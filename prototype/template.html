@@ -2405,6 +2405,7 @@ fetch('art.json')
   .catch(() => { ARTLATE = 'failed'; });
 /* Characteristic size of each item, to the nearest power of ten. */
 const SCALE = __SCALE_DATA__;
+const KEYSTONE = __KEYSTONE_DATA__;
 
 /* Where "true in general" and "safe in a kitchen" come apart. See
    data/cautions.json — the wording is attached to the hazard, not to the item,
@@ -3251,6 +3252,35 @@ function accessionOf(id) { return ACCESSION.get(id) || '—'; }
  * a field visible while you play.
  */
 function scaleOf(id) { return (SCALE[id] || {}).t || ''; }
+
+/* WHAT HOLDS THIS UP?
+ *
+ * Remove this element and recompute what is still reachable from the four
+ * starters: the number left behind is how much of the world it was carrying.
+ * Written by tools/keystone.mjs, where the reasoning and the caveats live.
+ *
+ * It is here because the intuitive answer is wrong often enough to be worth
+ * showing. Oxygen carries 1.1% of this world; sprout carries 78.5%. Flint
+ * carries half of it, because it unlocks Cut. A player who has only ever seen
+ * the additive half of the game — combine, discover, accumulate — has no way
+ * to find that out, and it is the most interesting fact most of these cards
+ * have.
+ *
+ * Said plainly and without a verdict attached. It is a fact about the shape of
+ * this graph, not a claim about the world, and not a score anything is ranked
+ * by. */
+function keystoneHTML(id) {
+  const lost = (KEYSTONE.s || {})[id];
+  if (!lost) return '';
+  const pct = KEYSTONE.n ? lost / KEYSTONE.n * 100 : 0;
+  // "over half of it" had no antecedent — the sentence never says what "it"
+  // is. Name the world.
+  const much = pct >= 50 ? ' — over half of this world'
+             : pct >= 20 ? ` — about ${Math.round(pct)}% of this world`
+             : '';
+  const what = lost === 1 ? 'one other thing stops' : `${lost.toLocaleString()} other things stop`;
+  return `<p class="pfrom keystone">🧱 Take this away and ${what} existing${much}.</p>`;
+}
 
 function chipHTML(e) {
   const name = nameOf(e);
@@ -9175,6 +9205,7 @@ function quickViewHTML(id) {
       <div class="pnums">${f.name}${e.terminal ? ' · nothing is made from this' : ''}</div>
       <div class="pfrom">${e.fact}</div>
     </div>
+    ${keystoneHTML(id)}
     ${(() => { const bid = bedrockIdFor(id); const svg = bid ? moleculeSVG(bid) : ''; return svg ? `<div class="molbox">${svg}</div>` : ''; })()}
     ${e.discovered ? `<p class="pfrom">🕐 <b>${e.discovered.year}</b> · ${e.discovered.note}</p>${nearestInTimeHTML(id)}` : ''}
     ${cautionHTML(id)}

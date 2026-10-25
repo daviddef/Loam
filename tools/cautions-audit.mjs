@@ -243,10 +243,23 @@ const rows = Object.entries(HAZ)
 if (LIST_UNSOURCED) {
   const owed = rows.filter(([, h]) => !h.src);
   console.log(`\n${n(owed.length)} HAZARD(S) CITING NOTHING AT ALL\n`);
-  // Worst first: an entry on many elements is read by more players, and one
-  // asserting a figure is making a checkable claim nobody has checked.
-  owed.sort((a, b) => ((b[1].ids || []).length - (a[1].ids || []).length)
-    || (figuresIn(b[1].note || '').length - figuresIn(a[1].note || '').length));
+  /* RISK FIRST, NOT REACH FIRST.
+   *
+   * This list used to rank by how many elements an entry touches. That is
+   * reach, and reach is not where the faults are. Every correction this layer
+   * has produced was a FIGURE — one that drifted from its source (Chagas, all
+   * three numbers), that collided with an unrelated number (a seed dose
+   * matching an FDA date), that carried the wrong unit (300 mph read as km/h),
+   * or that was never in the article at all (570,000 AIDS deaths).
+   *
+   * A note asserting no number can still be wrong, but it is wrong in a way a
+   * reader can weigh. A note asserting "13 to 40 °C" cannot be weighed at all
+   * without the source. So: how many checkable figures it asserts, then how
+   * many elements carry it. 176 of the 282 unsourced assert a number, and
+   * those are the ones worth reaching first. */
+  const risk = h => figuresIn(h.note || '').length;
+  owed.sort((a, b) => (risk(b[1]) - risk(a[1]))
+    || ((b[1].ids || []).length - (a[1].ids || []).length));
   for (const [id, h] of owed) {
     const figs = figuresIn(h.note || '');
     console.log(`  ${id}`);

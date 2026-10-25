@@ -780,7 +780,7 @@
     },
     "chrysotile_asbestos": {
       "label": "Some serpentine is asbestos",
-      "note": "Chrysotile, a fibrous form of serpentine, is one of the most important asbestos minerals. Breaking or excavating serpentine rock that contains it can release asbestos fibres into the air, a long-term lung health hazard from inhalation.",
+      "note": "Chrysotile — white asbestos — is the most commonly encountered form, accounting for approximately 95% of the asbestos in the United States. It is a soft, fibrous silicate in the serpentine subgroup, distinct from the amphibole asbestos minerals. It poses serious health risks when dispersed into air and inhaled, associated with parenchymal asbestosis, asbestos-related pleural abnormalities, peritoneal mesothelioma and lung cancer.",
       "ids": [
         "serpentine",
         "asbestos",
@@ -788,7 +788,8 @@
         "mesothelioma"
       ],
       "severity": "cumulative",
-      "carcinogen": true
+      "carcinogen": true,
+      "src": "https://en.wikipedia.org/wiki/Chrysotile"
     },
     "malaria_burden": {
       "label": "Malaria still kills hundreds of thousands a year",
@@ -890,14 +891,15 @@
     },
     "tapeworm_infection": {
       "label": "Large, long-lived, and usually mild",
-      "note": "Taenia solium and Taenia saginata are among the largest parasites that infect humans — the beef tapeworm can exceed 22 metres and live in a person for 25 years. Most infections cause mild or no symptoms, detected only when a segment passes.",
+      "note": "Taenia saginata, the beef tapeworm, is the largest species in its genus: an adult is normally 4 to 10 m long, and specimens over 22 m have been reported. Adults can live about 25 years in the host, usually one worm at a time. Infection comes from beef containing the infective larvae, and it is relatively harmless and clinically asymptomatic — each body segment, a proglottid, is a complete hermaphrodite, so reproduction is by self-fertilisation. Unlike the pork tapeworm, it does not cause cysticercosis.",
       "ids": [
         "taenia_solium",
         "taenia_saginata",
         "tapeworm",
         "taeniasis"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Taenia_saginata"
     },
     "schistosomiasis_burden": {
       "label": "The second-most devastating parasitic disease, after malaria",
@@ -1862,18 +1864,6 @@
       "severity": "cumulative",
       "carcinogen": true
     },
-    "clostridial_wound_risk": {
-      "label": "Deep wounds and soil are a real combination",
-      "note": "Clostridium tetani and Clostridium perfringens are both anaerobic soil bacteria that thrive specifically where a wound seals off oxygen. Tetanus causes spreading muscle rigidity that starts with lockjaw; gas gangrene causes outright muscle tissue death that can progress to shock within hours. Both are why puncture wounds and deep cuts get medical attention rather than just a bandage.",
-      "ids": [
-        "clostridium_tetani",
-        "tetanus",
-        "clostridium_perfringens",
-        "gas_gangrene"
-      ],
-      "severity": "acute",
-      "biohazard": true
-    },
     "tick_borne_rickettsia": {
       "label": "A tick bite can carry more than an itch",
       "note": "Rickettsia rickettsii is transmitted into the bloodstream by tick salivary secretions, and can start infecting a person in a feeding time as short as two hours. Before antibiotics were available, Rocky Mountain spotted fever killed more than 1 in 10 people it infected; with early treatment, mortality drops to about 1 in 200.",
@@ -1911,18 +1901,6 @@
       "severity": "conditional",
       "biohazard": true,
       "src": "https://en.wikipedia.org/wiki/Fecal–oral_route"
-    },
-    "bite_wound_zoonoses": {
-      "label": "An animal bite or scratch is a real inoculation",
-      "note": "Bartonella henselae (cat scratch disease) and Streptobacillus moniliformis (rat-bite fever) both live in ordinary, often-healthy pets and rodents, and both cross into a person through a scratch or bite. Most cases are mild in a healthy adult, but rat-bite fever in particular can produce genuinely high, prostrating fevers.",
-      "ids": [
-        "bartonella_henselae",
-        "cat_scratch_disease",
-        "streptobacillus_moniliformis",
-        "rat_bite_fever"
-      ],
-      "severity": "conditional",
-      "biohazard": true
     },
     "gonorrhea_sti": {
       "label": "A common bacterial STI, often silent",
@@ -1966,14 +1944,15 @@
     },
     "toxic_shock_risk": {
       "label": "Toxic shock syndrome can turn fatal within hours",
-      "note": "Certain Staphylococcus aureus strains release TSST-1, a superantigen that can trigger a cytokine storm, a sharp blood-pressure crash, and multi-organ failure. US incidence fell to roughly 0.3 to 0.5 cases per 100,000 people a year after high-absorbency tampons tied to the 1980 epidemic were pulled from the market, but the illness can still be fatal within hours if untreated.",
+      "note": "The mechanism is a superantigen: in staphylococcal cases the toxin is TSS Toxin-1, TSST-1, which activates so many of the body's T-cells at once that the resulting polyclonal population causes a cytokine storm and then multisystem disease — fever, low blood pressure, rash, vomiting, multiorgan failure. Very absorbent tampons are one risk factor among several, including post-surgical infection and skin lesions in young children. Menstrual and non-menstrual cases declined sharply in the 1990s and had stabilised at about 0.3 to 0.5 cases per 100,000 population by 2013.",
       "ids": [
         "staphylococcus_aureus",
         "tampon",
         "toxic_shock_syndrome"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Toxic_shock_syndrome"
     },
     "leptospirosis_exposure": {
       "label": "Leptospirosis spreads through water contaminated with animal urine",
@@ -2064,7 +2043,7 @@
     },
     "aids_untreated_progression": {
       "label": "Untreated HIV disease is fatal, though slowly",
-      "note": "An estimated 40.9 million people were living with HIV worldwide in the most recent count, and AIDS-related illness still killed roughly 570,000 people that year — far below the epidemic's peak, thanks to antiretroviral therapy that suppresses but never eliminates the virus. Without treatment, HIV infection typically progresses to AIDS over three to twenty years.",
+      "note": "In 2025, 1.2 million people acquired HIV and an estimated 40.9 million were living with it. Between AIDS first being readily identified and 2024, the disease is estimated to have caused at least 42.3 million deaths worldwide. Infection runs in three stages — acute infection, clinical latency, then AIDS — and without treatment average survival after infection is estimated at 9 to 11 years depending on subtype. Antiretroviral treatment can extend life expectancy to a nearly standard level, but the immune response never eliminates the virus.",
       "ids": [
         "hiv",
         "acute_retroviral_syndrome",
@@ -2072,7 +2051,8 @@
         "aids"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/HIV/AIDS"
     },
     "hiv_opportunistic_infections": {
       "label": "AIDS-defining infections turn dangerous only once CD4+ counts collapse",
@@ -3247,6 +3227,46 @@
       ],
       "severity": "conditional",
       "src": "https://en.wikipedia.org/wiki/Egg_as_food"
+    },
+    "tetanus_wound_risk": {
+      "label": "A wound that seals itself is the habitat",
+      "note": "Clostridium tetani is a common soil bacterium, and its spores are extremely hardy — found globally in soil and in the gastrointestinal tracts of animals. It cannot grow in the presence of oxygen, which is precisely why a deep or sealed wound suits it: inoculated there, it produces tetanospasmin, a potent toxin that interferes with motor neurons. The jaw muscles stiffen first, which is why tetanus has commonly been called lockjaw, and the spasms continue for several weeks because the toxin's binding at the neuromuscular junction is irreversible.",
+      "ids": [
+        "clostridium_tetani",
+        "tetanus"
+      ],
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Clostridium_tetani"
+    },
+    "gas_gangrene_risk": {
+      "label": "The bacteria make the oxygen-free pocket they need",
+      "note": "Gas gangrene — clostridial myonecrosis — is usually caused by Clostridium perfringens, and produces tissue gas within the gangrene. About 1,000 cases are reported yearly in the United States. Its exotoxins cause myonecrosis, the death of muscle tissue specifically, along with gas production and sepsis; progression to toxaemia and shock is often very rapid. Alpha-toxin drives platelet aggregation that blocks blood vessels and starves tissue of oxygen, creating the acidic, oxygen-deficient environment that helps the bacteria grow further.",
+      "ids": [
+        "clostridium_perfringens",
+        "gas_gangrene"
+      ],
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Gas_gangrene"
+    },
+    "cat_scratch_disease_risk": {
+      "label": "A healthy cat is the usual source",
+      "note": "Cat-scratch disease most often results from the scratch or bite of a cat, and is caused by Bartonella henselae, believed to be spread in the cat's saliva. Young cats pose a greater risk than older ones. Symptoms begin within 3 to 14 days: a non-painful bump or blister at the site, then painful swollen lymph nodes, tiredness, headache or fever. Most healthy people clear the infection without treatment, but in 5 to 14% the organisms disseminate.",
+      "ids": [
+        "bartonella_henselae",
+        "cat_scratch_disease"
+      ],
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Cat-scratch_disease"
+    },
+    "rat_bite_fever_risk": {
+      "label": "Not the mild one",
+      "note": "Rat-bite fever is an acute febrile illness caused by bacteria transmitted by rodents, passed to a person in the rodent's urine or mucous secretions as well as by a bite. In North America the cause is Streptobacillus moniliformis. It is not a minor illness: left untreated the mortality rate is 13%, and the article records deaths in 20% of untreated cases from malignant endocarditis, meningoencephalitis or septic shock. Even treated, it can leave migratory polyarthralgia, persistent rash and fatigue.",
+      "ids": [
+        "streptobacillus_moniliformis",
+        "rat_bite_fever"
+      ],
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Rat-bite_fever"
     }
   },
   "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."

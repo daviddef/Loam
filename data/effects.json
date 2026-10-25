@@ -4621,16 +4621,6 @@
         "src": "https://en.wikipedia.org/wiki/Tiger_attack"
       }
     ],
-    "bite_wound_zoonoses": [
-      {
-        "valence": "harm",
-        "route": "injected",
-        "outcome": "infection",
-        "onset": "conditional",
-        "mechanism": "A bite is an injection: it puts an animal's mouth flora past every barrier the skin has, into tissue with a good blood supply and no drainage. The animal is usually healthy, which is the point.",
-        "src": "https://en.wikipedia.org/wiki/Cat-scratch_disease"
-      }
-    ],
     "blasting_hazard": [
       {
         "valence": "harm",
@@ -4731,6 +4721,16 @@
         "src": "https://en.wikipedia.org/wiki/Coumarin"
       }
     ],
+    "cat_scratch_disease_risk": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "infection",
+        "onset": "conditional",
+        "mechanism": "A bite is an injection: it puts an animal's mouth flora past every barrier the skin has, into tissue with a good blood supply and no drainage. The animal is usually healthy, which is the point.",
+        "src": "https://en.wikipedia.org/wiki/Cat-scratch_disease"
+      }
+    ],
     "caustic": [
       {
         "valence": "harm",
@@ -4801,16 +4801,6 @@
         "src": "https://en.wikipedia.org/wiki/Chrysotile",
         "carcinogen": true,
         "iarc": 1
-      }
-    ],
-    "clostridial_wound_risk": [
-      {
-        "valence": "harm",
-        "route": "contact",
-        "outcome": "tetanus",
-        "onset": "acute",
-        "mechanism": "Both bacteria need the absence of oxygen, which a deep or crushed wound supplies by sealing itself. Tetanus toxin travels up the nerve to the spinal cord and blocks the signals that switch a muscle off, so nothing can relax.",
-        "src": "https://en.wikipedia.org/wiki/Tetanus"
       }
     ],
     "cocaine_dependency": [
@@ -4995,6 +4985,16 @@
         "src": "https://en.wikipedia.org/wiki/Formaldehyde",
         "carcinogen": true,
         "iarc": 1
+      }
+    ],
+    "gas_gangrene_risk": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "sepsis",
+        "onset": "acute",
+        "mechanism": "The bacteria deepen the conditions they need: alpha-toxin drives platelet aggregation that blocks blood vessels, depriving tissue of oxygen and leaving an acidic, oxygen-deficient environment that suits them better still. Muscle tissue dies specifically, gas forms inside it, and progression to toxaemia and shock is often very rapid.",
+        "src": "https://en.wikipedia.org/wiki/Gas_gangrene"
       }
     ],
     "gi_infection_risk": [
@@ -5560,6 +5560,16 @@
         "srcIarc": "https://en.wikipedia.org/wiki/International_Agency_for_Research_on_Cancer"
       }
     ],
+    "rat_bite_fever_risk": [
+      {
+        "valence": "harm",
+        "route": "injected",
+        "outcome": "infection",
+        "onset": "acute",
+        "mechanism": "An ordinary, often healthy rodent carries it, and the bite delivers it past every barrier the skin provides. Untreated it kills about one case in eight, and even treated it can leave migratory joint pain, a persistent rash and fatigue behind.",
+        "src": "https://en.wikipedia.org/wiki/Rat-bite_fever"
+      }
+    ],
     "rattlesnake_bite": [
       {
         "valence": "harm",
@@ -5828,6 +5838,16 @@
         "onset": "conditional",
         "mechanism": "Susceptibility follows developmental stage, not dose alone: the same exposure that does nothing later can, during the weeks an organ is being laid down, prevent it forming at all.",
         "src": "https://en.wikipedia.org/wiki/Teratology"
+      }
+    ],
+    "tetanus_wound_risk": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "tetanus",
+        "onset": "acute",
+        "mechanism": "Both bacteria need the absence of oxygen, which a deep or crushed wound supplies by sealing itself. Tetanus toxin travels up the nerve to the spinal cord and blocks the signals that switch a muscle off, so nothing can relax.",
+        "src": "https://en.wikipedia.org/wiki/Tetanus"
       }
     ],
     "theobromine_pet_toxicity": [

@@ -14,6 +14,13 @@ const data = {
 const art = J('../data/art.json');
 const palette = J('../data/palette.json');
 const scale = J('../data/scale.json');
+/* How much of the world each element holds up — written by tools/keystone.mjs.
+ * `n` is the reachable total the scores are a fraction OF, carried alongside
+ * rather than assumed from elements.length: they are the same number today
+ * only because reachability is 100%, and a card should not start lying if
+ * that ever stops being true. */
+const ks = J('../data/keystone.json');
+const keystone = { n: ks.$reachable, s: ks.score };
 const cautions = J('../data/cautions.json').hazards;
 const labels = J('../data/labels.json');
 const pathogens = J('../data/pathogens.json');
@@ -197,6 +204,7 @@ html = html.replace('__GAME_DATA__', JSON.stringify(data))
            .replace('__ART_DATA__', JSON.stringify(artEarly))
            .replace('__ARTCAT_DATA__', JSON.stringify(artCat))
            .replace('__SCALE_DATA__', JSON.stringify(scale))
+           .replace('__KEYSTONE_DATA__', JSON.stringify(keystone))
            .replace('__CAUTION_DATA__', JSON.stringify(cautions))
            .replace('__LABEL_DATA__', JSON.stringify(labels))
            .replace('__PATHOGEN_DATA__', JSON.stringify(pathogens))

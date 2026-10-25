@@ -34,14 +34,14 @@ validated and playtested first — before a line of Swift.
 | Sourced | **10,534 / 10,534** recipes, every URL machine-verified |
 | Independently verified | **8,445 / 10,534** (80%) carry `verified: true` |
 | Routes per element | **1.23** · 7,021 still have exactly one |
-| Hazards | **345**, covering 622 elements |
+| Hazards | **347**, covering 622 elements |
 | Scale span | **20 orders of magnitude**, 10^-10 m to 10^9 m |
 | Drawings | **7,875** hand-drawn; 708 on a family fallback — a tracked backlog, not a blocker |
 | Roles | **8,583 / 8,583** — what each noun is to a making |
 | Sense-checked | **1,849** single-word names read; 181 on the watchlist |
 | Places | **442 / 442** of a checklist that is part external, so it can disagree with us |
 | Parts lists | **1,116** written |
-| Effects on a body | **621 / 622** cautioned elements answered and **39 / 39** of the nutrients a body cannot make supplied; 79 rows are things the body is better off for, 5 elements are both, 5 carry a dose ladder; **554 / 554** have had the article they cite read and found to carry the claim |
+| Effects on a body | **621 / 622** cautioned elements answered and **39 / 39** of the nutrients a body cannot make supplied; 79 rows are things the body is better off for, 5 elements are both, 5 carry a dose ladder; **556 / 556** have had the article they cite read and found to carry the claim |
 | Colours | **28**, every one a measured Munsell chip |
 
 *Counted by `node tools/readme.mjs`. Every figure here is read from the corpus at
