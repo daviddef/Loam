@@ -1015,15 +1015,6 @@
         "polar_bear"
       ]
     },
-    "big_cat_attack": {
-      "label": "Rare, but the history is real",
-      "note": "Unprovoked attacks on people are uncommon for either species, but both have documented cases: the 'Leopard of Rudraprayag' killed more than 125 people in India before being shot in 1926, and confirmed cougar attacks in North America rose from 53 between 1890 and 1990 to 88 by 2004, with about 20 deaths recorded over that span.",
-      "severity": "acute",
-      "ids": [
-        "leopard",
-        "cougar"
-      ]
-    },
     "coyote_attack": {
       "label": "Rare, and rarely serious — but real",
       "note": "Coyotes are shy around people, and confirmed attacks are uncommon: 367 documented in the US and Canada between 1977 and 2015, most of them minor. Two are confirmed fatal — a 3-year-old in 1981 and an adult in 2009 — the only known deaths from an unprovoked coyote attack on record.",
@@ -2116,7 +2107,8 @@
         "bacillus_anthracis"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Anthrax"
     },
     "arboviral_disease_burden": {
       "label": "Viruses that arrive by bite, and mostly have no drug against them",
@@ -2374,13 +2366,14 @@
     },
     "mumps_complications": {
       "label": "The swollen glands pass; some of the complications do not",
-      "note": "Mumps virus is shed in saliva from about a week before symptoms to eight days after, and incubates 16 to 18 days on average. Orchitis occurs in 10 to 40% of pubertal and post-pubertal males who catch it, aseptic meningitis in 5 to 10% of cases, and hearing loss in about 4% — permanent in roughly 1 infection in 20,000. The overall case-fatality rate is 1.6 to 3.8 per 10,000.",
+      "note": "Symptoms typically occur 16 to 18 days after exposure, and about a third of infections produce none at all. Orchitis, meningitis and encephalitis are responsible for the bulk of the morbidity. Mumps orchitis usually affects one testis, both in 10–30% of cases, and is accompanied by epididymitis about 85% of the time; the involved testicle atrophies in 30–50% of orchitis cases, and of bilateral cases 30–87% experience infertility. Aseptic meningitis occurs in 5–10% of cases, oophoritis in 5–10% of post-pubertal women, and mastitis in up to about 30%. The overall case-fatality rate is 1.6–3.8 per 10,000, and those deaths are typically in people who develop encephalitis.",
       "ids": [
         "mumps",
         "mumps_virus"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Mumps"
     },
     "mycoplasma_pneumonia_illness": {
       "label": "No cell wall means penicillin has nothing to attack",
@@ -2421,13 +2414,14 @@
     },
     "pneumococcal_disease": {
       "label": "Carried harmlessly by millions, and still one of the great child killers",
-      "note": "Streptococcus pneumoniae sits in the nose and throat of 5 to 10% of healthy adults and 20 to 40% of healthy children without causing anything. When it does invade it accounts for 15 to 50% of community-acquired pneumonia, and estimates of the child deaths it causes worldwide each year run from 700,000 to a million, most of them under five. Of about 30,000 US invasive cases in 2015, 30% were resistant to one or more antibiotics.",
+      "note": "Streptococcus pneumoniae resides asymptomatically in healthy carriers, colonising the respiratory tract, sinuses and nasal cavity — more than 100 serotypes are known, differing in virulence, prevalence and drug resistance. In susceptible people, particularly the elderly and young children, it turns pathogenic and spreads to cause disease. In 2015 there were an estimated 30,000 US cases, and in 30% of them the strains were resistant to one or more antibiotics.",
       "ids": [
         "streptococcus_pneumoniae",
         "pneumococcal_pneumonia"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Streptococcus_pneumoniae"
     },
     "poliomyelitis_paralysis": {
       "label": "Most polio infections show nothing at all; a small fraction paralyse permanently",
@@ -2485,12 +2479,13 @@
     },
     "sars_outbreak_mortality": {
       "label": "SARS killed roughly one in ten of the people it infected",
-      "note": "The 2002-2004 outbreak produced 8,096 confirmed cases and 783 known deaths, a case fatality rate near 11% that ranged from under 1% in people younger than 24 to over 50% in those aged 65 and older. It spread by respiratory droplets, aerosols and contaminated surfaces, with symptoms appearing four to six days after exposure. Human-to-human transmission was contained in 2003 and no case has been reported since 2004, though related coronaviruses persist in animal reservoirs.",
+      "note": "At the end of the epidemic in June 2003 the reported incidence was 8,422 cases, with a case fatality rate of 11% overall — but that average hides the whole story. The rate ranges from 0% to 50% depending on age group: patients under 24 were least likely to die, at less than 1%, while those 65 and older were most likely, at over 55%. The primary route was contact of the mucous membranes with respiratory droplets or fomites. No cases of SARS-CoV-1 have been reported worldwide since 2004.",
       "ids": [
         "sars_cov"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Severe_acute_respiratory_syndrome"
     },
     "scalded_skin_toxin": {
       "label": "The bacterium stays put; the toxin that peels the skin travels",
@@ -2815,11 +2810,12 @@
     },
     "thalidomide_teratogen": {
       "label": "Safe for the person swallowing it, and not for the fetus",
-      "note": "The window ran roughly from day 20 to day 36 after fertilisation, and it was narrow enough to read the date off the injury: around day 20 the central brain, day 22 the ears and face, day 24 the arms, out to about day 28 the legs. More than 10,000 children in 46 countries were born with deformities, and roughly 40% died around the time of birth. It was never marketed in the United States — the FDA reviewer holding the application refused to approve it on the evidence supplied — and the 1962 Drug Amendments followed. The drug is prescribed again today for multiple myeloma and for erythema nodosum leprosum, under pregnancy-prevention programmes.",
+      "note": "The window was narrow enough to read the date off the injury: roughly day 20 to day 36 post-fertilisation, with the 20th day causing central brain damage, day 22 the ears and face, day 24 the arms, and leg damage if taken up to day 28. The total severely harmed in pregnancy is estimated at over 10,000 and possibly 20,000, of whom about 40% died around the time of birth; survivors had limb, eye, urinary tract and heart problems. It was available in 46 countries. Its entry to the US market was at first prevented by Frances Oldham Kelsey, a reviewer at the FDA, and the defects it caused drove greater drug regulation in many countries. It is prescribed again today — approved in the US in 1998 — for multiple myeloma and for acute episodes of erythema nodosum leprosum.",
       "ids": [
         "thalidomide"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Thalidomide"
     },
     "tobacco_smoke_carcinogen": {
       "label": "Tobacco smoke is a Group 1 carcinogen for the smoker and for everyone nearby",
@@ -3267,6 +3263,24 @@
       ],
       "severity": "acute",
       "src": "https://en.wikipedia.org/wiki/Rat-bite_fever"
+    },
+    "leopard_attack": {
+      "label": "One animal, not a population",
+      "note": "The man-eating leopard of Rudraprayag killed more than 125 people in the Garhwal region of northern India before Jim Corbett shot it in 1926. That is the shape of the risk: attacks on people cluster in individual animals rather than across a species.",
+      "ids": [
+        "leopard"
+      ],
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Leopard_of_Rudraprayag"
+    },
+    "cougar_attack": {
+      "label": "Rare, and rising with the overlap",
+      "note": "The cougar is reclusive and mostly avoids people, and fatal attacks are rare — but they increased in North America as more people entered cougar habitat. Between 1890 and 1990 there were 53 reported, confirmed attacks on humans in North America, causing 48 nonfatal injuries and 10 deaths; by 2004 the count had climbed to 88 attacks and 20 deaths. The distribution is not uniform across the continent.",
+      "ids": [
+        "cougar"
+      ],
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Cougar"
     }
   },
   "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."
