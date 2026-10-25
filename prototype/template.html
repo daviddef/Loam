@@ -2988,7 +2988,9 @@ function countOnBench(id) {
 // element.fact is the short plain line, recipe.why is the mechanism.
 const prefs = { depth: 'curious', tone: 'playful', freePlay: false,
                 theme: 'specimen', ground: 'paper', chrome: 'light',
-                assist: 'on', density: 'half', consolidate: false, motes: true };
+                assist: 'on', density: 'half', consolidate: false, motes: true,
+                /* Shown once, then never again — see the live-badge tip below. */
+                tipLive: false };
 let savedPrefs = null;
 try { savedPrefs = JSON.parse(localStorage.getItem('loam.prefs') || 'null'); } catch {}
 if (savedPrefs) Object.assign(prefs, savedPrefs);
@@ -3191,9 +3193,9 @@ const sfx = {
 const board = document.getElementById('board');
 const toastEl = document.getElementById('toast');
 let toastT;
-function toast(msg) {
+function toast(msg, ms = 2200) {
   toastEl.textContent = msg; toastEl.classList.add('on');
-  clearTimeout(toastT); toastT = setTimeout(() => toastEl.classList.remove('on'), 2200);
+  clearTimeout(toastT); toastT = setTimeout(() => toastEl.classList.remove('on'), ms);
 }
 
 // ---------- taxonomy ----------
@@ -5774,7 +5776,7 @@ function ensureVisible(el) {
 // so nothing is lost by letting it go.
 let cardT, cardPinned = false;
 function showCard(r, e) {
-  endIntro();                                    // the cue has done its job
+  advanceIntro();                // stage 1 has done its job; stage 2 may follow
   const isFolk = e.shelf === 'folklore';
   const card = document.getElementById('card');
   cardPinned = false;
@@ -5929,6 +5931,26 @@ board.addEventListener('pointerdown', ev => {
     const n = livePartnersOn(chip);
     chip.dataset.live = n ? String(n) : '';
     chip.classList.toggle('haslive', n > 0);
+    /* THE NUMBER THAT APPEARED ON THE CARD.
+     *
+     * The header count has had a title attribute explaining itself since it
+     * was built. This badge has never had one, and a title would not help the
+     * players most likely to need it: there is no hover on a tablet, which is
+     * where a game aimed partly at children actually gets played.
+     *
+     * So it is said out loud, once, the first time a number ever appears on a
+     * card in the hand — the moment the question is actually being asked — and
+     * then never again, remembered in prefs like every other choice. Four
+     * seconds rather than the usual 2.2: this is a sentence, not a
+     * confirmation.
+     *
+     * It says what the number counts and not what the partner is. That is the
+     * same line the badge's own CSS draws ("A number, never a partner"), and
+     * the reason the assist is a nudge rather than an answer. */
+    if (n > 0 && !prefs.tipLive) {
+      prefs.tipLive = true; savePrefs();
+      toast('That number is how many cards on the bench this one will make something new with.', 4200);
+    }
   }
   drag = { chip, ox: wx - (parseFloat(chip.style.left) || 0),
                  oy: wy - (parseFloat(chip.style.top) || 0),
@@ -11998,15 +12020,48 @@ window.regressionTest = regressionTest;
  */
 let introDone = found.size > 4;
 let introTimer = 0;
+/* THE SECOND CUE: A THING CAN BE COMBINED WITH ITSELF.
+ *
+ * 77 recipes take the same element twice, and the four most load-bearing of
+ * them sit at the very top of this world: stone + stone makes spark, which
+ * holds up 76.3% of everything; wood + wood makes fire, which holds up 39.4%.
+ * Spark is also what both flint and fire are made from, so it is the door to
+ * Cut, Heat and Smother — three of the eight verbs.
+ *
+ * Nothing taught it. The opening cue points at seed and water, which is the
+ * best possible first move (sprout holds up 78.5%), and then stops. A player
+ * who never thinks to drag a card onto another copy of itself has the largest
+ * subtree in the game closed to them, and no way to find out why.
+ *
+ * It waits for the first discovery, so it is never two hints at once, and it
+ * goes the moment the player picks anything up — the earlier version of this
+ * cue was dismissed by a live complaint about a hint that would not leave, and
+ * that fix is not being undone here. */
+let introStage = 1;
 const intro = () => document.getElementById('intro');
+
+/** First discovery landed: either move to the second cue, or finish. */
+function advanceIntro() {
+  if (introDone) return;
+  if (introStage === 1 && !found.has('spark') && byId['stone']) {
+    introStage = 2;
+    clearTimeout(introTimer); introTimer = 0;
+    drawIntro();
+    return;
+  }
+  endIntro();
+}
 
 function drawIntro() {
   const box0 = intro();
   if (introDone || !box0) return;
   const introArc = box0.querySelector('#introArc path');
   const introSay = box0.querySelector('#introSay');
-  const a = [...world.querySelectorAll('.chip.board')].find(c => c.dataset.id === 'seed');
-  const b = [...world.querySelectorAll('.chip.board')].find(c => c.dataset.id === 'water');
+  const onBench = id => [...world.querySelectorAll('.chip.board')].find(c => c.dataset.id === id);
+  // Stage 2 points at one card and loops back to it, because the gesture it is
+  // describing is that card onto another of itself.
+  const a = introStage === 2 ? onBench('stone') : onBench('seed');
+  const b = introStage === 2 ? a : onBench('water');
   if (!a || !b) { box0.classList.add('gone'); return; }
   box0.classList.remove('gone');
   // Rubbing itself out "the moment the player makes anything" (see above)
@@ -12037,10 +12092,21 @@ function drawIntro() {
   const len = Math.hypot(dx, dy) || 1;
   const bow = Math.min(70, len * 0.32);
   const cx = mx - (dy / len) * bow, cy = my + (dx / len) * bow;
-  introArc.setAttribute('d', `M${p1[0]} ${p1[1]} Q${cx} ${cy} ${p2[0]} ${p2[1]}`);
+  if (introStage === 2) {
+    // A loop leaving the card and returning to it: the same thing, twice.
+    const r = Math.max(26, (cw * view.k) * 0.42);
+    introArc.setAttribute('d',
+      `M${p1[0]} ${p1[1] - r * 0.2} C${p1[0] + r * 1.6} ${p1[1] - r * 1.5},` +
+      `${p1[0] + r * 1.6} ${p1[1] + r * 1.5},${p1[0]} ${p1[1] + r * 0.2}`);
+  } else {
+    introArc.setAttribute('d', `M${p1[0]} ${p1[1]} Q${cx} ${cy} ${p2[0]} ${p2[1]}`);
+  }
 
-  introSay.innerHTML = `<b>Drag one of these onto another.</b>` +
-    `<i>four things · everything else is made from them</i>`;
+  introSay.innerHTML = introStage === 2
+    ? `<b>A thing can go onto another of itself.</b>` +
+      `<i>drag a second stone out and try the pair</i>`
+    : `<b>Drag one of these onto another.</b>` +
+      `<i>four things · everything else is made from them</i>`;
   // Below both cards, never on top of one. Sitting it on the arc's midpoint put
   // it straight over the card it was pointing at.
   const lowest = Math.max(p1[1], p2[1]) + (ch * view.k) / 2 + 14;

@@ -41,7 +41,7 @@ validated and playtested first — before a line of Swift.
 | Sense-checked | **1,849** single-word names read; 181 on the watchlist |
 | Places | **442 / 442** of a checklist that is part external, so it can disagree with us |
 | Parts lists | **1,116** written |
-| Effects on a body | **620 / 622** cautioned elements answered and **39 / 39** of the nutrients a body cannot make supplied; 79 rows are things the body is better off for, 5 elements are both, 5 carry a dose ladder; **556 / 556** have had the article they cite read and found to carry the claim |
+| Effects on a body | **621 / 622** cautioned elements answered and **39 / 39** of the nutrients a body cannot make supplied; 79 rows are things the body is better off for, 5 elements are both, 5 carry a dose ladder; **556 / 556** have had the article they cite read and found to carry the claim |
 | Colours | **28**, every one a measured Munsell chip |
 
 *Counted by `node tools/readme.mjs`. Every figure here is read from the corpus at
