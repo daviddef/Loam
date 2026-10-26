@@ -319,11 +319,12 @@
     },
     "lion_predation": {
       "label": "Man-eating is a supplement, not a last resort",
-      "note": "The Tsavo pair stopped the Uganda Railway in 1898; Patterson claimed 135 victims and a later review of his journal put it nearer 28–31. The modern figure is larger and less famous: more than 563 people killed in Tanzania since 1990 and at least 308 injured, with attacks peaking at harvest time. Studies of man-eating lions find that African lions eat people as a supplement to other food rather than because they are starving.",
+      "note": "The Tsavo Man-Eaters were a pair of male lions responsible for the deaths of many construction workers on the Kenya–Uganda Railway between March and December 1898. Patterson gave several figures, overall claiming 135 victims. A 2001 review of man-eating behaviour among lions found the proposed toll of 100 or more was most likely an exaggeration, putting the likelier death toll at 28 to 31. Both numbers are worth carrying: the one that made the story famous, and the one that survived examination.",
       "severity": "acute",
       "ids": [
         "lion"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Tsavo_Man-Eaters"
     },
     "bear_defence": {
       "label": "A defensive animal, not a predatory one",
@@ -2129,13 +2130,14 @@
     },
     "bacterial_vaginosis_risks": {
       "label": "Common, often symptomless, and it raises the risk of other infections",
-      "note": "Bacterial vaginosis affects an estimated 23 to 29% of reproductive-age women worldwide, and about half have no symptoms at all. It roughly doubles the risk of acquiring several sexually transmitted infections including HIV, is associated with up to a six-fold increase in HIV shedding, and in pregnancy is linked to premature rupture of membranes and preterm birth. Recurrence after antibiotic treatment runs as high as 80%.",
+      "note": "A systematic review and meta-analysis found global prevalence in reproductive-aged women ranges from 23 to 29%, and occasionally there may be no symptoms at all. Having it approximately doubles the risk of infection by a number of sexually transmitted infections including HIV/AIDS, and it is associated with up to a six-fold increase in HIV shedding. In pregnancy it raises the risk of chorioamnionitis, miscarriage, preterm birth, premature rupture of membranes and postpartum endometritis. About 10% to 15% of people do not improve with the first course of antibiotics, and recurrence rates of up to 80% have been documented.",
       "ids": [
         "bacterial_vaginosis",
         "gardnerella_vaginalis"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Bacterial_vaginosis"
     },
     "brucellosis_exposure": {
       "label": "Raw milk and a slaughterhouse cut are the usual routes in",
@@ -2197,13 +2199,14 @@
     },
     "ebv_lifelong_infection": {
       "label": "Almost everyone carries it, and it never entirely leaves",
-      "note": "About 95% of people have been infected with Epstein-Barr virus by age 40, usually via saliva, with symptoms appearing roughly 33 to 49 days later. Most recover from mononucleosis in two to four weeks, though fatigue lasts more than a month in an estimated 28% of cases and splenic rupture occurs in under 1%. The virus persists in B cells for life and is linked to Burkitt and Hodgkin lymphoma, nasopharyngeal and gastric carcinoma, and to multiple sclerosis.",
+      "note": "Nearly 95% of people have had an Epstein–Barr infection by the time they are adults. It spreads primarily through saliva — shared glasses, toothbrushes — and a review of the literature estimates 33 to 49 days from exposure to symptoms. Most people recover in two to four weeks, though fatigue lasts more than a month in an estimated 28% of cases and may last months. The liver or spleen may swell, and in less than one percent of cases the spleen ruptures. The virus establishes itself in B cells, which it invades via CD21; a persistent infection can develop into systemic EBV-positive T cell lymphoma, and prior infection has been linked to multiple sclerosis.",
       "ids": [
         "epstein_barr_virus",
         "infectious_mononucleosis"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Infectious_mononucleosis"
     },
     "endocarditis_mortality": {
       "label": "An infection on a heart valve kills about one in four",
@@ -2245,13 +2248,14 @@
     },
     "group_a_strep_sequelae": {
       "label": "Strep throat is minor; what group A strep does afterwards is not",
-      "note": "Streptococcus pyogenes causes an estimated 700 million infections a year, and though overall mortality is under 0.1%, the 650,000-odd invasive cases — necrotizing fasciitis, streptococcal toxic shock — kill about a quarter of the people they strike. Untreated throat infection carries a roughly 3% risk of acute rheumatic fever, which is why 33.4 million people now live with rheumatic heart disease. Antibiotics shorten the sore throat by only about 16 hours; what they change is the rheumatic fever risk.",
+      "note": "An estimated 700 million group A streptococcal infections occur worldwide each year. The overall mortality rate is less than 0.1% — but over 650,000 of those cases are severe and invasive, and those have a mortality rate of 25%. The same organism that causes an ordinary sore throat causes necrotising fasciitis and streptococcal toxic shock, and the difference is not the bacterium.",
       "ids": [
         "streptococcus_pyogenes",
         "strep_throat"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Streptococcus_pyogenes"
     },
     "healthcare_associated_infection": {
       "label": "Care itself carries an infection rate",
@@ -2275,21 +2279,23 @@
     },
     "herpes_simplex_persistence": {
       "label": "Herpes simplex is lifelong, and it transmits with nothing visible to see",
-      "note": "HSV settles into sensory nerve cells and reactivates for the rest of a person's life; WHO estimates 3.8 billion people under 50 carry HSV-1 and 520 million aged 15 to 49 carry HSV-2. It passes through oral, genital and skin contact, including when no sore is present. Most infections stay mild, but neonatal herpes occurs in about 10 of every 100,000 births and can cause neurological disability or death, and HSV-2 infection raises the risk of acquiring HIV roughly threefold.",
+      "note": "After infection the viruses are transported along sensory nerves to the nerve cell bodies, where they reside lifelong — the virus enters at the site of primary infection and becomes latent in the ganglion. Recurrence can follow decreased immune function, stress or sunlight. Even microscopic abrasions on mucous membranes are enough to allow viral entry, and asymptomatic shedding occurs at some time in most infected people — more than a week before or after a symptomatic recurrence in 50% of cases, and more frequently in the first 12 months. There is no vaccine and, once infected, no cure.",
       "ids": [
         "herpes_simplex_virus"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Herpes_simplex"
     },
     "hpv_cervical_cancer": {
       "label": "Nearly every cervical cancer begins as an HPV infection",
-      "note": "HPV is a sexually transmitted infection that almost everyone sexually active acquires at some point, usually without symptoms, and about 90% of infections clear within two years. The minority that persist can progress to cancer over a decade or more: nearly all cervical cancer is HPV-associated, and types 16 and 18 alone account for 70% of it. WHO counted roughly 660,000 new cervical cancer cases and 350,000 deaths worldwide in 2022.",
+      "note": "Many HPV infections cause no symptoms, and 90% resolve spontaneously within two years. The minority that persist are the problem: nearly all cervical cancer is due to HPV, and two strains, HPV16 and HPV18, account for 70% of all cases. The gap between infection and cancer is measured in years, which is what makes screening work.",
       "ids": [
         "human_papillomavirus"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Human_papillomavirus_infection"
     },
     "impetigo_contagion": {
       "label": "A skin infection that moves between children on contact",
@@ -2313,23 +2319,25 @@
     },
     "legionnaires_outbreak": {
       "label": "Legionella arrives in aerosolized water, never from another person",
-      "note": "Legionella lives inside amoebae in warm plumbing, cooling towers and spa pools, and infects people who inhale contaminated mist two to ten days before symptoms start; it does not spread person to person. Legionnaires' disease kills around 10% of previously healthy people infected in the community and up to 25% of those with underlying conditions, with hospital-acquired cases near 28%. The 1976 Philadelphia convention outbreak that named it produced 182 reported cases and 29 deaths.",
+      "note": "Infection often begins 2–10 days after exposure to contaminated mist, and it does not spread person to person. The fatality rate is around 10% for previously healthy people, but up to 25% in those with underlying conditions; hospital-acquired Legionella pneumonia has a fatality rate of 28%, where the principal source is the drinking-water distribution system. The disease is named after a 1976 American Legion convention in Philadelphia, where mortality was high — 29 deaths in 182 infected people — because the antibiotics then used had poor effect against it.",
       "ids": [
         "legionella"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Legionnaires%27_disease"
     },
     "leishmaniasis_burden": {
       "label": "Untreated visceral leishmaniasis is fatal in more than 95% of cases",
-      "note": "Leishmania parasites are transmitted by the bite of infected female phlebotomine sandflies. The visceral form runs to 50,000 to 90,000 new cases a year worldwide and kills over 95% of those left untreated; the cutaneous form, at 600,000 to 1 million new cases a year, leaves ulcers and permanent scarring instead. WHO describes the disease as tracking malnutrition, displacement and poor housing rather than geography alone.",
+      "note": "Leishmania is spread by the bite of phlebotomine sandflies, and more than 20 species infect humans. The visceral form — kala-azar, \"black fever\" — is the most serious and is generally fatal if untreated, running to 50,000 to 90,000 cases worldwide each year, with damage to the spleen and liver. The cutaneous form is the most common, at 600,000 to 1 million new cases a year, of which only 200,000 are officially reported. Risk factors are poverty, malnutrition, deforestation and urbanisation, and population displacement spreads it further.",
       "ids": [
         "leishmania",
         "leishmaniasis",
         "sandfly"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Leishmaniasis"
     },
     "leprosy_nerve_damage": {
       "label": "Leprosy is curable, but the nerve damage it does before treatment is permanent",
@@ -2441,22 +2449,24 @@
     },
     "poliomyelitis_paralysis": {
       "label": "Most polio infections show nothing at all; a small fraction paralyse permanently",
-      "note": "Poliovirus travels the faecal-oral route through water fouled by sewage, and about three quarters of infections produce no symptoms while the infected person stays contagious for up to six weeks. Between 0.1% and 0.5% of infections progress to paralytic polio, which kills 2 to 5% of children and 15 to 30% of adults, usually through paralysis of the respiratory muscles. Vaccination brought cases from an estimated 350,000 in 1988 down to 30 confirmed in 2022, but wild poliovirus still circulates in Afghanistan and Pakistan.",
+      "note": "Approximately 75% of poliovirus infections are asymptomatic, and those infected may spread the disease for up to six weeks even with no symptoms — which is what makes the faecal–oral route so effective. About one to five in 1,000 cases progress to paralytic disease, where muscles become weak, floppy and poorly controlled and finally completely paralysed. Of those who develop paralysis, between 2 and 10 percent die, as it reaches the breathing muscles. Vaccination took wild polio from an estimated 350,000 cases in 1988 to 30 confirmed cases in 2022, confined to just three countries.",
       "ids": [
         "poliovirus",
         "poliomyelitis"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Poliomyelitis"
     },
     "prion_disease": {
       "label": "No genome, no treatment, and routine sterilization does not destroy it",
-      "note": "A prion is a misfolded protein that converts normal copies of the same protein into its own shape, and every known prion disease is untreatable and fatal. Sporadic Creutzfeldt-Jakob disease occurs at roughly 1 to 1.5 cases per million people a year, and about 70% of patients die within a year of diagnosis; variant CJD, from BSE-infected beef, has reached 178 UK cases as of 2024. Prions resist proteases, ionizing radiation and formaldehyde, surgical instruments have transmitted the disease through standard decontamination, and even 134°C for 18 minutes in a pressurized autoclave is only partly effective.",
+      "note": "A prion is a misfolded protein that induces folding problems in normal variants of the same protein, leading to cellular death. All known prion diseases are untreatable and fatal. The reason they are so hard to contain is that prions resist proteases, heat, ionising radiation and formaldehyde — the treatments that handle every ordinary pathogen only reduce their infectivity. Heating at 134 °C for 18 minutes in a pressurised steam autoclave has been found somewhat effective, and the WHO's procedures for sterilising heat-resistant surgical instruments begin by immersing them in sodium hydroxide.",
       "ids": [
         "prion"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Prion"
     },
     "pseudomonas_hospital_infection": {
       "label": "One in ten hospital-acquired infections, and hard to kill",
@@ -2875,12 +2885,13 @@
     },
     "aspartame_phenylketonuria": {
       "label": "Aspartame carries phenylalanine, and for one group that matters",
-      "note": "Aspartame is a methyl ester of two amino acids and one of them is phenylalanine. People born with phenylketonuria — about one baby in 12,000 — lack the enzyme phenylalanine hydroxylase and cannot clear it; untreated, that leads to intellectual disability and seizures, which is why newborns have been screened since the early 1960s. It is the reason US labels on aspartame-containing food are required to read \"Phenylketonurics: Contains Phenylalanine\". For everyone else the acceptable daily intake is 50 mg per kg of body weight in the US and 40 mg/kg in the EU, against 0.18 g in a 350 ml can.",
+      "note": "High levels of phenylalanine are a health hazard to those born with phenylketonuria, a rare inherited disease that prevents it being properly metabolised — and aspartame contains phenylalanine, which is why foods containing it sold in the US must state \"Phenylketonurics: Contains Phenylalanine\" on the label. For everyone else the acceptable daily intake is 40 mg per kg of body weight according to JECFA and the European Commission's committee, and 50 mg/kg according to the FDA — an amount equated to 75 packets of commercial sweetener a day. A 350 ml can of diet soda contains 0.18 grams.",
       "ids": [
         "aspartame",
         "diet_soda"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Aspartame"
     },
     "xylitol_dog_toxicity": {
       "label": "Xylitol is dangerous to dogs at an amount a person would not notice",
@@ -2893,13 +2904,14 @@
     },
     "polyol_laxation": {
       "label": "Sugar alcohols are absorbed incompletely, and the rest reaches the colon",
-      "note": "Polyols are not fully taken up in the small intestine, so what is left ferments further down — bloating, wind and diarrhoea. The reported maximum non-laxative dose is 0.17 to 0.24 grams per kilogram of body weight for sorbitol and 0.3 to 0.42 g/kg for xylitol, and around 50 grams of xylitol in a day gives most people diarrhoea. It is dose-dependent and uncomfortable rather than harmful, and it is why sorbitol doubles as an actual laxative.",
+      "note": "Sugar alcohols are absorbed at 50% of the rate of sugars, which is what makes them useful — less effect on blood sugar, measured against sucrose on the glycemic index. It is also what makes them uncomfortable: like many other incompletely digestible substances, overconsumption leads to bloating, diarrhoea and flatulence, because they are not fully absorbed in the small intestine and what is left ferments further down. Dose-dependent and unpleasant rather than harmful — and the reason sorbitol doubles as an actual laxative.",
       "ids": [
         "sorbitol",
         "sugar_free_gum",
         "xylitol"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Sugar_alcohol"
     },
     "neurocysticercosis_epilepsy": {
       "label": "Tapeworm eggs, not tapeworm meat, are the dangerous half",
