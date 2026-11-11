@@ -54437,7 +54437,6 @@
       "earth"
     ],
     "fact": "Angkor Wat, built here by the Khmer Empire from 1113-1150 CE, is the largest religious monument on Earth.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -54495,7 +54494,6 @@
       "earth"
     ],
     "fact": "Capital Taipei. Its tea shops gave the world bubble tea in the 1980s, tapioca pearls dropped into cold tea.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -111570,5 +111568,857 @@
     ],
     "fact": "Stone slab inscribed with one decree in three scripts, which allowed hieroglyphs to be deciphered.",
     "src": "https://en.wikipedia.org/wiki/Rosetta_Stone"
+  },
+  {
+    "id": "semitic_languages",
+    "name": "Semitic Languages",
+    "emoji": "🌙",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Branch of the Afroasiatic language family.",
+    "src": "https://en.wikipedia.org/wiki/Semitic_languages"
+  },
+  {
+    "id": "algic_languages",
+    "name": "Algic Languages",
+    "emoji": "🪶",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Indigenous language family of North America.",
+    "src": "https://en.wikipedia.org/wiki/Algic_languages"
+  },
+  {
+    "id": "austroasiatic_languages",
+    "name": "Austroasiatic Languages",
+    "emoji": "🎋",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Large language family spoken throughout Mainland Southeast Asia, South Asia, and East Asia.",
+    "src": "https://en.wikipedia.org/wiki/Austroasiatic_languages"
+  },
+  {
+    "id": "eskaleut_languages",
+    "name": "Eskaleut Languages",
+    "emoji": "🧊",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Language family native to the northern portions of the North American continent, and a small part of northeastern Asia.",
+    "src": "https://en.wikipedia.org/wiki/Eskaleut_languages"
+  },
+  {
+    "id": "indo_european_languages",
+    "name": "Indo-European Languages",
+    "emoji": "🌳",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Language family native to the north of the Indian subcontinent, most of Europe, and Greater Iran.",
+    "src": "https://en.wikipedia.org/wiki/Indo-European_languages"
+  },
+  {
+    "id": "indo_aryan_languages",
+    "name": "Indo-Aryan Languages",
+    "emoji": "🪷",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Branch of the Indo-Iranian languages in the Indo-European language family.",
+    "src": "https://en.wikipedia.org/wiki/Indo-Aryan_languages"
+  },
+  {
+    "id": "romance_languages",
+    "name": "Romance Languages",
+    "emoji": "🥖",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Languages that directly descended from Vulgar Latin.",
+    "src": "https://en.wikipedia.org/wiki/Romance_languages"
+  },
+  {
+    "id": "germanic_languages",
+    "name": "Germanic Languages",
+    "emoji": "🍺",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Branch of the Indo-European language family spoken natively by a population of about 515 million people mainly in Europe.",
+    "src": "https://en.wikipedia.org/wiki/Germanic_languages"
+  },
+  {
+    "id": "iranian_languages",
+    "name": "Iranian Languages",
+    "emoji": "🏺",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Branch of the Indo-Iranian languages in the Indo-European language family that are spoken natively by the Iranian peoples.",
+    "src": "https://en.wikipedia.org/wiki/Iranian_languages"
+  },
+  {
+    "id": "slavic_languages",
+    "name": "Slavic Languages",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Indo-European languages spoken primarily by the Slavic peoples and their descendants.",
+    "src": "https://en.wikipedia.org/wiki/Slavic_languages"
+  },
+  {
+    "id": "kartvelian_languages",
+    "name": "Kartvelian Languages",
+    "emoji": "🍇",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Language family indigenous to and spoken primarily in Georgia.",
+    "src": "https://en.wikipedia.org/wiki/Kartvelian_languages"
+  },
+  {
+    "id": "khoisan_languages",
+    "name": "Khoisan Languages",
+    "emoji": "🦓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Group of African languages with click consonants, once classified together.",
+    "src": "https://en.wikipedia.org/wiki/Khoisan_languages"
+  },
+  {
+    "id": "kra_dai_languages",
+    "name": "Kra–Dai Languages",
+    "emoji": "🐘",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Language family in mainland Southeast Asia, southern China, and northeastern India.",
+    "src": "https://en.wikipedia.org/wiki/Kra–Dai_languages"
+  },
+  {
+    "id": "bantu_languages",
+    "name": "Bantu Languages",
+    "emoji": "🌍",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Language family, or a branch of the proposed Niger-Congo language family, containing about 600 languages.",
+    "src": "https://en.wikipedia.org/wiki/Bantu_languages"
+  },
+  {
+    "id": "nilo_saharan_languages",
+    "name": "Nilo-Saharan Languages",
+    "emoji": "🐂",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Proposed linguistic family consisting of around 210 Native African languages spoken by somewhere around 70 million speakers.",
+    "src": "https://en.wikipedia.org/wiki/Nilo-Saharan_languages"
+  },
+  {
+    "id": "trans_new_guinea_languages",
+    "name": "Trans–New Guinea Languages",
+    "emoji": "🦜",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Extensive family of Papuan languages spoken on the island of New Guinea and neighboring islands.",
+    "src": "https://en.wikipedia.org/wiki/Trans–New_Guinea_languages"
+  },
+  {
+    "id": "uralic_languages",
+    "name": "Uralic Languages",
+    "emoji": "🦌",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Language family native to northern Eurasia.",
+    "src": "https://en.wikipedia.org/wiki/Uralic_languages"
+  },
+  {
+    "id": "uto_aztecan_languages",
+    "name": "Uto-Aztecan Languages",
+    "emoji": "🌽",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Family of Native American languages, consisting of over thirty languages.",
+    "src": "https://en.wikipedia.org/wiki/Uto-Aztecan_languages"
+  },
+  {
+    "id": "armenian_language",
+    "name": "Armenian Language",
+    "emoji": "🏔️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Sole member of an independent branch in the Indo-European language family.",
+    "src": "https://en.wikipedia.org/wiki/Armenian_language"
+  },
+  {
+    "id": "ancient_greek",
+    "name": "Ancient Greek",
+    "emoji": "🏛️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The forms of the Greek language used in ancient Greece and the ancient world from around 1500 BC to 300 BC.",
+    "src": "https://en.wikipedia.org/wiki/Ancient_Greek"
+  },
+  {
+    "id": "danish_language",
+    "name": "Danish Language",
+    "emoji": "🧜",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "North Germanic language from the Indo-European language family spoken by about 5.5 million people, principally in.",
+    "src": "https://en.wikipedia.org/wiki/Danish_language"
+  },
+  {
+    "id": "old_english",
+    "name": "Old English",
+    "emoji": "⚔️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Earliest attested form of the English language, spoken in England and southern and eastern Scotland in the Early Middle Ages.",
+    "src": "https://en.wikipedia.org/wiki/Old_English"
+  },
+  {
+    "id": "middle_english",
+    "name": "Middle English",
+    "emoji": "🏰",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Variations of the English language that were spoken in England after the Norman Conquest of 1066, until the late 15th century.",
+    "src": "https://en.wikipedia.org/wiki/Middle_English"
+  },
+  {
+    "id": "modern_english",
+    "name": "Modern English",
+    "emoji": "🖨️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Form of English spoken since the Great Vowel Shift, which began in the late 14th century.",
+    "src": "https://en.wikipedia.org/wiki/Modern_English"
+  },
+  {
+    "id": "swedish_language",
+    "name": "Swedish Language",
+    "emoji": "🦌",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "North Germanic language from the Indo-European language family, spoken predominantly in Sweden and parts of Finland.",
+    "src": "https://en.wikipedia.org/wiki/Swedish_language"
+  },
+  {
+    "id": "yiddish",
+    "name": "Yiddish",
+    "emoji": "✡️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "West Germanic language and Jewish ethnolect historically spoken by Ashkenazi Jews.",
+    "src": "https://en.wikipedia.org/wiki/Yiddish"
+  },
+  {
+    "id": "romanian_language",
+    "name": "Romanian Language",
+    "emoji": "🦇",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Official and main language of Romania and Moldova.",
+    "src": "https://en.wikipedia.org/wiki/Romanian_language"
+  },
+  {
+    "id": "czech_language",
+    "name": "Czech Language",
+    "emoji": "🍺",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "West Slavic language of the Czech–Slovak group, written in Latin script.",
+    "src": "https://en.wikipedia.org/wiki/Czech_language"
+  },
+  {
+    "id": "serbo_croatian",
+    "name": "Serbo-Croatian",
+    "emoji": "🇭🇷",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Western South Slavic language and the primary language of Serbia, Croatia, Bosnia and Herzegovina, and Montenegro.",
+    "src": "https://en.wikipedia.org/wiki/Serbo-Croatian"
+  },
+  {
+    "id": "ukrainian_language",
+    "name": "Ukrainian Language",
+    "emoji": "🌻",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "East Slavic language, spoken primarily in Ukraine.",
+    "src": "https://en.wikipedia.org/wiki/Ukrainian_language"
+  },
+  {
+    "id": "kurdish_language",
+    "name": "Kurdish Language",
+    "emoji": "☀️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Northwestern Iranian language or group of languages spoken by Kurds in the region of Kurdistan, namely in southeast Turkey.",
+    "src": "https://en.wikipedia.org/wiki/Kurdish_language"
+  },
+  {
+    "id": "pashto",
+    "name": "Pashto",
+    "emoji": "⛰️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Eastern Iranian language, belonging to the Indo-European language family, natively spoken in northwestern Pakistan.",
+    "src": "https://en.wikipedia.org/wiki/Pashto"
+  },
+  {
+    "id": "assamese_language",
+    "name": "Assamese Language",
+    "emoji": "🍵",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Indo-European language of the Indo-Aryan branch spoken mainly in the north-eastern Indian state of Assam.",
+    "src": "https://en.wikipedia.org/wiki/Assamese_language"
+  },
+  {
+    "id": "hindustani_language",
+    "name": "Hindustani Language",
+    "emoji": "🎬",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Indo-Aryan language native to the Hindi-Urdu Belt, and spoken across North, Central, West, and East India.",
+    "src": "https://en.wikipedia.org/wiki/Hindustani_language"
+  },
+  {
+    "id": "marathi_language",
+    "name": "Marathi Language",
+    "emoji": "🥭",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Indo-Aryan language of the Indo-Iranian branch of the Indo-European language family.",
+    "src": "https://en.wikipedia.org/wiki/Marathi_language"
+  },
+  {
+    "id": "nepali_language",
+    "name": "Nepali Language",
+    "emoji": "🏔️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Indo-Aryan language, belonging to the Indo-Iranian branch within the Indo-European language family.",
+    "src": "https://en.wikipedia.org/wiki/Nepali_language"
+  },
+  {
+    "id": "odia_language",
+    "name": "Odia Language",
+    "emoji": "🛕",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Classical Indo-European language of the Indo-Aryan branch spoken in the Indian state of Odisha.",
+    "src": "https://en.wikipedia.org/wiki/Odia_language"
+  },
+  {
+    "id": "pali",
+    "name": "Pali",
+    "emoji": "☸️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Middle Indo-Aryan language that is widely studied as the sacred language of Theravada Buddhism and the language of the Tipiṭaka.",
+    "src": "https://en.wikipedia.org/wiki/Pali"
+  },
+  {
+    "id": "sindhi_language",
+    "name": "Sindhi Language",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Indo-Aryan language, official in the Pakistani province of Sindh.",
+    "src": "https://en.wikipedia.org/wiki/Sindhi_language"
+  },
+  {
+    "id": "sinhala_language",
+    "name": "Sinhala Language",
+    "emoji": "🦁",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Indo-Aryan language primarily spoken by the Sinhalese people of Sri Lanka, who make up the largest ethnic group on the island.",
+    "src": "https://en.wikipedia.org/wiki/Sinhala_language"
+  },
+  {
+    "id": "gujarati_language",
+    "name": "Gujarati Language",
+    "emoji": "🪔",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Indo-European language of the Indo-Aryan branch native to the Indian state of Gujarat.",
+    "src": "https://en.wikipedia.org/wiki/Gujarati_language"
+  },
+  {
+    "id": "akkadian_language",
+    "name": "Akkadian Language",
+    "emoji": "🪨",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "East Semitic language of ancient Mesopotamia, later replaced by Old Aramaic.",
+    "src": "https://en.wikipedia.org/wiki/Akkadian_language"
+  },
+  {
+    "id": "classical_arabic",
+    "name": "Classical Arabic",
+    "emoji": "📿",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Standardized literary form of Arabic used from the 7th century and throughout the Middle Ages, most notably in Umayyad.",
+    "src": "https://en.wikipedia.org/wiki/Classical_Arabic"
+  },
+  {
+    "id": "egyptian_arabic",
+    "name": "Egyptian Arabic",
+    "emoji": "🐫",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Most widely spoken vernacular Arabic variety in Egypt.",
+    "src": "https://en.wikipedia.org/wiki/Egyptian_Arabic"
+  },
+  {
+    "id": "aramaic",
+    "name": "Aramaic",
+    "emoji": "📜",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Northwest Semitic language that originated in the ancient region of Syria and quickly spread to Mesopotamia, the southern Levant.",
+    "src": "https://en.wikipedia.org/wiki/Aramaic"
+  },
+  {
+    "id": "berber_languages",
+    "name": "Berber Languages",
+    "emoji": "🏜️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Branch of the Afroasiatic language family.",
+    "src": "https://en.wikipedia.org/wiki/Berber_languages"
+  },
+  {
+    "id": "egyptian_language",
+    "name": "Egyptian Language",
+    "emoji": "𓃠",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Extinct branch of the Afro-Asiatic language family that was spoken in Egypt.",
+    "src": "https://en.wikipedia.org/wiki/Egyptian_language"
+  },
+  {
+    "id": "oromo_language",
+    "name": "Oromo Language",
+    "emoji": "☕",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Afroasiatic language belonging to the Cushitic branch, primarily spoken by the Oromo people, native to northern Kenya.",
+    "src": "https://en.wikipedia.org/wiki/Oromo_language"
+  },
+  {
+    "id": "somali_language",
+    "name": "Somali Language",
+    "emoji": "🐪",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Cushitic language belonging to wider Afroasiatic language family.",
+    "src": "https://en.wikipedia.org/wiki/Somali_language"
+  },
+  {
+    "id": "burmese_language",
+    "name": "Burmese Language",
+    "emoji": "🛕",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Tibeto-Burman language spoken in Myanmar, where it is the official language, lingua franca, and the native language of the Bamar.",
+    "src": "https://en.wikipedia.org/wiki/Burmese_language"
+  },
+  {
+    "id": "chinese_language",
+    "name": "Chinese Language",
+    "emoji": "🀄",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Collection of language varieties containing almost all Sinitic languages except Macro-Bai languages.",
+    "src": "https://en.wikipedia.org/wiki/Chinese_language"
+  },
+  {
+    "id": "classical_chinese",
+    "name": "Classical Chinese",
+    "emoji": "🖌️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Style of Chinese language in which the classics of Chinese literature were written, from c. the 5th century BCE.",
+    "src": "https://en.wikipedia.org/wiki/Classical_Chinese"
+  },
+  {
+    "id": "hakka_chinese",
+    "name": "Hakka Chinese",
+    "emoji": "🏘️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Language group of varieties of Chinese spoken natively by the Hakka people in parts of Southern China, Taiwan.",
+    "src": "https://en.wikipedia.org/wiki/Hakka_Chinese"
+  },
+  {
+    "id": "wu_chinese",
+    "name": "Wu Chinese",
+    "emoji": "🧵",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Major group of Chinese languages spoken primarily in Shanghai, Zhejiang province, and parts of Jiangsu province.",
+    "src": "https://en.wikipedia.org/wiki/Wu_Chinese"
+  },
+  {
+    "id": "yue_chinese",
+    "name": "Yue Chinese",
+    "emoji": "🥟",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Branch of the Sinitic languages primarily spoken in Southern China, particularly in the provinces of Guangdong.",
+    "src": "https://en.wikipedia.org/wiki/Yue_Chinese"
+  },
+  {
+    "id": "min_chinese",
+    "name": "Min Chinese",
+    "emoji": "🍜",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Diverse group of Sinitic languages with about 75 million native speakers.",
+    "src": "https://en.wikipedia.org/wiki/Min_Chinese"
+  },
+  {
+    "id": "cebuano_language",
+    "name": "Cebuano Language",
+    "emoji": "🌴",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Austronesian language spoken in the southern Philippines by the Visayan people, and other ethnic groups as a secondary language.",
+    "src": "https://en.wikipedia.org/wiki/Cebuano_language"
+  },
+  {
+    "id": "malagasy_language",
+    "name": "Malagasy Language",
+    "emoji": "🦎",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Austronesian language and dialect continuum spoken in Madagascar.",
+    "src": "https://en.wikipedia.org/wiki/Malagasy_language"
+  },
+  {
+    "id": "malay_language",
+    "name": "Malay Language",
+    "emoji": "🌺",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Austronesian pluricentric macrolanguage native to several islands of Maritime Southeast Asia.",
+    "src": "https://en.wikipedia.org/wiki/Malay_language"
+  },
+  {
+    "id": "sundanese_language",
+    "name": "Sundanese Language",
+    "emoji": "🌋",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Austronesian language spoken in Java, primarily by the Sundanese.",
+    "src": "https://en.wikipedia.org/wiki/Sundanese_language"
+  },
+  {
+    "id": "khmer_language",
+    "name": "Khmer Language",
+    "emoji": "🛕",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Austroasiatic language spoken natively by the Khmer people and is an official language and national language of Cambodia.",
+    "src": "https://en.wikipedia.org/wiki/Khmer_language"
+  },
+  {
+    "id": "kannada",
+    "name": "Kannada",
+    "emoji": "🐘",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Dravidian language spoken mainly in the state of Karnataka in southwestern India.",
+    "src": "https://en.wikipedia.org/wiki/Kannada"
+  },
+  {
+    "id": "malayalam",
+    "name": "Malayalam",
+    "emoji": "🥥",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Dravidian language, primarily spoken by the Malayali people, native to the Indian state of Keralam.",
+    "src": "https://en.wikipedia.org/wiki/Malayalam"
+  },
+  {
+    "id": "fula_language",
+    "name": "Fula Language",
+    "emoji": "🐄",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Senegambian language spoken by around 36.8 million people as a set of various dialects in a continuum.",
+    "src": "https://en.wikipedia.org/wiki/Fula_language"
+  },
+  {
+    "id": "igbo_language",
+    "name": "Igbo Language",
+    "emoji": "🎭",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Principal native language of the Igbo people, an ethnicity in the Southeastern part of Nigeria.",
+    "src": "https://en.wikipedia.org/wiki/Igbo_language"
+  },
+  {
+    "id": "azerbaijani_language",
+    "name": "Azerbaijani Language",
+    "emoji": "🛢️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Turkic language from the Oghuz sub-branch.",
+    "src": "https://en.wikipedia.org/wiki/Azerbaijani_language"
+  },
+  {
+    "id": "kazakh_language",
+    "name": "Kazakh Language",
+    "emoji": "🐎",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Turkic language of the Kipchak branch, spoken in Central Asia by the Kazakhs.",
+    "src": "https://en.wikipedia.org/wiki/Kazakh_language"
+  },
+  {
+    "id": "uzbek_language",
+    "name": "Uzbek Language",
+    "emoji": "🕌",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Karluk Turkic language spoken by Uzbeks.",
+    "src": "https://en.wikipedia.org/wiki/Uzbek_language"
+  },
+  {
+    "id": "hungarian_language",
+    "name": "Hungarian Language",
+    "emoji": "🌶️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Ugric language of the Uralic language family spoken in Hungary and parts of several neighboring countries.",
+    "src": "https://en.wikipedia.org/wiki/Hungarian_language"
+  },
+  {
+    "id": "quechuan_languages",
+    "name": "Quechuan Languages",
+    "emoji": "🦙",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Indigenous language family that originated in central Peru and thereafter spread to other countries of the Andes.",
+    "src": "https://en.wikipedia.org/wiki/Quechuan_languages"
+  },
+  {
+    "id": "sumerian_language",
+    "name": "Sumerian Language",
+    "emoji": "🏺",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Language of ancient Sumer.",
+    "src": "https://en.wikipedia.org/wiki/Sumerian_language"
   }
 ]
