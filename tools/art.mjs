@@ -4008,6 +4008,8 @@ def('black_hole', () => [ring('hi', 30, 32, 20, 3), C(30, 32, 15, 'ground'),
                          ['g', -18, 30, 32, [E(30, 32, 26, 5, 'bs')]]]);         // the disc, edge on
 def('planetesimal', () => [lump('lo', 30, 32, 17, 15), ...granules('bs', 8, 71, [16, 20, 44, 44]),
                            C(22, 24, 4, 'ground'), C(38, 40, 3, 'ground')]);
+def('protoplanet', () => [C(30, 32, 19, 'lo'), ring('hi', 30, 32, 19, 1.4), C(23, 25, 4, 'ground'), C(37, 38, 5, 'ground'),
+                          C(35, 24, 2.4, 'hi'), ...granules('bs', 6, 53, [14, 18, 46, 46])]);   // round, but still growing
 def('planet',   () => [C(30, 32, 19, 'bs'), P('M13 26 Q30 34 47 26 L47 38 Q30 30 13 38 Z', 'lo'),
                        C(22, 22, 5, 'hi')]);
 def('moon',     () => [C(30, 32, 18, 'hi'), C(22, 26, 5, 'lo'), C(37, 38, 4, 'lo'), C(33, 22, 2.6, 'lo')]);

@@ -86,6 +86,33 @@ function candidates(h) {
   return out.slice(0, 4);
 }
 
+/* WHEN THE IDS ARE NOT ENOUGH, ASK WIKIPEDIA.
+ *
+ * The id heuristic is a good first guess and no more. `benzoate_ascorbate_benzene`
+ * was sent to Sodium benzoate, where its dates were absent and its 10 matched
+ * "benzoic acid (E210)" — while every one of its figures sits in its own
+ * sentence of **Benzene in soft drinks**, a title no element id could produce.
+ * Polar bear attacks live in **Bear attack**; the Caruaru dialysis outbreak
+ * lives in **Microcystin-LR**.
+ *
+ * So when no id-derived candidate carries everything, search for the note's
+ * own distinctive words and try what comes back. Still a proposal; still read
+ * before it is used. */
+async function searched(h) {
+  // The note's own rare words make a better query than its element ids: proper
+  // nouns and technical terms, minus the ordinary vocabulary of a warning.
+  const STOP = /^(the|and|that|with|from|this|which|where|when|what|their|there|about|into|over|under|after|before|between|through|people|person|cases|risk|than|most|more|some|also|only|other|every|each|been|were|have|has|its|it|is|are|was|not|but|for|per|can|may|does|do|a|an|of|in|on|to|by|as|at|or|if|so)$/i;
+  const words = [...new Set((h.note || '').split(/[^\p{L}\p{N}-]+/u)
+    .filter(w => w.length > 4 && !STOP.test(w)))].slice(0, 6);
+  if (!words.length) return [];
+  try {
+    const r = await fetch(`https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(words.join(' '))}&srlimit=3&format=json&formatversion=2`,
+      { headers: { 'User-Agent': 'Loam/1.0 (hazard source audit; contact via repo)' } });
+    const j = await r.json();
+    return (j.query?.search || []).map(x => x.title.replace(/\s+/g, '_'));
+  } catch { return []; }
+}
+
 const CACHE = join(ROOT, 'data', 'cautions-sources.json.gz');
 let cache = {};
 if (existsSync(CACHE)) { try { cache = JSON.parse(gunzipSync(readFileSync(CACHE)).toString('utf8')); } catch { } }
@@ -125,7 +152,8 @@ for (const [id, h] of rows) {
   const figs = figuresIn(h.note || '');
   const auths = Object.keys(BODIES).filter(a => new RegExp(`\\b${a}\\b`).test(h.note || ''));
   const found = [];
-  for (const t of candidates(h)) {
+  let titles = candidates(h);
+  for (const t of titles) {
     const text = await article(t);
     await new Promise(r => setTimeout(r, 350));
     if (!text) continue;
@@ -133,12 +161,30 @@ for (const [id, h] of rows) {
     const missA = auths.filter(a => !(new RegExp(`\\b${a}\\b`, 'i').test(text) || new RegExp(BODIES[a], 'i').test(text)));
     found.push({ t, missF, missA, ok: !missF.length && !missA.length });
   }
-  const best = found.find(f => f.ok) || found[0];
+  // Nothing from the ids carried everything — ask search before giving up.
+  if (!found.some(f => f.ok)) {
+    for (const t of await searched(h)) {
+      if (titles.includes(t)) continue;
+      const text = await article(t);
+      await new Promise(r => setTimeout(r, 350));
+      if (!text) continue;
+      const missF = figs.filter(f => !has(text, f));
+      const missA = auths.filter(a => !(new RegExp(`\\b${a}\\b`, 'i').test(text) || new RegExp(BODIES[a], 'i').test(text)));
+      found.push({ t, missF, missA, ok: !missF.length && !missA.length, via: 'search' });
+      if (!missF.length && !missA.length) break;
+    }
+  }
+  /* Show the closest candidate, not the first one tried — otherwise a search
+   * result that missed one figure is hidden behind an id guess that missed
+   * five, and the report sends you back to the worse article. */
+  const miss = f => (f.missF?.length || 0) + (f.missA?.length || 0);
+  const best = found.find(f => f.ok)
+    || found.slice().sort((a, b) => miss(a) - miss(b))[0];
   if (best?.ok) hits++;
   const mark = best?.ok ? '✓' : best ? '·' : '✗';
   console.log(`${mark} ${id}  [${figs.length} figure(s)${auths.length ? ', ' + auths.join('/') : ''}]`);
   if (!best) { console.log(`     no candidate article readable — needs a hand search`); continue; }
-  console.log(`     ${best.t}${best.ok ? '  — carries everything asserted' : ''}`);
+  console.log(`     ${best.t}${best.via ? ' (via search)' : ''}${best.ok ? '  — carries everything asserted' : ''}`);
   if (best.missF?.length) console.log(`     missing figures: ${best.missF.join(', ')}`);
   if (best.missA?.length) console.log(`     missing bodies: ${best.missA.join(', ')}`);
 }

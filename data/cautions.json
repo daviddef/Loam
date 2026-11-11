@@ -1014,19 +1014,21 @@
     },
     "polar_bear_attack": {
       "label": "A predator, not a defensive animal",
-      "note": "A peer-reviewed survey found 73 confirmed polar bear attacks across all five range countries from 1870 to 2014, killing 20 people and injuring 63. Nutritionally stressed adult males were the most common attackers, and in most cases the bear was acting as a predator rather than defending itself or cubs — a different mechanism from a brown bear's usual defensive attack.",
+      "note": "Between 1870 and 2014 there have been 73 recorded polar bear attacks, causing 20 fatalities and 63 injured — across all five range countries, over a century and a half. Rare, and not the same event as a brown bear encounter: the mechanism differs, and so does what to do about it.",
       "severity": "acute",
       "ids": [
         "polar_bear"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Bear_attack"
     },
     "coyote_attack": {
       "label": "Rare, and rarely serious — but real",
-      "note": "Coyotes are shy around people, and confirmed attacks are uncommon: 367 documented in the US and Canada between 1977 and 2015, most of them minor. Two are confirmed fatal — a 3-year-old in 1981 and an adult in 2009 — the only known deaths from an unprovoked coyote attack on record.",
+      "note": "Two fatal coyote attacks on humans have been confirmed by experts. On 26 August 1981 a coyote grabbed three-year-old Kelly Keen in a driveway; on 27 October 2009 two eastern coyotes — coywolves — mauled the 19-year-old singer-songwriter Taylor Mitchell at Cape Breton Highlands National Park in Nova Scotia. Two, in the whole record, is the number worth carrying.",
       "severity": "conditional",
       "ids": [
         "coyote"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Coyote_attack"
     },
     "chimpanzee_attack": {
       "label": "Strength enough to cause severe injury",
@@ -2169,12 +2171,13 @@
     },
     "cyanotoxin_bloom": {
       "label": "Blue-green blooms make liver and nerve toxins that boiling does not remove",
-      "note": "Cyanobacteria produce microcystins, which bond covalently to the protein phosphatases PP1 and PP2A in liver cells, alongside neurotoxins such as anatoxin-a and saxitoxin. The cyclic structure makes them stable across a wide range of temperature and pH, so boiling water does not clear them. At a dialysis clinic in Caruaru, Brazil in 1996, microcystin-contaminated supply water left 116 of 131 patients ill, 100 of them in acute liver failure, and at least 52 dead.",
+      "note": "Microcystins bond covalently to the protein phosphatases PP1 and PP2A in liver cells, and their cyclic structure makes them stable across a wide range of temperature and pH — boiling does not clear them. One of the most outstanding reports was an outbreak in Caruaru, Brazil in 1996, where contaminated dialysis water left 116 patients with visual disturbance, nausea, vomiting and muscle weakness; one hundred developed acute liver failure and 52 suffered symptoms of what is now called Caruaru Syndrome.",
       "ids": [
         "cyanobacteria"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Microcystin-LR"
     },
     "dermatophyte_transmission": {
       "label": "Ringworm passes between people, animals and shared surfaces",
@@ -2693,12 +2696,13 @@
     },
     "angiosarcoma_occupational": {
       "label": "Liver angiosarcoma is the tumour that convicted vinyl chloride",
-      "note": "Three cases in one Louisville PVC plant, reported to NIOSH in January 1974, were enough to establish vinyl chloride monomer as a human carcinogen; OSHA cut the permissible exposure limit from 500 ppm to 1 ppm in 1975. 197 vinyl-chloride angiosarcomas were recorded worldwide between 1974 and 2000, at an average latency of about 20 years, and no US case is believed to have arisen from exposure beginning after the 1975 standard. Thorotrast, arsenic and therapeutic radiation are the other established causes.",
+      "note": "Vinyl chloride is a IARC group 1 carcinogen, posing elevated risks of rare angiosarcoma, brain and lung tumours, and malignant haematopoietic lymphatic tumours. Its hepatotoxicity has been established since the 1930s, when the PVC industry was still in its early stages — the very first study of its dangers, published by Patty in 1930, found that a single short-term high dose harmed test animals. The risk was visible at the beginning and the industry grew anyway.",
       "ids": [
         "angiosarcoma"
       ],
       "severity": "cumulative",
-      "carcinogen": true
+      "carcinogen": true,
+      "src": "https://en.wikipedia.org/wiki/Vinyl_chloride"
     },
     "benzo_a_pyrene_carcinogen": {
       "label": "Benzo[a]pyrene is a Group 1 carcinogen that the body makes dangerous itself",
@@ -2711,13 +2715,14 @@
     },
     "benzoate_ascorbate_benzene": {
       "label": "Benzoate and vitamin C in the same bottle can make a little benzene",
-      "note": "Benzoic acid can lose its carboxyl group in the presence of ascorbic or erythorbic acid, catalysed by trace copper and iron and accelerated by heat and light, and what is left is benzene. The soft drink industry raised it with the FDA in the early 1990s and reformulated by 1993; test results in November 2005 showed it happening again. FDA testing of 100 beverages in May 2006 found most below 5 ppb, with four over the federal limit. The WHO drinking-water guideline is 10 ppb, and California's limit is 1 ppb.",
+      "note": "Benzene can form from benzoate and ascorbic acid during production, particularly in drinks with an orange flavour. By 1993 the FDA determined most drinks had little benzene contamination — then in November 2005 it received test results from private citizens showing benzene forming again at low levels in several types of beverage. Preliminary FDA results in May 2006 for 100 beverages showed many containing low levels, less than the 5 ppb federal drinking water limit, while four exceeded it. The WHO guideline is 10 ppb, and WHO notes benzene should be avoided whenever technically feasible.",
       "ids": [
         "benzoic_acid",
         "benzoate",
         "cordial"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Benzene_in_soft_drinks"
     },
     "beta_propiolactone_alkylating": {
       "label": "What makes it sterilise is what makes it dangerous",
@@ -2829,13 +2834,14 @@
     },
     "teratogen_window": {
       "label": "A teratogen's damage is decided by the week as much as the dose",
-      "note": "Wilson's second principle of teratology is that susceptibility varies with developmental stage, and the human embryo's most vulnerable stretch runs from roughly day 14 after implantation to day 60 after conception. Thalidomide hit the brain on day 20 and the arms on day 24, and after day 42 caused nothing. Teratogens are held responsible for 2 to 3% of developmental defects in US newborns; alcohol is the leading cause of birth defects and neurodevelopmental abnormality in the United States.",
+      "note": "In 1959, and in his 1973 monograph Environment and Birth Defects, the embryologist James Wilson set out six principles of teratogenesis. Two of them are why timing matters more than dose here: susceptibility to teratogenesis varies with the developmental stage at the time of exposure, and there are critical periods of susceptibility specific to the organ systems the agent affects. The same substance on two different days does two different things, or nothing at all.",
       "ids": [
         "teratogen",
         "birth_defect",
         "organogenesis"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Teratology"
     },
     "thalidomide_teratogen": {
       "label": "Safe for the person swallowing it, and not for the fetus",

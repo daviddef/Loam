@@ -8293,6 +8293,16 @@
   {
     "in": [
       "planetesimal",
+      "gravity"
+    ],
+    "out": "protoplanet",
+    "why": "Once a body reaches around a kilometre in size, its grains attract each other directly through mutual gravity, which speeds further growth into Moon-sized protoplanets. Planetesimals combine to form a protoplanet; protoplanets keep growing, faster, toward planets.",
+    "src": "https://en.wikipedia.org/wiki/Planetesimal",
+    "verified": true
+  },
+  {
+    "in": [
+      "planetesimal",
       "planetesimal"
     ],
     "out": "planet",
@@ -8343,10 +8353,10 @@
   {
     "in": [
       "planet",
-      "planetesimal"
+      "protoplanet"
     ],
     "out": "moon",
-    "why": "About 4.4 billion years ago a Mars-sized body called Theia hit the proto-Earth. Roughly a fifth of Theia ended up as a ring of debris around the Earth, and about half of that ring re-accreted into the Moon.",
+    "why": "About 4.4 billion years ago a Mars-sized protoplanet called Theia hit the proto-Earth. Roughly a fifth of Theia ended up as a ring of debris around the Earth, and about half of that ring re-accreted into the Moon.",
     "src": "https://en.wikipedia.org/wiki/Giant-impact_hypothesis",
     "verified": true
   },
@@ -69486,7 +69496,7 @@
       "solar_wind"
     ],
     "out": "helium",
-    "why": "With no atmosphere and no magnetic field to stop it, the solar wind has been implanting helium straight into the lunar soil for billions of years — 1.4 to 15 parts per billion of helium-3 in sunlit regolith, and up to 50 in the permanent shadows.",
+    "why": "The solar wind has deposited helium-3 in the upper layer of the lunar regolith over billions of years — 1.4 to 15 parts per billion in sunlit regolith, as much as 50 in permanently shadowed regions. It is a rare isotope: the same article puts lunar helium-4 at about 28 parts per million.",
     "src": "https://en.wikipedia.org/wiki/Helium-3",
     "verified": true
   },
