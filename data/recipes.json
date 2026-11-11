@@ -117052,5 +117052,515 @@
     "why": "The middle class refers to a class of people in the middle of a social hierarchy, often defined by occupation, income, education, or social status. The term has historically been associated with modernity, capitalism and political debate.",
     "src": "https://en.wikipedia.org/wiki/Middle_class",
     "verified": true
+  },
+  {
+    "in": [
+      "education",
+      "infant"
+    ],
+    "out": "early_childhood_education",
+    "why": "Early childhood education (ECE) is a branch of education theory that relates to the teaching of children (formally and informally) from birth up to the age of eight. Traditionally, this is up to the equivalent of third grade.",
+    "src": "https://en.wikipedia.org/wiki/Early_childhood_education",
+    "verified": true
+  },
+  {
+    "in": [
+      "school",
+      "child"
+    ],
+    "out": "primary_education",
+    "why": "Primary education is the first stage of formal education, coming after preschool/kindergarten and before secondary education. Primary education takes place in primary schools, elementary schools, or first schools and middle schools, depending on the location.",
+    "src": "https://en.wikipedia.org/wiki/Primary_education",
+    "verified": true
+  },
+  {
+    "in": [
+      "school",
+      "adolescence"
+    ],
+    "out": "secondary_education",
+    "why": "Secondary education or post-primary education covers two phases on the International Standard Classification of Education scale: Level 2 (lower secondary education, less commonly junior secondary education) is the second and final phase of basic education, and Level 3 (upper secondary education or senior secondary education) is the phase immediately preceding tertiary education.",
+    "src": "https://en.wikipedia.org/wiki/Secondary_education",
+    "verified": true
+  },
+  {
+    "in": [
+      "school",
+      "university"
+    ],
+    "out": "tertiary_education",
+    "why": "Tertiary education is a stage of education following compulsory education. Depending on the definition used it may include all post-compulsory education, including that delivered at secondary schools, all post-secondary education, or be a synonym for higher education.",
+    "src": "https://en.wikipedia.org/wiki/Tertiary_education",
+    "verified": true
+  },
+  {
+    "in": [
+      "school",
+      "book"
+    ],
+    "out": "homework",
+    "why": "Homework is a set of tasks assigned to students by their teachers to be completed at home. Common homework assignments may include required reading, a writing or typing project, math problems to be completed, information to be reviewed before a test, or other skills to be practiced.",
+    "src": "https://en.wikipedia.org/wiki/Homework",
+    "verified": true
+  },
+  {
+    "in": [
+      "teacher",
+      "student"
+    ],
+    "out": "lesson",
+    "why": "A lesson or class is a structured period of time where learning is intended to occur. It involves one or more students (also called pupils or learners in some circumstances) being taught by a teacher or instructor.",
+    "src": "https://en.wikipedia.org/wiki/Lesson",
+    "verified": true
+  },
+  {
+    "in": [
+      "university",
+      "teacher"
+    ],
+    "out": "college",
+    "why": "A college is an educational institution. Within higher education, it may be a part of a collegiate university, an academic division within a university, or a standalone institution providing undergraduate education (and sometimes awarding academic degrees). It may also be an institution providing further education, vocational education, or secondary education.",
+    "src": "https://en.wikipedia.org/wiki/College",
+    "verified": true
+  },
+  {
+    "in": [
+      "academic_degree",
+      "university"
+    ],
+    "out": "bachelors_degree",
+    "why": "A bachelor's degree is an undergraduate degree awarded by higher education institutions upon completion of a course of study lasting three to six years (depending on the institution and academic discipline). The two most common bachelor's degrees are the Bachelor of Arts (BA) and the Bachelor of Science (BS or BSc).",
+    "src": "https://en.wikipedia.org/wiki/Bachelor's_degree",
+    "verified": true
+  },
+  {
+    "in": [
+      "academic_degree",
+      "bachelors_degree"
+    ],
+    "out": "masters_degree",
+    "why": "A master's degree is a postgraduate academic degree awarded by universities or colleges upon completion of a course of study demonstrating mastery or a high-order overview of a specific field of study or area of professional practice. A master's degree normally requires previous study at the bachelor's level, either as a separate degree or as part of an integrated course.",
+    "src": "https://en.wikipedia.org/wiki/Master's_degree",
+    "verified": true
+  },
+  {
+    "in": [
+      "academic_degree",
+      "masters_degree"
+    ],
+    "out": "doctor_of_philosophy",
+    "why": "A Doctor of Philosophy is a terminal degree that usually denotes the highest level of academic achievement in a given discipline and is awarded following a course of graduate study and original research. The name of the degree is most often abbreviated PhD (or, at times, as Ph.D. in North America) and is pronounced as three separate letters .",
+    "src": "https://en.wikipedia.org/wiki/Doctor_of_Philosophy",
+    "verified": true
+  },
+  {
+    "in": [
+      "library",
+      "egypt"
+    ],
+    "out": "library_of_alexandria",
+    "why": "The Library of Alexandria (a.k.a. the Great Library) in Alexandria, Egypt, was one of the largest and most significant libraries of the ancient world. The library was part of a larger research institution called the Mouseion, which was dedicated to the Muses, the nine goddesses of the arts.",
+    "src": "https://en.wikipedia.org/wiki/Library_of_Alexandria",
+    "verified": true
+  },
+  {
+    "in": [
+      "library",
+      "united_states"
+    ],
+    "out": "library_of_congress",
+    "why": "The Library of Congress (LOC) is a research library in Washington, D.C., serving as the library and research service for the United States Congress and the de facto national library of the United States. It also administers copyright law through the United States Copyright Office, and it houses the Congressional Research Service.",
+    "src": "https://en.wikipedia.org/wiki/Library_of_Congress",
+    "verified": true
+  },
+  {
+    "in": [
+      "library",
+      "united_kingdom"
+    ],
+    "out": "british_library",
+    "why": "The British Library is the national library of the United Kingdom. Based in London, it is one of the largest libraries in the world, with an estimated collection of over 200 million items from multiple countries.",
+    "src": "https://en.wikipedia.org/wiki/British_Library",
+    "verified": true
+  },
+  {
+    "in": [
+      "library",
+      "islam"
+    ],
+    "out": "house_of_wisdom",
+    "why": "The House of Wisdom, also known as the Grand Library of Baghdad, was a major Abbasid-era public academy and intellectual center in Baghdad.",
+    "src": "https://en.wikipedia.org/wiki/House_of_Wisdom",
+    "verified": true
+  },
+  {
+    "in": [
+      "university",
+      "egypt"
+    ],
+    "out": "al_azhar_university",
+    "why": "Al-Azhar University is a public university in Cairo, Egypt. Founded in 970, and associated with the Al-Azhar Al-Sharif religious institution in Islamic Cairo, it is Egypt's oldest degree-granting university, and one of the oldest universities in the world. It is known as one of the most prestigious universities for Islamic learning.",
+    "src": "https://en.wikipedia.org/wiki/Al-Azhar_University",
+    "verified": true
+  },
+  {
+    "in": [
+      "university",
+      "mexico"
+    ],
+    "out": "unam",
+    "why": "The National Autonomous University of Mexico is a public research university in Mexico. It has several campuses in Mexico City, and many others in various locations across Mexico, as well as a presence in nine countries.",
+    "src": "https://en.wikipedia.org/wiki/National_Autonomous_University_of_Mexico",
+    "verified": true
+  },
+  {
+    "in": [
+      "university",
+      "canada"
+    ],
+    "out": "university_of_toronto",
+    "why": "The University of Toronto (U of T) is a public research university with three main campuses in the Greater Toronto Area of Ontario, Canada. Based on the grounds that surround Queen's Park in Toronto, it was founded by royal charter in 1827 as King's College, the first institution of higher learning in Upper Canada.",
+    "src": "https://en.wikipedia.org/wiki/University_of_Toronto",
+    "verified": true
+  },
+  {
+    "in": [
+      "university",
+      "united_states"
+    ],
+    "out": "harvard_university",
+    "why": "Harvard University is a private Ivy League research university in Cambridge, Massachusetts, United States. Founded in 1636, and named Harvard College in 1639 in honor of its first benefactor, Puritan clergyman John Harvard, it is the oldest institution of higher learning in the United States.",
+    "src": "https://en.wikipedia.org/wiki/Harvard_University",
+    "verified": true
+  },
+  {
+    "in": [
+      "university",
+      "skyscraper"
+    ],
+    "out": "columbia_university",
+    "why": "Columbia University in the City of New York, commonly referred to as Columbia University, is a private Ivy League research university in New York City, United States. Established in 1754 as King's College by royal charter under George II of Great Britain on the grounds of Trinity Church in Manhattan, it is the oldest institution of higher education in New York and the fifth-oldest in the United States.",
+    "src": "https://en.wikipedia.org/wiki/Columbia_University",
+    "verified": true
+  },
+  {
+    "in": [
+      "university",
+      "medicine"
+    ],
+    "out": "johns_hopkins_university",
+    "why": "Johns Hopkins University (JHU), often abbreviated as Hopkins, is a private research university in Baltimore, Maryland, United States. Incorporated in 1867 and opened in 1876 based on the European research institution model, Johns Hopkins is considered to be the first research university in the U.S. The university was named for its first benefactor, the American businessman and Quaker philanthropist Johns Hopkins.",
+    "src": "https://en.wikipedia.org/wiki/Johns_Hopkins_University",
+    "verified": true
+  },
+  {
+    "in": [
+      "university",
+      "computer"
+    ],
+    "out": "mit",
+    "why": "The Massachusetts Institute of Technology (MIT) is a private research university in Cambridge, Massachusetts, United States. William Barton Rogers founded MIT to accelerate American industrialization through scientific knowledge.",
+    "src": "https://en.wikipedia.org/wiki/Massachusetts_Institute_of_Technology",
+    "verified": true
+  },
+  {
+    "in": [
+      "university",
+      "relativity"
+    ],
+    "out": "princeton_university",
+    "why": "Princeton University is a private Ivy League research university in Princeton, New Jersey, United States. Founded in 1746 in Elizabeth as the College of New Jersey, Princeton is the fourth-oldest institution of higher education in the United States and one of the nine colonial colleges chartered before the American Revolution.",
+    "src": "https://en.wikipedia.org/wiki/Princeton_University",
+    "verified": true
+  },
+  {
+    "in": [
+      "university",
+      "silicon"
+    ],
+    "out": "stanford_university",
+    "why": "Leland Stanford Junior University, commonly referred to as Stanford University, is a private research university in Stanford, California, United States. It was founded in 1885 by railroad magnate Leland Stanford (the eighth governor of and then-incumbent United States senator representing California) and his wife, Jane, in memory of their only child, Leland Stanford Jr., who died from typhoid at the age of 15.",
+    "src": "https://en.wikipedia.org/wiki/Stanford_University",
+    "verified": true
+  },
+  {
+    "in": [
+      "university",
+      "gold"
+    ],
+    "out": "uc_berkeley",
+    "why": "The University of California, Berkeley (UC Berkeley, Berkeley, Cal, or California) is a public land-grant research university in Berkeley, California, United States. Founded in 1868 and named after the Anglo-Irish philosopher and clergyman George Berkeley, it is the state's first land-grant university and the founding campus of the University of California system.",
+    "src": "https://en.wikipedia.org/wiki/University_of_California,_Berkeley",
+    "verified": true
+  },
+  {
+    "in": [
+      "university",
+      "secret_society"
+    ],
+    "out": "yale_university",
+    "why": "Yale University is a private Ivy League research university in New Haven, Connecticut, United States. Founded in 1701, Yale is the fourth oldest institution of higher education in the United States.",
+    "src": "https://en.wikipedia.org/wiki/Yale_University",
+    "verified": true
+  },
+  {
+    "in": [
+      "university",
+      "india"
+    ],
+    "out": "indian_institutes_of_technology",
+    "why": "The Indian Institutes of Technology (IITs) are a network of autonomous public engineering, technology and research universities in India. Established in 1950, they are under the purview of the Ministry of Education of the Government of India and are governed by the Institutes of Technology Act, 1961.",
+    "src": "https://en.wikipedia.org/wiki/Indian_Institutes_of_Technology",
+    "verified": true
+  },
+  {
+    "in": [
+      "university",
+      "china"
+    ],
+    "out": "peking_university",
+    "why": "Peking University (PKU) is a public university in Haidian, Beijing, China. It is affiliated with and funded by the Ministry of Education.",
+    "src": "https://en.wikipedia.org/wiki/Peking_University",
+    "verified": true
+  },
+  {
+    "in": [
+      "student",
+      "china"
+    ],
+    "out": "tsinghua_university",
+    "why": "Tsinghua University is a public research university in Haidian, Beijing, China. It is affiliated with and funded by the Ministry of Education of China.",
+    "src": "https://en.wikipedia.org/wiki/Tsinghua_University",
+    "verified": true
+  },
+  {
+    "in": [
+      "university",
+      "japan"
+    ],
+    "out": "kyoto_university",
+    "why": "Kyoto University, or KyotoU, is a national research university in Kyoto, Japan. Founded in 1897, it is one of the former Imperial Universities and the second oldest university in Japan.",
+    "src": "https://en.wikipedia.org/wiki/Kyoto_University",
+    "verified": true
+  },
+  {
+    "in": [
+      "student",
+      "japan"
+    ],
+    "out": "university_of_tokyo",
+    "why": "The University of Tokyo is a public research university in Bunkyō, Tokyo, Japan. Founded in 1877 as the nation's first modern university by the merger of several pre-westernisation era institutions, its direct precursors include the Tenmongata, founded in 1684, and the Shōheizaka Institute.",
+    "src": "https://en.wikipedia.org/wiki/University_of_Tokyo",
+    "verified": true
+  },
+  {
+    "in": [
+      "university",
+      "switzerland"
+    ],
+    "out": "eth_zurich",
+    "why": "ETH Zurich is a public university in Zurich, Switzerland. Founded by the Swiss federal government in 1854, the university primarily teaches and conducts research in science, technology, engineering, and mathematics (STEM). ETH Zurich is widely regarded as one of the world's leading universities, particularly in the sciences, and consistently ranks among the top universities worldwide.",
+    "src": "https://en.wikipedia.org/wiki/ETH_Zurich",
+    "verified": true
+  },
+  {
+    "in": [
+      "university",
+      "russia"
+    ],
+    "out": "moscow_state_university",
+    "why": "Moscow State University (MSU), officially M. V. Lomonosov Moscow State University, is a public research university in Moscow, Russia. The university includes 15 research institutes, 43 faculties, more than 300 departments, and six branches.",
+    "src": "https://en.wikipedia.org/wiki/Moscow_State_University",
+    "verified": true
+  },
+  {
+    "in": [
+      "university",
+      "france"
+    ],
+    "out": "sorbonne_university",
+    "why": "Sorbonne University is a public research university in Paris, France. The institution's legacy reaches back to the Middle Ages in 1257 when the College of Sorbonne was established by Robert de Sorbon as a constituent college of the University of Paris, one of the first universities in Europe.",
+    "src": "https://en.wikipedia.org/wiki/Sorbonne_University",
+    "verified": true
+  },
+  {
+    "in": [
+      "university",
+      "denmark"
+    ],
+    "out": "university_of_copenhagen",
+    "why": "The University of Copenhagen (Danish: Københavns Universitet, abbr. KU) is a public research university in Copenhagen, Denmark.",
+    "src": "https://en.wikipedia.org/wiki/University_of_Copenhagen",
+    "verified": true
+  },
+  {
+    "in": [
+      "university",
+      "austria"
+    ],
+    "out": "university_of_vienna",
+    "why": "The University of Vienna is a public research university in Vienna, Austria. Founded by Duke Rudolph IV in 1365, it is the oldest university in the German-speaking world and one of the oldest universities in the world in continuous operation.",
+    "src": "https://en.wikipedia.org/wiki/University_of_Vienna",
+    "verified": true
+  },
+  {
+    "in": [
+      "university",
+      "germany"
+    ],
+    "out": "lmu_munich",
+    "why": "The Ludwig-Maximilians-Universität München (LMU Munich), also referred to as the University of Munich, is a public research university in Munich, Bavaria, Germany. Originally established as the University of Ingolstadt in 1472 by Duke Ludwig IX of Bavaria-Landshut, it is Germany's sixth-oldest university in continuous operation.",
+    "src": "https://en.wikipedia.org/wiki/LMU_Munich",
+    "verified": true
+  },
+  {
+    "in": [
+      "university",
+      "age_of_enlightenment"
+    ],
+    "out": "humboldt_university",
+    "why": "The Humboldt University of Berlin is a public research university in the central borough of Mitte in Berlin, Germany. The university was established by Frederick William III on the initiative of Wilhelm von Humboldt, Johann Gottlieb Fichte and Friedrich Daniel Ernst Schleiermacher as the University of Berlin (Universität zu Berlin) in 1809, and opened in 1810.",
+    "src": "https://en.wikipedia.org/wiki/Humboldt_University_of_Berlin",
+    "verified": true
+  },
+  {
+    "in": [
+      "university",
+      "mathematics"
+    ],
+    "out": "university_of_gottingen",
+    "why": "The University of Göttingen, officially the Georg August University of Göttingen, is a public research university in the German city of Göttingen, Lower Saxony. Founded in 1734 by the Electorate of Hanover's government on the orders of George II, it began admitting students in 1737 and is recognized as the oldest university in Lower Saxony.",
+    "src": "https://en.wikipedia.org/wiki/University_of_Göttingen",
+    "verified": true
+  },
+  {
+    "in": [
+      "university",
+      "italy"
+    ],
+    "out": "university_of_bologna",
+    "why": "The University of Bologna is a public research university in Bologna, Italy. It is the oldest university in continuous operation in the world, and the first degree-awarding institution of higher learning.",
+    "src": "https://en.wikipedia.org/wiki/University_of_Bologna",
+    "verified": true
+  },
+  {
+    "in": [
+      "student",
+      "italy"
+    ],
+    "out": "sapienza_university",
+    "why": "The Sapienza University of Rome, also known as La Sapienza (The Wisdom or The Knowledge), is a public research university located in Rome, Italy. It was founded in 1303 and is one of the world's oldest universities.",
+    "src": "https://en.wikipedia.org/wiki/Sapienza_University_of_Rome",
+    "verified": true
+  },
+  {
+    "in": [
+      "university",
+      "isaac_newton"
+    ],
+    "out": "university_of_cambridge",
+    "why": "The University of Cambridge is a collegiate public research university in Cambridge, England. Founded in 1209, the University of Cambridge is the second-oldest university in the English-speaking world and the world's third-oldest university in continuous operation.",
+    "src": "https://en.wikipedia.org/wiki/University_of_Cambridge",
+    "verified": true
+  },
+  {
+    "in": [
+      "university",
+      "united_kingdom"
+    ],
+    "out": "university_of_oxford",
+    "why": "The University of Oxford is a collegiate research university in Oxford, England. There is evidence of teaching as early as 1096, making it the oldest university in the English-speaking world and the world's second-oldest university in continuous operation.",
+    "src": "https://en.wikipedia.org/wiki/University_of_Oxford",
+    "verified": true
+  },
+  {
+    "in": [
+      "harvest",
+      "festival"
+    ],
+    "out": "harvest_festival",
+    "why": "A harvest festival is an annual celebration that occurs around the time of the main harvest of a given region. Given the differences in climate and crops around the world, harvest festivals can be found at various times at different places.",
+    "src": "https://en.wikipedia.org/wiki/Harvest_festival",
+    "verified": true
+  },
+  {
+    "in": [
+      "festival",
+      "powder"
+    ],
+    "out": "holi",
+    "why": "Holi is a major Hindu festival of colours, love and spring. It celebrates the love between the deities Radha and Krishna. Additionally, the day signifies the triumph of good over evil, as it commemorates the victory of Vishnu as Narasimha over Hiranyakashipu.",
+    "src": "https://en.wikipedia.org/wiki/Holi",
+    "verified": true
+  },
+  {
+    "in": [
+      "festival",
+      "dragon"
+    ],
+    "out": "chinese_new_year",
+    "why": "Chinese New Year, also known as the Spring Festival, marks the beginning of a new year on the traditional lunisolar Chinese calendar. It is one of the most important holidays in Chinese culture.",
+    "src": "https://en.wikipedia.org/wiki/Chinese_New_Year",
+    "verified": true
+  },
+  {
+    "in": [
+      "ramadan",
+      "feast"
+    ],
+    "out": "eid_al_fitr",
+    "why": "Eid al-Fitr is the first of the two main festivals in Islam, the other being Eid al-Adha. The holiday falls on the first day of Shawwal, the tenth month of the Islamic calendar.",
+    "src": "https://en.wikipedia.org/wiki/Eid_al-Fitr",
+    "verified": true
+  },
+  {
+    "in": [
+      "sacrifice",
+      "feast"
+    ],
+    "out": "eid_al_adha",
+    "why": "Eid al-Adha is the second of the two main festivals in Islam (alongside Eid al-Fitr) and Druze. It falls on the 10th of Dhu'l-Hijja, the twelfth and final month of the Islamic calendar.",
+    "src": "https://en.wikipedia.org/wiki/Eid_al-Adha",
+    "verified": true
+  },
+  {
+    "in": [
+      "judaism",
+      "lamb"
+    ],
+    "out": "passover",
+    "why": "Passover, also called Pasch or Pesach, or Peysekh in Yiddish, is a major Jewish holiday and one of the Three Pilgrimage Festivals. It celebrates the Exodus of the Israelites from slavery in Egypt.",
+    "src": "https://en.wikipedia.org/wiki/Passover",
+    "verified": true
+  },
+  {
+    "in": [
+      "judaism",
+      "fasting"
+    ],
+    "out": "yom_kippur",
+    "why": "Yom Kippur is the holiest day of the year in Judaism. It occurs annually on the 10th of Tishrei, in late September or early October. For traditional Jewish people, Yom Kippur centers on atonement and repentance.",
+    "src": "https://en.wikipedia.org/wiki/Yom_Kippur",
+    "verified": true
+  },
+  {
+    "in": [
+      "iran",
+      "spring"
+    ],
+    "out": "nowruz",
+    "why": "Nowruz is New Year's Day on the Iranian calendars, including the currently used Solar Hijri calendar. Historically, it has been observed by Iranian peoples, but is now celebrated by many Persianate cultures worldwide.",
+    "src": "https://en.wikipedia.org/wiki/Nowruz",
+    "verified": true
+  },
+  {
+    "in": [
+      "festival",
+      "industry"
+    ],
+    "out": "worlds_fair",
+    "why": "A world's fair, also known as a universal exhibition, is a large global exhibition designed to showcase the achievements of nations. These exhibitions vary in character and are held in different parts of the world at a specific site for a period of time, typically between three and six months.",
+    "src": "https://en.wikipedia.org/wiki/World's_fair",
+    "verified": true
   }
 ]

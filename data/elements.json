@@ -1536,8 +1536,7 @@
     "tags": [
       "dish"
     ],
-    "fact": "Nutritionally unnecessary. Every human society does it anyway.",
-    "terminal": true
+    "fact": "Nutritionally unnecessary. Every human society does it anyway."
   },
   {
     "id": "philosopher_stone",
@@ -109795,5 +109794,617 @@
     ],
     "fact": "The social group between the working and upper classes, defined by education, income and security.",
     "src": "https://en.wikipedia.org/wiki/Middle_class"
+  },
+  {
+    "id": "early_childhood_education",
+    "name": "Early Childhood Education",
+    "emoji": "🧒",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The education of young children before they start primary school.",
+    "src": "https://en.wikipedia.org/wiki/Early_childhood_education"
+  },
+  {
+    "id": "primary_education",
+    "name": "Primary Education",
+    "emoji": "🎒",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The first stage of formal schooling, usually for children from about five or six to eleven or twelve.",
+    "src": "https://en.wikipedia.org/wiki/Primary_education"
+  },
+  {
+    "id": "secondary_education",
+    "name": "Secondary Education",
+    "emoji": "🏫",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The stage of schooling between primary school and higher education.",
+    "src": "https://en.wikipedia.org/wiki/Secondary_education"
+  },
+  {
+    "id": "tertiary_education",
+    "name": "Tertiary Education",
+    "emoji": "🎓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Education after secondary school, at universities, colleges and technical institutes.",
+    "src": "https://en.wikipedia.org/wiki/Tertiary_education"
+  },
+  {
+    "id": "homework",
+    "name": "Homework",
+    "emoji": "📚",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Tasks that a school gives its students to do outside the classroom.",
+    "src": "https://en.wikipedia.org/wiki/Homework"
+  },
+  {
+    "id": "lesson",
+    "name": "Lesson",
+    "emoji": "🧑‍🏫",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A structured period of teaching on a subject.",
+    "src": "https://en.wikipedia.org/wiki/Lesson"
+  },
+  {
+    "id": "college",
+    "name": "College",
+    "emoji": "🏛️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "An institution of higher education, or one part of a university.",
+    "src": "https://en.wikipedia.org/wiki/College"
+  },
+  {
+    "id": "bachelors_degree",
+    "name": "Bachelor's Degree",
+    "emoji": "🎓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "An undergraduate degree, usually earned in three to four years.",
+    "src": "https://en.wikipedia.org/wiki/Bachelor's_degree"
+  },
+  {
+    "id": "masters_degree",
+    "name": "Master's Degree",
+    "emoji": "🎓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A postgraduate degree showing mastery of a subject, usually earned in one to two years after a bachelor's.",
+    "src": "https://en.wikipedia.org/wiki/Master's_degree"
+  },
+  {
+    "id": "doctor_of_philosophy",
+    "name": "Doctor of Philosophy",
+    "emoji": "🎓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The highest academic degree in most fields, awarded for original research.",
+    "src": "https://en.wikipedia.org/wiki/Doctor_of_Philosophy"
+  },
+  {
+    "id": "library_of_alexandria",
+    "name": "Library of Alexandria",
+    "emoji": "🏛️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The great library of ancient Egypt, a centre of scholarship from the third century BC.",
+    "src": "https://en.wikipedia.org/wiki/Library_of_Alexandria"
+  },
+  {
+    "id": "library_of_congress",
+    "name": "Library of Congress",
+    "emoji": "📚",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The research library of the US Congress, the largest library in the world by collection.",
+    "src": "https://en.wikipedia.org/wiki/Library_of_Congress"
+  },
+  {
+    "id": "british_library",
+    "name": "British Library",
+    "emoji": "📚",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The national library of the United Kingdom, holding well over 150 million items.",
+    "src": "https://en.wikipedia.org/wiki/British_Library"
+  },
+  {
+    "id": "house_of_wisdom",
+    "name": "House of Wisdom",
+    "emoji": "📜",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A library and centre of learning in ninth-century Baghdad, where Greek works were translated into Arabic.",
+    "src": "https://en.wikipedia.org/wiki/House_of_Wisdom"
+  },
+  {
+    "id": "al_azhar_university",
+    "name": "Al-Azhar University",
+    "emoji": "🕌",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A university in Cairo that grew from a mosque founded in 970, among the oldest in the world.",
+    "src": "https://en.wikipedia.org/wiki/Al-Azhar_University"
+  },
+  {
+    "id": "unam",
+    "name": "National Autonomous University of Mexico",
+    "emoji": "🎓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Mexico's largest university, tracing its roots to a royal university founded in 1551.",
+    "src": "https://en.wikipedia.org/wiki/National_Autonomous_University_of_Mexico"
+  },
+  {
+    "id": "university_of_toronto",
+    "name": "University of Toronto",
+    "emoji": "🎓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A public research university in Canada's largest city, founded in 1827.",
+    "src": "https://en.wikipedia.org/wiki/University_of_Toronto"
+  },
+  {
+    "id": "harvard_university",
+    "name": "Harvard University",
+    "emoji": "🎓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The oldest university in the United States, founded in 1636 in Massachusetts.",
+    "src": "https://en.wikipedia.org/wiki/Harvard_University"
+  },
+  {
+    "id": "columbia_university",
+    "name": "Columbia University",
+    "emoji": "🎓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "An Ivy League university in New York City, founded in 1754 as King's College.",
+    "src": "https://en.wikipedia.org/wiki/Columbia_University"
+  },
+  {
+    "id": "johns_hopkins_university",
+    "name": "Johns Hopkins University",
+    "emoji": "🎓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A private research university in Baltimore, founded in 1876 and famed for its medical school.",
+    "src": "https://en.wikipedia.org/wiki/Johns_Hopkins_University"
+  },
+  {
+    "id": "mit",
+    "name": "Massachusetts Institute of Technology",
+    "emoji": "🎓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A private research university in Cambridge, Massachusetts, founded in 1861.",
+    "src": "https://en.wikipedia.org/wiki/Massachusetts_Institute_of_Technology"
+  },
+  {
+    "id": "princeton_university",
+    "name": "Princeton University",
+    "emoji": "🎓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "An Ivy League university in New Jersey, founded in 1746.",
+    "src": "https://en.wikipedia.org/wiki/Princeton_University"
+  },
+  {
+    "id": "stanford_university",
+    "name": "Stanford University",
+    "emoji": "🎓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A private research university in California, founded in 1885, beside Silicon Valley.",
+    "src": "https://en.wikipedia.org/wiki/Stanford_University"
+  },
+  {
+    "id": "uc_berkeley",
+    "name": "University of California, Berkeley",
+    "emoji": "🎓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A public research university in California, the original campus of the University of California, founded in 1868.",
+    "src": "https://en.wikipedia.org/wiki/University_of_California,_Berkeley"
+  },
+  {
+    "id": "yale_university",
+    "name": "Yale University",
+    "emoji": "🎓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "An Ivy League university in New Haven, Connecticut, founded in 1701.",
+    "src": "https://en.wikipedia.org/wiki/Yale_University"
+  },
+  {
+    "id": "indian_institutes_of_technology",
+    "name": "Indian Institutes of Technology",
+    "emoji": "🎓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A group of public technical universities in India, the first of which opened in 1951.",
+    "src": "https://en.wikipedia.org/wiki/Indian_Institutes_of_Technology"
+  },
+  {
+    "id": "peking_university",
+    "name": "Peking University",
+    "emoji": "🎓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A leading university in Beijing, founded in 1898 as the Imperial University of Peking.",
+    "src": "https://en.wikipedia.org/wiki/Peking_University"
+  },
+  {
+    "id": "tsinghua_university",
+    "name": "Tsinghua University",
+    "emoji": "🎓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A leading university in Beijing, founded in 1911 and known for engineering.",
+    "src": "https://en.wikipedia.org/wiki/Tsinghua_University"
+  },
+  {
+    "id": "kyoto_university",
+    "name": "Kyoto University",
+    "emoji": "🎓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A national research university in Kyoto, Japan, founded in 1897.",
+    "src": "https://en.wikipedia.org/wiki/Kyoto_University"
+  },
+  {
+    "id": "university_of_tokyo",
+    "name": "University of Tokyo",
+    "emoji": "🎓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Japan's oldest national university, founded in 1877.",
+    "src": "https://en.wikipedia.org/wiki/University_of_Tokyo"
+  },
+  {
+    "id": "eth_zurich",
+    "name": "ETH Zurich",
+    "emoji": "🎓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A Swiss technical university in Zürich, founded in 1854, where Albert Einstein studied.",
+    "src": "https://en.wikipedia.org/wiki/ETH_Zurich"
+  },
+  {
+    "id": "moscow_state_university",
+    "name": "Moscow State University",
+    "emoji": "🎓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A university in Moscow founded in 1755 on the proposal of Mikhail Lomonosov.",
+    "src": "https://en.wikipedia.org/wiki/Moscow_State_University"
+  },
+  {
+    "id": "sorbonne_university",
+    "name": "Sorbonne University",
+    "emoji": "🎓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A university in Paris, formed by merger in 2018, descended from the medieval Sorbonne.",
+    "src": "https://en.wikipedia.org/wiki/Sorbonne_University"
+  },
+  {
+    "id": "university_of_copenhagen",
+    "name": "University of Copenhagen",
+    "emoji": "🎓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Denmark's oldest university, founded in 1479.",
+    "src": "https://en.wikipedia.org/wiki/University_of_Copenhagen"
+  },
+  {
+    "id": "university_of_vienna",
+    "name": "University of Vienna",
+    "emoji": "🎓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A university in Austria's capital, founded in 1365, the oldest in the German-speaking world.",
+    "src": "https://en.wikipedia.org/wiki/University_of_Vienna"
+  },
+  {
+    "id": "lmu_munich",
+    "name": "LMU Munich",
+    "emoji": "🎓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A leading research university in Munich, founded in 1472 in Ingolstadt.",
+    "src": "https://en.wikipedia.org/wiki/LMU_Munich"
+  },
+  {
+    "id": "humboldt_university",
+    "name": "Humboldt University of Berlin",
+    "emoji": "🎓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A university in Berlin, founded in 1810, whose model of joining research and teaching spread worldwide.",
+    "src": "https://en.wikipedia.org/wiki/Humboldt_University_of_Berlin"
+  },
+  {
+    "id": "university_of_gottingen",
+    "name": "University of Göttingen",
+    "emoji": "🎓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A German university founded in 1734, whose mathematicians include Gauss and Hilbert.",
+    "src": "https://en.wikipedia.org/wiki/University_of_Göttingen"
+  },
+  {
+    "id": "university_of_bologna",
+    "name": "University of Bologna",
+    "emoji": "🎓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The oldest university in continuous operation, founded in 1088.",
+    "src": "https://en.wikipedia.org/wiki/University_of_Bologna"
+  },
+  {
+    "id": "sapienza_university",
+    "name": "Sapienza University of Rome",
+    "emoji": "🎓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A large public university in Rome, founded in 1303.",
+    "src": "https://en.wikipedia.org/wiki/Sapienza_University_of_Rome"
+  },
+  {
+    "id": "university_of_cambridge",
+    "name": "University of Cambridge",
+    "emoji": "🎓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A collegiate university in England, founded in 1209, the second-oldest in the English-speaking world.",
+    "src": "https://en.wikipedia.org/wiki/University_of_Cambridge"
+  },
+  {
+    "id": "university_of_oxford",
+    "name": "University of Oxford",
+    "emoji": "🎓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The oldest university in the English-speaking world, with teaching dating from about 1096.",
+    "src": "https://en.wikipedia.org/wiki/University_of_Oxford"
+  },
+  {
+    "id": "harvest_festival",
+    "name": "Harvest Festival",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A celebration at the time of the main harvest, held in many cultures.",
+    "src": "https://en.wikipedia.org/wiki/Harvest_festival"
+  },
+  {
+    "id": "holi",
+    "name": "Holi",
+    "emoji": "🎨",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The Hindu festival of colours, celebrating spring and the triumph of good over evil.",
+    "src": "https://en.wikipedia.org/wiki/Holi"
+  },
+  {
+    "id": "chinese_new_year",
+    "name": "Chinese New Year",
+    "emoji": "🧧",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The festival marking the start of the lunar new year in China and across East Asia.",
+    "src": "https://en.wikipedia.org/wiki/Chinese_New_Year"
+  },
+  {
+    "id": "eid_al_fitr",
+    "name": "Eid al-Fitr",
+    "emoji": "🌙",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The Muslim festival that ends the month of fasting in Ramadan.",
+    "src": "https://en.wikipedia.org/wiki/Eid_al-Fitr"
+  },
+  {
+    "id": "eid_al_adha",
+    "name": "Eid al-Adha",
+    "emoji": "🐑",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The Muslim festival of sacrifice, remembering Abraham's willingness to sacrifice his son.",
+    "src": "https://en.wikipedia.org/wiki/Eid_al-Adha"
+  },
+  {
+    "id": "passover",
+    "name": "Passover",
+    "emoji": "🍷",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The Jewish spring festival recalling the Israelites' exodus from slavery in Egypt.",
+    "src": "https://en.wikipedia.org/wiki/Passover"
+  },
+  {
+    "id": "yom_kippur",
+    "name": "Yom Kippur",
+    "emoji": "🕯️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The Day of Atonement, the holiest day in Judaism, marked by fasting and prayer.",
+    "src": "https://en.wikipedia.org/wiki/Yom_Kippur"
+  },
+  {
+    "id": "nowruz",
+    "name": "Nowruz",
+    "emoji": "🌷",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The Persian New Year, held at the spring equinox and kept from Iran to Central Asia.",
+    "src": "https://en.wikipedia.org/wiki/Nowruz"
+  },
+  {
+    "id": "worlds_fair",
+    "name": "World's Fair",
+    "emoji": "🎡",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A large international exhibition of the achievements of nations, such as the Great Exhibition of 1851.",
+    "src": "https://en.wikipedia.org/wiki/World's_fair"
   }
 ]
