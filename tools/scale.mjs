@@ -33,6 +33,7 @@ const SCALE = {
   // deposited on glass, iron is worked). Filing them at 10^-10 m while drawing
   // them as nuggets was a mislabel, not a drawing mistake.
   '-10': [
+          /* corpus review, 11 Nov — missing basics added */ 'chloride',
           /* the universe closed, 4 Sep */
           'quantum_mechanics', 'uncertainty_principle', 'radioactivity', 'fusion', 'superconductivity',
           /* subatomic, 4 Sep */
@@ -55,8 +56,9 @@ const SCALE = {
           // sandboxels gapfill batch 1 — antiparticle and antimatter-atom scale, the same rack as proton/positron/hydrogen
           'antiproton', 'antihydrogen'],
   '-9':  [
+          /* corpus review, 11 Nov — missing basics added */ 'ester', 'thiol',
           /* W4 physiology fourth pass, 6 Sep */
-          'pepsin', 'amylase', 'trypsin', 'lipase', 'oestrogen', 'prolactin', 'aldosterone',
+          'pepsin', 'amylase', 'trypsin', 'lipase', 'prolactin', 'aldosterone',
           /* W4 physiology third pass, 6 Sep */
           'lactate', 'ketone', 'ion_channel', 'receptor', 'resting_potential',
           /* W2 arachnids and insects, 5 Sep */
@@ -343,6 +345,7 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+          /* corpus review, 11 Nov — missing basics added */ 'tennessine', 'oganesson', 'tonsil',
           /* W4 physiology fourth pass, 6 Sep */
           'bolus', 'chyme', 'bile_duct', 'portal_vein', 'parathyroid', 'endocrine_gland', 'pons', 'gastrulation',
           /* W2 insects third pass, 6 Sep */
@@ -454,7 +457,7 @@ const SCALE = {
           /* asbestos chain, 2 Sep */ 'asbestos',
           /* crops and materials wave, 2 Sep */
           'alfalfa_sprout', 'aonla', 'boysenberry', 'chilli_pepper', 'currant', 'einkorn', 'elderberry', 'emmer',
-          'fava_bean', 'feijoa', 'fiddlehead_fern', 'finger_lime', 'gooseberry', 'hop', 'huckleberry', 'jerusalem_artichoke',
+          'fava_bean', 'feijoa', 'fiddlehead_fern', 'finger_lime', 'gooseberry', 'huckleberry', 'jerusalem_artichoke',
           'jojoba', 'jujube', 'kamut', 'kiwifruit', 'kumquat', 'lingonberry', 'lupin', 'mangosteen',
           'medlar', 'meyer_lemon', 'microgreen', 'mung_bean_sprout', 'napa_cabbage', 'passionfruit', 'peat_moss', 'quince',
           'ramie', 'saskatoon_berry', 'sisal', 'snow_pea', 'sugarsnap_pea', 'water_chestnut',
@@ -470,7 +473,7 @@ const SCALE = {
           /* microbio wave, 2 Sep */
           'acid_fast_stain', 'endospore_stain', 'gram_stain', 'negative_stain', 'nematode', 'plant_cuticle', 'plant_epidermis', 'trematode',
           // A0b scale-fill batch, 2 Sep — closing the 2166-element scale.json gap, classified by 15 parallel research passes against this file's existing conventions
-          'para_dichlorobenzene', 'anhydrite', 'toes', 'watch', 'whistle', 'yoyo', 'bug', 'button', 'cookie', 'cracker', 'cupcake', 'doughnut', 'ear', 'greasepaint', 'sodium_potassium_tartrate', 'hexamine', 'ankle', 'building_block', 'bubble', 'lima_bean', 'black_eyed_pea', 'navy_bean', 'brazil_nut', 'tempeh', 'edamame', 'green_bean', 'falafel', 'zirconia', 'shallot', 'chestnut', 'magnesium_carbonate', 'ligament', 'earring', 'bead', 'nock', 'fletching', 'bung', 'blank', 'tumbler', 'fingernail', 'hair', 'spring', 'slinky', 'sticker', 'postage_stamp', 'tape', 'nose', 'elderflower', 'oyster_leaf', 'paracress', 'yuzu', 'fines_herbes', 'incense', 'tomatillo', 'physalis', 'calamansi', 'key', 'liquorice', 'rose_petal', 'barberry', 'lemon_myrtle', 'dried_lime', 'stirrup', 'cornea', 'lens', 'iris', 'tympanic_membrane', 'olfactory_epithelium', 'bulldog_clamp', 'suture_needle', 'umbilical_cord_clamp', 'krill', 'nudibranch', 'tunicate', 'ampullae_of_lorenzini', 'spiracle', 'gill_raker', 'radula', 'operculum', 'byssus', 'prawn', 'fiddler_crab', 'fossil_mold', 'fossil_cast', 'index_fossil', 'sclerochronology', 'amniotic_egg', 'canine_tooth', 'molar', 'incisor', 'opposable_thumb', 'coprolite', 'peppered_moth', 'ventifact', 'phototropism',
+          'para_dichlorobenzene', 'anhydrite', 'toes', 'watch', 'whistle', 'yoyo', 'bug', 'button', 'cookie', 'cracker', 'cupcake', 'doughnut', 'ear', 'greasepaint', 'sodium_potassium_tartrate', 'hexamine', 'ankle', 'building_block', 'bubble', 'lima_bean', 'black_eyed_pea', 'navy_bean', 'brazil_nut', 'tempeh', 'edamame', 'green_bean', 'falafel', 'zirconia', 'shallot', 'chestnut', 'magnesium_carbonate', 'ligament', 'earring', 'bead', 'nock', 'fletching', 'bung', 'blank', 'tumbler', 'fingernail', 'hair', 'spring', 'slinky', 'sticker', 'postage_stamp', 'tape', 'nose', 'elderflower', 'oyster_leaf', 'paracress', 'yuzu', 'fines_herbes', 'incense', 'tomatillo', 'physalis', 'calamansi', 'key', 'liquorice', 'rose_petal', 'barberry', 'lemon_myrtle', 'dried_lime', 'stirrup', 'cornea', 'lens', 'iris', 'olfactory_epithelium', 'bulldog_clamp', 'suture_needle', 'umbilical_cord_clamp', 'krill', 'nudibranch', 'tunicate', 'ampullae_of_lorenzini', 'spiracle', 'gill_raker', 'radula', 'operculum', 'byssus', 'prawn', 'fiddler_crab', 'fossil_mold', 'fossil_cast', 'index_fossil', 'sclerochronology', 'amniotic_egg', 'canine_tooth', 'molar', 'incisor', 'opposable_thumb', 'coprolite', 'peppered_moth', 'ventifact', 'phototropism',
           // mining comprehensive batch — broken/loose rock and small cast metal, hand-sample scale
           // alongside ore/stone/ballast/diamond/coin
           'run_of_mine', 'waste_rock', 'assay', 'dore',
@@ -573,6 +576,7 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* corpus review, 11 Nov — missing basics added */ 'radon', 'humidity', 'knot', 'scroll', 'litre',
           /* W4 physiology fourth pass, 6 Sep */
           'absorption', 'ossification', 'negative_feedback', 'differentiation', 'myelination', 'synaptic_plasticity',
           /* W4 physiology third pass, 6 Sep */
@@ -582,7 +586,7 @@ const SCALE = {
           /* W4 physiology second pass, 6 Sep */
           'blood_type', 'rhesus_factor', 'lactation', 'shivering', 'basal_metabolic_rate',
           /* W4 physiology, 6 Sep */
-          'ureter', 'pleura', 'oesophagus', 'tendon', 'urine', 'lymph', 'breath', 'urea', 'adrenaline', 'reflex',
+          'ureter', 'pleura', 'tendon', 'urine', 'lymph', 'breath', 'urea', 'adrenaline', 'reflex',
           /* W2 continued — spider silk and what is built from it, 5 Sep */
           'spider_silk', 'dragline', 'orb_web', 'tarantula',
           /* owed outcomes restored, 5 Sep */
@@ -722,7 +726,7 @@ const SCALE = {
           'phase_contrast_microscope', 'phylogenetic_tree', 'sake', 'spleen', 'tampon', 'transgenic_plant', 'urethra', 'vagina',
           'wastewater',
           // A0b scale-fill batch, 2 Sep — closing the 2166-element scale.json gap, classified by 15 parallel research passes against this file's existing conventions
-          'oxo_degradable_plastic', 'hydrogen_peroxide', 'hydrochloric_acid', 'carbon_tetrachloride', 'ammonium_bicarbonate', 'phosphoric_acid', 'potassium_bicarbonate', 'potassium_hypochlorite', 'necktie', 'toilet_paper', 'saliva', 'tongue', 'bristle', 'toothbrush', 'toy', 'towel', 'triangle', 'tricycle', 'stomach', 'umbrella', 'underwear', 'toy_wagon', 'washcloth', 'zipper', 'perchloric_acid', 'ammonium_hydroxide', 'hydroiodic_acid', 'formic_acid', 'hydrofluoric_acid', 'hydrocyanic_acid', 'polystyrene', 'tetrachloroethylene', 'cd', 'cereal', 'circle', 'comb', 'crayon', 'crown', 'cup', 'curtain', 'diaper', 'dress', 'drum', 'acetone', 'polycarbonate', 'ethylene_glycol', 'bleach', 'hypobromous_acid', 'hydrazine', 'sodium_silicate', 'chromic_acid', 'methyl_acetate', 'hexane', 'potassium_bitartrate', 'arm', 'baby', 'bag', 'bagel', 'backpack', 'balloon', 'ball', 'baseball_bat', 'bathtub', 'belt', 'bird', 'blanket', 'boot', 'bowl', 'broom', 'brush', 'bucket', 'almond_butter', 'marzipan', 'soy_milk', 'refried_beans', 'dal', 'hoppin_john', 'baked_beans', 'propylene', 'butadiene', 'acrylonitrile', 'nitrile_rubber', 'chloromethane', 'dimethyldichlorosilane', 'silicone', 'aniline', 'isocyanate', 'polyol', 'polyurethane', 'inconel_625', 'borosilicate_glass', 'polyacrylonitrile', 'carbon_fiber', 'epichlorohydrin', 'epoxy_resin', 'cfrp', 'glass_fiber', 'gfrp', 'wood_plastic_composite', 'pom_acetal', 'pps', 'epdm', 'chervil', 'lemongrass', 'savory', 'scallion', 'garlic_chives', 'balsamic_vinegar', 'sesame_oil', 'steak_sauce', 'relish', 'bouquet_garni', 'marinade', 'chloroform', 'chlorodifluoromethane', 'tetrafluoroethylene', 'ptfe', 'hexafluoropropylene', 'pfa', 'fkm', 'ethylidene_chloride', 'trichloroethane_111', 'chlorodifluoroethane', 'vinylidene_fluoride', 'pvdf', 'cfc_113', 'chlorotrifluoroethylene', 'ectfe', 'ethylene_dichloride', 'vinyl_chloride', 'pvc', 'ldpe', 'uhmwpe', 'pp', 'butane', 'polybutadiene', 'styrene_acrylonitrile', 'abs', 'xylene', 'terephthalic_acid', 'pet', 'hydroquinone', 'nitrobenzene', 'fluoroboric_acid', 'benzenediazonium_chloride', 'benzenediazonium_tetrafluoroborate', 'fluorobenzene', 'difluorobenzophenone', 'peek', 'cyclohexanone', 'hydroxylamine', 'cyclohexanone_oxime', 'caprolactam', 'nylon_6', 'phthalic_anhydride', 'methyl_ethyl_ketone', 'trichloroacetic_acid', 'acetonitrile', 'propane', 'pentane', 'octane', 'benzene', 'hydrobromic_acid', 'iodic_acid', 'turpentine', 'wire', 'battery', 'skin', 'elbow', 'envelope', 'eye', 'finger', 'flashlight', 'fork', 'garbage_can', 'glasses', 'glove', 'glue', 'hanger', 'hat', 'head', 'hoop', 'hose', 'sock', 'carbonated_water', 'soda', 'spider_web', 'spoon', 'squirrel', 'stick', 'stool', 'string', 'suitcase', 'sunglasses', 'sweater', 'swimsuit', 'teapot', 'olfactory_nerve', 'optic_nerve', 'trigeminal_nerve', 'vestibulocochlear_nerve', 'vagus_nerve', 'accessory_nerve', 'hypoglossal_nerve', 'durian', 'lavender', 'wakame', 'celeriac', 'pulque', 'tequila', 'cognac', 'cassia', 'galangal', 'harissa', 'chermoula', 'thai_curry_paste', 'achiote_paste', 'zhoug', 'enuma_elish', 'book_of_the_dead', 'bhagavad_gita', 'vedas', 'upanishads', 'torah', 'talmud', 'tanakh', 'quran', 'bible', 'guru_granth_sahib', 'elecampane', 'licorice', 'quassia', 'java_galangal', 'asafoetida', 'yerba_mate', 'bergamot', 'jasmine', 'plantain', 'butternut_squash', 'nasturtium', 'perilla', 'absinthe_wormwood', 'doenjang', 'gochujang', 'cuneiform', 'oracle_bone', 'phoenician_alphabet', 'chain', 'pandoras_box', 'golden_fleece', 'katana', 'gilgamesh', 'egyptian_hittite_treaty', 'domesday_book', 'magna_carta', 'kanban', 'composite_bow', 'greek_fire', 'flintlock_musket', 'ak47', 'poison_gas', 'retina', 'oculomotor_nerve', 'cochlea', 'vestibular_system', 'glossopharyngeal_nerve', 'basal_ganglia', 'substantia_nigra', 'wernicke_area', 'broca_area', 'sword', 'dagger', 'misericorde', 'longsword', 'gambeson', 'chain_mail', 'shield', 'kite_shield', 'plate_armor', 'war_hammer', 'war_mace', 'flail', 'crossbow', 'longbow', 'katar', 'kris', 'shotel', 'takouba', 'tulwar', 'flyssa', 'iklwa', 'shamshir', 'yataghan', 'repeating_crossbow', 'sling', 'macuahuitl', 'vexillum', 'saltire', 'oriflamme', 'ensign', 'tricolour', 'union_flag', 'dannebrog', 'flag_norway', 'flag_sweden', 'flag_finland', 'flag_iceland', 'flag_germany', 'flag_poland', 'flag_argentina', 'flag_uruguay', 'flag_brazil', 'flag_chile', 'wiphala', 'flag_venezuela', 'flag_costa_rica', 'flag_el_salvador', 'flag_panama', 'flag_jamaica', 'flag_cuba', 'flag_mexico', 'flag_canada', 'flag_united_states', 'gladius', 'lorica_segmentata', 'chainmail', 'rapier', 'scimitar', 'javelin_missile', 'tow_missile', 'hellfire_missile', 'm16_rifle', 'm4_carbine', 'm249_saw', 'm2_browning', 'allis_forceps', 'aplysia', 'bone_rongeur', 'deaver_retractor', 'debakey_forceps', 'dermatome', 'dilator', 'ear_syringe', 'gigli_saw', 'hemostat', 'laryngoscope', 'lateral_geniculate_nucleus', 'locus_coeruleus', 'magill_forceps', 'mouth_gag', 'needle_holder', 'olfactory_bulb', 'optic_chiasm', 'otoscope', 'periaqueductal_gray', 'raphe_nuclei', 'rectal_speculum', 'scalpel', 'spinothalamic_tract', 'striatum', 'suction_tube', 'surgical_scissors', 'tenaculum_forceps', 'thumb_forceps', 'trocar', 'tuning_fork', 'vaginal_speculum', 'ventral_tegmental_area', 'osmoregulation', 'countershading', 'bioluminescence', 'pinniped', 'sea_lion', 'seal', 'claspers', 'siphon', 'ink_sac', 'blowhole', 'melon', 'fluke', 'porpoise', 'crayfish', 'spiny_lobster', 'giant_isopod', 'molt', 'matchlock', 'wheellock', 'flintlock', 'arquebus', 'musket', 'pistol', 'flanged_mace', 'gauntlet', 'proof_armor', 'sallet', 'barbute', 'armet', 'close_helmet', 'burgonet', 'morion', 'katzbalger', 'schiavona', 'smallsword', 'main_gauche', 'plug_bayonet', 'socket_bayonet', 'jaw', 'lobe_finned_fish', 'tiktaalik', 'acanthostega', 'ichthyostega', 'tetrapod', 'amniote', 'synapsid', 'sauropsid', 'therapsid', 'cynodont', 'endothermy', 'bat', 'diaphragm', 'reticulum', 'omasum', 'abomasum', 'blubber', 'hibernation', 'lanternfish', 'hatchetfish', 'sinosauropteryx', 'heterodontosaurus', 'arandaspis', 'sacabambaspis', 'astraspis', 'cephalaspis', 'pteraspis', 'birkenia', 'conodont', 'placoderm', 'bothriolepis', 'coccosteus', 'climatius', 'cheirolepis', 'osteolepis', 'hagfish', 'lamprey', 'neoceratodus', 'morganucodon', 'monotreme', 'multituberculate', 'marsupial', 'placental', 'solenodon', 'laotian_rock_rat', 'indri', 'mountain_pygmy_possum', 'numbat', 'moth', 'stick_insect', 'exoskeleton', 'compound_eye', 'tracheal_system', 'insect_spiracle', 'hemolymph', 'malpighian_tubule', 'ecdysis', 'complete_metamorphosis', 'incomplete_metamorphosis', 'imaginal_disc', 'darwins_finches', 'rhizosphere', 'microbiome', 'probiotic', 'chewing_gum', 'single_use_plastic', 'ghost_net', 'photodegradation', 'plastic_recycling', 'pyrolysis', 'bioplastic', 'incineration', 'mul_apin', 'scale', 'big_dipper', 'gnomon', 'sundial', 'water_clock', 'armillary_sphere', 'antikythera_mechanism', 'astrolabe', 'merkhet', 'frost_heave', 'laterite', 'podzol', 'chernozem', 'gley_soil', 'black_cotton_soil', 'sextant', 'flag_of_netherlands', 'flag_of_ireland', 'flag_of_switzerland', 'flag_of_austria', 'flag_of_greece', 'flag_of_turkiye', 'flag_of_israel', 'flag_of_lebanon', 'flag_of_saudi_arabia', 'flag_of_iran', 'flag_of_japan', 'flag_of_south_korea', 'flag_of_china', 'flag_of_indonesia', 'flag_of_australia', 'flag_of_new_zealand', 'flag_of_papua_new_guinea',
+          'oxo_degradable_plastic', 'hydrogen_peroxide', 'hydrochloric_acid', 'carbon_tetrachloride', 'ammonium_bicarbonate', 'phosphoric_acid', 'potassium_bicarbonate', 'potassium_hypochlorite', 'necktie', 'toilet_paper', 'saliva', 'tongue', 'bristle', 'toothbrush', 'toy', 'towel', 'triangle', 'tricycle', 'stomach', 'umbrella', 'underwear', 'toy_wagon', 'washcloth', 'zipper', 'perchloric_acid', 'ammonium_hydroxide', 'hydroiodic_acid', 'formic_acid', 'hydrofluoric_acid', 'hydrocyanic_acid', 'polystyrene', 'tetrachloroethylene', 'cd', 'cereal', 'circle', 'comb', 'crayon', 'crown', 'cup', 'curtain', 'diaper', 'dress', 'drum', 'acetone', 'polycarbonate', 'ethylene_glycol', 'bleach', 'hypobromous_acid', 'hydrazine', 'sodium_silicate', 'chromic_acid', 'methyl_acetate', 'hexane', 'potassium_bitartrate', 'arm', 'baby', 'bag', 'bagel', 'backpack', 'balloon', 'ball', 'baseball_bat', 'bathtub', 'belt', 'bird', 'blanket', 'boot', 'bowl', 'broom', 'brush', 'bucket', 'almond_butter', 'marzipan', 'soy_milk', 'refried_beans', 'dal', 'hoppin_john', 'baked_beans', 'propylene', 'butadiene', 'acrylonitrile', 'nitrile_rubber', 'chloromethane', 'dimethyldichlorosilane', 'silicone', 'aniline', 'isocyanate', 'polyol', 'polyurethane', 'inconel_625', 'borosilicate_glass', 'polyacrylonitrile', 'carbon_fiber', 'epichlorohydrin', 'epoxy_resin', 'cfrp', 'glass_fiber', 'gfrp', 'wood_plastic_composite', 'pom_acetal', 'pps', 'epdm', 'chervil', 'lemongrass', 'savory', 'scallion', 'garlic_chives', 'balsamic_vinegar', 'sesame_oil', 'steak_sauce', 'relish', 'bouquet_garni', 'marinade', 'chloroform', 'chlorodifluoromethane', 'tetrafluoroethylene', 'ptfe', 'hexafluoropropylene', 'pfa', 'fkm', 'ethylidene_chloride', 'trichloroethane_111', 'chlorodifluoroethane', 'vinylidene_fluoride', 'pvdf', 'cfc_113', 'chlorotrifluoroethylene', 'ectfe', 'ethylene_dichloride', 'vinyl_chloride', 'pvc', 'ldpe', 'uhmwpe', 'pp', 'butane', 'polybutadiene', 'styrene_acrylonitrile', 'abs', 'xylene', 'terephthalic_acid', 'pet', 'hydroquinone', 'nitrobenzene', 'fluoroboric_acid', 'benzenediazonium_chloride', 'benzenediazonium_tetrafluoroborate', 'fluorobenzene', 'difluorobenzophenone', 'peek', 'cyclohexanone', 'hydroxylamine', 'cyclohexanone_oxime', 'caprolactam', 'nylon_6', 'phthalic_anhydride', 'methyl_ethyl_ketone', 'trichloroacetic_acid', 'acetonitrile', 'propane', 'pentane', 'octane', 'benzene', 'hydrobromic_acid', 'iodic_acid', 'turpentine', 'wire', 'battery', 'skin', 'elbow', 'envelope', 'eye', 'finger', 'flashlight', 'fork', 'garbage_can', 'glasses', 'glove', 'glue', 'hanger', 'hat', 'head', 'hoop', 'hose', 'sock', 'carbonated_water', 'soda', 'spider_web', 'spoon', 'squirrel', 'stick', 'stool', 'string', 'suitcase', 'sunglasses', 'sweater', 'swimsuit', 'teapot', 'olfactory_nerve', 'optic_nerve', 'trigeminal_nerve', 'vestibulocochlear_nerve', 'vagus_nerve', 'accessory_nerve', 'hypoglossal_nerve', 'durian', 'lavender', 'wakame', 'celeriac', 'pulque', 'tequila', 'cognac', 'cassia', 'galangal', 'harissa', 'chermoula', 'thai_curry_paste', 'achiote_paste', 'zhoug', 'enuma_elish', 'book_of_the_dead', 'bhagavad_gita', 'vedas', 'upanishads', 'torah', 'talmud', 'tanakh', 'quran', 'bible', 'guru_granth_sahib', 'elecampane', 'licorice', 'quassia', 'java_galangal', 'asafoetida', 'yerba_mate', 'bergamot', 'jasmine', 'plantain', 'butternut_squash', 'nasturtium', 'perilla', 'absinthe_wormwood', 'doenjang', 'gochujang', 'cuneiform', 'oracle_bone', 'phoenician_alphabet', 'chain', 'pandoras_box', 'golden_fleece', 'katana', 'gilgamesh', 'egyptian_hittite_treaty', 'domesday_book', 'magna_carta', 'kanban', 'composite_bow', 'greek_fire', 'flintlock_musket', 'ak47', 'poison_gas', 'retina', 'oculomotor_nerve', 'cochlea', 'vestibular_system', 'glossopharyngeal_nerve', 'basal_ganglia', 'substantia_nigra', 'wernicke_area', 'broca_area', 'sword', 'dagger', 'misericorde', 'longsword', 'gambeson', 'chain_mail', 'shield', 'kite_shield', 'plate_armor', 'war_hammer', 'war_mace', 'flail', 'crossbow', 'longbow', 'katar', 'kris', 'shotel', 'takouba', 'tulwar', 'flyssa', 'iklwa', 'shamshir', 'yataghan', 'repeating_crossbow', 'sling', 'macuahuitl', 'vexillum', 'saltire', 'oriflamme', 'ensign', 'tricolour', 'union_flag', 'dannebrog', 'flag_norway', 'flag_sweden', 'flag_finland', 'flag_iceland', 'flag_germany', 'flag_poland', 'flag_argentina', 'flag_uruguay', 'flag_brazil', 'flag_chile', 'wiphala', 'flag_venezuela', 'flag_costa_rica', 'flag_el_salvador', 'flag_panama', 'flag_jamaica', 'flag_cuba', 'flag_mexico', 'flag_canada', 'flag_united_states', 'gladius', 'lorica_segmentata', 'rapier', 'scimitar', 'javelin_missile', 'tow_missile', 'hellfire_missile', 'm16_rifle', 'm4_carbine', 'm249_saw', 'm2_browning', 'allis_forceps', 'aplysia', 'bone_rongeur', 'deaver_retractor', 'debakey_forceps', 'dermatome', 'dilator', 'ear_syringe', 'gigli_saw', 'hemostat', 'laryngoscope', 'lateral_geniculate_nucleus', 'locus_coeruleus', 'magill_forceps', 'mouth_gag', 'needle_holder', 'olfactory_bulb', 'optic_chiasm', 'otoscope', 'periaqueductal_gray', 'raphe_nuclei', 'rectal_speculum', 'scalpel', 'spinothalamic_tract', 'striatum', 'suction_tube', 'surgical_scissors', 'tenaculum_forceps', 'thumb_forceps', 'trocar', 'tuning_fork', 'vaginal_speculum', 'ventral_tegmental_area', 'osmoregulation', 'countershading', 'bioluminescence', 'pinniped', 'sea_lion', 'seal', 'claspers', 'siphon', 'ink_sac', 'blowhole', 'melon', 'fluke', 'porpoise', 'crayfish', 'spiny_lobster', 'giant_isopod', 'molt', 'matchlock', 'wheellock', 'flintlock', 'arquebus', 'musket', 'pistol', 'flanged_mace', 'gauntlet', 'proof_armor', 'sallet', 'barbute', 'armet', 'close_helmet', 'burgonet', 'morion', 'katzbalger', 'schiavona', 'smallsword', 'main_gauche', 'plug_bayonet', 'socket_bayonet', 'jaw', 'lobe_finned_fish', 'tiktaalik', 'acanthostega', 'ichthyostega', 'tetrapod', 'amniote', 'synapsid', 'sauropsid', 'therapsid', 'cynodont', 'endothermy', 'bat', 'diaphragm', 'reticulum', 'omasum', 'abomasum', 'blubber', 'hibernation', 'lanternfish', 'hatchetfish', 'sinosauropteryx', 'heterodontosaurus', 'arandaspis', 'sacabambaspis', 'astraspis', 'cephalaspis', 'pteraspis', 'birkenia', 'conodont', 'placoderm', 'bothriolepis', 'coccosteus', 'climatius', 'cheirolepis', 'osteolepis', 'hagfish', 'lamprey', 'neoceratodus', 'morganucodon', 'monotreme', 'multituberculate', 'marsupial', 'placental', 'solenodon', 'laotian_rock_rat', 'indri', 'mountain_pygmy_possum', 'numbat', 'moth', 'stick_insect', 'exoskeleton', 'compound_eye', 'tracheal_system', 'insect_spiracle', 'hemolymph', 'malpighian_tubule', 'ecdysis', 'complete_metamorphosis', 'incomplete_metamorphosis', 'imaginal_disc', 'darwins_finches', 'rhizosphere', 'microbiome', 'probiotic', 'chewing_gum', 'single_use_plastic', 'ghost_net', 'photodegradation', 'plastic_recycling', 'pyrolysis', 'bioplastic', 'incineration', 'mul_apin', 'scale', 'big_dipper', 'gnomon', 'sundial', 'water_clock', 'armillary_sphere', 'antikythera_mechanism', 'astrolabe', 'merkhet', 'frost_heave', 'laterite', 'podzol', 'chernozem', 'gley_soil', 'black_cotton_soil', 'sextant', 'flag_of_netherlands', 'flag_of_ireland', 'flag_of_switzerland', 'flag_of_austria', 'flag_of_greece', 'flag_of_turkiye', 'flag_of_israel', 'flag_of_lebanon', 'flag_of_saudi_arabia', 'flag_of_iran', 'flag_of_japan', 'flag_of_south_korea', 'flag_of_china', 'flag_of_indonesia', 'flag_of_australia', 'flag_of_new_zealand', 'flag_of_papua_new_guinea',
           // mining comprehensive batch — a printed/tablet map or report, a drummed industrial liquid,
           // and cast metal sheet/ingot, same item scale as paper/sulfuric_acid/steel
           'geological_mapping', 'target_generation', 'feasibility_study', 'overburden',
@@ -881,6 +885,7 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* corpus review, 11 Nov — missing basics added */ 'kelvin', 'hour', 'inertia', 'torque', 'wavelength', 'kinetic_energy', 'potential_energy', 'absolute_zero', 'doppler_effect', 'diffraction', 'ohms_law', 'maxwells_equations', 'ideal_gas_law', 'conservation_of_energy', 'software', 'email', 'cryptography',
           /* W2 insects third pass, 6 Sep */
           'caste', 'termite_mound', 'swarm',
           /* owed outcomes restored, 5 Sep */
@@ -1224,12 +1229,13 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+          /* corpus review, 11 Nov — missing basics added */ 'central_heating',
           /* W2 continued — a mating flight happens tens of metres up, 5 Sep */
           'nuptial_flight',
     'crumple_zone', 'still', 'iwan', 'caravanserai', 'tomb',   // missing-list components
     'rtg', 'jib', 'outrigger',   // mechanism parts
     'saturn_v', 'command_module', 'lunar_module', 'docking_port', 'airlock', 'life_support', 'robotic_arm',   // spaceflight + engine parts
-    'extruder', 'counterweight', 'capstone', 'harness', 'stair',   // components
+    'extruder', 'counterweight', 'capstone', 'harness',   // components
     'windmill', 'mine', 'smithy', 'bakery', 'tannery', 'bank', 'garden', 'kitchen', 'watermill',   // orphan-list subjects
     'stream', 'brook', 'pond', 'culvert', 'watershed', 'runoff', 'oxbow', 'wiring', 'shower', 'bath', 'fridge', 'washing_machine', 'plumbing', 'furniture',   // universe gaps 5 Sep
     'spillway', 'embankment', 'penstock', 'flue', 'airframe', 'terrace', 'retaining_wall', 'arena', 'vomitorium', 'awning', 'basilica', 'forum',   // needs sweep
@@ -1637,6 +1643,8 @@ const SCALE = {
           // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
           'intertidal_zone'],
   '3':   [
+          /* corpus review, 11 Nov — sized by diameter to the nearest power of ten (Earth 1.3×10⁷ m, Jupiter 1.4×10⁸ m, Pluto 2.4×10⁶ m); they had all been filed under the 10⁹ ceiling */ 'planetesimal',
+          /* corpus review, 11 Nov — missing basics added */ 'beach', 'bog',
     'wet_tropics', 'thessaloniki', 'arab_norman_palermo', 'venetian_works', 'maramures_churches', 'slovak_wooden_churches', 'lesser_poland_churches', 'ferapontov', 'altai_mountains', 'trier_monuments', 'arles_monuments', 'beech_forests', 'lower_german_limes', 'shushtar', 'pattadakal', 'rajasthan_forts', 'cst_mumbai', 'ho_citadel', 'philippine_churches', 'shirakami', 'jomon_sites', 'canadian_rockies', 'pimachiowin_aki', 'vega_archipelago', 'frank_lloyd_wright', 'kluane', 'gulf_of_california', 'cuba_coffee', 'rio_abiseo', 'cordoba_jesuit', 'jesuit_guarani', 'ajina_tepa', 'zarafshan_corridor', 'letoon', 'sagalassos', 'colchic_rainforests', 'saba_landmarks', 'sierra_gorda_missions', 'akhsikath', 'tusi_sites', 'fars_sassanid', 'bahrain_pearling', 'great_spa_towns', 'leeds_castle', 'st_james_palace', 'sacri_monti', 'kosovo_monuments', 'piedmont_vineyards', 'classical_weimar', 'thungyai', 'dong_phayayen',   // places, 5 Sep
     'volta_forts', 'bassari_country', 'w_arly_pendjari', 'atsinanana', 'huascaran', 'kinabalu', 'trang_an', 'saryarka', 'hiraizumi', 'fujian_tulou', 'manu', 'portobelo', 'hospicio_cabanas', 'lima_centre', 'pampulha', 'ming_tombs', 'koguryo_tombs', 'meiji_industry', 'xanthos', 'sumela', 'ahwar', 'westminster_abbey', 'dover_castle', 'jurassic_coast', 'dacian_fortresses', 'churches_of_peace', 'tasmanian_wilderness',   // Chronicarum places, 5 Sep
     'goree', 'naqa', 'tiebele', 'niokolo_koba', 'dinosaur_provincial_park', 'selous', 'humberstone', 'ani', 'pergamon', 'pamukkale', 'susa', 'bhimbetka', 'macau_centre', 'altamira', 'vezere', 'bern_old_city', 'potsdam_palaces', 'orkney_neolithic', 'kotor', 'shirakawa_go', 'kii_routes',   // Chronicarum places 5 Sep
@@ -1731,6 +1739,8 @@ const SCALE = {
           // seashore batch 1 — the tide's rise and fall along a whole stretch of coastline, km scale like estuary/lagoon/fjord
           'tide'],
   '4':   [
+          /* corpus review, 11 Nov — compact objects sized by their real diameter: a white dwarf is Earth-sized, a neutron star about 20 km, a brown dwarf Jupiter-sized, a sunspot tens of thousands of km */ 'neutron_star', 'pulsar',
+          /* corpus review, 11 Nov — sized by diameter to the nearest power of ten (Earth 1.3×10⁷ m, Jupiter 1.4×10⁸ m, Pluto 2.4×10⁶ m); they had all been filed under the 10⁹ ceiling */ 'phobos', 'deimos',
     /* places batch 45, 5 Sep. 82,388 ha of ice and rock */
     'jungfrau_aletsch',
     /* places batch 41, 5 Sep. 70,176 ha of city and lagoon */
@@ -1792,6 +1802,8 @@ const SCALE = {
           // aviation batch 1 — a whole airport site, several kilometres across, the same bucket as the LHC ring
           'airport'],
   '6':   [
+          /* corpus review, 11 Nov — sized by diameter to the nearest power of ten (Earth 1.3×10⁷ m, Jupiter 1.4×10⁸ m, Pluto 2.4×10⁶ m); they had all been filed under the 10⁹ ceiling */ 'pluto', 'europa', 'enceladus', 'mimas', 'titania', 'oberon', 'miranda', 'triton', 'charon', 'ceres', 'eris', 'dwarf_planet',
+          /* corpus review, 11 Nov — missing basics added */ 'jet_stream', 'ice_sheet',
     /* places batch 40, 5 Sep. 2,820 km of triangulation */
     'struve_arc',
     /* places batch 13, 5 Sep. 1,776 km of canal and about 40,000 km of road */
@@ -1816,7 +1828,7 @@ const SCALE = {
           'united_states', 'yemen', 'zambia', 'zimbabwe',
           // A0b scale-fill batch, 2 Sep — closing the 2166-element scale.json gap, classified by 15 parallel research passes against this file's existing conventions
           'silk_road', 'continent', 'ocean', 'equator', 'hemisphere', 'latitude', 'longitude', 'prime_meridian', 'time_zone', 'tropic_of_cancer', 'tropic_of_capricorn', 'steppe', 'savanna', 'border', 'country', 'nation_state', 'population_density', 'photic_zone', 'aphotic_zone', 'twilight_zone', 'pelagic_zone', 'benthic_zone', 'upwelling', 'epipelagic_zone', 'mesopelagic_zone', 'bathypelagic_zone', 'abyssopelagic_zone', 'abyssal_plain', 'trade_winds', 'thermocline', 'ocean_current', 'coriolis_effect', 'gyre', 'el_nino', 'thermohaline_circulation', 'great_pacific_garbage_patch', 'permafrost', 'antarctica', 'arctic', 'china', 'japan', 'india', 'mongolia', 'kazakhstan', 'nepal', 'indonesia', 'philippines', 'thailand', 'cambodia', 'laos', 'vietnam', 'malaysia', 'north_korea', 'south_korea', 'afghanistan', 'uzbekistan', 'pakistan', 'bangladesh', 'australia', 'new_zealand', 'papua_new_guinea', 'halleys_comet', 'cultural_hearth', 'culture_region', 'sahara', 'nile', 'amazon_river', 'andes', 'alps', 'mediterranean_sea', 'argentina', 'brazil', 'chile', 'peru', 'colombia', 'venezuela', 'bolivia', 'ecuador', 'paraguay', 'uruguay', 'nigeria', 'egypt', 'south_africa', 'kenya', 'ethiopia', 'morocco', 'algeria', 'ghana', 'tanzania', 'senegal', 'democratic_republic_of_the_congo', 'madagascar', 'france', 'germany', 'italy', 'spain', 'united_kingdom', 'poland', 'greece', 'sweden', 'turkiye', 'saudi_arabia', 'iran',
-          'primordial_soup', 'planetesimal', 'protoplanet', 'moon', 'comet', 'asteroid', 'storm', 'hurricane', 'blizzard', 'sky', 'sea',
+          'primordial_soup', 'protoplanet', 'comet', 'asteroid', 'storm', 'hurricane', 'blizzard', 'sky', 'sea',
           // did you know batch 1 — thousands of kilometres long, same regional scale
           'great_wall',
           // weather batch 2 — storm-system and climate-zone scale, same as storm/hurricane above
@@ -1845,36 +1857,32 @@ const SCALE = {
           /* unblocking-nouns wave, 2 Sep */
           'apparent_magnitude', 'asteroid_belt', 'astronomical_unit', 'binary_star', 'coronal_mass_ejection', 'cosmic_inflation', 'escape_velocity', 'event_horizon',
           'gravitational_lensing', 'gravitational_wave', 'gravity', 'heliosphere', 'hubbles_law', 'light_year', 'magnetosphere', 'main_sequence',
-          'observable_universe', 'orbit', 'parsec', 'planetary_nebula', 'red_dwarf', 'solar_system', 'stellar_classification', 'sunspot',
-          'supernova_remnant',
+          'observable_universe', 'orbit', 'parsec', 'planetary_nebula', 'red_dwarf', 'solar_system', 'stellar_classification', 'supernova_remnant',
           /* microbio wave, 2 Sep */
           'big_bang', 'universe',
           // A0b scale-fill batch, 2 Sep — closing the 2166-element scale.json gap, classified by 15 parallel research passes against this file's existing conventions
           'bok_globule', 'cometary_globule', 'herbig_haro_object', 't_tauri_star', 'herbig_ae_be_star', 'fu_orionis_star', 'sirius', 'betelgeuse', 'rigel', 'deneb', 'vega', 'altair', 'arcturus', 'procyon', 'aldebaran', 'regulus', 'antares', 'capella', 'castor', 'pollux', 'polaris', 'cigar_galaxy', 'whirlpool_galaxy', 'ring_nebula', 'alpha_centauri', 'proxima_centauri', 'virgo_cluster',
-          'star', 'red_giant', 'white_dwarf', 'neutron_star', 'black_hole', 'supernova', 'nebula', 'planet', 'gas_giant', 'ice_giant', 'plasma', 'sun',
+          'star', 'red_giant', 'black_hole', 'supernova', 'nebula', 'plasma', 'sun',
           // eyewitness universe batch 1 — everything astronomical/cosmological this
           // scale system has no bucket bigger than: stars, nebulae, galaxies, and
           // the universe's own large-scale abstractions all share this ceiling,
           // same as star/nebula/black_hole/planet above
-          'protostar', 'brown_dwarf', 'supergiant', 'pulsar', 'crab_nebula',
+          'protostar', 'supergiant', 'crab_nebula',
           'galaxy', 'milky_way', 'andromeda_galaxy', 'spiral_galaxy', 'elliptical_galaxy',
           'barred_spiral_galaxy', 'lenticular_galaxy', 'local_group', 'galaxy_cluster',
           'supercluster', 'supermassive_black_hole', 'accretion_disc', 'active_galaxy',
-          'quasar', 'seyfert_galaxy', 'radio_galaxy', 'exoplanet', 'cepheid_variable',
+          'quasar', 'seyfert_galaxy', 'radio_galaxy', 'cepheid_variable',
           'spectrum', 'redshift', 'dark_energy', 'dark_matter', 'cosmic_microwave_background',
           'globular_cluster', 'orion_nebula', 'pleiades',
           // planets batch 1 — the Sun's own planets, real moons, and ring systems,
           // same ceiling scale as planet/gas_giant/ice_giant above
-          'mercury_planet', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus_planet',
-          'neptune', 'pluto', 'io', 'europa', 'ganymede', 'callisto', 'saturn_rings',
-          'cassini_division', 'titan', 'enceladus', 'mimas', 'titania', 'oberon',
-          'miranda', 'triton', 'phobos', 'deimos', 'charon', 'ceres', 'eris', 'great_red_spot',
+          'saturn_rings',
           // planets batch 2 — Neptune's own vanished storm, same ceiling as great_red_spot;
           // dwarf_planet is the taxonomic sibling of pluto/ceres/eris above; kuiper_belt and
           // oort_cloud are vast regions, same "big cosmic thing" tier as nebula/galaxy; solar_wind
           // is the Sun's own plasma in motion, same tier as plasma/sun; tidal_locking isn't a size
           // claim, filed at the real moons' own tier
-          'great_dark_spot', 'dwarf_planet', 'kuiper_belt', 'oort_cloud', 'solar_wind', 'tidal_locking'],
+          'kuiper_belt', 'oort_cloud', 'solar_wind'],
   '5':   [
     /* places batch 44, 5 Sep. a delta of 5,165 km2 */
     'danube_delta',
@@ -1912,11 +1920,18 @@ const SCALE = {
           'atlantis', 'chicxulub_crater', 'sri_lanka', 'maldives', 'taiwan', 'brunei', 'fiji', 'samoa', 'portugal', 'netherlands', 'switzerland', 'ireland', 'austria', 'israel', 'lebanon',
           ],
   '7':   [
+          /* corpus review, 11 Nov — compact objects sized by their real diameter: a white dwarf is Earth-sized, a neutron star about 20 km, a brown dwarf Jupiter-sized, a sunspot tens of thousands of km */ 'white_dwarf', 'sunspot',
+          /* corpus review, 11 Nov — sized by diameter to the nearest power of ten (Earth 1.3×10⁷ m, Jupiter 1.4×10⁸ m, Pluto 2.4×10⁶ m); they had all been filed under the 10⁹ ceiling */ 'mercury_planet', 'venus', 'earth', 'mars', 'io', 'ganymede', 'callisto', 'titan', 'great_red_spot', 'great_dark_spot', 'cassini_division', 'moon', 'planet', 'tidal_locking',
           /* time as a period, 4 Sep — a span of history, not an object */
           'season', 'era', 'past', 'future', 'prehistory', 'bronze_age', 'iron_age', 'antiquity', 'middle_ages', 'renaissance', 'modernity', 'infinity',// A0b scale-fill batch, 2 Sep — closing the 2166-element scale.json gap, classified by 15 parallel research passes against this file's existing conventions
           /* unblocking-nouns wave, 2 Sep */
           'soviet_union',
           'russia',
+          ],
+
+  '8':   [
+          /* corpus review, 11 Nov — compact objects sized by their real diameter: a white dwarf is Earth-sized, a neutron star about 20 km, a brown dwarf Jupiter-sized, a sunspot tens of thousands of km */ 'brown_dwarf',
+          /* corpus review, 11 Nov — sized by diameter to the nearest power of ten (Earth 1.3×10⁷ m, Jupiter 1.4×10⁸ m, Pluto 2.4×10⁶ m); they had all been filed under the 10⁹ ceiling */ 'jupiter', 'saturn', 'uranus_planet', 'neptune', 'gas_giant', 'ice_giant', 'exoplanet',
           ],
 
 };

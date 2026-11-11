@@ -2534,19 +2534,6 @@
         "shackle"
       ]
     },
-    "chainmail": {
-      "src": "https://en.wikipedia.org/wiki/Mail_(armour)",
-      "needs": [
-        "iron_wire|steel_wire",
-        "mandrel",
-        "ring",
-        "rivet",
-        "punch",
-        "link",
-        "leather_edging",
-        "padding|gambeson"
-      ]
-    },
     "chair": {
       "src": "https://en.wikipedia.org/wiki/Chair",
       "needs": [
@@ -3585,7 +3572,6 @@
         "pier",
         "arch",
         "mortar",
-        "stair",
         "drainage"
       ]
     },
@@ -9513,7 +9499,6 @@
         "state_room",
         "courtyard",
         "colonnade",
-        "stair",
         "roof",
         "window",
         "glass",
@@ -12468,17 +12453,6 @@
         "cartoon|pattern"
       ]
     },
-    "stair": {
-      "src": "https://en.wikipedia.org/wiki/Stairs",
-      "note": "The stringer carries the load; the tread and riser are the steps.",
-      "needs": [
-        "tread",
-        "riser",
-        "stringer",
-        "newel",
-        "handrail"
-      ]
-    },
     "stairs": {
       "src": "https://en.wikipedia.org/wiki/Stairs",
       "needs": [
@@ -13670,7 +13644,6 @@
         "buttress",
         "floor",
         "joist",
-        "stair",
         "window",
         "roof",
         "parapet",
@@ -14436,7 +14409,6 @@
       "note": "The passage that lets a full amphitheatre empty in minutes.",
       "needs": [
         "vault",
-        "stair",
         "arch",
         "seat"
       ]

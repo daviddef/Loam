@@ -6039,6 +6039,39 @@
         "mechanism": "Most cases resolve. The toxic phase begins after an apparent recovery, and the jaundice it is named for is the liver failing.",
         "src": "https://en.wikipedia.org/wiki/Yellow_fever"
       }
+    ],
+    "radon_gas": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "cancer",
+        "onset": "cumulative",
+        "mechanism": "Breathed in with closed-room air. The gas and its radioactive decay products irradiate the lining of the lungs, and ionizing radiation forms free radicals that damage cells. The harm adds up over years of living above it, and the gas gives no sign that it is there.",
+        "src": "https://en.wikipedia.org/wiki/Radon",
+        "carcinogen": true,
+        "iarc": 1,
+        "srcIarc": "https://en.wikipedia.org/wiki/IARC_group_1"
+      }
+    ],
+    "potassium_water": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "thermal_burn",
+        "onset": "acute",
+        "mechanism": "The reaction with water gives off enough heat to ignite the hydrogen it releases, so skin meets fire and strong alkali at once.",
+        "src": "https://en.wikipedia.org/wiki/Potassium"
+      }
+    ],
+    "magnesium_burns": [
+      {
+        "valence": "harm",
+        "route": "thermal",
+        "outcome": "thermal_burn",
+        "onset": "acute",
+        "mechanism": "The metal burns at about 3,100 °C, far hotter than an ordinary fire, so whatever it touches or has ignited is burned at once.",
+        "src": "https://en.wikipedia.org/wiki/Magnesium"
+      }
     ]
   },
   "verbs": {

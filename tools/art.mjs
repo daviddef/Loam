@@ -15848,12 +15848,6 @@ def('cochlea', () => {                                          // a fluid spira
       return C(n(30 + rad * Math.cos(ang)), n(30 + rad * Math.sin(ang)), 1.4, 'hi'); }),  // hair cells, lining it
   ];
 });
-def('tympanic_membrane', () => [                                // a thin cone, passing vibration on to three tiny bones
-  P('M14 14 L46 14 L30 40 Z', 'hi'),                            // the eardrum itself
-  S('M30 40 L38 38', 'ik', 1.6),                                // malleus
-  C(43, 36, 2.4, 'bs'), S('M45 36 L50 33', 'ik', 1.4),          // incus
-  C(53, 31, 2, 'lo'),                                            // stapes
-]);
 def('vestibular_system', () => [                                // three canals, near right angles, sensing every axis of tilt
   S('M14 30 A14 14 0 1 1 30 44', 'bs', 2.6),
   ['g', 60, 30, 30, [S('M14 30 A14 14 0 1 1 30 44', 'hi', 2.2)]],
@@ -20094,10 +20088,6 @@ def('trebuchet', () => [                                         // a pivoting s
   S('M10 20 L50 32', 'bs', 3),
   E(14, 18, 6, 6, 'hi'),
   S('M50 32 Q54 40 50 46', 'ik', 1.6),
-]);
-def('chainmail', () => [                                         // interlocking iron rings, first woven by the Celts around the 3rd century BC
-  ...[0, 1, 2, 3].flatMap(row => [0, 1, 2, 3].map(col =>
-    ring(row % 2 === col % 2 ? 'bs' : 'lo', 14 + col * 11, 14 + row * 11, 5, 1.6))),
 ]);
 def('rapier', () => [                                            // a slender civilian thrusting sword, born in Spain and Italy for the duel
   S('M30 6 L30 40', 'bs', 1.8),
@@ -34357,14 +34347,6 @@ def('honeydew_melon', () => [                                    // smooth rind,
   C(30, 50, 2, 'gh'),
   ring('gh', 30, 32, 23.5, 1),                                   // size tells you nothing
 ]);
-def('hop', () => [                                               // the cone, bract over bract, lupulin inside
-  S('M30 4 L30 13', 'plant-lo', 2),
-  ...[0, 1, 2, 3, 4, 5].map(i => {
-    const y = 13 + i * 6.4, w = 15 - i * 2.3;
-    return P(`M${n(30 - w)} ${y} Q30 ${n(y + 7)} ${n(30 + w)} ${y} Q30 ${n(y - 4)} ${n(30 - w)} ${y} Z`, i % 2 ? 'bs' : 'hi');
-  }),
-  ...[[26, 24], [34, 29], [28, 35], [35, 39], [30, 45]].map(([x, y]) => C(x, y, 1.7, 'lo')),
-]);
 def('horseradish', () => [                                       // nothing happens until you cut it
   P('M22 20 L38 20 L33 48 Q30 55 27 48 Z', 'hi'),
   ...[27, 33, 39].map(y => S(`M${n(22 + (y - 20) * .18)} ${y} L${n(38 - (y - 20) * .18)} ${y}`, 'lo', 1)),
@@ -45539,6 +45521,174 @@ const FAMILY = {
     return [shape, ...pts.map((p, i) => C(p[0], p[1], 4, i % 2 ? 'bs' : 'hi'))];
   },
 };
+
+/* ── thirty-three things the corpus review found missing, 11 Nov ──────────
+ * Physics ideas are drawn as the situation that shows them, not as the
+ * equation: a cart stopping while the ball does not, a ball at the top of a
+ * ledge, waves through a gap. Units are drawn as the thing they measure. */
+const flake = (x, y) => [S(`M${x - 4} ${y} L${x + 4} ${y}`, 'hi', 1.2),
+                         S(`M${n(x - 2)} ${n(y - 3.5)} L${n(x + 2)} ${n(y + 3.5)}`, 'hi', 1.2),
+                         S(`M${n(x + 2)} ${n(y - 3.5)} L${n(x - 2)} ${n(y + 3.5)}`, 'hi', 1.2)];
+const shellDots = (count, rad, r, size = 2.6) => Array.from({ length: count }, (_, i) => {
+  const a = (i * 2 * Math.PI) / count - Math.PI / 2;
+  return C(n(30 + rad * Math.cos(a)), n(30 + rad * Math.sin(a)), size, r);
+});
+const drop = (x, y, s, r) =>
+  P(`M${x} ${n(y - 8 * s)} Q${n(x + 7 * s)} ${n(y + 2 * s)} ${x} ${n(y + 7 * s)} Q${n(x - 7 * s)} ${n(y + 2 * s)} ${x} ${n(y - 8 * s)} Z`, r);
+
+def('radon', () => [                                              // denser than air, so it pools where the floor is, and has no smell to tell you
+  P('M8 14 L52 14 L52 50 L8 50 Z', 'lo'),
+  S('M8 14 L52 14', 'ik', 2),
+  ...granules('hi', 16, 311, [12, 38, 48, 47]),
+  S('M30 50 L30 43 Q25 37 30 31 Q35 25 30 19', 'bs', 1.8),         // up through the crack in the slab
+  S('M8 50 L52 50', 'ik', 2.4)]);
+def('tennessine', () => [                                         // seven in the outer shell: a halogen, if anything lived long enough to say
+  ring('gh', 30, 30, 8, 1.2), ring('gh', 30, 30, 15, 1.2), ring('lo', 30, 30, 22, 1.6),
+  C(30, 30, 4, 'bs'), ...shellDots(7, 22, 'hi')]);
+def('oganesson', () => [                                          // eight, the shell closed: a noble gas that lasts 0.7 milliseconds
+  ring('gh', 30, 30, 8, 1.2), ring('gh', 30, 30, 15, 1.2), ring('lo', 30, 30, 22, 1.6),
+  C(30, 30, 5, 'bs'), ...shellDots(8, 22, 'hi'), ring('ik', 30, 30, 27, .9)]);
+def('inertia', () => [                                            // the cart stops; the ball does not
+  S('M4 48 L56 48', 'ik', 2),
+  P('M6 36 L26 36 L26 45 L6 45 Z', 'lo'), C(12, 47, 3.2, 'bs'), C(22, 47, 3.2, 'bs'),
+  S('M30 30 L30 48', 'ik', 3.4),                                  // the wall
+  S('M22 33 Q28 14 40 22', 'gh', 1.4), C(40, 22, 5, 'bs'),        // and over the top it goes
+  S('M46 23 L52 25', 'ik', 1.8), P('M50 21 L57 26 L50 29 Z', 'ik')]);
+def('torque', () => [                                             // not the push: the push, and how far from the pivot it lands
+  S('M16 42 L50 42', 'bs', 5),
+  C(16, 42, 6, 'lo'), C(16, 42, 2, 'ik'),
+  S('M50 42 L50 16', 'ik', 2), P('M45 20 L50 11 L55 20 Z', 'ik'),
+  S('M8 34 A10 10 0 0 1 22 31', 'hi', 2.2), P('M20 26 L26 32 L18 34 Z', 'hi')]);
+def('wavelength', () => [                                         // crest to crest
+  S('M2 36 Q10 14 18 36 Q26 58 34 36 Q42 14 50 36 Q58 58 62 40', 'bs', 2.6),
+  S('M10 10 L42 10', 'ik', 1.6), S('M10 6 L10 14', 'ik', 1.6), S('M42 6 L42 14', 'ik', 1.6),
+  S('M10 14 L10 26', 'gh', 1), S('M42 14 L42 26', 'gh', 1)]);
+def('kinetic_energy', () => [                                     // what it has because it is going
+  C(9, 32, 3, 'gh'), C(19, 32, 5, 'lo'), C(33, 32, 8, 'bs'), C(30, 29, 2.6, 'hi'),
+  S('M44 32 L52 32', 'ik', 2), P('M50 27 L58 32 L50 37 Z', 'ik'),
+  S('M4 46 L56 46', 'gh', 1.2)]);
+def('potential_energy', () => [                                   // all of it still to come
+  P('M2 26 L32 26 L32 52 L2 52 Z', 'lo'), S('M2 26 L32 26', 'ik', 2),
+  C(26, 19, 6.5, 'bs'), S('M40 24 L40 44', 'gh', 1.4), P('M36 42 L44 42 L40 50 Z', 'ik'),
+  S('M32 52 L58 52', 'ik', 2)]);
+def('absolute_zero', () => [                                      // the floor of the scale, and nothing gets down to it
+  P('M26 6 L34 6 L34 38 L26 38 Z', 'lo'), C(30, 46, 9, 'bs'), P('M28 40 L32 40 L32 44 L28 44 Z', 'hi'),
+  ...[10, 18, 26, 34].map(y => S(`M36 ${y} L42 ${y}`, 'ik', 1.4)),
+  ...flake(12, 16), ...flake(49, 40), ...flake(12, 44),
+  S('M16 58 L44 58', 'ik', 2.4)]);
+def('doppler_effect', () => [                                     // crowded ahead of the source, stretched behind it
+  ring('hi', 22, 30, 17, 1.4), ring('hi', 28, 30, 12, 1.4), ring('hi', 34, 30, 7, 1.4),
+  C(41, 30, 4, 'bs'), S('M47 30 L55 30', 'ik', 1.8), P('M53 26 L59 30 L53 34 Z', 'ik')]);
+def('diffraction', () => [                                        // through a gap it stops being a line and starts being a spread
+  P('M26 4 L32 4 L32 24 L26 24 Z', 'lo'), P('M26 36 L32 36 L32 56 L26 56 Z', 'lo'),
+  S('M6 6 L6 54', 'bs', 1.6), S('M14 6 L14 54', 'bs', 1.6),
+  S('M36 21.3 A10 10 0 0 1 36 38.7', 'hi', 1.8), S('M40 14.4 A18 18 0 0 1 40 45.6', 'hi', 1.8),
+  S('M44 7.5 A26 26 0 0 1 44 52.5', 'hi', 1.8)]);
+def('ohms_law', () => [                                           // the triangle everyone draws on the margin: cover one, read the other two
+  P('M30 6 L55 51 L5 51 Z', 'lo'), S('M30 6 L55 51 L5 51 Z', 'ik', 1.6),
+  S('M17 29 L43 29', 'ik', 1.6), S('M30 29 L30 51', 'ik', 1.6),
+  C(30, 19, 2.8, 'hi'), C(21, 41, 2.8, 'bs'), C(39, 41, 2.8, 'bs')]);
+def('maxwells_equations', () => [                                 // an electric wave and a magnetic one, riding each other, which is what light is
+  S('M2 32 L54 32', 'ik', 1.2), P('M52 28 L59 32 L52 36 Z', 'ik'),
+  S('M4 32 Q11 8 18 32 Q25 56 32 32 Q39 8 46 32', 'bs', 2.6),
+  S('M4 32 Q11 25 18 32 Q25 39 32 32 Q39 25 46 32', 'hi', 1.8)]);
+def('ideal_gas_law', () => [                                      // three knobs on one gas, and the fourth moves when you turn any of them
+  P('M14 22 L46 22 L46 52 L14 52 Z', 'lo'), P('M16 14 L44 14 L44 22 L16 22 Z', 'bs'), S('M30 4 L30 14', 'ik', 3),
+  ...granules('hi', 12, 733, [18, 26, 42, 48]), S('M14 22 L14 52 L46 52 L46 22', 'ik', 1.6)]);
+def('conservation_of_energy', () => [                             // it swings down and comes back up to exactly where it began
+  S('M2 36 L58 36', 'gh', 1), C(30, 8, 2.4, 'ik'),
+  S('M30 8 L7 36', 'gh', 1), S('M30 8 L53 36', 'gh', 1),
+  S('M7 36 Q30 62 53 36', 'gh', 1.2),
+  C(7, 36, 5, 'hi'), C(53, 36, 5, 'hi'), S('M30 8 L30 44', 'ik', 1.2), C(30, 46, 5.5, 'bs')]);
+def('software', () => [                                           // instructions, with indentation
+  P('M5 8 L55 8 L55 52 L5 52 Z', 'lo'), P('M5 8 L55 8 L55 16 L5 16 Z', 'bs'),
+  C(10, 12, 1.6, 'hi'), C(15, 12, 1.6, 'hi'), C(20, 12, 1.6, 'hi'),
+  S('M10 24 L30 24', 'hi', 2), S('M16 31 L42 31', 'hi', 2), S('M16 38 L34 38', 'hi', 2), S('M10 45 L24 45', 'hi', 2)]);
+def('email', () => [                                              // a letter that waits for you on someone else's machine
+  P('M6 18 L54 18 L54 50 L6 50 Z', 'lo'), S('M6 18 L30 38 L54 18', 'ik', 2), S('M6 50 L22 32 M54 50 L38 32', 'gh', 1.2),
+  S('M20 11 Q30 4 40 11', 'hi', 1.8), S('M24 14 Q30 9 36 14', 'hi', 1.8), C(30, 17, 1.6, 'hi')]);
+def('cryptography', () => [                                       // a cipher wheel: two alphabets on two discs, one slid along against the other
+  C(30, 30, 26, 'lo'), ring('hi', 30, 30, 26, 1.4),
+  ...Array.from({ length: 24 }, (_, i) => { const a = (i * Math.PI) / 12; return S(`M${n(30 + 22 * Math.sin(a))} ${n(30 - 22 * Math.cos(a))} L${n(30 + 25 * Math.sin(a))} ${n(30 - 25 * Math.cos(a))}`, 'hi', 1.3); }),
+  C(30, 30, 17, 'bs'),
+  ...Array.from({ length: 24 }, (_, i) => { const a = (i * Math.PI) / 12 + 0.26; return S(`M${n(30 + 14 * Math.sin(a))} ${n(30 - 14 * Math.cos(a))} L${n(30 + 17 * Math.sin(a))} ${n(30 - 17 * Math.cos(a))}`, 'ik', 1.2); }),
+  C(30, 30, 3.4, 'ik'), P('M27 2 L33 2 L30 9 Z', 'ik')]);
+def('beach', () => [                                              // loose stuff left where the water stopped
+  P('M0 6 L60 6 L60 24 Q40 29 22 22 Q10 18 0 22 Z', 'bs'),
+  P('M0 22 Q10 18 22 22 Q40 29 60 24 L60 56 L0 56 Z', 'hi'),
+  S('M0 22 Q10 18 22 22 Q40 29 60 24', 'ik', 1.4),
+  ...granules('lo', 12, 419, [4, 32, 56, 52]), P('M42 44 Q47 38 52 44 Z', 'lo')]);
+def('jet_stream', () => [                                         // a narrow river of air, high above everything, always running the same way
+  P('M-8 66 Q30 34 68 66 Z', 'lo'),
+  S('M2 26 Q30 8 58 26', 'bs', 4.6), S('M7 34 Q30 18 53 34', 'hi', 2.4), P('M51 19 L60 29 L49 31 Z', 'bs')]);
+def('ice_sheet', () => [                                          // a continent under a dome of ice, calving at the edges
+  P('M0 46 L60 46 L60 56 L0 56 Z', 'lo'), P('M3 46 Q30 -2 57 46 Z', 'hi'),
+  S('M26 30 L30 38 M36 26 L34 36 M18 38 L24 44', 'gh', 1.2),
+  P('M0 46 L5 46 L5 52 L0 52 Z', 'bs'), P('M55 46 L60 46 L60 53 L55 53 Z', 'bs')]);
+def('humidity', () => [                                           // how much of the air is water you cannot see
+  drop(16, 18, 1.2, 'bs'), drop(40, 28, 1.6, 'bs'), drop(20, 42, .9, 'bs'), drop(48, 12, .7, 'hi'),
+  ...granules('hi', 10, 611, [6, 6, 54, 54]), S('M4 56 L56 56', 'gh', 1)]);
+def('bog', () => [                                                // sour, still water, and moss laid down on itself for thousands of years
+  P('M4 46 L56 46 L56 55 L4 55 Z', 'ground'), P('M4 34 L56 34 L56 46 L4 46 Z', 'lo'),
+  S('M4 34 Q16 30 30 34 Q44 38 56 34', 'hi', 1.6),
+  ...[10, 18, 26, 34, 42, 50].map((x, i) => S(`M${x} 34 Q${x - 2} ${26 - (i % 3) * 3} ${x + 2} ${20 - (i % 3) * 4}`, 'bs', 2.4))]);
+def('ester', () => [                                              // an acid and an alcohol, with a water lost between them
+  S('M6 42 L16 36', 'ik', 2.2), S('M16 36 L28 42', 'ik', 2.2), S('M28 42 L40 36', 'ik', 2.2), S('M40 36 L52 42', 'ik', 2.2),
+  ...double([16, 36], [16, 20], 'ik'), C(16, 17, 5, '#FF0D0D'), C(28, 42, 5, '#FF0D0D')]);
+def('thiol', () => [                                              // an alcohol with the oxygen swapped for sulfur, and a nose that notices
+  S('M4 42 L14 36 L26 42 L38 36', 'ik', 2.2), S('M38 36 L46 42', 'ik', 2.2), S('M46 42 L54 34', 'ik', 2),
+  C(46, 42, 6.5, '#FFFF30'), C(54, 33, 3.4, '#FFFFFF')]);
+def('chloride', () => [                                           // chlorine with one electron more than it started with
+  C(30, 30, 14, '#1FF01F'), S('M23 30 L37 30', 'ik', 3), ring('gh', 30, 30, 22, 1), C(48.5, 17, 3, 'hi')]);
+def('knot', () => {                                               // a trefoil, the simplest knot that cannot be undone without cutting: three crossings, over and under in turn
+  const N = 120, pts = Array.from({ length: N }, (_, i) => {
+    const t = (i / N) * 2 * Math.PI;
+    return [30 + 8.6 * (Math.sin(t) + 2 * Math.sin(2 * t)) * 0.97, 30 + 8.6 * (Math.cos(t) - 2 * Math.cos(2 * t)) * 0.97 * -1];
+  });
+  const seg = (i, j) => `M${pts.slice(i, j + 1).map(q => n(q[0]) + ' ' + n(q[1])).join(' L')}`;
+  const loop = `M${pts.map(q => n(q[0]) + ' ' + n(q[1])).join(' L')} Z`;
+  const cross = [];                                                // find where the curve crosses itself
+  for (let i = 0; i < N; i++) for (let j = i + 3; j < N; j++) {
+    if (i === 0 && j >= N - 2) continue;
+    const [p1, p2, p3, p4] = [pts[i], pts[(i + 1) % N], pts[j], pts[(j + 1) % N]];
+    const d = (p2[0] - p1[0]) * (p4[1] - p3[1]) - (p2[1] - p1[1]) * (p4[0] - p3[0]);
+    if (!d) continue;
+    const u = ((p3[0] - p1[0]) * (p4[1] - p3[1]) - (p3[1] - p1[1]) * (p4[0] - p3[0])) / d;
+    const v = ((p3[0] - p1[0]) * (p2[1] - p1[1]) - (p3[1] - p1[1]) * (p2[0] - p1[0])) / d;
+    if (u >= 0 && u < 1 && v >= 0 && v < 1) cross.push(i, j);
+  }
+  const visits = [...new Set(cross)].sort((x, y) => x - y);        // six passes through three crossings
+  const over = visits.filter((_, k) => k % 2 === 0);              // alternate: over, under, over, under ...
+  const hop = idx => { const a = (idx - 6 + N) % N, b = a + 12; return b < N ? [seg(a, b)] : [seg(a, N - 1), seg(0, b - N)]; };
+  return [
+    S(loop, 'lo', 7.4), S(loop, 'bs', 4.8),
+    ...over.flatMap(idx => hop(idx).flatMap(d => [S(d, 'lo', 7.4), S(d, 'bs', 4.8)]))];
+});
+def('scroll', () => [                                             // writing you unroll one page at a time
+  P('M10 14 L50 14 L50 46 L10 46 Z', 'hi'), S('M16 24 L44 24', 'lo', 1.4), S('M16 31 L44 31', 'lo', 1.4), S('M16 38 L36 38', 'lo', 1.4),
+  P('M6 8 L54 8 L54 15 L6 15 Z', 'bs'), E(6, 11.5, 3, 4, 'lo'), E(54, 11.5, 3, 4, 'lo'),
+  P('M6 45 L54 45 L54 52 L6 52 Z', 'bs'), E(6, 48.5, 3, 4, 'lo'), E(54, 48.5, 3, 4, 'lo')]);
+def('central_heating', () => [                                    // the fire lives in one room and the warmth goes everywhere
+  P('M12 28 L48 28 L48 52 L12 52 Z', 'bs'), P('M6 30 L30 8 L54 30 Z', 'lo'),
+  P('M15 38 L26 38 L26 52 L15 52 Z', 'ik'), C(20.5, 47, 3, 'hi'),
+  S('M26 43 L36 43', 'hi', 2), P('M36 37 L46 37 L46 51 L36 51 Z', 'hi'), S('M39 38 L39 50 M43 38 L43 50', 'lo', 1.2)]);
+def('tonsil', () => [                                             // two lymph nodes beside the doorway, on guard
+  E(30, 30, 24, 22, 'lo'), P('M10 46 Q30 36 50 46 L50 52 L10 52 Z', 'hi'),
+  E(14, 32, 7, 10, 'bs'), E(46, 32, 7, 10, 'bs'),
+  P('M27 10 L33 10 L33 28 Q30 34 27 28 Z', 'hi')]);
+def('kelvin', () => [                                             // the same size of degree, started from the floor instead of from the freezing point
+  P('M8 6 L22 6 L22 54 L8 54 Z', 'lo'), P('M38 6 L52 6 L52 54 L38 54 Z', 'gh'),
+  ...[0, 1, 2, 3, 4, 5, 6, 7].map(i => S(`M22 ${54 - i * 6} L${i === 0 ? 30 : 27} ${54 - i * 6}`, 'ik', i === 0 ? 2.4 : 1.4)),
+  ...[0, 1, 2, 3, 4, 5, 6, 7].map(i => S(`M38 ${48 - i * 6} L${i === 1 ? 30 : 33} ${48 - i * 6}`, 'ik', 1.2)),
+  C(15, 48, 2.6, 'hi'), S('M22 54 L38 54', 'gh', 1.2)]);
+def('litre', () => [                                              // ten centimetres on a side, which is why it holds exactly a kilogram of water
+  P('M30 6 L52 17 L30 28 L8 17 Z', 'hi'), P('M8 17 L30 28 L30 54 L8 43 Z', 'bs'), P('M52 17 L30 28 L30 54 L52 43 Z', 'lo'),
+  S('M30 6 L52 17 L52 43 L30 54 L8 43 L8 17 Z M30 28 L30 54 M8 17 L30 28 L52 17', 'ik', 1.4),
+  S('M8 31 L30 42 L52 31', 'gh', 1.2)]);
+def('hour', () => [                                               // a twenty-fourth of a day, one wedge of twenty-four on the dial
+  ring('bs', 30, 30, 23, 3.2), P('M30 30 L30 7 A23 23 0 0 1 41.5 10 Z', 'hi'),
+  ...Array.from({ length: 12 }, (_, i) => { const a = (i * Math.PI) / 6; return S(`M${n(30 + 17 * Math.sin(a))} ${n(30 - 17 * Math.cos(a))} L${n(30 + 20 * Math.sin(a))} ${n(30 - 20 * Math.cos(a))}`, 'ik', 1.4); }),
+  S('M30 30 L30 14', 'ik', 2.6), S('M30 30 L38 38', 'ik', 1.6), C(30, 30, 2, 'ik')]);
 
 /* ── build ────────────────────────────────────────────────────────────────*/
 

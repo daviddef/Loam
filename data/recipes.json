@@ -10776,7 +10776,7 @@
       "carmine",
       "cloth"
     ],
-    "out": "clothing",
+    "out": "dyed_cloth",
     "why": "A dye this bright still needs a mordant to stay put. The mordant forms a coordination complex with the dye and that complex attaches to the fibre — heavier, and bonded, so the colour survives washing.",
     "src": "https://en.wikipedia.org/wiki/Mordant",
     "verified": true
@@ -18711,8 +18711,8 @@
   },
   {
     "in": [
-      "open_pit_mining",
-      "copper"
+      "mining",
+      "ore"
     ],
     "out": "block_caving",
     "why": "Block caving mines a massive, steeply dipping, typically low-grade orebody with high friability: an undercut with haulage access is driven beneath it, drawbells are excavated for the caving rock to fall into, and the orebody is drilled and blasted above the undercut.",
@@ -19179,7 +19179,7 @@
   },
   {
     "in": [
-      "iron",
+      "cable",
       "steel"
     ],
     "out": "elevator",
@@ -22329,8 +22329,8 @@
   },
   {
     "in": [
-      "iron",
-      "human"
+      "gladiator",
+      "iron"
     ],
     "out": "trident",
     "why": "Roman gladiators called retiarii fought with a trident and a net, pitted against an opponent called a secutor.",
@@ -25229,7 +25229,7 @@
   },
   {
     "in": [
-      "flower",
+      "bird",
       "feather"
     ],
     "out": "peacock",
@@ -30122,8 +30122,8 @@
   },
   {
     "in": [
-      "mud",
-      "reef"
+      "clam",
+      "convergent_evolution"
     ],
     "out": "lampshell",
     "why": "A lampshell's two valves are dorsal and ventral, not left-right like a bivalve mollusc's, and it feeds through a U-shaped lophophore rather than gills. The clam-like shape evolved independently in Brachiopoda — convergent evolution on an unrelated body plan.",
@@ -32317,8 +32317,8 @@
   },
   {
     "in": [
-      "rubber",
-      "steel"
+      "snow",
+      "tractor"
     ],
     "out": "snow_groomer",
     "why": "A tracked vehicle with a front blade and a rear tiller combs a ski slope into the ridged pattern called corduroy, winched by cable up gradients too steep to grip.",
@@ -32637,7 +32637,7 @@
   },
   {
     "in": [
-      "coin",
+      "delphi",
       "human"
     ],
     "out": "plutarch",
@@ -32747,8 +32747,8 @@
   },
   {
     "in": [
-      "cup",
-      "knife"
+      "faith",
+      "human"
     ],
     "out": "sartre",
     "why": "Sartre's classic example of 'bad faith' is a cafe waiter whose movements are a little too precise, too eager — overplaying the role of 'waiter' as if it were his fixed essence, to hide from himself that he remains radically free to be otherwise.",
@@ -32847,8 +32847,8 @@
   },
   {
     "in": [
-      "brain",
-      "human"
+      "russia",
+      "reason"
     ],
     "out": "ayn_rand",
     "why": "Having emigrated from Soviet Russia in 1926, Rand founded Objectivism, calling egoism 'the virtue of selfishness' and reason 'his only absolute' — condemning altruism as incompatible with human happiness.",
@@ -32907,7 +32907,7 @@
   },
   {
     "in": [
-      "cup",
+      "ethics",
       "human"
     ],
     "out": "levinas",
@@ -32937,7 +32937,7 @@
   },
   {
     "in": [
-      "mirror",
+      "death",
       "book"
     ],
     "out": "barthes",
@@ -33007,8 +33007,8 @@
   },
   {
     "in": [
-      "book",
-      "heart"
+      "justice",
+      "society"
     ],
     "out": "martha_nussbaum",
     "why": "Nussbaum's capabilities approach, developed with economist Amartya Sen, judges a society's justice not by wealth alone but by the real freedoms — including a full emotional life — each person has to flourish.",
@@ -34428,7 +34428,7 @@
   {
     "in": [
       "dividers",
-      "stone"
+      "geometry"
     ],
     "out": "circle",
     "why": "A compass does one geometric trick: fix one leg and swing the other, and the point traces every location the same distance from the centre — that fixed-distance rule is the actual definition of a circle, automated instead of laid out with a rope and a stake.",
@@ -37348,7 +37348,7 @@
   },
   {
     "in": [
-      "rope",
+      "basket",
       "steel"
     ],
     "out": "hoop",
@@ -42903,8 +42903,8 @@
   },
   {
     "in": [
-      "mirror",
-      "star"
+      "god",
+      "reason"
     ],
     "out": "anselm",
     "why": "Anselm's Ontological Argument defines God as 'that than which no greater can be conceived', then reasons that a being existing both in the mind and in reality is greater than one existing in the mind alone — so God must exist.",
@@ -43093,8 +43093,8 @@
   },
   {
     "in": [
-      "cloud",
-      "coin"
+      "hand",
+      "market"
     ],
     "out": "adam_smith",
     "why": "Smith argued that a person pursuing only their own gain is 'led by an invisible hand' to promote the interest of society more effectually than if they had set out to do so directly.",
@@ -43843,8 +43843,8 @@
   },
   {
     "in": [
-      "chalk",
-      "star"
+      "scaffolding",
+      "ceiling"
     ],
     "out": "michelangelo",
     "why": "From 1508 to 1512 Michelangelo worked from scaffolding to fresco the Sistine Chapel ceiling with over 300 figures, including the Creation of Adam.",
@@ -45736,7 +45736,7 @@
       "ear",
       "membrane"
     ],
-    "out": "tympanic_membrane",
+    "out": "eardrum",
     "why": "The eardrum is a thin, cone-shaped membrane separating the outer ear from the middle ear; it flexes with incoming sound pressure and transmits that vibration to the ossicles, the middle ear's chain of tiny bones.",
     "src": "https://en.wikipedia.org/wiki/Eardrum",
     "verified": true
@@ -46593,7 +46593,7 @@
   },
   {
     "in": [
-      "chainmail",
+      "chain_mail",
       "horse"
     ],
     "out": "cataphract",
@@ -46676,19 +46676,9 @@
       "chain",
       "iron"
     ],
-    "out": "chainmail",
+    "out": "chain_mail",
     "why": "Small iron rings linked ring-through-ring into a flexible mesh; the earliest surviving mail comes from the 3rd century BC Celtic Carpathian Basin, and Rome adopted the technology soon after.",
     "src": "https://en.wikipedia.org/wiki/Mail_(armour)",
-    "verified": true
-  },
-  {
-    "in": [
-      "chainmail",
-      "steel"
-    ],
-    "out": "plate_armor",
-    "why": "Shaped steel plates replaced mail piece by piece across 14th-15th century Europe, driven by thrusting poleaxes, estocs and halberds and by increasingly effective crossbows that mail alone could no longer stop.",
-    "src": "https://en.wikipedia.org/wiki/Plate_armour",
     "verified": true
   },
   {
@@ -46713,8 +46703,8 @@
   },
   {
     "in": [
-      "maple",
-      "steel"
+      "plate_armor",
+      "mace"
     ],
     "out": "war_hammer",
     "why": "Once swords and axes could no longer pierce plate armor, the war hammer's blunt head -- paired with a spike or beak on the reverse -- delivered concentrated impact that dented or stunned the wearer instead.",
@@ -47014,7 +47004,7 @@
   {
     "in": [
       "cannon",
-      "rocket_nozzle_alloy"
+      "rocket"
     ],
     "out": "mlrs",
     "why": "Swapping the cannon's single barrel for twelve rocket pods on a Bradley-derived tracked chassis lets one launcher blanket a square kilometer in one salvo — British troops in the 1991 Gulf War nicknamed it the 'grid square removal system.'",
@@ -47424,7 +47414,7 @@
   {
     "in": [
       "brain",
-      "chalk"
+      "dementia"
     ],
     "out": "alois_alzheimer",
     "why": "His November 1906 presentation on the disease in Tübingen drew almost no interest from the audience; it was his mentor Emil Kraepelin who gave the disease Alzheimer's name, in a 1910 psychiatric handbook.",
@@ -47873,8 +47863,8 @@
   },
   {
     "in": [
-      "boat",
-      "human"
+      "austria",
+      "personality_disorder"
     ],
     "out": "otto_kernberg",
     "why": "Otto Kernberg was born in Vienna in 1928; his Jewish family fled Austria for Chile after the 1939 Nazi annexation, and in 1959 he emigrated to the United States, where he built the object relations model of personality disorders.",
@@ -47893,8 +47883,8 @@
   },
   {
     "in": [
-      "hammer",
-      "human"
+      "borderline_personality_disorder",
+      "hospital"
     ],
     "out": "john_gunderson",
     "why": "John Gunderson published a seminal 1975 paper with Margaret Singer identifying borderline personality disorder as a distinct form of psychopathology, later led the DSM-IV personality disorders group, and founded McLean Hospital's Borderline Center.",
@@ -47923,8 +47913,8 @@
   },
   {
     "in": [
-      "brain",
-      "wheel"
+      "personality_disorder",
+      "journal"
     ],
     "out": "theodore_millon",
     "why": "Theodore Millon founded the Journal of Personality Disorders and served as first president of the International Society for the Study of Personality Disorders; his 1969 book Modern Psychopathology proposed a biosocial-learning theory of personality.",
@@ -47943,8 +47933,8 @@
   },
   {
     "in": [
-      "chain",
-      "human"
+      "patient",
+      "borderline_personality_disorder"
     ],
     "out": "mary_zanarini",
     "why": "Mary Zanarini created the McLean Study of Adult Development, following roughly 300 hospitalized borderline personality disorder patients for over a decade; contrary to earlier assumptions, most reached remission at follow-up.",
@@ -48033,7 +48023,7 @@
   },
   {
     "in": [
-      "rope",
+      "personality_disorder",
       "thomas_widiger"
     ],
     "out": "alternative_dsm5_model_for_personality_disorders",
@@ -48343,8 +48333,8 @@
   },
   {
     "in": [
-      "brain",
-      "toy"
+      "child",
+      "play"
     ],
     "out": "lev_vygotsky",
     "why": "Vygotsky treated make-believe play as a child's own zone of proximal development in action — the place a child first rehearses abilities beyond her current reach.",
@@ -49132,7 +49122,7 @@
   {
     "in": [
       "polyethylene",
-      "fetus"
+      "umbilical_cord"
     ],
     "out": "umbilical_cord_clamp",
     "why": "After the umbilical cord is clamped and cut, the newborn wears a plastic clip on the navel until the compressed cord tissue dries and seals; major bodies now recommend delaying clamping by a minute or more.",
@@ -49239,8 +49229,8 @@
   },
   {
     "in": [
-      "steel",
-      "sinew"
+      "scissors",
+      "steel"
     ],
     "out": "surgical_scissors",
     "why": "Surgical scissors specialise by task: Mayo scissors have semi-blunt, straight or curved blades for general-purpose cutting, while the lighter, longer-handled Metzenbaum scissors are built for cutting delicate tissue.",
@@ -72675,7 +72665,7 @@
       "flower",
       "wort"
     ],
-    "out": "hop",
+    "out": "hops",
     "why": "The hop is a female flower cone; boiled in the wort, its humulones isomerise into the iso-alpha acids that make beer bitter, which unboiled hops barely are.",
     "src": "https://en.wikipedia.org/wiki/Hops",
     "verified": true
@@ -102042,7 +102032,7 @@
       "timber",
       "brace"
     ],
-    "out": "stair",
+    "out": "stairs",
     "why": "A comfortable step pairs a rise between 150 and 220 mm with a going between 220 and 300 mm, because that is what matches a stride. Every step in a flight must be identical: a variation of a few millimetres is what people trip on.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Stairs"
@@ -103958,7 +103948,7 @@
       "muscle",
       "pharynx"
     ],
-    "out": "oesophagus",
+    "out": "esophagus",
     "why": "A ring of contraction travels its length at a few centimetres a second, driving the bolus ahead of it. Gravity helps and is not required, which is the point of the arrangement.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Esophagus"
@@ -104906,7 +104896,7 @@
       "hormone",
       "ovary"
     ],
-    "out": "oestrogen",
+    "out": "estrogen",
     "why": "It is made from testosterone by a single enzyme, in both sexes. Its withdrawal at menopause is why bone loss accelerates then, which is a skeletal consequence of a reproductive change.",
     "verified": true,
     "src": "https://en.wikipedia.org/wiki/Estrogen"
@@ -105079,7 +105069,7 @@
   },
   {
     "in": [
-      "oestrogen",
+      "estrogen",
       "ovulation"
     ],
     "out": "contraception",
@@ -105291,5 +105281,503 @@
     "why": "About 80% of the protein in cow's milk, named from the Latin for cheese. It is the half that sets; whey is the half that runs off.",
     "src": "https://en.wikipedia.org/wiki/Casein",
     "verified": true
+  },
+  {
+    "in": [
+      "radium"
+    ],
+    "verb": "wait",
+    "out": "radon",
+    "why": "Radon isotopes are the immediate decay products of radium isotopes: 222Rn, the most stable, has a half-life of 3.82 days and is a decay product of 226Ra, itself a decay product of 238U. It is a radioactive noble gas, colourless and odourless.",
+    "src": "https://en.wikipedia.org/wiki/Radon",
+    "verified": true
+  },
+  {
+    "in": [
+      "berkelium",
+      "calcium"
+    ],
+    "out": "tennessine",
+    "why": "249Bk + 48Ca → 297Ts* → 294Ts + 3n (1 event), or 293Ts + 4n (5 events). The Dubna–Oak Ridge team reported it on 9 April 2010; the atoms lasted tens or hundreds of milliseconds, and IUPAC credited the Russian–American team in December 2015.",
+    "src": "https://en.wikipedia.org/wiki/Tennessine",
+    "verified": true
+  },
+  {
+    "in": [
+      "californium",
+      "calcium"
+    ],
+    "out": "oganesson",
+    "why": "Californium-249 atoms hit by calcium-48 ions at Dubna: the first event took four months and a beam dose of 2.5×1019 calcium ions. Three, possibly four, nuclei of 294Og were detected in 2002 and 2005, and the half-life is 0.7 ms.",
+    "src": "https://en.wikipedia.org/wiki/Oganesson",
+    "verified": true
+  },
+  {
+    "in": [
+      "mass",
+      "force"
+    ],
+    "out": "inertia",
+    "why": "Inertia is the natural tendency of objects in motion to stay in motion and objects at rest to stay at rest, unless a force causes the velocity to change — one of the primary manifestations of mass. On Earth it is often masked by gravity, friction and air resistance, which tend to bring moving things to rest.",
+    "src": "https://en.wikipedia.org/wiki/Inertia",
+    "verified": true
+  },
+  {
+    "in": [
+      "lever",
+      "force"
+    ],
+    "out": "torque",
+    "why": "Torque is the rotational correspondent of linear force. Multiply the force applied perpendicularly to a lever by its distance from the fulcrum — the length of the lever arm — and that product is the torque.",
+    "src": "https://en.wikipedia.org/wiki/Torque",
+    "verified": true
+  },
+  {
+    "in": [
+      "wave_physics",
+      "frequency"
+    ],
+    "out": "wavelength",
+    "why": "Wavelength is the distance over which a wave's shape repeats, such as the gap between two adjacent crests. At a fixed wave speed it is inversely proportional to frequency: higher frequencies have shorter wavelengths, and lower frequencies longer ones.",
+    "src": "https://en.wikipedia.org/wiki/Wavelength",
+    "verified": true
+  },
+  {
+    "in": [
+      "energy",
+      "speed"
+    ],
+    "out": "kinetic_energy",
+    "why": "Kinetic energy is the energy an object possesses due to its motion. It equals the work needed to accelerate the object from rest to its speed, and the same amount of work is done by the object when it decelerates to rest.",
+    "src": "https://en.wikipedia.org/wiki/Kinetic_energy",
+    "verified": true
+  },
+  {
+    "in": [
+      "energy",
+      "gravity"
+    ],
+    "out": "potential_energy",
+    "why": "Potential energy is the energy of a system due to the position of its parts relative to other objects. Gravitational potential energy is the work of the gravitational force; elastic is the work of a deformed spring; electric is the work of the Coulomb force on a charge.",
+    "src": "https://en.wikipedia.org/wiki/Potential_energy",
+    "verified": true
+  },
+  {
+    "in": [
+      "temperature",
+      "thermodynamics"
+    ],
+    "out": "absolute_zero",
+    "why": "Absolute zero is the theoretically coldest temperature, where a system's internal energy reaches its minimum. The Kelvin scale puts it at 0 K, equivalent to −273.15 °C, and the third law of thermodynamics implies that no physical process can reach it in a finite number of steps.",
+    "src": "https://en.wikipedia.org/wiki/Absolute_zero",
+    "verified": true
+  },
+  {
+    "in": [
+      "sound",
+      "velocity"
+    ],
+    "out": "doppler_effect",
+    "why": "Christian Doppler described it in 1842: the frequency of a wave changes for an observer who is moving relative to the source. A vehicle approaching an observer raises the pitch and receding lowers it, because each successive cycle is emitted from a position closer to — or farther from — the observer than the last.",
+    "src": "https://en.wikipedia.org/wiki/Doppler_effect",
+    "verified": true
+  },
+  {
+    "in": [
+      "wave_physics",
+      "aperture"
+    ],
+    "out": "diffraction",
+    "why": "Diffraction is the deviation of waves from straight-line propagation due to an obstacle or through an aperture. Francesco Maria Grimaldi coined the word from the Latin diffringere, \"to break into pieces\", for light breaking up into different directions.",
+    "src": "https://en.wikipedia.org/wiki/Diffraction",
+    "verified": true
+  },
+  {
+    "in": [
+      "voltage",
+      "resistance"
+    ],
+    "out": "ohms_law",
+    "why": "In an ohmic conductor the electric current between two points is directly proportional to the voltage across them, and the constant of proportionality is the resistance: V=IR. Georg Ohm described it in a treatise published in 1827, from measurements on circuits of wire of various lengths.",
+    "src": "https://en.wikipedia.org/wiki/Ohm's_law",
+    "verified": true
+  },
+  {
+    "in": [
+      "electromagnetism",
+      "light"
+    ],
+    "out": "maxwells_equations",
+    "why": "Maxwell published an early form of the equations in 1861 and 1862. Their publication marked the unification of magnetism, electricity, light and associated radiation, and his addition was that magnetic fields also relate to changing electric fields — the displacement current.",
+    "src": "https://en.wikipedia.org/wiki/Maxwell's_equations",
+    "verified": true
+  },
+  {
+    "in": [
+      "gas",
+      "pressure"
+    ],
+    "out": "ideal_gas_law",
+    "why": "The ideal gas law, pV=nRT, is the equation of state of a hypothetical ideal gas. Clapeyron stated it in 1834 as a combination of the empirical Boyle's, Charles's, Avogadro's and Gay-Lussac's laws, and the temperature in it must be absolute, in kelvins.",
+    "src": "https://en.wikipedia.org/wiki/Ideal_gas_law",
+    "verified": true
+  },
+  {
+    "in": [
+      "energy",
+      "thermodynamics"
+    ],
+    "out": "conservation_of_energy",
+    "why": "The total energy of an isolated system remains constant: energy can neither be created nor destroyed, only transformed or transferred. In thermodynamics it is the first law, and Noether's theorem derives it from the fact that the laws of physics do not change over time.",
+    "src": "https://en.wikipedia.org/wiki/Conservation_of_energy",
+    "verified": true
+  },
+  {
+    "in": [
+      "program",
+      "computer"
+    ],
+    "out": "software",
+    "why": "Software consists of computer programs that instruct the execution of a computer, and also includes design documents and specifications. High-level programming languages, introduced in 1958, allowed more human-readable instructions and made software more portable across computer architectures.",
+    "src": "https://en.wikipedia.org/wiki/Software",
+    "verified": true
+  },
+  {
+    "in": [
+      "computer_network",
+      "postbox"
+    ],
+    "out": "email",
+    "why": "Email is a method of transmitting and receiving digital messages over a computer network, primarily the Internet. Mail servers accept, forward, deliver and store messages, so neither the users nor their computers need to be online at the same time.",
+    "src": "https://en.wikipedia.org/wiki/Email",
+    "verified": true
+  },
+  {
+    "in": [
+      "cipher",
+      "encryption"
+    ],
+    "out": "cryptography",
+    "why": "Cryptography is the practice and study of techniques for secure communication in the presence of adversarial behavior. Before the modern age it was effectively synonymous with encryption — turning readable plaintext into unintelligible ciphertext that only reversing the process can read.",
+    "src": "https://en.wikipedia.org/wiki/Cryptography",
+    "verified": true
+  },
+  {
+    "in": [
+      "sand",
+      "wave"
+    ],
+    "out": "beach",
+    "why": "A beach is a landform alongside a body of water, made of loose particles such as sand, gravel, shingle and pebbles, or of mollusc shells. Most beaches are on coasts, where wave or current action deposits and reworks the sediment.",
+    "src": "https://en.wikipedia.org/wiki/Beach",
+    "verified": true
+  },
+  {
+    "in": [
+      "wind",
+      "atmosphere"
+    ],
+    "out": "jet_stream",
+    "why": "Jet streams are fast flowing, narrow air currents in the atmosphere. The main terrestrial ones sit near the altitude of the tropopause and flow west to east; each hemisphere has a polar jet at around 9.1 km above sea level, typically travelling at around 180 km/h, and jet streams have been detected on Venus, Jupiter, Saturn, Uranus and Neptune.",
+    "src": "https://en.wikipedia.org/wiki/Jet_stream",
+    "verified": true
+  },
+  {
+    "in": [
+      "ice",
+      "continent"
+    ],
+    "out": "ice_sheet",
+    "why": "An ice sheet is a mass of glacial ice that covers surrounding terrain and is greater than 50,000 km². The two that exist are the Antarctic ice sheet, at 14 million km², and the Greenland ice sheet, at 1.7 million km², each with an average thickness of about 2 km.",
+    "src": "https://en.wikipedia.org/wiki/Ice_sheet",
+    "verified": true
+  },
+  {
+    "in": [
+      "air",
+      "evaporation"
+    ],
+    "out": "humidity",
+    "why": "Humidity is the concentration of water vapor present in the air. It depends on temperature and pressure: the same amount of water vapor gives a higher relative humidity in cool air than in warm air, because the amount needed for saturation rises with temperature.",
+    "src": "https://en.wikipedia.org/wiki/Humidity",
+    "verified": true
+  },
+  {
+    "in": [
+      "peat",
+      "water"
+    ],
+    "out": "bog",
+    "why": "A bog is a wetland that accumulates peat as a deposit of dead plant material, often mosses and typically sphagnum. Bogs occur where the water at the ground surface is acidic and low in nutrients.",
+    "src": "https://en.wikipedia.org/wiki/Bog",
+    "verified": true
+  },
+  {
+    "in": [
+      "acid",
+      "ethanol"
+    ],
+    "out": "ester",
+    "why": "An ester forms by substitution between a carboxylic acid and an alcohol, the acid's hydroxyl hydrogen being replaced by the alcohol's organic group. Esters of carboxylic acids typically have a pleasant smell, and those of low molecular weight are used as fragrances.",
+    "src": "https://en.wikipedia.org/wiki/Ester",
+    "verified": true
+  },
+  {
+    "in": [
+      "skunk",
+      "sulfur"
+    ],
+    "out": "thiol",
+    "why": "A thiol is an organosulfur compound of the form R−SH, the sulfur analogue of an alcohol, and many have strong odors resembling garlic, cabbage or rotten eggs. The spray of skunks consists mainly of low-molecular-weight thiols and derivatives.",
+    "src": "https://en.wikipedia.org/wiki/Thiol",
+    "verified": true
+  },
+  {
+    "in": [
+      "chlorine",
+      "electron"
+    ],
+    "out": "chloride",
+    "why": "The chloride ion, Cl−, is the anion of chlorine — chlorine with an extra electron. Ionic chlorides include potassium chloride, calcium chloride and ammonium chloride.",
+    "src": "https://en.wikipedia.org/wiki/Chloride",
+    "verified": true
+  },
+  {
+    "in": [
+      "rope",
+      "hand"
+    ],
+    "out": "knot",
+    "why": "A knot is an intentional complication in cordage which may be practical or decorative. Practical knots are classified by function: a hitch fastens a rope to another object, a bend fastens two ends of a rope to each other, and a loop knot creates a loop.",
+    "src": "https://en.wikipedia.org/wiki/Knot",
+    "verified": true
+  },
+  {
+    "in": [
+      "parchment",
+      "writing"
+    ],
+    "out": "scroll",
+    "why": "A scroll is a roll of papyrus, parchment or paper containing writing, usually partitioned into pages that are read by unrolling one page at a time. Scrolls were the first form of editable record-keeping texts, used in the Eastern Mediterranean and ancient Egyptian civilizations, before the codex came into popular use around the 1st century AD.",
+    "src": "https://en.wikipedia.org/wiki/Scroll",
+    "verified": true
+  },
+  {
+    "in": [
+      "furnace",
+      "radiator"
+    ],
+    "out": "central_heating",
+    "why": "A central heating system provides warmth to a number of spaces within a building from one main source of heat. A furnace converts fuel or electricity to heat, which is circulated by forced air through ducts, by low-pressure steam to radiators, or by pumps carrying hot water through room radiators.",
+    "src": "https://en.wikipedia.org/wiki/Central_heating",
+    "verified": true
+  },
+  {
+    "in": [
+      "pharynx",
+      "lymph"
+    ],
+    "out": "tonsil",
+    "why": "The tonsils are a set of lymphoid organs facing into the aerodigestive tract. Unqualified, the term usually means the palatine tonsils, two lymphoid organs at either side of the back of the throat, which tend to reach their largest size in puberty and then gradually atrophy.",
+    "src": "https://en.wikipedia.org/wiki/Tonsil",
+    "verified": true
+  },
+  {
+    "in": [
+      "temperature",
+      "absolute_zero"
+    ],
+    "out": "kelvin",
+    "why": "The Kelvin scale is an absolute temperature scale that starts at the lowest possible temperature, absolute zero, taken to be 0 K. Its unit has the same magnitude as the Celsius degree, so a rise of one kelvin is a rise of 1 °C, and any Celsius temperature converts by adding 273.15.",
+    "src": "https://en.wikipedia.org/wiki/Kelvin"
+  },
+  {
+    "in": [
+      "water",
+      "measurement"
+    ],
+    "out": "litre",
+    "why": "The litre is a metric unit of volume equal to one cubic decimetre, a cube 10 cm × 10 cm × 10 cm. Because the kilogram was originally defined in 1795 as the mass of one cubic decimetre of water at melting-ice temperature, one litre of liquid water has a mass of almost exactly one kilogram.",
+    "src": "https://en.wikipedia.org/wiki/Litre"
+  },
+  {
+    "in": [
+      "day",
+      "clock"
+    ],
+    "out": "hour",
+    "why": "An hour is a unit of time historically reckoned as 1/24 of a day and now defined as exactly 3,600 seconds. There are 24 hours in a day and 60 minutes in an hour, which is why a 24-hour clock reads out the hour of the day.",
+    "src": "https://en.wikipedia.org/wiki/Hour"
+  },
+  {
+    "in": [
+      "ferrocerium",
+      "steel"
+    ],
+    "out": "spark",
+    "why": "Struck with a harder material such as a steel edge, ferrocerium sheds hot fragments that oxidise rapidly in the oxygen of the air, producing sparks that can reach 3,315 °C. Rods of it are used in camping and survival kits as an emergency way to start a fire.",
+    "src": "https://en.wikipedia.org/wiki/Ferrocerium"
+  },
+  {
+    "in": [
+      "pea",
+      "plant"
+    ],
+    "out": "legume",
+    "why": "Legumes are plants in the pea family Fabaceae, or the fruit or seeds of such plants. Most of them have symbiotic nitrogen-fixing bacteria, the rhizobia, living in structures called root nodules.",
+    "src": "https://en.wikipedia.org/wiki/Legume"
+  },
+  {
+    "in": [
+      "rain",
+      "stream"
+    ],
+    "out": "river",
+    "why": "Water first enters rivers through precipitation, whether from rainfall, runoff down a slope, the melting of glaciers or snow, or seepage from aquifers. Rivers flow in channelled watercourses and merge in confluences to form drainage basins, areas where surface water eventually flows to a common outlet.",
+    "src": "https://en.wikipedia.org/wiki/River"
+  },
+  {
+    "in": [
+      "ocean",
+      "coast"
+    ],
+    "out": "sea",
+    "why": "A sea is a very large body of salty water. One sense is the interconnected body of seawater spanning most of Earth, the ocean; the other is a named body of water, usually a marginal sea such as the Mediterranean, a section of the ocean, or a large, nearly landlocked body of water.",
+    "src": "https://en.wikipedia.org/wiki/Sea"
+  },
+  {
+    "in": [
+      "mineral",
+      "mine"
+    ],
+    "out": "ore",
+    "why": "Ore is natural rock or sediment that contains one or more valuable minerals, typically including metals, concentrated above background levels and economically viable to mine and process. It is extracted from the earth through mining and then treated or refined, often by smelting, to extract the valuable metals or minerals.",
+    "src": "https://en.wikipedia.org/wiki/Ore"
+  },
+  {
+    "in": [
+      "natural_gas",
+      "hydrogen_sulfide"
+    ],
+    "out": "sulfur",
+    "why": "Though sulfur is sometimes found in pure native form, on Earth it usually occurs as sulfide and sulfate minerals. Almost all elemental sulfur is now produced as a byproduct of removing sulfur-containing contaminants from natural gas and petroleum.",
+    "src": "https://en.wikipedia.org/wiki/Sulfur"
+  },
+  {
+    "in": [
+      "malachite",
+      "fire"
+    ],
+    "out": "copper",
+    "why": "Malachite is a copper carbonate hydroxide mineral, and its Cu²⁺ gives it its green colour. Archaeological evidence indicates that it has been mined and smelted to obtain copper at Timna Valley, in present-day Israel, for more than 3,000 years.",
+    "src": "https://en.wikipedia.org/wiki/Malachite"
+  },
+  {
+    "in": [
+      "matter",
+      "element"
+    ],
+    "out": "atom",
+    "why": "Atoms are the basic particles of the chemical elements and the fundamental building blocks of matter. The chemical elements are distinguished from each other by the number of protons in their atoms.",
+    "src": "https://en.wikipedia.org/wiki/Atom"
+  },
+  {
+    "in": [
+      "atom",
+      "molecule"
+    ],
+    "out": "matter",
+    "why": "In physical science, matter is anything that has mass and occupies space by having volume. All everyday objects that can be touched are ultimately composed of atoms, and DNA molecules, for example, are matter under this definition because they are made of atoms.",
+    "src": "https://en.wikipedia.org/wiki/Matter"
+  },
+  {
+    "in": [
+      "clock",
+      "calendar"
+    ],
+    "out": "time",
+    "why": "Time is the continuous progression of existence that occurs in an apparently irreversible succession from the past, through the present, and into the future. Practical, human-scale measurements of time are performed using clocks and calendars, reflecting a 24-hour day collected into a 365-day year linked to the astronomical motion of the Earth.",
+    "src": "https://en.wikipedia.org/wiki/Time"
+  },
+  {
+    "in": [
+      "photon",
+      "eye"
+    ],
+    "out": "light",
+    "why": "Light, or visible light, is electromagnetic radiation that can be perceived by the human eye. Single, massless elementary particles, or quanta, of light called photons can be detected with specialised equipment, although phenomena like interference are described by waves.",
+    "src": "https://en.wikipedia.org/wiki/Light"
+  },
+  {
+    "in": [
+      "hemp",
+      "fibre"
+    ],
+    "out": "rope",
+    "why": "A rope is a group of yarns, plies, fibres or strands that are twisted or braided together into a larger and stronger form. It may be made of any long, fibrous material, but generally of natural or synthetic fibres; common natural fibres for rope are Manila hemp, hemp, linen, cotton, coir, jute, straw and sisal.",
+    "src": "https://en.wikipedia.org/wiki/Rope"
+  },
+  {
+    "in": [
+      "wheel",
+      "machine"
+    ],
+    "out": "gear",
+    "why": "A gear, also called a toothed wheel or cog, is a rotating machine part typically used to transmit rotational motion or torque by means of a series of teeth that engage with compatible teeth of another gear. Gears can be used to trade torque for rotational speed between two axles, or to change the axis or sense of rotation.",
+    "src": "https://en.wikipedia.org/wiki/Gear"
+  },
+  {
+    "in": [
+      "soot",
+      "glue"
+    ],
+    "out": "ink",
+    "why": "The earliest inks from all civilisations are believed to have been made with lampblack, a kind of soot, easily collected as a by-product of fire. The earliest Chinese inks, similar to modern inksticks, date to around 256 BC and were made from soot and animal glue.",
+    "src": "https://en.wikipedia.org/wiki/Ink"
+  },
+  {
+    "in": [
+      "tree",
+      "cambium"
+    ],
+    "out": "bark",
+    "why": "Bark is the outermost layer of the stems and roots of woody plants, including trees, woody vines and shrubs. It refers to all the tissues outside the vascular cambium.",
+    "src": "https://en.wikipedia.org/wiki/Bark_(botany)"
+  },
+  {
+    "in": [
+      "sand",
+      "desert"
+    ],
+    "out": "dune",
+    "why": "A dune is a landform composed of wind- or water-driven sand. Dunes are most common in desert environments, where the lack of moisture hinders the growth of vegetation that would otherwise interfere with their development, though they are also found along sea shores and in areas of glacial outwash.",
+    "src": "https://en.wikipedia.org/wiki/Dune"
+  },
+  {
+    "in": [
+      "africa",
+      "desert"
+    ],
+    "out": "sahara",
+    "why": "The Sahara is a desert spanning North Africa. With an area of 9,200,000 square kilometres, it is the largest hot desert in the world and the third-largest desert overall, smaller only than the deserts of Antarctica and the northern Arctic.",
+    "src": "https://en.wikipedia.org/wiki/Sahara"
+  },
+  {
+    "in": [
+      "africa",
+      "river"
+    ],
+    "out": "nile",
+    "why": "The Nile is a major north-flowing river in northeast Africa which empties into the Mediterranean Sea. At 7,088 kilometres long it is the longest river in the world, although the volume of water it carries is much smaller than other major rivers such as the Amazon or the Congo.",
+    "src": "https://en.wikipedia.org/wiki/Nile"
+  },
+  {
+    "in": [
+      "crust",
+      "mantle"
+    ],
+    "out": "tectonic_plate",
+    "why": "Earth's lithosphere, the rigid outer shell of the planet including the crust and upper mantle, is fractured into seven or eight major plates and many minor ones. Tectonic plates are composed of oceanic lithosphere and thicker continental lithosphere, each topped by its own kind of crust.",
+    "src": "https://en.wikipedia.org/wiki/Plate_tectonics"
   }
 ]

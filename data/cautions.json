@@ -40,7 +40,8 @@
       "ids": [
         "hydrogen_peroxide"
       ],
-      "severity": "contact"
+      "severity": "contact",
+      "src": "https://en.wikipedia.org/wiki/Hydrogen_peroxide"
     },
     "silver_nitrate_corrosive": {
       "label": "Silver nitrate burns and stains on contact",
@@ -48,7 +49,8 @@
       "ids": [
         "silver_nitrate"
       ],
-      "severity": "contact"
+      "severity": "contact",
+      "src": "https://en.wikipedia.org/wiki/Silver_nitrate"
     },
     "fire": {
       "label": "Fire and hot fat",
@@ -80,7 +82,8 @@
         "ethanol",
         "sweet_wine"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "src": "https://en.wikipedia.org/wiki/Alcohol_(drug)"
     },
     "cherry_kernel": {
       "label": "The stone, not the fruit",
@@ -88,7 +91,8 @@
       "ids": [
         "cherry"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Amygdalin"
     },
     "mercury_toxicity": {
       "label": "Mercury is toxic, in the ore and in the metal",
@@ -98,7 +102,8 @@
         "mercury",
         "placer_mining"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "src": "https://en.wikipedia.org/wiki/Mercury_poisoning"
     },
     "mine_collapse": {
       "label": "Pillars can fail without warning",
@@ -106,7 +111,8 @@
       "ids": [
         "room_and_pillar_mining"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Room_and_pillar_mining"
     },
     "mine_subsidence": {
       "label": "Undermining a deposit can bring the surface down",
@@ -114,7 +120,8 @@
       "ids": [
         "block_caving"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Block_caving"
     },
     "uranium_toxicity": {
       "label": "Uranium is a heavy-metal poison first",
@@ -124,17 +131,17 @@
         "yellowcake"
       ],
       "severity": "cumulative",
-      "carcinogen": true
+      "carcinogen": true,
+      "src": "https://en.wikipedia.org/wiki/Uranium"
     },
     "reactive_metal": {
-      "label": "These metals set fire to water",
-      "note": "Sodium forms flammable hydrogen and caustic sodium hydroxide on contact with water, and potassium reacts hard enough to ignite that hydrogen itself. Magnesium burns at around 3,100°C with a brilliant white light carrying strong ultraviolet. This is real chemistry, and none of it is a demonstration to improvise.",
+      "label": "Sodium explodes in contact with water",
+      "note": "Like all the alkali metals, sodium reacts exothermically with water, and it will explode in contact with it, although it only burns gently in air. This is real chemistry, and none of it is a demonstration to improvise.",
       "ids": [
-        "sodium",
-        "potassium",
-        "magnesium"
+        "sodium"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Sodium"
     },
     "lead_toxicity": {
       "label": "Lead is a neurotoxin",
@@ -157,7 +164,8 @@
       "ids": [
         "chlorine"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Chlorine"
     },
     "fluorine_hazard": {
       "label": "Fluorine is why chemistry has martyrs",
@@ -166,7 +174,8 @@
         "fluorine",
         "fluorite"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Fluorine"
     },
     "arsenic_toxicity": {
       "label": "Arsenic is a poison, and a drinking-water problem",
@@ -175,15 +184,17 @@
         "arsenic",
         "arsenic_trioxide"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Arsenic_poisoning"
     },
     "selenium_dose": {
       "label": "Essential and toxic are the same element, at different doses",
-      "note": "Selenium is a required nutrient: the adult recommended intake is 55 micrograms a day and the tolerable upper limit is 400. Exceeding it causes selenosis. That is a narrow window compared with almost anything else on the shelf.",
+      "note": "Selenium is a required nutrient: the US recommended dietary allowance for teenagers and adults is 55 μg a day, yet both elemental selenium and, especially, selenium salts are toxic in even small doses, causing selenosis. That is a narrow window compared with almost anything else on the shelf.",
       "ids": [
         "selenium"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "src": "https://en.wikipedia.org/wiki/Selenium"
     },
     "heavy_metal_dust": {
       "label": "Some metals are only dangerous once they are dust",
@@ -193,7 +204,8 @@
         "manganese",
         "osmium"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "src": "https://en.wikipedia.org/wiki/Heavy_metals"
     },
     "radioactivity": {
       "label": "These are radioactive, and that is the point of some of them",
@@ -218,7 +230,8 @@
       "ids": [
         "calcium"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Calcium"
     },
     "lightning": {
       "label": "Thunder is the sound of something already close",
@@ -239,7 +252,8 @@
         "volcano",
         "caldera"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Volcano"
     },
     "earthquake_hazard": {
       "label": "The shaking itself rarely kills — what falls on you does",
@@ -247,7 +261,8 @@
       "ids": [
         "earthquake"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Earthquake"
     },
     "tsunami_hazard": {
       "label": "A tsunami outruns a person on foot",
@@ -255,7 +270,8 @@
       "ids": [
         "tsunami"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Tsunami"
     },
     "severe_weather": {
       "label": "Weather that kills people",
@@ -276,7 +292,8 @@
       "ids": [
         "ozone"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "src": "https://en.wikipedia.org/wiki/Ozone"
     },
     "methanol_toxicity": {
       "label": "Methanol looks and smells like drinking alcohol",
@@ -285,7 +302,8 @@
         "methanol",
         "wood_tar"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Methanol_toxicity"
     },
     "phenol_corrosive": {
       "label": "Phenol degrades protein on contact",
@@ -294,7 +312,8 @@
         "phenol",
         "coal_tar"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Phenol"
     },
     "formaldehyde_carcinogen": {
       "label": "Formaldehyde is a carcinogen, not just a smell",
@@ -315,7 +334,8 @@
       "ids": [
         "platypus"
       ],
-      "severity": "contact"
+      "severity": "contact",
+      "src": "https://en.wikipedia.org/wiki/Platypus"
     },
     "lion_predation": {
       "label": "Man-eating is a supplement, not a last resort",
@@ -332,41 +352,46 @@
       "severity": "acute",
       "ids": [
         "bear"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Bear_attack"
     },
     "rattlesnake_bite": {
       "label": "A real venom, and a real treatment for it",
-      "note": "About seven to eight thousand people are bitten by venomous snakes in the United States each year, and up to 95% of the snakebite deaths there are attributed to western and eastern diamondback rattlesnakes specifically. Antivenom, given intravenously, is effective at preventing death — but it works by binding and neutralising the venom enzymes already in the body, and it carries its own side effects. It is a hospital treatment, not a home one.",
+      "note": "An estimated 7,000 to 8,000 people are bitten by venomous snakes in the United States each year, with about five deaths. Most deaths occur between 6 and 48 hours after the bite. If antivenom is given within two hours of the bite, the probability of recovery is greater than 99% — but it is a hospital treatment, not a home one.",
       "severity": "acute",
       "ids": [
         "rattlesnake"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Rattlesnake"
     },
     "elephant_musth": {
       "label": "A herbivore, dangerous for a reason that has nothing to do with diet",
-      "note": "Adult bulls enter a periodic state of raised testosterone called musth, marked by a fluid running from the temporal gland down the side of the face. Males become extremely aggressive during it, and working elephants in musth are chained until it passes. Human–elephant conflict kills as many as 80 people a year in Sri Lanka, where farmers kill more than 230 elephants in return.",
+      "note": "Adult bulls enter a periodic state of raised reproductive hormones called musth, marked by a thick, tar-like secretion from the temporal gland. Bulls in musth are extremely dangerous and have killed keepers and mahouts, livestock, other species and other elephants. Domesticated Asian elephants in musth are traditionally tied to a strong tree and denied food and water for a week or so.",
       "severity": "acute",
       "ids": [
         "elephant"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Musth"
     },
     "road_animal": {
       "label": "The dangerous ones are the ones you meet at speed",
-      "note": "Deer-vehicle collisions run to 500,000 a year in Europe and 1–1.5 million in North America, and together account for some 30,000 injuries and 200 deaths. Nine out of ten animal collisions in Australia involve kangaroos, which cross at around 50 km/h and are heavy enough to come through a windscreen. By comparison only two fatal kangaroo attacks have ever been reliably documented in Australia.",
+      "note": "A 2008 Federal Highway Administration report estimates that 1 to 2 million accidents occur each year in the United States between large animals and vehicles.",
       "severity": "acute",
       "ids": [
         "deer",
         "kangaroo"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Wildlife-vehicle_collision"
     },
     "sting_anaphylaxis": {
       "label": "The sting is a protein, and the reaction is an allergy",
-      "note": "Most stings produce a local reaction. An estimated 5–10% of people have a generalised systemic response instead, and in the United States about 40 people a year die of anaphylaxis from stinging-insect allergy. The mechanism is the same IgE pathway as a food allergy — a venom protein where a seed protein would be — which is why an insect sting and a peanut appear in the same part of a medical textbook.",
+      "note": "Venom from stinging or biting insects such as Hymenoptera (ants, bees and wasps) may cause anaphylaxis in susceptible people. Common triggers of anaphylaxis include venom from insect bites or stings, foods and medication; foods are the most common trigger in children and young adults, while medications and insect stings are more common in older adults.",
       "severity": "conditional",
       "ids": [
         "bee",
         "wasp"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Anaphylaxis"
     },
     "thujone_toxicity": {
       "label": "Thujone in concentrated sage oil",
@@ -375,7 +400,8 @@
         "sage",
         "absinthe_wormwood"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "src": "https://en.wikipedia.org/wiki/Thujone"
     },
     "bay_leaf_hazard": {
       "label": "Bay leaves are for flavour, not for eating",
@@ -383,7 +409,8 @@
       "ids": [
         "bay_leaf"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Bay_leaf"
     },
     "niacin_flush": {
       "label": "Niacin flush is a real, dose-triggered reaction",
@@ -391,7 +418,8 @@
       "ids": [
         "niacin"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "src": "https://en.wikipedia.org/wiki/Niacin"
     },
     "b6_neuropathy": {
       "label": "Vitamin B6 neuropathy is a supplement-dose problem",
@@ -408,25 +436,28 @@
       "ids": [
         "vitamin_e"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "src": "https://en.wikipedia.org/wiki/Vitamin_E"
     },
     "eu_dye_hyperactivity_warning": {
       "label": "The EU requires a warning label on this dye",
-      "note": "Red 40, Yellow 5 and Yellow 6 are three of the 'Southampton Six' synthetic dyes an EU regulation, effective 2010, requires be labelled 'may have an adverse effect on activity and attention in children.' The underlying science is genuinely disputed: some studies link the dyes to hyperactivity in children, others do not, and the EU and US regulators have reached different conclusions from the same evidence.",
+      "note": "Food and drink products containing any of the six designated colours must carry a label saying they 'may have an adverse effect on activity and attention in children'. The underlying science is genuinely disputed: the Southampton study found 'a possible link' between these colours with a sodium benzoate preservative and increased hyperactivity, but the advisory committee that evaluated it said that, because of the study's limitations, the results could not be extrapolated to the general population.",
       "ids": [
         "red_40",
         "yellow_5",
         "yellow_6"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Food_coloring"
     },
     "yellow_5_allergy_warning": {
-      "label": "Yellow 5 carries its own FDA-mandated allergy warning",
-      "note": "The US FDA requires products containing tartrazine to state that it may cause allergic-type reactions, including bronchial asthma, in certain susceptible people — a separate concern from the EU attention warning above, and specific to Yellow 5 among the four dyes in this batch.",
+      "label": "Yellow 5 is a rare, documented cause of hives",
+      "note": "According to the FDA, tartrazine (Yellow 5) causes hives in fewer than 1 in 10,000 people, or 0.01%. It has been suspected of exacerbating asthma, but medical evidence does not confirm this. Medication data sheets are required to list it, because it is a separate concern from the EU attention warning above.",
       "ids": [
         "yellow_5"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Tartrazine"
     },
     "blue_1_enteral_advisory": {
       "label": "A 2003 FDA advisory, and it is not about candy",
@@ -434,7 +465,8 @@
       "ids": [
         "blue_1"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Brilliant_Blue_FCF"
     },
     "shiitake_dermatitis": {
       "label": "Raw shiitake can cause a rash",
@@ -442,7 +474,8 @@
       "ids": [
         "shiitake"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Shiitake"
     },
     "spirulina_contamination": {
       "label": "Spirulina supplements and contamination",
@@ -450,7 +483,8 @@
       "ids": [
         "spirulina"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Spirulina_(dietary_supplement)"
     },
     "synephrine_cardio": {
       "label": "Synephrine carries ephedra's risk profile, not a safer one",
@@ -458,7 +492,8 @@
       "ids": [
         "synephrine"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Synephrine"
     },
     "caffeine_powder": {
       "label": "Caffeine from coffee or tea is not the same risk as the pure powder",
@@ -466,7 +501,8 @@
       "ids": [
         "caffeine"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Caffeine"
     },
     "horsetail_thiaminase": {
       "label": "Horsetail's thiaminase, over time",
@@ -474,7 +510,8 @@
       "ids": [
         "horsetail"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "src": "https://en.wikipedia.org/wiki/Equisetum_arvense"
     },
     "aloin_laxative": {
       "label": "Aloe's outer leaf layer is not the gel",
@@ -482,7 +519,8 @@
       "ids": [
         "aloe_vera"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Aloin"
     },
     "psyllium_choking": {
       "label": "Psyllium needs water to go with it",
@@ -490,7 +528,8 @@
       "ids": [
         "psyllium"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Psyllium"
     },
     "fos_fodmap": {
       "label": "FOS is a FODMAP",
@@ -498,7 +537,8 @@
       "ids": [
         "fos"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Fructooligosaccharide"
     },
     "ginseng_interactions": {
       "label": "Ginseng interacts with medication",
@@ -506,7 +546,8 @@
       "ids": [
         "ginseng"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Ginseng"
     },
     "salmonella_illness": {
       "label": "Salmonella causes real food poisoning",
@@ -515,7 +556,8 @@
         "salmonella"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Salmonella"
     },
     "aspirin_reye": {
       "label": "Reye syndrome links aspirin to a rare, severe childhood illness",
@@ -523,7 +565,8 @@
       "ids": [
         "aspirin"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Reye_syndrome"
     },
     "streptomycin_ototoxicity": {
       "label": "Streptomycin can cause permanent hearing and balance damage",
@@ -531,7 +574,8 @@
       "ids": [
         "streptomycin"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "src": "https://en.wikipedia.org/wiki/Streptomycin"
     },
     "insulin_hypoglycemia": {
       "label": "Too much insulin is a medical emergency, not a dosing error to shrug off",
@@ -539,23 +583,26 @@
       "ids": [
         "insulin"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Hypoglycemia"
     },
     "penicillin_allergy": {
       "label": "Penicillin allergy is common to claim, rare to confirm",
-      "note": "About 10% of people in the United States report a penicillin allergy, but the great majority were never truly allergic or have outgrown it — skin-test positivity drops by about 10% with every year of avoidance, and roughly 90% of self-reported cases can eventually tolerate penicillin again. A true IgE-mediated anaphylactic reaction is rare, occurring in roughly 0.01% of patients, though a milder rash affects 1 to 10%.",
+      "note": "It has been proposed that as many as 90% of those who say they are allergic to penicillin are able to take it and do not have a true allergy; some reports suggest fewer than 1% of Americans actually do. Of patients with a documented penicillin allergy, approximately 95% return a negative penicillin skin-prick test, and a patient carrying the label is significantly more likely to experience worse outcomes, which is why clinicians verify a reported allergy and 'de-label' when appropriate.",
       "ids": [
         "penicillin"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Penicillin_allergy"
     },
     "apricot_kernel": {
       "label": "The kernel, not the flesh",
-      "note": "Apricot flesh is entirely safe and this caution is not about eating apricots. The kernel inside the pit contains amygdalin — bitter kernels run about 5% amygdalin, sweet ones about 0.9% — which breaks down into cyanide. Do not eat the kernel.",
+      "note": "Apricot flesh is entirely safe and this caution is not about eating apricots. The kernel inside the pit contains amygdalin, which is made of glucose, benzaldehyde and cyanide, and apricot kernels can cause potentially fatal cyanide poisoning when eaten. In 2016 the European Food Safety Authority reported that eating three small bitter apricot kernels, or half of a large bitter one, would exceed safe consumption levels of amygdalin. Do not eat the kernel.",
       "ids": [
         "apricot"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Apricot_kernel"
     },
     "rhubarb_leaf": {
       "label": "The stalk, not the leaf",
@@ -563,7 +610,8 @@
       "ids": [
         "rhubarb"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Rhubarb"
     },
     "bean_lectin": {
       "label": "Raw beans are not a recipe you can eyeball",
@@ -584,7 +632,8 @@
       "ids": [
         "cashew"
       ],
-      "severity": "contact"
+      "severity": "contact",
+      "src": "https://en.wikipedia.org/wiki/Cashew"
     },
     "cassava_cyanogenic_toxicity": {
       "label": "Raw cassava is toxic — bitter varieties badly so",
@@ -593,7 +642,8 @@
         "cassava",
         "tapioca"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Cassava"
     },
     "cassia_coumarin": {
       "label": "Cassia cinnamon carries far more coumarin than Ceylon",
@@ -603,7 +653,8 @@
         "coumarin",
         "cassia"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "src": "https://en.wikipedia.org/wiki/Coumarin"
     },
     "nutmeg_myristicin": {
       "label": "Nutmeg's own toxin, in excess",
@@ -612,7 +663,8 @@
         "nutmeg",
         "myristicin"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Nutmeg"
     },
     "ecoli_illness": {
       "label": "E. coli is usually harmless, and sometimes isn't",
@@ -622,7 +674,8 @@
         "colibacillosis"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Escherichia_coli"
     },
     "paracetamol_overdose": {
       "label": "Paracetamol overdose is a leading cause of acute liver failure",
@@ -630,7 +683,8 @@
       "ids": [
         "paracetamol"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Paracetamol_poisoning"
     },
     "cowpox_zoonosis": {
       "label": "Cowpox still circulates — now mostly by way of cats",
@@ -639,7 +693,8 @@
         "cowpox"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Cowpox"
     },
     "histamine_scombroid": {
       "label": "Histamine is also a real fish-poisoning toxin",
@@ -647,7 +702,8 @@
       "ids": [
         "histamine"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Scombroid_food_poisoning"
     },
     "shark_bite": {
       "label": "Rare, but the numbers are real",
@@ -667,7 +723,8 @@
       "severity": "acute",
       "ids": [
         "blue_ringed_octopus"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Blue-ringed_octopus"
     },
     "box_jellyfish_sting": {
       "label": "The most venomous animal most people never see",
@@ -675,7 +732,8 @@
       "severity": "acute",
       "ids": [
         "box_jellyfish"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Box_jellyfish"
     },
     "venomous_fish_sting": {
       "label": "A real venom, and a real treatment for it",
@@ -685,7 +743,8 @@
         "stonefish",
         "common_lionfish",
         "scorpionfish"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Stonefish"
     },
     "piranha_bite": {
       "label": "Rare, and rarely serious — but real",
@@ -693,23 +752,26 @@
       "severity": "conditional",
       "ids": [
         "piranha"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Piranha"
     },
     "scorpion_sting": {
       "label": "Real venom, and it varies a lot by species",
-      "note": "Most scorpion stings cause pain and swelling and nothing worse. A handful of genera in the family Buthidae are the exception — Androctonus and Leiurus in North Africa and the Middle East, Centruroides in Mexico, Tityus in South America — with venom that can be medically serious. Scorpion stings are estimated to cause around 3,000 deaths a year worldwide, concentrated in the regions those genera live.",
+      "note": "Most scorpion stings are not a serious threat: the vast majority of species do not seriously threaten humans, and healthy adults usually need no medical treatment after a sting. About 25 species, fewer than one percent, have venom capable of killing a human, which happens frequently in the parts of the world where they live, primarily where access to medical treatment is unlikely.",
       "severity": "conditional",
       "ids": [
         "scorpion"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Scorpion"
     },
     "tick_borne_disease": {
-      "label": "A real disease risk, tied to how long it feeds",
-      "note": "Ixodes ticks are the main carrier of Lyme disease, and transmission risk rises sharply the longer a tick stays attached to its host, with most studies putting the threshold around 24 hours. Even so, only an estimated 1.2 to 1.4% of recognised tick bites result in Lyme disease, and people treated with antibiotics within days of the first symptoms have the best outcomes.",
+      "label": "Ixodes ticks carry Lyme disease, which antibiotics treat",
+      "note": "Lyme disease is a tick-borne disease caused by Borrelia bacteria and transmitted by blood-feeding ticks in the genus Ixodes. Approximately 70–80% of infected people develop a rash, and the infection is treatable with antibiotics, including doxycycline, amoxicillin and cefuroxime.",
       "severity": "conditional",
       "ids": [
         "tick"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Lyme_disease"
     },
     "mistletoe_toxicity": {
       "label": "Mistletoe berries and leaves are toxic if eaten",
@@ -717,7 +779,8 @@
       "severity": "conditional",
       "ids": [
         "mistletoe"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Mistletoe"
     },
     "bracken_ptaquiloside": {
       "label": "Bracken fern carries a documented carcinogen",
@@ -726,15 +789,17 @@
       "ids": [
         "bracken_fern"
       ],
-      "carcinogen": true
+      "carcinogen": true,
+      "src": "https://en.wikipedia.org/wiki/Ptaquiloside"
     },
     "amatoxin_poisoning": {
       "label": "The deadliest mushroom, and a real cause of death every year",
-      "note": "Amanita phalloides causes roughly 90% of fatal mushroom poisonings worldwide. Its amatoxins are thermostable — cooking or freezing does nothing to them — and as little as half a cap can be a lethal dose. Symptoms are deceptively delayed: gastrointestinal illness appears 6 to 12 hours in and eases for a few days before liver and kidney failure follow.",
+      "note": "Amanita phalloides causes roughly 90% of fatal mushroom poisonings worldwide. Its amatoxins are thermostable — cooking or freezing does nothing to them — and half a cap, about 30 grams, is estimated to be enough to kill a human. Symptoms are deceptively delayed: gastrointestinal illness appears 6 to 12 hours in and eases for a few days before liver and kidney failure follow.",
       "ids": [
         "death_cap"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Amanita_phalloides"
     },
     "muscimol_toxicity": {
       "label": "Psychoactive, and a real poisoning risk",
@@ -742,7 +807,8 @@
       "ids": [
         "fly_agaric"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Muscimol"
     },
     "morel_raw_toxicity": {
       "label": "Morels are toxic raw",
@@ -750,7 +816,8 @@
       "ids": [
         "morel"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Morchella"
     },
     "puffball_amanita_confusion": {
       "label": "A deadly Amanita's 'egg' stage can look like a young puffball",
@@ -758,7 +825,8 @@
       "ids": [
         "puffball"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Amanita"
     },
     "beryllium_disease": {
       "label": "Beryllium dust causes a chronic lung disease",
@@ -812,7 +880,8 @@
         "toxoplasmosis"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Toxoplasmosis"
     },
     "giardiasis_illness": {
       "label": "A few swallowed cysts are enough",
@@ -822,27 +891,30 @@
         "giardiasis"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Giardiasis"
     },
     "amoebiasis_illness": {
       "label": "A real, sometimes fatal dysentery",
-      "note": "Entamoeba histolytica infects an estimated 35 to 50 million people worldwide and is thought to kill more than 55,000 of them a year, mostly through amoebic dysentery or a liver abscess.",
+      "note": "Entamoeba histolytica infects an estimated 50 million people worldwide each year, and amoebiasis caused about 55,000 deaths worldwide in 2010, mostly through amoebic dysentery or a liver abscess.",
       "ids": [
         "entamoeba_histolytica",
         "amoebiasis"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Amoebiasis"
     },
     "trichomoniasis_sti": {
       "label": "A common sexually transmitted infection",
-      "note": "Trichomonas vaginalis causes an estimated 160 million infections a year worldwide. Most people who carry it, roughly 85% of women and 77% of men, have no symptoms at all, but it still spreads person to person through sexual contact.",
+      "note": "About 70% of people affected by trichomoniasis have no symptoms when infected, but infected people may spread the disease even when symptoms are absent. When symptoms occur they typically begin 5 to 28 days after exposure. There were about 122 million new cases in 2015, and about 20% of people are infected again within three months of treatment.",
       "ids": [
         "trichomonas_vaginalis",
         "trichomoniasis"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Trichomoniasis"
     },
     "cryptosporidiosis_illness": {
       "label": "Resists the chlorine that stops most water contaminants",
@@ -852,7 +924,8 @@
         "cryptosporidiosis"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Cryptosporidiosis"
     },
     "soil_transmitted_helminths": {
       "label": "The leading cause of anemia in developing countries",
@@ -880,7 +953,8 @@
         "trichinosis"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Trichinosis"
     },
     "lymphatic_filariasis_burden": {
       "label": "Chronic swelling that builds over repeated exposure",
@@ -890,7 +964,8 @@
         "lymphatic_filariasis"
       ],
       "severity": "cumulative",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Lymphatic_filariasis"
     },
     "tapeworm_infection": {
       "label": "Large, long-lived, and usually mild",
@@ -912,7 +987,8 @@
         "schistosomiasis"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Schistosomiasis"
     },
     "liver_fluke_infection": {
       "label": "A parasite that can live in one host for decades",
@@ -934,7 +1010,8 @@
       "ids": [
         "body_louse"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Body_louse"
     },
     "scabies_infestation": {
       "label": "Intensely itchy, and it spreads easily",
@@ -942,7 +1019,8 @@
       "ids": [
         "scabies_mite"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Scabies"
     },
     "head_lice_infestation": {
       "label": "Extremely common, not a sign of poor hygiene",
@@ -950,7 +1028,8 @@
       "ids": [
         "head_louse"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Head_louse"
     },
     "crocodilian_bite": {
       "label": "Real predators, and real numbers",
@@ -968,7 +1047,8 @@
       "severity": "acute",
       "ids": [
         "king_cobra"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/King_cobra"
     },
     "komodo_dragon_bite": {
       "label": "A genuinely venomous bite, not just a dirty mouth",
@@ -985,7 +1065,8 @@
       "severity": "conditional",
       "ids": [
         "gila_monster"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Gila_monster"
     },
     "poison_dart_frog_toxin": {
       "label": "The most toxic vertebrate known by weight",
@@ -994,7 +1075,8 @@
       "ids": [
         "golden_poison_frog",
         "batrachotoxin"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Poison_dart_frog"
     },
     "cane_toad_toxin": {
       "label": "Poison in the skin, real risk to pets",
@@ -1002,7 +1084,8 @@
       "severity": "conditional",
       "ids": [
         "cane_toad"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Cane_toad"
     },
     "salamander_toxin": {
       "label": "A real neurotoxin, right on the skin",
@@ -1010,7 +1093,8 @@
       "severity": "contact",
       "ids": [
         "fire_salamander"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Fire_salamander"
     },
     "polar_bear_attack": {
       "label": "A predator, not a defensive animal",
@@ -1036,16 +1120,18 @@
       "severity": "acute",
       "ids": [
         "chimpanzee"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Chimpanzee"
     },
     "tailings_dam_failure": {
       "label": "A tailings dam can fail catastrophically",
-      "note": "Tailings dams hold back millions of tonnes of waste slurry, often built up in stages from the tailings themselves. When one fails, the release can travel for kilometres in minutes — the Brumadinho dam collapse in Brazil in January 2019 killed 272 people.",
+      "note": "Tailings ponds are vulnerable to major breaches or leaks from the dams that hold them back, causing environmental disasters such as the Mount Polley disaster in British Columbia. Tailings dams are often the most significant environmental liability for a mining project, and the first UN-level standard for tailings management was only established in 2020.",
       "ids": [
         "tailings",
         "tailings_dam"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Tailings"
     },
     "cyanide_poisoning": {
       "label": "Cyanide is lethal in small doses",
@@ -1063,12 +1149,13 @@
     },
     "blasting_hazard": {
       "label": "Blasting is a controlled explosion, not a safe one",
-      "note": "ANFO and other blasting agents are designed to fragment solid rock, and the same holes and timing that make a blast predictable can misfire, throw flyrock well beyond the blast area, or detonate early if handled wrong. Mine blasting crews follow strict exclusion zones and licensing for exactly this reason.",
+      "note": "ANFO is a blasting agent, highly insensitive as an explosive, so it needs a primer or booster larger than a standard blasting cap to be detonated. Blasts produce moderate amounts of toxic gases such as carbon monoxide and nitrogen oxides, and the fuel-to-oil ratio matters: a slight excess of fuel oil is added in practice, because underdosing reduces performance. Blasting is licensed work with exclusion zones for a reason.",
       "ids": [
         "anfo",
         "blasting"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/ANFO"
     },
     "hotbox": {
       "label": "Overheated bearings start real fires",
@@ -1076,7 +1163,8 @@
       "ids": [
         "plain_bearing"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Hot_box"
     },
     "airship_hydrogen": {
       "label": "Hydrogen lift is real, and it really burns",
@@ -1084,7 +1172,8 @@
       "ids": [
         "airship"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Airship"
     },
     "mri_magnetic_field": {
       "label": "A magnetic field strong enough to make metal fly",
@@ -1093,7 +1182,8 @@
       "ids": [
         "superconducting_magnet",
         "mri_scan"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Safety_of_magnetic_resonance_imaging"
     },
     "pet_radiotracer": {
       "label": "A radioactive tracer, injected on purpose",
@@ -1102,7 +1192,8 @@
       "ids": [
         "fdg",
         "positron"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Fludeoxyglucose_(18F)"
     },
     "nitroglycerin_instability": {
       "label": "Unstabilised nitroglycerin can detonate on its own",
@@ -1110,24 +1201,27 @@
       "ids": [
         "nitroglycerin"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Nitroglycerin"
     },
     "high_explosive_hazard": {
       "label": "TNT and dynamite are designed to detonate",
-      "note": "TNT and dynamite are real high explosives, engineered to detonate reliably on command with a blasting cap. Both were part of the cargo when a munitions ship collided in Halifax harbour in 1917 and detonated, killing at least 1,782 people in the largest human-made explosion before the nuclear age. Making, storing or handling either is licensed, regulated work.",
+      "note": "TNT and dynamite are real high explosives, engineered to detonate reliably on command. Dynamite allows the use of nitroglycerine's explosive properties while greatly reducing its risk of accidental detonation, and Nobel's blasting cap allowed a controlled explosion to be set off from a distance using a fuse. Making, storing or handling either is licensed, regulated work.",
       "ids": [
         "tnt",
         "dynamite"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Dynamite"
     },
     "gunpowder_hazard": {
       "label": "Black powder ignites easily and burns explosively fast",
-      "note": "Gunpowder ignites from a spark, flame or even friction, and once confined it burns fast enough to act as an explosive rather than a controlled fire. A gunpowder store igniting in Delft in 1654 — the 'Delft Thunderclap' — killed at least 100 people and levelled a large part of the city, which is why powder magazines have been built isolated and underground ever since. It is real energetic chemistry, not a firework to make at home.",
+      "note": "Gunpowder is the earliest known chemical explosive. It is a low explosive, burning at subsonic speed with a low ignition temperature, and it ignites easily; once confined it burns fast enough to act as an explosive rather than a controlled fire. It is real energetic chemistry, not a firework to make at home.",
       "ids": [
         "gunpowder"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Gunpowder"
     },
     "blasting_cap_hazard": {
       "label": "A detonator's whole job is to go off from a small shock",
@@ -1135,7 +1229,8 @@
       "ids": [
         "blasting_cap"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Detonator"
     },
     "tropane_alkaloid_poisoning": {
       "label": "Deadly nightshade, datura and angel's trumpet are true poisons",
@@ -1155,7 +1250,8 @@
       "severity": "acute",
       "ids": [
         "poison_hemlock"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Coniine"
     },
     "cicutoxin_poisoning": {
       "label": "Water hemlock's root is North America's most violent plant poison",
@@ -1163,7 +1259,8 @@
       "severity": "acute",
       "ids": [
         "water_hemlock"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Cicutoxin"
     },
     "ricin_toxicity": {
       "label": "Ricin is one of the most toxic substances known",
@@ -1172,16 +1269,18 @@
       "ids": [
         "castor_bean",
         "ricin"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Ricin"
     },
     "cardiac_glycoside_poisoning": {
       "label": "Oleander and lily of the valley stop hearts, not just upset stomachs",
-      "note": "Both plants carry cardiac glycosides that slow the heart rate toward arrest by disrupting electrolyte balance; sinus bradycardia down to 50-60 beats per minute is the documented pattern in poisoning. The same chemistry, at controlled doses, treats congestive heart failure in conventional and traditional medicine alike.",
+      "note": "Both plants carry cardiac glycosides, which inhibit the sodium–potassium pump in heart muscle cells so that sodium cannot be pushed out. Toxicity changes the heart's rhythm in several ways, including potentially fatal ventricular tachycardia; in 2008 US poison centers reported 2,632 cases of digoxin toxicity and 17 digoxin-related deaths. The same chemistry, at controlled doses, treats heart failure.",
       "severity": "acute",
       "ids": [
         "oleander",
         "lily_of_the_valley"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Cardiac_glycoside"
     },
     "aconitine_poisoning": {
       "label": "Aconite is called the queen of poisons for a reason",
@@ -1189,7 +1288,8 @@
       "severity": "acute",
       "ids": [
         "aconite"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Aconitine"
     },
     "colchicine_toxicity": {
       "label": "Colchicine's therapeutic and lethal doses sit close together",
@@ -1197,7 +1297,8 @@
       "severity": "acute",
       "ids": [
         "autumn_crocus"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Colchicine"
     },
     "podophyllotoxin_toxicity": {
       "label": "Mayapple's rhizome is a powerful, unpredictable purgative",
@@ -1205,7 +1306,8 @@
       "severity": "conditional",
       "ids": [
         "mayapple"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Podophyllotoxin"
     },
     "taxine_poisoning": {
       "label": "Yew is toxic in every part except the aril",
@@ -1213,7 +1315,8 @@
       "severity": "acute",
       "ids": [
         "yew"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Taxus_baccata"
     },
     "phytolacca_toxicity": {
       "label": "Pokeweed's root is far more toxic than its berry",
@@ -1221,7 +1324,8 @@
       "severity": "conditional",
       "ids": [
         "pokeweed"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Phytolacca_americana"
     },
     "larkspur_toxicity": {
       "label": "Larkspur is the leading cause of cattle poisoning on western rangeland",
@@ -1229,7 +1333,8 @@
       "severity": "acute",
       "ids": [
         "larkspur"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Delphinium"
     },
     "furanocoumarin_phototoxicity": {
       "label": "Giant hogweed's sap burns only where sunlight reaches it",
@@ -1237,7 +1342,8 @@
       "severity": "contact",
       "ids": [
         "giant_hogweed"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Heracleum_mantegazzianum"
     },
     "strychnine_poisoning": {
       "label": "Strychnine causes death by asphyxiation through muscle convulsion",
@@ -1245,15 +1351,17 @@
       "severity": "acute",
       "ids": [
         "strychnine_tree"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Strychnine_poisoning"
     },
     "grayanotoxin_honey": {
       "label": "\"Mad honey\" from rhododendron nectar is a documented, ancient hazard",
-      "note": "Grayanotoxin from some rhododendron species' nectar passes into honey made from it; Xenophon's Anabasis records Greek soldiers disabled by eating it in Anatolia in 401 BC. Modern cases are usually self-limiting nausea and low blood pressure, rarely fatal.",
+      "note": "Honey that contains grayanotoxins, made from the nectar of some rhododendron species, is commonly called 'mad honey', and eating it can cause a rare poisonous reaction known as grayanotoxin poisoning. Its intoxicating effects have been suspected for centuries: according to Xenophon's Anabasis, an invading Greek army was accidentally poisoned by eating local Asia Minor honey, but all made a quick recovery without fatalities. Most modern cases occur in middle-aged males who use it for perceived sexual enhancement.",
       "severity": "conditional",
       "ids": [
         "rhododendron"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Grayanotoxin"
     },
     "nicotine_toxicity": {
       "label": "Nicotine is acutely toxic in concentrated or pure form",
@@ -1272,7 +1380,8 @@
       "ids": [
         "coca",
         "cocaine"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Cocaine"
     },
     "opioid_overdose": {
       "label": "Opium poppy alkaloids depress breathing at high doses",
@@ -1281,7 +1390,8 @@
       "ids": [
         "opium_poppy",
         "morphine"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Opioid_overdose"
     },
     "betel_nut_carcinogen": {
       "label": "Habitual betel-nut chewing is linked to oral cancer",
@@ -1290,7 +1400,8 @@
       "ids": [
         "betel_nut"
       ],
-      "carcinogen": true
+      "carcinogen": true,
+      "src": "https://en.wikipedia.org/wiki/Areca_nut"
     },
     "ayahuasca_mao_interaction": {
       "label": "Ayahuasca's MAO inhibitors interact dangerously with some medicines",
@@ -1298,7 +1409,8 @@
       "severity": "conditional",
       "ids": [
         "ayahuasca_vine"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Ayahuasca"
     },
     "sweet_flag_carcinogen": {
       "label": "Sweet flag's beta-asarone is banned from US food products",
@@ -1307,7 +1419,8 @@
       "ids": [
         "sweet_flag"
       ],
-      "carcinogen": true
+      "carcinogen": true,
+      "src": "https://en.wikipedia.org/wiki/Acorus_calamus"
     },
     "mescal_bean_toxicity": {
       "label": "Mescal bean seeds can cause convulsions and respiratory paralysis",
@@ -1315,7 +1428,8 @@
       "severity": "acute",
       "ids": [
         "mescal_bean"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Dermatophyllum_secundiflorum"
     },
     "morning_glory_seed_treatment": {
       "label": "Commercial morning glory seeds are often chemically treated",
@@ -1323,7 +1437,8 @@
       "severity": "conditional",
       "ids": [
         "morning_glory"
-      ]
+      ],
+      "src": "https://en.wikipedia.org/wiki/Morning_glory"
     },
     "methane_explosion": {
       "label": "Methane is explosive in air",
@@ -1331,7 +1446,8 @@
       "ids": [
         "methane"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Methane"
     },
     "hydrogen_flammability": {
       "label": "Hydrogen has one of the widest explosive ranges of any gas",
@@ -1348,7 +1464,8 @@
       "ids": [
         "akee"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Hypoglycin_A"
     },
     "corrosive_acid": {
       "label": "Strong acids burn on contact",
@@ -1357,7 +1474,8 @@
         "hydrochloric_acid",
         "sulfuric_acid"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Chemical_burn"
     },
     "carbon_tetrachloride_toxicity": {
       "label": "Carbon tetrachloride damages the liver and kidneys",
@@ -1366,7 +1484,8 @@
         "carbon_tetrachloride"
       ],
       "severity": "cumulative",
-      "carcinogen": true
+      "carcinogen": true,
+      "src": "https://en.wikipedia.org/wiki/Carbon_tetrachloride"
     },
     "barium_toxicity": {
       "label": "Soluble barium salts are toxic if swallowed",
@@ -1375,7 +1494,8 @@
         "barium_nitrate",
         "barium_carbonate"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Barium"
     },
     "hexavalent_chromium": {
       "label": "Hexavalent chromium is a recognised carcinogen",
@@ -1399,7 +1519,8 @@
         "hydrogen_fluoride",
         "hydrofluoric_acid"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Hydrofluoric_acid"
     },
     "strong_oxidizer_acid": {
       "label": "Chlorine's stronger oxoacids are real oxidiser hazards",
@@ -1424,7 +1545,8 @@
       "ids": [
         "oxalic_acid"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Oxalic_acid"
     },
     "hexavalent_chromium_carcinogen": {
       "label": "Hexavalent chromium is a confirmed carcinogen",
@@ -1434,7 +1556,8 @@
         "sodium_dichromate"
       ],
       "severity": "cumulative",
-      "carcinogen": true
+      "carcinogen": true,
+      "src": "https://en.wikipedia.org/wiki/Hexavalent_chromium"
     },
     "acetaldehyde_carcinogen": {
       "label": "Acetaldehyde is what your body already makes from alcohol",
@@ -1443,7 +1566,8 @@
         "acetaldehyde"
       ],
       "severity": "cumulative",
-      "carcinogen": true
+      "carcinogen": true,
+      "src": "https://en.wikipedia.org/wiki/Acetaldehyde"
     },
     "perc_solvent_toxicity": {
       "label": "Perc is a probable carcinogen, not just a dry-cleaning smell",
@@ -1452,7 +1576,8 @@
         "tetrachloroethylene"
       ],
       "severity": "cumulative",
-      "carcinogen": true
+      "carcinogen": true,
+      "src": "https://en.wikipedia.org/wiki/Tetrachloroethylene"
     },
     "oxidizer_hazard": {
       "label": "Strong oxidisers burn on contact and burn what they touch",
@@ -1462,16 +1587,18 @@
         "barium_peroxide",
         "sodium_chlorate"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Oxidizing_agent"
     },
     "nickel_dermatitis": {
-      "label": "Nickel is the most common metal allergy there is",
+      "label": "Nickel is the most common contact allergy in industrialised countries",
       "note": "Soluble nickel salts like nickel nitrate and nickel acetate are more readily absorbed through skin than the metal itself, and nickel contact allergy is the single most common metal sensitisation in humans -- a rash from a cheap watch strap and an industrial soluble-nickel exposure are the same underlying immune reaction, just different doses.",
       "ids": [
         "nickel_nitrate",
         "nickel_acetate"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Nickel_allergy"
     },
     "phosgene_toxicity": {
       "label": "Phosgene killed more people than any other WWI gas",
@@ -1479,7 +1606,8 @@
       "ids": [
         "phosgene"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Phosgene"
     },
     "bleach_fumes": {
       "label": "Bleach mixed with acid or ammonia makes toxic gas",
@@ -1487,7 +1615,8 @@
       "ids": [
         "bleach"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Sodium_hypochlorite"
     },
     "ammonium_nitrite_instability": {
       "label": "Ammonium nitrite can explode when heated",
@@ -1495,7 +1624,8 @@
       "ids": [
         "ammonium_nitrite"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Ammonium_nitrite"
     },
     "sodium_amide_reactivity": {
       "label": "Sodium amide reacts violently with water",
@@ -1503,7 +1633,8 @@
       "ids": [
         "sodium_amide"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Sodium_amide"
     },
     "ethylene_oxide_carcinogen": {
       "label": "Ethylene oxide is flammable and carcinogenic",
@@ -1512,16 +1643,17 @@
         "ethylene_oxide"
       ],
       "severity": "cumulative",
-      "carcinogen": true
+      "carcinogen": true,
+      "src": "https://en.wikipedia.org/wiki/Ethylene_oxide"
     },
     "bromate_carcinogen": {
       "label": "Bromate is a suspected carcinogen",
-      "note": "Bromate is a suspected human carcinogen; the US EPA caps it at 10 parts per billion in drinking water. Its presence in bottled water has forced product recalls.",
+      "note": "Bromate in drinking water is a suspected human carcinogen; the maximum contaminant level set by the USEPA is 10 parts per billion. Its presence in Dasani bottled water forced a recall of that product in the UK.",
       "ids": [
         "bromate"
       ],
       "severity": "cumulative",
-      "carcinogen": true
+      "src": "https://en.wikipedia.org/wiki/Bromate"
     },
     "chlorate_oxidizer": {
       "label": "Potassium chlorate is a powerful oxidizer",
@@ -1529,7 +1661,8 @@
       "ids": [
         "potassium_chlorate"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Potassium_chlorate"
     },
     "hydrazine_toxicity": {
       "label": "Hydrazine is corrosive, toxic, and probably carcinogenic",
@@ -1538,7 +1671,8 @@
         "hydrazine"
       ],
       "severity": "acute",
-      "carcinogen": true
+      "carcinogen": true,
+      "src": "https://en.wikipedia.org/wiki/Hydrazine"
     },
     "violent_hydrolysis": {
       "label": "These react violently with water",
@@ -1547,7 +1681,8 @@
         "phosphorus_pentachloride",
         "potassium_oxide"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Phosphorus_pentachloride"
     },
     "hexane_neurotoxicity": {
       "label": "Chronic hexane exposure damages nerves",
@@ -1555,7 +1690,8 @@
       "ids": [
         "hexane"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "src": "https://en.wikipedia.org/wiki/Hexane"
     },
     "bleach_mixing_hazard": {
       "label": "Never mix bleach with acid or ammonia",
@@ -1563,7 +1699,8 @@
       "ids": [
         "hypochlorite"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Sodium_hypochlorite"
     },
     "dmso_skin_penetration": {
       "label": "DMSO carries whatever is dissolved in it through skin",
@@ -1571,7 +1708,8 @@
       "ids": [
         "dimethyl_sulfoxide"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Dimethyl_sulfoxide"
     },
     "peanut_allergy": {
       "label": "Peanut allergy can be fatal, and trace amounts are enough",
@@ -1580,7 +1718,8 @@
         "peanut",
         "peanut_butter"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Peanut_allergy"
     },
     "isocyanate_sensitization": {
       "label": "Isocyanates are a leading cause of occupational asthma",
@@ -1588,7 +1727,8 @@
       "ids": [
         "isocyanate"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "src": "https://en.wikipedia.org/wiki/Isocyanate"
     },
     "crystalline_silica_dust": {
       "label": "Fine silica dust causes silicosis",
@@ -1598,7 +1738,8 @@
         "borosilicate_glass"
       ],
       "severity": "cumulative",
-      "carcinogen": true
+      "carcinogen": true,
+      "src": "https://en.wikipedia.org/wiki/Silicosis"
     },
     "capsaicin_irritant": {
       "label": "Capsaicin burns skin and eyes on contact",
@@ -1621,7 +1762,8 @@
       "ids": [
         "ptfe"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Polytetrafluoroethylene"
     },
     "vinyl_chloride_carcinogen": {
       "label": "Vinyl chloride monomer is a known human carcinogen",
@@ -1630,7 +1772,8 @@
         "vinyl_chloride"
       ],
       "severity": "cumulative",
-      "carcinogen": true
+      "carcinogen": true,
+      "src": "https://en.wikipedia.org/wiki/Vinyl_chloride"
     },
     "pvc_combustion": {
       "label": "Burning PVC releases hydrogen chloride",
@@ -1638,7 +1781,8 @@
       "ids": [
         "pvc"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Polyvinyl_chloride"
     },
     "diazonium_salt_explosive": {
       "label": "Dry diazonium salts are explosive",
@@ -1646,7 +1790,8 @@
       "ids": [
         "benzenediazonium_chloride"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Diazonium_compound"
     },
     "acetonitrile_cyanide": {
       "label": "Acetonitrile is metabolised into cyanide",
@@ -1654,7 +1799,8 @@
       "ids": [
         "acetonitrile"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Acetonitrile"
     },
     "nitrous_oxide_misuse": {
       "label": "Nitrous oxide misuse causes real nerve damage",
@@ -1662,7 +1808,8 @@
       "ids": [
         "dinitrogen_monoxide"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "src": "https://en.wikipedia.org/wiki/Nitrous_oxide"
     },
     "phenolphthalein_carcinogen": {
       "label": "Phenolphthalein was pulled from laxatives over cancer risk",
@@ -1671,7 +1818,8 @@
         "phenolphthalein"
       ],
       "severity": "conditional",
-      "carcinogen": true
+      "carcinogen": true,
+      "src": "https://en.wikipedia.org/wiki/Phenolphthalein"
     },
     "barium_peroxide_hazard": {
       "label": "Barium peroxide is an oxidiser, and barium compounds are toxic",
@@ -1679,7 +1827,8 @@
       "ids": [
         "barium_peroxide"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Barium_peroxide"
     },
     "trichloroacetic_acid_corrosive": {
       "label": "Trichloroacetic acid burns skin the same way in a clinic or a spill",
@@ -1687,7 +1836,8 @@
       "ids": [
         "trichloroacetic_acid"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Trichloroacetic_acid"
     },
     "sulfur_trioxide_corrosive": {
       "label": "Sulfur trioxide turns to sulfuric acid the instant it meets water",
@@ -1695,7 +1845,8 @@
       "ids": [
         "sulfur_trioxide"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Sulfur_trioxide"
     },
     "hydrogen_peroxide_concentration": {
       "label": "Hydrogen peroxide's hazard is almost entirely about concentration",
@@ -1703,7 +1854,8 @@
       "ids": [
         "hydrogen_peroxide"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Hydrogen_peroxide"
     },
     "benzene_carcinogen": {
       "label": "Benzene is a known human carcinogen",
@@ -1712,7 +1864,8 @@
         "benzene"
       ],
       "severity": "cumulative",
-      "carcinogen": true
+      "carcinogen": true,
+      "src": "https://en.wikipedia.org/wiki/Benzene"
     },
     "copper_sulfate_toxicity": {
       "label": "Copper sulfate is toxic well below fungicide doses",
@@ -1720,15 +1873,17 @@
       "ids": [
         "copper_sulfate"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Copper(II)_sulfate"
     },
     "camphor_toxicity": {
       "label": "Camphor is a real paediatric poisoning risk",
-      "note": "As little as 3 to 5 mL of 20% camphor oil, or roughly 30 mg/kg, can be lethal to a small child, and seizures have started within five minutes of ingestion. Camphor accounts for thousands of US poison-centre calls a year, most involving children under six.",
+      "note": "Camphor is poisonous when swallowed, including as cream or ointment. In high ingested doses it produces irritability, disorientation, lethargy, muscle spasms, vomiting, abdominal cramps, convulsions and seizures. Lethal doses by ingestion in adults are in the range 50–500 mg/kg; two grams causes serious toxicity and four grams is potentially lethal, and a child is far smaller than an adult.",
       "ids": [
         "camphor"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Camphor"
     },
     "silver_nitrate_caustic": {
       "label": "Silver nitrate burns and stains on contact",
@@ -1736,7 +1891,8 @@
       "ids": [
         "silver_nitrate"
       ],
-      "severity": "contact"
+      "severity": "contact",
+      "src": "https://en.wikipedia.org/wiki/Silver_nitrate"
     },
     "lpg_flammability": {
       "label": "Butane and propane are pressurised, flammable gases",
@@ -1745,7 +1901,8 @@
         "butane",
         "propane"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Liquefied_petroleum_gas"
     },
     "elderberry_raw": {
       "label": "Only the flower is eaten raw",
@@ -1754,16 +1911,18 @@
         "elderflower",
         "elderberry"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Elderberry"
     },
     "theobromine_pet_toxicity": {
       "label": "Chocolate is toxic to dogs and cats",
-      "note": "Theobromine is mild in humans but animals metabolize it far more slowly. A human LD50 near 800 mg/kg compares to roughly 300 mg/kg in dogs and 200 mg/kg in cats — dark and baking chocolate carry the highest doses.",
+      "note": "Chocolate can be safely consumed by humans with a negligible risk of poisoning, but animals metabolise theobromine much more slowly and can easily eat enough to be poisoned. Dogs are the most common victims, and it can be fatal; the toxic dose for cats is even lower. The median lethal dose has only been published for cats, dogs, rats and mice, and these differ by a factor of 6 across species.",
       "ids": [
         "theobromine",
         "chocolate"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Theobromine_poisoning"
     },
     "glycyrrhizin_hypertension": {
       "label": "Liquorice root can raise blood pressure",
@@ -1772,7 +1931,8 @@
         "licorice",
         "glycyrrhizin"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Liquorice"
     },
     "fenugreek_pregnancy": {
       "label": "Fenugreek seed and pregnancy don't mix",
@@ -1780,7 +1940,8 @@
       "ids": [
         "fenugreek"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Fenugreek"
     },
     "allyl_isothiocyanate_irritant": {
       "label": "Allyl isothiocyanate is a lachrymatory irritant",
@@ -1790,7 +1951,8 @@
         "mustard_seed",
         "mustard"
       ],
-      "severity": "contact"
+      "severity": "contact",
+      "src": "https://en.wikipedia.org/wiki/Allyl_isothiocyanate"
     },
     "safrole_carcinogen": {
       "label": "Safrole was banned as a food additive in 1960",
@@ -1799,16 +1961,18 @@
         "safrole"
       ],
       "severity": "cumulative",
-      "carcinogen": true
+      "carcinogen": true,
+      "src": "https://en.wikipedia.org/wiki/Safrole"
     },
     "glycyrrhizin_arrhythmia": {
-      "label": "Black liquorice and the FDA's 2 oz warning",
-      "note": "Glycyrrhizin, liquorice's sweet compound, can drive down blood potassium. The FDA has warned that eating 2 oz of black liquorice a day for at least two weeks — if you're 40 or older — can bring on an irregular heartbeat; the effect is usually reversible once you stop.",
+      "label": "Liquorice can lower blood potassium",
+      "note": "Glycyrrhizin, liquorice's sweet compound, is suspected when overindulgence in liquorice shows up as unexplained hypertension, low blood potassium (hypokalaemia) and muscle weakness. The effects of excessive liquorice on lowering blood potassium and raising blood pressure are a particular concern for people with hypertension or heart or kidney disease.",
       "ids": [
         "liquorice",
         "glycyrrhizin"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "src": "https://en.wikipedia.org/wiki/Liquorice"
     },
     "poppy_seed_opiate_residue": {
       "label": "Poppy seeds carry real trace opiates",
@@ -1816,17 +1980,19 @@
       "ids": [
         "poppy"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Poppy_seed"
     },
     "rabies_exposure": {
       "label": "Rabies is nearly always fatal once symptoms start",
-      "note": "Rabies virus travels from a bite along nerves to the brain over days to months, and once neurological symptoms appear the disease is almost always fatal; the only real protection is prompt post-exposure vaccination before that happens. It still kills an estimated 55,000 people a year worldwide.",
+      "note": "Rabies virus travels from a bite along peripheral nerves to the central nervous system, and the time that takes depends on the distance. The rabies vaccine and sometimes rabies immunoglobulin prevent the disease if given before symptoms start, and as of 2016 only fourteen people were documented to have survived rabies after showing symptoms. It causes about 59,000 human deaths worldwide each year.",
       "ids": [
         "rabies_virus",
         "mongoose"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Rabies"
     },
     "staphylococcus_illness": {
       "label": "Staph food poisoning survives the cooking that kills the bacterium",
@@ -1835,7 +2001,8 @@
         "staphylococcus_aureus"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Staphylococcus_aureus"
     },
     "listeriosis_risk": {
       "label": "Listeria keeps growing in the refrigerator",
@@ -1844,16 +2011,18 @@
         "listeria_monocytogenes"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Listeriosis"
     },
     "campylobacteriosis_illness": {
-      "label": "Campylobacter is the most common bacterial foodborne illness in the US",
-      "note": "Most Campylobacter infections resolve within about a week without treatment, but roughly 1 in 3,000 go on to trigger Guillain-Barré syndrome, an autoimmune nerve disorder, weeks after the diarrhea has cleared.",
+      "label": "Campylobacter is among the most common bacterial infections in humans",
+      "note": "Campylobacteriosis is among the most common infections caused by a bacterium in humans, often as a foodborne illness. Some individuals (1–2 in 100,000 cases) develop Guillain–Barré syndrome, in which the nerves that join the spinal cord and brain to the rest of the body are damaged, sometimes permanently, usually seen several weeks after the infection.",
       "ids": [
         "campylobacter"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Campylobacteriosis"
     },
     "aflatoxin_carcinogen": {
       "label": "Aflatoxin is one of the most potent liver carcinogens known",
@@ -1862,7 +2031,8 @@
         "aflatoxin"
       ],
       "severity": "cumulative",
-      "carcinogen": true
+      "carcinogen": true,
+      "src": "https://en.wikipedia.org/wiki/Aflatoxin"
     },
     "tick_borne_rickettsia": {
       "label": "A tick bite can carry more than an itch",
@@ -1872,7 +2042,8 @@
         "rocky_mountain_spotted_fever"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Rocky_Mountain_spotted_fever"
     },
     "rubella_pregnancy_risk": {
       "label": "Mild in most people, dangerous for a fetus",
@@ -1882,7 +2053,8 @@
         "rubella"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Rubella"
     },
     "gi_infection_risk": {
       "label": "Fecal-oral pathogens are a real category",
@@ -1910,7 +2082,8 @@
         "gonorrhea"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Gonorrhea"
     },
     "chlamydia_sti": {
       "label": "The most-reported bacterial STI in the US",
@@ -1931,7 +2104,8 @@
         "syphilis"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Syphilis"
     },
     "chancroid_sti": {
       "label": "A painful genital ulcer disease, rare in wealthy countries",
@@ -1941,7 +2115,8 @@
         "chancroid"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Chancroid"
     },
     "toxic_shock_risk": {
       "label": "Toxic shock syndrome can turn fatal within hours",
@@ -1963,7 +2138,8 @@
         "leptospirosis"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Leptospirosis"
     },
     "pyelonephritis_risk": {
       "label": "Untreated bladder infections can spread to the kidneys",
@@ -1973,7 +2149,8 @@
         "pyelonephritis"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Pyelonephritis"
     },
     "tetanus_illness": {
       "label": "Tetanus is rare today because of vaccination, not luck",
@@ -1982,7 +2159,8 @@
         "tetanus"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Tetanus"
     },
     "botulism_illness": {
       "label": "A different toxin, a different paralysis, from a namesake genus",
@@ -1991,7 +2169,8 @@
         "botulism"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Botulism"
     },
     "bacterial_meningitis": {
       "label": "The bacterial form of a name that also covers a mild virus",
@@ -2001,16 +2180,18 @@
         "meningococcemia"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Meningitis"
     },
     "viral_encephalitis": {
       "label": "Brain inflammation is a different order of danger than meningitis",
-      "note": "Untreated herpes simplex encephalitis kills about 70% of those it strikes, and even with antiviral treatment a third still die. Epidemic arboviral encephalitis varies enormously by virus, from under 1% case-fatality for La Crosse virus to 30–75% for eastern equine encephalitis.",
+      "note": "Encephalitis is inflammation of the brain. Its causes include viruses such as herpes simplex virus and rabies virus, and the most common identifiable cause of viral encephalitis is herpes simplex. In 2015 it was estimated to have affected 4.3 million people and resulted in 150,000 deaths worldwide. Treatment generally takes place in hospital.",
       "ids": [
         "encephalitis"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Encephalitis"
     },
     "sepsis_deaths": {
       "label": "Sepsis is not rare, and it kills fast",
@@ -2025,13 +2206,14 @@
     },
     "plague_mortality": {
       "label": "Plague still occurs, and pneumonic plague is nearly always fatal untreated",
-      "note": "The WHO still receives roughly 1,000 to 2,000 reported plague cases a year. Prompt antibiotics matter: untreated bubonic plague is usually fatal, and untreated pneumonic plague kills close to 100% of those infected, sometimes within days.",
+      "note": "Globally about 600 plague cases are reported a year. Early treatment with antibiotics reduces the mortality rate to between 4% and 15%; untreated, septicaemic plague is usually fatal, and in untreated pneumonic cases mortality is nearly 100%, with death following within one to six days.",
       "ids": [
         "plague",
         "yersinia_pestis"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Plague_(disease)"
     },
     "tularemia_infectivity": {
       "label": "A handful of organisms is enough for some routes",
@@ -2041,7 +2223,8 @@
         "francisella_tularensis"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Tularemia"
     },
     "aids_untreated_progression": {
       "label": "Untreated HIV disease is fatal, though slowly",
@@ -2081,16 +2264,18 @@
         "perinatal_hiv_transmission"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/HIV/AIDS"
     },
     "abscess_severity_by_site": {
-      "label": "Where an abscess forms decides how dangerous it is",
-      "note": "Over 90% of documented and cultured skin abscesses grow Staphylococcus aureus, and a skin abscess rarely results in death because it eventually breaks through the skin on its own — which is why drainage, not antibiotics, is the standard treatment for an uncomplicated one. The same walled-off pocket of infection inside the skull is a different illness: brain abscess still ends in death in about 10% of cases even with treatment, with roughly 70% of people recovering well.",
+      "label": "A skin abscess is drained, and staph is the usual cause",
+      "note": "An abscess is a collection of pus built up within the tissue of the body, usually caused by bacterial infection. Skin abscesses in particular are overwhelmingly caused by Staphylococcus aureus, and in many areas the most common bacteria present are methicillin-resistant Staph. Standard treatment for most skin or soft-tissue abscesses is cutting the abscess open and draining it.",
       "ids": [
         "abscess"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Abscess"
     },
     "actinomycosis_invasion": {
       "label": "Ordinary mouth bacteria in the wrong tissue plane",
@@ -2100,7 +2285,8 @@
         "actinomycosis"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Actinomycosis"
     },
     "adenovirus_infection": {
       "label": "Adenovirus survives on surfaces that would kill most viruses",
@@ -2109,7 +2295,8 @@
         "adenovirus"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Adenoviridae"
     },
     "anthrax_spore_persistence": {
       "label": "Anthrax spores wait decades in the ground, and the inhaled form kills about half",
@@ -2128,7 +2315,8 @@
         "arbovirus"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Arbovirus"
     },
     "bacterial_vaginosis_risks": {
       "label": "Common, often symptomless, and it raises the risk of other infections",
@@ -2149,16 +2337,18 @@
         "brucellosis"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Brucellosis"
     },
     "clostridium_toxins": {
       "label": "One genus, and some of the most potent toxins in biology",
-      "note": "Clostridium species are obligate anaerobes that ride out oxygen as endospores and make toxin once they reach sealed tissue or sealed food: C. tetani causes tetanus, C. perfringens and C. septicum gas gangrene, C. botulinum botulism. Botulinum toxin's estimated human median lethal dose is 1.3 to 2.1 nanograms per kilogram injected, the deadliest natural substance recorded in the chemical literature. Their close relative Clostridioides difficile, which fills the gut space antibiotics empty, caused about 453,000 US cases and 29,000 deaths in 2011, and its spores are untouched by alcohol hand rub.",
+      "note": "Clostridium species are anaerobic spore-formers. C. botulinum can produce botulinum toxin in food or wounds and cause botulism, which can be fatal; C. perfringens causes a wide range of illness from food poisoning to cellulitis, fasciitis, necrotic enteritis and gas gangrene; C. tetani causes tetanus. Clostridioides difficile, once counted in the genus, causes a major diarrhoeal illness.",
       "ids": [
         "clostridium"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Clostridium"
     },
     "coccidiosis_human_species": {
       "label": "Most coccidia stay inside one host species; a few of them reach people",
@@ -2167,7 +2357,8 @@
         "coccidiosis"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Coccidiosis"
     },
     "cyanotoxin_bloom": {
       "label": "Blue-green blooms make liver and nerve toxins that boiling does not remove",
@@ -2187,7 +2378,8 @@
         "ringworm"
       ],
       "severity": "contact",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Dermatophyte"
     },
     "diphtheria_toxin_lethality": {
       "label": "The membrane in the throat is not what kills",
@@ -2218,7 +2410,8 @@
         "infective_endocarditis"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Infective_endocarditis"
     },
     "endotoxin_shock": {
       "label": "Killing the bacterium does not remove the endotoxin",
@@ -2228,7 +2421,8 @@
         "lipopolysaccharide"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Lipopolysaccharide"
     },
     "epidemic_typhus_lice": {
       "label": "Rickettsia arrives on ticks, mites, fleas and lice, and typhus still follows war and famine",
@@ -2247,7 +2441,8 @@
         "exotoxin"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Exotoxin"
     },
     "group_a_strep_sequelae": {
       "label": "Strep throat is minor; what group A strep does afterwards is not",
@@ -2308,7 +2503,8 @@
         "folliculitis"
       ],
       "severity": "contact",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Impetigo"
     },
     "influenza_severity": {
       "label": "Seasonal flu kills hundreds of thousands of people every year",
@@ -2344,31 +2540,34 @@
     },
     "leprosy_nerve_damage": {
       "label": "Leprosy is curable, but the nerve damage it does before treatment is permanent",
-      "note": "Mycobacterium leprae passes only through prolonged close contact with an untreated case, in droplets from the nose and mouth; around 95% of people exposed never develop the disease, and the average incubation is about five years, occasionally as long as twenty. WHO recorded 182,815 new cases in 2023, of which 9,729 already had grade-2 visible disability by the time they were found. Multidrug therapy, supplied free by WHO, cures the infection in six months for paucibacillary and twelve for multibacillary disease, but loss of sensation and paralysis already caused do not reverse.",
+      "note": "Leprosy infection can damage the nerves, respiratory tract, skin and eyes. Nerve damage may result in the loss of nociception, which can lead to the loss of parts of a person's extremities from repeated injuries or infection through unnoticed wounds. Leprosy is spread between people, although extensive contact is necessary, and 95% of people exposed to the bacterium do not develop it. It is curable with multidrug therapy, which the World Health Organization provides free of charge.",
       "ids": [
         "leprosy"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Leprosy"
     },
     "measles_severity": {
-      "label": "Measles killed an estimated 95,000 people in 2024, mostly children under five",
+      "label": "Measles still kills an estimated 95 thousand people a year",
       "note": "One case can generate up to 18 secondary infections, and nine in ten non-immune people sharing a home with a case catch it. About 6% develop pneumonia; blindness, severe diarrhoea and brain inflammation also follow. Around 2 in 10,000 measles cases later develop subacute sclerosing panencephalitis, a degenerative brain disease that appears on average ten years after the infection and is essentially always fatal.",
       "ids": [
         "measles",
         "measles_virus"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Measles"
     },
     "mould_spore_exposure": {
-      "label": "Mould spores are harmless to most lungs and dangerous to a few",
-      "note": "People inhale thousands of Aspergillus spores a day with no effect, because a working immune system clears them. Where it cannot — transplant recipients, people on steroids or other immunosuppressants — the same spores cause invasive aspergillosis, which affects around 300,000 people worldwide and carries 20% mortality at six months. Damp buildings also carry an allergic burden: as many as 21% of asthma cases have been attributed to mould exposure.",
+      "label": "Moulds can cause disease through allergy, infection or toxins",
+      "note": "Some diseases of animals and humans can be caused by certain moulds. Disease may result from allergic sensitivity to mould spores, from growth of pathogenic moulds within the body, or from the effects of ingested or inhaled toxic compounds (mycotoxins) that moulds produce.",
       "ids": [
         "mould"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Mold"
     },
     "mrsa_resistance": {
       "label": "MRSA is ordinary staph that the beta-lactam antibiotics no longer touch",
@@ -2377,7 +2576,8 @@
         "mrsa"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Methicillin-resistant_Staphylococcus_aureus"
     },
     "mucormycosis_risk": {
       "label": "Bread mould, and in the wrong patient an infection that kills about half",
@@ -2386,7 +2586,8 @@
         "zygomycete"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Mucormycosis"
     },
     "mumps_complications": {
       "label": "The swollen glands pass; some of the complications do not",
@@ -2401,12 +2602,13 @@
     },
     "mycoplasma_pneumonia_illness": {
       "label": "No cell wall means penicillin has nothing to attack",
-      "note": "Mycoplasma pneumoniae spreads by respiratory droplets and aerosols and causes atypical pneumonia, the 'walking pneumonia' that reportedly accounts for 10 to 15% of community-acquired pneumonia overall and closer to 27% in children. Because the genus has no cell wall at all, beta-lactam antibiotics such as penicillin and amoxicillin have no target and do nothing. Most infections stay mild, but the immune response can spill over into Guillain-Barré syndrome, Stevens-Johnson syndrome, haemolytic anaemia or encephalitis.",
+      "note": "Mycoplasma pneumoniae is a species of very small bacteria that lack a cell wall, which makes them inherently resistant to antibiotics that target cell wall synthesis, such as the beta-lactams. It is a human pathogen that causes Mycoplasma pneumonia, a form of atypical bacterial pneumonia.",
       "ids": [
         "mycoplasma"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Mycoplasma_pneumoniae"
     },
     "naegleria_infection": {
       "label": "It enters through the nose, and almost no one survives it",
@@ -2478,24 +2680,27 @@
         "pseudomonas_infection"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Pseudomonas_aeruginosa"
     },
     "pseudomonas_resistance": {
       "label": "The organism that infects the patients other bacteria cannot reach",
-      "note": "Pseudomonas aeruginosa is an opportunist armed with a low-permeability envelope, efflux pumps and its own AmpC beta-lactamase, which leaves it intrinsically resistant to many antibiotics. It is the most common cause of infection in burn injuries and forms chronic biofilms in cystic fibrosis lungs. The US CDC counted about 32,600 multidrug-resistant P. aeruginosa infections among hospitalized patients in 2017 and 2,700 deaths, and WHO ranks it among the greatest antibiotic-resistance threats.",
+      "note": "Pseudomonas aeruginosa is a multidrug-resistant, opportunistic pathogen: serious infection often occurs during existing diseases or conditions, most notably cystic fibrosis and traumatic burns. Its genome includes efflux systems and beta-lactamases that contribute to its antibiotic resistance, it can aggregate into enduring biofilms, and it poses one of the greatest threats to humans in terms of antibiotic resistance.",
       "ids": [
         "pseudomonas_aeruginosa"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Pseudomonas_aeruginosa"
     },
     "psilocybe_galerina_confusion": {
       "label": "The deadliest little brown mushroom grows in the same habit as the ones foragers hunt for",
-      "note": "Galerina marginata carries the same amatoxins as the death cap — one study measured 78 to 244 micrograms per gram fresh weight, in some specimens more than in Amanita phalloides itself, against an estimated lethal dose near 0.1 mg per kilogram of body weight. Poisonings have happened exactly this way, with collectors taking it for the hallucinogenic Psilocybe stuntzii. Amatoxin illness is deceptive: vomiting and diarrhoea some hours after the meal, then an apparent recovery, then liver failure.",
+      "note": "Galerina marginata carries the same deadly amatoxins as the death cap. Several poisonings have been attributed to collectors consuming it after mistaking it for the hallucinogenic Psilocybe stuntzii. Initial symptoms of severe abdominal pain, vomiting and diarrhoea may last six to nine hours, and ingestion in toxic amounts causes severe liver damage and eventual death if not treated rapidly.",
       "ids": [
         "psilocybin_mushroom"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Galerina_marginata"
     },
     "rabies_encephalitis_fatality": {
       "label": "Once the virus reaches the brain there is essentially no treatment",
@@ -2504,7 +2709,8 @@
         "rabies_encephalitis"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Rabies"
     },
     "sars_outbreak_mortality": {
       "label": "SARS killed roughly one in ten of the people it infected",
@@ -2518,21 +2724,23 @@
     },
     "scalded_skin_toxin": {
       "label": "The bacterium stays put; the toxin that peels the skin travels",
-      "note": "Exfoliative toxins A and B from Staphylococcus aureus cleave desmoglein-1, the protein holding two epidermal layers together, so skin separates far from the site of infection itself. Most cases are in children under six, where mortality runs low — on the order of a few percent — but in adults, who develop it mainly alongside immunosuppression or kidney failure, reported mortality reaches 50 to 60%.",
+      "note": "Staphylococcal scalded skin syndrome is induced by exfoliative toxins A and B from Staphylococcus aureus. These proteases cleave desmoglein-1, which normally holds the skin's granular and spinous layers together, so large sheets of skin peel away. It is most common in children under 6, but can be seen in adults who are immunosuppressed or have kidney failure; the prognosis in children is excellent with treatment.",
       "ids": [
         "staphylococcal_scalded_skin_syndrome"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Staphylococcal_scalded_skin_syndrome"
     },
     "trachoma_blindness": {
       "label": "Repeated infection scars the eyelid until the lashes turn inward",
-      "note": "Chlamydia are obligate intracellular bacteria that alternate an infectious form with a replicating one inside the host cell. In the eye, Chlamydia trachomatis causes trachoma, spread by hands, shared cloth and flies carrying discharge from an infected person's eyes or nose; repeated infection over years scars the inner eyelid until the lashes scrape the cornea. It is the leading infectious cause of blindness worldwide, with about 1.9 million people blind or visually impaired by it and 92 million living where it is endemic.",
+      "note": "Chlamydia trachomatis causes trachoma, an infection of the eye. Globally about 80 million people have an active infection; the disease is the cause of decreased vision in 2.2 million people, of whom 1.2 million are completely blind, and 92 million people are at risk.",
       "ids": [
         "chlamydia_bacterium"
       ],
       "severity": "cumulative",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Trachoma"
     },
     "tuberculosis_burden": {
       "label": "Latent in a quarter of humanity, and still killing over a million people a year",
@@ -2557,12 +2765,13 @@
     },
     "west_nile_neuroinvasive": {
       "label": "Silent in most people, neuroinvasive in a few",
-      "note": "About 80% of West Nile infections produce no symptoms at all, and fewer than 1% reach the nervous system as meningitis or encephalitis — but among those, roughly 10% die, and survivors can spend 60 to 90 days recovering with motor deficits and fatigue lasting more than a year. Mosquitoes carry it; blood transfusion, organ transplant and mother-to-child transmission are documented but uncommon. There is no human vaccine.",
+      "note": "In about 80% of West Nile infections people have few or no symptoms, and in less than 1% encephalitis or meningitis occurs. The risk of death among those in whom the nervous system is affected is about 10%. Rarely the virus is spread through blood transfusions, organ transplants, or from mother to baby; it does not otherwise spread directly between people. There is no human vaccine.",
       "ids": [
         "west_nile_virus"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/West_Nile_fever"
     },
     "yellow_fever_toxic_phase": {
       "label": "The fever that comes back is the dangerous one",
@@ -2642,15 +2851,17 @@
         "salt_fish"
       ],
       "severity": "cumulative",
-      "carcinogen": true
+      "carcinogen": true,
+      "src": "https://en.wikipedia.org/wiki/Salted_fish"
     },
     "carbon_monoxide_poisoning": {
-      "label": "Carbon monoxide gives no warning at all, and binds 240 times harder than oxygen",
-      "note": "It is colourless, odourless and tasteless, so nothing about a room tells you it is filling with it. Haemoglobin holds carbon monoxide about 240 times more tightly than oxygen, so blood keeps circulating while carrying less and less of what it is for. 35 parts per million brings on headache and dizziness after six to eight hours; 1,600 ppm can kill in under two. It causes more than 400 non-fire deaths and 20,000 emergency visits a year in the United States alone. Burning charcoal indoors or in a tent is a common way people are poisoned, because a fire that looks small still produces it.",
+      "label": "Carbon monoxide gives no warning at all",
+      "note": "Carbon monoxide is a colourless, odourless gas that is initially non-irritating, so nothing about a room tells you it is filling with it. It combines with haemoglobin to form carboxyhaemoglobin, which stops the blood carrying oxygen. Exposure at 100 ppm or more is dangerous to health. Poisoning results in more than 20,000 emergency room visits a year in the United States, and non-fire cases cause more than 400 deaths a year.",
       "ids": [
         "carbon_monoxide"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Carbon_monoxide_poisoning"
     },
     "corium_lethality": {
       "label": "Chernobyl's Elephant's Foot delivered a coin-flip lethal dose in about three minutes",
@@ -2658,7 +2869,8 @@
       "ids": [
         "corium"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Elephant%27s_Foot_(Chernobyl)"
     },
     "ethylene_glycol_poisoning": {
       "label": "Antifreeze tastes sweet, which is most of the problem",
@@ -2666,7 +2878,8 @@
       "ids": [
         "ethylene_glycol"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Ethylene_glycol_poisoning"
     },
     "foxglove_cardiac_glycoside": {
       "label": "Every part of a foxglove is poisonous, and drying does not change that",
@@ -2674,7 +2887,8 @@
       "ids": [
         "foxglove"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Digitalis_purpurea"
     },
     "urushiol_contact": {
       "label": "The oil in poison ivy is also in mango skin and cashew shell",
@@ -2683,16 +2897,18 @@
         "urushiol",
         "mango"
       ],
-      "severity": "contact"
+      "severity": "contact",
+      "src": "https://en.wikipedia.org/wiki/Urushiol"
     },
     "aflatoxin_b1_p53_signature": {
       "label": "The mould toxin that leaves a signature in one gene",
-      "note": "Cytochrome P450 enzymes in the liver convert aflatoxin B1 into the 8,9-epoxide, which binds guanine in DNA. The third base of codon 249 of the p53 gene is more susceptible than the bases around it, and the G-to-T change there is a recognisable fingerprint in liver tumours. IARC lists aflatoxins in Group 1, carcinogenic to humans, and the risk compounds with chronic hepatitis B infection.",
+      "note": "After entering the body, aflatoxins may be metabolised by the liver to a reactive epoxide intermediate. Aflatoxin metabolites may intercalate into DNA and alkylate the bases through the epoxide, which is thought to cause mutations in the p53 gene, an important gene in preventing cell-cycle progression when there are DNA mutations. Chronic exposure increases the risk of liver and gallbladder cancer.",
       "ids": [
         "aflatoxin_b1"
       ],
       "severity": "cumulative",
-      "carcinogen": true
+      "carcinogen": true,
+      "src": "https://en.wikipedia.org/wiki/Aflatoxin"
     },
     "angiosarcoma_occupational": {
       "label": "Liver angiosarcoma is the tumour that convicted vinyl chloride",
@@ -2711,7 +2927,8 @@
         "benzo_a_pyrene"
       ],
       "severity": "cumulative",
-      "carcinogen": true
+      "carcinogen": true,
+      "src": "https://en.wikipedia.org/wiki/Benzo(a)pyrene"
     },
     "benzoate_ascorbate_benzene": {
       "label": "Benzoate and vitamin C in the same bottle can make a little benzene",
@@ -2730,23 +2947,26 @@
       "ids": [
         "beta_propiolactone"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "src": "https://en.wikipedia.org/wiki/%CE%B2-Propiolactone"
     },
     "bha_forestomach_evidence": {
       "label": "The animal evidence is real; whether it means anything for people is disputed",
-      "note": "BHA induces benign and malignant tumours in the forestomach of rodents, which is why the US National Toxicology Program lists it as reasonably anticipated to be a human carcinogen and IARC places it in Group 2B, possibly carcinogenic. Humans have no forestomach, and the European Commission has treated the finding as of limited relevance to people. EFSA re-evaluated it in 2011 and set an acceptable daily intake of 1.0 mg per kg of body weight, from a no-effect level of 100 mg/kg in rats — higher than the 0.5 mg/kg that JECFA and the EU's Scientific Committee for Food had set in 1989.",
+      "note": "In high doses as part of their diet, BHA causes papillomas and squamous cell carcinomas of the forestomach in rats and Syrian golden hamsters; in mice there is no carcinogenic effect. An NIH report says BHA is reasonably anticipated to be a human carcinogen on the strength of that animal evidence, but humans lack a forestomach, and some reviewers have said studies showing carcinogenic effects in hamsters are not relevant to humans.",
       "ids": [
         "bha"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Butylated_hydroxyanisole"
     },
     "bht_contested_evidence": {
-      "label": "Not a settled carcinogen, and the safe intake has moved in both directions",
-      "note": "A 1979 National Cancer Institute study found BHT non-carcinogenic in mice; a 1986 WHO report found limited evidence of carcinogenicity in animals, varying by species and by organ. IARC places BHT in Group 3, meaning the evidence does not support a classification either way. EFSA concluded in 2012 that it is not of concern for genotoxicity and that any carcinogenicity would have a threshold, and set an acceptable daily intake of 0.25 mg per kg of body weight — up from the 0.05 mg/kg the EU's Scientific Committee for Food had set in 1987 over thyroid, reproductive and blood effects in rats.",
+      "label": "Not a settled carcinogen, and the evidence cuts both ways",
+      "note": "In 1979 the National Cancer Institute determined that BHT was noncarcinogenic in a mouse model, and a 1986 World Health Organization report concluded there is limited evidence for carcinogenicity from animal studies. A review published in 2002 noted that BHT has shown anticarcinogenic effects, no effect, or tumour-promoting effects depending on the animal species and target organ considered.",
       "ids": [
         "bht"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Butylated_hydroxytoluene"
     },
     "carcinogen_hazard_not_dose": {
       "label": "A carcinogen classification says how sure the evidence is, not how much cancer follows",
@@ -2760,28 +2980,31 @@
     },
     "ethyleneimine_alkylating": {
       "label": "An alkylating agent, which is another way of saying it reacts with DNA",
-      "note": "The ring strain that makes aziridine useful also makes it reactive toward DNA, and it is a mutagen as well as an acute poison — the oral LD50 in rats is 14 mg/kg. IARC puts it in Group 2B, possibly carcinogenic to humans, and OSHA regulates it as an occupational carcinogen. The same three-membered ring is built deliberately into several chemotherapy drugs, where damaging the DNA of a dividing cell is the intended effect.",
+      "note": "Aziridine is a colourless, toxic, volatile liquid. It is highly toxic, with an LD50 of 14 mg (oral, rats). As an alkylating agent it is also a mutagen, because it is reactive toward DNA. The same three-membered ring is built deliberately into several chemotherapy drugs, where damaging the DNA of a dividing cell is the intended effect.",
       "ids": [
         "ethyleneimine"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Aziridine"
     },
     "methylmercury_placenta": {
       "label": "The placenta concentrates it in the fetus instead of keeping it out",
-      "note": "Minamata was reported on 1 May 1956 as an epidemic of an unknown disease of the central nervous system; by March 2001, 2,265 people had been officially recognised. In November 1962 a congenital form was certified in eighteen children, two of them already dead, born after the outbreak and never fed contaminated fish — many of their mothers had shown no symptoms at all. The placenta keeps most chemicals out, but it draws methylmercury from the mother's blood and concentrates it in the fetus, and nobody knew that at the time. IARC classifies methylmercury compounds in Group 2B; the nervous system, not cancer, is the reason it is regulated.",
+      "note": "Minamata was reported on 1 May 1956 as an epidemic of an unknown disease of the central nervous system; by March 2001, 2,265 people had been officially recognised. In November 1962 a congenital form was certified in eighteen children, two of them already dead, born after the outbreak and never fed contaminated fish — many of their mothers had shown no symptoms at all. The placenta keeps most chemicals out, but it draws methylmercury from the mother's blood and concentrates it in the fetus, and nobody knew that at the time.",
       "ids": [
         "methylmercury"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "src": "https://en.wikipedia.org/wiki/Minamata_disease"
     },
     "mutagen_not_carcinogen": {
       "label": "Mutagenic and carcinogenic are overlapping tests, not one test",
-      "note": "Around 90% of known carcinogens came up mutagenic in the early Ames screens, and about 80% of Ames-positive mutagens turn out to be carcinogens — but neither number is 100. Sodium azide is mutagenic and has not been shown to cause cancer. Going the other way, hormones and other non-genotoxic carcinogens promote tumour growth without binding DNA, so a clean mutagenicity result is not a clean bill of health.",
+      "note": "Mutagens identified in the Ames test are also possible carcinogens: early studies by Ames showed that 90% of known carcinogens may be identified via the test. But mutagens identified in it need not be carcinogenic, and further tests are required for any potential carcinogen it flags.",
       "ids": [
         "mutagen",
         "chromosomal_aberration"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "src": "https://en.wikipedia.org/wiki/Ames_test"
     },
     "naphthalene_hemolysis": {
       "label": "Naphthalene breaks down red blood cells",
@@ -2789,7 +3012,8 @@
       "ids": [
         "naphthalene"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Naphthalene"
     },
     "nitrosamine_carcinogen": {
       "label": "Nothing here is a carcinogen until the body makes it one",
@@ -2802,12 +3026,13 @@
       "src": "https://en.wikipedia.org/wiki/Nitrosamine"
     },
     "organochlorine_persistence": {
-      "label": "The carbon–chlorine bond is exactly what makes these last",
-      "note": "A chlorine atom makes a molecule greasy and hard to take apart, so organochlorines dissolve into fat and stay there, climbing the food chain instead of washing out. DDT turned up in Antarctica, where it was never used. The class is not uniform: vinyl chloride is an IARC Group 1 human carcinogen — workers were routinely exposed to 1,000 ppm of it before liver angiosarcoma was reported in 1974, against a current OSHA limit of 1 ppm — while chloroform and carbon tetrachloride sit in Group 2B, and forest fires and soil microbes make organochlorines of their own.",
+      "label": "Some organochlorines are among the most notorious pollutants, and many are natural",
+      "note": "Organochlorine compounds have wide use in many applications, though some are of profound environmental concern, DDT and TCDD among the most notorious. Chloroform, carbon tetrachloride, trichloroethylene and tetrachloroethylene are used as solvents. Not all of them are man-made: many have been isolated from natural sources, and a majority of the chloromethane in the environment is produced naturally by microbial communities, forest fires and volcanoes.",
       "ids": [
         "chlorinated_hydrocarbon"
       ],
-      "severity": "cumulative"
+      "severity": "cumulative",
+      "src": "https://en.wikipedia.org/wiki/Organochloride"
     },
     "pah_carcinogen_grades": {
       "label": "Structure decides which of these is dangerous",
@@ -2824,13 +3049,14 @@
       "src": "https://en.wikipedia.org/wiki/Polycyclic_aromatic_hydrocarbon"
     },
     "soot_carcinogen": {
-      "label": "Soot is where occupational cancer was first identified",
-      "note": "IARC classifies soot, as found in the occupational exposure of chimney sweeps, in Group 1 — carcinogenic to humans — across Monographs 35, Supplement 7, 92 and 100F, most recently evaluated in 2009. Percivall Pott described the sweeps' scrotal cancers in 1775 and named soot as the cause. The carbon itself is not the whole story: what rides on the particles is a mixture of polycyclic aromatic hydrocarbons and, sometimes, heavy metals.",
+      "label": "Soot is hazardous, and carcinogenic",
+      "note": "Soot is considered a hazardous substance with carcinogenic properties and causes various types of cancer and lung disease. It can include polycyclic aromatic hydrocarbons, which are known mutagens classified as a known human carcinogen by the International Agency for Research on Cancer, and heavy metals like mercury.",
       "ids": [
         "soot"
       ],
       "severity": "cumulative",
-      "carcinogen": true
+      "carcinogen": true,
+      "src": "https://en.wikipedia.org/wiki/Soot"
     },
     "teratogen_window": {
       "label": "A teratogen's damage is decided by the week as much as the dose",
@@ -2853,31 +3079,34 @@
       "src": "https://en.wikipedia.org/wiki/Thalidomide"
     },
     "tobacco_smoke_carcinogen": {
-      "label": "Tobacco smoke is a Group 1 carcinogen for the smoker and for everyone nearby",
-      "note": "IARC classifies tobacco smoking and secondhand smoke alike as carcinogenic to humans. Smoking causes more than 8 million deaths a year worldwide, and more than 1.3 million of those are non-smokers who breathed someone else's smoke; in the United States, passive smoke is estimated to cause over 7,000 lung cancer deaths a year among non-smokers. About half of smokers die of a tobacco-related disease, losing on average 14 years of life. Filters do not lower the carcinogen load of the smoke that is inhaled.",
+      "label": "Tobacco smoke harms the people who breathe it second-hand",
+      "note": "According to a World Health Organization report published in 2023, more than 1.3 million deaths are attributed to passive smoking worldwide every year. Passive smoking is a risk factor for lung cancer, and is estimated to cause over 7,000 deaths from lung cancer among non-smokers every year in the US.",
       "ids": [
         "tobacco_smoke"
       ],
       "severity": "cumulative",
-      "carcinogen": true
+      "carcinogen": true,
+      "src": "https://en.wikipedia.org/wiki/Passive_smoking"
     },
     "sulfite_asthma": {
-      "label": "Sulfites set off a small number of people, and asthmatics most",
-      "note": "About one person in a hundred reacts to sulfites, and roughly 5% of asthmatics are at risk, with breathing difficulty starting within minutes of eating; anaphylaxis is rare. The US FDA banned sulfites on fresh fruit and vegetables eaten raw in 1986 after reports of severe reactions. Anything above 10 mg/kg must be declared on the label, and dried apricots may legally carry up to 2,000 mg/kg. For everyone else the effect is nothing at all.",
+      "label": "Sulfites are regulated because some people react",
+      "note": "In 1986 the US Food and Drug Administration banned the addition of sulfites to all fresh fruit and vegetables eaten raw. In the United States, wines bottled after mid-1987 must carry a label saying they contain sulfites if they contain more than 10 parts per million. Shrimp are sometimes treated with sulfites on fishing vessels without the chemical appearing on the label.",
       "ids": [
         "dried_apricot",
         "potassium_sulfite"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Sulfite"
     },
     "ponceau_4r_southampton_trial": {
-      "label": "Ponceau 4R was in the mix that put a warning on European labels",
-      "note": "The 2007 Southampton trial, published in the Lancet, gave 153 three-year-olds and 144 eight- and nine-year-olds a drink containing sodium benzoate and one of two colour mixes. Mix A held ponceau 4R with sunset yellow, carmoisine and tartrazine, and both mixes raised the trial's hyperactivity score. The result is why the EU requires foods carrying any of the six dyes to say they may have an adverse effect on activity and attention in children. Europe cut the acceptable daily intake for ponceau 4R to 0.7 mg per kg of body weight against the WHO's 4.",
+      "label": "Ponceau 4R was one of six dyes in the Southampton hyperactivity study",
+      "note": "Concern that food colourings may cause ADHD-like behaviour in children led the UK Food Standards Agency to commission a study at Southampton University of a mixture of six food dyes that included ponceau 4R. The study found 'a possible link' with increased hyperactivity, although the FSA's advisory committee said that, because of study limitations, the results could not be extrapolated to the general population. There is no evidence of carcinogenicity or genotoxicity at permitted exposures; the European acceptable daily intake is 0.7 mg/kg against the WHO/FAO's 4 mg/kg.",
       "ids": [
         "jelly",
         "ponceau_4r"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Ponceau_4R"
     },
     "nitrite_endogenous_nitrosation": {
       "label": "Nitrite becomes something else in the stomach",
@@ -2906,7 +3135,8 @@
         "sugar_free_gum",
         "xylitol"
       ],
-      "severity": "acute"
+      "severity": "acute",
+      "src": "https://en.wikipedia.org/wiki/Xylitol"
     },
     "polyol_laxation": {
       "label": "Sugar alcohols are absorbed incompletely, and the rest reaches the colon",
@@ -2928,7 +3158,8 @@
         "neurocysticercosis"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Neurocysticercosis"
     },
     "hydatid_cyst_rupture": {
       "label": "A cyst that can be silent for years, and dangerous when it opens",
@@ -2939,7 +3170,8 @@
         "hydatid_cyst"
       ],
       "severity": "acute",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Echinococcosis"
     },
     "onchocerciasis_blindness": {
       "label": "The second most common infectious cause of blindness",
@@ -2950,7 +3182,8 @@
         "onchocerciasis"
       ],
       "severity": "cumulative",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Onchocerciasis"
     },
     "mazzotti_reaction": {
       "label": "Where the reaction to the dying parasite is the danger",
@@ -2958,7 +3191,8 @@
       "ids": [
         "diethylcarbamazine"
       ],
-      "severity": "conditional"
+      "severity": "conditional",
+      "src": "https://en.wikipedia.org/wiki/Mazzotti_reaction"
     },
     "diphyllobothriasis_b12": {
       "label": "A worm that competes for one vitamin in particular",
@@ -2968,18 +3202,20 @@
         "diphyllobothrium_latum"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Diphyllobothriasis"
     },
     "guinea_worm_eradication": {
       "label": "Almost gone, and there was never a drug for it",
-      "note": "Dracunculiasis is contracted by drinking water containing copepods carrying Guinea worm larvae. There is no vaccine and no drug that kills the adult; the worm is still removed by slow withdrawal over days or weeks, and there is no immunity to reinfection. Filtering drinking water breaks the cycle, and reported cases fell from around 3.5 million in 1986 to fewer than 18,000 by 2010 and to a handful since.",
+      "note": "A person becomes infected with Guinea worm by drinking water contaminated with larvae that live inside copepods, a type of small crustacean. Prevention centres on filtering drinking water to remove copepods and on discouraging people from soaking affected limbs in drinking-water sources. Cases have dropped precipitously — below 100,000 a year in 1997, below 10,000 in 2007, below 1,000 in 2012, below 100 in 2015 and only 10 in 2025.",
       "ids": [
         "copepod",
         "dracunculiasis",
         "dracunculus_medinensis"
       ],
       "severity": "conditional",
-      "biohazard": true
+      "biohazard": true,
+      "src": "https://en.wikipedia.org/wiki/Dracunculiasis"
     },
     "taro_raphides": {
       "label": "Cooked, it feeds half a billion people; raw, it stings the mouth",
@@ -3318,6 +3554,34 @@
       ],
       "severity": "acute",
       "src": "https://en.wikipedia.org/wiki/Cougar"
+    },
+    "radon_gas": {
+      "label": "A gas you cannot see, smell or taste, that collects below ground",
+      "note": "Radon is a colorless, odorless, tasteless radioactive gas that seeps out of uranium-containing minerals in the ground. It is denser than air, so it accumulates in basements and crawlspaces. According to the US EPA it is the second most frequent cause of lung cancer after cigarette smoking, causing 21,000 lung cancer deaths a year in the United States, about 2,900 of them among people who have never smoked. Because nothing about it can be sensed, the only way to know is to test, and a house that tests high can be fixed, for example by sub-slab depressurization.",
+      "ids": [
+        "radon"
+      ],
+      "severity": "cumulative",
+      "carcinogen": true,
+      "src": "https://en.wikipedia.org/wiki/Radon"
+    },
+    "potassium_water": {
+      "label": "Potassium reacts with water hard enough to ignite the hydrogen",
+      "severity": "acute",
+      "ids": [
+        "potassium"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Potassium",
+      "note": "Elemental potassium reacts vigorously with water, generating enough heat to ignite the hydrogen given off, and burning with a lilac-coloured flame. This is real chemistry, and none of it is a demonstration to improvise."
+    },
+    "magnesium_burns": {
+      "label": "Magnesium burns white-hot",
+      "severity": "acute",
+      "ids": [
+        "magnesium"
+      ],
+      "src": "https://en.wikipedia.org/wiki/Magnesium",
+      "note": "Magnesium is flammable. The free metal burns at approximately 3,100 °C with a brilliant-white light, hot enough to sever an aircraft wing spar in a documented fire. This is real chemistry, and none of it is a demonstration to improvise."
     }
   },
   "$severity": "How loudly to say it. acute: can kill or permanently injure. contact: burns, corrodes or envenomates on contact. cumulative: harms with exposure over time. conditional: harms only some people, or only in some circumstances. The tier decides the signal on the card; it is never a ranking of how bad a thing is, and it is never advice."
