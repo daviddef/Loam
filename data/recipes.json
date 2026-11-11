@@ -108572,5 +108572,1075 @@
     "why": "Taxidermy is the art of preserving an animal's body by mounting (over an armature) or stuffing, for the purpose of display or study. Animals are often, but not always, portrayed in a lifelike state.",
     "src": "https://en.wikipedia.org/wiki/Taxidermy",
     "verified": true
+  },
+  {
+    "in": [
+      "anger",
+      "force"
+    ],
+    "out": "violence",
+    "why": "Violence is characterized as the use of physical force by humans to cause harm to other living beings, such as pain, injury, disablement, death, damage and destruction.",
+    "src": "https://en.wikipedia.org/wiki/Violence",
+    "verified": true
+  },
+  {
+    "in": [
+      "money",
+      "property"
+    ],
+    "out": "wealth",
+    "why": "Wealth is the abundance of valuable financial assets or physical possessions which can be converted into a form that can be used for transactions. The modern concept of wealth is of significance in all areas of economics, and clearly so for growth economics and development economics, yet the meaning of wealth is context-dependent.",
+    "src": "https://en.wikipedia.org/wiki/Wealth",
+    "verified": true
+  },
+  {
+    "in": [
+      "money",
+      "debt"
+    ],
+    "out": "poverty",
+    "why": "Poverty is a state or condition in which an individual lacks the financial resources and essentials for a basic standard of living. It can have diverse environmental, legal, social, economic, and political causes and effects.",
+    "src": "https://en.wikipedia.org/wiki/Poverty",
+    "verified": true
+  },
+  {
+    "in": [
+      "government",
+      "power"
+    ],
+    "out": "politics",
+    "why": "Politics is the activity of settling affairs in an organized society. Politics is usually concerned with resolving issues within a society via a government.",
+    "src": "https://en.wikipedia.org/wiki/Politics",
+    "verified": true
+  },
+  {
+    "in": [
+      "politics",
+      "theory"
+    ],
+    "out": "political_science",
+    "why": "Political science is a field which aims to study the scientific aspect of politics. It deals with systems of governance and power, and the analysis of political activities, political thought, political behavior, and associated constitutions and laws.",
+    "src": "https://en.wikipedia.org/wiki/Political_science",
+    "verified": true
+  },
+  {
+    "in": [
+      "society",
+      "power"
+    ],
+    "out": "liberty",
+    "why": "Liberty is the state of being free within society from restrictions imposed by authority on one's way of life, behavior, or political views. The concept of liberty can vary depending on perspective and context.",
+    "src": "https://en.wikipedia.org/wiki/Liberty",
+    "verified": true
+  },
+  {
+    "in": [
+      "nation",
+      "law"
+    ],
+    "out": "citizenship",
+    "why": "Citizenship is a membership in the political community of and allegiance to a sovereign state. Generally, citizenships have no expiration and allow persons to work, reside and vote in the polity, as well as identify with the polity, possibly acquiring a passport.",
+    "src": "https://en.wikipedia.org/wiki/Citizenship",
+    "verified": true
+  },
+  {
+    "in": [
+      "liberty",
+      "law"
+    ],
+    "out": "civil_liberties",
+    "why": "Civil liberties are fundamental rights and freedoms that governments pledge not to restrict, either through constitutions, legislation, or judicial interpretation, without due process of law.",
+    "src": "https://en.wikipedia.org/wiki/Civil_liberties",
+    "verified": true
+  },
+  {
+    "in": [
+      "democracy",
+      "government"
+    ],
+    "out": "election",
+    "why": "An election is a group decision-making process whereby a portion or all of a population or group votes to choose an individual or multiple individuals to hold public office or other position of responsibility. Elections have been the usual mechanism by which representative democracy has operated since the 17th century.",
+    "src": "https://en.wikipedia.org/wiki/Election",
+    "verified": true
+  },
+  {
+    "in": [
+      "election",
+      "human"
+    ],
+    "out": "voting",
+    "why": "Voting is the process of making collective decisions by means of submitting and then adding up individual choices. Voting can be formal, using ballots and specific rules, or informal using raised hands, shouts, or movement to indicate preference.",
+    "src": "https://en.wikipedia.org/wiki/Voting",
+    "verified": true
+  },
+  {
+    "in": [
+      "politics",
+      "society"
+    ],
+    "out": "political_party",
+    "why": "A political party is an organization that coordinates candidates to compete in elections and participate in governance. It is common for the members of a party to hold similar ideas about politics, and parties may promote specific ideological or policy goals.",
+    "src": "https://en.wikipedia.org/wiki/Political_party",
+    "verified": true
+  },
+  {
+    "in": [
+      "election",
+      "statistics"
+    ],
+    "out": "opinion_poll",
+    "why": "An opinion poll, often simply referred to as a survey or a poll, is a human research survey of public opinion from a particular sample. Opinion polls are usually designed to represent the opinions of a population by conducting a series of questions and then extrapolating generalities in ratio or within confidence intervals.",
+    "src": "https://en.wikipedia.org/wiki/Opinion_poll",
+    "verified": true
+  },
+  {
+    "in": [
+      "nation",
+      "treaty"
+    ],
+    "out": "diplomacy",
+    "why": "Diplomacy is the communication by representatives of state, intergovernmental, or non-governmental institutions intended to influence events in the international system. International treaties, agreements, alliances, and other manifestations of international relations are usually the result of diplomatic negotiations and processes.",
+    "src": "https://en.wikipedia.org/wiki/Diplomacy",
+    "verified": true
+  },
+  {
+    "in": [
+      "nation",
+      "politics"
+    ],
+    "out": "international_relations",
+    "why": "International relations is an academic discipline. In a broader sense, the study of IR, in addition to multilateral relations, concerns all activities among states—such as war, diplomacy, trade, and foreign policy—as well as relations with and among other international actors.",
+    "src": "https://en.wikipedia.org/wiki/International_relations",
+    "verified": true
+  },
+  {
+    "in": [
+      "law",
+      "international_relations"
+    ],
+    "out": "international_law",
+    "why": "International law, also known as public international law and the law of nations, is the set of rules, norms, legal customs and standards that states and other actors feel an obligation to, and generally do, obey in their mutual relations.",
+    "src": "https://en.wikipedia.org/wiki/International_law",
+    "verified": true
+  },
+  {
+    "in": [
+      "trade",
+      "internet"
+    ],
+    "out": "globalization",
+    "why": "Globalization is the process of increasing interdependence and integration among the economies, markets, societies, and cultures of different countries worldwide. It can be attributed to a series of factors, including the reduction of barriers to international trade, the liberalization of capital movements, the development of transportation infrastructure, and the advancement of information and communication technologies.",
+    "src": "https://en.wikipedia.org/wiki/Globalization",
+    "verified": true
+  },
+  {
+    "in": [
+      "empire",
+      "power"
+    ],
+    "out": "imperialism",
+    "why": "Imperialism is the maintaining and extending of power over foreign nations, particularly through expansionism, employing both hard power and soft power. Imperialism focuses on establishing or maintaining hegemony and a more formal empire.",
+    "src": "https://en.wikipedia.org/wiki/Imperialism",
+    "verified": true
+  },
+  {
+    "in": [
+      "government",
+      "army"
+    ],
+    "out": "coup_detat",
+    "why": "A coup d'état, or simply a coup, is typically an illegal and overt attempt by a military organization or other government elites to unseat an incumbent person or leadership. By one estimate, there were 457 coup attempts from 1950 to 2010, half of which were successful.",
+    "src": "https://en.wikipedia.org/wiki/Coup_d'état",
+    "verified": true
+  },
+  {
+    "in": [
+      "society",
+      "anger"
+    ],
+    "out": "riot",
+    "why": "A riot or mob violence is a form of civil disorder commonly characterized by some people committing public violence against government or other authority figures and property. Riots typically involve destruction of property, public or private.",
+    "src": "https://en.wikipedia.org/wiki/Riot",
+    "verified": true
+  },
+  {
+    "in": [
+      "politics",
+      "anger"
+    ],
+    "out": "protest",
+    "why": "A protest is a public act of objection, disapproval or dissent against political advantage. Protests can take many different forms, from individual statements to mass political demonstrations.",
+    "src": "https://en.wikipedia.org/wiki/Protest",
+    "verified": true
+  },
+  {
+    "in": [
+      "protest",
+      "society"
+    ],
+    "out": "activism",
+    "why": "Activism consists of efforts to promote, impede, direct or intervene in social, political, economic or environmental reform with the desire to make changes in society toward a perceived common good.",
+    "src": "https://en.wikipedia.org/wiki/Activism",
+    "verified": true
+  },
+  {
+    "in": [
+      "society",
+      "revolution"
+    ],
+    "out": "social_movement",
+    "why": "A social movement or popular movement is a loosely organized effort by a large number of people to achieve a particular goal, typically a social or political one. It is a type of group action and may involve individuals, organizations, or both.",
+    "src": "https://en.wikipedia.org/wiki/Social_movement",
+    "verified": true
+  },
+  {
+    "in": [
+      "emperor",
+      "power"
+    ],
+    "out": "autocracy",
+    "why": "Autocracy is a form of government in which absolute power is held by one person, known as an autocrat. It includes both absolute monarchies and dictatorships, while it is contrasted with democracy and other forms of free government.",
+    "src": "https://en.wikipedia.org/wiki/Autocracy",
+    "verified": true
+  },
+  {
+    "in": [
+      "autocracy",
+      "army"
+    ],
+    "out": "dictatorship",
+    "why": "A dictatorship is a form of government which is characterized by a leader who holds absolute or near-absolute political power. The dictator maintains control by influencing and appeasing the inner circle and repressing any opposition.",
+    "src": "https://en.wikipedia.org/wiki/Dictatorship",
+    "verified": true
+  },
+  {
+    "in": [
+      "monarchy",
+      "power"
+    ],
+    "out": "absolute_monarchy",
+    "why": "Absolute monarchy is a form of monarchy in which the sovereign is the sole source of political power, unconstrained by constitutions, legislatures or other checks on their authority.",
+    "src": "https://en.wikipedia.org/wiki/Absolute_monarchy",
+    "verified": true
+  },
+  {
+    "in": [
+      "monarchy",
+      "constitution"
+    ],
+    "out": "constitutional_monarchy",
+    "why": "Constitutional monarchy is a form of monarchy in which the monarch exercises their authority in accordance with a constitution and is not alone in making decisions. Constitutional monarchies differ from absolute monarchies in that they are bound to exercise powers and authorities within limits prescribed by an established legal framework.",
+    "src": "https://en.wikipedia.org/wiki/Constitutional_monarchy",
+    "verified": true
+  },
+  {
+    "in": [
+      "government",
+      "wealth"
+    ],
+    "out": "oligarchy",
+    "why": "Oligarchy is a controversial form of government in which power rests with a small number of people. Leaders of such regimes are often referred to as oligarchs, and generally are characterized by having titles of nobility or high amounts of wealth.",
+    "src": "https://en.wikipedia.org/wiki/Oligarchy",
+    "verified": true
+  },
+  {
+    "in": [
+      "religion",
+      "power"
+    ],
+    "out": "theocracy",
+    "why": "Theocracy is a form of government in which one or more deities are recognized as supreme ruling authorities giving divine guidance to human intermediaries with executive, legislative or judicial power who manage the government's daily affairs.",
+    "src": "https://en.wikipedia.org/wiki/Theocracy",
+    "verified": true
+  },
+  {
+    "in": [
+      "nation",
+      "government"
+    ],
+    "out": "sovereign_state",
+    "why": "A sovereign state is a state that has sovereignty, that is, the highest authority over a territory. A sovereign state is required to have a permanent population, defined territory, a government not under the control of another, and the capacity to interact with other sovereign states.",
+    "src": "https://en.wikipedia.org/wiki/Sovereign_state",
+    "verified": true
+  },
+  {
+    "in": [
+      "nation",
+      "constitution"
+    ],
+    "out": "federation",
+    "why": "A federation is a union of partially self-governing provinces, states, or other regions under a federal government. In a federation, the self-governing status of the component units and the division of power between them and the central government are constitutionally entrenched.",
+    "src": "https://en.wikipedia.org/wiki/Federation",
+    "verified": true
+  },
+  {
+    "in": [
+      "treaty",
+      "federation"
+    ],
+    "out": "confederation",
+    "why": "A confederation is a formal alliance of sovereign states united for purposes of common action. Usually created by a treaty, confederations of states tend to be established for dealing with critical issues, such as defence, foreign relations, internal trade or currency.",
+    "src": "https://en.wikipedia.org/wiki/Confederation",
+    "verified": true
+  },
+  {
+    "in": [
+      "government",
+      "poverty"
+    ],
+    "out": "welfare_state",
+    "why": "A welfare state is a form of government in which the state protects and promotes the economic and social well-being of its citizens, based upon the principles of equal opportunity, equitable distribution of wealth, and public responsibility for citizens unable to avail themselves of the minimal provisions for a good life.",
+    "src": "https://en.wikipedia.org/wiki/Welfare_state",
+    "verified": true
+  },
+  {
+    "in": [
+      "government",
+      "law"
+    ],
+    "out": "legislature",
+    "why": "A legislature is a deliberative assembly that holds the legal authority to make law and exercise political oversight within a political entity such as a state, nation, or city. Legislatures are among the principal institutions of state, typically contrasted with the executive and judicial institutions.",
+    "src": "https://en.wikipedia.org/wiki/Legislature",
+    "verified": true
+  },
+  {
+    "in": [
+      "legislature",
+      "democracy"
+    ],
+    "out": "parliament",
+    "why": "A parliament is a type of legislature, or law-making body, of a state. Generally, a parliament has three functions: representing the electorate, making laws, and overseeing the executive government via hearings and inquiries.",
+    "src": "https://en.wikipedia.org/wiki/Parliament",
+    "verified": true
+  },
+  {
+    "in": [
+      "government",
+      "justice"
+    ],
+    "out": "judiciary",
+    "why": "The judiciary is the system of courts that adjudicates legal disputes/disagreements and interprets, defends, and applies the law in legal cases. Under the doctrine of the separation of powers, the judiciary generally does not make statutory law.",
+    "src": "https://en.wikipedia.org/wiki/Judiciary",
+    "verified": true
+  },
+  {
+    "in": [
+      "constitution",
+      "power"
+    ],
+    "out": "separation_of_powers",
+    "why": "The separation of powers principle functionally differentiates several types of state power (usually legislation, adjudication, and execution) and requires these operations of government to be conceptually and institutionally distinct and clearly articulated, thereby maintaining the integrity of each branch.",
+    "src": "https://en.wikipedia.org/wiki/Separation_of_powers",
+    "verified": true
+  },
+  {
+    "in": [
+      "government",
+      "society"
+    ],
+    "out": "public_policy",
+    "why": "Public policy is the set of laws, regulations, guidelines, and other actions that a government implements or proposes to address social issues. It is often implemented through programs in education, health care, employment, finance, economics, and transportation.",
+    "src": "https://en.wikipedia.org/wiki/Public_policy",
+    "verified": true
+  },
+  {
+    "in": [
+      "politics",
+      "philosophy"
+    ],
+    "out": "ideology",
+    "why": "An ideology is a set of ideals, values, or beliefs that is attributed to a person or group of people, especially those held for reasons that are not purely about belief in certain knowledge. The term was coined by Antoine Destutt de Tracy, a French Enlightenment aristocrat and philosopher, who conceived it in 1796 as the \"science of ideas\".",
+    "src": "https://en.wikipedia.org/wiki/Ideology",
+    "verified": true
+  },
+  {
+    "in": [
+      "government",
+      "liberty"
+    ],
+    "out": "anarchism",
+    "why": "Anarchism is a political philosophy and movement that seeks to abolish all institutions that perpetuate authority, coercion, or hierarchy, primarily targeting the state and capitalism. Anarchism advocates for the replacement of these hierarchical social structures with stateless societies consisting of horizontal networks of voluntary associations.",
+    "src": "https://en.wikipedia.org/wiki/Anarchism",
+    "verified": true
+  },
+  {
+    "in": [
+      "government",
+      "fear"
+    ],
+    "out": "authoritarianism",
+    "why": "Authoritarianism is a political system characterized by the rejection of political plurality, the use of strong central power to preserve the political status quo, and reductions in democracy, separation of powers, civil liberties, and the rule of law.",
+    "src": "https://en.wikipedia.org/wiki/Authoritarianism",
+    "verified": true
+  },
+  {
+    "in": [
+      "authoritarianism",
+      "propaganda"
+    ],
+    "out": "totalitarianism",
+    "why": "Totalitarianism is a political system and a form of government that completely controls the public sphere and the private sphere of society. It is characterized by its prohibition of opposing political parties and its extreme suppression of opposition to the state.",
+    "src": "https://en.wikipedia.org/wiki/Totalitarianism",
+    "verified": true
+  },
+  {
+    "in": [
+      "market",
+      "property"
+    ],
+    "out": "capitalism",
+    "why": "Capitalism is an economic system based on the private ownership of the means of production and its use for the purpose of obtaining profit. This socioeconomic system is defined by a number of constituent elements: private property, profit motive, capital accumulation, competitive markets, commodification, wage labor, and an emphasis on innovation.",
+    "src": "https://en.wikipedia.org/wiki/Capitalism",
+    "verified": true
+  },
+  {
+    "in": [
+      "property",
+      "society"
+    ],
+    "out": "communism",
+    "why": "Communism is a political and economic ideology whose goal is the creation of a communist society, a socioeconomic classless order centered on common ownership of the means of production, distribution, and exchange that allocates products in society based on need.",
+    "src": "https://en.wikipedia.org/wiki/Communism",
+    "verified": true
+  },
+  {
+    "in": [
+      "communism",
+      "theory"
+    ],
+    "out": "marxism",
+    "why": "Marxism is a political philosophy and method of socioeconomic analysis that uses a materialist interpretation of historical development, known as historical materialism, to understand class relations and social conflict. Originating in the works of 19th-century German philosophers Karl Marx and Friedrich Engels, the Marxist approach views class struggle as the central driving force of historical change.",
+    "src": "https://en.wikipedia.org/wiki/Marxism",
+    "verified": true
+  },
+  {
+    "in": [
+      "society",
+      "economy"
+    ],
+    "out": "socialism",
+    "why": "Socialism is an economic ideology and political philosophy encompassing diverse economic and social systems characterised by social ownership of the means of production, as opposed to private ownership.",
+    "src": "https://en.wikipedia.org/wiki/Socialism",
+    "verified": true
+  },
+  {
+    "in": [
+      "tradition",
+      "politics"
+    ],
+    "out": "conservatism",
+    "why": "Conservatism is a cultural, social, and political philosophy and ideology that seeks to promote and preserve traditional institutions, customs, and values. The central tenets of conservatism may vary in relation to the culture and civilization in which it appears.",
+    "src": "https://en.wikipedia.org/wiki/Conservatism",
+    "verified": true
+  },
+  {
+    "in": [
+      "liberty",
+      "politics"
+    ],
+    "out": "liberalism",
+    "why": "Liberalism is a political and moral philosophy based on the rights of the individual, liberty, consent of the governed, political equality, right to private property, and equality before the law.",
+    "src": "https://en.wikipedia.org/wiki/Liberalism",
+    "verified": true
+  },
+  {
+    "in": [
+      "liberty",
+      "property"
+    ],
+    "out": "libertarianism",
+    "why": "Libertarianism is a political philosophy that holds liberty and personal sovereignty as primary values. Many libertarians believe that the concept of freedom is in accord with the non-aggression principle.",
+    "src": "https://en.wikipedia.org/wiki/Libertarianism",
+    "verified": true
+  },
+  {
+    "in": [
+      "nationalism",
+      "dictatorship"
+    ],
+    "out": "fascism",
+    "why": "Fascism is a far-right, authoritarian, and ultranationalist political ideology and movement that rose to prominence in early-20th-century Europe. Fascism is characterized by support for a dictatorial leader, centralized autocracy, militarism, forcible suppression of opposition, belief in a natural social hierarchy.",
+    "src": "https://en.wikipedia.org/wiki/Fascism",
+    "verified": true
+  },
+  {
+    "in": [
+      "nation",
+      "ideology"
+    ],
+    "out": "nationalism",
+    "why": "Nationalism is an ideology or movement that holds that the nation should be congruent with the state. As a movement, it presupposes the existence and tends to promote the interests of a particular nation, especially with the aim of gaining and maintaining its sovereignty over its perceived homeland.",
+    "src": "https://en.wikipedia.org/wiki/Nationalism",
+    "verified": true
+  },
+  {
+    "in": [
+      "nation",
+      "love"
+    ],
+    "out": "patriotism",
+    "why": "Patriotism is the feeling of love, devotion, and a sense of attachment to one's country or state. This attachment can be a combination of different feelings for things such as the language of one's homeland, and its ethnic, cultural, political, or historical aspects.",
+    "src": "https://en.wikipedia.org/wiki/Patriotism",
+    "verified": true
+  },
+  {
+    "in": [
+      "democracy",
+      "anger"
+    ],
+    "out": "populism",
+    "why": "Populism is a contested concept for a variety of political stances that emphasise the idea of the \"common people\", often in opposition to a perceived elite. It is frequently associated with anti-establishment and anti-political sentiment.",
+    "src": "https://en.wikipedia.org/wiki/Populism",
+    "verified": true
+  },
+  {
+    "in": [
+      "socialism",
+      "democracy"
+    ],
+    "out": "social_democracy",
+    "why": "Social democracy is a social, economic, and political ideology. Social democracy supports political and economic democracy and a gradualist, reformist, and democratic approach toward achieving social equality.",
+    "src": "https://en.wikipedia.org/wiki/Social_democracy",
+    "verified": true
+  },
+  {
+    "in": [
+      "culture",
+      "society"
+    ],
+    "out": "multiculturalism",
+    "why": "Multiculturalism is the coexistence of multiple cultures. In sociology and everyday usage, it is usually a synonym for ethnic or cultural pluralism in which various ethnic and cultural groups exist in a single society.",
+    "src": "https://en.wikipedia.org/wiki/Multiculturalism",
+    "verified": true
+  },
+  {
+    "in": [
+      "justice",
+      "human"
+    ],
+    "out": "equality",
+    "why": "Social equality is a state of affairs in which all individuals within society have equal rights, liberties, and status; possibly including civil rights, freedom of expression, autonomy, and equal access to certain public goods and social services.",
+    "src": "https://en.wikipedia.org/wiki/Social_equality",
+    "verified": true
+  },
+  {
+    "in": [
+      "law",
+      "human"
+    ],
+    "out": "human_rights",
+    "why": "Human rights are moral principles or norms that establish standards of human behavior and are often protected by both national and international laws. These rights are considered inherent and inalienable, meaning they belong to every individual simply by virtue of being human.",
+    "src": "https://en.wikipedia.org/wiki/Human_rights",
+    "verified": true
+  },
+  {
+    "in": [
+      "voting",
+      "law"
+    ],
+    "out": "suffrage",
+    "why": "Suffrage, political franchise, or simply franchise is the right to vote in public political elections and referendums (although the term is sometimes used for any right to vote).",
+    "src": "https://en.wikipedia.org/wiki/Suffrage",
+    "verified": true
+  },
+  {
+    "in": [
+      "race",
+      "prejudice"
+    ],
+    "out": "racism",
+    "why": "Racism is the belief that groups of humans possess different behavioral traits corresponding to inherited attributes and can be divided based on the superiority of one race or ethnicity over another. It may also mean prejudice, discrimination, or antagonism directed against other people because they are of a different ethnic background.",
+    "src": "https://en.wikipedia.org/wiki/Racism",
+    "verified": true
+  },
+  {
+    "in": [
+      "belief",
+      "group"
+    ],
+    "out": "prejudice",
+    "why": "Prejudice can be an affective feeling towards a person based on their perceived social group membership. The word is often used to refer to a preconceived (usually unfavourable) evaluation or classification of another person based on that person's perceived personal characteristics.",
+    "src": "https://en.wikipedia.org/wiki/Prejudice",
+    "verified": true
+  },
+  {
+    "in": [
+      "prejudice",
+      "law"
+    ],
+    "out": "discrimination",
+    "why": "Discrimination is the process of making unjustified distinctions between people based on the groups, classes, or other categories to which they belong or are perceived to belong, usually in a way that deprives them of their legal or human rights.",
+    "src": "https://en.wikipedia.org/wiki/Discrimination",
+    "verified": true
+  },
+  {
+    "in": [
+      "war",
+      "race"
+    ],
+    "out": "genocide",
+    "why": "Genocide is the partial or total destruction of a human group, committed intentionally. The popular view conceives of genocide as the large-scale killing of individuals, but in scholarly and legal fields, genocide occurs when the group itself is targeted.",
+    "src": "https://en.wikipedia.org/wiki/Genocide",
+    "verified": true
+  },
+  {
+    "in": [
+      "law",
+      "violence"
+    ],
+    "out": "crime",
+    "why": "In ordinary language, a crime is an unlawful act punishable by a state or other authority. The most popular view is that crime is a category created by law; in other words, something is a crime if declared as such by the relevant and applicable law.",
+    "src": "https://en.wikipedia.org/wiki/Crime",
+    "verified": true
+  },
+  {
+    "in": [
+      "crime",
+      "property"
+    ],
+    "out": "theft",
+    "why": "Theft is the act of taking another person's property or services without that person's permission or consent with the intent to deprive the rightful owner of it.",
+    "src": "https://en.wikipedia.org/wiki/Theft",
+    "verified": true
+  },
+  {
+    "in": [
+      "crime",
+      "death"
+    ],
+    "out": "murder",
+    "why": "Murder is the unlawful killing of another human without justification or valid excuse and committed with the necessary intent as defined by the law in a specific jurisdiction.",
+    "src": "https://en.wikipedia.org/wiki/Murder",
+    "verified": true
+  },
+  {
+    "in": [
+      "crime",
+      "money"
+    ],
+    "out": "fraud",
+    "why": "In law, fraud is intentional deception to deprive a victim of a legal right or to gain from a victim unlawfully or unfairly. Fraud can violate civil law or criminal law, or it may be an element of another civil or criminal offense.",
+    "src": "https://en.wikipedia.org/wiki/Fraud",
+    "verified": true
+  },
+  {
+    "in": [
+      "theft",
+      "violence"
+    ],
+    "out": "robbery",
+    "why": "Robbery is the crime of taking or attempting to take anything of value by force, threat of force, or use of fear. According to common law, robbery is defined as taking the property of another, with the intent to permanently deprive the person of that property, by means of force or fear.",
+    "src": "https://en.wikipedia.org/wiki/Robbery",
+    "verified": true
+  },
+  {
+    "in": [
+      "crime",
+      "ship"
+    ],
+    "out": "piracy",
+    "why": "Piracy is an act of robbery or criminal violence by ship or boat-borne attackers upon another ship or a coastal area, typically intending to steal cargo and valuable goods, or take hostages.",
+    "src": "https://en.wikipedia.org/wiki/Piracy",
+    "verified": true
+  },
+  {
+    "in": [
+      "crime",
+      "border"
+    ],
+    "out": "smuggling",
+    "why": "Smuggling or trafficking is the illegal and often covert transportation of goods, substances, people or intelligence across a border or in and out of buildings and facilities, in violation of applicable laws or other regulations.",
+    "src": "https://en.wikipedia.org/wiki/Smuggling",
+    "verified": true
+  },
+  {
+    "in": [
+      "crime",
+      "child"
+    ],
+    "out": "kidnapping",
+    "why": "Kidnapping is the illegal relocation (abduction) and confinement of a person against their will, and is a crime in many jurisdictions. Kidnapping may be accomplished by use of force or fear, or a victim may be enticed into confinement by fraud or deception.",
+    "src": "https://en.wikipedia.org/wiki/Kidnapping",
+    "verified": true
+  },
+  {
+    "in": [
+      "violence",
+      "prison"
+    ],
+    "out": "torture",
+    "why": "Torture is the deliberate infliction of severe pain or suffering on a person for reasons including punishment, extracting a confession, interrogation for information, or intimidating third parties.",
+    "src": "https://en.wikipedia.org/wiki/Torture",
+    "verified": true
+  },
+  {
+    "in": [
+      "murder",
+      "politics"
+    ],
+    "out": "assassination",
+    "why": "Assassination is the willful killing, by a sudden or secret attack, of a person—especially a prominent or important one—typically for political, social, or ideological reasons. Acts of assassination have been performed since ancient times.",
+    "src": "https://en.wikipedia.org/wiki/Assassination",
+    "verified": true
+  },
+  {
+    "in": [
+      "violence",
+      "politics"
+    ],
+    "out": "terrorism",
+    "why": "Terrorism, in its broadest sense, is the use of violence against non-combatants to achieve political or ideological aims. There are several different definitions of terrorism, without universal agreement on the precise meaning of the term.",
+    "src": "https://en.wikipedia.org/wiki/Terrorism",
+    "verified": true
+  },
+  {
+    "in": [
+      "government",
+      "crime"
+    ],
+    "out": "corruption",
+    "why": "Corruption is a form of dishonesty or a crime that is undertaken by a person or an organization that is entrusted in a position of authority to acquire illicit benefits or abuse power for one's gain. Corruption may involve activities like bribery, influence peddling, embezzlement, and fraud.",
+    "src": "https://en.wikipedia.org/wiki/Corruption",
+    "verified": true
+  },
+  {
+    "in": [
+      "crime",
+      "group"
+    ],
+    "out": "organized_crime",
+    "why": "Organized crime refers to groups of centralized enterprises that engage in, and aim to profit from, illegal activities. Some forms of organized crime exist simply to meet demand for illegal goods or to facilitate trade in products and services banned by the state.",
+    "src": "https://en.wikipedia.org/wiki/Organized_crime",
+    "verified": true
+  },
+  {
+    "in": [
+      "justice",
+      "law"
+    ],
+    "out": "court",
+    "why": "A court is an institution, often a government entity, with the authority to adjudicate legal disputes between parties and administer justice in civil, criminal, and administrative matters in accordance with the rule of law. Courts generally consist of judges or other judicial officers, and are usually established and dissolved through legislation enacted by a legislature.",
+    "src": "https://en.wikipedia.org/wiki/Court",
+    "verified": true
+  },
+  {
+    "in": [
+      "court",
+      "law"
+    ],
+    "out": "judge",
+    "why": "A judge is a public official who presides over court proceedings, either alone or as a part of a judicial panel. In an adversarial system, the judge hears all the witnesses and any other evidence presented, assesses the credibility and arguments of the parties, and then issues a ruling in the case.",
+    "src": "https://en.wikipedia.org/wiki/Judge",
+    "verified": true
+  },
+  {
+    "in": [
+      "court",
+      "society"
+    ],
+    "out": "jury",
+    "why": "A jury is a sworn body of people (jurors) convened to hear evidence, make findings of fact, and render an impartial verdict officially submitted to them by a court, or to set a penalty or judgment.",
+    "src": "https://en.wikipedia.org/wiki/Jury",
+    "verified": true
+  },
+  {
+    "in": [
+      "court",
+      "human"
+    ],
+    "out": "lawyer",
+    "why": "A lawyer is a person who is qualified to offer advice about the law, draft legal documents, and represent individuals in legal matters.",
+    "src": "https://en.wikipedia.org/wiki/Lawyer",
+    "verified": true
+  },
+  {
+    "in": [
+      "law",
+      "soldier"
+    ],
+    "out": "police",
+    "why": "The police are a constituted body of people empowered by a state with the aim of enforcing the law and protecting the public order as well as the public itself. Their lawful powers encompass arrest and the use of force legitimized by the state's monopoly on violence.",
+    "src": "https://en.wikipedia.org/wiki/Police",
+    "verified": true
+  },
+  {
+    "in": [
+      "court",
+      "evidence"
+    ],
+    "out": "trial",
+    "why": "In law, a trial is a coming together of parties to a dispute, to present information (in the form of evidence) in a tribunal, a formal setting with the authority to adjudicate claims or disputes. One form of tribunal is a court.",
+    "src": "https://en.wikipedia.org/wiki/Trial",
+    "verified": true
+  },
+  {
+    "in": [
+      "trial",
+      "human"
+    ],
+    "out": "witness",
+    "why": "In law, a witness is someone who, either voluntarily or under compulsion, provides testimonial evidence, either oral or written, of what they know or claim to know.",
+    "src": "https://en.wikipedia.org/wiki/Witness",
+    "verified": true
+  },
+  {
+    "in": [
+      "court",
+      "trial"
+    ],
+    "out": "appeal",
+    "why": "In law, an appeal is the process in which cases or decisions are reviewed by a higher authority, where parties request a formal change to an official decision. Appeals function both as a process for error correction as well as a process of clarifying and interpreting law.",
+    "src": "https://en.wikipedia.org/wiki/Appeal",
+    "verified": true
+  },
+  {
+    "in": [
+      "law",
+      "legislature"
+    ],
+    "out": "statute",
+    "why": "A statute is a law or formal written enactment of a legislature. Statutes typically declare, command or prohibit something.",
+    "src": "https://en.wikipedia.org/wiki/Statute",
+    "verified": true
+  },
+  {
+    "in": [
+      "court",
+      "history"
+    ],
+    "out": "precedent",
+    "why": "Precedent is a judicial decision that serves as an authority for courts when deciding subsequent identical or similar cases. Fundamental to common law legal systems, precedent operates under the principle of stare decisis, where past judicial decisions serve as case law to guide future rulings.",
+    "src": "https://en.wikipedia.org/wiki/Precedent",
+    "verified": true
+  },
+  {
+    "in": [
+      "law",
+      "tradition"
+    ],
+    "out": "common_law",
+    "why": "Common law is the body of law primarily developed through judicial decisions rather than statutes. Although common law may incorporate certain statutes, it is largely based on precedent—judicial rulings made in previous similar cases.",
+    "src": "https://en.wikipedia.org/wiki/Common_law",
+    "verified": true
+  },
+  {
+    "in": [
+      "law",
+      "crime"
+    ],
+    "out": "criminal_law",
+    "why": "Criminal law is the body of law that relates to crime. Most criminal law is established by statute, which is to say that the laws are enacted by a legislature.",
+    "src": "https://en.wikipedia.org/wiki/Criminal_law",
+    "verified": true
+  },
+  {
+    "in": [
+      "property",
+      "idea"
+    ],
+    "out": "intellectual_property",
+    "why": "Intellectual property is a category of property that includes intangible creations of the human intellect, while intellectual property rights are rights empowering the creator or owner of an intellectual property asset to use it and to prevent others from doing so.",
+    "src": "https://en.wikipedia.org/wiki/Intellectual_property",
+    "verified": true
+  },
+  {
+    "in": [
+      "intellectual_property",
+      "book"
+    ],
+    "out": "copyright",
+    "why": "A copyright is a type of intellectual property that gives its owner the exclusive legal right to copy, distribute, adapt, display, and perform a creative work, usually for a limited time. The creative work may be in a literary, artistic, educational, or musical form.",
+    "src": "https://en.wikipedia.org/wiki/Copyright",
+    "verified": true
+  },
+  {
+    "in": [
+      "intellectual_property",
+      "machine"
+    ],
+    "out": "patent",
+    "why": "A patent is a type of intellectual property that gives its owner the legal right to exclude others from making, using, or selling an invention for a limited period of time, in exchange for publishing an enabling disclosure of the invention.",
+    "src": "https://en.wikipedia.org/wiki/Patent",
+    "verified": true
+  },
+  {
+    "in": [
+      "property",
+      "death"
+    ],
+    "out": "inheritance",
+    "why": "Inheritance is the practice of receiving private property, titles, debts, entitlements, privileges, rights, and obligations upon the death of an individual. The rules of inheritance differ among societies and have changed over time.",
+    "src": "https://en.wikipedia.org/wiki/Inheritance",
+    "verified": true
+  },
+  {
+    "in": [
+      "inheritance",
+      "writing"
+    ],
+    "out": "will_testament",
+    "why": "A will and testament is a legal document that expresses a person's (testator) wishes as to how their property (estate) is to be distributed after their death and as to which person (executor) is to manage the property until its final distribution.",
+    "src": "https://en.wikipedia.org/wiki/Will_and_testament",
+    "verified": true
+  },
+  {
+    "in": [
+      "justice",
+      "death"
+    ],
+    "out": "capital_punishment",
+    "why": "Capital punishment, also known as the death penalty, is the state-sanctioned killing of a person as punishment for actual or supposed misconduct. The sentence ordering that an offender be punished in such a manner is called a death sentence, and the act of carrying out the sentence is an execution.",
+    "src": "https://en.wikipedia.org/wiki/Capital_punishment",
+    "verified": true
+  },
+  {
+    "in": [
+      "law",
+      "constitution"
+    ],
+    "out": "rule_of_law",
+    "why": "The rule of law is a political and legal principle that generally entails and ensures that the law is clear, consistent and open; individuals and groups have access to justice; and that government institutions are subject to the law.",
+    "src": "https://en.wikipedia.org/wiki/Rule_of_law",
+    "verified": true
+  },
+  {
+    "in": [
+      "law",
+      "theory"
+    ],
+    "out": "jurisprudence",
+    "why": "Jurisprudence, also known as legal theory or legal science, is the philosophy of law. As a field of knowledge, it applies philosophical methods to legal questions, such as what the law is or how it ought to be.",
+    "src": "https://en.wikipedia.org/wiki/Jurisprudence",
+    "verified": true
+  },
+  {
+    "in": [
+      "court",
+      "contract"
+    ],
+    "out": "lawsuit",
+    "why": "A lawsuit is a proceeding by one or more parties (the plaintiff or claimant) against one or more parties (the defendant) in a civil court of law.",
+    "src": "https://en.wikipedia.org/wiki/Lawsuit",
+    "verified": true
+  },
+  {
+    "in": [
+      "newspaper",
+      "information"
+    ],
+    "out": "news",
+    "why": "News is information about current events. This may be provided through many different media: word of mouth, printing, postal systems, broadcasting, electronic communication, or through the testimony of observers and witnesses to events.",
+    "src": "https://en.wikipedia.org/wiki/News",
+    "verified": true
+  },
+  {
+    "in": [
+      "news",
+      "writing"
+    ],
+    "out": "journalism",
+    "why": "Journalism is the production and distribution of reports on events, facts, ideas, and people that constitute the \"news of the day\" and inform society with a commitment to accuracy and verification.",
+    "src": "https://en.wikipedia.org/wiki/Journalism",
+    "verified": true
+  },
+  {
+    "in": [
+      "newspaper",
+      "television"
+    ],
+    "out": "mass_media",
+    "why": "Mass media refers to the forms of media that reach large audiences via mass communication. It includes broadcast media, digital media, print media, social media, streaming media, advertising, and events.",
+    "src": "https://en.wikipedia.org/wiki/Mass_media",
+    "verified": true
+  },
+  {
+    "in": [
+      "politics",
+      "mass_media"
+    ],
+    "out": "propaganda",
+    "why": "Propaganda is a form of mass communication that is primarily used to influence an audience and persuade them to further an agenda. Propaganda may not be objective and often selectively presents facts to encourage a particular perception, or uses loaded language to produce an emotional rather than a rational response.",
+    "src": "https://en.wikipedia.org/wiki/Propaganda",
+    "verified": true
+  },
+  {
+    "in": [
+      "government",
+      "writing"
+    ],
+    "out": "censorship",
+    "why": "Censorship is the suppression of speech, public communication, or other information. Censorship can be conducted by governments and private institutions.",
+    "src": "https://en.wikipedia.org/wiki/Censorship",
+    "verified": true
+  },
+  {
+    "in": [
+      "mass_media",
+      "company"
+    ],
+    "out": "public_relations",
+    "why": "Public relations is the practice of managing and disseminating information from an individual or an organization to the public in order to influence their perception.",
+    "src": "https://en.wikipedia.org/wiki/Public_relations",
+    "verified": true
+  },
+  {
+    "in": [
+      "book",
+      "company"
+    ],
+    "out": "publishing",
+    "why": "Publishing is the process of making information, literature, music, software, and other content, whether in physical or digital form, available to the public for sale or free of charge. Traditionally, the term publishing refers to the creation and distribution of printed works, such as books, zines, comic books, newspapers, and magazines, to the public.",
+    "src": "https://en.wikipedia.org/wiki/Publishing",
+    "verified": true
+  },
+  {
+    "in": [
+      "paper",
+      "news"
+    ],
+    "out": "magazine",
+    "why": "A magazine is a periodical publication, print or digital, produced on a regular schedule, that contains any of a variety of subject-oriented textual and visual content forms. Magazines are generally financed by advertising, purchase price, prepaid subscriptions, or by a combination of the three.",
+    "src": "https://en.wikipedia.org/wiki/Magazine",
+    "verified": true
+  },
+  {
+    "in": [
+      "internet",
+      "society"
+    ],
+    "out": "social_media",
+    "why": "Social media are new media technologies that facilitate the creation, sharing and aggregation of content (such as ideas, interests, and other forms of expression) amongst virtual communities and networks.",
+    "src": "https://en.wikipedia.org/wiki/Social_media",
+    "verified": true
+  },
+  {
+    "in": [
+      "magazine",
+      "knowledge"
+    ],
+    "out": "academic_journal",
+    "why": "An academic journal or scholarly journal is a periodical publication in which scholarship relating to a particular academic discipline is published. They serve as permanent and transparent forums for the dissemination, scrutiny, and discussion of research.",
+    "src": "https://en.wikipedia.org/wiki/Academic_journal",
+    "verified": true
+  },
+  {
+    "in": [
+      "painting",
+      "newspaper"
+    ],
+    "out": "cartoon",
+    "why": "A cartoon is a type of visual art that is typically drawn, frequently animated, in an unrealistic or semi-realistic style. The specific meaning has evolved, but the modern usage usually refers to either: an image or series of images intended for satire, caricature, or humor; or a motion picture that relies on a sequence of illustrations for its animation.",
+    "src": "https://en.wikipedia.org/wiki/Cartoon",
+    "verified": true
+  },
+  {
+    "in": [
+      "internet",
+      "idea"
+    ],
+    "out": "internet_meme",
+    "why": "An internet meme, or meme, is a cultural item (such as an idea, behavior, or style) that spreads across the internet, now primarily through social media platforms. Internet memes manifest in a variety of formats, including images, videos, and other viral content.",
+    "src": "https://en.wikipedia.org/wiki/Internet_meme",
+    "verified": true
   }
 ]
