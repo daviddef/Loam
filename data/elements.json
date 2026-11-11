@@ -96645,5 +96645,778 @@
     ],
     "fact": "A covering that takes the blow so the body does not.",
     "src": "https://en.wikipedia.org/wiki/Armour"
+  },
+  {
+    "id": "addition",
+    "name": "Addition",
+    "emoji": "➕",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Combining two quantities into one — repeated addition of 1 is the same as counting.",
+    "src": "https://en.wikipedia.org/wiki/Addition"
+  },
+  {
+    "id": "subtraction",
+    "name": "Subtraction",
+    "emoji": "➖",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Addition run backwards: the number that, added to the second, gives the first.",
+    "src": "https://en.wikipedia.org/wiki/Subtraction"
+  },
+  {
+    "id": "multiplication",
+    "name": "Multiplication",
+    "emoji": "✖️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Repeated addition: three groups of four.",
+    "src": "https://en.wikipedia.org/wiki/Multiplication"
+  },
+  {
+    "id": "arithmetic",
+    "name": "Arithmetic",
+    "emoji": "🧮",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The elementary branch of mathematics: addition, subtraction, multiplication and division.",
+    "src": "https://en.wikipedia.org/wiki/Arithmetic"
+  },
+  {
+    "id": "exponentiation",
+    "name": "Exponentiation",
+    "emoji": "⬆️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Repeated multiplication: a base multiplied by itself, n times.",
+    "src": "https://en.wikipedia.org/wiki/Exponentiation"
+  },
+  {
+    "id": "square_root",
+    "name": "Square Root",
+    "emoji": "√",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The number that, multiplied by itself, gives the number you started with.",
+    "src": "https://en.wikipedia.org/wiki/Square_root"
+  },
+  {
+    "id": "logarithm",
+    "name": "Logarithm",
+    "emoji": "📏",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The inverse of exponentiation; Napier introduced it in 1614 to turn multiplying into adding.",
+    "src": "https://en.wikipedia.org/wiki/Logarithm"
+  },
+  {
+    "id": "integer",
+    "name": "Integer",
+    "emoji": "🔢",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Zero, the counting numbers, and their negations.",
+    "src": "https://en.wikipedia.org/wiki/Integer"
+  },
+  {
+    "id": "negative_number",
+    "name": "Negative Number",
+    "emoji": "➖",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A number less than zero — a debt, thought of as an asset below nothing.",
+    "src": "https://en.wikipedia.org/wiki/Negative_number"
+  },
+  {
+    "id": "rational_number",
+    "name": "Rational Number",
+    "emoji": "➗",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Any number that can be written as one integer over another.",
+    "src": "https://en.wikipedia.org/wiki/Rational_number"
+  },
+  {
+    "id": "real_number",
+    "name": "Real Number",
+    "emoji": "📈",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The numbers of the continuous line, including the irrational ones — the numbers calculus needs.",
+    "src": "https://en.wikipedia.org/wiki/Real_number"
+  },
+  {
+    "id": "complex_number",
+    "name": "Complex Number",
+    "emoji": "🌀",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A real part plus an imaginary one — the numbers that make every polynomial equation solvable.",
+    "src": "https://en.wikipedia.org/wiki/Complex_number"
+  },
+  {
+    "id": "point",
+    "name": "Point",
+    "emoji": "•",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "\"That which has no part\" — position with no size.",
+    "src": "https://en.wikipedia.org/wiki/Point_(geometry)"
+  },
+  {
+    "id": "line",
+    "name": "Line",
+    "emoji": "📐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Infinitely long and with no width: the idealisation of a taut string.",
+    "src": "https://en.wikipedia.org/wiki/Line_(geometry)"
+  },
+  {
+    "id": "angle",
+    "name": "Angle",
+    "emoji": "📐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Two rays from a common point; how far one is turned from the other.",
+    "src": "https://en.wikipedia.org/wiki/Angle"
+  },
+  {
+    "id": "polygon",
+    "name": "Polygon",
+    "emoji": "⬠",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A closed chain of straight edges: triangle, square, pentagon and on.",
+    "src": "https://en.wikipedia.org/wiki/Polygon"
+  },
+  {
+    "id": "perimeter",
+    "name": "Perimeter",
+    "emoji": "🔲",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The length of a closed boundary — the fence needed around a yard.",
+    "src": "https://en.wikipedia.org/wiki/Perimeter"
+  },
+  {
+    "id": "parallel",
+    "name": "Parallel",
+    "emoji": "∥",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Lines in one plane that never meet, however far they run.",
+    "src": "https://en.wikipedia.org/wiki/Parallel_(geometry)"
+  },
+  {
+    "id": "tangent",
+    "name": "Tangent",
+    "emoji": "↗️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A line that just touches a curve at one point.",
+    "src": "https://en.wikipedia.org/wiki/Tangent"
+  },
+  {
+    "id": "trigonometry",
+    "name": "Trigonometry",
+    "emoji": "📐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The relations between the angles and side lengths of triangles, from the Greek for \"triangle\" and \"measure\".",
+    "src": "https://en.wikipedia.org/wiki/Trigonometry"
+  },
+  {
+    "id": "sine",
+    "name": "Sine",
+    "emoji": "〰️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Opposite over hypotenuse — and, on the unit circle, a height.",
+    "src": "https://en.wikipedia.org/wiki/Sine_and_cosine"
+  },
+  {
+    "id": "sphere",
+    "name": "Sphere",
+    "emoji": "🔮",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "All the points at one distance from a centre, in three dimensions.",
+    "src": "https://en.wikipedia.org/wiki/Sphere"
+  },
+  {
+    "id": "volume",
+    "name": "Volume",
+    "emoji": "🧊",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "How much three-dimensional space something takes up.",
+    "src": "https://en.wikipedia.org/wiki/Volume"
+  },
+  {
+    "id": "derivative",
+    "name": "Derivative",
+    "emoji": "📉",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The instantaneous rate of change of a function — the slope of its tangent.",
+    "src": "https://en.wikipedia.org/wiki/Derivative"
+  },
+  {
+    "id": "integral",
+    "name": "Integral",
+    "emoji": "∫",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Area under a curve — and the inverse of differentiation.",
+    "src": "https://en.wikipedia.org/wiki/Integral"
+  },
+  {
+    "id": "matrix",
+    "name": "Matrix",
+    "emoji": "🔲",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A rectangle of numbers in rows and columns, built to hold a whole system of linear equations.",
+    "src": "https://en.wikipedia.org/wiki/Matrix_(mathematics)"
+  },
+  {
+    "id": "sequence",
+    "name": "Sequence",
+    "emoji": "🔢",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A list in which order matters and repeats are allowed.",
+    "src": "https://en.wikipedia.org/wiki/Sequence"
+  },
+  {
+    "id": "series",
+    "name": "Series",
+    "emoji": "Σ",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An addition of infinitely many terms, one after the other.",
+    "src": "https://en.wikipedia.org/wiki/Series_(mathematics)"
+  },
+  {
+    "id": "conjecture",
+    "name": "Conjecture",
+    "emoji": "❓",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A proposition put forward without proof — some are still open after centuries.",
+    "src": "https://en.wikipedia.org/wiki/Conjecture"
+  },
+  {
+    "id": "mathematics",
+    "name": "Mathematics",
+    "emoji": "🧠",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The study of numbers, shapes, sets, functions and the structures between them.",
+    "src": "https://en.wikipedia.org/wiki/Mathematics"
+  },
+  {
+    "id": "percentage",
+    "name": "Percentage",
+    "emoji": "％",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A number expressed as a fraction of 100 — \"by the hundred\".",
+    "src": "https://en.wikipedia.org/wiki/Percentage"
+  },
+  {
+    "id": "goods",
+    "name": "Goods",
+    "emoji": "📦",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "What a factory makes from raw material: things that are scarce because producing them costs effort.",
+    "src": "https://en.wikipedia.org/wiki/Goods"
+  },
+  {
+    "id": "service",
+    "name": "Service",
+    "emoji": "🛎️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "Value that is an act, not an object: someone is willing to pay for it being done.",
+    "src": "https://en.wikipedia.org/wiki/Service_(economics)"
+  },
+  {
+    "id": "price",
+    "name": "Price",
+    "emoji": "🏷️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "The amount at which buyers and sellers agree a thing changes hands.",
+    "src": "https://en.wikipedia.org/wiki/Price"
+  },
+  {
+    "id": "supply_and_demand",
+    "name": "Supply and Demand",
+    "emoji": "⚖️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "The model of how a market settles on a price.",
+    "src": "https://en.wikipedia.org/wiki/Supply_and_demand"
+  },
+  {
+    "id": "inflation",
+    "name": "Inflation",
+    "emoji": "🎈",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "The average price of goods and services rising, measured in money.",
+    "src": "https://en.wikipedia.org/wiki/Inflation"
+  },
+  {
+    "id": "deflation",
+    "name": "Deflation",
+    "emoji": "📉",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "Inflation's opposite: the general price level falling.",
+    "src": "https://en.wikipedia.org/wiki/Deflation"
+  },
+  {
+    "id": "profit",
+    "name": "Profit",
+    "emoji": "💰",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "What is left of the revenue once every cost of the inputs has been paid.",
+    "src": "https://en.wikipedia.org/wiki/Profit_(economics)"
+  },
+  {
+    "id": "business",
+    "name": "Business",
+    "emoji": "💼",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "Making a living by producing, or buying and selling, goods and services.",
+    "src": "https://en.wikipedia.org/wiki/Business"
+  },
+  {
+    "id": "company",
+    "name": "Company",
+    "emoji": "🏢",
+    "shelf": "workshop",
+    "tags": [
+      "trade",
+      "society"
+    ],
+    "fact": "A legal entity that is an association of legal persons with a shared objective.",
+    "src": "https://en.wikipedia.org/wiki/Company"
+  },
+  {
+    "id": "corporation",
+    "name": "Corporation",
+    "emoji": "🏛️",
+    "shelf": "workshop",
+    "tags": [
+      "trade",
+      "society"
+    ],
+    "fact": "A company the state authorises to act as one entity — and whose owners are not personally liable.",
+    "src": "https://en.wikipedia.org/wiki/Corporation"
+  },
+  {
+    "id": "wage",
+    "name": "Wage",
+    "emoji": "💵",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "The price of labour.",
+    "src": "https://en.wikipedia.org/wiki/Wage"
+  },
+  {
+    "id": "employment",
+    "name": "Employment",
+    "emoji": "🧑‍🏭",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "A relationship between two parties for the provision of paid labour.",
+    "src": "https://en.wikipedia.org/wiki/Employment"
+  },
+  {
+    "id": "unemployment",
+    "name": "Unemployment",
+    "emoji": "🚪",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "Available for work, but not in paid employment.",
+    "src": "https://en.wikipedia.org/wiki/Unemployment"
+  },
+  {
+    "id": "loan",
+    "name": "Loan",
+    "emoji": "🤝",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "Money handed over on an agreement to pay it back.",
+    "src": "https://en.wikipedia.org/wiki/Loan"
+  },
+  {
+    "id": "mortgage",
+    "name": "Mortgage",
+    "emoji": "🏠",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "A loan secured on a property — \"death pledge\" in Law French.",
+    "src": "https://en.wikipedia.org/wiki/Mortgage_loan"
+  },
+  {
+    "id": "insurance",
+    "name": "Insurance",
+    "emoji": "☂️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "A fee paid now for compensation if a specified loss comes later.",
+    "src": "https://en.wikipedia.org/wiki/Insurance"
+  },
+  {
+    "id": "investment",
+    "name": "Investment",
+    "emoji": "🌱",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "Committing resources to something expected to gain value over time.",
+    "src": "https://en.wikipedia.org/wiki/Investment"
+  },
+  {
+    "id": "stock_exchange",
+    "name": "Stock Exchange",
+    "emoji": "📈",
+    "shelf": "workshop",
+    "tags": [
+      "trade",
+      "society"
+    ],
+    "fact": "A market where shares in corporations are bought and sold — Amsterdam's is often called the oldest modern one.",
+    "src": "https://en.wikipedia.org/wiki/Stock_exchange"
+  },
+  {
+    "id": "accounting",
+    "name": "Accounting",
+    "emoji": "📒",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "Recording and reporting financial transactions; double-entry bookkeeping comes from medieval Venice.",
+    "src": "https://en.wikipedia.org/wiki/Accounting"
+  },
+  {
+    "id": "gdp",
+    "name": "Gross Domestic Product",
+    "emoji": "📊",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "The total market value of a country's final goods and services in a year.",
+    "src": "https://en.wikipedia.org/wiki/Gross_domestic_product"
+  },
+  {
+    "id": "economic_growth",
+    "name": "Economic Growth",
+    "emoji": "🌆",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "More, and better, goods and services produced by a society.",
+    "src": "https://en.wikipedia.org/wiki/Economic_growth"
+  },
+  {
+    "id": "economics",
+    "name": "Economics",
+    "emoji": "🧮",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "The social science of production, distribution and consumption.",
+    "src": "https://en.wikipedia.org/wiki/Economics"
+  },
+  {
+    "id": "monopoly",
+    "name": "Monopoly",
+    "emoji": "🎩",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "A single seller, and so no competition and no substitute.",
+    "src": "https://en.wikipedia.org/wiki/Monopoly"
+  },
+  {
+    "id": "subsidy",
+    "name": "Subsidy",
+    "emoji": "🏗️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "Public money that keeps a job, a farm or a housing programme going.",
+    "src": "https://en.wikipedia.org/wiki/Subsidy"
+  },
+  {
+    "id": "sales_tax",
+    "name": "Sales Tax",
+    "emoji": "🧾",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "A tax paid to a governing body on the sale of certain goods and services.",
+    "src": "https://en.wikipedia.org/wiki/Sales_tax"
+  },
+  {
+    "id": "property_tax",
+    "name": "Property Tax",
+    "emoji": "🏘️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "A tax on the value of a property, set as a percentage — or a \"millage\".",
+    "src": "https://en.wikipedia.org/wiki/Property_tax"
+  },
+  {
+    "id": "income_tax",
+    "name": "Income Tax",
+    "emoji": "📄",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "A tax on the income or profits people and entities earn.",
+    "src": "https://en.wikipedia.org/wiki/Income_tax"
+  },
+  {
+    "id": "international_trade",
+    "name": "International Trade",
+    "emoji": "🚢",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "Exchange of capital, goods and services across borders.",
+    "src": "https://en.wikipedia.org/wiki/International_trade"
+  },
+  {
+    "id": "exchange_rate",
+    "name": "Exchange Rate",
+    "emoji": "💱",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "The rate at which one currency is exchanged for another.",
+    "src": "https://en.wikipedia.org/wiki/Exchange_rate"
+  },
+  {
+    "id": "pension",
+    "name": "Pension",
+    "emoji": "🪑",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "A fund paid into during a working career, paid out in retirement.",
+    "src": "https://en.wikipedia.org/wiki/Pension"
+  },
+  {
+    "id": "bankruptcy",
+    "name": "Bankruptcy",
+    "emoji": "🥀",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "A legal process through which those who cannot repay debts may seek relief.",
+    "src": "https://en.wikipedia.org/wiki/Bankruptcy"
+  },
+  {
+    "id": "black_market",
+    "name": "Black Market",
+    "emoji": "🕶️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "A clandestine market with some aspect of illegality.",
+    "src": "https://en.wikipedia.org/wiki/Black_market"
+  },
+  {
+    "id": "protectionism",
+    "name": "Protectionism",
+    "emoji": "🛡️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "Restricting imports with tariffs and quotas.",
+    "src": "https://en.wikipedia.org/wiki/Protectionism"
+  },
+  {
+    "id": "competition",
+    "name": "Competition",
+    "emoji": "🥊",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "Firms contending for limited goods by varying price, product, promotion and place.",
+    "src": "https://en.wikipedia.org/wiki/Competition_(economics)"
+  },
+  {
+    "id": "commerce",
+    "name": "Commerce",
+    "emoji": "🏬",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "The organised system for the large-scale exchange of goods and services.",
+    "src": "https://en.wikipedia.org/wiki/Commerce"
+  },
+  {
+    "id": "productivity",
+    "name": "Productivity",
+    "emoji": "⏱️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "trade"
+    ],
+    "fact": "Output per unit of input: how efficiently goods or services get made.",
+    "src": "https://en.wikipedia.org/wiki/Productivity"
   }
 ]

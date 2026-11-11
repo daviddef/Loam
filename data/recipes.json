@@ -105842,5 +105842,675 @@
     "out": "armor",
     "why": "Armour is a covering used to protect an object, individual or vehicle from physical injury or damage, especially from direct-contact weapons or projectiles during combat. Personal armour is used to protect soldiers and war animals, and has been used throughout recorded history.",
     "src": "https://en.wikipedia.org/wiki/Armour"
+  },
+  {
+    "in": [
+      "number",
+      "counting"
+    ],
+    "out": "addition",
+    "why": "Addition is one of the four basic operations of arithmetic, usually denoted with the plus sign. Besides counting items, it can be defined without referring to concrete objects, using abstractions called numbers instead, and repeated addition of 1 is the same as counting.",
+    "src": "https://en.wikipedia.org/wiki/Addition",
+    "verified": true
+  },
+  {
+    "in": [
+      "addition",
+      "number"
+    ],
+    "out": "subtraction",
+    "why": "Subtraction is an operation that represents removal of objects from a collection. In a sense it is the inverse of addition: the difference of two numbers is the number that gives the first one when added to the second one, so the difference of 5 and 2 is 3.",
+    "src": "https://en.wikipedia.org/wiki/Subtraction",
+    "verified": true
+  },
+  {
+    "in": [
+      "addition",
+      "counting"
+    ],
+    "out": "multiplication",
+    "why": "The multiplication of whole numbers may be thought of as repeated addition: the multiplication of two numbers is equivalent to adding as many copies of one of them as the quantity of the other one. The expression 3×4 can be phrased as \"three groups of four\", and evaluated as 4+4+4.",
+    "src": "https://en.wikipedia.org/wiki/Multiplication",
+    "verified": true
+  },
+  {
+    "in": [
+      "addition",
+      "multiplication"
+    ],
+    "out": "arithmetic",
+    "why": "Arithmetic is an elementary branch of mathematics that deals with numerical operations like addition, subtraction, multiplication, and division. Ancient civilizations like the Egyptians and the Sumerians invented numeral systems to solve practical arithmetic problems in about 3000 BCE.",
+    "src": "https://en.wikipedia.org/wiki/Arithmetic",
+    "verified": true
+  },
+  {
+    "in": [
+      "multiplication",
+      "number"
+    ],
+    "out": "exponentiation",
+    "why": "When n is a positive integer, exponentiation corresponds to repeated multiplication of the base: b to the n is the product of multiplying b by itself n times. The expression b squared is called \"the square of b\" because the area of a square with side-length b is b squared.",
+    "src": "https://en.wikipedia.org/wiki/Exponentiation",
+    "verified": true
+  },
+  {
+    "in": [
+      "exponentiation",
+      "equation"
+    ],
+    "out": "square_root",
+    "why": "A square root of a number x is a number y such that y squared equals x; in other words, a number whose square, the result of multiplying the number by itself, is x. Every nonnegative real number x has a unique nonnegative square root, called the principal square root: the principal square root of 9 is 3.",
+    "src": "https://en.wikipedia.org/wiki/Square_root",
+    "verified": true
+  },
+  {
+    "in": [
+      "exponentiation",
+      "function"
+    ],
+    "out": "logarithm",
+    "why": "As a single-variable function, the logarithm to base b is the inverse of exponentiation with base b. Logarithms were introduced by John Napier in 1614 as a means of simplifying calculations: using logarithm tables, tedious multi-digit multiplication steps can be replaced by table look-ups and simpler addition.",
+    "src": "https://en.wikipedia.org/wiki/Logarithm",
+    "verified": true
+  },
+  {
+    "in": [
+      "number",
+      "zero"
+    ],
+    "out": "integer",
+    "why": "An integer is the number zero, a positive natural number (1, 2, 3, ...), or the negation of a positive natural number (−1, −2, −3, ...). The negations or additive inverses of the positive natural numbers are referred to as negative integers.",
+    "src": "https://en.wikipedia.org/wiki/Integer",
+    "verified": true
+  },
+  {
+    "in": [
+      "integer",
+      "subtraction"
+    ],
+    "out": "negative_number",
+    "why": "A negative number is the opposite of a positive real number; equivalently, a real number that is less than zero. A debt that is owed may be thought of as a negative asset, and Islamic mathematicians further developed the rules of subtracting and multiplying negative numbers.",
+    "src": "https://en.wikipedia.org/wiki/Negative_number",
+    "verified": true
+  },
+  {
+    "in": [
+      "integer",
+      "fraction"
+    ],
+    "out": "rational_number",
+    "why": "A rational number is a number that can be expressed as the quotient or fraction of two integers, a numerator p and a nonzero denominator q. Every integer is a rational number, and the rationals are closed under addition, subtraction, multiplication, and division by a nonzero rational number.",
+    "src": "https://en.wikipedia.org/wiki/Rational_number",
+    "verified": true
+  },
+  {
+    "in": [
+      "rational_number",
+      "limit"
+    ],
+    "out": "real_number",
+    "why": "Every real number can be almost uniquely represented by an infinite decimal expansion, and real numbers that are not rational are irrational. The real numbers are fundamental in calculus, in particular by their role in the classical definitions of limits, continuity and derivatives.",
+    "src": "https://en.wikipedia.org/wiki/Real_number",
+    "verified": true
+  },
+  {
+    "in": [
+      "real_number",
+      "equation"
+    ],
+    "out": "complex_number",
+    "why": "A complex number is a number of the form a+bi, where a and b are real numbers and i is the imaginary unit, which satisfies the equation i squared equals −1. Square roots of negative numbers were found helpful in the 16th century for determining the real solutions of cubic equations.",
+    "src": "https://en.wikipedia.org/wiki/Complex_number",
+    "verified": true
+  },
+  {
+    "in": [
+      "geometry",
+      "zero"
+    ],
+    "out": "point",
+    "why": "As zero-dimensional objects, points are usually taken to be the fundamental indivisible elements comprising the space. In classical Euclidean geometry, a point is a primitive notion, defined as \"that which has no part\".",
+    "src": "https://en.wikipedia.org/wiki/Point_(geometry)",
+    "verified": true
+  },
+  {
+    "in": [
+      "point",
+      "geometry"
+    ],
+    "out": "line",
+    "why": "In geometry, a straight line is an infinitely long object with no width, depth, or curvature. It is an idealisation of such physical objects as a straightedge, a taut string, or a ray of light, and a line segment is the part of a line delimited by two points.",
+    "src": "https://en.wikipedia.org/wiki/Line_(geometry)",
+    "verified": true
+  },
+  {
+    "in": [
+      "line",
+      "point"
+    ],
+    "out": "angle",
+    "why": "One standard definition is that an angle is a figure consisting of two rays which lie in a plane and share a common endpoint. Each line is called a side of the angle and the point they share is its vertex, and the measurement of angles is intrinsically linked with circles and rotations.",
+    "src": "https://en.wikipedia.org/wiki/Angle",
+    "verified": true
+  },
+  {
+    "in": [
+      "line",
+      "angle"
+    ],
+    "out": "polygon",
+    "why": "A polygon is a plane figure made up of line segments connected to form a closed polygonal chain, and the segments are called its edges or sides. An n-gon is a polygon with n sides; for example, a triangle is a 3-gon.",
+    "src": "https://en.wikipedia.org/wiki/Polygon",
+    "verified": true
+  },
+  {
+    "in": [
+      "polygon",
+      "distance"
+    ],
+    "out": "perimeter",
+    "why": "A perimeter is the length of a closed boundary that encompasses, surrounds, or outlines a two-dimensional shape. The perimeter of a polygon equals the sum of the lengths of its sides, and a calculated perimeter is the length of fence required to surround a yard or garden.",
+    "src": "https://en.wikipedia.org/wiki/Perimeter",
+    "verified": true
+  },
+  {
+    "in": [
+      "line",
+      "infinity"
+    ],
+    "out": "parallel",
+    "why": "Line m is in the same plane as line l but does not intersect l, recalling that lines extend to infinity in either direction. Parallel planes are likewise infinite flat planes in the same three-dimensional space that never meet.",
+    "src": "https://en.wikipedia.org/wiki/Parallel_(geometry)",
+    "verified": true
+  },
+  {
+    "in": [
+      "line",
+      "circle"
+    ],
+    "out": "tangent",
+    "why": "The tangent line to a plane curve at a given point is, intuitively, the straight line that \"just touches\" the curve at that point. Euclid makes several references to the tangent to a circle in book III of the Elements.",
+    "src": "https://en.wikipedia.org/wiki/Tangent",
+    "verified": true
+  },
+  {
+    "in": [
+      "angle",
+      "distance"
+    ],
+    "out": "trigonometry",
+    "why": "Trigonometry, from Ancient Greek words for \"triangle\" and \"measure\", is a branch of mathematics concerned with relationships between angles and side lengths of triangles. Mathematicians in India created the earliest-known tables of trigonometric ratios such as sine.",
+    "src": "https://en.wikipedia.org/wiki/Trigonometry",
+    "verified": true
+  },
+  {
+    "in": [
+      "trigonometry",
+      "circle"
+    ],
+    "out": "sine",
+    "why": "The sine of an acute angle of a right triangle is the ratio of the length of the side opposite that angle to the length of the longest side of the triangle, the hypotenuse. The definitions of sine and cosine have been extended to any real value in terms of the lengths of certain line segments in a unit circle.",
+    "src": "https://en.wikipedia.org/wiki/Sine_and_cosine",
+    "verified": true
+  },
+  {
+    "in": [
+      "point",
+      "distance"
+    ],
+    "out": "sphere",
+    "why": "In solid geometry, a sphere is the set of points that are all at the same distance r from a given point in three-dimensional space. That given point is the center of the sphere, and the distance r is the sphere's radius; the word comes from the Ancient Greek for \"ball\".",
+    "src": "https://en.wikipedia.org/wiki/Sphere",
+    "verified": true
+  },
+  {
+    "in": [
+      "area",
+      "measurement"
+    ],
+    "out": "volume",
+    "why": "Volume is a measure of regions in three-dimensional space. It is often quantified numerically using SI derived units, such as the cubic metre and litre, or by imperial or US customary units such as the gallon, quart and cubic inch.",
+    "src": "https://en.wikipedia.org/wiki/Volume",
+    "verified": true
+  },
+  {
+    "in": [
+      "function",
+      "limit"
+    ],
+    "out": "derivative",
+    "why": "The derivative of a function of a single variable at a chosen input value, when it exists, is the slope of the tangent line to the graph of the function at that point. It is often described as the instantaneous rate of change, and is computed as the limit of a difference quotient.",
+    "src": "https://en.wikipedia.org/wiki/Derivative",
+    "verified": true
+  },
+  {
+    "in": [
+      "function",
+      "area"
+    ],
+    "out": "integral",
+    "why": "Integration was initially used to solve problems in mathematics and physics, such as finding the area under a curve, or determining displacement from velocity. The fundamental theorem of calculus relates definite integration to differentiation: they are inverse operations.",
+    "src": "https://en.wikipedia.org/wiki/Integral",
+    "verified": true
+  },
+  {
+    "in": [
+      "number",
+      "equation"
+    ],
+    "out": "matrix",
+    "why": "A matrix is a rectangular array of numbers or other mathematical objects with elements arranged in rows and columns, usually satisfying certain properties of addition and multiplication. Matrices can be used to compactly write and work with multiple linear equations, that is, systems of linear equations.",
+    "src": "https://en.wikipedia.org/wiki/Matrix_(mathematics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "set_math",
+      "counting"
+    ],
+    "out": "sequence",
+    "why": "A sequence is a collection of objects, possibly with repetition, that come in a specified order. Unlike a set, the same elements can appear multiple times at different positions in a sequence, and the order does matter.",
+    "src": "https://en.wikipedia.org/wiki/Sequence",
+    "verified": true
+  },
+  {
+    "in": [
+      "sequence",
+      "addition"
+    ],
+    "out": "series",
+    "why": "A series is, roughly speaking, an addition of infinitely many terms, one after the other. Among the Ancient Greeks, the idea that a potentially infinite summation could produce a finite result was considered paradoxical, most famously in Zeno's paradoxes.",
+    "src": "https://en.wikipedia.org/wiki/Series_(mathematics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "theorem",
+      "proof"
+    ],
+    "out": "conjecture",
+    "why": "A conjecture is a proposition that is proffered on a tentative basis without proof. Some conjectures, such as Fermat's conjecture, now a theorem, proven in 1995 by Andrew Wiles, have shaped much of mathematical history as new areas of mathematics are developed in order to prove them.",
+    "src": "https://en.wikipedia.org/wiki/Conjecture",
+    "verified": true
+  },
+  {
+    "in": [
+      "number",
+      "geometry"
+    ],
+    "out": "mathematics",
+    "why": "Mathematics is a field of knowledge concerned with abstract concepts such as numbers, geometric shapes, sets, functions, and probabilities. Its areas include number theory, the study of integers and their properties, and geometry, the study of shapes and the spaces that contain them.",
+    "src": "https://en.wikipedia.org/wiki/Mathematics",
+    "verified": true
+  },
+  {
+    "in": [
+      "fraction",
+      "ratio"
+    ],
+    "out": "percentage",
+    "why": "A percentage, from Latin per centum \"by a hundred\", is a number or ratio expressed as a fraction of 100. It is a dimensionless number, primarily used for expressing proportions, though percent is nonetheless a unit of measurement in its orthography and usage.",
+    "src": "https://en.wikipedia.org/wiki/Percentage",
+    "verified": true
+  },
+  {
+    "in": [
+      "trade",
+      "industry"
+    ],
+    "out": "goods",
+    "why": "Goods are the result of the secondary sector of the economy, which involves the transformation of raw materials or intermediate goods into goods. They are commonly considered to have diminishing marginal utility, which means that consuming more gives less utility per amount consumed.",
+    "src": "https://en.wikipedia.org/wiki/Goods",
+    "verified": true
+  },
+  {
+    "in": [
+      "goods",
+      "work"
+    ],
+    "out": "service",
+    "why": "A service is an act or use for which a consumer, company, or government is willing to pay. Services may be defined as intangible acts or performances whereby the service provider provides value to the customer.",
+    "src": "https://en.wikipedia.org/wiki/Service_(economics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "market",
+      "money"
+    ],
+    "out": "price",
+    "why": "A price in economics is the amount of money that buyers are willing and able to pay for a particular good or service, and that sellers are willing to accept. Prices are influenced by production costs, supply of the desired product, and demand for the product.",
+    "src": "https://en.wikipedia.org/wiki/Price",
+    "verified": true
+  },
+  {
+    "in": [
+      "price",
+      "market"
+    ],
+    "out": "supply_and_demand",
+    "why": "In microeconomics, supply and demand is an economic model of price determination in a market. It postulates that, holding all else equal, the unit price in a perfectly competitive market will vary until it settles at the market-clearing price, where the quantity demanded equals the quantity supplied.",
+    "src": "https://en.wikipedia.org/wiki/Supply_and_demand",
+    "verified": true
+  },
+  {
+    "in": [
+      "money",
+      "price"
+    ],
+    "out": "inflation",
+    "why": "In economics, inflation is an increase in the average price of goods and services in terms of money, though it originally referred to the increase of the money supply that can cause such a universal shift. The increase is measured using a price index, typically a consumer price index.",
+    "src": "https://en.wikipedia.org/wiki/Inflation",
+    "verified": true
+  },
+  {
+    "in": [
+      "inflation",
+      "price"
+    ],
+    "out": "deflation",
+    "why": "The opposite of inflation is deflation, a decrease in the general price level of goods and services. It is an increase in the real value of the monetary unit of account, and a monetary phenomenon, explainable in terms of changes in money supply and velocity relative to spending on output.",
+    "src": "https://en.wikipedia.org/wiki/Deflation",
+    "verified": true
+  },
+  {
+    "in": [
+      "business",
+      "price"
+    ],
+    "out": "profit",
+    "why": "In economics, profit is the difference between the revenue an economic entity has received from its outputs and the total costs of its inputs, also known as \"surplus value\". It is equal to total revenue minus total cost, including both explicit and implicit costs.",
+    "src": "https://en.wikipedia.org/wiki/Profit_(economics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "trade",
+      "company"
+    ],
+    "out": "business",
+    "why": "Business is the practice of making one's living or making money by producing or buying and selling products, such as goods and services. A business entity is not necessarily separate from the owner, and creditors can hold the owner liable for debts the business has acquired, except for a limited liability company.",
+    "src": "https://en.wikipedia.org/wiki/Business",
+    "verified": true
+  },
+  {
+    "in": [
+      "law",
+      "guild"
+    ],
+    "out": "company",
+    "why": "A company is a legal entity representing an association of legal persons with a shared objective, such as generating profit or benefiting society. Companies are governed by company law, and incorporated companies are created through state registration, whereas unincorporated companies are not.",
+    "src": "https://en.wikipedia.org/wiki/Company",
+    "verified": true
+  },
+  {
+    "in": [
+      "company",
+      "law"
+    ],
+    "out": "corporation",
+    "why": "A corporation is an individual or other entity such as a company that has been authorized by the state to act as a single entity, recognized as such in law for certain purposes. One early advantage for investors over sole proprietorships and joint partnerships was limited liability.",
+    "src": "https://en.wikipedia.org/wiki/Corporation",
+    "verified": true
+  },
+  {
+    "in": [
+      "work",
+      "money"
+    ],
+    "out": "wage",
+    "why": "A wage is the price of labor. Wages are part of the expenses involved in running a business, and wage payment is an obligation due to an employee regardless of the profitability of the company.",
+    "src": "https://en.wikipedia.org/wiki/Wage",
+    "verified": true
+  },
+  {
+    "in": [
+      "work",
+      "contract"
+    ],
+    "out": "employment",
+    "why": "Employment is a relationship between two parties regulating the provision of paid labour services. Employing other people is often a significant step for a self-employed person whose work is developing into a small business.",
+    "src": "https://en.wikipedia.org/wiki/Employment",
+    "verified": true
+  },
+  {
+    "in": [
+      "employment",
+      "wage"
+    ],
+    "out": "unemployment",
+    "why": "Unemployment is the state of not being in paid employment or self-employment but currently available for work. It is measured by the unemployment rate, the number of people who are unemployed as a percentage of the labour force.",
+    "src": "https://en.wikipedia.org/wiki/Unemployment",
+    "verified": true
+  },
+  {
+    "in": [
+      "money",
+      "contract"
+    ],
+    "out": "loan",
+    "why": "In finance, a loan is the tender of money by one party to another with an agreement to pay it back. Acting as a provider of loans is one of the main activities of financial institutions such as banks and credit card companies.",
+    "src": "https://en.wikipedia.org/wiki/Loan",
+    "verified": true
+  },
+  {
+    "in": [
+      "loan",
+      "property"
+    ],
+    "out": "mortgage",
+    "why": "A mortgage is a loan used by purchasers of real property to raise funds to buy real estate, or by existing owners to raise funds for any purpose while putting a lien on the property. The word comes from a Law French term meaning \"death pledge\": the pledge dies when the obligation is fulfilled or the property is taken through foreclosure.",
+    "src": "https://en.wikipedia.org/wiki/Mortgage_loan",
+    "verified": true
+  },
+  {
+    "in": [
+      "contract",
+      "ship"
+    ],
+    "out": "insurance",
+    "why": "Insurance is a means of protection from financial loss in which, in exchange for a fee, a party agrees to compensate another party in the event of a certain loss, damage, or injury. The general average principle of marine insurance was established on the island of Rhodes in approximately 1000 to 800 BC.",
+    "src": "https://en.wikipedia.org/wiki/Insurance",
+    "verified": true
+  },
+  {
+    "in": [
+      "money",
+      "profit"
+    ],
+    "out": "investment",
+    "why": "Investment is traditionally defined as the \"commitment of resources into something expected to gain value over time\". When a low-risk investment is made, the return is also generally low.",
+    "src": "https://en.wikipedia.org/wiki/Investment",
+    "verified": true
+  },
+  {
+    "in": [
+      "market",
+      "corporation"
+    ],
+    "out": "stock_exchange",
+    "why": "Some view the founding of the Dutch East India Company in 1602 as the key event in the history of stock exchanges, while others point to earlier developments in Antwerp in 1531 and Lyon in 1548. Trade on an exchange is restricted to brokers who are members of the exchange.",
+    "src": "https://en.wikipedia.org/wiki/Stock_exchange",
+    "verified": true
+  },
+  {
+    "in": [
+      "writing",
+      "business"
+    ],
+    "out": "accounting",
+    "why": "The recording of financial transactions, so that summaries may be presented in financial reports, is known as bookkeeping, of which double-entry bookkeeping is the most common system. The double-entry system in use today was developed in medieval Europe, particularly in Venice, and is usually attributed to Luca Pacioli.",
+    "src": "https://en.wikipedia.org/wiki/Accounting",
+    "verified": true
+  },
+  {
+    "in": [
+      "economy",
+      "measurement"
+    ],
+    "out": "gdp",
+    "why": "Gross domestic product is a monetary measure of the total market value of all the final goods and services produced during a specific period of time, usually a year, by a country or countries. It is often used to measure the economic activity of a country or region.",
+    "src": "https://en.wikipedia.org/wiki/Gross_domestic_product",
+    "verified": true
+  },
+  {
+    "in": [
+      "economy",
+      "gdp"
+    ],
+    "out": "economic_growth",
+    "why": "In economics, economic growth is an increase in the quantity and quality of the economic goods and services that a society produces. The rate of growth is typically calculated as the real GDP growth rate, real GDP per capita growth rate, GNI per capita growth or median income growth.",
+    "src": "https://en.wikipedia.org/wiki/Economic_growth",
+    "verified": true
+  },
+  {
+    "in": [
+      "economy",
+      "goods"
+    ],
+    "out": "economics",
+    "why": "Economics is a social science that studies the production, distribution, and consumption of goods and services. Microeconomics analyses the basic elements of economies, including individual agents and markets, their interactions, and the outcomes of those interactions.",
+    "src": "https://en.wikipedia.org/wiki/Economics",
+    "verified": true
+  },
+  {
+    "in": [
+      "market",
+      "company"
+    ],
+    "out": "monopoly",
+    "why": "In economics, a monopoly is a single seller. It is characterized by a lack of economic competition to produce a particular thing, a lack of viable substitute goods, and the possibility of a high monopoly price well above the seller's marginal cost.",
+    "src": "https://en.wikipedia.org/wiki/Monopoly",
+    "verified": true
+  },
+  {
+    "in": [
+      "government",
+      "goods"
+    ],
+    "out": "subsidy",
+    "why": "Employment or wage subsidies keep the employment relationship ongoing even during financial crisis, so workers are prevented from losing their jobs and associated benefits. Housing subsidies are designed to promote the construction industry and homeownership.",
+    "src": "https://en.wikipedia.org/wiki/Subsidy",
+    "verified": true
+  },
+  {
+    "in": [
+      "tax",
+      "price"
+    ],
+    "out": "sales_tax",
+    "why": "A sales tax is a tax paid to a governing body for the sales of certain goods and services. A purchaser who is not an end-user is usually issued a \"resale certificate\" by the taxing authority, to show that the item is for resale.",
+    "src": "https://en.wikipedia.org/wiki/Sales_tax",
+    "verified": true
+  },
+  {
+    "in": [
+      "tax",
+      "property"
+    ],
+    "out": "property_tax",
+    "why": "A property tax is an ad valorem tax on the value of a property, with its rate expressed as a percentage or per mille, also called millage. The tax is levied by the governing authority of the jurisdiction in which the property is located.",
+    "src": "https://en.wikipedia.org/wiki/Property_tax",
+    "verified": true
+  },
+  {
+    "in": [
+      "tax",
+      "wage"
+    ],
+    "out": "income_tax",
+    "why": "An income tax is a tax imposed on individuals or entities in respect of the income or profits earned by them, commonly called taxable income. It is generally computed as the product of a tax rate times the taxable income, and the tax on companies is usually known as corporate tax.",
+    "src": "https://en.wikipedia.org/wiki/Income_tax",
+    "verified": true
+  },
+  {
+    "in": [
+      "trade",
+      "border"
+    ],
+    "out": "international_trade",
+    "why": "International trade is the exchange of capital, goods, and services across international borders or territories because there is a need or demand for goods or services. Cross-border trade typically incurs additional costs such as explicit tariffs, as well as non-tariff barriers such as time costs due to border delays, language and cultural differences.",
+    "src": "https://en.wikipedia.org/wiki/International_trade",
+    "verified": true
+  },
+  {
+    "in": [
+      "currency",
+      "price"
+    ],
+    "out": "exchange_rate",
+    "why": "In finance, an exchange rate is the rate at which one currency will be exchanged for another currency. Currencies are most commonly national currencies, but may be sub-national, as in the case of Hong Kong, or supra-national, as in the case of the euro.",
+    "src": "https://en.wikipedia.org/wiki/Exchange_rate",
+    "verified": true
+  },
+  {
+    "in": [
+      "wage",
+      "time"
+    ],
+    "out": "pension",
+    "why": "A pension, from Latin pensiō \"payment\", is a fund or pay-as-you-go scheme into which amounts are paid regularly during an individual's working career, and from which periodic payments are made to support the person's retirement from work. Occupational pensions are a form of deferred compensation.",
+    "src": "https://en.wikipedia.org/wiki/Pension",
+    "verified": true
+  },
+  {
+    "in": [
+      "debt",
+      "law"
+    ],
+    "out": "bankruptcy",
+    "why": "Bankruptcy is a legal process through which people or other entities who cannot repay debts to creditors may seek relief from some or all of their debts. Bankrupt is not the only legal status that an insolvent person may have, so the term bankruptcy is not a synonym for insolvency.",
+    "src": "https://en.wikipedia.org/wiki/Bankruptcy",
+    "verified": true
+  },
+  {
+    "in": [
+      "market",
+      "law"
+    ],
+    "out": "black_market",
+    "why": "A black market is a clandestine market or series of transactions that has some aspect of illegality within a legal jurisdiction; it may also not be compliant with an institutional set of rules. Such activities are generally referred to using the definite article, as in \"the black market in bush meat\".",
+    "src": "https://en.wikipedia.org/wiki/Black_market",
+    "verified": true
+  },
+  {
+    "in": [
+      "tax",
+      "international_trade"
+    ],
+    "out": "protectionism",
+    "why": "Protectionism is the economic policy of restricting imports from other countries through methods such as tariffs on imported goods, import quotas, and a variety of other government regulations. Tariffs and import quotas are the most common types of protectionist policies.",
+    "src": "https://en.wikipedia.org/wiki/Protectionism",
+    "verified": true
+  },
+  {
+    "in": [
+      "market",
+      "business"
+    ],
+    "out": "competition",
+    "why": "In economics, competition is a scenario where different economic firms are in contention to obtain goods that are limited by varying the elements of the marketing mix: price, product, promotion and place. The word competitiveness derives from the Latin competere, which refers to the rivalry found between entities in markets and industries.",
+    "src": "https://en.wikipedia.org/wiki/Competition_(economics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "trade",
+      "economy"
+    ],
+    "out": "commerce",
+    "why": "Commerce is the organized system of activities, functions, procedures and institutions that directly or indirectly contribute to the smooth, unhindered large-scale exchange of goods, services, and other forms of value, predominantly through transactional processes.",
+    "src": "https://en.wikipedia.org/wiki/Commerce",
+    "verified": true
+  },
+  {
+    "in": [
+      "factory",
+      "ratio"
+    ],
+    "out": "productivity",
+    "why": "Productivity is the efficiency of production of goods or services expressed by some measure. Measurements of productivity are often expressed as a ratio of an aggregate output to a single input or an aggregate input used in a production process.",
+    "src": "https://en.wikipedia.org/wiki/Productivity",
+    "verified": true
   }
 ]

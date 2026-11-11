@@ -887,6 +887,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* economics batch, 11 Nov — abstract concepts, filed at the 10⁰ idea bucket */ 'goods', 'service', 'price', 'supply_and_demand', 'inflation', 'deflation', 'profit', 'business', 'company', 'corporation', 'wage', 'employment', 'unemployment', 'loan', 'mortgage', 'insurance', 'investment', 'stock_exchange', 'accounting', 'gdp', 'economic_growth', 'economics', 'monopoly', 'subsidy', 'sales_tax', 'property_tax', 'income_tax', 'international_trade', 'exchange_rate', 'pension', 'bankruptcy', 'black_market', 'protectionism', 'competition', 'commerce', 'productivity',
+          /* R3 mathematics, 11 Nov — abstract concepts, filed at the 10⁰ idea bucket */ 'addition', 'subtraction', 'multiplication', 'arithmetic', 'exponentiation', 'square_root', 'logarithm', 'integer', 'negative_number', 'rational_number', 'real_number', 'complex_number', 'point', 'line', 'angle', 'polygon', 'perimeter', 'parallel', 'tangent', 'trigonometry', 'sine', 'sphere', 'volume', 'derivative', 'integral', 'matrix', 'sequence', 'series', 'conjecture', 'mathematics', 'percentage',
           /* umbrella pass, 11 Nov */ 'fluid', 'armor',
           /* corpus review, 11 Nov — missing basics added */ 'kelvin', 'hour', 'inertia', 'torque', 'wavelength', 'kinetic_energy', 'potential_energy', 'absolute_zero', 'doppler_effect', 'diffraction', 'ohms_law', 'maxwells_equations', 'ideal_gas_law', 'conservation_of_energy', 'software', 'email', 'cryptography',
           /* W2 insects third pass, 6 Sep */
