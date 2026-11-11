@@ -23802,8 +23802,7 @@
     "tags": [
       "myth"
     ],
-    "fact": "God of the wild, shepherds and flocks. Roman Faunus. Has the legs and horns of a goat.",
-    "terminal": true
+    "fact": "God of the wild, shepherds and flocks. Roman Faunus. Has the legs and horns of a goat."
   },
   {
     "id": "hypnos",
@@ -32328,7 +32327,6 @@
       "tool"
     ],
     "fact": "An S-shaped pipe traps a plug of standing water that seals the drain against sewer gas. Cumming, 1775.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -33309,7 +33307,6 @@
       "sweet"
     ],
     "fact": "Ruth Wakefield's 1930s Toll House recipe expected chopped chocolate to melt into the dough. It held its shape.",
-    "terminal": true,
     "soleRoute": true,
     "aliases": {
       "en-GB": "Biscuit"
@@ -49661,7 +49658,6 @@
       "tool"
     ],
     "fact": "A wheellock handgun short enough to fire one-handed and hide under a cloak.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -103730,5 +103726,3113 @@
     ],
     "fact": "A youth movement teaching informal education through the Scout method.",
     "src": "https://en.wikipedia.org/wiki/Scouting"
+  },
+  {
+    "id": "household",
+    "name": "Household",
+    "emoji": "🏠",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "One or more people living in the same dwelling.",
+    "src": "https://en.wikipedia.org/wiki/Household"
+  },
+  {
+    "id": "nuclear_family",
+    "name": "Nuclear Family",
+    "emoji": "👨‍👩‍👧",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A family group of two parents and their children.",
+    "src": "https://en.wikipedia.org/wiki/Nuclear_family"
+  },
+  {
+    "id": "extended_family",
+    "name": "Extended Family",
+    "emoji": "👪",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A family reaching beyond parents and children to aunts, uncles, grandparents and cousins.",
+    "src": "https://en.wikipedia.org/wiki/Extended_family"
+  },
+  {
+    "id": "stepfamily",
+    "name": "Stepfamily",
+    "emoji": "🧩",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A family where at least one parent has children not biologically related to their spouse.",
+    "src": "https://en.wikipedia.org/wiki/Stepfamily"
+  },
+  {
+    "id": "kinship",
+    "name": "Kinship",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The web of social relationships formed through family and descent.",
+    "src": "https://en.wikipedia.org/wiki/Kinship"
+  },
+  {
+    "id": "clan",
+    "name": "Clan",
+    "emoji": "🏴",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A group united by actual or perceived kinship and descent.",
+    "src": "https://en.wikipedia.org/wiki/Clan"
+  },
+  {
+    "id": "lineage_anthropology",
+    "name": "Lineage",
+    "emoji": "🌳",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A descent group that traces its ancestry to a known shared ancestor.",
+    "src": "https://en.wikipedia.org/wiki/Lineage_(anthropology)"
+  },
+  {
+    "id": "interpersonal_relationship",
+    "name": "Interpersonal Relationship",
+    "emoji": "🤝",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A social association or connection between two or more people.",
+    "src": "https://en.wikipedia.org/wiki/Interpersonal_relationship"
+  },
+  {
+    "id": "friendship",
+    "name": "Friendship",
+    "emoji": "🧑‍🤝‍🧑",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A relationship of mutual affection between people.",
+    "src": "https://en.wikipedia.org/wiki/Friendship"
+  },
+  {
+    "id": "intimate_relationship",
+    "name": "Intimate Relationship",
+    "emoji": "💞",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A close relationship involving emotional or physical closeness.",
+    "src": "https://en.wikipedia.org/wiki/Intimate_relationship"
+  },
+  {
+    "id": "courtship",
+    "name": "Courtship",
+    "emoji": "🌹",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The period when a couple gets to know each other before a possible marriage.",
+    "src": "https://en.wikipedia.org/wiki/Courtship"
+  },
+  {
+    "id": "dating",
+    "name": "Dating",
+    "emoji": "🍷",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Spending time together in planned encounters to explore a romantic relationship.",
+    "src": "https://en.wikipedia.org/wiki/Dating"
+  },
+  {
+    "id": "breakup",
+    "name": "Breakup",
+    "emoji": "💔",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The ending of a romantic relationship.",
+    "src": "https://en.wikipedia.org/wiki/Breakup"
+  },
+  {
+    "id": "cohabitation",
+    "name": "Cohabitation",
+    "emoji": "🏡",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Living together as a couple without being legally married.",
+    "src": "https://en.wikipedia.org/wiki/Cohabitation"
+  },
+  {
+    "id": "infidelity",
+    "name": "Infidelity",
+    "emoji": "💔",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A violation of a couple's expected exclusivity, such as cheating or adultery.",
+    "src": "https://en.wikipedia.org/wiki/Infidelity"
+  },
+  {
+    "id": "arranged_marriage",
+    "name": "Arranged Marriage",
+    "emoji": "💍",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A marriage in which the spouses are chosen by a third party, often the parents.",
+    "src": "https://en.wikipedia.org/wiki/Arranged_marriage"
+  },
+  {
+    "id": "divorce",
+    "name": "Divorce",
+    "emoji": "📄",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The process of ending a marriage.",
+    "src": "https://en.wikipedia.org/wiki/Divorce"
+  },
+  {
+    "id": "monogamy",
+    "name": "Monogamy",
+    "emoji": "💑",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A relationship of two people in an exclusive partnership.",
+    "src": "https://en.wikipedia.org/wiki/Monogamy"
+  },
+  {
+    "id": "polygamy",
+    "name": "Polygamy",
+    "emoji": "👥",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The practice of marrying multiple spouses.",
+    "src": "https://en.wikipedia.org/wiki/Polygamy"
+  },
+  {
+    "id": "same_sex_relationship",
+    "name": "Same-Sex Relationship",
+    "emoji": "🏳️‍🌈",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A romantic or sexual relationship between people of the same sex or gender.",
+    "src": "https://en.wikipedia.org/wiki/Same-sex_relationship"
+  },
+  {
+    "id": "parenting",
+    "name": "Parenting",
+    "emoji": "🍼",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Supporting a child's development from infancy to adulthood.",
+    "src": "https://en.wikipedia.org/wiki/Parenting"
+  },
+  {
+    "id": "family_planning",
+    "name": "Family Planning",
+    "emoji": "📅",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Deciding how many children to have and when.",
+    "src": "https://en.wikipedia.org/wiki/Family_planning"
+  },
+  {
+    "id": "adoption",
+    "name": "Adoption",
+    "emoji": "🤱",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Taking on the parenting of someone else's child.",
+    "src": "https://en.wikipedia.org/wiki/Adoption"
+  },
+  {
+    "id": "orphan",
+    "name": "Orphan",
+    "emoji": "🧒",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A child whose parents have died, are unknown or have abandoned them.",
+    "src": "https://en.wikipedia.org/wiki/Orphan"
+  },
+  {
+    "id": "parent",
+    "name": "Parent",
+    "emoji": "👨‍👧",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A progenitor of offspring, or a caregiver or guardian.",
+    "src": "https://en.wikipedia.org/wiki/Parent"
+  },
+  {
+    "id": "mother",
+    "name": "Mother",
+    "emoji": "👩‍👧",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The female parent of a child.",
+    "src": "https://en.wikipedia.org/wiki/Mother"
+  },
+  {
+    "id": "father",
+    "name": "Father",
+    "emoji": "👨‍👦",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The male parent of a child.",
+    "src": "https://en.wikipedia.org/wiki/Father"
+  },
+  {
+    "id": "husband",
+    "name": "Husband",
+    "emoji": "🤵",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A man in a marital relationship.",
+    "src": "https://en.wikipedia.org/wiki/Husband"
+  },
+  {
+    "id": "wife",
+    "name": "Wife",
+    "emoji": "👰",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A woman in a marital relationship.",
+    "src": "https://en.wikipedia.org/wiki/Wife"
+  },
+  {
+    "id": "sibling",
+    "name": "Sibling",
+    "emoji": "👫",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A relative who shares at least one parent with another.",
+    "src": "https://en.wikipedia.org/wiki/Sibling"
+  },
+  {
+    "id": "brother",
+    "name": "Brother",
+    "emoji": "👦",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A male sibling.",
+    "src": "https://en.wikipedia.org/wiki/Brother"
+  },
+  {
+    "id": "sister",
+    "name": "Sister",
+    "emoji": "👧",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A female sibling.",
+    "src": "https://en.wikipedia.org/wiki/Sister"
+  },
+  {
+    "id": "twin",
+    "name": "Twin",
+    "emoji": "👯",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "One of two offspring produced by the same pregnancy.",
+    "src": "https://en.wikipedia.org/wiki/Twin"
+  },
+  {
+    "id": "grandparent",
+    "name": "Grandparent",
+    "emoji": "👵",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The parent of a person's mother or father.",
+    "src": "https://en.wikipedia.org/wiki/Grandparent"
+  },
+  {
+    "id": "cousin",
+    "name": "Cousin",
+    "emoji": "🧑‍🤝‍🧑",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A relative who is the child of a parent's sibling.",
+    "src": "https://en.wikipedia.org/wiki/Cousin"
+  },
+  {
+    "id": "infant",
+    "name": "Infant",
+    "emoji": "🍼",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A very young human being; a baby.",
+    "src": "https://en.wikipedia.org/wiki/Infant"
+  },
+  {
+    "id": "boy",
+    "name": "Boy",
+    "emoji": "👦",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A young male human.",
+    "src": "https://en.wikipedia.org/wiki/Boy"
+  },
+  {
+    "id": "girl",
+    "name": "Girl",
+    "emoji": "👧",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A young female human.",
+    "src": "https://en.wikipedia.org/wiki/Girl"
+  },
+  {
+    "id": "adolescence",
+    "name": "Adolescence",
+    "emoji": "🧑",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The stage of development between puberty and adulthood.",
+    "src": "https://en.wikipedia.org/wiki/Adolescence"
+  },
+  {
+    "id": "adult",
+    "name": "Adult",
+    "emoji": "🧍",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "An organism that has reached full growth and sexual maturity.",
+    "src": "https://en.wikipedia.org/wiki/Adult"
+  },
+  {
+    "id": "middle_age",
+    "name": "Middle Age",
+    "emoji": "🧔",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The years halfway between young adulthood and old age.",
+    "src": "https://en.wikipedia.org/wiki/Middle_age"
+  },
+  {
+    "id": "old_age",
+    "name": "Old Age",
+    "emoji": "🧓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The range of ages nearing and surpassing life expectancy.",
+    "src": "https://en.wikipedia.org/wiki/Old_age"
+  },
+  {
+    "id": "gender",
+    "name": "Gender",
+    "emoji": "⚧️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The social, psychological and cultural aspects of being a man, a woman or another gender.",
+    "src": "https://en.wikipedia.org/wiki/Gender"
+  },
+  {
+    "id": "man",
+    "name": "Man",
+    "emoji": "👨",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "An adult male human.",
+    "src": "https://en.wikipedia.org/wiki/Man"
+  },
+  {
+    "id": "woman",
+    "name": "Woman",
+    "emoji": "👩",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "An adult female human.",
+    "src": "https://en.wikipedia.org/wiki/Woman"
+  },
+  {
+    "id": "transgender",
+    "name": "Transgender",
+    "emoji": "🏳️‍⚧️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A person whose gender identity differs from the sex they were assigned at birth.",
+    "src": "https://en.wikipedia.org/wiki/Transgender"
+  },
+  {
+    "id": "sexual_orientation",
+    "name": "Sexual Orientation",
+    "emoji": "🌈",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "An enduring pattern of romantic or sexual attraction.",
+    "src": "https://en.wikipedia.org/wiki/Sexual_orientation"
+  },
+  {
+    "id": "heterosexuality",
+    "name": "Heterosexuality",
+    "emoji": "💑",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Attraction between people of the opposite sex or gender.",
+    "src": "https://en.wikipedia.org/wiki/Heterosexuality"
+  },
+  {
+    "id": "homosexuality",
+    "name": "Homosexuality",
+    "emoji": "🏳️‍🌈",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Attraction between people of the same sex or gender.",
+    "src": "https://en.wikipedia.org/wiki/Homosexuality"
+  },
+  {
+    "id": "human_sexuality",
+    "name": "Human Sexuality",
+    "emoji": "💗",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The way people experience and express themselves sexually.",
+    "src": "https://en.wikipedia.org/wiki/Human_sexuality"
+  },
+  {
+    "id": "condom",
+    "name": "Condom",
+    "emoji": "🛡️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A barrier device that reduces the chance of pregnancy and infection.",
+    "src": "https://en.wikipedia.org/wiki/Condom"
+  },
+  {
+    "id": "fertility",
+    "name": "Fertility",
+    "emoji": "🌱",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The ability to have offspring.",
+    "src": "https://en.wikipedia.org/wiki/Fertility"
+  },
+  {
+    "id": "sex_education",
+    "name": "Sex Education",
+    "emoji": "📘",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Instruction about human sexuality, relationships and reproduction.",
+    "src": "https://en.wikipedia.org/wiki/Sex_education"
+  },
+  {
+    "id": "kiss",
+    "name": "Kiss",
+    "emoji": "💋",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Touching or pressing one's lips against another person or thing.",
+    "src": "https://en.wikipedia.org/wiki/Kiss"
+  },
+  {
+    "id": "home",
+    "name": "Home",
+    "emoji": "🏡",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A space used as a permanent or semi-permanent residence.",
+    "src": "https://en.wikipedia.org/wiki/Home"
+  },
+  {
+    "id": "apartment",
+    "name": "Apartment",
+    "emoji": "🏢",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A self-contained housing unit within a larger building.",
+    "src": "https://en.wikipedia.org/wiki/Apartment"
+  },
+  {
+    "id": "hut",
+    "name": "Hut",
+    "emoji": "🛖",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A small dwelling built from local materials.",
+    "src": "https://en.wikipedia.org/wiki/Hut"
+  },
+  {
+    "id": "igloo",
+    "name": "Igloo",
+    "emoji": "🧊",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A snow house built as a shelter, traditionally in Canada's Central Arctic.",
+    "src": "https://en.wikipedia.org/wiki/Igloo"
+  },
+  {
+    "id": "tent",
+    "name": "Tent",
+    "emoji": "⛺",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A shelter of fabric sheets supported by a frame of poles.",
+    "src": "https://en.wikipedia.org/wiki/Tent"
+  },
+  {
+    "id": "hotel",
+    "name": "Hotel",
+    "emoji": "🏨",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "An establishment providing paid lodging on a short-term basis.",
+    "src": "https://en.wikipedia.org/wiki/Hotel"
+  },
+  {
+    "id": "bathroom",
+    "name": "Bathroom",
+    "emoji": "🛁",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A room where people wash their bodies.",
+    "src": "https://en.wikipedia.org/wiki/Bathroom"
+  },
+  {
+    "id": "bedroom",
+    "name": "Bedroom",
+    "emoji": "🛏️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A room used mainly for sleeping.",
+    "src": "https://en.wikipedia.org/wiki/Bedroom"
+  },
+  {
+    "id": "garage_residential",
+    "name": "Garage",
+    "emoji": "🚗",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A roofed, walled structure for storing a vehicle at a home.",
+    "src": "https://en.wikipedia.org/wiki/Garage_(residential)"
+  },
+  {
+    "id": "sauna",
+    "name": "Sauna",
+    "emoji": "🧖",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A room built for sessions of dry or wet heat.",
+    "src": "https://en.wikipedia.org/wiki/Sauna"
+  },
+  {
+    "id": "cabinetry",
+    "name": "Cabinetry",
+    "emoji": "🗄️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Cases and cupboards with shelves or drawers for storing or displaying things.",
+    "src": "https://en.wikipedia.org/wiki/Cabinetry"
+  },
+  {
+    "id": "chopsticks",
+    "name": "Chopsticks",
+    "emoji": "🥢",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Pairs of equal-length sticks used as eating utensils across East Asia.",
+    "src": "https://en.wikipedia.org/wiki/Chopsticks"
+  },
+  {
+    "id": "cutlery",
+    "name": "Cutlery",
+    "emoji": "🍴",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Utensils for serving and eating food at table.",
+    "src": "https://en.wikipedia.org/wiki/Cutlery"
+  },
+  {
+    "id": "tableware",
+    "name": "Tableware",
+    "emoji": "🍽️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The dishes and utensils used for setting a table and serving food.",
+    "src": "https://en.wikipedia.org/wiki/Tableware"
+  },
+  {
+    "id": "restaurant",
+    "name": "Restaurant",
+    "emoji": "🍽️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A business that prepares and serves food and drink to customers.",
+    "src": "https://en.wikipedia.org/wiki/Restaurant"
+  },
+  {
+    "id": "bar_establishment",
+    "name": "Bar",
+    "emoji": "🍺",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A business that serves alcoholic drinks, also called a saloon or pub.",
+    "src": "https://en.wikipedia.org/wiki/Bar_(establishment)"
+  },
+  {
+    "id": "meal",
+    "name": "Meal",
+    "emoji": "🍲",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "An occasion at a set time when food is eaten.",
+    "src": "https://en.wikipedia.org/wiki/Meal"
+  },
+  {
+    "id": "eating",
+    "name": "Eating",
+    "emoji": "😋",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Taking food in for digestion.",
+    "src": "https://en.wikipedia.org/wiki/Eating"
+  },
+  {
+    "id": "lunch",
+    "name": "Lunch",
+    "emoji": "🥪",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A meal eaten around the middle of the day.",
+    "src": "https://en.wikipedia.org/wiki/Lunch"
+  },
+  {
+    "id": "snack",
+    "name": "Snack",
+    "emoji": "🍿",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A small portion of food eaten between meals.",
+    "src": "https://en.wikipedia.org/wiki/Snack"
+  },
+  {
+    "id": "dessert",
+    "name": "Dessert",
+    "emoji": "🍰",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A dish of sweet foods served at the end of a meal.",
+    "src": "https://en.wikipedia.org/wiki/Dessert"
+  },
+  {
+    "id": "candy",
+    "name": "Candy",
+    "emoji": "🍬",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A confection with sugar as its main ingredient.",
+    "src": "https://en.wikipedia.org/wiki/Candy"
+  },
+  {
+    "id": "biscuit",
+    "name": "Biscuit",
+    "emoji": "🍪",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A flour-based baked food, typically hard, flat and unleavened.",
+    "src": "https://en.wikipedia.org/wiki/Biscuit"
+  },
+  {
+    "id": "vegetarianism",
+    "name": "Vegetarianism",
+    "emoji": "🥗",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Abstaining from eating meat.",
+    "src": "https://en.wikipedia.org/wiki/Vegetarianism"
+  },
+  {
+    "id": "veganism",
+    "name": "Veganism",
+    "emoji": "🌱",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Abstaining from animal products and animal-derived foods.",
+    "src": "https://en.wikipedia.org/wiki/Veganism"
+  },
+  {
+    "id": "cuisine",
+    "name": "Cuisine",
+    "emoji": "👨‍🍳",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A style of cooking marked by distinctive ingredients, techniques and dishes.",
+    "src": "https://en.wikipedia.org/wiki/Cuisine"
+  },
+  {
+    "id": "chinese_cuisine",
+    "name": "Chinese Cuisine",
+    "emoji": "🥡",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The regional cooking traditions of China.",
+    "src": "https://en.wikipedia.org/wiki/Chinese_cuisine"
+  },
+  {
+    "id": "french_cuisine",
+    "name": "French Cuisine",
+    "emoji": "🥐",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The cooking traditions and practices of France.",
+    "src": "https://en.wikipedia.org/wiki/French_cuisine"
+  },
+  {
+    "id": "japanese_cuisine",
+    "name": "Japanese Cuisine",
+    "emoji": "🍣",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The regional and traditional foods of Japan.",
+    "src": "https://en.wikipedia.org/wiki/Japanese_cuisine"
+  },
+  {
+    "id": "indian_cuisine",
+    "name": "Indian Cuisine",
+    "emoji": "🍛",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The varied regional cuisines of the Indian subcontinent.",
+    "src": "https://en.wikipedia.org/wiki/Indian_cuisine"
+  },
+  {
+    "id": "italian_cuisine",
+    "name": "Italian Cuisine",
+    "emoji": "🍝",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A Mediterranean cuisine developed in Italy since Roman times.",
+    "src": "https://en.wikipedia.org/wiki/Italian_cuisine"
+  },
+  {
+    "id": "mexican_cuisine",
+    "name": "Mexican Cuisine",
+    "emoji": "🌮",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The food traditions of Mexico, rooted in Mesoamerican cuisine.",
+    "src": "https://en.wikipedia.org/wiki/Mexican_cuisine"
+  },
+  {
+    "id": "fast_food",
+    "name": "Fast Food",
+    "emoji": "🍔",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Mass-produced food designed for speed of service.",
+    "src": "https://en.wikipedia.org/wiki/Fast_food"
+  },
+  {
+    "id": "culinary_arts",
+    "name": "Culinary Arts",
+    "emoji": "🧑‍🍳",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The art of preparing, cooking and presenting food.",
+    "src": "https://en.wikipedia.org/wiki/Culinary_arts"
+  },
+  {
+    "id": "frying",
+    "name": "Frying",
+    "emoji": "🍳",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Cooking food in oil or animal fat.",
+    "src": "https://en.wikipedia.org/wiki/Frying"
+  },
+  {
+    "id": "grilling",
+    "name": "Grilling",
+    "emoji": "🍖",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Cooking with heat applied to the surface of the food.",
+    "src": "https://en.wikipedia.org/wiki/Grilling"
+  },
+  {
+    "id": "cooking_oil",
+    "name": "Cooking Oil",
+    "emoji": "🫒",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A plant or animal liquid fat used for frying, baking and cooking.",
+    "src": "https://en.wikipedia.org/wiki/Cooking_oil"
+  },
+  {
+    "id": "margarine",
+    "name": "Margarine",
+    "emoji": "🧈",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A spread used for flavouring, baking and cooking, often as a butter substitute.",
+    "src": "https://en.wikipedia.org/wiki/Margarine"
+  },
+  {
+    "id": "seafood",
+    "name": "Seafood",
+    "emoji": "🦐",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Any sea life eaten as food, including fish and shellfish.",
+    "src": "https://en.wikipedia.org/wiki/Seafood"
+  },
+  {
+    "id": "green_tea",
+    "name": "Green Tea",
+    "emoji": "🍵",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Tea made from leaves that have not undergone withering and oxidation.",
+    "src": "https://en.wikipedia.org/wiki/Green_tea"
+  },
+  {
+    "id": "drinking_water",
+    "name": "Drinking Water",
+    "emoji": "🚰",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Water that is safe to drink or to use in preparing food.",
+    "src": "https://en.wikipedia.org/wiki/Drinking_water"
+  },
+  {
+    "id": "alcoholic_beverage",
+    "name": "Alcoholic Beverage",
+    "emoji": "🍷",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Any drink that contains alcohol.",
+    "src": "https://en.wikipedia.org/wiki/Alcoholic_beverage"
+  },
+  {
+    "id": "liquor",
+    "name": "Liquor",
+    "emoji": "🥃",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A strong alcoholic drink made by distillation.",
+    "src": "https://en.wikipedia.org/wiki/Distilled_beverage"
+  },
+  {
+    "id": "cocktail",
+    "name": "Cocktail",
+    "emoji": "🍸",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A mixed drink, usually alcoholic.",
+    "src": "https://en.wikipedia.org/wiki/Cocktail"
+  },
+  {
+    "id": "vodka",
+    "name": "Vodka",
+    "emoji": "🍶",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A clear distilled spirit that originated in Poland and Russia.",
+    "src": "https://en.wikipedia.org/wiki/Vodka"
+  },
+  {
+    "id": "cloak",
+    "name": "Cloak",
+    "emoji": "🧥",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A loose garment worn over clothing as outerwear.",
+    "src": "https://en.wikipedia.org/wiki/Cloak"
+  },
+  {
+    "id": "cosmetics",
+    "name": "Cosmetics",
+    "emoji": "💄",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Substances applied to the body to cleanse, beautify or change appearance.",
+    "src": "https://en.wikipedia.org/wiki/Cosmetics"
+  },
+  {
+    "id": "hairstyle",
+    "name": "Hairstyle",
+    "emoji": "💇",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The styling of hair, usually on the head.",
+    "src": "https://en.wikipedia.org/wiki/Hairstyle"
+  },
+  {
+    "id": "beard",
+    "name": "Beard",
+    "emoji": "🧔",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The hair that grows on the lower face of humans.",
+    "src": "https://en.wikipedia.org/wiki/Beard"
+  },
+  {
+    "id": "wig",
+    "name": "Wig",
+    "emoji": "👩‍🦳",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A head covering made from human, animal or synthetic hair.",
+    "src": "https://en.wikipedia.org/wiki/Wig"
+  },
+  {
+    "id": "handbag",
+    "name": "Handbag",
+    "emoji": "👜",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A handled bag used to carry personal items.",
+    "src": "https://en.wikipedia.org/wiki/Handbag"
+  },
+  {
+    "id": "nightwear",
+    "name": "Nightwear",
+    "emoji": "🛌",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Clothing designed to be worn while sleeping.",
+    "src": "https://en.wikipedia.org/wiki/Nightwear"
+  },
+  {
+    "id": "scarf",
+    "name": "Scarf",
+    "emoji": "🧣",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A long piece of fabric worn around the neck, shoulders or head.",
+    "src": "https://en.wikipedia.org/wiki/Scarf"
+  },
+  {
+    "id": "suit",
+    "name": "Suit",
+    "emoji": "🤵",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A set of clothes of a matching jacket and trousers.",
+    "src": "https://en.wikipedia.org/wiki/Suit"
+  },
+  {
+    "id": "uniform",
+    "name": "Uniform",
+    "emoji": "👮",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Clothing worn by members of an organisation.",
+    "src": "https://en.wikipedia.org/wiki/Uniform"
+  },
+  {
+    "id": "leisure",
+    "name": "Leisure",
+    "emoji": "🛋️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Free time, or a quality of experience spent away from obligations.",
+    "src": "https://en.wikipedia.org/wiki/Leisure"
+  },
+  {
+    "id": "entertainment",
+    "name": "Entertainment",
+    "emoji": "🎭",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Activity that holds an audience's attention or gives pleasure.",
+    "src": "https://en.wikipedia.org/wiki/Entertainment"
+  },
+  {
+    "id": "hobby",
+    "name": "Hobby",
+    "emoji": "🧶",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A regular activity done for enjoyment in one's spare time.",
+    "src": "https://en.wikipedia.org/wiki/Hobby"
+  },
+  {
+    "id": "recreation",
+    "name": "Recreation",
+    "emoji": "🏞️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "An activity of leisure done for enjoyment or amusement.",
+    "src": "https://en.wikipedia.org/wiki/Recreation"
+  },
+  {
+    "id": "tourism",
+    "name": "Tourism",
+    "emoji": "🧳",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Travel for pleasure, and the business of supporting it.",
+    "src": "https://en.wikipedia.org/wiki/Tourism"
+  },
+  {
+    "id": "vacation",
+    "name": "Vacation",
+    "emoji": "🏖️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A leave of absence from work or school, or a trip taken for leisure.",
+    "src": "https://en.wikipedia.org/wiki/Vacation"
+  },
+  {
+    "id": "collecting",
+    "name": "Collecting",
+    "emoji": "🗃️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The hobby of seeking, acquiring, organising and displaying items of interest.",
+    "src": "https://en.wikipedia.org/wiki/Collecting"
+  },
+  {
+    "id": "party",
+    "name": "Party",
+    "emoji": "🎉",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A gathering of invited people for socialising and recreation.",
+    "src": "https://en.wikipedia.org/wiki/Party"
+  },
+  {
+    "id": "karaoke",
+    "name": "Karaoke",
+    "emoji": "🎤",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "An entertainment system where people sing along to recorded music.",
+    "src": "https://en.wikipedia.org/wiki/Karaoke"
+  },
+  {
+    "id": "camping",
+    "name": "Camping",
+    "emoji": "🏕️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Outdoor recreation involving overnight stays in a basic temporary shelter.",
+    "src": "https://en.wikipedia.org/wiki/Camping"
+  },
+  {
+    "id": "hiking",
+    "name": "Hiking",
+    "emoji": "🥾",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A long, vigorous walk, usually on trails in the countryside.",
+    "src": "https://en.wikipedia.org/wiki/Hiking"
+  },
+  {
+    "id": "zoo",
+    "name": "Zoo",
+    "emoji": "🦒",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A facility where animals are kept and shown to the public.",
+    "src": "https://en.wikipedia.org/wiki/Zoo"
+  },
+  {
+    "id": "amusement_park",
+    "name": "Amusement Park",
+    "emoji": "🎢",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A park with rides, games and attractions for entertainment.",
+    "src": "https://en.wikipedia.org/wiki/Amusement_park"
+  },
+  {
+    "id": "playground",
+    "name": "Playground",
+    "emoji": "🛝",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A place designed for children to play.",
+    "src": "https://en.wikipedia.org/wiki/Playground"
+  },
+  {
+    "id": "puzzle",
+    "name": "Puzzle",
+    "emoji": "🧩",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A game, problem or toy that tests ingenuity or knowledge.",
+    "src": "https://en.wikipedia.org/wiki/Puzzle"
+  },
+  {
+    "id": "riddle",
+    "name": "Riddle",
+    "emoji": "❓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A statement or question with a veiled meaning, put forward to be solved.",
+    "src": "https://en.wikipedia.org/wiki/Riddle"
+  },
+  {
+    "id": "crossword",
+    "name": "Crossword",
+    "emoji": "🔤",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A word game of clues and a grid of black and white squares.",
+    "src": "https://en.wikipedia.org/wiki/Crossword"
+  },
+  {
+    "id": "jigsaw_puzzle",
+    "name": "Jigsaw Puzzle",
+    "emoji": "🧩",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A tiling puzzle made by assembling oddly shaped pieces.",
+    "src": "https://en.wikipedia.org/wiki/Jigsaw_puzzle"
+  },
+  {
+    "id": "rubiks_cube",
+    "name": "Rubik's Cube",
+    "emoji": "🟥",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A 3D combination puzzle invented in 1974 by Ernő Rubik.",
+    "src": "https://en.wikipedia.org/wiki/Rubik's_Cube"
+  },
+  {
+    "id": "quiz",
+    "name": "Quiz",
+    "emoji": "📝",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A mind sport in which people answer questions on one or several topics.",
+    "src": "https://en.wikipedia.org/wiki/Quiz"
+  },
+  {
+    "id": "doll",
+    "name": "Doll",
+    "emoji": "🪆",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A model of a human figure, often used as a children's toy.",
+    "src": "https://en.wikipedia.org/wiki/Doll"
+  },
+  {
+    "id": "lego",
+    "name": "Lego",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A brand of plastic construction toys.",
+    "src": "https://en.wikipedia.org/wiki/Lego"
+  },
+  {
+    "id": "action_figure",
+    "name": "Action Figure",
+    "emoji": "🦸",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A poseable character model figure, usually of plastic.",
+    "src": "https://en.wikipedia.org/wiki/Action_figure"
+  },
+  {
+    "id": "stuffed_toy",
+    "name": "Stuffed Toy",
+    "emoji": "🧸",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A toy with a sewn fabric outside, stuffed with soft material.",
+    "src": "https://en.wikipedia.org/wiki/Stuffed_toy"
+  },
+  {
+    "id": "scale_model",
+    "name": "Scale Model",
+    "emoji": "🚂",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A physical model geometrically similar to the object it represents.",
+    "src": "https://en.wikipedia.org/wiki/Scale_model"
+  },
+  {
+    "id": "board_game",
+    "name": "Board Game",
+    "emoji": "🎲",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A tabletop game of pieces moved or placed on a marked board.",
+    "src": "https://en.wikipedia.org/wiki/Board_game"
+  },
+  {
+    "id": "chess",
+    "name": "Chess",
+    "emoji": "♟️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A two-player strategy game on an 8×8 board.",
+    "src": "https://en.wikipedia.org/wiki/Chess"
+  },
+  {
+    "id": "checkers",
+    "name": "Checkers",
+    "emoji": "⚫",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A group of strategy board games for two players, also called draughts.",
+    "src": "https://en.wikipedia.org/wiki/Checkers"
+  },
+  {
+    "id": "go_game",
+    "name": "Go",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "An abstract strategy game where players fence off territory with stones.",
+    "src": "https://en.wikipedia.org/wiki/Go_(game)"
+  },
+  {
+    "id": "dice",
+    "name": "Dice",
+    "emoji": "🎲",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Small throwable objects with marked sides, used for games of chance.",
+    "src": "https://en.wikipedia.org/wiki/Dice"
+  },
+  {
+    "id": "backgammon",
+    "name": "Backgammon",
+    "emoji": "🎲",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A two-player board game played with counters and dice.",
+    "src": "https://en.wikipedia.org/wiki/Backgammon"
+  },
+  {
+    "id": "mancala",
+    "name": "Mancala",
+    "emoji": "🫘",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A family of two-player games played with small stones or seeds in pits.",
+    "src": "https://en.wikipedia.org/wiki/Mancala"
+  },
+  {
+    "id": "pachisi",
+    "name": "Pachisi",
+    "emoji": "🎯",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A cross-and-circle board game that originated in ancient India.",
+    "src": "https://en.wikipedia.org/wiki/Pachisi"
+  },
+  {
+    "id": "scrabble",
+    "name": "Scrabble",
+    "emoji": "🔠",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A word game where players score by placing lettered tiles on a board.",
+    "src": "https://en.wikipedia.org/wiki/Scrabble"
+  },
+  {
+    "id": "xiangqi",
+    "name": "Xiangqi",
+    "emoji": "🐘",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Chinese chess, a strategy board game for two players.",
+    "src": "https://en.wikipedia.org/wiki/Xiangqi"
+  },
+  {
+    "id": "mahjong",
+    "name": "Mahjong",
+    "emoji": "🀄",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A tile-based game for two to four players.",
+    "src": "https://en.wikipedia.org/wiki/Mahjong"
+  },
+  {
+    "id": "dominoes",
+    "name": "Dominoes",
+    "emoji": "🁣",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A family of tile-based games played with rectangular pieces.",
+    "src": "https://en.wikipedia.org/wiki/Dominoes"
+  },
+  {
+    "id": "card_game",
+    "name": "Card Game",
+    "emoji": "🃏",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Any game that uses cards as its main device.",
+    "src": "https://en.wikipedia.org/wiki/Card_game"
+  },
+  {
+    "id": "tarot",
+    "name": "Tarot",
+    "emoji": "🔮",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A set of playing cards used in card games and, later, divination.",
+    "src": "https://en.wikipedia.org/wiki/Tarot"
+  },
+  {
+    "id": "poker",
+    "name": "Poker",
+    "emoji": "♠️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A family of card games in which players wager on the best hand.",
+    "src": "https://en.wikipedia.org/wiki/Poker"
+  },
+  {
+    "id": "blackjack",
+    "name": "Blackjack",
+    "emoji": "🂡",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A casino banking game played with cards.",
+    "src": "https://en.wikipedia.org/wiki/Blackjack"
+  },
+  {
+    "id": "contract_bridge",
+    "name": "Contract Bridge",
+    "emoji": "🃏",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A trick-taking card game played with a standard 52-card deck.",
+    "src": "https://en.wikipedia.org/wiki/Contract_bridge"
+  },
+  {
+    "id": "gambling",
+    "name": "Gambling",
+    "emoji": "🎰",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Wagering something of value on a random event.",
+    "src": "https://en.wikipedia.org/wiki/Gambling"
+  },
+  {
+    "id": "casino",
+    "name": "Casino",
+    "emoji": "🎰",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A facility for gambling.",
+    "src": "https://en.wikipedia.org/wiki/Casino"
+  },
+  {
+    "id": "lottery",
+    "name": "Lottery",
+    "emoji": "🎫",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A form of gambling that draws numbers at random for a prize.",
+    "src": "https://en.wikipedia.org/wiki/Lottery"
+  },
+  {
+    "id": "roulette",
+    "name": "Roulette",
+    "emoji": "🎡",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A casino game of a spinning wheel and a ball.",
+    "src": "https://en.wikipedia.org/wiki/Roulette"
+  },
+  {
+    "id": "slot_machine",
+    "name": "Slot Machine",
+    "emoji": "🎰",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A gambling machine that spins reels of symbols.",
+    "src": "https://en.wikipedia.org/wiki/Slot_machine"
+  },
+  {
+    "id": "role_playing_game",
+    "name": "Role-Playing Game",
+    "emoji": "🐉",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A game in which players take on the roles of characters.",
+    "src": "https://en.wikipedia.org/wiki/Role-playing_game"
+  },
+  {
+    "id": "video_game",
+    "name": "Video Game",
+    "emoji": "🎮",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "An electronic game played through a user interface or input device.",
+    "src": "https://en.wikipedia.org/wiki/Video_game"
+  },
+  {
+    "id": "video_game_console",
+    "name": "Video Game Console",
+    "emoji": "🕹️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "An electronic device that outputs a video game to a display.",
+    "src": "https://en.wikipedia.org/wiki/Video_game_console"
+  },
+  {
+    "id": "esports",
+    "name": "Esports",
+    "emoji": "🖱️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Competition using video games, often organised as leagues and tournaments.",
+    "src": "https://en.wikipedia.org/wiki/Esports"
+  },
+  {
+    "id": "arcade_game",
+    "name": "Arcade Game",
+    "emoji": "👾",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A coin-operated entertainment machine in a public venue.",
+    "src": "https://en.wikipedia.org/wiki/Arcade_game"
+  },
+  {
+    "id": "pinball",
+    "name": "Pinball",
+    "emoji": "🔴",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A family of games where a ball is propelled around a table of targets.",
+    "src": "https://en.wikipedia.org/wiki/Pinball"
+  },
+  {
+    "id": "tetris",
+    "name": "Tetris",
+    "emoji": "🟦",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A puzzle video game of falling blocks, created by Alexey Pajitnov.",
+    "src": "https://en.wikipedia.org/wiki/Tetris"
+  },
+  {
+    "id": "minecraft",
+    "name": "Minecraft",
+    "emoji": "⛏️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A sandbox video game developed by Mojang Studios.",
+    "src": "https://en.wikipedia.org/wiki/Minecraft"
+  },
+  {
+    "id": "pokemon",
+    "name": "Pokémon",
+    "emoji": "⚡",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A Japanese media franchise of video games, animated series, films and a card game.",
+    "src": "https://en.wikipedia.org/wiki/Pokémon"
+  },
+  {
+    "id": "hide_and_seek",
+    "name": "Hide-and-Seek",
+    "emoji": "🙈",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A children's game in which hiders conceal themselves and seekers look for them.",
+    "src": "https://en.wikipedia.org/wiki/Hide-and-seek"
+  },
+  {
+    "id": "tag_game",
+    "name": "Tag",
+    "emoji": "🏃",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A playground game in which one player chases the others.",
+    "src": "https://en.wikipedia.org/wiki/Tag_(game)"
+  },
+  {
+    "id": "hopscotch",
+    "name": "Hopscotch",
+    "emoji": "🦘",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A playground game of hopping through a pattern of squares.",
+    "src": "https://en.wikipedia.org/wiki/Hopscotch"
+  },
+  {
+    "id": "sports_equipment",
+    "name": "Sports Equipment",
+    "emoji": "🎽",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The tools, materials and gear used to play sport.",
+    "src": "https://en.wikipedia.org/wiki/Sports_equipment"
+  },
+  {
+    "id": "stadium",
+    "name": "Stadium",
+    "emoji": "🏟️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A venue for outdoor sports, concerts and other events.",
+    "src": "https://en.wikipedia.org/wiki/Stadium"
+  },
+  {
+    "id": "mascot",
+    "name": "Mascot",
+    "emoji": "🦁",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A person, animal or object thought to bring luck or to represent a group.",
+    "src": "https://en.wikipedia.org/wiki/Mascot"
+  },
+  {
+    "id": "doping_in_sport",
+    "name": "Doping in Sport",
+    "emoji": "💉",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Using banned performance-enhancing drugs in competition.",
+    "src": "https://en.wikipedia.org/wiki/Doping_in_sport"
+  },
+  {
+    "id": "extreme_sport",
+    "name": "Extreme Sport",
+    "emoji": "🪂",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Activities seen as carrying a high degree of risk.",
+    "src": "https://en.wikipedia.org/wiki/Extreme_sport"
+  },
+  {
+    "id": "olympic_games",
+    "name": "Olympic Games",
+    "emoji": "🏅",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "International multi-sport events held in a cycle of years.",
+    "src": "https://en.wikipedia.org/wiki/Olympic_Games"
+  },
+  {
+    "id": "ancient_olympic_games",
+    "name": "Ancient Olympic Games",
+    "emoji": "🏛️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A series of athletic competitions among Greek city-states.",
+    "src": "https://en.wikipedia.org/wiki/Ancient_Olympic_Games"
+  },
+  {
+    "id": "association_football",
+    "name": "Football",
+    "emoji": "⚽",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A team sport of two teams of eleven, known as football or soccer.",
+    "src": "https://en.wikipedia.org/wiki/Association_football"
+  },
+  {
+    "id": "american_football",
+    "name": "American Football",
+    "emoji": "🏈",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A team sport played on a field with a pointed ball, also called gridiron football.",
+    "src": "https://en.wikipedia.org/wiki/American_football"
+  },
+  {
+    "id": "baseball",
+    "name": "Baseball",
+    "emoji": "⚾",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A bat-and-ball sport between two teams of nine players.",
+    "src": "https://en.wikipedia.org/wiki/Baseball"
+  },
+  {
+    "id": "softball",
+    "name": "Softball",
+    "emoji": "🥎",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A bat-and-ball sport on a diamond-shaped field.",
+    "src": "https://en.wikipedia.org/wiki/Softball"
+  },
+  {
+    "id": "basketball",
+    "name": "Basketball",
+    "emoji": "🏀",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A team sport of two teams of five scoring through hoops.",
+    "src": "https://en.wikipedia.org/wiki/Basketball"
+  },
+  {
+    "id": "volleyball",
+    "name": "Volleyball",
+    "emoji": "🏐",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A team sport in which two teams of six are separated by a net.",
+    "src": "https://en.wikipedia.org/wiki/Volleyball"
+  },
+  {
+    "id": "handball",
+    "name": "Handball",
+    "emoji": "🤾",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A team sport in which two teams pass a ball by hand and try to score.",
+    "src": "https://en.wikipedia.org/wiki/Handball"
+  },
+  {
+    "id": "rugby_union",
+    "name": "Rugby Union",
+    "emoji": "🏉",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A close-contact team sport played with an oval ball.",
+    "src": "https://en.wikipedia.org/wiki/Rugby_union"
+  },
+  {
+    "id": "ice_hockey",
+    "name": "Ice Hockey",
+    "emoji": "🏒",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A team sport played on ice skates, with a puck.",
+    "src": "https://en.wikipedia.org/wiki/Ice_hockey"
+  },
+  {
+    "id": "field_hockey",
+    "name": "Field Hockey",
+    "emoji": "🏑",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A fast-paced team sport of two teams of eleven with sticks and a ball.",
+    "src": "https://en.wikipedia.org/wiki/Field_hockey"
+  },
+  {
+    "id": "lacrosse",
+    "name": "Lacrosse",
+    "emoji": "🥍",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A contact team sport played with a stick and a ball.",
+    "src": "https://en.wikipedia.org/wiki/Lacrosse"
+  },
+  {
+    "id": "polo",
+    "name": "Polo",
+    "emoji": "🐎",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A mallet-and-ball game played on horseback.",
+    "src": "https://en.wikipedia.org/wiki/Polo"
+  },
+  {
+    "id": "curling",
+    "name": "Curling",
+    "emoji": "🥌",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A sport of sliding stones on ice toward a target.",
+    "src": "https://en.wikipedia.org/wiki/Curling"
+  },
+  {
+    "id": "tug_of_war",
+    "name": "Tug of War",
+    "emoji": "🪢",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A sport in which two teams pull on opposite ends of a rope.",
+    "src": "https://en.wikipedia.org/wiki/Tug_of_war"
+  },
+  {
+    "id": "running",
+    "name": "Running",
+    "emoji": "🏃",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Moving quickly on foot, with both feet briefly off the ground.",
+    "src": "https://en.wikipedia.org/wiki/Running"
+  },
+  {
+    "id": "marathon",
+    "name": "Marathon",
+    "emoji": "🏃‍♂️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A long-distance foot race of 42.195 kilometres.",
+    "src": "https://en.wikipedia.org/wiki/Marathon"
+  },
+  {
+    "id": "hurdling",
+    "name": "Hurdling",
+    "emoji": "🚧",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Jumping over obstacles at speed.",
+    "src": "https://en.wikipedia.org/wiki/Hurdling"
+  },
+  {
+    "id": "long_jump",
+    "name": "Long Jump",
+    "emoji": "🤸",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A track and field event to leap as far as possible.",
+    "src": "https://en.wikipedia.org/wiki/Long_jump"
+  },
+  {
+    "id": "high_jump",
+    "name": "High Jump",
+    "emoji": "🦘",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A track and field event to jump over a horizontal bar.",
+    "src": "https://en.wikipedia.org/wiki/High_jump"
+  },
+  {
+    "id": "pole_vault",
+    "name": "Pole Vault",
+    "emoji": "🏴",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A track and field event using a long pole to clear a bar.",
+    "src": "https://en.wikipedia.org/wiki/Pole_vault"
+  },
+  {
+    "id": "shot_put",
+    "name": "Shot Put",
+    "emoji": "⚫",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A track and field event throwing a heavy ball as far as possible.",
+    "src": "https://en.wikipedia.org/wiki/Shot_put"
+  },
+  {
+    "id": "discus_throw",
+    "name": "Discus Throw",
+    "emoji": "🥏",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A track and field event throwing a heavy disc.",
+    "src": "https://en.wikipedia.org/wiki/Discus_throw"
+  },
+  {
+    "id": "javelin_throw",
+    "name": "Javelin Throw",
+    "emoji": "🎯",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A track and field event throwing a spear-like javelin.",
+    "src": "https://en.wikipedia.org/wiki/Javelin_throw"
+  },
+  {
+    "id": "decathlon",
+    "name": "Decathlon",
+    "emoji": "🔟",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A combined event of ten track and field contests.",
+    "src": "https://en.wikipedia.org/wiki/Decathlon"
+  },
+  {
+    "id": "track_and_field",
+    "name": "Track and Field",
+    "emoji": "🏟️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A sport of running, jumping and throwing contests.",
+    "src": "https://en.wikipedia.org/wiki/Track_and_field"
+  },
+  {
+    "id": "ice_skating",
+    "name": "Ice Skating",
+    "emoji": "⛸️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Gliding across ice on metal-bladed skates.",
+    "src": "https://en.wikipedia.org/wiki/Ice_skating"
+  },
+  {
+    "id": "figure_skating",
+    "name": "Figure Skating",
+    "emoji": "⛸️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A sport of jumps, spins and dance moves on ice.",
+    "src": "https://en.wikipedia.org/wiki/Figure_skating"
+  },
+  {
+    "id": "speed_skating",
+    "name": "Speed Skating",
+    "emoji": "⛸️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Racing on ice skates over a set distance.",
+    "src": "https://en.wikipedia.org/wiki/Speed_skating"
+  },
+  {
+    "id": "roller_skating",
+    "name": "Roller Skating",
+    "emoji": "🛼",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Travelling on surfaces using roller skates.",
+    "src": "https://en.wikipedia.org/wiki/Roller_skating"
+  },
+  {
+    "id": "skateboarding",
+    "name": "Skateboarding",
+    "emoji": "🛹",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "An action sport of riding and performing tricks on a skateboard.",
+    "src": "https://en.wikipedia.org/wiki/Skateboarding"
+  },
+  {
+    "id": "swimming",
+    "name": "Swimming",
+    "emoji": "🏊",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Moving oneself through water for recreation, sport or survival.",
+    "src": "https://en.wikipedia.org/wiki/Swimming"
+  },
+  {
+    "id": "diving_sport",
+    "name": "Diving",
+    "emoji": "🤿",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The sport of jumping into water from a platform or springboard.",
+    "src": "https://en.wikipedia.org/wiki/Diving_(sport)"
+  },
+  {
+    "id": "rowing_sport",
+    "name": "Rowing",
+    "emoji": "🚣",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The sport of racing boats using oars.",
+    "src": "https://en.wikipedia.org/wiki/Rowing_(sport)"
+  },
+  {
+    "id": "sailing_sport",
+    "name": "Sailing",
+    "emoji": "⛵",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Competitive racing under sail.",
+    "src": "https://en.wikipedia.org/wiki/Sailing_(sport)"
+  },
+  {
+    "id": "underwater_diving",
+    "name": "Underwater Diving",
+    "emoji": "🤿",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Descending below the water's surface to interact with the environment.",
+    "src": "https://en.wikipedia.org/wiki/Underwater_diving"
+  },
+  {
+    "id": "swimming_pool",
+    "name": "Swimming Pool",
+    "emoji": "🏊",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A structure built to hold water for swimming.",
+    "src": "https://en.wikipedia.org/wiki/Swimming_pool"
+  },
+  {
+    "id": "martial_arts",
+    "name": "Martial Arts",
+    "emoji": "🥋",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Codified systems and traditions of combat.",
+    "src": "https://en.wikipedia.org/wiki/Martial_arts"
+  },
+  {
+    "id": "boxing",
+    "name": "Boxing",
+    "emoji": "🥊",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A combat sport of two opponents throwing punches.",
+    "src": "https://en.wikipedia.org/wiki/Boxing"
+  },
+  {
+    "id": "judo",
+    "name": "Judo",
+    "emoji": "🥋",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A Japanese martial art and Olympic sport based on throws and grappling.",
+    "src": "https://en.wikipedia.org/wiki/Judo"
+  },
+  {
+    "id": "karate",
+    "name": "Karate",
+    "emoji": "🥋",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A martial art developed in the Ryukyu Kingdom.",
+    "src": "https://en.wikipedia.org/wiki/Karate"
+  },
+  {
+    "id": "taekwondo",
+    "name": "Taekwondo",
+    "emoji": "🥋",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A Korean martial art of kicking and punching techniques.",
+    "src": "https://en.wikipedia.org/wiki/Taekwondo"
+  },
+  {
+    "id": "sumo",
+    "name": "Sumo",
+    "emoji": "🤼",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Competitive wrestling in which a wrestler forces his opponent out of a ring.",
+    "src": "https://en.wikipedia.org/wiki/Sumo"
+  },
+  {
+    "id": "wrestling",
+    "name": "Wrestling",
+    "emoji": "🤼",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A combat sport of grappling with an opponent.",
+    "src": "https://en.wikipedia.org/wiki/Wrestling"
+  },
+  {
+    "id": "capoeira",
+    "name": "Capoeira",
+    "emoji": "🤸",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "An Afro-Brazilian martial art and game with dance elements.",
+    "src": "https://en.wikipedia.org/wiki/Capoeira"
+  },
+  {
+    "id": "kickboxing",
+    "name": "Kickboxing",
+    "emoji": "🥊",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A group of full-contact combat sports combining punches and kicks.",
+    "src": "https://en.wikipedia.org/wiki/Kickboxing"
+  },
+  {
+    "id": "mixed_martial_arts",
+    "name": "Mixed Martial Arts",
+    "emoji": "🥊",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A full-contact combat sport mixing striking and grappling.",
+    "src": "https://en.wikipedia.org/wiki/Mixed_martial_arts"
+  },
+  {
+    "id": "muay_thai",
+    "name": "Muay Thai",
+    "emoji": "🥊",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Thai boxing, the Art of Eight Limbs.",
+    "src": "https://en.wikipedia.org/wiki/Muay_Thai"
+  },
+  {
+    "id": "brazilian_jiu_jitsu",
+    "name": "Brazilian Jiu-Jitsu",
+    "emoji": "🥋",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A grappling-based martial art and combat sport.",
+    "src": "https://en.wikipedia.org/wiki/Brazilian_jiu-jitsu"
+  },
+  {
+    "id": "chinese_martial_arts",
+    "name": "Chinese Martial Arts",
+    "emoji": "🥋",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Fighting styles from China, known as kung fu or wushu.",
+    "src": "https://en.wikipedia.org/wiki/Chinese_martial_arts"
+  },
+  {
+    "id": "archery",
+    "name": "Archery",
+    "emoji": "🏹",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The sport of shooting arrows from a bow at a target.",
+    "src": "https://en.wikipedia.org/wiki/Archery"
+  },
+  {
+    "id": "fencing",
+    "name": "Fencing",
+    "emoji": "🤺",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A combat sport of sword fighting.",
+    "src": "https://en.wikipedia.org/wiki/Fencing"
+  },
+  {
+    "id": "angling",
+    "name": "Angling",
+    "emoji": "🎣",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Fishing with a hook and line.",
+    "src": "https://en.wikipedia.org/wiki/Angling"
+  },
+  {
+    "id": "golf",
+    "name": "Golf",
+    "emoji": "⛳",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A club-and-ball sport of hitting a ball into holes on a course.",
+    "src": "https://en.wikipedia.org/wiki/Golf"
+  },
+  {
+    "id": "tennis",
+    "name": "Tennis",
+    "emoji": "🎾",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A racket sport played individually or between two teams.",
+    "src": "https://en.wikipedia.org/wiki/Tennis"
+  },
+  {
+    "id": "table_tennis",
+    "name": "Table Tennis",
+    "emoji": "🏓",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A racket sport played on a table, also called ping-pong.",
+    "src": "https://en.wikipedia.org/wiki/Table_tennis"
+  },
+  {
+    "id": "badminton",
+    "name": "Badminton",
+    "emoji": "🏸",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A racquet sport in which a shuttlecock is hit across a net.",
+    "src": "https://en.wikipedia.org/wiki/Badminton"
+  },
+  {
+    "id": "bowling",
+    "name": "Bowling",
+    "emoji": "🎳",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A sport of rolling a ball toward pins.",
+    "src": "https://en.wikipedia.org/wiki/Bowling"
+  },
+  {
+    "id": "cue_sports",
+    "name": "Cue Sports",
+    "emoji": "🎱",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Games of skill played with a cue stick and billiard balls.",
+    "src": "https://en.wikipedia.org/wiki/Cue_sports"
+  },
+  {
+    "id": "snooker",
+    "name": "Snooker",
+    "emoji": "🎱",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A cue sport played on a baize-covered table with six pockets.",
+    "src": "https://en.wikipedia.org/wiki/Snooker"
+  },
+  {
+    "id": "darts",
+    "name": "Darts",
+    "emoji": "🎯",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A sport of throwing small pointed missiles at a target board.",
+    "src": "https://en.wikipedia.org/wiki/Darts"
+  },
+  {
+    "id": "bodybuilding",
+    "name": "Bodybuilding",
+    "emoji": "💪",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Progressive resistance exercise to build and develop the muscles.",
+    "src": "https://en.wikipedia.org/wiki/Bodybuilding"
+  },
+  {
+    "id": "powerlifting",
+    "name": "Powerlifting",
+    "emoji": "🏋️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A strength sport of three maximal lifts: squat, bench press and deadlift.",
+    "src": "https://en.wikipedia.org/wiki/Powerlifting"
+  },
+  {
+    "id": "olympic_weightlifting",
+    "name": "Olympic Weightlifting",
+    "emoji": "🏋️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A strength sport of lifting a barbell in the snatch and the clean and jerk.",
+    "src": "https://en.wikipedia.org/wiki/Olympic_weightlifting"
+  },
+  {
+    "id": "gymnastics",
+    "name": "Gymnastics",
+    "emoji": "🤸",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A group of sports needing balance, strength, flexibility and coordination.",
+    "src": "https://en.wikipedia.org/wiki/Gymnastics"
+  },
+  {
+    "id": "climbing",
+    "name": "Climbing",
+    "emoji": "🧗",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Using hands and feet to ascend steep surfaces.",
+    "src": "https://en.wikipedia.org/wiki/Climbing"
+  },
+  {
+    "id": "mountaineering",
+    "name": "Mountaineering",
+    "emoji": "🏔️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Outdoor activities that involve ascending mountains.",
+    "src": "https://en.wikipedia.org/wiki/Mountaineering"
+  },
+  {
+    "id": "rock_climbing",
+    "name": "Rock Climbing",
+    "emoji": "🧗",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A climbing discipline of ascending routes on natural rock.",
+    "src": "https://en.wikipedia.org/wiki/Rock_climbing"
+  },
+  {
+    "id": "cycle_sport",
+    "name": "Cycle Sport",
+    "emoji": "🚴",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Competitive physical activity using bicycles.",
+    "src": "https://en.wikipedia.org/wiki/Cycle_sport"
+  },
+  {
+    "id": "tour_de_france",
+    "name": "Tour de France",
+    "emoji": "🚴",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "An annual men's multiple-stage road cycling race held mainly in France.",
+    "src": "https://en.wikipedia.org/wiki/Tour_de_France"
+  },
+  {
+    "id": "equestrianism",
+    "name": "Equestrianism",
+    "emoji": "🏇",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Horse riding and the sports built on it.",
+    "src": "https://en.wikipedia.org/wiki/Equestrianism"
+  },
+  {
+    "id": "horse_racing",
+    "name": "Horse Racing",
+    "emoji": "🏇",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "An equestrian activity in which horses, usually with jockeys, race each other.",
+    "src": "https://en.wikipedia.org/wiki/Horse_racing"
+  },
+  {
+    "id": "rodeo",
+    "name": "Rodeo",
+    "emoji": "🤠",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A competitive equestrian sport that grew from cattle-herding.",
+    "src": "https://en.wikipedia.org/wiki/Rodeo"
+  },
+  {
+    "id": "bullfighting",
+    "name": "Bullfighting",
+    "emoji": "🐂",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A physical contest between a bullfighter and a bull.",
+    "src": "https://en.wikipedia.org/wiki/Bullfighting"
+  },
+  {
+    "id": "shooting_sports",
+    "name": "Shooting Sports",
+    "emoji": "🔫",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Competitive and recreational activities that focus on shooting accuracy.",
+    "src": "https://en.wikipedia.org/wiki/Shooting_sports"
+  },
+  {
+    "id": "biathlon",
+    "name": "Biathlon",
+    "emoji": "🎿",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A winter sport combining cross-country skiing and rifle shooting.",
+    "src": "https://en.wikipedia.org/wiki/Biathlon"
+  },
+  {
+    "id": "skiing",
+    "name": "Skiing",
+    "emoji": "⛷️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Using skis to glide on snow.",
+    "src": "https://en.wikipedia.org/wiki/Skiing"
+  },
+  {
+    "id": "alpine_skiing",
+    "name": "Alpine Skiing",
+    "emoji": "⛷️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Sliding down snow-covered slopes on skis with fixed-heel bindings.",
+    "src": "https://en.wikipedia.org/wiki/Alpine_skiing"
+  },
+  {
+    "id": "ski_jumping",
+    "name": "Ski Jumping",
+    "emoji": "🎿",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A winter sport in which skiers aim for the farthest jump.",
+    "src": "https://en.wikipedia.org/wiki/Ski_jumping"
+  },
+  {
+    "id": "sled",
+    "name": "Sled",
+    "emoji": "🛷",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A vehicle that slides across ice or snow on runners.",
+    "src": "https://en.wikipedia.org/wiki/Sled"
+  },
+  {
+    "id": "bobsleigh",
+    "name": "Bobsleigh",
+    "emoji": "🛷",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A winter sport of timed speed runs down an ice track.",
+    "src": "https://en.wikipedia.org/wiki/Bobsleigh"
+  },
+  {
+    "id": "luge",
+    "name": "Luge",
+    "emoji": "🛷",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A small sled ridden face up and feet first.",
+    "src": "https://en.wikipedia.org/wiki/Luge"
+  },
+  {
+    "id": "snowboarding",
+    "name": "Snowboarding",
+    "emoji": "🏂",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Descending a snow-covered surface standing on a board.",
+    "src": "https://en.wikipedia.org/wiki/Snowboarding"
+  },
+  {
+    "id": "surfing",
+    "name": "Surfing",
+    "emoji": "🏄",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A water sport of riding a wave on a board.",
+    "src": "https://en.wikipedia.org/wiki/Surfing"
+  },
+  {
+    "id": "formula_one",
+    "name": "Formula One",
+    "emoji": "🏎️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The highest class of worldwide single-seater open-wheel racing.",
+    "src": "https://en.wikipedia.org/wiki/Formula_One"
   }
 ]

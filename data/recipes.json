@@ -111922,5 +111922,2595 @@
     "why": "Scouting or the Scout Movement is a youth movement which became popularly established in the first decade of the 20th century. It follows the Scout method of informal education with an emphasis on practical outdoor activities, including camping, woodcraft, aquatics, hiking, backpacking, and sports.",
     "src": "https://en.wikipedia.org/wiki/Scouting",
     "verified": true
+  },
+  {
+    "in": [
+      "house",
+      "nuclear_family"
+    ],
+    "out": "household",
+    "why": "A household consists of one or more persons who live in the same dwelling. It may be of a single family or another type of person group.",
+    "src": "https://en.wikipedia.org/wiki/Household",
+    "verified": true
+  },
+  {
+    "in": [
+      "family",
+      "child"
+    ],
+    "out": "nuclear_family",
+    "why": "A nuclear family – also called an elementary family, atomic family, or conjugal family – is a family group consisting of two parents and their children (one or more), typically living in one home residence. The term is used in contrast to both a single-parent family and a larger extended family (which may include grandparents, aunts, uncles, cousins, and other blood relatives or community members).",
+    "src": "https://en.wikipedia.org/wiki/Nuclear_family",
+    "verified": true
+  },
+  {
+    "in": [
+      "village",
+      "nuclear_family"
+    ],
+    "out": "extended_family",
+    "why": "An extended family is a family that extends beyond the nuclear family of parents and their children to include aunts, uncles, grandparents, cousins, other blood relatives or even community members, all living nearby or in the same household. Particular forms include the stem and joint families.",
+    "src": "https://en.wikipedia.org/wiki/Extended_family",
+    "verified": true
+  },
+  {
+    "in": [
+      "family",
+      "marriage"
+    ],
+    "out": "stepfamily",
+    "why": "A stepfamily (sometimes called a bonus family) is a family where at least one parent has children who are not biologically related to their spouse. Either parent, or both, may have children from previous relationships or marriages.",
+    "src": "https://en.wikipedia.org/wiki/Stepfamily",
+    "verified": true
+  },
+  {
+    "in": [
+      "culture",
+      "nuclear_family"
+    ],
+    "out": "kinship",
+    "why": "In anthropology, kinship is the web of social relationships that form an important part of the lives of all humans in all societies, although its exact meanings even within this discipline are often debated.",
+    "src": "https://en.wikipedia.org/wiki/Kinship",
+    "verified": true
+  },
+  {
+    "in": [
+      "kinship",
+      "group"
+    ],
+    "out": "clan",
+    "why": "A clan is a group of people united by actual or perceived kinship and descent. Even if lineage details remain unknown or non-specific, clan members may claim descent from a founding individual or apical ancestor who serves as a symbol of the clan's unity.",
+    "src": "https://en.wikipedia.org/wiki/Clan",
+    "verified": true
+  },
+  {
+    "in": [
+      "kinship",
+      "inheritance"
+    ],
+    "out": "lineage_anthropology",
+    "why": "In anthropology, a lineage is a unilineal descent group that traces its ancestry to a demonstrably shared ancestor, known as the apical ancestor. Lineages are formed through relationships traced either exclusively through the maternal line (matrilineage), paternal line (patrilineage), or some combination of both (ambilineal).",
+    "src": "https://en.wikipedia.org/wiki/Lineage_(anthropology)",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "trust"
+    ],
+    "out": "interpersonal_relationship",
+    "why": "In social psychology, an interpersonal relation (or interpersonal relationship) describes a social association, connection, or affiliation between two or more people. It overlaps significantly with the concept of social relations, which are the fundamental unit of analysis within the social sciences.",
+    "src": "https://en.wikipedia.org/wiki/Interpersonal_relationship",
+    "verified": true
+  },
+  {
+    "in": [
+      "trust",
+      "happiness"
+    ],
+    "out": "friendship",
+    "why": "Friendship is a relationship of mutual affection between people. It is a stronger form of interpersonal bond than an \"acquaintance\" or an \"association\", such as a classmate, neighbor, coworker, or colleague.",
+    "src": "https://en.wikipedia.org/wiki/Friendship",
+    "verified": true
+  },
+  {
+    "in": [
+      "love",
+      "trust"
+    ],
+    "out": "intimate_relationship",
+    "why": "An intimate relationship is an interpersonal relationship that involves emotional or physical closeness between people and can include feelings of romantic or platonic love and sexual intimacy. Intimate relationships are interdependent, and the members of the relationship mutually influence each other.",
+    "src": "https://en.wikipedia.org/wiki/Intimate_relationship",
+    "verified": true
+  },
+  {
+    "in": [
+      "love",
+      "tradition"
+    ],
+    "out": "courtship",
+    "why": "Courtship is the period when some couples become familiar with each other prior to a possible marriage or committed relationship. Courtship traditionally may begin after a betrothal and may conclude with the celebration of marriage.",
+    "src": "https://en.wikipedia.org/wiki/Courtship",
+    "verified": true
+  },
+  {
+    "in": [
+      "courtship",
+      "society"
+    ],
+    "out": "dating",
+    "why": "Dating is an activity involving spending time with other individuals (\"going on dates\") usually through planned social encounters, with the intention of getting to know each other, often with a romantic or intimate purpose. While the result of dating may at any time lead to friendship, any level of intimate relationship, marriage, or no relation, its significance extends beyond relationship status.",
+    "src": "https://en.wikipedia.org/wiki/Dating",
+    "verified": true
+  },
+  {
+    "in": [
+      "love",
+      "sadness"
+    ],
+    "out": "breakup",
+    "why": "A relationship breakup, breakup, or break-up is the ending of a relationship. The act is commonly termed \"dumping [someone]\" in slang when it is initiated by one partner.",
+    "src": "https://en.wikipedia.org/wiki/Breakup",
+    "verified": true
+  },
+  {
+    "in": [
+      "marriage",
+      "house"
+    ],
+    "out": "cohabitation",
+    "why": "Cohabitation is an arrangement where people who are not legally married live together as a couple. They are often involved in a romantic or sexually intimate relationship on a long-term or permanent basis.",
+    "src": "https://en.wikipedia.org/wiki/Cohabitation",
+    "verified": true
+  },
+  {
+    "in": [
+      "marriage",
+      "jealousy"
+    ],
+    "out": "infidelity",
+    "why": "Infidelity (synonyms include cheating, having an affair, adultery, being unfaithful, non-consensual non-monogamy, straying or two-timing) is a violation of a couple's emotional or sexual exclusivity that commonly results in feelings of anger, sexual jealousy, and rivalry. What constitutes infidelity depends on expectations within the relationship.",
+    "src": "https://en.wikipedia.org/wiki/Infidelity",
+    "verified": true
+  },
+  {
+    "in": [
+      "marriage",
+      "tradition"
+    ],
+    "out": "arranged_marriage",
+    "why": "An arranged marriage is a marriage where the spouses are selected by a third party. The third party is most commonly the spouses' parents, possibly with the aid of a marriage broker.",
+    "src": "https://en.wikipedia.org/wiki/Arranged_marriage",
+    "verified": true
+  },
+  {
+    "in": [
+      "marriage",
+      "law"
+    ],
+    "out": "divorce",
+    "why": "Divorce (also known as dissolution of marriage) is the process of terminating a marriage. Divorce usually entails canceling or reorganising the legal duties and responsibilities of marriage according to the law of the particular country or state.",
+    "src": "https://en.wikipedia.org/wiki/Divorce",
+    "verified": true
+  },
+  {
+    "in": [
+      "marriage",
+      "trust"
+    ],
+    "out": "monogamy",
+    "why": "Monogamy is a relationship of two individuals in which they form a mutual and exclusive intimate partnership. Having only one partner at any one time, whether for life or serial monogamy, contrasts with various forms of non-monogamy (e.g., polygamy or polyamory).",
+    "src": "https://en.wikipedia.org/wiki/Monogamy",
+    "verified": true
+  },
+  {
+    "in": [
+      "marriage",
+      "group"
+    ],
+    "out": "polygamy",
+    "why": "Polygamy is the practice of marrying multiple spouses. When a man is married to more than one wife at the same time, it is called polygyny. When a woman is married to more than one husband at the same time, it is called polyandry.",
+    "src": "https://en.wikipedia.org/wiki/Polygamy",
+    "verified": true
+  },
+  {
+    "in": [
+      "love",
+      "equality"
+    ],
+    "out": "same_sex_relationship",
+    "why": "A same-sex relationship, also known as same-gender relationship, is a romantic or sexual relationship between people of the same sex or gender. Some couples in same-sex relationships have children, both biological or non-biological, such as adoptive or foster children, and parent them with their partner.",
+    "src": "https://en.wikipedia.org/wiki/Same-sex_relationship",
+    "verified": true
+  },
+  {
+    "in": [
+      "child",
+      "education"
+    ],
+    "out": "parenting",
+    "why": "Parenting or child rearing promotes and supports the physical, cognitive, social, emotional, and educational development from infancy to adulthood. Parenting refers to the intricacies of raising a child and not exclusively for a biological relationship.",
+    "src": "https://en.wikipedia.org/wiki/Parenting",
+    "verified": true
+  },
+  {
+    "in": [
+      "family",
+      "contraception"
+    ],
+    "out": "family_planning",
+    "why": "Family planning is the consideration of the number of children a person wishes to have, including the choice to have no children, and the age at which they wish to have them. Factors that may influence family planning decisions include the desire (or lack thereof) to have children, health factors, relationship status, career considerations, and financial circumstances.",
+    "src": "https://en.wikipedia.org/wiki/Family_planning",
+    "verified": true
+  },
+  {
+    "in": [
+      "child",
+      "law"
+    ],
+    "out": "adoption",
+    "why": "Adoption is a process whereby a person assumes the parenting of another, usually a child, from that person's biological or legal parent or parents. Legal adoptions permanently transfer all rights and responsibilities, along with filiation, from the biological parents to the adoptive parents.",
+    "src": "https://en.wikipedia.org/wiki/Adoption",
+    "verified": true
+  },
+  {
+    "in": [
+      "child",
+      "death"
+    ],
+    "out": "orphan",
+    "why": "An orphan is a child whose parents have died, are unknown, or have permanently abandoned them.",
+    "src": "https://en.wikipedia.org/wiki/Orphan",
+    "verified": true
+  },
+  {
+    "in": [
+      "child",
+      "birth"
+    ],
+    "out": "parent",
+    "why": "A parent is either the progenitor of an offspring, or in humans, it can refer to a caregiver or legal guardian, generally called an adoptive parent or step-parent. Parents are first-degree relatives and share 50% of their genes.",
+    "src": "https://en.wikipedia.org/wiki/Parent",
+    "verified": true
+  },
+  {
+    "in": [
+      "parent",
+      "birth"
+    ],
+    "out": "mother",
+    "why": "A mother, mom, mum, mommy, or mummy is the female parent of a child. A woman may be considered a mother by virtue of having given birth, by raising a child who may or may not be her biological offspring, or by supplying her ovum for fertilisation in the case of gestational surrogacy.",
+    "src": "https://en.wikipedia.org/wiki/Mother",
+    "verified": true
+  },
+  {
+    "in": [
+      "parent",
+      "sperm"
+    ],
+    "out": "father",
+    "why": "A father, dad, or daddy, is the male parent of a child. Besides the paternal bonds of a father to his child or children, fathers may have a parental, legal, and social relationship with their child or children that carries with it certain rights and obligations. A biological father is the male genetic contributor to the creation of the child, through sexual intercourse or sperm donation.",
+    "src": "https://en.wikipedia.org/wiki/Father",
+    "verified": true
+  },
+  {
+    "in": [
+      "marriage",
+      "father"
+    ],
+    "out": "husband",
+    "why": "A husband is a man involved in a marital relationship, commonly referred to as a spouse. The specific rights, responsibilities, and societal status attributed to a husband can vary significantly across different cultures and historical periods, reflecting a global perspective on this role.",
+    "src": "https://en.wikipedia.org/wiki/Husband",
+    "verified": true
+  },
+  {
+    "in": [
+      "marriage",
+      "mother"
+    ],
+    "out": "wife",
+    "why": "A wife (pl.: wives) is a woman in a marital relationship. A woman who has separated from her partner continues to be a wife until their marriage is legally dissolved with a divorce judgment; or until death, depending on the kind of marriage. On the death of her partner, a wife is referred to as a widow.",
+    "src": "https://en.wikipedia.org/wiki/Wife",
+    "verified": true
+  },
+  {
+    "in": [
+      "family",
+      "birth"
+    ],
+    "out": "sibling",
+    "why": "A sibling is a relative that shares at least one parent with the other person. A male sibling is a brother, and a female sibling is a sister.",
+    "src": "https://en.wikipedia.org/wiki/Sibling",
+    "verified": true
+  },
+  {
+    "in": [
+      "sibling",
+      "father"
+    ],
+    "out": "brother",
+    "why": "A brother (pl.: brothers or brethren) is a man or boy who shares one or more parents with another; a male sibling. The female counterpart is a sister.",
+    "src": "https://en.wikipedia.org/wiki/Brother",
+    "verified": true
+  },
+  {
+    "in": [
+      "sibling",
+      "mother"
+    ],
+    "out": "sister",
+    "why": "A sister is a woman or a girl who shares parents or a parent with another individual; a female sibling. The male counterpart is a brother.",
+    "src": "https://en.wikipedia.org/wiki/Sister",
+    "verified": true
+  },
+  {
+    "in": [
+      "sibling",
+      "puberty"
+    ],
+    "out": "twin",
+    "why": "Twins are two offspring produced by the same pregnancy. Twins can be either monozygotic ('identical'), meaning that they develop from one zygote, which splits and forms two embryos, or dizygotic ('non-identical' or 'fraternal'), meaning that each twin develops from a separate egg and each egg is fertilized by its own sperm cell. Since identical twins develop from one zygote, they will share the same chromosomal sex, while fraternal twins may or may not.",
+    "src": "https://en.wikipedia.org/wiki/Twin",
+    "verified": true
+  },
+  {
+    "in": [
+      "parent",
+      "ageing"
+    ],
+    "out": "grandparent",
+    "why": "Grandparents, individually known as grandmother and grandfather, or Grandma and Grandpa, are the parents of a person's father or mother – paternal or maternal.",
+    "src": "https://en.wikipedia.org/wiki/Grandparent",
+    "verified": true
+  },
+  {
+    "in": [
+      "sibling",
+      "extended_family"
+    ],
+    "out": "cousin",
+    "why": "A cousin is a relative who is the child of a parent's sibling; this is more specifically referred to as a first cousin. A parent of a first cousin is an aunt or uncle.",
+    "src": "https://en.wikipedia.org/wiki/Cousin",
+    "verified": true
+  },
+  {
+    "in": [
+      "baby",
+      "milk"
+    ],
+    "out": "infant",
+    "why": "An infant is a very young human being. Baby is an alternative term for infant. The terms may also be used to refer to juvenile beings of other organisms.",
+    "src": "https://en.wikipedia.org/wiki/Infant",
+    "verified": true
+  },
+  {
+    "in": [
+      "child",
+      "father"
+    ],
+    "out": "boy",
+    "why": "A boy is a young male human. The term is commonly used for a child or an adolescent. When a male human reaches adulthood, they are usually described as a man.",
+    "src": "https://en.wikipedia.org/wiki/Boy",
+    "verified": true
+  },
+  {
+    "in": [
+      "child",
+      "mother"
+    ],
+    "out": "girl",
+    "why": "A girl is a young female human, usually a child or an adolescent. While the term girl has other meanings, including young woman, daughter, or girlfriend regardless of age, the first meaning is the most common one.",
+    "src": "https://en.wikipedia.org/wiki/Girl",
+    "verified": true
+  },
+  {
+    "in": [
+      "child",
+      "puberty"
+    ],
+    "out": "adolescence",
+    "why": "Adolescence is a transitional stage of human physical and psychological development that generally occurs during the period from puberty to adulthood (typically corresponding to the age of majority). Adolescence is usually associated with the teenage years, but its physical, psychological or cultural expressions may begin earlier or end later.",
+    "src": "https://en.wikipedia.org/wiki/Adolescence",
+    "verified": true
+  },
+  {
+    "in": [
+      "adolescence",
+      "society"
+    ],
+    "out": "adult",
+    "why": "An adult is an animal that has reached full growth. The biological definition of adult is an organism that has reached sexual maturity and is thus capable of reproduction. In the human context, the term adult has meanings associated with legal and social concepts.",
+    "src": "https://en.wikipedia.org/wiki/Adult",
+    "verified": true
+  },
+  {
+    "in": [
+      "adult",
+      "ageing"
+    ],
+    "out": "middle_age",
+    "why": "Middle age (or middle adulthood) is the age range of the years halfway between young adulthood and old age. The exact range is subject to public debate, but the term is commonly used to denote the age range from 40 to 64 years.",
+    "src": "https://en.wikipedia.org/wiki/Middle_age",
+    "verified": true
+  },
+  {
+    "in": [
+      "middle_age",
+      "death"
+    ],
+    "out": "old_age",
+    "why": "Old age is the range of ages for people nearing and surpassing life expectancy. People of old age are called old people, old-timers, the elderly, elders, senior citizens, seniors, or older adults.",
+    "src": "https://en.wikipedia.org/wiki/Old_age",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "sexual_dimorphism"
+    ],
+    "out": "gender",
+    "why": "Gender is the range of social, psychological, cultural, and behavioral aspects of being a man (or boy), woman (or girl), or portraying a third gender. Although gender often corresponds to sex, a transgender person may identify with a gender other than their sex assigned at birth.",
+    "src": "https://en.wikipedia.org/wiki/Gender",
+    "verified": true
+  },
+  {
+    "in": [
+      "gender",
+      "father"
+    ],
+    "out": "man",
+    "why": "A man is an adult male human. Before adulthood, a male child or adolescent is referred to as a boy. Like most other male mammals, a man's genome usually inherits an X chromosome from the mother and a Y chromosome from the father.",
+    "src": "https://en.wikipedia.org/wiki/Man",
+    "verified": true
+  },
+  {
+    "in": [
+      "gender",
+      "mother"
+    ],
+    "out": "woman",
+    "why": "A woman is an adult female human. Before adulthood, a female child or adolescent is referred to as a girl. Anatomically the general female characteristic of human sexual dimorphism is the human female reproductive system, which includes the ovaries, fallopian tubes, uterus, vagina, and vulva.",
+    "src": "https://en.wikipedia.org/wiki/Woman",
+    "verified": true
+  },
+  {
+    "in": [
+      "gender",
+      "identity_social"
+    ],
+    "out": "transgender",
+    "why": "A transgender (often shortened to trans) person has a gender identity different from that typically associated with the sex they were assigned at birth. The opposite of transgender is cisgender, which describes persons whose gender identity matches their assigned sex.",
+    "src": "https://en.wikipedia.org/wiki/Transgender",
+    "verified": true
+  },
+  {
+    "in": [
+      "gender",
+      "love"
+    ],
+    "out": "sexual_orientation",
+    "why": "Sexual orientation is an enduring personal pattern of romantic attraction or sexual attraction (or a combination of these) to persons of the opposite sex or gender, the same sex or gender, or to both sexes or more than one gender.",
+    "src": "https://en.wikipedia.org/wiki/Sexual_orientation",
+    "verified": true
+  },
+  {
+    "in": [
+      "sexual_orientation",
+      "marriage"
+    ],
+    "out": "heterosexuality",
+    "why": "Heterosexuality is romantic attraction, sexual attraction, or sexual behavior between people of the opposite sex or gender. As a sexual orientation, heterosexuality is \"an enduring pattern of emotional, romantic, and/or sexual attractions\" to people of the opposite sex.",
+    "src": "https://en.wikipedia.org/wiki/Heterosexuality",
+    "verified": true
+  },
+  {
+    "in": [
+      "sexual_orientation",
+      "equality"
+    ],
+    "out": "homosexuality",
+    "why": "Homosexuality is romantic attraction, sexual attraction, or sexual behavior between people of the same sex or gender. It also denotes identity based on attraction, related behavior, and community affiliation.",
+    "src": "https://en.wikipedia.org/wiki/Homosexuality",
+    "verified": true
+  },
+  {
+    "in": [
+      "love",
+      "sexual_reproduction"
+    ],
+    "out": "human_sexuality",
+    "why": "Sexuality is the way people experience and express themselves through sexual activities. This involves biological, psychological, physical, erotic, emotional, social, and spiritual feelings and behaviors.",
+    "src": "https://en.wikipedia.org/wiki/Human_sexuality",
+    "verified": true
+  },
+  {
+    "in": [
+      "contraception",
+      "rubber"
+    ],
+    "out": "condom",
+    "why": "A condom is a sheath-shaped barrier device used during sexual intercourse to reduce the probability of pregnancy or a sexually transmitted infection (STI). There are both external condoms, also called male condoms, and internal (female) condoms.",
+    "src": "https://en.wikipedia.org/wiki/Condom",
+    "verified": true
+  },
+  {
+    "in": [
+      "sexual_reproduction",
+      "birth"
+    ],
+    "out": "fertility",
+    "why": "Fertility in colloquial terms refers the ability to have offspring. In demographic contexts, fertility refers to the actual production of offspring, rather than the physical capability to reproduce, which is termed fecundity.",
+    "src": "https://en.wikipedia.org/wiki/Fertility",
+    "verified": true
+  },
+  {
+    "in": [
+      "education",
+      "contraception"
+    ],
+    "out": "sex_education",
+    "why": "Sex education, also known as sexual education, sexuality education or sex ed, is the instruction of issues relating to human sexuality, including human sexual anatomy, sexual activity, sexual reproduction, safe sex, birth control, sexual and reproductive health, emotional relationships and responsibilities, age of consent, and reproductive rights.",
+    "src": "https://en.wikipedia.org/wiki/Sex_education",
+    "verified": true
+  },
+  {
+    "in": [
+      "love",
+      "courtship"
+    ],
+    "out": "kiss",
+    "why": "A kiss is the touching or pressing of one's lips against another person, animal, or object. The cultural connotations associated with kissing vary significantly between different societies and contexts.",
+    "src": "https://en.wikipedia.org/wiki/Kiss",
+    "verified": true
+  },
+  {
+    "in": [
+      "house",
+      "love"
+    ],
+    "out": "home",
+    "why": "A home, or domicile, is a space used as a permanent or semi-permanent residence for one or more human occupants, and sometimes various companion animals. Homes provide sheltered spaces, for instance rooms, where domestic activity can be performed such as sleeping, preparing food, eating, and hygiene as well as providing spaces for work and leisure such as remote working, studying, and playing.",
+    "src": "https://en.wikipedia.org/wiki/Home",
+    "verified": true
+  },
+  {
+    "in": [
+      "house",
+      "city"
+    ],
+    "out": "apartment",
+    "why": "An apartment (North American English), flat (British English, Indian English, South African English) or unit (Australian English), is a self-contained housing unit that occupies part of a building.",
+    "src": "https://en.wikipedia.org/wiki/Apartment",
+    "verified": true
+  },
+  {
+    "in": [
+      "wood",
+      "village"
+    ],
+    "out": "hut",
+    "why": "A hut is a small dwelling, which may be constructed of various local materials. Huts are a type of vernacular (non-academic) architecture, being built of readily available materials like mud.",
+    "src": "https://en.wikipedia.org/wiki/Hut",
+    "verified": true
+  },
+  {
+    "in": [
+      "ice",
+      "house"
+    ],
+    "out": "igloo",
+    "why": "An igloo, also known as a snow house or snow hut, is a type of shelter built of suitable snow. Although igloos are often associated with all Inuit, they were traditionally used only by the people of Canada's Central Arctic and the Qaanaaq area of Greenland.",
+    "src": "https://en.wikipedia.org/wiki/Igloo",
+    "verified": true
+  },
+  {
+    "in": [
+      "cloth",
+      "roof"
+    ],
+    "out": "tent",
+    "why": "A tent is a type of shelter, generally consisting of sheets of fabric supported by a frame of poles. Smaller tents may be free-standing or attached to the ground, while large ones are usually anchored using guy ropes tied to stakes or tent pegs.",
+    "src": "https://en.wikipedia.org/wiki/Tent",
+    "verified": true
+  },
+  {
+    "in": [
+      "bed",
+      "city"
+    ],
+    "out": "hotel",
+    "why": "A hotel is an establishment that provides paid lodging on a short-term basis. Facilities provided inside a hotel room may range from a modest-quality mattress in a small room to large suites with bigger, higher-quality beds, a dresser, a refrigerator, and other kitchen facilities, upholstered chairs, a television, and en-suite bathrooms.",
+    "src": "https://en.wikipedia.org/wiki/Hotel",
+    "verified": true
+  },
+  {
+    "in": [
+      "bath",
+      "toilet"
+    ],
+    "out": "bathroom",
+    "why": "A bathroom is a room in which people wash their bodies or parts thereof. It can contain one or more of the following plumbing fixtures: a shower, a bathtub, a bidet, and a sink (also known as a wash basin in the United Kingdom).",
+    "src": "https://en.wikipedia.org/wiki/Bathroom",
+    "verified": true
+  },
+  {
+    "in": [
+      "bed",
+      "house"
+    ],
+    "out": "bedroom",
+    "why": "A bedroom or bedchamber is a room situated within a residential or accommodation unit, primarily used for sleeping. A typical Western bedroom contains as bedroom furniture one or two beds, a clothes closet, and bedside table and dressing table, both of which usually contain drawers.",
+    "src": "https://en.wikipedia.org/wiki/Bedroom",
+    "verified": true
+  },
+  {
+    "in": [
+      "house",
+      "automobile"
+    ],
+    "out": "garage_residential",
+    "why": "A residential garage is a walled, roofed structure with a door for storing a vehicle or vehicles that may be part of or attached to a home (\"attached garage\"), or a separate outbuilding or shed (\"detached garage\"). Residential garages typically have space for one or two cars, although three-car garages are used.",
+    "src": "https://en.wikipedia.org/wiki/Garage_(residential)",
+    "verified": true
+  },
+  {
+    "in": [
+      "steam",
+      "house"
+    ],
+    "out": "sauna",
+    "why": "A sauna is a room or building designed as a place to experience dry or wet heat sessions or an establishment with one or more of these facilities. The steam and high heat make the bathers perspire.",
+    "src": "https://en.wikipedia.org/wiki/Sauna",
+    "verified": true
+  },
+  {
+    "in": [
+      "furniture",
+      "knife"
+    ],
+    "out": "cabinetry",
+    "why": "A cabinet is a case or cupboard with shelves or drawers for storing or displaying items. Some cabinets are stand-alone while others are built into a wall or are attached to it like a medicine cabinet.",
+    "src": "https://en.wikipedia.org/wiki/Cabinetry",
+    "verified": true
+  },
+  {
+    "in": [
+      "wood",
+      "rice"
+    ],
+    "out": "chopsticks",
+    "why": "Chopsticks are shaped pairs of equal-length sticks that have been used as kitchen and eating utensils in most countries of the Sinosphere for over three millennia. They are held in the dominant hand, secured by fingers, and wielded as extensions of the hand, to pick up food.",
+    "src": "https://en.wikipedia.org/wiki/Chopsticks",
+    "verified": true
+  },
+  {
+    "in": [
+      "knife",
+      "fork"
+    ],
+    "out": "cutlery",
+    "why": "Cutlery are utensils used for serving and eating food at the dining table — originally referring to just knives, whereas forks and spoons were silverware — all part of flatware (American English) or tableware, these both encompassing crockery as well. These three implements first appeared together on tables as a set in Britain in the Georgian era.",
+    "src": "https://en.wikipedia.org/wiki/Cutlery",
+    "verified": true
+  },
+  {
+    "in": [
+      "plate",
+      "cup"
+    ],
+    "out": "tableware",
+    "why": "Tableware items are the dishware and utensils used for setting a table, serving food, and dining. The term includes cutlery, glassware, serving dishes, serving utensils, and other items used for practical as well as decorative purposes.",
+    "src": "https://en.wikipedia.org/wiki/Tableware",
+    "verified": true
+  },
+  {
+    "in": [
+      "food",
+      "shop"
+    ],
+    "out": "restaurant",
+    "why": "A restaurant is a business that prepares and serves food and beverages to customers. Meals are generally served and eaten on the premises, but many restaurants also offer take-out and food delivery services.",
+    "src": "https://en.wikipedia.org/wiki/Restaurant",
+    "verified": true
+  },
+  {
+    "in": [
+      "beer",
+      "shop"
+    ],
+    "out": "bar_establishment",
+    "why": "A bar, also known as a saloon, a tavern or tippling house, or sometimes as a pub (public house) or club, is a retail business that serves alcoholic beverages, such as beer, wine, liquor, cocktails, and other beverages such as mineral water and soft drinks. Bars often also sell snacks, such as chips (crisps) or peanuts, for consumption on their premises.",
+    "src": "https://en.wikipedia.org/wiki/Bar_(establishment)",
+    "verified": true
+  },
+  {
+    "in": [
+      "food",
+      "family"
+    ],
+    "out": "meal",
+    "why": "A meal is an occasion that occurs at a specific time and involves the consumption of food. The English names used for specific meals vary, depending on the speaker's culture, the time of day, or the size of the meal.",
+    "src": "https://en.wikipedia.org/wiki/Meal",
+    "verified": true
+  },
+  {
+    "in": [
+      "food",
+      "human"
+    ],
+    "out": "eating",
+    "why": "Eating (also known as feeding or consuming) is the ingestion of food for digestion. In biology, this is typically done to provide heterotrophic organisms with the essential nutrients and energy needed for metabolism and physical growth, since they are incapable of acquiring nutrition and energy intrinsically like autotrophs and therefore must ingest external organic matters in order to survive.",
+    "src": "https://en.wikipedia.org/wiki/Eating",
+    "verified": true
+  },
+  {
+    "in": [
+      "meal",
+      "work"
+    ],
+    "out": "lunch",
+    "why": "Lunch is a meal typically consumed around the middle of the day, following breakfast and preceding dinner. It varies in form, size, and significance across cultures and historical periods.",
+    "src": "https://en.wikipedia.org/wiki/Lunch",
+    "verified": true
+  },
+  {
+    "in": [
+      "meal",
+      "cookie"
+    ],
+    "out": "snack",
+    "why": "A snack is a small portion of food generally eaten between meals. While many snack foods are packaged, snacks may also include fresh ingredients commonly available at home which do not require lengthy preparation.",
+    "src": "https://en.wikipedia.org/wiki/Snack",
+    "verified": true
+  },
+  {
+    "in": [
+      "meal",
+      "sugar"
+    ],
+    "out": "dessert",
+    "why": "A dessert is a dish that consists of sweet foods, such as cake, biscuit, ice cream, and possibly a beverage, such as dessert wine or liqueur. Some cultures sweeten foods that are more commonly savory to create desserts.",
+    "src": "https://en.wikipedia.org/wiki/Dessert",
+    "verified": true
+  },
+  {
+    "in": [
+      "sugar",
+      "dye"
+    ],
+    "out": "candy",
+    "why": "Candy, also known as sweets and lollies, is a confection that features sugar as a principal ingredient. The category, sugar confectionery, encompasses any sweet confection, including chocolate or chewing gum.",
+    "src": "https://en.wikipedia.org/wiki/Candy",
+    "verified": true
+  },
+  {
+    "in": [
+      "cookie",
+      "flour"
+    ],
+    "out": "biscuit",
+    "why": "A biscuit is a flour-based baked food item. Biscuits are typically hard, flat, and unleavened. They are usually sweet and may be made with sugar, chocolate, icing, jam, ginger, or cinnamon.",
+    "src": "https://en.wikipedia.org/wiki/Biscuit",
+    "verified": true
+  },
+  {
+    "in": [
+      "vegetable",
+      "ethics"
+    ],
+    "out": "vegetarianism",
+    "why": "Vegetarianism is the practice of abstaining from the consumption of meat (red meat, poultry, seafood, freshwater fish, insects, and the flesh of any other animal). It may also include abstaining from eating all by-products of animal slaughter.",
+    "src": "https://en.wikipedia.org/wiki/Vegetarianism",
+    "verified": true
+  },
+  {
+    "in": [
+      "vegetarianism",
+      "animal_rights"
+    ],
+    "out": "veganism",
+    "why": "Veganism is the practice of abstaining from the use of animal products and the consumption of animal source foods, and an associated philosophy that rejects the commodity status of animals. A person who practices veganism is known as a vegan; the word is also used to describe foods and materials that are compatible with veganism.",
+    "src": "https://en.wikipedia.org/wiki/Veganism",
+    "verified": true
+  },
+  {
+    "in": [
+      "cooking",
+      "culture"
+    ],
+    "out": "cuisine",
+    "why": "A cuisine is a style of cooking characterized by distinctive ingredients, techniques, and dishes, and usually associated with a specific culture or geographic region. Regional food preparation techniques, customs and ingredients combine to enable dishes unique to a region.",
+    "src": "https://en.wikipedia.org/wiki/Cuisine",
+    "verified": true
+  },
+  {
+    "in": [
+      "cuisine",
+      "china"
+    ],
+    "out": "chinese_cuisine",
+    "why": "Chinese cuisine comprises cuisines originating from China, that varies with the country's large population and geographic diversity, as well as from Chinese people from other parts of the world. Due to the Chinese diaspora and the historical power of the country, Chinese cuisine has profoundly influenced other cuisines in Asia and beyond, with modifications made to cater to local palates.",
+    "src": "https://en.wikipedia.org/wiki/Chinese_cuisine",
+    "verified": true
+  },
+  {
+    "in": [
+      "cuisine",
+      "france"
+    ],
+    "out": "french_cuisine",
+    "why": "French cuisine is the cooking traditions and practices of France. In the 14th century, Guillaume Tirel, a court chef known as \"Taillevent\", wrote Le Viandier, one of the earliest recipe collections of medieval France.",
+    "src": "https://en.wikipedia.org/wiki/French_cuisine",
+    "verified": true
+  },
+  {
+    "in": [
+      "cuisine",
+      "japan"
+    ],
+    "out": "japanese_cuisine",
+    "why": "Japanese cuisine encompasses the regional and traditional foods of Japan, which have developed through centuries of political, economic, and social changes. The traditional cuisine of Japan is based on rice with miso soup and other dishes with an emphasis on seasonal ingredients.",
+    "src": "https://en.wikipedia.org/wiki/Japanese_cuisine",
+    "verified": true
+  },
+  {
+    "in": [
+      "cuisine",
+      "india"
+    ],
+    "out": "indian_cuisine",
+    "why": "Indian cuisine is not a single homogeneous entity, but consists of the regional cuisines native to the Indian subcontinent. Indian food has been influenced by religion, cultural choices and traditions.",
+    "src": "https://en.wikipedia.org/wiki/Indian_cuisine",
+    "verified": true
+  },
+  {
+    "in": [
+      "cuisine",
+      "italy"
+    ],
+    "out": "italian_cuisine",
+    "why": "Italian cuisine is a Mediterranean cuisine consisting of the ingredients, recipes and cooking techniques developed in Italy since Roman times, and later spread around the world together with waves of Italian diaspora.",
+    "src": "https://en.wikipedia.org/wiki/Italian_cuisine",
+    "verified": true
+  },
+  {
+    "in": [
+      "cuisine",
+      "mexico"
+    ],
+    "out": "mexican_cuisine",
+    "why": "Mexican cuisine consists of the food traditions of Mexico. Its earliest roots lie in Mesoamerican cuisine. Mexican cuisine's ingredients and methods arise from the area's first agricultural communities, such as those of the Olmec and Maya, who domesticated maize, created the standard process of nixtamalization, and established foodways.",
+    "src": "https://en.wikipedia.org/wiki/Mexican_cuisine",
+    "verified": true
+  },
+  {
+    "in": [
+      "food",
+      "trade"
+    ],
+    "out": "fast_food",
+    "why": "Fast food is a type of mass-produced food designed for commercial resale, with a strong priority placed on speed of service. Fast food is a commercial term, limited to food sold in a restaurant or store with frozen, preheated or precooked ingredients and served in packaging for take-out or takeaway.",
+    "src": "https://en.wikipedia.org/wiki/Fast_food",
+    "verified": true
+  },
+  {
+    "in": [
+      "cooking",
+      "art"
+    ],
+    "out": "culinary_arts",
+    "why": "Culinary arts are the cuisine arts of the preparation, cooking, and presentation of food, usually in the form of meals. People working in this field – especially in establishments such as restaurants – are commonly called chefs or cooks, although, at its most general, the terms culinary artist and culinarian are also used.",
+    "src": "https://en.wikipedia.org/wiki/Culinary_arts",
+    "verified": true
+  },
+  {
+    "in": [
+      "oil",
+      "pan"
+    ],
+    "out": "frying",
+    "why": "Frying is a method of cooking where food is made in oil or animal fat. Frying is believed to have first appeared in Ancient Egypt around 2500 BC, with tiger nut cakes deep fried in oil.",
+    "src": "https://en.wikipedia.org/wiki/Frying",
+    "verified": true
+  },
+  {
+    "in": [
+      "fire",
+      "vegetable"
+    ],
+    "out": "grilling",
+    "why": "Grilling is a form of cooking that involves heat applied to the surface of food, commonly from above, below or from the side. Grilling usually involves a significant amount of direct, radiant heat, and tends to be used for cooking meat and vegetables quickly.",
+    "src": "https://en.wikipedia.org/wiki/Grilling",
+    "verified": true
+  },
+  {
+    "in": [
+      "oil",
+      "cooking"
+    ],
+    "out": "cooking_oil",
+    "why": "Cooking oil (also known as edible oil) is a plant or animal liquid fat used in frying, baking, and other types of cooking. Oil allows higher cooking temperatures than water, making cooking faster and more flavorful, while likewise distributing heat, reducing burning and uneven cooking.",
+    "src": "https://en.wikipedia.org/wiki/Cooking_oil",
+    "verified": true
+  },
+  {
+    "in": [
+      "oil",
+      "milk"
+    ],
+    "out": "margarine",
+    "why": "Margarine is a spread used for flavoring, baking, and cooking. It is most often used as a substitute for butter.",
+    "src": "https://en.wikipedia.org/wiki/Margarine",
+    "verified": true
+  },
+  {
+    "in": [
+      "fish",
+      "food"
+    ],
+    "out": "seafood",
+    "why": "Seafood is any form of sea life regarded as food by humans, prominently including fish and shellfish. Shellfish include various species of molluscs (e.g., bivalve molluscs such as clams, oysters, and mussels, and cephalopods such as octopus and squid), crustaceans (e.g. shrimp, crabs, and lobster), and echinoderms (e.g. sea cucumbers and sea urchins).",
+    "src": "https://en.wikipedia.org/wiki/Seafood",
+    "verified": true
+  },
+  {
+    "in": [
+      "tea",
+      "plant"
+    ],
+    "out": "green_tea",
+    "why": "Green tea is a type of tea made from the leaves and buds of the Camellia sinensis that have not undergone the withering and oxidation process that creates oolong teas and black teas. Green tea originated in China in the late 1st millennium BC, and since then its production and manufacture has spread to other countries in East Asia.",
+    "src": "https://en.wikipedia.org/wiki/Green_tea",
+    "verified": true
+  },
+  {
+    "in": [
+      "water",
+      "human"
+    ],
+    "out": "drinking_water",
+    "why": "Drinking water or potable water is water safe for ingestion, either when drunk directly in liquid form or consumed indirectly through food preparation. For most terrestrial animals (including humans), drinkable water is fresh water, either surface or underground, whose quality does not cause immediate poisoning or significant short-term physiological detriment to the health of the ingesting individual.",
+    "src": "https://en.wikipedia.org/wiki/Drinking_water",
+    "verified": true
+  },
+  {
+    "in": [
+      "wine",
+      "distillation"
+    ],
+    "out": "alcoholic_beverage",
+    "why": "An alcoholic beverage (also called an alcoholic drink or strong drink) is any drink that contains alcohol. Alcoholic beverages are typically divided into three classes: beers, wines, and spirits; with alcohol content typically between 3% and 50%.",
+    "src": "https://en.wikipedia.org/wiki/Alcoholic_beverage",
+    "verified": true
+  },
+  {
+    "in": [
+      "distillation",
+      "alcoholic_beverage"
+    ],
+    "out": "liquor",
+    "why": "Liquor, spirit, distilled spirit, or spirituous liquor are alcoholic drinks produced by the distillation of grains, fruits, vegetables, or sugar that have already gone through alcoholic fermentation.",
+    "src": "https://en.wikipedia.org/wiki/Distilled_beverage",
+    "verified": true
+  },
+  {
+    "in": [
+      "alcoholic_beverage",
+      "juice"
+    ],
+    "out": "cocktail",
+    "why": "A cocktail is a mixed drink, usually alcoholic. Most commonly, a cocktail is a combination of one or more spirits mixed with other ingredients, such as juices, flavored syrups, tonic water, shrubs, and bitters. Cocktails vary widely across regions of the world.",
+    "src": "https://en.wikipedia.org/wiki/Cocktail",
+    "verified": true
+  },
+  {
+    "in": [
+      "liquor",
+      "potato"
+    ],
+    "out": "vodka",
+    "why": "Vodka is a clear distilled alcoholic beverage. Its varieties originated in Poland and Russia. Vodka is composed mainly of water and ethanol (alcohol), sometimes with traces of impurities and flavourings.",
+    "src": "https://en.wikipedia.org/wiki/Vodka",
+    "verified": true
+  },
+  {
+    "in": [
+      "cloth",
+      "coat"
+    ],
+    "out": "cloak",
+    "why": "A cloak is a type of loose garment worn over clothing, mostly but not always, as outerwear for outdoor wear, which serves the same purpose as an overcoat and protects the wearer from the weather. It may form part of a uniform.",
+    "src": "https://en.wikipedia.org/wiki/Cloak",
+    "verified": true
+  },
+  {
+    "in": [
+      "pigment",
+      "beauty"
+    ],
+    "out": "cosmetics",
+    "why": "Cosmetics are substances that are intended for application to the body for cleansing, beautifying, promoting attractiveness, or altering appearance. They are mixtures of chemical compounds derived from either natural sources or created synthetically.",
+    "src": "https://en.wikipedia.org/wiki/Cosmetics",
+    "verified": true
+  },
+  {
+    "in": [
+      "hair",
+      "comb"
+    ],
+    "out": "hairstyle",
+    "why": "A hairstyle, hairdo, haircut, or coiffure refers to the styling of hair, usually on the human head but sometimes on the face or body. Hair styling can be considered an aspect of personal grooming, fashion, and cosmetics, although practical, cultural, and popular considerations also influence some hairstyles.",
+    "src": "https://en.wikipedia.org/wiki/Hairstyle",
+    "verified": true
+  },
+  {
+    "in": [
+      "hair",
+      "razor"
+    ],
+    "out": "beard",
+    "why": "A beard is the hair that grows on the jaw, chin, upper lip, lower lip, cheeks, and neck of humans and some non-human animals. In humans, beards are most common among pubescent and adult males, though some women also develop them in a condition called hirsutism.",
+    "src": "https://en.wikipedia.org/wiki/Beard",
+    "verified": true
+  },
+  {
+    "in": [
+      "hair",
+      "cloth"
+    ],
+    "out": "wig",
+    "why": "A wig is a head covering made from human or animal hair, or a synthetic imitation thereof. The word is short for \"periwig\", derived from the French word perruque.",
+    "src": "https://en.wikipedia.org/wiki/Wig",
+    "verified": true
+  },
+  {
+    "in": [
+      "leather",
+      "fashion"
+    ],
+    "out": "handbag",
+    "why": "A handbag, commonly known as a purse in North American English, is a handled medium-to-large bag used to carry personal items. It has also been called a pocketbook in parts of the U.S.",
+    "src": "https://en.wikipedia.org/wiki/Handbag",
+    "verified": true
+  },
+  {
+    "in": [
+      "clothing",
+      "bed"
+    ],
+    "out": "nightwear",
+    "why": "Nightwear – also called sleepwear, or nightclothes – is clothing designed to be worn while sleeping. The style of nightwear worn may vary with the seasons, with warmer styles being worn in colder conditions and vice versa.",
+    "src": "https://en.wikipedia.org/wiki/Nightwear",
+    "verified": true
+  },
+  {
+    "in": [
+      "wool",
+      "neck"
+    ],
+    "out": "scarf",
+    "why": "A scarf (pl.: scarves or scarfs) is a long piece of fabric that is worn on or around the neck, shoulders, or head. A scarf is used for warmth, sun protection, cleanliness, fashion, religious reasons, or to show support for a sports club or team.",
+    "src": "https://en.wikipedia.org/wiki/Scarf",
+    "verified": true
+  },
+  {
+    "in": [
+      "coat",
+      "trousers"
+    ],
+    "out": "suit",
+    "why": "A suit, also called a lounge suit, business suit, dress suit, or formal suit, is a set of clothes comprising a suit jacket and trousers of identical textiles generally worn with a collared dress shirt, necktie, and dress shoes. A skirt suit is similar, but with a matching pencil skirt instead of trousers.",
+    "src": "https://en.wikipedia.org/wiki/Suit",
+    "verified": true
+  },
+  {
+    "in": [
+      "clothing",
+      "organization"
+    ],
+    "out": "uniform",
+    "why": "A uniform is a variety of costume worn by members of an organization while usually participating in that organization's activity. Modern uniforms are most often worn by armed forces and paramilitary organizations such as police, emergency services, security guards, in some workplaces and schools, and by inmates in prisons.",
+    "src": "https://en.wikipedia.org/wiki/Uniform",
+    "verified": true
+  },
+  {
+    "in": [
+      "time",
+      "happiness"
+    ],
+    "out": "leisure",
+    "why": "Leisure has often been defined as a quality of experience or as free time. Free time is time spent away from business, work, job hunting, domestic chores, and education, as well as necessary activities such as eating and sleeping.",
+    "src": "https://en.wikipedia.org/wiki/Leisure",
+    "verified": true
+  },
+  {
+    "in": [
+      "leisure",
+      "music"
+    ],
+    "out": "entertainment",
+    "why": "Entertainment is a form of activity that holds the attention and interest of an audience or gives pleasure and delight. It can be an idea or a task, but it is more commonly one of the activities or events developed over thousands of years specifically to engage an audience.",
+    "src": "https://en.wikipedia.org/wiki/Entertainment",
+    "verified": true
+  },
+  {
+    "in": [
+      "leisure",
+      "tool"
+    ],
+    "out": "hobby",
+    "why": "A hobby is a regular activity that is done for enjoyment, typically during one's leisure time. Hobbies include collecting themed items and objects, engaging in creative and artistic pursuits, playing sports, or pursuing other amusements or avocations.",
+    "src": "https://en.wikipedia.org/wiki/Hobby",
+    "verified": true
+  },
+  {
+    "in": [
+      "leisure",
+      "sport"
+    ],
+    "out": "recreation",
+    "why": "Recreation is an activity of leisure, often done for enjoyment, amusement, or pleasure and are considered to be \"fun\". The \"need to do something for recreation\" is an essential element of human biology and psychology.",
+    "src": "https://en.wikipedia.org/wiki/Recreation",
+    "verified": true
+  },
+  {
+    "in": [
+      "leisure",
+      "city"
+    ],
+    "out": "tourism",
+    "why": "Tourism is travel for pleasure, and the commercial activity of providing and supporting such travel. UN Tourism defines tourism more generally as people \"staying in places outside their usual environment for not more than one consecutive year for leisure and not less than 24 hours, business and other purposes\".",
+    "src": "https://en.wikipedia.org/wiki/Tourism",
+    "verified": true
+  },
+  {
+    "in": [
+      "leisure",
+      "calendar"
+    ],
+    "out": "vacation",
+    "why": "A vacation (American English) or holiday (British English) is either a leave of absence from a regular job or school or an instance of leisure travel away from home. People often take a vacation during specific holiday observances or for specific festivals or celebrations.",
+    "src": "https://en.wikipedia.org/wiki/Vacation",
+    "verified": true
+  },
+  {
+    "in": [
+      "hobby",
+      "museum"
+    ],
+    "out": "collecting",
+    "why": "The hobby of collecting includes seeking, locating, acquiring, organizing, cataloging, displaying, storing, and maintaining items that are of interest to an individual collector. Collections differ in a wide variety of respects, most obviously in the nature and scope of the objects contained, but also in purpose, presentation, and so forth.",
+    "src": "https://en.wikipedia.org/wiki/Collecting",
+    "verified": true
+  },
+  {
+    "in": [
+      "friendship",
+      "music"
+    ],
+    "out": "party",
+    "why": "A party is a gathering of people who have been invited by a host for the purposes of socializing, conversation, recreation, or as part of a festival or other commemoration or celebration of a special occasion. A party will often feature food and beverages, and generally conversation, music, dancing, or other forms of entertainment.",
+    "src": "https://en.wikipedia.org/wiki/Party",
+    "verified": true
+  },
+  {
+    "in": [
+      "singing",
+      "entertainment"
+    ],
+    "out": "karaoke",
+    "why": "Karaoke is a type of interactive entertainment system usually offered in nightclubs and bars, where people sing along to pre-recorded accompaniment using a microphone. Its musical content is an instrumental rendition of a well-known popular song.",
+    "src": "https://en.wikipedia.org/wiki/Karaoke",
+    "verified": true
+  },
+  {
+    "in": [
+      "tent",
+      "fire"
+    ],
+    "out": "camping",
+    "why": "Camping is a form of outdoor recreation or outdoor education involving overnight stays with a basic temporary shelter, such as a tent. Camping can also include a recreational vehicle, a sheltered cabin, a permanent tent, a bivy or tarp, a hammock, or no shelter at all.",
+    "src": "https://en.wikipedia.org/wiki/Camping",
+    "verified": true
+  },
+  {
+    "in": [
+      "tourism",
+      "mountain"
+    ],
+    "out": "hiking",
+    "why": "A hike is a long, vigorous walk, usually on trails or footpaths in the countryside. Walking for pleasure developed in Europe during the eighteenth century.",
+    "src": "https://en.wikipedia.org/wiki/Hiking",
+    "verified": true
+  },
+  {
+    "in": [
+      "animal",
+      "city"
+    ],
+    "out": "zoo",
+    "why": "A zoo (short for zoological garden; also called a zoological park, animal park, or menagerie) is a facility where animals are kept within enclosures for exhibition and often bred for conservation purposes. Zoos vary greatly in size, ranging from small urban enclosures of a few acres to massive open-range and natural-habitat reserves spanning thousands of acres.",
+    "src": "https://en.wikipedia.org/wiki/Zoo",
+    "verified": true
+  },
+  {
+    "in": [
+      "entertainment",
+      "circus"
+    ],
+    "out": "amusement_park",
+    "why": "An amusement park is a park that features various attractions, such as rides and games, and events for entertainment purposes. A theme park is a type of amusement park that bases its structures and attractions around a central theme, often featuring multiple areas with different themes.",
+    "src": "https://en.wikipedia.org/wiki/Amusement_park",
+    "verified": true
+  },
+  {
+    "in": [
+      "child",
+      "field"
+    ],
+    "out": "playground",
+    "why": "A playground, playpark, or play area is a place designed to provide an environment for children that facilitates play, typically outdoors. While playgrounds are usually designed for children, some are designed for other age groups or older people with disabilities.",
+    "src": "https://en.wikipedia.org/wiki/Playground",
+    "verified": true
+  },
+  {
+    "in": [
+      "game",
+      "thought"
+    ],
+    "out": "puzzle",
+    "why": "A puzzle is a game, problem, or toy that tests a person's ingenuity or knowledge. In a puzzle, the solver is expected to put pieces together (or take them apart) in a logical way, in order to find the solution of the puzzle.",
+    "src": "https://en.wikipedia.org/wiki/Puzzle",
+    "verified": true
+  },
+  {
+    "in": [
+      "puzzle",
+      "language"
+    ],
+    "out": "riddle",
+    "why": "A riddle is a statement, question, or phrase having a double or veiled meaning, put forth as a puzzle to be solved. Riddles are of two types: enigmas, which are problems generally expressed in metaphorical or allegorical language that require ingenuity and careful thinking for their solution, and conundrums, which are questions relying for their effects on punning in either the question or the answer.",
+    "src": "https://en.wikipedia.org/wiki/Riddle",
+    "verified": true
+  },
+  {
+    "in": [
+      "puzzle",
+      "word"
+    ],
+    "out": "crossword",
+    "why": "A crossword is a word game consisting of a grid of black and white squares with numbers on the corners, into which solvers enter words or phrases (\"entries\") crossing each other horizontally (\"across\") and vertically (\"down\") according to a set of clues. Each white square is typically filled with one letter, while the black squares are used to separate entries.",
+    "src": "https://en.wikipedia.org/wiki/Crossword",
+    "verified": true
+  },
+  {
+    "in": [
+      "puzzle",
+      "wood"
+    ],
+    "out": "jigsaw_puzzle",
+    "why": "A jigsaw puzzle (with context, sometimes just jigsaw or just puzzle) is a tiling puzzle that requires the assembly of often irregularly shaped, interlocking, and mosaicked pieces. Typically each puzzle piece contains a portion of a picture, which is completed by solving the puzzle, in which the picture should match the one shown on its box.",
+    "src": "https://en.wikipedia.org/wiki/Jigsaw_puzzle",
+    "verified": true
+  },
+  {
+    "in": [
+      "puzzle",
+      "geometry"
+    ],
+    "out": "rubiks_cube",
+    "why": "The Rubik's Cube (Hungarian: Rubik-kocka) is a 3D combination puzzle invented in 1974 by Hungarian sculptor and professor of architecture Ernő Rubik. Originally called the Magic Cube (Hungarian: bűvös kocka), the puzzle was licensed by Rubik to be sold by Pentangle Puzzles in the UK in 1978, and then by Ideal Toy Corp in 1980 via businessman Tibor Laczi and Seven Towns founder Tom Kremer.",
+    "src": "https://en.wikipedia.org/wiki/Rubik's_Cube",
+    "verified": true
+  },
+  {
+    "in": [
+      "puzzle",
+      "education"
+    ],
+    "out": "quiz",
+    "why": "A quiz is a form of mind sport in which people attempt to answer questions correctly on one or several topics. Quizzes can be used as a brief assessment in education and similar fields to measure growth in knowledge, abilities, and skills, or simply as a hobby.",
+    "src": "https://en.wikipedia.org/wiki/Quiz",
+    "verified": true
+  },
+  {
+    "in": [
+      "toy",
+      "human"
+    ],
+    "out": "doll",
+    "why": "A doll is a model typically of a human or humanoid character, often used as a toy for children. Dolls have also been used in traditional religious rituals throughout the world.",
+    "src": "https://en.wikipedia.org/wiki/Doll",
+    "verified": true
+  },
+  {
+    "in": [
+      "toy",
+      "brick"
+    ],
+    "out": "lego",
+    "why": "Lego is a brand of plastic construction toys manufactured by the Lego Group, a privately held company based in Billund, Denmark. Lego consists of variously coloured interlocking plastic bricks made of acrylonitrile butadiene styrene (ABS) that accompany an array of gears, figurines called minifigures, and various other parts.",
+    "src": "https://en.wikipedia.org/wiki/Lego",
+    "verified": true
+  },
+  {
+    "in": [
+      "doll",
+      "sword"
+    ],
+    "out": "action_figure",
+    "why": "An action figure is a poseable character model figure made most commonly of plastic, and often based upon characters from a film, comic book, military, video game, television program, or sport; fictional or historical. These figures are usually marketed toward boys and adult collectors.",
+    "src": "https://en.wikipedia.org/wiki/Action_figure",
+    "verified": true
+  },
+  {
+    "in": [
+      "toy",
+      "cloth"
+    ],
+    "out": "stuffed_toy",
+    "why": "A stuffed toy is a toy with an outer fabric sewn from a textile and stuffed with flexible material. They are known by many names, such as stuffed animals, plush toys, plushies, stuffies and teddies; in Britain and Australia, they may also be called soft toys or cuddly toys.",
+    "src": "https://en.wikipedia.org/wiki/Stuffed_toy",
+    "verified": true
+  },
+  {
+    "in": [
+      "toy",
+      "machine"
+    ],
+    "out": "scale_model",
+    "why": "A scale model is a physical model that is geometrically similar to an object (known as the prototype). Scale models are generally smaller than large prototypes such as vehicles, buildings, or people; but may be larger than small prototypes such as anatomical structures or subatomic particles.",
+    "src": "https://en.wikipedia.org/wiki/Scale_model",
+    "verified": true
+  },
+  {
+    "in": [
+      "game",
+      "table"
+    ],
+    "out": "board_game",
+    "why": "The board game is a type of tabletop game that involves small objects (game pieces) that are placed and moved in particular ways on a specially designed patterned game board, potentially including other components, e.g. dice. The earliest known uses of the term \"board game\" are between the 1840s and 1850s.",
+    "src": "https://en.wikipedia.org/wiki/Board_game",
+    "verified": true
+  },
+  {
+    "in": [
+      "board_game",
+      "army"
+    ],
+    "out": "chess",
+    "why": "Chess is a board game for two players, played on a square board consisting of 64 squares arranged in an 8×8 grid. The players, referred to as \"White\" and \"Black\", each control sixteen pieces: one king, one queen, two rooks, two bishops, two knights, and eight pawns, with each piece type having a different pattern of movement.",
+    "src": "https://en.wikipedia.org/wiki/Chess",
+    "verified": true
+  },
+  {
+    "in": [
+      "board_game",
+      "wood"
+    ],
+    "out": "checkers",
+    "why": "Checkers (North American English), also known as draughts, is a group of strategy board games for two players which involve forward movements of uniform game pieces and mandatory captures by jumping over opponent pieces. Checkers is developed from alquerque.",
+    "src": "https://en.wikipedia.org/wiki/Checkers",
+    "verified": true
+  },
+  {
+    "in": [
+      "board_game",
+      "stone"
+    ],
+    "out": "go_game",
+    "why": "Go, weiqi, or baduk is an abstract strategy board game for two players in which the aim is to fence off more territory than the opponent. The game was invented in China more than 2,500 years ago and is believed to be the oldest board game continuously played to the present day.",
+    "src": "https://en.wikipedia.org/wiki/Go_(game)",
+    "verified": true
+  },
+  {
+    "in": [
+      "game",
+      "bone"
+    ],
+    "out": "dice",
+    "why": "A die (plural: dice, sometimes also used as singular) is a small, throwable object with marked sides that can rest in multiple positions. Dice are used for generating random values, commonly as part of tabletop games, including dice games, board games, role-playing games, and games of chance.",
+    "src": "https://en.wikipedia.org/wiki/Dice",
+    "verified": true
+  },
+  {
+    "in": [
+      "board_game",
+      "dice"
+    ],
+    "out": "backgammon",
+    "why": "Backgammon is a two-player board game played with counters and dice on tables boards. It is the most widespread Western member of the large family of tables games, whose ancestors date back at least 1,600 years.",
+    "src": "https://en.wikipedia.org/wiki/Backgammon",
+    "verified": true
+  },
+  {
+    "in": [
+      "board_game",
+      "seed"
+    ],
+    "out": "mancala",
+    "why": "Mancala is a family of two-player turn-based strategy board games played with small stones, beans, marbles, or seeds, and rows of holes or pits in the earth, a board, or other playing surface. The objective is usually to capture all or some set of the opponent's pieces.",
+    "src": "https://en.wikipedia.org/wiki/Mancala",
+    "verified": true
+  },
+  {
+    "in": [
+      "board_game",
+      "number"
+    ],
+    "out": "pachisi",
+    "why": "Pachisi is a cross and circle board game that originated in Ancient India. It is described in the ancient text Mahabharata under the name of \"Pasha\".",
+    "src": "https://en.wikipedia.org/wiki/Pachisi",
+    "verified": true
+  },
+  {
+    "in": [
+      "board_game",
+      "word"
+    ],
+    "out": "scrabble",
+    "why": "Scrabble is a word game in which two to four players score points by placing tiles, each bearing a single letter, onto a game board divided into a 15×15 grid of squares. The tiles must form words that, in crossword fashion, read left to right in rows or downward in columns and are included in a standard dictionary or lexicon.",
+    "src": "https://en.wikipedia.org/wiki/Scrabble",
+    "verified": true
+  },
+  {
+    "in": [
+      "chess",
+      "china"
+    ],
+    "out": "xiangqi",
+    "why": "Xiangqi, commonly known in English as Chinese chess and in Vietnamese as cờ tướng (literally 'General's chess'), is a strategy board game for two players. Originating in China, it is widely played in both China and Vietnam, as well as in communities of Chinese and Vietnamese descent worldwide.",
+    "src": "https://en.wikipedia.org/wiki/Xiangqi",
+    "verified": true
+  },
+  {
+    "in": [
+      "game",
+      "china"
+    ],
+    "out": "mahjong",
+    "why": "Mahjong is a tile-based game for two to four players. Though regional variations may exclude certain tiles or add unique ones, it is typically played with a set of 144 tiles based on Chinese characters and symbols. Players hold one of four \"wind\" positions referred to as the East, South, West, and North.",
+    "src": "https://en.wikipedia.org/wiki/Mahjong",
+    "verified": true
+  },
+  {
+    "in": [
+      "game",
+      "wood"
+    ],
+    "out": "dominoes",
+    "why": "Dominoes are a family of tile-based games played with pieces. Each domino is a rectangular tile, usually with a line dividing its face into two square ends.",
+    "src": "https://en.wikipedia.org/wiki/Dominoes",
+    "verified": true
+  },
+  {
+    "in": [
+      "game",
+      "paper"
+    ],
+    "out": "card_game",
+    "why": "A card game is any game that uses cards as the primary device with which the game is played, whether the cards are of a traditional design or specifically created for the game (proprietary). Countless card games exist, including families of related games (such as poker).",
+    "src": "https://en.wikipedia.org/wiki/Card_game",
+    "verified": true
+  },
+  {
+    "in": [
+      "card_game",
+      "divination"
+    ],
+    "out": "tarot",
+    "why": "Tarot (first known as trionfi and later as tarocchi or tarocks) is a set of playing cards used in Tarot card games and fortune-telling or divination. From at least the mid-15th century, the tarot was used to play trick-taking card games such as Tarocchini.",
+    "src": "https://en.wikipedia.org/wiki/Tarot",
+    "verified": true
+  },
+  {
+    "in": [
+      "card_game",
+      "money"
+    ],
+    "out": "poker",
+    "why": "Poker is a family of comparing card games in which players wager over which hand is best according to that specific game's rules. It is played worldwide, with varying rules in different places.",
+    "src": "https://en.wikipedia.org/wiki/Poker",
+    "verified": true
+  },
+  {
+    "in": [
+      "card_game",
+      "number"
+    ],
+    "out": "blackjack",
+    "why": "Blackjack (formerly black jack or vingt-un) is a casino banking game. It is the most widely played casino banking game in the world.",
+    "src": "https://en.wikipedia.org/wiki/Blackjack",
+    "verified": true
+  },
+  {
+    "in": [
+      "card_game",
+      "contract"
+    ],
+    "out": "contract_bridge",
+    "why": "Contract bridge, or simply bridge, is a trick-taking card game using a standard 52-card deck. In its basic format, it is played by four players in two competing partnerships, with partners sitting opposite each other around a table.",
+    "src": "https://en.wikipedia.org/wiki/Contract_bridge",
+    "verified": true
+  },
+  {
+    "in": [
+      "game",
+      "money"
+    ],
+    "out": "gambling",
+    "why": "Gambling (also known as betting or gaming) is the wagering of something of value (\"the stakes\") on a random event with the intent of winning something else of value, where instances of strategy are discounted. Gambling thus requires three elements to be present: consideration (an amount wagered), risk (chance), and a prize.",
+    "src": "https://en.wikipedia.org/wiki/Gambling",
+    "verified": true
+  },
+  {
+    "in": [
+      "gambling",
+      "building"
+    ],
+    "out": "casino",
+    "why": "A casino is a facility for gambling. Casinos are often built near or combined with hotels, resorts, restaurants, retail shopping, cruise ships, and other tourist attractions. Some casinos are also known for hosting live entertainment, such as stand-up comedy, concerts, and sporting events.",
+    "src": "https://en.wikipedia.org/wiki/Casino",
+    "verified": true
+  },
+  {
+    "in": [
+      "gambling",
+      "number"
+    ],
+    "out": "lottery",
+    "why": "A lottery (or lotto) is a form of gambling that involves the drawing of numbers at random for a prize. Some governments outlaw lotteries, while others endorse them to the extent of organizing a national or state lottery.",
+    "src": "https://en.wikipedia.org/wiki/Lottery",
+    "verified": true
+  },
+  {
+    "in": [
+      "casino",
+      "wheel"
+    ],
+    "out": "roulette",
+    "why": "Roulette (named after the French word meaning \"little wheel\") is a casino game which was likely developed from the Italian game Biribi. In the game, a player may choose to place a bet on a single number, various groupings of numbers, the color red or black, whether the number is odd or even, or if the number is high or low.",
+    "src": "https://en.wikipedia.org/wiki/Roulette",
+    "verified": true
+  },
+  {
+    "in": [
+      "casino",
+      "machine"
+    ],
+    "out": "slot_machine",
+    "why": "A slot machine, fruit machine (British English), puggie (Scots), poker machine or pokie machine (Australian and New Zealand English) is a gambling machine that creates a game of chance for its customers. A slot machine's standard layout features a screen displaying three or more reels that \"spin\" when the game is activated.",
+    "src": "https://en.wikipedia.org/wiki/Slot_machine",
+    "verified": true
+  },
+  {
+    "in": [
+      "game",
+      "story"
+    ],
+    "out": "role_playing_game",
+    "why": "A role-playing game (sometimes spelled as roleplaying game or abbreviated as RPG) is a game in which players assume and play out the roles of characters in a fictional setting. Players take responsibility for acting out these roles within a narrative, either through literal acting or through a process of structured decision-making regarding character development.",
+    "src": "https://en.wikipedia.org/wiki/Role-playing_game",
+    "verified": true
+  },
+  {
+    "in": [
+      "game",
+      "computer"
+    ],
+    "out": "video_game",
+    "why": "A video game or computer game, is an electronic game that involves interaction with a user interface or input device (such as a joystick, controller, keyboard, or motion sensing device) to generate visual feedback from a display device, most commonly shown in a video format on a television set, computer monitor, flat-panel display or touchscreen on handheld devices, or a virtual reality headset.",
+    "src": "https://en.wikipedia.org/wiki/Video_game",
+    "verified": true
+  },
+  {
+    "in": [
+      "video_game",
+      "television"
+    ],
+    "out": "video_game_console",
+    "why": "A video game console is an electronic device that outputs a video signal or image to display a video game that can typically be played with a game controller.",
+    "src": "https://en.wikipedia.org/wiki/Video_game_console",
+    "verified": true
+  },
+  {
+    "in": [
+      "video_game",
+      "sport"
+    ],
+    "out": "esports",
+    "why": "Esports, short for electronic sports, is a form of competition using video games. Esports often takes the form of organized, multiplayer video game competitions, particularly between professional players, played individually or as teams.",
+    "src": "https://en.wikipedia.org/wiki/Esports",
+    "verified": true
+  },
+  {
+    "in": [
+      "video_game",
+      "coin"
+    ],
+    "out": "arcade_game",
+    "why": "An arcade game, or coin-op game, is a coin-operated entertainment machine typically installed in public businesses such as restaurants, bars and amusement arcades. Most arcade games are presented as primarily games of skill and include arcade video games, pinball machines, electro-mechanical games, redemption games or merchandisers.",
+    "src": "https://en.wikipedia.org/wiki/Arcade_game",
+    "verified": true
+  },
+  {
+    "in": [
+      "arcade_game",
+      "ball"
+    ],
+    "out": "pinball",
+    "why": "Pinball games are a family of games in which a ball is propelled into a specially designed table where it bounces off various obstacles, scoring points either en-route or when it comes to rest. Historically the board was studded with nails called 'pins' and had hollows or pockets which scored points if the ball came to rest in them.",
+    "src": "https://en.wikipedia.org/wiki/Pinball",
+    "verified": true
+  },
+  {
+    "in": [
+      "video_game",
+      "puzzle"
+    ],
+    "out": "tetris",
+    "why": "Tetris is a puzzle video game created by Alexey Pajitnov, a Soviet software engineer, in the mid-1980s. In Tetris, falling pieces made up of four connected blocks, known as tetrominoes, must be arranged into a stack.",
+    "src": "https://en.wikipedia.org/wiki/Tetris",
+    "verified": true
+  },
+  {
+    "in": [
+      "video_game",
+      "brick"
+    ],
+    "out": "minecraft",
+    "why": "Minecraft is a sandbox video game developed and published by the Swedish company Mojang Studios. Following its initial public alpha release as an early access title on 17 May 2009, it was formally released on 18 November 2011 for personal computers.",
+    "src": "https://en.wikipedia.org/wiki/Minecraft",
+    "verified": true
+  },
+  {
+    "in": [
+      "video_game",
+      "animal"
+    ],
+    "out": "pokemon",
+    "why": "Pokémon is a Japanese media franchise consisting of video games, animated series and films, a trading card game, and other related media. The franchise takes place in a shared universe in which humans co-exist with the eponymous creatures, a large variety of species endowed with special powers.",
+    "src": "https://en.wikipedia.org/wiki/Pokémon",
+    "verified": true
+  },
+  {
+    "in": [
+      "game",
+      "fear"
+    ],
+    "out": "hide_and_seek",
+    "why": "Hide-and-seek or hide-and-go-seek is a children's game played by least two players, in which hiders conceal themselves within the surrounding environment while seekers attempt to locate them. The game is initiated after the seeker counts to a predetermined number with their eyes closed while the other players find hiding spots.",
+    "src": "https://en.wikipedia.org/wiki/Hide-and-seek",
+    "verified": true
+  },
+  {
+    "in": [
+      "game",
+      "runner"
+    ],
+    "out": "tag_game",
+    "why": "Tag (also called chase, tig, it, tiggy, tips, tick, on-on and tip) is a playground game involving one or more players chasing other players in an attempt to \"tag\" and mark them out of play, typically by touching with a hand. There are many variations; most forms have no teams, scores, or equipment.",
+    "src": "https://en.wikipedia.org/wiki/Tag_(game)",
+    "verified": true
+  },
+  {
+    "in": [
+      "game",
+      "number"
+    ],
+    "out": "hopscotch",
+    "why": "Hopscotch is a playground game popular in many countries around the world. Players toss a small object, sometimes called a piggy or lagger, into numbered triangles or a pattern of rectangles outlined on the ground and then hop or jump through the spaces and retrieve the object.",
+    "src": "https://en.wikipedia.org/wiki/Hopscotch",
+    "verified": true
+  },
+  {
+    "in": [
+      "sport",
+      "tool"
+    ],
+    "out": "sports_equipment",
+    "why": "Sports equipment, also called sporting goods, are the tools, materials, apparel, and gear that vary in shape, size, and usage in a particular sport. It includes balls, nets, rackets, protective gears like helmets, goggles, etc. Since the performer must use sports equipment, it can also serve for protection.",
+    "src": "https://en.wikipedia.org/wiki/Sports_equipment",
+    "verified": true
+  },
+  {
+    "in": [
+      "sport",
+      "arena"
+    ],
+    "out": "stadium",
+    "why": "A stadium (pl.: stadiums or stadia) is a place or venue for (mostly) outdoor sports, concerts, or other events and consists of a field or stage completely or partially surrounded by a tiered structure designed to allow spectators to stand or sit and view the event.",
+    "src": "https://en.wikipedia.org/wiki/Stadium",
+    "verified": true
+  },
+  {
+    "in": [
+      "sport",
+      "animal"
+    ],
+    "out": "mascot",
+    "why": "A mascot is any human, animal, or object thought to bring luck, or anything used to represent a group with a common public identity, such as a school, sports team, society, military unit, or brand name. Mascots are also used as fictional, representative spokespeople for consumer products.",
+    "src": "https://en.wikipedia.org/wiki/Mascot",
+    "verified": true
+  },
+  {
+    "in": [
+      "sport",
+      "drug"
+    ],
+    "out": "doping_in_sport",
+    "why": "In competitive sports, doping is the use of banned athletic performance-enhancing drugs (PEDs) by athletes as a way of cheating. As stated in the World Anti-Doping Code by WADA, doping is defined as the occurrence of one or more of the anti-doping rule violations outlined in Article 2.1 through Article 2.11 of the Code.",
+    "src": "https://en.wikipedia.org/wiki/Doping_in_sport",
+    "verified": true
+  },
+  {
+    "in": [
+      "sport",
+      "fear"
+    ],
+    "out": "extreme_sport",
+    "why": "Extreme sports or action sports are activities perceived as involving a high degree of risk of injury or death. These activities often involve speed, height, a high level of physical exertion, and highly specialized gear.",
+    "src": "https://en.wikipedia.org/wiki/Extreme_sport",
+    "verified": true
+  },
+  {
+    "in": [
+      "sport",
+      "ancient_greece"
+    ],
+    "out": "olympic_games",
+    "why": "The modern Olympic Games are a series of international multi-sport events. Considered among the biggest sporting events in the world, the Olympics are organised into distinct Summer and Winter Games, each featuring different sports.",
+    "src": "https://en.wikipedia.org/wiki/Olympic_Games",
+    "verified": true
+  },
+  {
+    "in": [
+      "olympic_games",
+      "zeus"
+    ],
+    "out": "ancient_olympic_games",
+    "why": "The ancient Olympic Games, or the ancient Olympics, were a series of athletic competitions among representatives of city-states and one of the Panhellenic Games of ancient Greece. They were held at the Panhellenic religious sanctuary of Olympia, in honor of Zeus, and the Greeks gave them a mythological origin.",
+    "src": "https://en.wikipedia.org/wiki/Ancient_Olympic_Games",
+    "verified": true
+  },
+  {
+    "in": [
+      "sport",
+      "ball"
+    ],
+    "out": "association_football",
+    "why": "Association football, commonly known as football or soccer, is a team sport played between two teams of 11 players each who mostly use their feet to kick an inflated ball around a pitch (playing field). The objective of the game is to score more goals than the opposing team by moving the ball into the rectangular-framed goal which that team defends.",
+    "src": "https://en.wikipedia.org/wiki/Association_football",
+    "verified": true
+  },
+  {
+    "in": [
+      "association_football",
+      "helmet"
+    ],
+    "out": "american_football",
+    "why": "American football, referred to simply as football in the United States and Canada and also known as gridiron football, is a sport played by two teams of eleven players on a rectangular field with goalposts at each end.",
+    "src": "https://en.wikipedia.org/wiki/American_football",
+    "verified": true
+  },
+  {
+    "in": [
+      "ball",
+      "bat"
+    ],
+    "out": "baseball",
+    "why": "Baseball is a bat-and-ball sport played between two teams of nine players each, taking turns batting and fielding. Gameplay centers around the pitcher on the fielding team throwing a baseball to a batter on the opposing team, who tries to hit it into the field of play.",
+    "src": "https://en.wikipedia.org/wiki/Baseball",
+    "verified": true
+  },
+  {
+    "in": [
+      "baseball",
+      "glove"
+    ],
+    "out": "softball",
+    "why": "Softball is a bat-and-ball sport played between two teams on a diamond-shaped field, who take turns batting and fielding. There are two primary forms: Fast-pitch and slow-pitch.",
+    "src": "https://en.wikipedia.org/wiki/Softball",
+    "verified": true
+  },
+  {
+    "in": [
+      "ball",
+      "basket"
+    ],
+    "out": "basketball",
+    "why": "Basketball is a team sport in which two teams of five players each (excluding substitutes) oppose one another on a rectangular court. Players compete with the primary objective of shooting a basketball through a hoop (a basket mounted to a backboard) at each end of the court.",
+    "src": "https://en.wikipedia.org/wiki/Basketball",
+    "verified": true
+  },
+  {
+    "in": [
+      "ball",
+      "rope"
+    ],
+    "out": "volleyball",
+    "why": "Volleyball is a team sport in which two teams of six players are separated by a net. Each team tries to score points by grounding a ball on the other team's court under organized rules.",
+    "src": "https://en.wikipedia.org/wiki/Volleyball",
+    "verified": true
+  },
+  {
+    "in": [
+      "ball",
+      "hand"
+    ],
+    "out": "handball",
+    "why": "Handball (also known as team handball, European handball, Olympic handball, or indoor handball) is a team sport in which two teams of seven players each (six outcourt players and a goalkeeper) pass a ball using their hands with the aim of throwing it into the goal of the opposing team. A standard match consists of two periods of 30 minutes, and the team that scores more goals wins.",
+    "src": "https://en.wikipedia.org/wiki/Handball",
+    "verified": true
+  },
+  {
+    "in": [
+      "association_football",
+      "field"
+    ],
+    "out": "rugby_union",
+    "why": "Rugby union football, commonly known simply as rugby union or often just rugby, is a close-contact team sport that originated at Rugby School in England in the first half of the 19th century. Rugby involves running with the ball in hand.",
+    "src": "https://en.wikipedia.org/wiki/Rugby_union",
+    "verified": true
+  },
+  {
+    "in": [
+      "ice",
+      "stick"
+    ],
+    "out": "ice_hockey",
+    "why": "Ice hockey, known simply as hockey in North America and parts of Europe, is a team sport played on ice skates, usually on an ice skating rink with lines and markings specific to the sport. It belongs to a family of sports called hockey.",
+    "src": "https://en.wikipedia.org/wiki/Ice_hockey",
+    "verified": true
+  },
+  {
+    "in": [
+      "stick",
+      "field"
+    ],
+    "out": "field_hockey",
+    "why": "Hockey, or field hockey in North America, is a fast-paced team sport in which two teams of eleven players (ten field players and one goalkeeper) use curved sticks to maneuver a small, hard hockey ball towards the rival team's shooting circle and then into the goal. The team with the most goals at the end of play wins the match.",
+    "src": "https://en.wikipedia.org/wiki/Field_hockey",
+    "verified": true
+  },
+  {
+    "in": [
+      "stick",
+      "ball"
+    ],
+    "out": "lacrosse",
+    "why": "Lacrosse is a contact team sport played with a lacrosse stick and a lacrosse ball. It is the oldest organized sport in North America, with its origins with the indigenous people of North America as early as the 12th century.",
+    "src": "https://en.wikipedia.org/wiki/Lacrosse",
+    "verified": true
+  },
+  {
+    "in": [
+      "horse",
+      "stick"
+    ],
+    "out": "polo",
+    "why": "Polo is a mallet and ball game that is played on ponyback on an English style riding as a traditional field sport, and is one of the oldest known team sports in the world. Outdoor or \"field\" polo is played on a 300-by-160-yard grass field, while indoor or \"arena\" polo is played on a smaller 300-by-150-foot dirt arena.",
+    "src": "https://en.wikipedia.org/wiki/Polo",
+    "verified": true
+  },
+  {
+    "in": [
+      "ice",
+      "stone"
+    ],
+    "out": "curling",
+    "why": "Curling is a sport in which players slide stones on a sheet of ice towards a target area that is segmented into four concentric circles. It is related to bowls, boules, and shuffleboard.",
+    "src": "https://en.wikipedia.org/wiki/Curling",
+    "verified": true
+  },
+  {
+    "in": [
+      "rope",
+      "group"
+    ],
+    "out": "tug_of_war",
+    "why": "Tug of war (also known as tug o' war, tug-a-war, tug war, rope war, rope pulling, or tugging war) is a sport in which two teams compete by pulling on opposite ends of a rope, with the goal of bringing the rope a certain distance in one direction against the force of the opposing team's pull.",
+    "src": "https://en.wikipedia.org/wiki/Tug_of_war",
+    "verified": true
+  },
+  {
+    "in": [
+      "runner",
+      "race"
+    ],
+    "out": "running",
+    "why": "Running is a method of terrestrial locomotion by which humans and other animals move quickly on foot. Running has an aerial phase in which both, or all, feet are above the ground at some stage (though there are exceptions).",
+    "src": "https://en.wikipedia.org/wiki/Running",
+    "verified": true
+  },
+  {
+    "in": [
+      "running",
+      "distance"
+    ],
+    "out": "marathon",
+    "why": "The marathon is a long-distance foot race with a distance of 42.195 kilometres (c. 26.22 mi), usually run as a road race, but the distance can be covered on trail routes. The marathon can be completed by running or with a run/walk strategy.",
+    "src": "https://en.wikipedia.org/wiki/Marathon",
+    "verified": true
+  },
+  {
+    "in": [
+      "running",
+      "wall"
+    ],
+    "out": "hurdling",
+    "why": "Hurdling is the act of jumping over an obstacle at a high speed or in a sprint. In the early 19th century, hurdlers ran at and jumped over each hurdle (sometimes known as 'burgles'), landing on both feet and checking their forward motion.",
+    "src": "https://en.wikipedia.org/wiki/Hurdling",
+    "verified": true
+  },
+  {
+    "in": [
+      "running",
+      "sand"
+    ],
+    "out": "long_jump",
+    "why": "The long jump is a track and field event in which athletes combine speed, strength and agility in an attempt to leap as far as possible from a takeoff point. Along with the triple jump, the two events that measure jumping for distance as a group are referred to as the \"horizontal jumps\".",
+    "src": "https://en.wikipedia.org/wiki/Long_jump",
+    "verified": true
+  },
+  {
+    "in": [
+      "running",
+      "rope"
+    ],
+    "out": "high_jump",
+    "why": "The high jump is a track and field event in which competitors must jump unaided over a horizontal bar placed at measured heights without dislodging it. In its modern, most-practiced format, a bar is placed between two standards with a crash mat for landing.",
+    "src": "https://en.wikipedia.org/wiki/High_jump",
+    "verified": true
+  },
+  {
+    "in": [
+      "stick",
+      "high_jump"
+    ],
+    "out": "pole_vault",
+    "why": "Pole vaulting, also known as pole jumping, is a track and field event in which an athlete uses a long and flexible pole, usually made from fiberglass or carbon fiber, as an aid to jump over a bar.",
+    "src": "https://en.wikipedia.org/wiki/Pole_vault",
+    "verified": true
+  },
+  {
+    "in": [
+      "stone",
+      "weight"
+    ],
+    "out": "shot_put",
+    "why": "The shot put is a track and field event involving \"putting\" (or throwing) a heavy spherical ball—the shot—as far as possible. For men, the sport has been a part of the modern Olympics since their revival in 1896, and women's competition began in 1948.",
+    "src": "https://en.wikipedia.org/wiki/Shot_put",
+    "verified": true
+  },
+  {
+    "in": [
+      "shot_put",
+      "ancient_greece"
+    ],
+    "out": "discus_throw",
+    "why": "The discus throw, also known as disc throw, is a track and field event in which the participant athlete throws an oblate spheroid weight – called a discus – in an attempt to achieve a farther distance than other competitors. It is an ancient sport originated in ancient Greece, as demonstrated by the fifth-century-BC Myron statue Discobolus.",
+    "src": "https://en.wikipedia.org/wiki/Discus_throw",
+    "verified": true
+  },
+  {
+    "in": [
+      "spear",
+      "running"
+    ],
+    "out": "javelin_throw",
+    "why": "The javelin throw is a track and field event where the javelin, a spear about 2.5 m (8 ft 2 in) in length, is thrown as far as possible. The javelin thrower gains momentum by running within a predetermined area.",
+    "src": "https://en.wikipedia.org/wiki/Javelin_throw",
+    "verified": true
+  },
+  {
+    "in": [
+      "running",
+      "shot_put"
+    ],
+    "out": "decathlon",
+    "why": "The decathlon is a combined event in athletics consisting of 10 track and field events.",
+    "src": "https://en.wikipedia.org/wiki/Decathlon",
+    "verified": true
+  },
+  {
+    "in": [
+      "running",
+      "field"
+    ],
+    "out": "track_and_field",
+    "why": "Track and field is a sport that includes many different kinds of athletic contests that are based on running, jumping, and throwing. The name used in North America is derived from where the sport takes place, a running track and a grass field for the throwing and some of the jumping events.",
+    "src": "https://en.wikipedia.org/wiki/Track_and_field",
+    "verified": true
+  },
+  {
+    "in": [
+      "ice",
+      "shoe"
+    ],
+    "out": "ice_skating",
+    "why": "Ice skating is the self-propulsion and gliding of a person across a flat ice surface, using metal-bladed ice skates. People skate for various reasons, including recreation (fun), exercise, competitive sports, and commuting.",
+    "src": "https://en.wikipedia.org/wiki/Ice_skating",
+    "verified": true
+  },
+  {
+    "in": [
+      "ice_skating",
+      "dance"
+    ],
+    "out": "figure_skating",
+    "why": "Figure skating is a sport in which individuals, pairs, or groups perform jumps, spins, and dance moves on ice. Their footwear are figure skates.",
+    "src": "https://en.wikipedia.org/wiki/Figure_skating",
+    "verified": true
+  },
+  {
+    "in": [
+      "ice_skating",
+      "race"
+    ],
+    "out": "speed_skating",
+    "why": "Speed skating is a competitive form of ice skating in which the competitors race each other in travelling a certain distance on skates. Types of speed skating are long-track speed skating, short-track speed skating, and marathon speed skating.",
+    "src": "https://en.wikipedia.org/wiki/Speed_skating",
+    "verified": true
+  },
+  {
+    "in": [
+      "wheel",
+      "shoe"
+    ],
+    "out": "roller_skating",
+    "why": "Roller skating is the act of travelling on surfaces with roller skates. It is a recreational activity, a sport, and a form of transportation.",
+    "src": "https://en.wikipedia.org/wiki/Roller_skating",
+    "verified": true
+  },
+  {
+    "in": [
+      "roller_skating",
+      "wood"
+    ],
+    "out": "skateboarding",
+    "why": "Skateboarding is an action sport that involves riding and performing tricks using a skateboard, as well as a recreational activity, an art form, an entertainment industry job, and a method of transportation. Originating in the United States, skateboarding has been shaped and influenced by many skateboarders throughout the years.",
+    "src": "https://en.wikipedia.org/wiki/Skateboarding",
+    "verified": true
+  },
+  {
+    "in": [
+      "water",
+      "muscle"
+    ],
+    "out": "swimming",
+    "why": "Swimming is the self-propulsion of a person through water, usually for recreation, sport, exercise, or survival. Swimmers achieve locomotion by coordinating limb and body movements to achieve a level of buoyancy and hydrodynamic thrust that results in directional motion.",
+    "src": "https://en.wikipedia.org/wiki/Swimming",
+    "verified": true
+  },
+  {
+    "in": [
+      "swimming",
+      "tower"
+    ],
+    "out": "diving_sport",
+    "why": "Diving is the sport of jumping or falling into water from a platform or springboard, usually while performing acrobatics. Diving is an internationally recognised sport that is part of the Olympic Games.",
+    "src": "https://en.wikipedia.org/wiki/Diving_(sport)",
+    "verified": true
+  },
+  {
+    "in": [
+      "boat",
+      "oar"
+    ],
+    "out": "rowing_sport",
+    "why": "Rowing, often called crew in the United States, is the sport of racing boats using oars. It differs from paddling sports in that rowing oars (called blades in the United Kingdom) are attached to the boat using rowlocks, while paddles are not connected to the boat.",
+    "src": "https://en.wikipedia.org/wiki/Rowing_(sport)",
+    "verified": true
+  },
+  {
+    "in": [
+      "sail",
+      "race"
+    ],
+    "out": "sailing_sport",
+    "why": "The sport of sailing involves a variety of competitive sailing formats that are sanctioned through various sailing federations and yacht clubs. Racing disciplines include matches within a fleet of sailing craft, between a pair thereof or among teams.",
+    "src": "https://en.wikipedia.org/wiki/Sailing_(sport)",
+    "verified": true
+  },
+  {
+    "in": [
+      "swimming",
+      "mask"
+    ],
+    "out": "underwater_diving",
+    "why": "Underwater diving, as a human activity, is the practice of descending below the water's surface to interact with the environment. It is also often referred to as diving, an ambiguous term with several possible meanings, depending on context.",
+    "src": "https://en.wikipedia.org/wiki/Underwater_diving",
+    "verified": true
+  },
+  {
+    "in": [
+      "swimming",
+      "building"
+    ],
+    "out": "swimming_pool",
+    "why": "A swimming pool, swimming bath, wading pool, paddling pool, or simply pool, is a structure designed to hold water to enable swimming and associated activities. Pools can be built into the ground (in-ground pools) or built above ground (as a freestanding construction or as part of a building or other larger structure), and may be found as a feature aboard ships.",
+    "src": "https://en.wikipedia.org/wiki/Swimming_pool",
+    "verified": true
+  },
+  {
+    "in": [
+      "sword",
+      "sport"
+    ],
+    "out": "martial_arts",
+    "why": "Martial arts are codified systems and traditions of combat. They are practiced for a number of reasons ranging from self-defense, street fighting, military, and law enforcement to non-violent exercising, ceremonial, competition; physical, mental, and spiritual development; entertainment; and to preserve the intangible cultural heritage of a nation. The term \"martial arts\" was originally used to refer to the traditions of East Asia, but has subsequently been applied to other practices which originated outside that r",
+    "src": "https://en.wikipedia.org/wiki/Martial_arts",
+    "verified": true
+  },
+  {
+    "in": [
+      "martial_arts",
+      "glove"
+    ],
+    "out": "boxing",
+    "why": "Boxing is a combat sport and martial art. Taking place in a boxing ring, it involves two opponents throwing punches at each other for a predetermined amount of time. It is usually done wearing protective equipment, such as protective gloves, hand wraps, and mouthguards.",
+    "src": "https://en.wikipedia.org/wiki/Boxing",
+    "verified": true
+  },
+  {
+    "in": [
+      "martial_arts",
+      "japan"
+    ],
+    "out": "judo",
+    "why": "Judo is an unarmed modern Japanese martial art, combat sport, Olympic sport (since 1964), Paralympic sport (since 1988) and Commonwealth Games sport (since 1990). Judo is the most prominent form of Samurai throws and self-defense competed internationally.",
+    "src": "https://en.wikipedia.org/wiki/Judo",
+    "verified": true
+  },
+  {
+    "in": [
+      "martial_arts",
+      "hand"
+    ],
+    "out": "karate",
+    "why": "Karate, also karate-do, is a martial art developed in the Ryukyu Kingdom. It developed from the indigenous Ryukyuan martial arts (called te, \"hand\"; tī in Okinawan) under the influence of Chinese martial arts.",
+    "src": "https://en.wikipedia.org/wiki/Karate",
+    "verified": true
+  },
+  {
+    "in": [
+      "martial_arts",
+      "south_korea"
+    ],
+    "out": "taekwondo",
+    "why": "Taekwondo is a Korean martial art and combat sport involving primarily kicking techniques and punching. \"Taekwondo\" can be translated as tae (\"strike with foot\"), kwon (\"strike with hand\"), and do (\"the art or way\").",
+    "src": "https://en.wikipedia.org/wiki/Taekwondo",
+    "verified": true
+  },
+  {
+    "in": [
+      "martial_arts",
+      "ritual"
+    ],
+    "out": "sumo",
+    "why": "Sumo is a form of competitive full-contact wrestling where a rikishi (wrestler) attempts to force his opponent out of a dohyō (circular ring) or into touching the ground with any body part other than the soles of his feet (usually by throwing, shoving or pushing him down). Sumo originated in Japan, the only country where it is practised professionally and where it is considered the national sport.",
+    "src": "https://en.wikipedia.org/wiki/Sumo",
+    "verified": true
+  },
+  {
+    "in": [
+      "martial_arts",
+      "ball"
+    ],
+    "out": "wrestling",
+    "why": "Wrestling is a martial art, combat sport, and form of entertainment that involves grappling with an opponent and striving to obtain a position of advantage through different throws or techniques, within a given ruleset. Wrestling involves different grappling-type techniques, such as clinch fighting, throws and takedowns, joint locks, pins, and other grappling holds.",
+    "src": "https://en.wikipedia.org/wiki/Wrestling",
+    "verified": true
+  },
+  {
+    "in": [
+      "martial_arts",
+      "dance"
+    ],
+    "out": "capoeira",
+    "why": "Capoeira is an Afro-Brazilian martial art and game that includes elements of dance, acrobatics, music, and spirituality. Capoeira has been practiced among Black Brazilians for centuries; scholars have identified roots in engolo, a traditional Bantu martial art practiced in Angola.",
+    "src": "https://en.wikipedia.org/wiki/Capoeira",
+    "verified": true
+  },
+  {
+    "in": [
+      "boxing",
+      "karate"
+    ],
+    "out": "kickboxing",
+    "why": "Kickboxing is an umbrella term for different styles of full-contact hybrid boxing type, combat sports, and martial arts based on punching and kicking. Kickboxing originated in various times in history.",
+    "src": "https://en.wikipedia.org/wiki/Kickboxing",
+    "verified": true
+  },
+  {
+    "in": [
+      "boxing",
+      "wrestling"
+    ],
+    "out": "mixed_martial_arts",
+    "why": "Mixed martial arts (MMA) is a full-contact combat sport based on striking and grappling, incorporating techniques from various combat sports from around the world. The precursors of modern MMA existed in various parts of the world since the ancient period to the 20th century in different forms.",
+    "src": "https://en.wikipedia.org/wiki/Mixed_martial_arts",
+    "verified": true
+  },
+  {
+    "in": [
+      "kickboxing",
+      "ritual"
+    ],
+    "out": "muay_thai",
+    "why": "Muay Thai or Muaythai, sometimes referred to as Thai boxing, the Art of Eight Limbs or the Science of Eight Limbs, is a Thai martial art and full-contact combat sport that uses stand-up striking, sweeps, and various clinching techniques. The name \"Art of Eight Limbs\" refers to the combined use of fists, elbows, knees and shins.",
+    "src": "https://en.wikipedia.org/wiki/Muay_Thai",
+    "verified": true
+  },
+  {
+    "in": [
+      "judo",
+      "wrestling"
+    ],
+    "out": "brazilian_jiu_jitsu",
+    "why": "Brazilian jiu-jitsu, commonly abbreviated as BJJ, is a self-defense system, martial art, and combat sport based on grappling, ground fighting, and submission holds. It is primarily a ground-based fighting style and involves taking one's opponent down to the ground, gaining a dominant position, and then using a number of techniques to force them into submission such as joint locks, chokeholds, or compression locks.",
+    "src": "https://en.wikipedia.org/wiki/Brazilian_jiu-jitsu",
+    "verified": true
+  },
+  {
+    "in": [
+      "martial_arts",
+      "china"
+    ],
+    "out": "chinese_martial_arts",
+    "why": "Chinese martial arts, commonly referred to with umbrella terms kung fu, kuoshu or wushu, are multiple fighting styles that have developed over the centuries in China. These fighting styles are often classified according to common traits, identified as \"families\" of martial arts.",
+    "src": "https://en.wikipedia.org/wiki/Chinese_martial_arts",
+    "verified": true
+  },
+  {
+    "in": [
+      "bow",
+      "sport"
+    ],
+    "out": "archery",
+    "why": "Archery is the sport, practice, or skill of using a bow to shoot arrows at a target. The word comes from the Latin arcus, meaning bow.",
+    "src": "https://en.wikipedia.org/wiki/Archery",
+    "verified": true
+  },
+  {
+    "in": [
+      "sword",
+      "competition"
+    ],
+    "out": "fencing",
+    "why": "Fencing is a combat sport that features sword fighting. It consists of three primary disciplines: foil, épée, and sabre (also spelled saber), each with its own blade and set of rules. Most competitive fencers specialise in one of these disciplines.",
+    "src": "https://en.wikipedia.org/wiki/Fencing",
+    "verified": true
+  },
+  {
+    "in": [
+      "fish",
+      "rope"
+    ],
+    "out": "angling",
+    "why": "Angling is a fishing technique that uses a fish hook attached to a fishing line to tether individual fish in the mouth. The fishing line is usually manipulated with a fishing rod, although rodless techniques such as handlining also exist.",
+    "src": "https://en.wikipedia.org/wiki/Angling",
+    "verified": true
+  },
+  {
+    "in": [
+      "ball",
+      "grass"
+    ],
+    "out": "golf",
+    "why": "Golf is a club-and-ball sport in which players use various clubs to hit a ball into a series of holes on a course in as few strokes as possible. The game was first played in the 15th century in Scotland, and as such, the country is often accredited as \"the home of Golf\".",
+    "src": "https://en.wikipedia.org/wiki/Golf",
+    "verified": true
+  },
+  {
+    "in": [
+      "ball",
+      "court"
+    ],
+    "out": "tennis",
+    "why": "Tennis is a racket sport that is played either individually against a single opponent (singles) or between two teams of two players each (doubles). Each player uses a tennis racket strung with a cord to strike a hollow rubber ball covered with felt over or around a net and into the opponent's court.",
+    "src": "https://en.wikipedia.org/wiki/Tennis",
+    "verified": true
+  },
+  {
+    "in": [
+      "tennis",
+      "table"
+    ],
+    "out": "table_tennis",
+    "why": "Table tennis (also known as ping-pong) is a racket sport derived from tennis but distinguished by its playing surface being atop a stationary table, rather than the court on which players stand.",
+    "src": "https://en.wikipedia.org/wiki/Table_tennis",
+    "verified": true
+  },
+  {
+    "in": [
+      "tennis",
+      "feather"
+    ],
+    "out": "badminton",
+    "why": "Badminton is a racquet sport played using racquets to hit a shuttlecock across a net. Although it may be played with larger teams, the most common forms of the game are \"singles\" (with one player per side) and \"doubles\" (with two players per side).",
+    "src": "https://en.wikipedia.org/wiki/Badminton",
+    "verified": true
+  },
+  {
+    "in": [
+      "ball",
+      "wood"
+    ],
+    "out": "bowling",
+    "why": "Bowling is a target sport and recreational activity in which a player rolls a ball toward pins (in pin bowling) or another target (in target bowling). Most references to bowling are to pin bowling, specifically tenpin bowling (played in the United Kingdom, Commonwealth countries, and elsewhere).",
+    "src": "https://en.wikipedia.org/wiki/Bowling",
+    "verified": true
+  },
+  {
+    "in": [
+      "ball",
+      "table"
+    ],
+    "out": "cue_sports",
+    "why": "Cue sports are a wide variety of games of skill played with a cue stick, which is used to strike billiard balls and thereby cause them to move around a table covered in cloth (usually baize), bounded by elastic bumpers known as cushions. Cue sports, a category of stick sports, may collectively be referred to as billiards, though this term has more specific connotations in some English dialects.",
+    "src": "https://en.wikipedia.org/wiki/Cue_sports",
+    "verified": true
+  },
+  {
+    "in": [
+      "cue_sports",
+      "number"
+    ],
+    "out": "snooker",
+    "why": "Snooker is a cue sport played on a rectangular billiards table covered with a green cloth called baize, with six pockets: one at each corner and one in the middle of each long side. First played by British Army officers stationed in India in the second half of the 19th century, the game is played with 22 balls: a white cue ball, 15 reds and six colours – yellow, green, brown, blue, pink and black.",
+    "src": "https://en.wikipedia.org/wiki/Snooker",
+    "verified": true
+  },
+  {
+    "in": [
+      "arrow",
+      "game"
+    ],
+    "out": "darts",
+    "why": "Darts is a competitive sport in which two or more players bare-handedly throw small sharp-pointed projectiles known as darts at a round target known as a dartboard. Points can be scored by hitting specific marked areas of the board, though unlike in sports such as archery, these areas are distributed all across the board and do not follow a principle of points increasing toward the board's bullseye.",
+    "src": "https://en.wikipedia.org/wiki/Darts",
+    "verified": true
+  },
+  {
+    "in": [
+      "muscle",
+      "weight"
+    ],
+    "out": "bodybuilding",
+    "why": "Bodybuilding is the practice of progressive resistance exercise to build, control, and develop one's muscles via hypertrophy. An individual who engages in this activity is referred to as a bodybuilder.",
+    "src": "https://en.wikipedia.org/wiki/Bodybuilding",
+    "verified": true
+  },
+  {
+    "in": [
+      "weight",
+      "competition"
+    ],
+    "out": "powerlifting",
+    "why": "Powerlifting is a competitive strength sport that consists of three attempts at maximal weight on three lifts: squat, bench press, and deadlift. As in the sport of Olympic weightlifting, it involves the athlete attempting a maximal weight single-lift effort of a barbell loaded with weight plates.",
+    "src": "https://en.wikipedia.org/wiki/Powerlifting",
+    "verified": true
+  },
+  {
+    "in": [
+      "weight",
+      "olympic_games"
+    ],
+    "out": "olympic_weightlifting",
+    "why": "Weightlifting (often known as Olympic weightlifting) is a competitive strength sport in which athletes compete in lifting a barbell loaded with weight plates from the ground to overhead, with the aim of successfully lifting the heaviest weights. Athletes compete in two specific ways of lifting the barbell overhead.",
+    "src": "https://en.wikipedia.org/wiki/Olympic_weightlifting",
+    "verified": true
+  },
+  {
+    "in": [
+      "muscle",
+      "dance"
+    ],
+    "out": "gymnastics",
+    "why": "Gymnastics is a group of sports that includes physical exercises requiring balance, strength, flexibility, agility, coordination, artistry and endurance. The movements involved in gymnastics contribute to the development of the arms, legs, shoulders, back, chest, and abdominal muscle groups.",
+    "src": "https://en.wikipedia.org/wiki/Gymnastics",
+    "verified": true
+  },
+  {
+    "in": [
+      "rope",
+      "wall"
+    ],
+    "out": "climbing",
+    "why": "Climbing is the activity of using one's hands, feet, or other parts of the body to ascend steep topographical objects that can range from the world's tallest mountains (e.g. the eight thousanders) to small boulders. Climbing is done for locomotion, sporting recreation, for competition, and in trades that rely on ascension, such as construction and military operations.",
+    "src": "https://en.wikipedia.org/wiki/Climbing",
+    "verified": true
+  },
+  {
+    "in": [
+      "climbing",
+      "snow"
+    ],
+    "out": "mountaineering",
+    "why": "Mountaineering is a set of outdoor activities that involves ascending mountains. Mountaineering-related activities include traditional outdoor climbing, skiing, and traversing via ferratas that have become sports in their own right.",
+    "src": "https://en.wikipedia.org/wiki/Mountaineering",
+    "verified": true
+  },
+  {
+    "in": [
+      "climbing",
+      "stone"
+    ],
+    "out": "rock_climbing",
+    "why": "Rock climbing is a climbing sports discipline that involves ascending routes consisting of natural rock in an outdoor environment, or on artificial climbing walls in a mostly indoor environment. Routes are documented in guidebooks, and on online databases, detailing how to climb the route (called the beta), and who made the first ascent (or FA) and the coveted first free ascent (or FFA).",
+    "src": "https://en.wikipedia.org/wiki/Rock_climbing",
+    "verified": true
+  },
+  {
+    "in": [
+      "bicycle",
+      "race"
+    ],
+    "out": "cycle_sport",
+    "why": "Cycle sport is a competitive physical activity using bicycles. There are several categories of bicycle racing including road bicycle racing, cyclo-cross, mountain bike racing, track cycling, BMX, and cycle speedway.",
+    "src": "https://en.wikipedia.org/wiki/Cycle_sport",
+    "verified": true
+  },
+  {
+    "in": [
+      "cycle_sport",
+      "france"
+    ],
+    "out": "tour_de_france",
+    "why": "The Tour de France is an annual men's multiple-stage road cycling race held primarily in France. It is the oldest and most prestigious of the three Grand Tours, which include the Giro d'Italia and the Vuelta a España.",
+    "src": "https://en.wikipedia.org/wiki/Tour_de_France",
+    "verified": true
+  },
+  {
+    "in": [
+      "horse",
+      "sport"
+    ],
+    "out": "equestrianism",
+    "why": "Equestrianism, commonly known as horse riding (Commonwealth English) or horseback riding (American English), includes the disciplines of riding, driving, and vaulting. This broad description includes the use of horses for practical working purposes, transportation, recreational activities, artistic or cultural exercises, and competitive sport.",
+    "src": "https://en.wikipedia.org/wiki/Equestrianism",
+    "verified": true
+  },
+  {
+    "in": [
+      "horse",
+      "race"
+    ],
+    "out": "horse_racing",
+    "why": "Horse racing is an equestrian performance activity, typically involving two or more horses ridden by jockeys (or sometimes driven without riders) over a set distance for competition. It is one of the most ancient of all sports, as its basic premise – to identify which of two or more horses is the fastest over a set course or distance – has been mostly unchanged since at least classical antiquity.",
+    "src": "https://en.wikipedia.org/wiki/Horse_racing",
+    "verified": true
+  },
+  {
+    "in": [
+      "horse",
+      "bull"
+    ],
+    "out": "rodeo",
+    "why": "Rodeo is a competitive equestrian sport that arose out of the working practices of cattle herding in Spain and Mexico, expanding throughout the Americas and to other nations. It was originally based on the skills required of the working vaqueros and, later, cowboys in what today is the western United States, western Canada, and northern Mexico.",
+    "src": "https://en.wikipedia.org/wiki/Rodeo",
+    "verified": true
+  },
+  {
+    "in": [
+      "bull",
+      "cloth"
+    ],
+    "out": "bullfighting",
+    "why": "Bullfighting is a physical contest that involves a bullfighter attempting to subdue, immobilize, or kill a bull, usually according to a set of rules, guidelines, or cultural expectations. Bullfighting can also loosely refer to other spectacles in which two bulls are pitted against each other, that is, bull wrestling.",
+    "src": "https://en.wikipedia.org/wiki/Bullfighting",
+    "verified": true
+  },
+  {
+    "in": [
+      "pistol",
+      "sport"
+    ],
+    "out": "shooting_sports",
+    "why": "Shooting sports are a group of competitive and recreational sporting activities which focus on shooting accuracy, precision and speed. Shooting is the art of using ranged weapons, mainly firearms and airguns, such as handguns, rifles and shotguns, and also bows/crossbows.",
+    "src": "https://en.wikipedia.org/wiki/Shooting_sports",
+    "verified": true
+  },
+  {
+    "in": [
+      "shooting_sports",
+      "skiing"
+    ],
+    "out": "biathlon",
+    "why": "Biathlon is a winter sport that combines cross-country skiing and rifle shooting. It developed from the sport of military patrol, which began in 19th century Scandinavia and originated in ski warfare.",
+    "src": "https://en.wikipedia.org/wiki/Biathlon",
+    "verified": true
+  },
+  {
+    "in": [
+      "snow",
+      "wood"
+    ],
+    "out": "skiing",
+    "why": "Skiing is the use of skis to glide on snow for basic transport, a recreational activity, or a competitive winter sport. Many types of competitive skiing events are recognized by the International Olympic Committee (IOC), and the International Ski and Snowboard Federation (FIS).",
+    "src": "https://en.wikipedia.org/wiki/Skiing",
+    "verified": true
+  },
+  {
+    "in": [
+      "skiing",
+      "mountain"
+    ],
+    "out": "alpine_skiing",
+    "why": "Alpine skiing, or downhill skiing, is the pastime of sliding down snow-covered slopes on skis with fixed-heel bindings, unlike other types of skiing (cross-country, Telemark, or ski jumping), which use skis with free-heel bindings. Whether for recreation or for sport, it is typically practiced at ski resorts, which provide such services as ski lifts, artificial snow making, snow grooming, restaurants, and ski patrol.",
+    "src": "https://en.wikipedia.org/wiki/Alpine_skiing",
+    "verified": true
+  },
+  {
+    "in": [
+      "skiing",
+      "high_jump"
+    ],
+    "out": "ski_jumping",
+    "why": "Ski jumping is a winter sport in which competitors aim to achieve the farthest jump after sliding down on their skis from a specially designed curved ramp. Along with jump length, the competitor's aerial style and other factors also affect the final score.",
+    "src": "https://en.wikipedia.org/wiki/Ski_jumping",
+    "verified": true
+  },
+  {
+    "in": [
+      "snow",
+      "cart"
+    ],
+    "out": "sled",
+    "why": "A sled, sledge, or sleigh is a vehicle that slides across a surface, usually of ice or snow. It is built with a smooth underside or a separate body supported by runners that reduce friction with the surface.",
+    "src": "https://en.wikipedia.org/wiki/Sled",
+    "verified": true
+  },
+  {
+    "in": [
+      "sled",
+      "race"
+    ],
+    "out": "bobsleigh",
+    "why": "Bobsleigh or bobsled is a winter sport in which individual athletes or teams of two to four athletes make timed speed runs down narrow, twisting, banked, iced tracks in a gravity-powered sleigh. International bobsleigh competitions are governed by the International Bobsleigh and Skeleton Federation (formerly the FIBT).",
+    "src": "https://en.wikipedia.org/wiki/Bobsleigh",
+    "verified": true
+  },
+  {
+    "in": [
+      "sled",
+      "ice"
+    ],
+    "out": "luge",
+    "why": "A luge is a small one- or two-person sled on which one sleds supine (face up) and feet first. A luger begins seated, propelling themselves initially from handles on either side of the start ramp, then steers by using the calf muscles to flex the sled's runners or by exerting opposite shoulder pressure to the pod.",
+    "src": "https://en.wikipedia.org/wiki/Luge",
+    "verified": true
+  },
+  {
+    "in": [
+      "snow",
+      "skateboarding"
+    ],
+    "out": "snowboarding",
+    "why": "Snowboarding is a recreational and competitive sport that involves descending a snow-covered surface while standing on a snowboard with bindings securing the rider's feet to the board. Snowboarding was first developed in 1965 in the United States.",
+    "src": "https://en.wikipedia.org/wiki/Snowboarding",
+    "verified": true
+  },
+  {
+    "in": [
+      "wave",
+      "wood"
+    ],
+    "out": "surfing",
+    "why": "Surfing is a surface water sport in which an individual, a surfer, uses a board to ride on the forward section, or face, of a moving wave of water, which usually carries the surfer towards the shore. Waves suitable for surfing are primarily found on ocean shores, but can also be found as standing waves in the open ocean, in lakes, in rivers in the form of a tidal bore, or wave pools.",
+    "src": "https://en.wikipedia.org/wiki/Surfing",
+    "verified": true
+  },
+  {
+    "in": [
+      "automobile",
+      "competition"
+    ],
+    "out": "formula_one",
+    "why": "Formula One (F1) is the highest class of worldwide racing for open-wheel, single-seater formula racing cars run by the Formula One Group and sanctioned by the Fédération Internationale de l'Automobile (FIA). The FIA Formula One World Championship has been one of the world's premier forms of motorsport since its inaugural running in 1950 and is often considered to be the pinnacle of motorsport.",
+    "src": "https://en.wikipedia.org/wiki/Formula_One",
+    "verified": true
   }
 ]
