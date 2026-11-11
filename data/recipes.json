@@ -114512,5 +114512,1005 @@
     "why": "Formula One (F1) is the highest class of worldwide racing for open-wheel, single-seater formula racing cars run by the Formula One Group and sanctioned by the Fédération Internationale de l'Automobile (FIA). The FIA Formula One World Championship has been one of the world's premier forms of motorsport since its inaugural running in 1950 and is often considered to be the pinnacle of motorsport.",
     "src": "https://en.wikipedia.org/wiki/Formula_One",
     "verified": true
+  },
+  {
+    "in": [
+      "map",
+      "earth"
+    ],
+    "out": "geography",
+    "why": "Geography is the study of the lands, features, inhabitants, and phenomena of planet Earth.",
+    "src": "https://en.wikipedia.org/wiki/Geography",
+    "verified": true
+  },
+  {
+    "in": [
+      "geography",
+      "city"
+    ],
+    "out": "human_geography",
+    "why": "Human geography, also known as anthropogeography, is a branch of geography that studies how people interact with habitats. It focuses on the spatial relationships between human communities, cultures, economies, people, lifestyles, and their environments.",
+    "src": "https://en.wikipedia.org/wiki/Human_geography",
+    "verified": true
+  },
+  {
+    "in": [
+      "geography",
+      "mountain"
+    ],
+    "out": "physical_geography",
+    "why": "Physical geography, also known as physiography or natural geography, is one of the three main branches of geography. Physical geography is the branch of natural science which deals with the processes and patterns in the natural environment such as the atmosphere, hydrosphere, biosphere, and geosphere.",
+    "src": "https://en.wikipedia.org/wiki/Physical_geography",
+    "verified": true
+  },
+  {
+    "in": [
+      "map",
+      "computer"
+    ],
+    "out": "geographic_information_system",
+    "why": "A geographic information system (GIS) consists of integrated computer hardware and software that store, manage, analyze, edit, output, and visualize geographic data. Geographic data is often stored within a spatial database; however, this is not essential to meet the definition of a GIS.",
+    "src": "https://en.wikipedia.org/wiki/Geographic_information_system",
+    "verified": true
+  },
+  {
+    "in": [
+      "ship",
+      "compass"
+    ],
+    "out": "exploration",
+    "why": "Exploration is the process of exploring, an activity which has some expectation of discovery. Organised exploration is largely a human activity, but exploratory activity is common to most organisms capable of directed locomotion and the ability to learn, and has been described in, amongst others, social insects foraging behaviour, where feedback from returning individuals affects the activity of other members of the group.",
+    "src": "https://en.wikipedia.org/wiki/Exploration",
+    "verified": true
+  },
+  {
+    "in": [
+      "europe",
+      "asia"
+    ],
+    "out": "eurasia",
+    "why": "Eurasia, is the largest continental area on Earth, comprising all of Europe and Asia. According to some models of the world, physio-graphically, Eurasia is a single continent.",
+    "src": "https://en.wikipedia.org/wiki/Eurasia",
+    "verified": true
+  },
+  {
+    "in": [
+      "north_america",
+      "south_america"
+    ],
+    "out": "americas",
+    "why": "The Americas, also collectively known as America, are a landmass comprising the totality of North America and South America. When viewed as a single continent, the Americas are the second largest continent by area after Asia and the third largest continent by population.",
+    "src": "https://en.wikipedia.org/wiki/Americas",
+    "verified": true
+  },
+  {
+    "in": [
+      "map",
+      "pen"
+    ],
+    "out": "cartography",
+    "why": "Cartography is the study and practice of making and using maps. Combining science, aesthetics and technique, cartography builds on the premise that reality (or an imagined reality) can be modeled in ways that communicate spatial information effectively.",
+    "src": "https://en.wikipedia.org/wiki/Cartography",
+    "verified": true
+  },
+  {
+    "in": [
+      "cartography",
+      "cylinder"
+    ],
+    "out": "mercator_projection",
+    "why": "The Mercator projection is a conformal cylindrical map projection first presented by Flemish geographer and mapmaker Gerardus Mercator in 1569. In the 18th century, it became the standard map projection for navigation due to its property of representing rhumb lines as straight lines.",
+    "src": "https://en.wikipedia.org/wiki/Mercator_projection",
+    "verified": true
+  },
+  {
+    "in": [
+      "compass",
+      "pole"
+    ],
+    "out": "cardinal_direction",
+    "why": "The four cardinal directions or cardinal points are the four main compass directions: north (N), east (E), south (S), and west (W). The corresponding azimuths (clockwise horizontal angle from north) are 0°, 90°, 180°, and 270°.",
+    "src": "https://en.wikipedia.org/wiki/Cardinal_direction",
+    "verified": true
+  },
+  {
+    "in": [
+      "sphere",
+      "map"
+    ],
+    "out": "globe",
+    "why": "A globe is a spherical model of Earth, of some other celestial body, or of the celestial sphere. Globes serve purposes similar to maps, but, unlike maps, they do not distort the surface that they portray except to scale it down.",
+    "src": "https://en.wikipedia.org/wiki/Globe",
+    "verified": true
+  },
+  {
+    "in": [
+      "altitude",
+      "sea"
+    ],
+    "out": "elevation",
+    "why": "The elevation of a geographic location is its height above or below a fixed reference point, most commonly a reference geoid, a mathematical model of the Earth's sea level as an equipotential gravitational surface.",
+    "src": "https://en.wikipedia.org/wiki/Elevation",
+    "verified": true
+  },
+  {
+    "in": [
+      "earth",
+      "sea"
+    ],
+    "out": "geoid",
+    "why": "The geoid is the shape Earth would have if covered by an ocean responding to the gravity of Earth, including gravitational attraction and Earth's rotation, if other influences such as winds and tides were absent. This surface is extended through the continents (such as might be approximated with very narrow hypothetical canals).",
+    "src": "https://en.wikipedia.org/wiki/Geoid",
+    "verified": true
+  },
+  {
+    "in": [
+      "satellite",
+      "camera"
+    ],
+    "out": "remote_sensing",
+    "why": "Remote sensing is the acquisition of information about an object or area from a distance, without touching it, as opposed to measuring it on-site observation. The term often refers to observing Earth from satellites or aircraft, but also covers studies of other planets and some ship- or ground-based methods, such as sonar.",
+    "src": "https://en.wikipedia.org/wiki/Remote_sensing",
+    "verified": true
+  },
+  {
+    "in": [
+      "arctic",
+      "latitude"
+    ],
+    "out": "arctic_circle",
+    "why": "The Arctic Circle is one of the two polar circles, and the northernmost of the five major circles of latitude. It is shown on maps of Earth at about 66° 34' N. Its southern counterpart is the Antarctic Circle.",
+    "src": "https://en.wikipedia.org/wiki/Arctic_Circle",
+    "verified": true
+  },
+  {
+    "in": [
+      "antarctica",
+      "latitude"
+    ],
+    "out": "antarctic_circle",
+    "why": "The Antarctic Circle is the most southerly of the five major circles of latitude that mark maps of Earth. The region south of this circle is known as the Antarctic, and the zone immediately to the north is called the Southern Temperate Zone.",
+    "src": "https://en.wikipedia.org/wiki/Antarctic_Circle",
+    "verified": true
+  },
+  {
+    "in": [
+      "arctic_ocean",
+      "compass"
+    ],
+    "out": "north_pole",
+    "why": "The North Pole, also known as the Geographic North Pole or Terrestrial North Pole, is the point in the Northern Hemisphere where the Earth's axis of rotation meets its surface. It is called the True North Pole to distinguish from the magnetic north pole.",
+    "src": "https://en.wikipedia.org/wiki/North_Pole",
+    "verified": true
+  },
+  {
+    "in": [
+      "antarctica",
+      "compass"
+    ],
+    "out": "south_pole",
+    "why": "The South Pole, also known as the Geographic South Pole or Terrestrial South Pole, is the point in the Southern Hemisphere where the Earth's axis of rotation meets its surface. It is called the True South Pole to distinguish from the magnetic south pole.",
+    "src": "https://en.wikipedia.org/wiki/South_Pole",
+    "verified": true
+  },
+  {
+    "in": [
+      "time_zone",
+      "longitude"
+    ],
+    "out": "international_date_line",
+    "why": "The International Date Line (IDL) is the line extending between the North and South Poles that is the boundary between one calendar day and the next. It passes through the Pacific Ocean, roughly following the 180.0° line of longitude and deviating to pass around some territories and island groups.",
+    "src": "https://en.wikipedia.org/wiki/International_Date_Line",
+    "verified": true
+  },
+  {
+    "in": [
+      "ocean",
+      "europe"
+    ],
+    "out": "atlantic_ocean",
+    "why": "The Atlantic Ocean is the second largest of the world's five oceans, with an area of about 85,133,000 square kilometers (32,870,000 sq mi). It covers approximately 17% of Earth's surface and about 24% of its water surface area.",
+    "src": "https://en.wikipedia.org/wiki/Atlantic_Ocean",
+    "verified": true
+  },
+  {
+    "in": [
+      "ocean",
+      "asia"
+    ],
+    "out": "pacific_ocean",
+    "why": "The Pacific Ocean is the largest and deepest of Earth's five oceanic divisions. It stretches from the Arctic Ocean in the north to the Southern Ocean, or, depending on the definition, to Antarctica in the south, and is bounded by the continents of Asia and Australia in the west and the Americas in the east.",
+    "src": "https://en.wikipedia.org/wiki/Pacific_Ocean",
+    "verified": true
+  },
+  {
+    "in": [
+      "ocean",
+      "india"
+    ],
+    "out": "indian_ocean",
+    "why": "The Indian Ocean is the third-largest of the world's five oceanic divisions, covering 70,560,000 km2 (27,240,000 sq mi) or approximately 20% of the water area of Earth's surface. It is bounded by Asia to the north, Africa to the west and Australia to the east.",
+    "src": "https://en.wikipedia.org/wiki/Indian_Ocean",
+    "verified": true
+  },
+  {
+    "in": [
+      "ocean",
+      "antarctica"
+    ],
+    "out": "southern_ocean",
+    "why": "The Southern Ocean, also known as the Antarctic Ocean, comprises the southernmost waters of the World Ocean, generally taken to be south of 60° S latitude and encircling Antarctica. With a size of 21,960,000 km2 (8,480,000 mi2), it is the second-smallest of the five principal oceanic divisions, smaller than the Pacific, Atlantic and Indian oceans, and larger than the Arctic Ocean.",
+    "src": "https://en.wikipedia.org/wiki/Southern_Ocean",
+    "verified": true
+  },
+  {
+    "in": [
+      "ocean",
+      "arctic"
+    ],
+    "out": "arctic_ocean",
+    "why": "The Arctic Ocean is the smallest and shallowest of the world's five oceanic divisions. It spans an area of approximately 14,060,000 km2 (5,430,000 sq mi) and is the coldest of the world's oceans.",
+    "src": "https://en.wikipedia.org/wiki/Arctic_Ocean",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "sweden"
+    ],
+    "out": "baltic_sea",
+    "why": "The Baltic Sea is an arm of the Atlantic Ocean that is enclosed by the countries of Denmark, Estonia, Finland, Germany, Latvia, Lithuania, Poland, Russia, and Sweden. Geophysically, it is surrounded by the Scandinavian Peninsula and the North and Central European Plain regions.",
+    "src": "https://en.wikipedia.org/wiki/Baltic_Sea",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "ukraine"
+    ],
+    "out": "black_sea",
+    "why": "The Black Sea is a marginal sea located between Europe and Asia, east of the Balkans, south of the East European Plain, west of the Caucasus, and north of Anatolia. It is bordered by Bulgaria, Georgia, Romania, Russia, Turkey, and Ukraine.",
+    "src": "https://en.wikipedia.org/wiki/Black_Sea",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "cuba"
+    ],
+    "out": "caribbean_sea",
+    "why": "The Caribbean Sea is a sea of the North Atlantic Ocean in the tropics of the Western Hemisphere, located south of the Gulf of Mexico and southwest of the Sargasso Sea.",
+    "src": "https://en.wikipedia.org/wiki/Caribbean_Sea",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "mexico"
+    ],
+    "out": "gulf_of_mexico",
+    "why": "The Gulf of Mexico is an oceanic basin and a marginal sea of the Atlantic Ocean, mostly surrounded by the North American continent. It is bounded on the northeast, north, and northwest by the Gulf Coast of the United States; on the southwest and south by the Mexican states of Tamaulipas, Veracruz, Tabasco, Campeche, Yucatán, and Quintana Roo; and on the southeast by Cuba.",
+    "src": "https://en.wikipedia.org/wiki/Gulf_of_Mexico",
+    "verified": true
+  },
+  {
+    "in": [
+      "atlantic_ocean",
+      "gulf_of_mexico"
+    ],
+    "out": "gulf_stream",
+    "why": "The Gulf Stream is a warm and swift Atlantic ocean current that is part of the Atlantic meridional overturning circulation (AMOC). It originates in the Gulf of Mexico and flows through the Straits of Florida and up the eastern coastline of the United States, then veers east near 36°N latitude (North Carolina) and moves toward Northwest Europe as the North Atlantic Current.",
+    "src": "https://en.wikipedia.org/wiki/Gulf_Stream",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "ireland"
+    ],
+    "out": "irish_sea",
+    "why": "The Irish Sea is a 46,007 km2 (17,763 sq mi) body of water that separates the islands of Ireland, Isle of Man and Great Britain. It is linked to the Celtic Sea in the south by St George's Channel and to the Inner Seas off the West Coast of Scotland in the north by the North Channel.",
+    "src": "https://en.wikipedia.org/wiki/Irish_Sea",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "norway"
+    ],
+    "out": "north_sea",
+    "why": "The North Sea lies between Great Britain, Denmark, Norway, Germany, the Netherlands, Belgium, and France. A sea on the European continental shelf, it connects to the Atlantic Ocean through the English Channel in the south and the Norwegian Sea in the north.",
+    "src": "https://en.wikipedia.org/wiki/North_Sea",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "italy"
+    ],
+    "out": "adriatic_sea",
+    "why": "The Adriatic Sea is a body of water separating the Italian Peninsula from the Balkan Peninsula. The Adriatic is the northernmost arm of the Mediterranean Sea, extending from the Strait of Otranto (where it connects to the Ionian Sea) to the northwest and the Po Valley.",
+    "src": "https://en.wikipedia.org/wiki/Adriatic_Sea",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "greece"
+    ],
+    "out": "aegean_sea",
+    "why": "The Aegean Sea is an elongated embayment of the Mediterranean Sea between Europe and Asia. It is located between the Balkans and Anatolia, and covers an area of some 215,000 km2 (83,000 sq mi).",
+    "src": "https://en.wikipedia.org/wiki/Aegean_Sea",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "albania"
+    ],
+    "out": "ionian_sea",
+    "why": "The Ionian Sea is an elongated bay of the Mediterranean Sea. It is connected to the Adriatic Sea to the north, and is bounded by Southern Italy, including Basilicata, Calabria, Sicily, and the Salento peninsula to the west, southern Albania (and western Apulia, Italy) to the north, and the west coast of Greece, including the Peloponnese.",
+    "src": "https://en.wikipedia.org/wiki/Ionian_Sea",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "seaweed"
+    ],
+    "out": "sargasso_sea",
+    "why": "The Sargasso Sea is a region of the Atlantic Ocean bounded by four currents forming an ocean gyre. It is the only named sea without land boundaries.",
+    "src": "https://en.wikipedia.org/wiki/Sargasso_Sea",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "russia"
+    ],
+    "out": "bering_sea",
+    "why": "The Bering Sea is a marginal sea of the Northern Pacific Ocean. It forms, along with the Bering Strait, the divide between the two largest landmasses on Earth: Eurasia and the Americas.",
+    "src": "https://en.wikipedia.org/wiki/Bering_Sea",
+    "verified": true
+  },
+  {
+    "in": [
+      "reef",
+      "australia"
+    ],
+    "out": "coral_sea",
+    "why": "The Coral Sea is a marginal sea of the South Pacific off the northeast coast of Australia, and classified as an interim Australian bioregion. The Coral Sea extends 2,000 kilometres (1,200 mi) down the Australian north-east coast to latitude 30° south.",
+    "src": "https://en.wikipedia.org/wiki/Coral_Sea",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "japan"
+    ],
+    "out": "sea_of_japan",
+    "why": "The Sea of Japan is the marginal sea between the Japanese archipelago, Sakhalin, the Korean Peninsula, and the mainland of the Russian Far East. The Japanese archipelago separates the sea from the Pacific Ocean.",
+    "src": "https://en.wikipedia.org/wiki/Sea_of_Japan",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "china"
+    ],
+    "out": "south_china_sea",
+    "why": "The South China Sea is a marginal sea of the Western Pacific Ocean. It is bounded in the north by South China, in the west by the Indochinese Peninsula, in the east by the islands of Taiwan and northwestern Philippines (mainly Luzon, Mindoro, and Palawan), and in the south by Borneo, eastern Sumatra, and the Bangka Belitung Islands, encompassing an area of around 3,500,000 km2 (1,400,000 sq mi).",
+    "src": "https://en.wikipedia.org/wiki/South_China_Sea",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "south_korea"
+    ],
+    "out": "yellow_sea",
+    "why": "The Yellow Sea, also known as the North Sea, is a marginal sea of the Western Pacific Ocean located between mainland China and the Korean Peninsula, and can be considered the northwestern part of the East China Sea.",
+    "src": "https://en.wikipedia.org/wiki/Yellow_Sea",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "new_zealand"
+    ],
+    "out": "tasman_sea",
+    "why": "The Tasman Sea is a marginal sea of the South Pacific Ocean, situated between Australia and New Zealand. It measures about 2,000 km (1,200 mi) across and about 2,800 km (1,700 mi) from north to south.",
+    "src": "https://en.wikipedia.org/wiki/Tasman_Sea",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "philippines"
+    ],
+    "out": "philippine_sea",
+    "why": "The Philippine Sea is a marginal sea of the Western Pacific Ocean east of the Philippine Archipelago and the largest sea in the world, occupying an estimated surface area of 5 million square kilometers (2×10^6 sq mi). The Philippine Sea Plate forms the floor of the sea.",
+    "src": "https://en.wikipedia.org/wiki/Philippine_Sea",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "pakistan"
+    ],
+    "out": "arabian_sea",
+    "why": "The Arabian Sea is a region of sea in the northern Indian Ocean, bounded on the west by the Arabian Peninsula, Gulf of Aden and Guardafui Channel, on the northwest by Gulf of Oman and Iran, on the north by Pakistan, on the east by India, and on the southeast by the Laccadive Sea and the Maldives, and on the southwest by Somalia.",
+    "src": "https://en.wikipedia.org/wiki/Arabian_Sea",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "bangladesh"
+    ],
+    "out": "bay_of_bengal",
+    "why": "The Bay of Bengal forms the northeastern part of the Indian Ocean, located between the Indian subcontinent and the Indochinese peninsula, south of the Bengal region. Spread across an area of 2,600,000 km2 (1,000,000 sq mi), it is bordered by many of the countries in South Asia and Southeast Asia.",
+    "src": "https://en.wikipedia.org/wiki/Bay_of_Bengal",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "iran"
+    ],
+    "out": "persian_gulf",
+    "why": "The Persian Gulf, sometimes called the Arabian Gulf, is a mediterranean sea in West Asia. The body of water is an extension of the Arabian Sea and the larger Indian Ocean located between the Arabian Peninsula and Iran (Persia).",
+    "src": "https://en.wikipedia.org/wiki/Persian_Gulf",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "egypt"
+    ],
+    "out": "red_sea",
+    "why": "The Red Sea is a mediterranean sea lying between the Arabian Peninsula and Africa. It is an inlet of the Indian Ocean.",
+    "src": "https://en.wikipedia.org/wiki/Red_Sea",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "finland"
+    ],
+    "out": "barents_sea",
+    "why": "The Barents Sea is a marginal sea of the Arctic Ocean, located off the northern coasts of Norway and Russia and divided between Norwegian and Russian territorial waters. The Barents Sea is a rather shallow shelf sea with an average depth of 230 metres (750 ft), and it is an important site for both fishing and hydrocarbon exploration.",
+    "src": "https://en.wikipedia.org/wiki/Barents_Sea",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "canada"
+    ],
+    "out": "hudson_bay",
+    "why": "Hudson Bay, sometimes called Hudson's Bay (usually historically), is a large body of saltwater in northeastern Canada with a surface area of 1,230,000 km2 (470,000 sq mi). It is located north of Ontario, west of Quebec, northeast of Manitoba, and southeast of Nunavut, but politically entirely part of Nunavut.",
+    "src": "https://en.wikipedia.org/wiki/Hudson_Bay",
+    "verified": true
+  },
+  {
+    "in": [
+      "lake",
+      "kazakhstan"
+    ],
+    "out": "caspian_sea",
+    "why": "The Caspian Sea is the world's largest inland body of water, also described as the world's largest lake and usually referred to as a full-fledged sea. An endorheic basin, it is situated in both Europe and Asia: east of the Caucasus, west of the broad steppe of Central Asia, south of the fertile plains of Southern Russia in Eastern Europe, and north of the mountainous Iranian Plateau.",
+    "src": "https://en.wikipedia.org/wiki/Caspian_Sea",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "ice_sheet"
+    ],
+    "out": "ross_sea",
+    "why": "The Ross Sea is a deep bay of the Southern Ocean in Antarctica, between Victoria Land and Marie Byrd Land and within the Ross Embayment, and is the southernmost sea on Earth. It derives its name from the British explorer James Clark Ross who visited this area in 1841.",
+    "src": "https://en.wikipedia.org/wiki/Ross_Sea",
+    "verified": true
+  },
+  {
+    "in": [
+      "strait",
+      "turkey"
+    ],
+    "out": "bosporus",
+    "why": "The Bosporus or Bosphorus Strait is a natural strait and an internationally significant waterway located in Turkey and straddled by the city of Istanbul. The Bosporus connects the Black Sea to the Sea of Marmara and forms one of the continental boundaries between Asia and Europe.",
+    "src": "https://en.wikipedia.org/wiki/Bosporus",
+    "verified": true
+  },
+  {
+    "in": [
+      "strait",
+      "greece"
+    ],
+    "out": "dardanelles",
+    "why": "The Dardanelles, also known as the Strait of Gallipoli (after the Gallipoli peninsula), is a narrow, natural strait and internationally significant waterway in northwestern Turkey that forms part of the continental boundary between Asia and Europe and separates Asian Turkey from European Turkey. Together with the Bosporus, the Dardanelles forms the Turkish Straits.",
+    "src": "https://en.wikipedia.org/wiki/Dardanelles",
+    "verified": true
+  },
+  {
+    "in": [
+      "channel",
+      "france"
+    ],
+    "out": "english_channel",
+    "why": "The English Channel, also known as the Channel, is an arm of the Atlantic Ocean that separates Southern England from northern France. It links to the southern part of the North Sea by the Strait of Dover at its northeastern end.",
+    "src": "https://en.wikipedia.org/wiki/English_Channel",
+    "verified": true
+  },
+  {
+    "in": [
+      "strait",
+      "saudi_arabia"
+    ],
+    "out": "strait_of_hormuz",
+    "why": "The Strait of Hormuz is a waterway between the Persian Gulf and the Gulf of Oman. On the north coast lies Iran, and on the south coast lies the Musandam Peninsula under the Musandam Governorate of Oman, with a portion of the southwest of the peninsula under the United Arab Emirates (UAE).",
+    "src": "https://en.wikipedia.org/wiki/Strait_of_Hormuz",
+    "verified": true
+  },
+  {
+    "in": [
+      "strait",
+      "bering_sea"
+    ],
+    "out": "bering_strait",
+    "why": "The Bering Strait is a strait between the Pacific and Arctic oceans, separating the Chukchi Peninsula of the Russian Far East from the Seward Peninsula of Alaska. The present Russia–United States maritime boundary is at 168° 58' 37\" W longitude, slightly south of the Arctic Circle at about 65° 40' N latitude.",
+    "src": "https://en.wikipedia.org/wiki/Bering_Strait",
+    "verified": true
+  },
+  {
+    "in": [
+      "strait",
+      "chile"
+    ],
+    "out": "drake_passage",
+    "why": "The Drake Passage or Sea of Hoces (Mar de Hoces) is the body of water between Cape Horn in Chile at the southern extreme of the South American mainland and the South Shetland Islands of Antarctica. It connects the southwestern part of the Atlantic Ocean (Scotia Sea) with the southeastern part of the Pacific Ocean.",
+    "src": "https://en.wikipedia.org/wiki/Drake_Passage",
+    "verified": true
+  },
+  {
+    "in": [
+      "strait",
+      "united_kingdom"
+    ],
+    "out": "strait_of_dover",
+    "why": "The Strait of Dover or Dover Strait is the strait at the narrowest part of the English Channel, marking the boundary between the Channel and the North Sea, and separating Great Britain from continental Europe.",
+    "src": "https://en.wikipedia.org/wiki/Strait_of_Dover",
+    "verified": true
+  },
+  {
+    "in": [
+      "strait",
+      "china"
+    ],
+    "out": "taiwan_strait",
+    "why": "The Taiwan Strait is a 180-kilometer-wide (110 mi; 97 nmi) strait separating the island of Taiwan and mainland Asia. The strait connects the South China Sea to the south, and the East China Sea to the north.",
+    "src": "https://en.wikipedia.org/wiki/Taiwan_Strait",
+    "verified": true
+  },
+  {
+    "in": [
+      "lake",
+      "uganda"
+    ],
+    "out": "lake_victoria",
+    "why": "Lake Victoria is one of the African Great Lakes. With a surface area of approximately 59,947 km2 (23,146 sq mi), Lake Victoria is Africa's largest lake by area, the world's largest tropical lake, and the world's second-largest fresh water lake by surface area after Lake Superior in North America. In terms of volume, Lake Victoria is the world's ninth-largest continental lake, containing about 2,424 km3 of water.",
+    "src": "https://en.wikipedia.org/wiki/Lake_Victoria",
+    "verified": true
+  },
+  {
+    "in": [
+      "lake",
+      "tanzania"
+    ],
+    "out": "lake_tanganyika",
+    "why": "Lake Tanganyika is an African Great Lake. It is the world's second-largest freshwater lake by volume and the second deepest, in both cases after Lake Baikal in Siberia. It is the world's longest freshwater lake.",
+    "src": "https://en.wikipedia.org/wiki/Lake_Tanganyika",
+    "verified": true
+  },
+  {
+    "in": [
+      "lake",
+      "united_states"
+    ],
+    "out": "great_lakes",
+    "why": "The Great Lakes, also called the Great Lakes of North America, are a series of large interconnected freshwater lakes spanning the Canada–United States border. The five lakes are Superior, Michigan, Huron, Erie, and Ontario (though hydrologically, Michigan and Huron are a single body of water, joined at the Straits of Mackinac).",
+    "src": "https://en.wikipedia.org/wiki/Great_Lakes",
+    "verified": true
+  },
+  {
+    "in": [
+      "lake",
+      "canada"
+    ],
+    "out": "lake_superior",
+    "why": "Lake Superior is a lake in central North America. The northernmost, westernmost, and highest of the Great Lakes, Lake Superior straddles the Canada–United States border with the Canadian province of Ontario to the north and east and the U.S. states of Minnesota to the west and Michigan and Wisconsin to the south. It is the largest freshwater lake in the world by surface area and the third-largest freshwater lake by volume.",
+    "src": "https://en.wikipedia.org/wiki/Lake_Superior",
+    "verified": true
+  },
+  {
+    "in": [
+      "lake",
+      "bolivia"
+    ],
+    "out": "lake_titicaca",
+    "why": "Lake Titicaca is a large lake in the Andes mountains on the border of Bolivia and Peru. It is often called the highest navigable lake in the world.",
+    "src": "https://en.wikipedia.org/wiki/Lake_Titicaca",
+    "verified": true
+  },
+  {
+    "in": [
+      "lake",
+      "russia"
+    ],
+    "out": "lake_baikal",
+    "why": "Lake Baikal is a rift lake and the deepest lake in the world. It is situated in southern Siberia, Russia, between the federal subjects of Irkutsk Oblast to the northwest and the Republic of Buryatia to the southeast.",
+    "src": "https://en.wikipedia.org/wiki/Lake_Baikal",
+    "verified": true
+  },
+  {
+    "in": [
+      "lake",
+      "finland"
+    ],
+    "out": "lake_ladoga",
+    "why": "Lake Ladoga is a freshwater lake located in the Republic of Karelia and Leningrad Oblast in northwestern Russia, in the vicinity of Saint Petersburg. It is the largest lake located entirely in Europe, the second largest lake in Russia after Lake Baikal, and the 14th largest lake by area in the world.",
+    "src": "https://en.wikipedia.org/wiki/Lake_Ladoga",
+    "verified": true
+  },
+  {
+    "in": [
+      "lake",
+      "venezuela"
+    ],
+    "out": "lake_maracaibo",
+    "why": "Lake Maracaibo is located in northwestern Venezuela, between the states of Zulia, Trujillo, and Mérida. While Maracaibo is commonly referred to as a lake, its current hydrological characteristics may better classify it as an estuary and/or semi-enclosed bay connected to the Gulf of Venezuela.",
+    "src": "https://en.wikipedia.org/wiki/Lake_Maracaibo",
+    "verified": true
+  },
+  {
+    "in": [
+      "lake",
+      "turkey"
+    ],
+    "out": "lake_van",
+    "why": "Lake Van is the largest lake in Turkey. It lies in the Eastern Anatolia region of Turkey in the provinces of Van and Bitlis, in the Armenian highlands. It is a saline soda lake, receiving water from many small streams that descend from the surrounding mountains.",
+    "src": "https://en.wikipedia.org/wiki/Lake_Van",
+    "verified": true
+  },
+  {
+    "in": [
+      "lake",
+      "australia"
+    ],
+    "out": "lake_eyre",
+    "why": "Lake Eyre (AIR), officially known as Kati Thanda–Lake Eyre, is an endorheic lake in the east-central part of the Far North region of South Australia, some 700 km (430 mi) north of Adelaide. It is the largest ephemeral endorheic lake on the Australian continent, covering over 9,000 km2 (3,500 sq mi).",
+    "src": "https://en.wikipedia.org/wiki/Kati_Thanda–Lake_Eyre",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "china"
+    ],
+    "out": "yangtze",
+    "why": "The Yangtze River, Yangzi River or Chang Jiang is the longest river in China and the third-longest river in the world. It rises at Jari Hill in the Tanggula Mountains of the Tibetan Plateau and flows for 6,300 kilometers (3,900 mi), including the Dam Qu River, the longest source of the Yangtze, in a generally easterly direction to the East China Sea.",
+    "src": "https://en.wikipedia.org/wiki/Yangtze",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "silt"
+    ],
+    "out": "yellow_river",
+    "why": "The Yellow River, also known as Huang He, is the second-longest river in China and the sixth-longest in the world, with an estimated length of 5,464 km (3,395 mi) and a drainage basin of 795,000 km2 (307,000 sq mi).",
+    "src": "https://en.wikipedia.org/wiki/Yellow_River",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "vietnam"
+    ],
+    "out": "mekong",
+    "why": "The Mekong or Mekong River (UK: mee-KONG, US: may-KAWNG) is a transboundary river in East Asia and Southeast Asia. It is the world's twelfth-longest river and the third-longest in Asia with an estimated length of 4,909 km (3,050 mi) and a drainage area of 795,000 km2 (307,000 sq mi), discharging 475 km3 (114 cu mi) of water annually.",
+    "src": "https://en.wikipedia.org/wiki/Mekong",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "pakistan"
+    ],
+    "out": "indus_river",
+    "why": "The Indus is a transboundary river of Asia and a trans-Himalayan river of South and Central Asia.",
+    "src": "https://en.wikipedia.org/wiki/Indus_River",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "india"
+    ],
+    "out": "ganges",
+    "why": "The Ganges (in India: Ganga; in Bangladesh: Padma) is a trans-boundary river of Asia which flows through India and Bangladesh. The 2,525-kilometre-long (1,569 mi) river rises in the western Himalayas in the Indian state of Uttarakhand.",
+    "src": "https://en.wikipedia.org/wiki/Ganges",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "bangladesh"
+    ],
+    "out": "brahmaputra_river",
+    "why": "The Brahmaputra is a trans-boundary river which flows through Southwestern China, Northeastern India, and Bangladesh. It is known as the Brahmaputra in Assam, Yarlung Tsangpo in Tibetan, the Siang/Dihang River in the Mishmi language, and Jamuna River in Bangladesh.",
+    "src": "https://en.wikipedia.org/wiki/Brahmaputra_River",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "iraq"
+    ],
+    "out": "euphrates",
+    "why": "The Euphrates is the longest and one of the most historically important rivers of West Asia. Together with the Tigris, it is one of the two defining rivers of Mesopotamia (lit.",
+    "src": "https://en.wikipedia.org/wiki/Euphrates",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "baghdad"
+    ],
+    "out": "tigris",
+    "why": "The Tigris is the eastern of the two great rivers that define Mesopotamia, the other being the Euphrates. The river flows south from the mountains of the Armenian Highlands through the Syrian and Arabian Deserts, before merging with the Euphrates and reaching to the Persian Gulf.",
+    "src": "https://en.wikipedia.org/wiki/Tigris",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "israel"
+    ],
+    "out": "jordan_river",
+    "why": "The Jordan River or River Jordan, also known as Nahr Al-Sharieat, is a 251-kilometre-long (156 mi) endorheic river in the Levant that flows roughly north to south through the Sea of Galilee and drains to the Dead Sea. The river passes by or through Jordan, Syria, Israel, and Palestine.",
+    "src": "https://en.wikipedia.org/wiki/Jordan_River",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "united_states"
+    ],
+    "out": "mississippi_river",
+    "why": "The Mississippi River is the primary river of the largest drainage basin in the United States. It is the second-longest river in the U.S. after the Missouri.",
+    "src": "https://en.wikipedia.org/wiki/Mississippi_River",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "mississippi_river"
+    ],
+    "out": "missouri_river",
+    "why": "The Missouri River is a river in the Central and Mountain West regions of the United States. The nation's longest, it rises in the eastern Centennial Mountains of the Bitterroot Range of the Rocky Mountains of southwestern Montana, then flows east and south for 2,341 mi (3,767 km) before entering the Mississippi River north of St. Louis, Missouri.",
+    "src": "https://en.wikipedia.org/wiki/Missouri_River",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "canyon"
+    ],
+    "out": "colorado_river",
+    "why": "The Colorado River is one of the principal rivers (along with the Rio Grande) in the Southwestern United States and in northern Mexico. The 1,450-mile-long (2,330 km) river, the fifth-longest in the United States, drains an expansive, arid watershed that encompasses parts of seven U.S. states and two Mexican states.",
+    "src": "https://en.wikipedia.org/wiki/Colorado_River",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "canada"
+    ],
+    "out": "columbia_river",
+    "why": "The Columbia River is the largest river in the Pacific Northwest region of North America. The river forms in the Rocky Mountains of British Columbia, Canada.",
+    "src": "https://en.wikipedia.org/wiki/Columbia_River",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "mexico"
+    ],
+    "out": "rio_grande",
+    "why": "The Rio Grande (or), in the United States, or the Río Bravo (del Norte), in Mexico, also known as Tó Ba'áadi in Navajo, is one of the principal rivers (along with the Colorado River) in the Southwestern United States and in northern Mexico. The length of the Rio Grande is 1,896 miles (3,051 km), making it the fourth longest river in the United States and in North America by main stem.",
+    "src": "https://en.wikipedia.org/wiki/Rio_Grande",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "great_lakes"
+    ],
+    "out": "st_lawrence_river",
+    "why": "The St. Lawrence River is a large international river in the middle latitudes of North America connecting the Great Lakes with the North Atlantic Ocean. Its waters flow in a northeasterly direction from Lake Ontario to the Gulf of St. Lawrence, traversing Ontario and Quebec in Canada and New York in the United States.",
+    "src": "https://en.wikipedia.org/wiki/St._Lawrence_River",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "colombia"
+    ],
+    "out": "orinoco",
+    "why": "The Orinoco is one of the longest rivers in South America at 2,140 km (1,330 mi). Its drainage basin, sometimes known as the Orinoquia, covers approximately 1,000,000 km2 (390,000 sq mi), with 65% of it in Venezuela and 35% in Colombia.",
+    "src": "https://en.wikipedia.org/wiki/Orinoco",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "argentina"
+    ],
+    "out": "parana_river",
+    "why": "The Paraná River is a river in south-central South America, running through Brazil, Paraguay, and Argentina for some 4,880 kilometres (3,030 mi). Among South American rivers, it is second in length only to the Amazon River.",
+    "src": "https://en.wikipedia.org/wiki/Paraná_River",
+    "verified": true
+  },
+  {
+    "in": [
+      "estuary",
+      "argentina"
+    ],
+    "out": "rio_de_la_plata",
+    "why": "The Río de la Plata, also called the River Plate or La Plata River in English, is the estuary formed by the confluence of the Uruguay River and the Paraná River at Punta Gorda.",
+    "src": "https://en.wikipedia.org/wiki/Río_de_la_Plata",
+    "verified": true
+  },
+  {
+    "in": [
+      "nile",
+      "ethiopia"
+    ],
+    "out": "blue_nile",
+    "why": "The Blue Nile is a river originating at Lake Tana in Ethiopia. It travels for approximately 1,450 km (900 mi) through Ethiopia and Sudan.",
+    "src": "https://en.wikipedia.org/wiki/Blue_Nile",
+    "verified": true
+  },
+  {
+    "in": [
+      "nile",
+      "lake_victoria"
+    ],
+    "out": "white_nile",
+    "why": "The White Nile is a river in North and East Africa. It is the less voluminous, but longer (and wider and shallower), of the two major tributaries of the Nile, the larger being the Blue Nile. The name \"White\" comes from the clay sediment carried in the water which gives the water a pale color.",
+    "src": "https://en.wikipedia.org/wiki/White_Nile",
+    "verified": true
+  },
+  {
+    "in": [
+      "rainforest",
+      "africa"
+    ],
+    "out": "congo_river",
+    "why": "The Congo River, formerly also known as the Zaire River, is the second-longest river in Africa, shorter only than the Nile, as well as the third largest river in the world by discharge volume, following the Amazon and Ganges–Brahmaputra rivers. It is the world's deepest recorded river, with measured depths of around 220 m (720 ft).",
+    "src": "https://en.wikipedia.org/wiki/Congo_River",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "nigeria"
+    ],
+    "out": "niger_river",
+    "why": "The Niger River is the main river of West Africa, extending about 4,180 kilometres (2,600 miles). Its drainage basin is 2,117,700 km2 (817,600 sq mi) in area.",
+    "src": "https://en.wikipedia.org/wiki/Niger_River",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "waterfall"
+    ],
+    "out": "zambezi",
+    "why": "The Zambezi (also spelled Zambeze and Zambesi) is the fourth-longest river in Africa, the longest east-flowing river in Africa and the largest flowing into the Indian Ocean from Africa. Its drainage basin covers 1,390,000 km2 (540,000 mi2), slightly less than half of the Nile's.",
+    "src": "https://en.wikipedia.org/wiki/Zambezi",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "hungary"
+    ],
+    "out": "danube",
+    "why": "The Danube is a river in Europe, the second-longest after the Volga. It flows through Central and Southeastern Europe, from the Black Forest of Germany south through the Danube Delta in Romania into the Black Sea.",
+    "src": "https://en.wikipedia.org/wiki/Danube",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "germany"
+    ],
+    "out": "rhine",
+    "why": "The Rhine (RYNE) is one of the major rivers of Europe. The river begins in the Swiss canton of Graubünden in the southeastern Swiss Alps. It forms part of the Swiss–Liechtenstein border, then part of the Swiss–Austrian border.",
+    "src": "https://en.wikipedia.org/wiki/Rhine",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "united_kingdom"
+    ],
+    "out": "thames",
+    "why": "The River Thames, or simply the Thames (TEMZ), known alternatively in parts as the River Isis, is a river that flows through southern England including London. At 215 miles (346 km), it is the longest river entirely in England and the second-longest in the United Kingdom, after the River Severn.",
+    "src": "https://en.wikipedia.org/wiki/River_Thames",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "notre_dame"
+    ],
+    "out": "seine",
+    "why": "The Seine is a 777-kilometre-long (483 mi) river in northern France. Its drainage basin is in the Paris Basin (a geological relative lowland) covering most of northern France.",
+    "src": "https://en.wikipedia.org/wiki/Seine",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "russia"
+    ],
+    "out": "volga",
+    "why": "The Volga is the longest river in Europe and the longest endorheic basin river in the world. Situated in Russia, it flows through Central Russia to Southern Russia and into the Caspian Sea.",
+    "src": "https://en.wikipedia.org/wiki/Volga",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "poland"
+    ],
+    "out": "elbe",
+    "why": "The Elbe (Czech: Labe) is one of the major rivers of Central Europe. It rises in the Giant Mountains of the northern Czech Republic before traversing much of Bohemia (western half of the Czech Republic), then Germany before flowing into the North Sea at Cuxhaven, 110 kilometres (68 miles) northwest of Hamburg.",
+    "src": "https://en.wikipedia.org/wiki/Elbe",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "portugal"
+    ],
+    "out": "tagus",
+    "why": "The Tagus is the longest river in the Iberian Peninsula. The river rises in the Montes Universales between Cuenca and Teruel, in mid-eastern Spain, flows 1,007 km (626 mi), generally westward, and empties into the Atlantic Ocean at Lisbon.",
+    "src": "https://en.wikipedia.org/wiki/Tagus",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "spain"
+    ],
+    "out": "ebro",
+    "why": "The Ebro is a river of the north and northeast of the Iberian Peninsula, in Spain. It rises in Cantabria and flows 930 kilometres (580 mi), almost entirely in an east-southeast direction.",
+    "src": "https://en.wikipedia.org/wiki/Ebro",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "adriatic_sea"
+    ],
+    "out": "po_river",
+    "why": "The Po is the longest river in Italy. It flows eastward across northern Italy, starting from the Cottian Alps. The river's length is 652 km (405 mi), or 682 km (424 mi) if the Maira, a right bank tributary, is included.",
+    "src": "https://en.wikipedia.org/wiki/Po_(river)",
+    "verified": true
   }
 ]

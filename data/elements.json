@@ -106834,5 +106834,1205 @@
     ],
     "fact": "The highest class of worldwide single-seater open-wheel racing.",
     "src": "https://en.wikipedia.org/wiki/Formula_One"
+  },
+  {
+    "id": "geography",
+    "name": "Geography",
+    "emoji": "🗺️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "idea"
+    ],
+    "fact": "The study of places and of the relationships between people and their environments.",
+    "src": "https://en.wikipedia.org/wiki/Geography"
+  },
+  {
+    "id": "human_geography",
+    "name": "Human Geography",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "idea"
+    ],
+    "fact": "The branch of geography about people: where they live, how they move and how they shape places.",
+    "src": "https://en.wikipedia.org/wiki/Human_geography"
+  },
+  {
+    "id": "physical_geography",
+    "name": "Physical Geography",
+    "emoji": "⛰️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "idea"
+    ],
+    "fact": "The branch of geography about natural features: landforms, climate, soil, water and life.",
+    "src": "https://en.wikipedia.org/wiki/Physical_geography"
+  },
+  {
+    "id": "geographic_information_system",
+    "name": "GIS",
+    "emoji": "🛰️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "idea"
+    ],
+    "fact": "Software that stores, analyses and draws data tied to places on Earth.",
+    "src": "https://en.wikipedia.org/wiki/Geographic_information_system"
+  },
+  {
+    "id": "exploration",
+    "name": "Exploration",
+    "emoji": "🧭",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "idea"
+    ],
+    "fact": "Travel into unfamiliar regions to discover what is there, from Polynesian voyages to space probes.",
+    "src": "https://en.wikipedia.org/wiki/Exploration"
+  },
+  {
+    "id": "eurasia",
+    "name": "Eurasia",
+    "emoji": "🌏",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The single landmass holding Europe and Asia, the largest on Earth and home to most of its people.",
+    "src": "https://en.wikipedia.org/wiki/Eurasia"
+  },
+  {
+    "id": "americas",
+    "name": "The Americas",
+    "emoji": "🌎",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The two continents, North and South America, with the isthmus joining them, named for Amerigo Vespucci.",
+    "src": "https://en.wikipedia.org/wiki/Americas"
+  },
+  {
+    "id": "cartography",
+    "name": "Cartography",
+    "emoji": "📐",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "idea"
+    ],
+    "fact": "The art and science of making maps, from clay tablets to satellite imagery.",
+    "src": "https://en.wikipedia.org/wiki/Cartography"
+  },
+  {
+    "id": "mercator_projection",
+    "name": "Mercator Projection",
+    "emoji": "🧭",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "idea"
+    ],
+    "fact": "A 1569 map projection that keeps compass bearings straight but stretches regions near the poles.",
+    "src": "https://en.wikipedia.org/wiki/Mercator_projection"
+  },
+  {
+    "id": "cardinal_direction",
+    "name": "Cardinal Direction",
+    "emoji": "🧭",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "idea"
+    ],
+    "fact": "North, east, south and west, the four points from which all other compass directions are named.",
+    "src": "https://en.wikipedia.org/wiki/Cardinal_direction"
+  },
+  {
+    "id": "globe",
+    "name": "Globe",
+    "emoji": "🌐",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "idea"
+    ],
+    "fact": "A model of Earth, or another sphere, that shows continents and oceans without distortion.",
+    "src": "https://en.wikipedia.org/wiki/Globe"
+  },
+  {
+    "id": "elevation",
+    "name": "Elevation",
+    "emoji": "📈",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "idea"
+    ],
+    "fact": "The height of a place above mean sea level, the basis of every relief map.",
+    "src": "https://en.wikipedia.org/wiki/Elevation"
+  },
+  {
+    "id": "geoid",
+    "name": "Geoid",
+    "emoji": "🌍",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "idea"
+    ],
+    "fact": "The shape Earth's oceans would take under gravity and rotation alone, the true meaning of sea level.",
+    "src": "https://en.wikipedia.org/wiki/Geoid"
+  },
+  {
+    "id": "remote_sensing",
+    "name": "Remote Sensing",
+    "emoji": "📡",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "idea"
+    ],
+    "fact": "Gathering information about Earth from a distance, with satellites, aircraft or radar.",
+    "src": "https://en.wikipedia.org/wiki/Remote_sensing"
+  },
+  {
+    "id": "arctic_circle",
+    "name": "Arctic Circle",
+    "emoji": "⭕",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The parallel at about 66.6°N, north of which the sun can stay above or below the horizon for a full day.",
+    "src": "https://en.wikipedia.org/wiki/Arctic_Circle"
+  },
+  {
+    "id": "antarctic_circle",
+    "name": "Antarctic Circle",
+    "emoji": "⭕",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The parallel at about 66.6°S, south of which the sun can stay up or down for a full day.",
+    "src": "https://en.wikipedia.org/wiki/Antarctic_Circle"
+  },
+  {
+    "id": "north_pole",
+    "name": "North Pole",
+    "emoji": "🧊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The point where Earth's rotation axis meets the surface in the Arctic, sitting on drifting sea ice.",
+    "src": "https://en.wikipedia.org/wiki/North_Pole"
+  },
+  {
+    "id": "south_pole",
+    "name": "South Pole",
+    "emoji": "🐧",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The point where Earth's axis meets the surface in Antarctica, on an ice sheet about 2.8 km thick.",
+    "src": "https://en.wikipedia.org/wiki/South_Pole"
+  },
+  {
+    "id": "international_date_line",
+    "name": "International Date Line",
+    "emoji": "📅",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "idea"
+    ],
+    "fact": "An imaginary line near 180° longitude where the calendar date changes by a day.",
+    "src": "https://en.wikipedia.org/wiki/International_Date_Line"
+  },
+  {
+    "id": "atlantic_ocean",
+    "name": "Atlantic Ocean",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The world's second-largest ocean, separating the Americas from Europe and Africa.",
+    "src": "https://en.wikipedia.org/wiki/Atlantic_Ocean"
+  },
+  {
+    "id": "pacific_ocean",
+    "name": "Pacific Ocean",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The largest and deepest ocean, covering about a third of Earth's surface.",
+    "src": "https://en.wikipedia.org/wiki/Pacific_Ocean"
+  },
+  {
+    "id": "indian_ocean",
+    "name": "Indian Ocean",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The third-largest ocean, whose seasonal monsoon winds shaped centuries of trade.",
+    "src": "https://en.wikipedia.org/wiki/Indian_Ocean"
+  },
+  {
+    "id": "southern_ocean",
+    "name": "Southern Ocean",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The ocean ringing Antarctica, held in place by the strongest current on Earth.",
+    "src": "https://en.wikipedia.org/wiki/Southern_Ocean"
+  },
+  {
+    "id": "arctic_ocean",
+    "name": "Arctic Ocean",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The smallest and shallowest ocean, covered in sea ice for much of the year.",
+    "src": "https://en.wikipedia.org/wiki/Arctic_Ocean"
+  },
+  {
+    "id": "baltic_sea",
+    "name": "Baltic Sea",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A shallow, brackish inland sea of northern Europe, linked to the North Sea through narrow Danish straits.",
+    "src": "https://en.wikipedia.org/wiki/Baltic_Sea"
+  },
+  {
+    "id": "black_sea",
+    "name": "Black Sea",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "An inland sea between Europe and Asia whose deep waters hold almost no oxygen.",
+    "src": "https://en.wikipedia.org/wiki/Black_Sea"
+  },
+  {
+    "id": "caribbean_sea",
+    "name": "Caribbean Sea",
+    "emoji": "🏝️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A tropical sea of the western Atlantic, bordered by the Antilles, Central America and South America.",
+    "src": "https://en.wikipedia.org/wiki/Caribbean_Sea"
+  },
+  {
+    "id": "gulf_of_mexico",
+    "name": "Gulf of Mexico",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A large basin of the Atlantic, ringed by the US, Mexico and Cuba and rich in oil and fisheries.",
+    "src": "https://en.wikipedia.org/wiki/Gulf_of_Mexico"
+  },
+  {
+    "id": "gulf_stream",
+    "name": "Gulf Stream",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A warm Atlantic current that carries heat from the Gulf of Mexico to northwestern Europe.",
+    "src": "https://en.wikipedia.org/wiki/Gulf_Stream"
+  },
+  {
+    "id": "irish_sea",
+    "name": "Irish Sea",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The sea between Ireland and Great Britain, joined to the Atlantic by St George's Channel and the North Channel.",
+    "src": "https://en.wikipedia.org/wiki/Irish_Sea"
+  },
+  {
+    "id": "north_sea",
+    "name": "North Sea",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A shallow sea of the Atlantic between Great Britain, Scandinavia and the European mainland, with major oil and gas fields.",
+    "src": "https://en.wikipedia.org/wiki/North_Sea"
+  },
+  {
+    "id": "adriatic_sea",
+    "name": "Adriatic Sea",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The arm of the Mediterranean between the Italian peninsula and the Balkans.",
+    "src": "https://en.wikipedia.org/wiki/Adriatic_Sea"
+  },
+  {
+    "id": "aegean_sea",
+    "name": "Aegean Sea",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The arm of the Mediterranean between Greece and Turkey, scattered with islands.",
+    "src": "https://en.wikipedia.org/wiki/Aegean_Sea"
+  },
+  {
+    "id": "ionian_sea",
+    "name": "Ionian Sea",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The arm of the Mediterranean south of the Adriatic, between Greece and southern Italy.",
+    "src": "https://en.wikipedia.org/wiki/Ionian_Sea"
+  },
+  {
+    "id": "sargasso_sea",
+    "name": "Sargasso Sea",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A patch of the North Atlantic with no land borders, defined by currents and floating sargassum weed.",
+    "src": "https://en.wikipedia.org/wiki/Sargasso_Sea"
+  },
+  {
+    "id": "bering_sea",
+    "name": "Bering Sea",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A northern Pacific sea between Alaska and Russia, closed in by the Aleutian Islands.",
+    "src": "https://en.wikipedia.org/wiki/Bering_Sea"
+  },
+  {
+    "id": "coral_sea",
+    "name": "Coral Sea",
+    "emoji": "🪸",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A Pacific sea off northeastern Australia that contains the Great Barrier Reef.",
+    "src": "https://en.wikipedia.org/wiki/Coral_Sea"
+  },
+  {
+    "id": "sea_of_japan",
+    "name": "Sea of Japan",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A marginal sea of the western Pacific lying between Japan, Korea and Russia.",
+    "src": "https://en.wikipedia.org/wiki/Sea_of_Japan"
+  },
+  {
+    "id": "south_china_sea",
+    "name": "South China Sea",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A marginal sea of the western Pacific, one of the busiest shipping routes in the world.",
+    "src": "https://en.wikipedia.org/wiki/South_China_Sea"
+  },
+  {
+    "id": "yellow_sea",
+    "name": "Yellow Sea",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A shallow sea between China and the Korean peninsula, named for the silt carried in by rivers.",
+    "src": "https://en.wikipedia.org/wiki/Yellow_Sea"
+  },
+  {
+    "id": "tasman_sea",
+    "name": "Tasman Sea",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The sea between southeastern Australia and New Zealand, about 2,000 km across.",
+    "src": "https://en.wikipedia.org/wiki/Tasman_Sea"
+  },
+  {
+    "id": "philippine_sea",
+    "name": "Philippine Sea",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The largest marginal sea of the Pacific, bordering the Mariana Trench and its Challenger Deep.",
+    "src": "https://en.wikipedia.org/wiki/Philippine_Sea"
+  },
+  {
+    "id": "arabian_sea",
+    "name": "Arabian Sea",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The northwestern part of the Indian Ocean, between the Arabian Peninsula and India.",
+    "src": "https://en.wikipedia.org/wiki/Arabian_Sea"
+  },
+  {
+    "id": "bay_of_bengal",
+    "name": "Bay of Bengal",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The northeastern part of the Indian Ocean, the largest bay in the world.",
+    "src": "https://en.wikipedia.org/wiki/Bay_of_Bengal"
+  },
+  {
+    "id": "persian_gulf",
+    "name": "Persian Gulf",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A shallow arm of the Indian Ocean between Iran and the Arabian Peninsula, rich in oil.",
+    "src": "https://en.wikipedia.org/wiki/Persian_Gulf"
+  },
+  {
+    "id": "red_sea",
+    "name": "Red Sea",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A narrow inlet of the Indian Ocean between Africa and Arabia, linked to the Mediterranean by the Suez Canal.",
+    "src": "https://en.wikipedia.org/wiki/Red_Sea"
+  },
+  {
+    "id": "barents_sea",
+    "name": "Barents Sea",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "An Arctic sea north of Norway and Russia that stays largely ice-free thanks to Atlantic currents.",
+    "src": "https://en.wikipedia.org/wiki/Barents_Sea"
+  },
+  {
+    "id": "hudson_bay",
+    "name": "Hudson Bay",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A huge inland sea in northeastern Canada, named for the explorer Henry Hudson.",
+    "src": "https://en.wikipedia.org/wiki/Hudson_Bay"
+  },
+  {
+    "id": "caspian_sea",
+    "name": "Caspian Sea",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The world's largest inland body of water, a salt lake with an area close to Japan's.",
+    "src": "https://en.wikipedia.org/wiki/Caspian_Sea"
+  },
+  {
+    "id": "ross_sea",
+    "name": "Ross Sea",
+    "emoji": "🧊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A deep Antarctic bay of the Southern Ocean, the southernmost sea on Earth.",
+    "src": "https://en.wikipedia.org/wiki/Ross_Sea"
+  },
+  {
+    "id": "bosporus",
+    "name": "Bosporus",
+    "emoji": "🌉",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A narrow strait in Istanbul joining the Black Sea to the Sea of Marmara and dividing Europe from Asia.",
+    "src": "https://en.wikipedia.org/wiki/Bosporus"
+  },
+  {
+    "id": "dardanelles",
+    "name": "Dardanelles",
+    "emoji": "🌉",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A narrow strait in Turkey linking the Aegean Sea to the Sea of Marmara, lined by the Gallipoli peninsula.",
+    "src": "https://en.wikipedia.org/wiki/Dardanelles"
+  },
+  {
+    "id": "english_channel",
+    "name": "English Channel",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The arm of the Atlantic between southern England and northern France, only 33 km wide at Dover.",
+    "src": "https://en.wikipedia.org/wiki/English_Channel"
+  },
+  {
+    "id": "strait_of_hormuz",
+    "name": "Strait of Hormuz",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A narrow passage between Iran and Oman through which a large share of the world's oil is shipped.",
+    "src": "https://en.wikipedia.org/wiki/Strait_of_Hormuz"
+  },
+  {
+    "id": "bering_strait",
+    "name": "Bering Strait",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A strait about 82 km wide between Russia and Alaska, joining the Pacific to the Arctic Ocean.",
+    "src": "https://en.wikipedia.org/wiki/Bering_Strait"
+  },
+  {
+    "id": "drake_passage",
+    "name": "Drake Passage",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The wide, stormy stretch of sea between South America's Cape Horn and the Antarctic Peninsula.",
+    "src": "https://en.wikipedia.org/wiki/Drake_Passage"
+  },
+  {
+    "id": "strait_of_dover",
+    "name": "Strait of Dover",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The narrowest point of the English Channel, about 33 km across and busy with shipping.",
+    "src": "https://en.wikipedia.org/wiki/Strait_of_Dover"
+  },
+  {
+    "id": "taiwan_strait",
+    "name": "Taiwan Strait",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A strait about 180 km wide that separates Taiwan from mainland China.",
+    "src": "https://en.wikipedia.org/wiki/Taiwan_Strait"
+  },
+  {
+    "id": "lake_victoria",
+    "name": "Lake Victoria",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "Africa's largest lake and the largest tropical lake in the world, shared by Uganda, Kenya and Tanzania.",
+    "src": "https://en.wikipedia.org/wiki/Lake_Victoria"
+  },
+  {
+    "id": "lake_tanganyika",
+    "name": "Lake Tanganyika",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A rift lake in East Africa, the world's longest freshwater lake and second deepest.",
+    "src": "https://en.wikipedia.org/wiki/Lake_Tanganyika"
+  },
+  {
+    "id": "great_lakes",
+    "name": "Great Lakes",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "Five large freshwater lakes on the US-Canada border that hold about a fifth of the world's surface fresh water.",
+    "src": "https://en.wikipedia.org/wiki/Great_Lakes"
+  },
+  {
+    "id": "lake_superior",
+    "name": "Lake Superior",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The largest of the Great Lakes by area, and the largest freshwater lake in the world by surface.",
+    "src": "https://en.wikipedia.org/wiki/Lake_Superior"
+  },
+  {
+    "id": "lake_titicaca",
+    "name": "Lake Titicaca",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A large, high lake in the Andes between Peru and Bolivia, among the highest navigable lakes in the world.",
+    "src": "https://en.wikipedia.org/wiki/Lake_Titicaca"
+  },
+  {
+    "id": "lake_baikal",
+    "name": "Lake Baikal",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A rift lake in Siberia, the deepest and oldest lake on Earth, holding about a fifth of the world's fresh water.",
+    "src": "https://en.wikipedia.org/wiki/Lake_Baikal"
+  },
+  {
+    "id": "lake_ladoga",
+    "name": "Lake Ladoga",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The largest lake in Europe, in northwest Russia near Saint Petersburg.",
+    "src": "https://en.wikipedia.org/wiki/Lake_Ladoga"
+  },
+  {
+    "id": "lake_maracaibo",
+    "name": "Lake Maracaibo",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A large tidal bay in Venezuela that holds major oil fields and is known for frequent lightning.",
+    "src": "https://en.wikipedia.org/wiki/Lake_Maracaibo"
+  },
+  {
+    "id": "lake_van",
+    "name": "Lake Van",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The largest lake in Turkey, a salty soda lake without an outlet.",
+    "src": "https://en.wikipedia.org/wiki/Lake_Van"
+  },
+  {
+    "id": "lake_eyre",
+    "name": "Lake Eyre",
+    "emoji": "🏜️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "Australia's largest lake, a salt flat in the outback that fills with water only after rare, heavy rains.",
+    "src": "https://en.wikipedia.org/wiki/Kati_Thanda–Lake_Eyre"
+  },
+  {
+    "id": "yangtze",
+    "name": "Yangtze",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The longest river in Asia, flowing about 6,300 km across China to the East China Sea.",
+    "src": "https://en.wikipedia.org/wiki/Yangtze"
+  },
+  {
+    "id": "yellow_river",
+    "name": "Yellow River",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "China's second-longest river, named for the loess silt it carries; its floods shaped early Chinese history.",
+    "src": "https://en.wikipedia.org/wiki/Yellow_River"
+  },
+  {
+    "id": "mekong",
+    "name": "Mekong",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A river of about 4,350 km running from the Tibetan Plateau through six countries to Vietnam.",
+    "src": "https://en.wikipedia.org/wiki/Mekong"
+  },
+  {
+    "id": "indus_river",
+    "name": "Indus River",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A river rising in Tibet and flowing through Pakistan, the cradle of an early Bronze Age civilization.",
+    "src": "https://en.wikipedia.org/wiki/Indus_River"
+  },
+  {
+    "id": "ganges",
+    "name": "Ganges",
+    "emoji": "🛕",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A river of northern India and Bangladesh, sacred in Hinduism and home to hundreds of millions of people.",
+    "src": "https://en.wikipedia.org/wiki/Ganges"
+  },
+  {
+    "id": "brahmaputra_river",
+    "name": "Brahmaputra River",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A great river rising in Tibet and running through India and Bangladesh, joining the Ganges delta.",
+    "src": "https://en.wikipedia.org/wiki/Brahmaputra_River"
+  },
+  {
+    "id": "euphrates",
+    "name": "Euphrates",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The longest river of western Asia, one of the two rivers that framed ancient Mesopotamia.",
+    "src": "https://en.wikipedia.org/wiki/Euphrates"
+  },
+  {
+    "id": "tigris",
+    "name": "Tigris",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The eastern river of Mesopotamia, flowing through Turkey and Iraq to the Persian Gulf, along which Baghdad stands.",
+    "src": "https://en.wikipedia.org/wiki/Tigris"
+  },
+  {
+    "id": "jordan_river",
+    "name": "Jordan River",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A river of the Levant, flowing from Mount Hermon to the Dead Sea and holy to Christians and Jews.",
+    "src": "https://en.wikipedia.org/wiki/Jordan_River"
+  },
+  {
+    "id": "mississippi_river",
+    "name": "Mississippi River",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "North America's second-longest river system, draining about 40 per cent of the contiguous United States.",
+    "src": "https://en.wikipedia.org/wiki/Mississippi_River"
+  },
+  {
+    "id": "missouri_river",
+    "name": "Missouri River",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The longest river in North America, a tributary that joins the Mississippi near St. Louis.",
+    "src": "https://en.wikipedia.org/wiki/Missouri_River"
+  },
+  {
+    "id": "colorado_river",
+    "name": "Colorado River",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A river of the US Southwest that carved the Grand Canyon over millions of years.",
+    "src": "https://en.wikipedia.org/wiki/Colorado_River"
+  },
+  {
+    "id": "columbia_river",
+    "name": "Columbia River",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The largest river flowing into the Pacific from North America, with some of the continent's biggest dams.",
+    "src": "https://en.wikipedia.org/wiki/Columbia_River"
+  },
+  {
+    "id": "rio_grande",
+    "name": "Rio Grande",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A river about 3,000 km long that forms much of the border between Texas and Mexico.",
+    "src": "https://en.wikipedia.org/wiki/Rio_Grande"
+  },
+  {
+    "id": "st_lawrence_river",
+    "name": "St. Lawrence River",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The outlet of the Great Lakes to the Atlantic, once the gateway of European exploration into North America.",
+    "src": "https://en.wikipedia.org/wiki/St._Lawrence_River"
+  },
+  {
+    "id": "orinoco",
+    "name": "Orinoco",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "One of South America's longest rivers, flowing through Venezuela and Colombia to the Atlantic.",
+    "src": "https://en.wikipedia.org/wiki/Orinoco"
+  },
+  {
+    "id": "parana_river",
+    "name": "Paraná River",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "South America's second-longest river system, feeding the Río de la Plata through Paraguay and Argentina.",
+    "src": "https://en.wikipedia.org/wiki/Paraná_River"
+  },
+  {
+    "id": "rio_de_la_plata",
+    "name": "Río de la Plata",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A broad, muddy estuary between Argentina and Uruguay, formed where the Paraná and Uruguay rivers meet.",
+    "src": "https://en.wikipedia.org/wiki/Río_de_la_Plata"
+  },
+  {
+    "id": "blue_nile",
+    "name": "Blue Nile",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The main source of the Nile's floodwaters, rising in Ethiopia's highlands and carrying silt downstream.",
+    "src": "https://en.wikipedia.org/wiki/Blue_Nile"
+  },
+  {
+    "id": "white_nile",
+    "name": "White Nile",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The longer of the Nile's two main branches, flowing out of Lake Victoria through Uganda and South Sudan.",
+    "src": "https://en.wikipedia.org/wiki/White_Nile"
+  },
+  {
+    "id": "congo_river",
+    "name": "Congo River",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "Africa's deepest river and the second-longest, running through the world's second-largest rainforest.",
+    "src": "https://en.wikipedia.org/wiki/Congo_River"
+  },
+  {
+    "id": "niger_river",
+    "name": "Niger River",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The principal river of West Africa, which curves in a great bend through the Sahel and Nigeria's delta.",
+    "src": "https://en.wikipedia.org/wiki/Niger_River"
+  },
+  {
+    "id": "zambezi",
+    "name": "Zambezi",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "Africa's fourth-longest river, which drops over Victoria Falls and runs to the Indian Ocean.",
+    "src": "https://en.wikipedia.org/wiki/Zambezi"
+  },
+  {
+    "id": "danube",
+    "name": "Danube",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "Europe's second-longest river, flowing through ten countries from Germany to the Black Sea.",
+    "src": "https://en.wikipedia.org/wiki/Danube"
+  },
+  {
+    "id": "rhine",
+    "name": "Rhine",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A river from the Swiss Alps to the North Sea, one of Europe's busiest waterways.",
+    "src": "https://en.wikipedia.org/wiki/Rhine"
+  },
+  {
+    "id": "thames",
+    "name": "Thames",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The longest river entirely in England, flowing through London to the North Sea.",
+    "src": "https://en.wikipedia.org/wiki/River_Thames"
+  },
+  {
+    "id": "seine",
+    "name": "Seine",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The river of northern France that runs through Paris to the English Channel.",
+    "src": "https://en.wikipedia.org/wiki/Seine"
+  },
+  {
+    "id": "volga",
+    "name": "Volga",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "Europe's longest river, running through the heart of Russia to the Caspian Sea.",
+    "src": "https://en.wikipedia.org/wiki/Volga"
+  },
+  {
+    "id": "elbe",
+    "name": "Elbe",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "A river flowing from the Czech mountains through Germany to the North Sea at Hamburg.",
+    "src": "https://en.wikipedia.org/wiki/Elbe"
+  },
+  {
+    "id": "tagus",
+    "name": "Tagus",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "The longest river of the Iberian Peninsula, flowing through Spain and Portugal to Lisbon.",
+    "src": "https://en.wikipedia.org/wiki/Tagus"
+  },
+  {
+    "id": "ebro",
+    "name": "Ebro",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "Spain's largest river by flow, running to the Mediterranean through a broad delta in Catalonia.",
+    "src": "https://en.wikipedia.org/wiki/Ebro"
+  },
+  {
+    "id": "po_river",
+    "name": "Po",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "water"
+    ],
+    "fact": "Italy's longest river, flowing east across the northern plain to the Adriatic Sea.",
+    "src": "https://en.wikipedia.org/wiki/Po_(river)"
   }
 ]
