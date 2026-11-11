@@ -119242,5 +119242,475 @@
     "why": "Sumerian was the language of ancient Sumer. It is the oldest attested language, dating back to at least 3100 BC, perhaps earlier. It is a local language isolate, thus unrelated to any other known language, that was spoken exclusively in ancient Mesopotamia, in the area that is now modern-day Iraq.",
     "src": "https://en.wikipedia.org/wiki/Sumerian_language",
     "verified": true
+  },
+  {
+    "in": [
+      "news",
+      "press"
+    ],
+    "out": "news_media",
+    "why": "The news media or news industry are forms of mass media that focus on delivering news to the general public. These sources include news agencies, newspapers, news magazines, news channels, etc.",
+    "src": "https://en.wikipedia.org/wiki/News_media",
+    "verified": true
+  },
+  {
+    "in": [
+      "photograph",
+      "journalism"
+    ],
+    "out": "photojournalism",
+    "why": "Photojournalism is journalism that uses images to tell a news story. It usually only refers to still images, but can also refer to video used in broadcast journalism.",
+    "src": "https://en.wikipedia.org/wiki/Photojournalism",
+    "verified": true
+  },
+  {
+    "in": [
+      "television",
+      "computer"
+    ],
+    "out": "multimedia",
+    "why": "Multimedia is a form of communication that uses a combination of different content forms. These include writing, audio, images, animations, or video, into a single presentation.",
+    "src": "https://en.wikipedia.org/wiki/Multimedia",
+    "verified": true
+  },
+  {
+    "in": [
+      "television",
+      "company"
+    ],
+    "out": "television_broadcaster",
+    "why": "A television broadcaster or television network is a telecommunications network for the distribution of television content, where a central operation provides programming to many television stations, pay television providers or, in the United States, multichannel video programming distributors.",
+    "src": "https://en.wikipedia.org/wiki/Television_broadcaster",
+    "verified": true
+  },
+  {
+    "in": [
+      "television",
+      "united_kingdom"
+    ],
+    "out": "bbc",
+    "why": "The British Broadcasting Corporation (BBC) is a British public service broadcaster headquartered at Broadcasting House in London, England. Originally established in 1922 as the British Broadcasting Company, it evolved into its current state with its current name on 1 January 1927.",
+    "src": "https://en.wikipedia.org/wiki/BBC",
+    "verified": true
+  },
+  {
+    "in": [
+      "television",
+      "united_states"
+    ],
+    "out": "nbc",
+    "why": "The National Broadcasting Company (NBC) is an American commercial broadcast television network, serving as the flagship property of NBC Entertainment, a division of NBCUniversal, which is a subsidiary of Comcast. It is one of NBCUniversal's two flagship namesake properties, alongside Universal Studios.",
+    "src": "https://en.wikipedia.org/wiki/NBC",
+    "verified": true
+  },
+  {
+    "in": [
+      "newspaper",
+      "united_kingdom"
+    ],
+    "out": "the_times",
+    "why": "The Times is a British daily national newspaper based in London. It began in 1785 under the title The Daily Universal Register, adopting its modern name on 1 January 1788.",
+    "src": "https://en.wikipedia.org/wiki/The_Times",
+    "verified": true
+  },
+  {
+    "in": [
+      "newspaper",
+      "united_states"
+    ],
+    "out": "the_new_york_times",
+    "why": "The New York Times (NYT) is a newspaper based in Manhattan, New York City. The New York Times covers domestic, national, and international news, and publishes opinion pieces and reviews.",
+    "src": "https://en.wikipedia.org/wiki/The_New_York_Times",
+    "verified": true
+  },
+  {
+    "in": [
+      "newspaper",
+      "company"
+    ],
+    "out": "the_wall_street_journal",
+    "why": "The Wall Street Journal (WSJ), commonly known as the Journal, is an American newspaper based in Midtown Manhattan, New York City. It provides extensive coverage of news, especially business and finance, and operates on a subscription model that requires readers to pay for access to most articles and other content.",
+    "src": "https://en.wikipedia.org/wiki/The_Wall_Street_Journal",
+    "verified": true
+  },
+  {
+    "in": [
+      "newspaper",
+      "government"
+    ],
+    "out": "the_washington_post",
+    "why": "The Washington Post is an American daily newspaper published in Washington, D.C. It is the most widely circulated newspaper outlet in the Washington metropolitan area and is considered a newspaper of record in the United States. In 2023, the Post had 130,000 print subscribers and 2.5 million digital subscribers, both ranking third among American newspapers after The New York Times and The Wall Street Journal.",
+    "src": "https://en.wikipedia.org/wiki/The_Washington_Post",
+    "verified": true
+  },
+  {
+    "in": [
+      "newspaper",
+      "france"
+    ],
+    "out": "le_monde",
+    "why": "Le Monde is a French newspaper founded in 1944 by Hubert Beuve-Méry. It is the most widely read paid national daily newspaper in France, with 2.44 million readers in 2021, and the most widely circulated, with around 500,000 subscribers, including 414,000 digital subscribers and 87,000 print subscribers.",
+    "src": "https://en.wikipedia.org/wiki/Le_Monde",
+    "verified": true
+  },
+  {
+    "in": [
+      "academic_journal",
+      "observation"
+    ],
+    "out": "nature_journal",
+    "why": "Nature is a British weekly international scientific journal publishing peer-reviewed research across the natural sciences, including biology, physics, chemistry, the earth sciences, and related interdisciplinary fields. It operates editorial offices in London, the United States, continental Europe, and Asia under the international scientific publishing company Springer Nature.",
+    "src": "https://en.wikipedia.org/wiki/Nature_(journal)",
+    "verified": true
+  },
+  {
+    "in": [
+      "academic_journal",
+      "hypothesis"
+    ],
+    "out": "science_journal",
+    "why": "Science is the peer-reviewed academic journal of the American Association for the Advancement of Science (AAAS) and one of the world's top academic journals. It was first published in 1880, is currently circulated weekly and has a subscriber base of around 130,000.",
+    "src": "https://en.wikipedia.org/wiki/Science_(journal)",
+    "verified": true
+  },
+  {
+    "in": [
+      "magazine",
+      "map"
+    ],
+    "out": "national_geographic",
+    "why": "National Geographic (formerly The National Geographic Magazine, sometimes branded as Nat Geo) is an American monthly magazine published by National Geographic Partners and is based in Washington, DC. The magazine was founded in 1888 as a scholarly journal, nine months after the establishment of the society, but is now a popular magazine.",
+    "src": "https://en.wikipedia.org/wiki/National_Geographic",
+    "verified": true
+  },
+  {
+    "in": [
+      "magazine",
+      "empiricism"
+    ],
+    "out": "scientific_american",
+    "why": "Scientific American, informally abbreviated SciAm or sometimes SA, is an American popular science magazine. Many scientists, including Albert Einstein and Nikola Tesla, once contributed articles to it, with more than 150 Nobel Prize-winners having been featured since its inception.",
+    "src": "https://en.wikipedia.org/wiki/Scientific_American",
+    "verified": true
+  },
+  {
+    "in": [
+      "magazine",
+      "fashion"
+    ],
+    "out": "vogue_magazine",
+    "why": "Vogue (stylized in all caps), also known as American Vogue, is a monthly fashion magazine covering style news, including haute couture, beauty, fashion, culture, living, and runway. Founded in 1892 by Arthur Baldwin Turnure, it is part of the global collection of Condé Nast's VOGUE media.",
+    "src": "https://en.wikipedia.org/wiki/Vogue_(magazine)",
+    "verified": true
+  },
+  {
+    "in": [
+      "manga",
+      "magazine"
+    ],
+    "out": "weekly_shonen_jump",
+    "why": "Weekly Shōnen Jump is a weekly shōnen manga anthology published in Japan by Shueisha under the Jump line of magazines. The manga series within the magazine consist of many action scenes and a fair amount of comedy.",
+    "src": "https://en.wikipedia.org/wiki/Weekly_Shōnen_Jump",
+    "verified": true
+  },
+  {
+    "in": [
+      "social_media",
+      "corporation"
+    ],
+    "out": "facebook",
+    "why": "Facebook is an American social networking service owned by the American technology conglomerate Meta Platforms. It was founded in 2004 by Mark Zuckerberg, along with his Harvard College roommates and fellow students Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes.",
+    "src": "https://en.wikipedia.org/wiki/Facebook",
+    "verified": true
+  },
+  {
+    "in": [
+      "social_media",
+      "china"
+    ],
+    "out": "tiktok",
+    "why": "TikTok is a Chinese social networking service and short-form online video platform. It hosts user-submitted videos, which range in duration from three seconds to 60 minutes.",
+    "src": "https://en.wikipedia.org/wiki/TikTok",
+    "verified": true
+  },
+  {
+    "in": [
+      "encyclopedia",
+      "internet"
+    ],
+    "out": "wikipedia",
+    "why": "Wikipedia is a free online encyclopedia written and maintained by a community of volunteer editors, known as Wikipedians, through open collaboration and the wiki software MediaWiki. Founded by Jimmy Wales and Larry Sanger in 2001, Wikipedia has been hosted since 2003 by the Wikimedia Foundation, an American nonprofit organization funded mainly by donations from readers.",
+    "src": "https://en.wikipedia.org/wiki/Wikipedia",
+    "verified": true
+  },
+  {
+    "in": [
+      "television",
+      "internet"
+    ],
+    "out": "youtube",
+    "why": "YouTube is an American online video-sharing platform owned by Google. YouTube was founded on February 14, 2005, by Chad Hurley, Jawed Karim, and Steve Chen, all of whom were former employees at PayPal.",
+    "src": "https://en.wikipedia.org/wiki/YouTube",
+    "verified": true
+  },
+  {
+    "in": [
+      "diplomacy",
+      "government"
+    ],
+    "out": "diplomatic_mission",
+    "why": "A diplomatic mission or foreign mission is a group of people from a state or organization present in another state to represent the sending state or organization officially in the receiving or host state.",
+    "src": "https://en.wikipedia.org/wiki/Diplomatic_mission",
+    "verified": true
+  },
+  {
+    "in": [
+      "communism",
+      "china"
+    ],
+    "out": "chinese_communist_party",
+    "why": "The Communist Party of China (CPC), commonly known as the Chinese Communist Party (CCP), is the founding and sole governing party of the People's Republic of China (PRC). Founded in 1921, the CCP won the Chinese Civil War against the Kuomintang and proclaimed the establishment of the PRC under the chairmanship of Mao Zedong in October 1949.",
+    "src": "https://en.wikipedia.org/wiki/Chinese_Communist_Party",
+    "verified": true
+  },
+  {
+    "in": [
+      "government",
+      "sovereignty"
+    ],
+    "out": "state_polity",
+    "why": "A state is a political entity that rules and governs society and the population within a definite territory, or in other words, it is referred to as the country itself with various administrative divisions. Governments are considered as an apparatus, representative, or instrument of states as such the term is used as a metonym for them in governmental topics.",
+    "src": "https://en.wikipedia.org/wiki/State_(polity)",
+    "verified": true
+  },
+  {
+    "in": [
+      "poverty",
+      "tax"
+    ],
+    "out": "welfare_spending",
+    "why": "Welfare spending is a type of government support intended to ensure that members of a society can meet basic human needs such as food and shelter.",
+    "src": "https://en.wikipedia.org/wiki/Welfare_spending",
+    "verified": true
+  },
+  {
+    "in": [
+      "truth",
+      "trust"
+    ],
+    "out": "lie",
+    "why": "A lie is an assertion that is believed to be false, typically used with the intention of deceiving or misleading someone. The practice of communicating lies is called lying.",
+    "src": "https://en.wikipedia.org/wiki/Lie",
+    "verified": true
+  },
+  {
+    "in": [
+      "community",
+      "equality"
+    ],
+    "out": "social_cohesion",
+    "why": "Group cohesiveness is the degree or strength of bonds linking members of a social group to one another and to the group as a whole. Although cohesion is a multi-faceted process, it can be broken down into four main components: social relations, task relations, perceived unity, and emotions.",
+    "src": "https://en.wikipedia.org/wiki/Social_cohesion",
+    "verified": true
+  },
+  {
+    "in": [
+      "community",
+      "news"
+    ],
+    "out": "public",
+    "why": "In public relations and communication science, publics are groups of individual people, and the public (a.k.a. the general public) is the totality of such groupings.",
+    "src": "https://en.wikipedia.org/wiki/Public",
+    "verified": true
+  },
+  {
+    "in": [
+      "gender",
+      "equality"
+    ],
+    "out": "gender_equality",
+    "why": "Gender equality, also known as sexual equality, gender egalitarianism, or equality of the sexes, is the state of equal ease of access to resources and opportunities regardless of gender, including economic participation and decision-making, and the state of valuing different behaviors, aspirations, and needs equally, also regardless of gender.",
+    "src": "https://en.wikipedia.org/wiki/Gender_equality",
+    "verified": true
+  },
+  {
+    "in": [
+      "woman",
+      "rights"
+    ],
+    "out": "womens_rights",
+    "why": "Women's rights are the rights and entitlements claimed for women and girls worldwide. They formed the basis for the women's rights movement in the 19th century and the feminist movements during the 20th and 21st centuries.",
+    "src": "https://en.wikipedia.org/wiki/Women's_rights",
+    "verified": true
+  },
+  {
+    "in": [
+      "upper_class",
+      "india"
+    ],
+    "out": "caste_system_in_india",
+    "why": "In India, social classification based on caste has its origin in ancient times. It was transformed by various ruling elites in medieval, early-modern, and modern India, especially in the aftermath of the collapse of the Mughal Empire and the establishment of the British Raj.",
+    "src": "https://en.wikipedia.org/wiki/Caste_system_in_India",
+    "verified": true
+  },
+  {
+    "in": [
+      "community",
+      "revolution"
+    ],
+    "out": "social_change",
+    "why": "Social change is the alteration of the social order of a society which may include changes in social institutions, social behaviours or social relations. Sustained at a larger scale, it may lead to social transformation or societal transformation.",
+    "src": "https://en.wikipedia.org/wiki/Social_change",
+    "verified": true
+  },
+  {
+    "in": [
+      "rights",
+      "democracy"
+    ],
+    "out": "civil_and_political_rights",
+    "why": "Civil and political rights are a class of rights that protect individuals' freedom from infringement by governments, social organizations, and private individuals. They ensure one's entitlement to participate in the civil and political life of society and the state.",
+    "src": "https://en.wikipedia.org/wiki/Civil_and_political_rights",
+    "verified": true
+  },
+  {
+    "in": [
+      "civil_and_political_rights",
+      "treaty"
+    ],
+    "out": "iccpr",
+    "why": "The International Covenant on Civil and Political Rights (ICCPR) is a multilateral treaty that commits nations to respect individuals' civil and political rights, including the right to life, freedom of religion, freedom of speech, freedom of assembly, electoral rights and rights to due process and a fair trial.",
+    "src": "https://en.wikipedia.org/wiki/International_Covenant_on_Civil_and_Political_Rights",
+    "verified": true
+  },
+  {
+    "in": [
+      "human_rights",
+      "treaty"
+    ],
+    "out": "icescr",
+    "why": "The International Covenant on Economic, Social and Cultural Rights (ICESCR) is a multilateral treaty adopted by the United Nations General Assembly on 16 December 1966, and came into force on 3 January 1976.",
+    "src": "https://en.wikipedia.org/wiki/International_Covenant_on_Economic,_Social_and_Cultural_Rights",
+    "verified": true
+  },
+  {
+    "in": [
+      "observation",
+      "statistics"
+    ],
+    "out": "observational_study",
+    "why": "An observational study is a type of research design in which outcomes are measured to identify patterns or associations without attempts by the investigator to manipulate variables or conditions. Observational studies are commonly used in fields such as medicine, epidemiology, psychology, sociology, and statistics.",
+    "src": "https://en.wikipedia.org/wiki/Observational_study",
+    "verified": true
+  },
+  {
+    "in": [
+      "police",
+      "community"
+    ],
+    "out": "safety",
+    "why": "Safety is the state of being protected from harm or other danger. Safety can also refer to the control of recognized hazards in order to achieve an acceptable level of risk.",
+    "src": "https://en.wikipedia.org/wiki/Safety",
+    "verified": true
+  },
+  {
+    "in": [
+      "dollar",
+      "united_states"
+    ],
+    "out": "united_states_dollar",
+    "why": "The United States dollar (symbol: $; currency code: USD) is the official currency of the United States (U.S.) and several other countries. The U.S. Coinage Act of 1792 established the dollar as the base unit, with each dollar divided into 100 cents (symbol: ¢).",
+    "src": "https://en.wikipedia.org/wiki/United_States_dollar",
+    "verified": true
+  },
+  {
+    "in": [
+      "telephone",
+      "corporation"
+    ],
+    "out": "att",
+    "why": "AT&T Inc., an abbreviation of its predecessor's original name, the American Telephone and Telegraph Company, is an American multinational telecommunications holding company headquartered at the Whitacre Tower in Downtown Dallas, Texas.",
+    "src": "https://en.wikipedia.org/wiki/AT&T",
+    "verified": true
+  },
+  {
+    "in": [
+      "earring",
+      "tattoo"
+    ],
+    "out": "body_piercing",
+    "why": "Body piercing is a form of body modification involving the puncturing or cutting a part of the body to create an opening through which jewelry or implants can be worn or inserted. The word piercing can refer to the act or practice of body piercing, or to an opening in the body created by this act or practice.",
+    "src": "https://en.wikipedia.org/wiki/Body_piercing",
+    "verified": true
+  },
+  {
+    "in": [
+      "ritual",
+      "violence"
+    ],
+    "out": "human_cannibalism",
+    "why": "Human cannibalism is the act or practice of humans eating the flesh or internal organs of other human beings. A person who practices cannibalism is called a cannibal.",
+    "src": "https://en.wikipedia.org/wiki/Human_cannibalism",
+    "verified": true
+  },
+  {
+    "in": [
+      "university",
+      "holy_roman_empire"
+    ],
+    "out": "heidelberg_university",
+    "why": "Heidelberg University, officially the Ruprecht Karl University of Heidelberg, is a public research university in Heidelberg, Baden-Württemberg, Germany. Founded in 1386 on instruction of Pope Urban VI, Heidelberg is Germany's oldest university and one of the world's oldest surviving universities; it was the third university established in the Holy Roman Empire after Prague (1347) and Vienna (1365).",
+    "src": "https://en.wikipedia.org/wiki/Heidelberg_University",
+    "verified": true
+  },
+  {
+    "in": [
+      "soviet_union",
+      "diplomacy"
+    ],
+    "out": "commonwealth_of_independent_states",
+    "why": "The Commonwealth of Independent States (CIS) is a regional intergovernmental organisation of states in Eurasia. It was formed following the dissolution of the Soviet Union in 1991.",
+    "src": "https://en.wikipedia.org/wiki/Commonwealth_of_Independent_States",
+    "verified": true
+  },
+  {
+    "in": [
+      "treaty",
+      "europe"
+    ],
+    "out": "osce",
+    "why": "The Organization for Security and Co-operation in Europe (OSCE) is a regional security-oriented intergovernmental organization comprising member states in Europe, North America, and Asia. Its mandate includes issues such as arms control, the promotion of human rights, freedom of the press, and free and fair elections.",
+    "src": "https://en.wikipedia.org/wiki/Organization_for_Security_and_Co-operation_in_Europe",
+    "verified": true
+  },
+  {
+    "in": [
+      "treaty",
+      "united_states"
+    ],
+    "out": "organization_of_american_states",
+    "why": "The Organization of American States is an international organization founded on 30 April 1948 to promote cooperation among its member states within the Americas. Headquartered in Washington, D.C., United States, the OAS is a voluntary \"multilateral regional body focused on human rights, electoral oversight, social and economic development, and security in the Western Hemisphere\", according to the Council on Foreign Relations.",
+    "src": "https://en.wikipedia.org/wiki/Organization_of_American_States",
+    "verified": true
+  },
+  {
+    "in": [
+      "road",
+      "crime"
+    ],
+    "out": "driving_under_the_influence",
+    "why": "Driving under the influence (DUI) or driving while intoxicated (DWI) is the crime of driving, operating, or being in control of a vehicle while one is impaired from doing so safely by the effect of either alcohol or some other drug, whether recreational or prescription. Multiple other terms are used for the offense in various jurisdictions.",
+    "src": "https://en.wikipedia.org/wiki/Driving_under_the_influence",
+    "verified": true
+  },
+  {
+    "in": [
+      "film",
+      "united_states"
+    ],
+    "out": "western_genre",
+    "why": "The Western is a genre of fiction typically set in the American frontier, commonly referred to as the “Old West” or “Wild West”. Stories in the genre are most commonly set during the period of westward expansion in the 19th century, particularly from the mid-19th century (around the time of the California Gold Rush) through the closing of the American frontier in 1890, although works may be set outside this period.",
+    "src": "https://en.wikipedia.org/wiki/Western_(genre)",
+    "verified": true
   }
 ]
