@@ -107082,5 +107082,1495 @@
     "why": "Secularism is the principle of seeking to conduct human affairs based on naturalistic considerations, uninvolved with religion. It is most commonly thought of as the separation of religion from civil affairs and the state.",
     "src": "https://en.wikipedia.org/wiki/Secularism",
     "verified": true
+  },
+  {
+    "in": [
+      "school",
+      "knowledge"
+    ],
+    "out": "education",
+    "why": "Education is the transmission of knowledge and skills and the development of character traits. Non-formal education is also structured but occurs outside the formal schooling system, while informal education is unstructured learning through daily experiences.",
+    "src": "https://en.wikipedia.org/wiki/Education",
+    "verified": true
+  },
+  {
+    "in": [
+      "teacher",
+      "learning"
+    ],
+    "out": "teaching",
+    "why": "Teaching is the practice implemented by a teacher aimed at transmitting skills (knowledge, know-how, and interpersonal skills) to a learner, a student, or any other audience of an educational institution. It is closely related to learning, the student's activity of appropriating this knowledge.",
+    "src": "https://en.wikipedia.org/wiki/Teaching",
+    "verified": true
+  },
+  {
+    "in": [
+      "school",
+      "human"
+    ],
+    "out": "student",
+    "why": "A student is a person enrolled in a school or other educational institution, or more generally, a person who takes a special interest in a subject. Those in primary school are often referred to as pupils.",
+    "src": "https://en.wikipedia.org/wiki/Student",
+    "verified": true
+  },
+  {
+    "in": [
+      "school",
+      "library"
+    ],
+    "out": "university",
+    "why": "A university, from Latin universitas \"a whole\", is an institution of tertiary education and research which awards academic degrees in several academic disciplines. The word derives from the Latin phrase universitas magistrorum et scholarium, which roughly means \"community of teachers and scholars\".",
+    "src": "https://en.wikipedia.org/wiki/University",
+    "verified": true
+  },
+  {
+    "in": [
+      "education",
+      "writing"
+    ],
+    "out": "curriculum",
+    "why": "The term curriculum often refers specifically to a planned sequence of instruction, or to a view of the student's experiences in terms of the educator's or school's instructional goals. Curricula are split into several categories: the explicit, the implicit (including the hidden), the excluded, and the extracurricular.",
+    "src": "https://en.wikipedia.org/wiki/Curriculum",
+    "verified": true
+  },
+  {
+    "in": [
+      "education",
+      "question"
+    ],
+    "out": "exam",
+    "why": "An examination (exam or evaluation), or test, is an educational assessment intended to measure a test-taker's knowledge, skill, aptitude, physical fitness, or classification in many other topics. There is no general consensus or invariable standard for test formats and difficulty.",
+    "src": "https://en.wikipedia.org/wiki/Exam",
+    "verified": true
+  },
+  {
+    "in": [
+      "university",
+      "student"
+    ],
+    "out": "academic_degree",
+    "why": "An academic degree is a qualification awarded to a student upon successful completion of a course of study in higher education. Academic degrees are commonly structured in levels, most often categorized as undergraduate and postgraduate degrees.",
+    "src": "https://en.wikipedia.org/wiki/Academic_degree",
+    "verified": true
+  },
+  {
+    "in": [
+      "learning",
+      "time"
+    ],
+    "out": "skill",
+    "why": "A skill is the learned or innate ability to act with determined results and good execution often within a given amount of time, energy, or both. Although the arts are also skills, there are many skills that form an art but have no connection to the fine arts.",
+    "src": "https://en.wikipedia.org/wiki/Skill",
+    "verified": true
+  },
+  {
+    "in": [
+      "teaching",
+      "theory"
+    ],
+    "out": "pedagogy",
+    "why": "Pedagogy, taken as an academic discipline, is the study of how knowledge and skills are imparted in an educational context, and it considers the interactions that take place during learning. It is often described as the act of teaching.",
+    "src": "https://en.wikipedia.org/wiki/Pedagogy",
+    "verified": true
+  },
+  {
+    "in": [
+      "symbol",
+      "knowledge"
+    ],
+    "out": "information",
+    "why": "Information is an abstract concept that refers to something which has the power to inform. Any natural process that is not completely random and any observable pattern in any medium can be said to convey some amount of information.",
+    "src": "https://en.wikipedia.org/wiki/Information",
+    "verified": true
+  },
+  {
+    "in": [
+      "information",
+      "number"
+    ],
+    "out": "data",
+    "why": "Data is a collection of discrete or continuous values that conveys information, describing the quantity, quality, fact, statistics, other basic units of meaning, or simply sequences of symbols that may be further interpreted formally. A datum, data value or data point is an individual value in a collection of data.",
+    "src": "https://en.wikipedia.org/wiki/Data",
+    "verified": true
+  },
+  {
+    "in": [
+      "information",
+      "language"
+    ],
+    "out": "communication",
+    "why": "Communication is commonly defined as the transmission of information. Its precise definition is disputed, with disagreements about whether unintentional or failed transmissions are included and whether communication not only transmits meaning but also creates it.",
+    "src": "https://en.wikipedia.org/wiki/Communication",
+    "verified": true
+  },
+  {
+    "in": [
+      "communication",
+      "human"
+    ],
+    "out": "conversation",
+    "why": "Conversation is interactive communication between two or more people. Conversation analysis is a branch of sociology which studies the structure and organization of human interaction, with a more specific focus on conversational interaction.",
+    "src": "https://en.wikipedia.org/wiki/Conversation",
+    "verified": true
+  },
+  {
+    "in": [
+      "communication",
+      "eye"
+    ],
+    "out": "nonverbal_communication",
+    "why": "Nonverbal communication is the transmission of messages through signals that don't involve spoken or written words. It often goes unnoticed but is used in communication everywhere, to aid in the message someone is intending to get across.",
+    "src": "https://en.wikipedia.org/wiki/Nonverbal_communication",
+    "verified": true
+  },
+  {
+    "in": [
+      "nonverbal_communication",
+      "hand"
+    ],
+    "out": "body_language",
+    "why": "Body language is a type of nonverbal communication in which physical behaviors, as opposed to words, are used to express or convey information. Although it is an important part of communication, most of it happens without conscious awareness.",
+    "src": "https://en.wikipedia.org/wiki/Body_language",
+    "verified": true
+  },
+  {
+    "in": [
+      "society",
+      "tradition"
+    ],
+    "out": "culture",
+    "why": "Culture is a concept that encompasses the social behavior, institutions, and norms found in human societies, as well as the knowledge, beliefs, arts, laws, customs, capabilities, attitudes, and habits of the individuals in these groups. It often originates from or is attributed to a specific region or location.",
+    "src": "https://en.wikipedia.org/wiki/Culture",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "society"
+    ],
+    "out": "anthropology",
+    "why": "Anthropology is the scientific study of humanity that crosses biology and sociology, concerned with human behavior, human biology, cultures, societies, and linguistics, in both the present and past, including archaic humans.",
+    "src": "https://en.wikipedia.org/wiki/Anthropology",
+    "verified": true
+  },
+  {
+    "in": [
+      "anthropology",
+      "culture"
+    ],
+    "out": "cultural_anthropology",
+    "why": "Cultural anthropology is a branch of anthropology focused on the study of cultural variation among humans. It is in contrast to social anthropology, which perceives cultural variation as a subset of a posited anthropological constant.",
+    "src": "https://en.wikipedia.org/wiki/Cultural_anthropology",
+    "verified": true
+  },
+  {
+    "in": [
+      "anthropology",
+      "writing"
+    ],
+    "out": "ethnography",
+    "why": "Ethnography is a branch of anthropology and the systematic study of individual cultures. It is also a type of social research that involves examining the behavior of the participants in a given social situation and understanding the group members' own interpretation of such behavior.",
+    "src": "https://en.wikipedia.org/wiki/Ethnography",
+    "verified": true
+  },
+  {
+    "in": [
+      "tribe",
+      "language"
+    ],
+    "out": "ethnicity",
+    "why": "An ethnicity or ethnic group is a group of humans who identify with each other on the basis of perceived shared attributes that distinguish them from other groups. These attributes may include language, culture, ancestry, traditions, society, religion, history, region, or social treatment.",
+    "src": "https://en.wikipedia.org/wiki/Ethnicity",
+    "verified": true
+  },
+  {
+    "in": [
+      "tribe",
+      "road"
+    ],
+    "out": "nomad",
+    "why": "Nomads are communities without fixed habitation who regularly move to and from areas. Nomadism is also a lifestyle adapted to infertile regions such as steppe, tundra, or ice and sand, where mobility is the most efficient strategy for exploiting scarce resources.",
+    "src": "https://en.wikipedia.org/wiki/Nomad",
+    "verified": true
+  },
+  {
+    "in": [
+      "culture",
+      "history"
+    ],
+    "out": "cultural_heritage",
+    "why": "Cultural heritage is the tangible and intangible legacy of a group or society that is inherited from past generations. Not all legacies of past generations are \"heritage\".",
+    "src": "https://en.wikipedia.org/wiki/Cultural_heritage",
+    "verified": true
+  },
+  {
+    "in": [
+      "culture",
+      "newspaper"
+    ],
+    "out": "popular_culture",
+    "why": "Popular culture, also called pop culture or mass culture, is generally recognized by members of a society as a set of practices, beliefs, artistic output and objects that are dominant or prevalent in a society at a given point in time. Mass media, marketing, and the imperatives of mass appeal within capitalism constitute the primary engines of Western popular culture.",
+    "src": "https://en.wikipedia.org/wiki/Popular_culture",
+    "verified": true
+  },
+  {
+    "in": [
+      "tradition",
+      "word"
+    ],
+    "out": "oral_tradition",
+    "why": "Oral tradition, or oral lore, is a form of human communication in which knowledge, art, beliefs, ideas and culture are received, preserved, and transmitted orally from one generation to another. The transmission is through speech or song and may include folktales, ballads, chants, prose or poetry.",
+    "src": "https://en.wikipedia.org/wiki/Oral_tradition",
+    "verified": true
+  },
+  {
+    "in": [
+      "communication",
+      "hand"
+    ],
+    "out": "greeting",
+    "why": "Greeting is an act of communication in which human beings intentionally make their presence known to each other, to show attention to, and to suggest a type of relationship or social status between individuals or groups of people coming in contact with each other. Greetings are sometimes used just prior to a conversation or to greet in passing.",
+    "src": "https://en.wikipedia.org/wiki/Greeting",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "fashion"
+    ],
+    "out": "body_modification",
+    "why": "Body modification is the deliberate altering of the human anatomy or human physical appearance. It is performed for a large variety of reasons, including aesthetics, rites of passage, religious beliefs, and to display group membership or affiliation.",
+    "src": "https://en.wikipedia.org/wiki/Body_modification",
+    "verified": true
+  },
+  {
+    "in": [
+      "body_modification",
+      "ink"
+    ],
+    "out": "tattoo",
+    "why": "A tattoo is a form of body modification made by inserting tattoo ink, dyes, or pigments, either indelible or temporary, into the dermis layer of the skin to form a design. The etymology of the body modification term is not to be confused with the origins of the word for the military drumbeat or performance.",
+    "src": "https://en.wikipedia.org/wiki/Tattoo",
+    "verified": true
+  },
+  {
+    "in": [
+      "birth",
+      "calendar"
+    ],
+    "out": "birthday",
+    "why": "A birthday is the anniversary of the birth of a person or the figurative birth of an institution. Birthdays of people are celebrated in numerous cultures, often with birthday gifts, birthday cards, a birthday party, or a rite of passage.",
+    "src": "https://en.wikipedia.org/wiki/Birthday",
+    "verified": true
+  },
+  {
+    "in": [
+      "festival",
+      "calendar"
+    ],
+    "out": "holiday",
+    "why": "A holiday is a day or other period of time set aside for festivals or recreation. Public holidays are set by public authorities and vary by state or region.",
+    "src": "https://en.wikipedia.org/wiki/Holiday",
+    "verified": true
+  },
+  {
+    "in": [
+      "festival",
+      "mask"
+    ],
+    "out": "carnival",
+    "why": "Carnival typically involves public celebrations, including events such as parades, public street parties and other entertainments, combining some elements of a circus. It is known as a time of great indulgence before Lent, which stresses the opposite, with drinking, overeating, and various other activities of indulgence.",
+    "src": "https://en.wikipedia.org/wiki/Carnival",
+    "verified": true
+  },
+  {
+    "in": [
+      "holiday",
+      "jesus"
+    ],
+    "out": "christmas",
+    "why": "Christmas is a religious and cultural celebration commemorating the birth of Jesus Christ, observed primarily on December 25 among billions of people around the world. Advent is followed by Christmastide, which historically in the West lasts twelve days and culminates on Twelfth Night.",
+    "src": "https://en.wikipedia.org/wiki/Christmas",
+    "verified": true
+  },
+  {
+    "in": [
+      "holiday",
+      "resurrection"
+    ],
+    "out": "easter",
+    "why": "Easter is the culmination of the Passion of Jesus, preceded by Lent (or Great Lent), a 40-day period of fasting, prayer, and penance. In Eastern Christianity, the same events are commemorated with the names of days all starting with \"Holy\" or \"Holy and Great\".",
+    "src": "https://en.wikipedia.org/wiki/Easter",
+    "verified": true
+  },
+  {
+    "in": [
+      "holiday",
+      "ghost"
+    ],
+    "out": "halloween",
+    "why": "Halloween is at the beginning of the observance of Allhallowtide, the time in the Christian liturgical year dedicated to remembering the dead, including saints (hallows), Christian martyrs, and all the faithful departed. Thus, the name originates in Christianity, and means \"Saints' eve(ning)\".",
+    "src": "https://en.wikipedia.org/wiki/Halloween",
+    "verified": true
+  },
+  {
+    "in": [
+      "festival",
+      "light"
+    ],
+    "out": "diwali",
+    "why": "Diwali is associated with the spiritual victory or triumph of Dharma over Adharma, light over darkness, good over evil, and knowledge over ignorance. It is celebrated during the Hindu lunisolar months of Ashvin and Kārtika, between around mid-October and mid-November.",
+    "src": "https://en.wikipedia.org/wiki/Diwali",
+    "verified": true
+  },
+  {
+    "in": [
+      "holiday",
+      "year"
+    ],
+    "out": "new_years_eve",
+    "why": "New Year's Eve in the Gregorian calendar refers to the evening, or commonly the entire day, of the last day of the year: 31 December. In many countries it is celebrated with dancing, eating, drinking, and watching or lighting fireworks.",
+    "src": "https://en.wikipedia.org/wiki/New_Year%27s_Eve",
+    "verified": true
+  },
+  {
+    "in": [
+      "family",
+      "law"
+    ],
+    "out": "marriage",
+    "why": "Marriage, also called matrimony or wedlock, is a culturally and often legally recognised union between people called spouses. It is nearly a cultural universal, but the definition of marriage varies between cultures and religions, and over time.",
+    "src": "https://en.wikipedia.org/wiki/Marriage",
+    "verified": true
+  },
+  {
+    "in": [
+      "marriage",
+      "ritual"
+    ],
+    "out": "wedding",
+    "why": "A wedding is a ceremony in which two people are united in marriage. Special wedding garments are often worn, and the ceremony is sometimes followed by a wedding reception.",
+    "src": "https://en.wikipedia.org/wiki/Wedding",
+    "verified": true
+  },
+  {
+    "in": [
+      "history",
+      "philosophy"
+    ],
+    "out": "humanities",
+    "why": "Humanities are academic disciplines that study aspects of human society and culture, including certain fundamental questions asked by humans. The study of the humanities was a key part of the secular curriculum in universities at the time.",
+    "src": "https://en.wikipedia.org/wiki/Humanities",
+    "verified": true
+  },
+  {
+    "in": [
+      "society",
+      "knowledge"
+    ],
+    "out": "social_science",
+    "why": "Social science is one of the branches of science, devoted to the study of societies and the relationships among members within those societies. The term was formerly used to refer to the field of sociology, the original \"science of society\", established in the 18th century.",
+    "src": "https://en.wikipedia.org/wiki/Social_science",
+    "verified": true
+  },
+  {
+    "in": [
+      "social_science",
+      "culture"
+    ],
+    "out": "sociology",
+    "why": "Sociology is the scientific study of human society that focuses on human social behaviour, patterns of social relationships, social interaction, and aspects of culture associated with everyday life. The term sociology was coined in the late 18th century to describe the scientific study of society.",
+    "src": "https://en.wikipedia.org/wiki/Sociology",
+    "verified": true
+  },
+  {
+    "in": [
+      "language",
+      "observation"
+    ],
+    "out": "linguistics",
+    "why": "Linguistics is the scientific study of language. Theoretical linguistics is concerned with explaining the universal and fundamental nature of language and developing a general framework for describing it.",
+    "src": "https://en.wikipedia.org/wiki/Linguistics",
+    "verified": true
+  },
+  {
+    "in": [
+      "archaeology",
+      "library"
+    ],
+    "out": "museum",
+    "why": "A museum is an institution dedicated to displaying and preserving culturally or scientifically significant objects. The word is originally from the Ancient Greek mouseion, which denotes a place or temple dedicated to the muses, the patron divinities in Greek mythology of the arts.",
+    "src": "https://en.wikipedia.org/wiki/Museum",
+    "verified": true
+  },
+  {
+    "in": [
+      "city",
+      "government"
+    ],
+    "out": "civilization",
+    "why": "Civilizations are organized around densely populated settlements, divided into more or less rigid hierarchical social classes with a division of labour, often with a ruling elite. They are characterized by elaborate agriculture, architecture, infrastructure, technological advancement, currency, taxation, regulation, and specialization of labour.",
+    "src": "https://en.wikipedia.org/wiki/Civilization",
+    "verified": true
+  },
+  {
+    "in": [
+      "library",
+      "history"
+    ],
+    "out": "archive",
+    "why": "An archive is an accumulation of historical records or materials, in any medium, or the physical facility in which they are located. They are distinguished from documents that have been consciously written or created to communicate a particular message to posterity.",
+    "src": "https://en.wikipedia.org/wiki/Archive",
+    "verified": true
+  },
+  {
+    "in": [
+      "history",
+      "evidence"
+    ],
+    "out": "historical_method",
+    "why": "Historical method is the collection of techniques and guidelines that historians use to research and write histories of the past. Some scholars of history have observed that there are no particular standards for historical fields such as religion, art, science, democracy, and social justice.",
+    "src": "https://en.wikipedia.org/wiki/Historical_method",
+    "verified": true
+  },
+  {
+    "in": [
+      "stone",
+      "prehistory"
+    ],
+    "out": "stone_age",
+    "why": "The Stone Age was a broad prehistoric period during which stone was widely used to make stone tools with an edge, a point, or a percussion surface. The period lasted for roughly 3.4 million years and ended between 4000 BC and 2000 BC, with the advent of metalworking.",
+    "src": "https://en.wikipedia.org/wiki/Stone_Age",
+    "verified": true
+  },
+  {
+    "in": [
+      "stone_age",
+      "fire"
+    ],
+    "out": "paleolithic",
+    "why": "The Paleolithic Age is characterized by the use of knapped stone tools, although at the time humans also used wood and bone tools. Other organic commodities were adapted for use as tools, including leather and vegetable fibers, but these have not survived to any great degree due to rapid decomposition.",
+    "src": "https://en.wikipedia.org/wiki/Paleolithic",
+    "verified": true
+  },
+  {
+    "in": [
+      "stone_age",
+      "ice_age"
+    ],
+    "out": "mesolithic",
+    "why": "The Mesolithic refers to the final period of hunter-gatherer cultures in Europe and the Middle East, between the end of the Last Glacial Maximum and the Neolithic Revolution. The term Epipaleolithic is often used synonymously, especially outside Northern Europe.",
+    "src": "https://en.wikipedia.org/wiki/Mesolithic",
+    "verified": true
+  },
+  {
+    "in": [
+      "neolithic",
+      "agriculture"
+    ],
+    "out": "neolithic_revolution",
+    "why": "The Neolithic Revolution was humankind's first historically verifiable transition to agriculture. Other developments found very widely during this era are the domestication of animals, pottery, polished stone tools, and rectangular houses.",
+    "src": "https://en.wikipedia.org/wiki/Neolithic_Revolution",
+    "verified": true
+  },
+  {
+    "in": [
+      "history",
+      "writing"
+    ],
+    "out": "ancient_history",
+    "why": "Ancient history is a time period from the beginning of writing and recorded human history through late antiquity. The span of recorded history is roughly 5,000 years, beginning with the development of Sumerian cuneiform script.",
+    "src": "https://en.wikipedia.org/wiki/Ancient_history",
+    "verified": true
+  },
+  {
+    "in": [
+      "egypt",
+      "monarchy"
+    ],
+    "out": "pharaoh",
+    "why": "The Pharaoh was the monarch of ancient Egypt. Before this, \"Pharaoh\" was a term that referred more specifically to the king's administration rather than the king.",
+    "src": "https://en.wikipedia.org/wiki/Pharaoh",
+    "verified": true
+  },
+  {
+    "in": [
+      "feudalism",
+      "field"
+    ],
+    "out": "serfdom",
+    "why": "Serfdom was a condition of debt bondage. Serfs who occupied a plot of land were required to work for the lord of the manor who owned that land.",
+    "src": "https://en.wikipedia.org/wiki/Serfdom",
+    "verified": true
+  },
+  {
+    "in": [
+      "monarchy",
+      "property"
+    ],
+    "out": "nobility",
+    "why": "Nobility is a social class found in many societies that have an aristocracy. It is normally appointed by and ranked immediately below royalty.",
+    "src": "https://en.wikipedia.org/wiki/Nobility",
+    "verified": true
+  },
+  {
+    "in": [
+      "knight",
+      "ethics"
+    ],
+    "out": "chivalry",
+    "why": "Chivalry is an informal and varying code of conduct that developed in France between 1170 and 1220. It is associated with the medieval Christian institution of knighthood, with knights being members of various chivalric orders.",
+    "src": "https://en.wikipedia.org/wiki/Chivalry",
+    "verified": true
+  },
+  {
+    "in": [
+      "ship",
+      "map"
+    ],
+    "out": "age_of_discovery",
+    "why": "The Age of Discovery, also known as the Age of Exploration, was part of the early modern period and overlapped with the Age of Sail. It was a period from approximately the 15th to the 17th century, during which seafarers from European countries explored, colonized, and conquered regions across the globe.",
+    "src": "https://en.wikipedia.org/wiki/Age_of_Discovery",
+    "verified": true
+  },
+  {
+    "in": [
+      "empire",
+      "migration"
+    ],
+    "out": "colonization",
+    "why": "Colonization is defined as \"the act or process of sending people to live in and govern another country\". The term is sometimes used synonymously with the word settlement.",
+    "src": "https://en.wikipedia.org/wiki/Colonization",
+    "verified": true
+  },
+  {
+    "in": [
+      "age_of_discovery",
+      "agriculture"
+    ],
+    "out": "columbian_exchange",
+    "why": "The Columbian exchange is named after the Italian explorer Christopher Columbus and is related to the European colonization and global trade following his 1492 voyage. Some of the exchanges were deliberate while others were unintended.",
+    "src": "https://en.wikipedia.org/wiki/Columbian_exchange",
+    "verified": true
+  },
+  {
+    "in": [
+      "slavery",
+      "ship"
+    ],
+    "out": "atlantic_slave_trade",
+    "why": "The Atlantic slave trade was operated by slave ships from both Europe and the New World. Most of the people transported in the transatlantic trade were from Central and West Africa.",
+    "src": "https://en.wikipedia.org/wiki/Atlantic_slave_trade",
+    "verified": true
+  },
+  {
+    "in": [
+      "reason",
+      "printing_press"
+    ],
+    "out": "age_of_enlightenment",
+    "why": "Thinkers including René Descartes, Thomas Hobbes, Baruch Spinoza, and John Locke laid its philosophical foundations, and their ideas about reason, natural rights, and empirical knowledge became central to Enlightenment thought. The movement was characterized by an expanding print culture of books, journals, and pamphlets.",
+    "src": "https://en.wikipedia.org/wiki/Age_of_Enlightenment",
+    "verified": true
+  },
+  {
+    "in": [
+      "renaissance",
+      "observation"
+    ],
+    "out": "scientific_revolution",
+    "why": "The Scientific Revolution is a convenient boundary between ancient thought and modern science. It is frequently said to have begun in 1543 with the printings of De humani corporis fabrica by Andreas Vesalius and De Revolutionibus by Nicolaus Copernicus.",
+    "src": "https://en.wikipedia.org/wiki/Scientific_Revolution",
+    "verified": true
+  },
+  {
+    "in": [
+      "revolution",
+      "monarchy"
+    ],
+    "out": "french_revolution",
+    "why": "The French Revolution was a period resulting in political and societal changes in France that began with the Estates General of 1789 and ended with the Coup of 18 Brumaire on 9 November 1799. Many of its ideas are considered fundamental principles of liberal democracy.",
+    "src": "https://en.wikipedia.org/wiki/French_Revolution",
+    "verified": true
+  },
+  {
+    "in": [
+      "revolution",
+      "colonialism"
+    ],
+    "out": "american_revolution",
+    "why": "The American Revolution (1765–1789) was a political movement in the Thirteen Colonies of Great Britain. It began as a colonial rebellion and evolved into a revolution, the result of which was the creation of the United States.",
+    "src": "https://en.wikipedia.org/wiki/American_Revolution",
+    "verified": true
+  },
+  {
+    "in": [
+      "economy",
+      "stock_exchange"
+    ],
+    "out": "great_depression",
+    "why": "The Great Depression was a severe global economic downturn from 1929 to 1939. It was marked by high rates of unemployment and poverty, drastic reductions in industrial production and international trade, and widespread bank and business failures around the world.",
+    "src": "https://en.wikipedia.org/wiki/Great_Depression",
+    "verified": true
+  },
+  {
+    "in": [
+      "moon",
+      "rocket"
+    ],
+    "out": "moon_landing",
+    "why": "A Moon landing is the arrival of a crewed or robotic lander on the Moon. The first human-made object to touch the Moon was Luna 2 in 1959, and the first crewed mission to land on the Moon was Apollo 11 in 1969.",
+    "src": "https://en.wikipedia.org/wiki/Moon_landing",
+    "verified": true
+  },
+  {
+    "in": [
+      "computer",
+      "information"
+    ],
+    "out": "information_age",
+    "why": "The Information Age is a historical period that began in the mid-20th century. It is characterized by a rapid shift from traditional industries, as established during the Industrial Revolution, to an economy centered on information technology.",
+    "src": "https://en.wikipedia.org/wiki/Information_Age",
+    "verified": true
+  },
+  {
+    "in": [
+      "agriculture",
+      "industry"
+    ],
+    "out": "green_revolution",
+    "why": "The Green Revolution, or the Third Agricultural Revolution, was a period during which technology transfer initiatives resulted in a significant increase in crop yields. Farmers incorporated new technologies, including high-yielding varieties of cereals, particularly dwarf wheat and rice, and the widespread use of chemical fertilizers.",
+    "src": "https://en.wikipedia.org/wiki/Green_Revolution",
+    "verified": true
+  },
+  {
+    "in": [
+      "slavery",
+      "ethics"
+    ],
+    "out": "abolitionism",
+    "why": "Abolitionism, or the abolitionist movement, is the political movement to end slavery and liberate enslaved individuals around the world. The first country to fully outlaw slavery was France in 1315, though it was later used in its colonies.",
+    "src": "https://en.wikipedia.org/wiki/Abolitionism",
+    "verified": true
+  },
+  {
+    "in": [
+      "law",
+      "democracy"
+    ],
+    "out": "civil_rights_movement",
+    "why": "The civil rights movement was a social movement in the United States from 1954 to 1968 which aimed to abolish legalized racial segregation, discrimination, and disenfranchisement in the country, which most commonly affected African Americans.",
+    "src": "https://en.wikipedia.org/wiki/Civil_rights_movement",
+    "verified": true
+  },
+  {
+    "in": [
+      "church",
+      "heresy"
+    ],
+    "out": "inquisition",
+    "why": "An inquisition was a Catholic judicial procedure in which ecclesiastical judges could initiate, investigate and try cases in their jurisdiction. Beginning in the 1250s, inquisitors were generally chosen from members of the Dominican Order, replacing the earlier practice of using local clergy as judges.",
+    "src": "https://en.wikipedia.org/wiki/Inquisition",
+    "verified": true
+  },
+  {
+    "in": [
+      "roman_republic",
+      "emperor"
+    ],
+    "out": "roman_empire",
+    "why": "The Roman Empire was a state that dominated the Mediterranean sea and much of Europe, Western Asia, and North Africa during the classical period. In 27 BC, the Roman Senate granted Octavian overarching military power (imperium) and the new title of Augustus, marking his accession as the first Roman emperor.",
+    "src": "https://en.wikipedia.org/wiki/Roman_Empire",
+    "verified": true
+  },
+  {
+    "in": [
+      "egypt",
+      "antiquity"
+    ],
+    "out": "ancient_egypt",
+    "why": "Ancient Egypt was a cradle of civilization concentrated along the lower reaches of the Nile River in the eastern part of North Africa. The pinnacle of ancient Egyptian power was achieved during the New Kingdom, which extended its rule to much of Nubia and a considerable portion of the Levant.",
+    "src": "https://en.wikipedia.org/wiki/Ancient_Egypt",
+    "verified": true
+  },
+  {
+    "in": [
+      "greece",
+      "antiquity"
+    ],
+    "out": "ancient_greece",
+    "why": "Ancient Greece was an ancient civilization existing from the Greek Dark Ages of the 12th–9th centuries BC to the end of classical antiquity. Prior to the Roman period, most of this area was officially unified only once, from 338 to 323 BC under the Kingdom of Macedon.",
+    "src": "https://en.wikipedia.org/wiki/Ancient_Greece",
+    "verified": true
+  },
+  {
+    "in": [
+      "roman_republic",
+      "roman_empire"
+    ],
+    "out": "ancient_rome",
+    "why": "In modern historiography, ancient Rome is the Roman civilisation from the founding of the Italian city of Rome in the 8th century BC to the collapse of the Western Roman Empire in the 5th century AD. It began as an Italic settlement, traditionally dated to 753 BC, beside the River Tiber in the Italian Peninsula.",
+    "src": "https://en.wikipedia.org/wiki/Ancient_Rome",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "city"
+    ],
+    "out": "mesopotamia",
+    "why": "Mesopotamia is a historical region of West Asia situated within the Tigris–Euphrates river system, in the northern part of the Fertile Crescent. It is the site of the earliest developments of the Neolithic Revolution from around 10,000 BC.",
+    "src": "https://en.wikipedia.org/wiki/Mesopotamia",
+    "verified": true
+  },
+  {
+    "in": [
+      "city",
+      "trade"
+    ],
+    "out": "hanseatic_league",
+    "why": "The Hanseatic League, commonly called the Hansa, was a medieval commercial and defensive network of merchant guilds and market towns in Central and Northern Europe. It began as a collection of loosely associated groups of German traders and towns aiming to expand their commercial interests, including protection against robbery.",
+    "src": "https://en.wikipedia.org/wiki/Hanseatic_League",
+    "verified": true
+  },
+  {
+    "in": [
+      "empire",
+      "church"
+    ],
+    "out": "holy_roman_empire",
+    "why": "The Holy Roman Empire was a polity comprising and controlling much of Central Europe and Western Europe, headed by the Holy Roman Emperor and characterized by a decentralized political structure. On 25 December 800, Pope Leo III crowned Charlemagne as Roman Emperor, reviving the title more than three centuries after the fall of the Western Roman Empire in 476.",
+    "src": "https://en.wikipedia.org/wiki/Holy_Roman_Empire",
+    "verified": true
+  },
+  {
+    "in": [
+      "climate",
+      "glacier"
+    ],
+    "out": "little_ice_age",
+    "why": "The Little Ice Age was a period of regional cooling, particularly pronounced in the North Atlantic region. It was not a true ice age of global extent.",
+    "src": "https://en.wikipedia.org/wiki/Little_Ice_Age",
+    "verified": true
+  },
+  {
+    "in": [
+      "influenza",
+      "world_war_one"
+    ],
+    "out": "spanish_flu",
+    "why": "The 1918–1920 flu pandemic, also known as the Great Influenza epidemic or by the misleading name Spanish flu, was an exceptionally deadly global influenza pandemic caused by the H1N1 subtype of the influenza A virus. Estimates of deaths range from 17 million to 50 million, and possibly as high as 100 million.",
+    "src": "https://en.wikipedia.org/wiki/Spanish_flu",
+    "verified": true
+  },
+  {
+    "in": [
+      "history",
+      "human"
+    ],
+    "out": "human_history",
+    "why": "Human history, or world history, is the record of humankind from prehistory to the present. Hinduism originated during the late Bronze Age and was followed by the many seminal belief systems of the Axial Age: Buddhism, Confucianism, Greek philosophy, Jainism, Judaism, Taoism, and Zoroastrianism.",
+    "src": "https://en.wikipedia.org/wiki/Human_history",
+    "verified": true
+  },
+  {
+    "in": [
+      "art",
+      "human"
+    ],
+    "out": "artist",
+    "why": "An artist is a person who creates art or practices the arts. The term is also widely used in the entertainment business to refer to actors, musicians, singers, dancers, and other performers.",
+    "src": "https://en.wikipedia.org/wiki/Artist",
+    "verified": true
+  },
+  {
+    "in": [
+      "art",
+      "tradition"
+    ],
+    "out": "genre",
+    "why": "Genre, French for \"kind, sort\", is any style or form of communication and art in any mode with socially agreed-upon elements, or conventions, developed over time. The proper use of a specific genre is important for a successful transfer of information.",
+    "src": "https://en.wikipedia.org/wiki/Genre",
+    "verified": true
+  },
+  {
+    "in": [
+      "story",
+      "book"
+    ],
+    "out": "novel",
+    "why": "A novel is an extended work of narrative fiction usually written in prose and published as a book. The ancient romance form was revived by Romanticism, in the historical romances of Walter Scott and the Gothic novel.",
+    "src": "https://en.wikipedia.org/wiki/Novel",
+    "verified": true
+  },
+  {
+    "in": [
+      "story",
+      "animal"
+    ],
+    "out": "fable",
+    "why": "Fable is a literary genre defined as a succinct fictional story, in prose or verse, that features animals, legendary creatures, plants, inanimate objects, or forces of nature that are anthropomorphised, and that illustrates or leads to a particular moral lesson. Epicharmus of Kos and Phormis are reported as having been among the first to invent comic fables.",
+    "src": "https://en.wikipedia.org/wiki/Fable",
+    "verified": true
+  },
+  {
+    "in": [
+      "story",
+      "folklore"
+    ],
+    "out": "fairy_tale",
+    "why": "A fairy tale is a short story that belongs to the folklore genre. The history of the fairy tale is particularly difficult to trace because often only the literary forms survive.",
+    "src": "https://en.wikipedia.org/wiki/Fairy_tale",
+    "verified": true
+  },
+  {
+    "in": [
+      "story",
+      "magic"
+    ],
+    "out": "fantasy",
+    "why": "Fantasy is a genre of speculative fiction that involves supernatural or magical elements, often including completely imaginary realms and creatures. The expression fantastic literature is often used for this genre by Anglophone literary critics.",
+    "src": "https://en.wikipedia.org/wiki/Fantasy",
+    "verified": true
+  },
+  {
+    "in": [
+      "story",
+      "rocket"
+    ],
+    "out": "science_fiction",
+    "why": "Science fiction is the genre of speculative fiction that imagines advanced and futuristic changes in technology, scientific knowledge, or biological systems. Mary Shelley's Frankenstein, written in 1818, is often credited as the first true science fiction novel.",
+    "src": "https://en.wikipedia.org/wiki/Science_fiction",
+    "verified": true
+  },
+  {
+    "in": [
+      "story",
+      "fear"
+    ],
+    "out": "horror_fiction",
+    "why": "Horror is a genre of speculative fiction that is intended to disturb, frighten, or scare an audience. It is often divided into the sub-genres of psychological horror and supernatural horror.",
+    "src": "https://en.wikipedia.org/wiki/Horror_fiction",
+    "verified": true
+  },
+  {
+    "in": [
+      "story",
+      "page"
+    ],
+    "out": "short_story",
+    "why": "A short story is a piece of narrative fiction in written prose that can typically be read in a single sitting. It is one of the oldest types of literature and has existed as legends, mythic tales, folk tales, fairy tales, tall tales, fables, and anecdotes in various ancient communities around the world.",
+    "src": "https://en.wikipedia.org/wiki/Short_story",
+    "verified": true
+  },
+  {
+    "in": [
+      "story",
+      "history"
+    ],
+    "out": "biography",
+    "why": "A biography, or simply bio, is a detailed description or account of a person's life. Biographical works are usually non-fiction, but fiction can also be used to portray a person's life.",
+    "src": "https://en.wikipedia.org/wiki/Biography",
+    "verified": true
+  },
+  {
+    "in": [
+      "biography",
+      "writing"
+    ],
+    "out": "autobiography",
+    "why": "An autobiography is a self-written account of one's own life, providing a personal narrative that reflects on the author's experiences, memories, and insights. The term was first used in 1797, but the practice of writing about one's life dates back to antiquity.",
+    "src": "https://en.wikipedia.org/wiki/Autobiography",
+    "verified": true
+  },
+  {
+    "in": [
+      "writing",
+      "calendar"
+    ],
+    "out": "diary",
+    "why": "A diary is a written or audiovisual memorable record, with discrete entries arranged by date reporting on what has happened over the course of a day or other period. Diaries have traditionally been handwritten but are now also often digital.",
+    "src": "https://en.wikipedia.org/wiki/Diary",
+    "verified": true
+  },
+  {
+    "in": [
+      "book",
+      "word"
+    ],
+    "out": "dictionary",
+    "why": "A dictionary is a listing of words or lexemes from the lexicon of one or more specific languages, often arranged alphabetically. It is a lexicographical reference that shows inter-relationships among the data.",
+    "src": "https://en.wikipedia.org/wiki/Dictionary",
+    "verified": true
+  },
+  {
+    "in": [
+      "dictionary",
+      "knowledge"
+    ],
+    "out": "encyclopedia",
+    "why": "An encyclopedia is a reference work or compendium providing summaries of knowledge, either general or special, in a particular field or discipline. Encyclopedias are divided into articles or entries that are arranged alphabetically by article name or by thematic categories.",
+    "src": "https://en.wikipedia.org/wiki/Encyclopedia",
+    "verified": true
+  },
+  {
+    "in": [
+      "writing",
+      "argument"
+    ],
+    "out": "essay",
+    "why": "An essay is, generally, a piece of writing that gives the author's own argument, but the definition is vague, overlapping with those of a letter, a paper, an article, a pamphlet, and a short story. Essays have been sub-classified as formal and informal.",
+    "src": "https://en.wikipedia.org/wiki/Essay",
+    "verified": true
+  },
+  {
+    "in": [
+      "poetry",
+      "story"
+    ],
+    "out": "epic_poetry",
+    "why": "In poetry, an epic is a lengthy narrative poem typically about the extraordinary deeds of extraordinary characters who, in dealings with gods or other superhuman forces, gave shape to the mortal universe for their descendants.",
+    "src": "https://en.wikipedia.org/wiki/Epic_poetry",
+    "verified": true
+  },
+  {
+    "in": [
+      "poetry",
+      "japan"
+    ],
+    "out": "haiku",
+    "why": "Haiku is a type of short-form poetry that originated in Japan. Similar poems that do not adhere to these rules are generally classified as senryū.",
+    "src": "https://en.wikipedia.org/wiki/Haiku",
+    "verified": true
+  },
+  {
+    "in": [
+      "poetry",
+      "sound"
+    ],
+    "out": "rhyme",
+    "why": "A rhyme is a repetition of similar sounds in the final stressed syllables and any following syllables of two or more words. Most often, perfect rhyming is consciously used for a musical or aesthetic effect in the final position of lines within poems or songs.",
+    "src": "https://en.wikipedia.org/wiki/Rhyme",
+    "verified": true
+  },
+  {
+    "in": [
+      "poetry",
+      "rhyme"
+    ],
+    "out": "sonnet",
+    "why": "A sonnet is a fixed poetic form with a structure traditionally consisting of fourteen lines adhering to a set rhyming scheme. Originating in 13th-century Sicily, the sonnet was in time taken up in many European-language areas, mainly to express romantic love at first.",
+    "src": "https://en.wikipedia.org/wiki/Sonnet",
+    "verified": true
+  },
+  {
+    "in": [
+      "poetry",
+      "song"
+    ],
+    "out": "ode",
+    "why": "An ode is a type of lyric poetry, with its origins in Ancient Greece. Odes are elaborately structured poems praising or glorifying an event or individual, describing nature intellectually as well as emotionally.",
+    "src": "https://en.wikipedia.org/wiki/Ode",
+    "verified": true
+  },
+  {
+    "in": [
+      "pen",
+      "book"
+    ],
+    "out": "writer",
+    "why": "A writer is a person who uses written words to communicate ideas, to inspire feelings and emotions, or to entertain. Writers' works are nowadays published in a wide range of media.",
+    "src": "https://en.wikipedia.org/wiki/Writer",
+    "verified": true
+  },
+  {
+    "in": [
+      "writing",
+      "art"
+    ],
+    "out": "literature",
+    "why": "Literature is any collection of written work. The term is also used more narrowly for writings considered an art form, especially novels, plays, and poems.",
+    "src": "https://en.wikipedia.org/wiki/Literature",
+    "verified": true
+  },
+  {
+    "in": [
+      "writing",
+      "language"
+    ],
+    "out": "prose",
+    "why": "Prose is language that is natural or normal in structure: following the spontaneous flow of conversational speech, without any perfectly regular rhythm, containing ordinary grammar patterns. In writing, poetry is traditionally written in a special format called verse.",
+    "src": "https://en.wikipedia.org/wiki/Prose",
+    "verified": true
+  },
+  {
+    "in": [
+      "story",
+      "word"
+    ],
+    "out": "narration",
+    "why": "Narration is the use of a written or spoken commentary to convey a story to an audience. It is conveyed by a narrator: a specific person, or unspecified literary voice, developed by the creator of the story.",
+    "src": "https://en.wikipedia.org/wiki/Narration",
+    "verified": true
+  },
+  {
+    "in": [
+      "theatre",
+      "story"
+    ],
+    "out": "drama",
+    "why": "Drama is the specific mode of fiction represented in performance: a play, opera, mime, ballet, etc., performed in a theatre, or on radio or television.",
+    "src": "https://en.wikipedia.org/wiki/Drama",
+    "verified": true
+  },
+  {
+    "in": [
+      "drama",
+      "death"
+    ],
+    "out": "tragedy",
+    "why": "A tragedy is a genre of drama based on human suffering, specifically by way of terrible or sorrowful events that befall a main character or cast of characters. Traditionally, the intention of tragedy is to invoke an accompanying catharsis for the audience.",
+    "src": "https://en.wikipedia.org/wiki/Tragedy",
+    "verified": true
+  },
+  {
+    "in": [
+      "song",
+      "church"
+    ],
+    "out": "choir",
+    "why": "A choir, also known as a chorale or chorus, from Latin chorus, meaning \"a dance in a circle\", is a musical ensemble of singers. The term choir is very often applied to groups affiliated with a church, whereas a chorus performs in theatres or concert halls.",
+    "src": "https://en.wikipedia.org/wiki/Choir",
+    "verified": true
+  },
+  {
+    "in": [
+      "music",
+      "stage"
+    ],
+    "out": "concert",
+    "why": "A concert, known informally as a gig or show, is a live performance of music in front of an audience. Concerts are held in a wide variety of settings and sizes, from private houses and small nightclubs to concert halls, arenas and stadiums.",
+    "src": "https://en.wikipedia.org/wiki/Concert",
+    "verified": true
+  },
+  {
+    "in": [
+      "music",
+      "human"
+    ],
+    "out": "musician",
+    "why": "A musician is someone who composes, conducts, or performs music, especially instrumental music. A music performer is generally either a singer, who provides vocals, or an instrumentalist, who plays a musical instrument.",
+    "src": "https://en.wikipedia.org/wiki/Musician",
+    "verified": true
+  },
+  {
+    "in": [
+      "music",
+      "theory"
+    ],
+    "out": "music_theory",
+    "why": "Music theory is the study of theoretical frameworks for understanding the practices and possibilities of music. In medieval Europe the study of \"music\" in the Quadrivium liberal arts curriculum was an abstract system of proportions.",
+    "src": "https://en.wikipedia.org/wiki/Music_theory",
+    "verified": true
+  },
+  {
+    "in": [
+      "song",
+      "human"
+    ],
+    "out": "singing",
+    "why": "Singing is the art of creating music with the voice. It is the oldest form of musical expression, and the human voice can be considered the first musical instrument by some.",
+    "src": "https://en.wikipedia.org/wiki/Singing",
+    "verified": true
+  },
+  {
+    "in": [
+      "song",
+      "story"
+    ],
+    "out": "ballad",
+    "why": "A ballad is a form of verse, often a narrative set to music. Ballads were particularly characteristic of the popular poetry and song of England, Ireland and Scotland from the Late Middle Ages until the 19th century.",
+    "src": "https://en.wikipedia.org/wiki/Ballad",
+    "verified": true
+  },
+  {
+    "in": [
+      "song",
+      "worship"
+    ],
+    "out": "hymn",
+    "why": "A hymn is a type of song, and partially synonymous with devotional song, specifically written for the purpose of adoration or prayer, and typically addressed to a deity or deities. The word hymn derives from Greek hymnos, which means \"a song of praise\".",
+    "src": "https://en.wikipedia.org/wiki/Hymn",
+    "verified": true
+  },
+  {
+    "in": [
+      "song",
+      "sleep"
+    ],
+    "out": "lullaby",
+    "why": "A lullaby, or cradle song, is a soothing song or piece of music usually played for, or sung to, children. In some societies, they are used to pass down cultural knowledge or tradition.",
+    "src": "https://en.wikipedia.org/wiki/Lullaby",
+    "verified": true
+  },
+  {
+    "in": [
+      "song",
+      "nation"
+    ],
+    "out": "national_anthem",
+    "why": "A national anthem is a patriotic musical composition symbolizing and evoking eulogies of the history and traditions of a country or nation. The majority of national anthems are marches or hymns in style.",
+    "src": "https://en.wikipedia.org/wiki/National_anthem",
+    "verified": true
+  },
+  {
+    "in": [
+      "music",
+      "tradition"
+    ],
+    "out": "folk_music",
+    "why": "Folk music is a music genre that includes traditional folk music and the contemporary genre that evolved from the former during the 20th-century folk revival. Traditional folk music has been defined as music transmitted orally, music with unknown composers, and music that changes between generations.",
+    "src": "https://en.wikipedia.org/wiki/Folk_music",
+    "verified": true
+  },
+  {
+    "in": [
+      "music",
+      "musical_notation"
+    ],
+    "out": "sonata",
+    "why": "A sonata is a piece that consists of 3 or 4 movements that can be for different musical instruments. It was regarded, alongside the fugue, as one of two fundamental methods of organizing, interpreting and analyzing concert music.",
+    "src": "https://en.wikipedia.org/wiki/Sonata",
+    "verified": true
+  },
+  {
+    "in": [
+      "orchestra",
+      "piano"
+    ],
+    "out": "concerto",
+    "why": "A concerto is, since the late Baroque era, mostly understood as an instrumental composition, written for one or more soloists accompanied by an orchestra or other ensemble. Venetian composers such as Antonio Vivaldi had written hundreds of violin concertos.",
+    "src": "https://en.wikipedia.org/wiki/Concerto",
+    "verified": true
+  },
+  {
+    "in": [
+      "opera",
+      "song"
+    ],
+    "out": "aria",
+    "why": "An aria is a self-contained piece for one voice, with or without instrumental or orchestral accompaniment, normally part of a larger work. The typical context for arias is opera, but vocal arias also feature in oratorios and cantatas, or can be stand-alone concert arias.",
+    "src": "https://en.wikipedia.org/wiki/Aria",
+    "verified": true
+  },
+  {
+    "in": [
+      "song",
+      "slavery"
+    ],
+    "out": "blues",
+    "why": "Blues is a music genre and musical form that originated among African Americans in the Deep South of the United States around the 1860s. The blues form is ubiquitous in jazz, rhythm and blues, and rock and roll, and is characterized by the call-and-response pattern and the blues scale.",
+    "src": "https://en.wikipedia.org/wiki/Blues",
+    "verified": true
+  },
+  {
+    "in": [
+      "dance",
+      "stage"
+    ],
+    "out": "ballet",
+    "why": "Ballet is a type of performance dance that originated during the Italian Renaissance in the fifteenth century and later developed into a concert dance form in France and Russia. It has been influential globally and has defined the foundational techniques which are used in many other dance genres and cultures.",
+    "src": "https://en.wikipedia.org/wiki/Ballet",
+    "verified": true
+  },
+  {
+    "in": [
+      "dance",
+      "rhythm"
+    ],
+    "out": "waltz",
+    "why": "The waltz, from German walzer, meaning \"to roll or revolve\", is a ballroom and folk dance, in triple time, performed primarily in closed position, originating from German-speaking regions of Europe in the 18th century.",
+    "src": "https://en.wikipedia.org/wiki/Waltz",
+    "verified": true
+  },
+  {
+    "in": [
+      "theatre",
+      "animal"
+    ],
+    "out": "circus",
+    "why": "A circus is a company of performers who put on diverse entertainment shows that may include clowns, acrobats, trained animals, trapeze acts, musicians, dancers, tightrope walkers, jugglers and magicians. The earliest modern circuses were performed in open-air structures with limited covered seating.",
+    "src": "https://en.wikipedia.org/wiki/Circus",
+    "verified": true
+  },
+  {
+    "in": [
+      "theatre",
+      "hand"
+    ],
+    "out": "puppetry",
+    "why": "Puppetry is a form of theatre or performance that involves the manipulation of puppets, the inanimate objects, often resembling some type of human or animal figure, that are animated or manipulated by a human called a puppeteer. Such a performance is also known as a puppet production.",
+    "src": "https://en.wikipedia.org/wiki/Puppetry",
+    "verified": true
+  },
+  {
+    "in": [
+      "drama",
+      "human"
+    ],
+    "out": "acting",
+    "why": "Acting is an activity in which a story is told by means of its enactment by an actor who adopts a character, in theatre, television, film, radio, or any other medium that makes use of the mimetic mode.",
+    "src": "https://en.wikipedia.org/wiki/Acting",
+    "verified": true
+  },
+  {
+    "in": [
+      "painting",
+      "geometry"
+    ],
+    "out": "cubism",
+    "why": "Cubism is an early-20th-century avant-garde art movement which began in Paris. Cubist subjects are analyzed, broken up, and reassembled in an abstract form.",
+    "src": "https://en.wikipedia.org/wiki/Cubism",
+    "verified": true
+  },
+  {
+    "in": [
+      "painting",
+      "light"
+    ],
+    "out": "impressionism",
+    "why": "Impressionism was a 19th-century art movement characterised by visible brush strokes, open composition, emphasis on accurate depiction of light in its changing qualities, ordinary subject matter and unusual visual angles. It was soon followed by analogous styles in other media, Impressionist music and Impressionist literature.",
+    "src": "https://en.wikipedia.org/wiki/Impressionism",
+    "verified": true
+  },
+  {
+    "in": [
+      "painting",
+      "dream"
+    ],
+    "out": "surrealism",
+    "why": "Surrealism is an art and cultural movement that developed in Europe in the aftermath of World War I in which artists aimed to allow the unconscious mind to express itself, often resulting in the depiction of illogical or dreamlike scenes and ideas.",
+    "src": "https://en.wikipedia.org/wiki/Surrealism",
+    "verified": true
+  },
+  {
+    "in": [
+      "art",
+      "world_war_one"
+    ],
+    "out": "dada",
+    "why": "Dada or Dadaism was an international art movement that developed in the context of World War I, its aftermath, and the Futurist movement. The Dada movement's principles were first collected in Hugo Ball's Dada Manifesto in 1916.",
+    "src": "https://en.wikipedia.org/wiki/Dada",
+    "verified": true
+  },
+  {
+    "in": [
+      "art",
+      "popular_culture"
+    ],
+    "out": "pop_art",
+    "why": "Pop art is an art movement that emerged in the United Kingdom and the United States during the mid-to-late 1950s. It is also associated with the artists' use of mechanical means of reproduction or rendering techniques.",
+    "src": "https://en.wikipedia.org/wiki/Pop_art",
+    "verified": true
+  },
+  {
+    "in": [
+      "art",
+      "industrial_revolution"
+    ],
+    "out": "modernism",
+    "why": "Modernism was an early 20th-century movement in literature, visual arts, performing arts, and music that emphasized experimentation, abstraction, and subjective experience. Philosophy, politics, architecture, and social issues were all aspects of this movement.",
+    "src": "https://en.wikipedia.org/wiki/Modernism",
+    "verified": true
+  },
+  {
+    "in": [
+      "art",
+      "emotion"
+    ],
+    "out": "romanticism",
+    "why": "Romanticism was an artistic and intellectual movement that originated in Europe towards the end of the 18th century. Its purpose was to advocate for the importance of subjectivity, imagination, and appreciation of nature in society and culture in response to the Age of Enlightenment and the Industrial Revolution.",
+    "src": "https://en.wikipedia.org/wiki/Romanticism",
+    "verified": true
+  },
+  {
+    "in": [
+      "art",
+      "pattern"
+    ],
+    "out": "abstract_art",
+    "why": "Abstract art, non-figurative art, non-objective art, and non-representational art are all closely related terms. Abstraction indicates a departure from reality in depiction of imagery in art.",
+    "src": "https://en.wikipedia.org/wiki/Abstract_art",
+    "verified": true
+  },
+  {
+    "in": [
+      "writing",
+      "brush"
+    ],
+    "out": "calligraphy",
+    "why": "Calligraphy, from Ancient Greek kalligraphía \"beautiful writing\", is fine handwriting as a visual art. It involves the design and execution of lettering or characters using a pen, ink brush, or other writing instruments.",
+    "src": "https://en.wikipedia.org/wiki/Calligraphy",
+    "verified": true
+  },
+  {
+    "in": [
+      "paper",
+      "art"
+    ],
+    "out": "collage",
+    "why": "Collage, from the French coller, \"to glue\" or \"to stick together\", is a technique of art creation, primarily used in the visual arts, by which art results from an assembly of different forms, thus creating a new whole. A collage may include magazine and newspaper clippings, ribbons, paint and bits of colored or handmade papers.",
+    "src": "https://en.wikipedia.org/wiki/Collage",
+    "verified": true
+  },
+  {
+    "in": [
+      "story",
+      "painting"
+    ],
+    "out": "comics",
+    "why": "Comics is a medium used to express ideas with images, often combined with text or other visual information. There is no consensus among theorists and historians on a single definition of comics.",
+    "src": "https://en.wikipedia.org/wiki/Comics",
+    "verified": true
+  },
+  {
+    "in": [
+      "comics",
+      "japan"
+    ],
+    "out": "manga",
+    "why": "Manga are comics or graphic novels originating from Japan. The term manga is used in Japan to refer to both comics and cartooning.",
+    "src": "https://en.wikipedia.org/wiki/Manga",
+    "verified": true
+  },
+  {
+    "in": [
+      "paint",
+      "wall"
+    ],
+    "out": "graffiti",
+    "why": "Graffiti is writing or drawings made on a wall or other surface, usually without permission and within public view. It ranges from simple written \"monikers\" to elaborate wall paintings, and has existed since ancient times, with examples dating back to ancient Egypt, ancient Greece, and the Roman Empire.",
+    "src": "https://en.wikipedia.org/wiki/Graffiti",
+    "verified": true
+  },
+  {
+    "in": [
+      "painting",
+      "wall"
+    ],
+    "out": "mural",
+    "why": "A mural is any piece of graphic artwork that is painted or applied directly to a wall, ceiling or other permanent substrate. Graffiti is distinguished from murals, an often legally permitted form of street art.",
+    "src": "https://en.wikipedia.org/wiki/Mural",
+    "verified": true
+  },
+  {
+    "in": [
+      "stone",
+      "pattern"
+    ],
+    "out": "mosaic",
+    "why": "A mosaic is a pattern or image made of small regular or irregular pieces of colored stone, glass or ceramic, held in place by plaster or mortar, and covering a surface. Mosaics are often used as floor and wall decoration, and were particularly popular in the Ancient Roman world.",
+    "src": "https://en.wikipedia.org/wiki/Mosaic",
+    "verified": true
+  },
+  {
+    "in": [
+      "paper",
+      "hand"
+    ],
+    "out": "origami",
+    "why": "Origami is the art and technique of folding paper. It also refers to the two- and three-dimensional forms created in the process.",
+    "src": "https://en.wikipedia.org/wiki/Origami",
+    "verified": true
+  },
+  {
+    "in": [
+      "painting",
+      "human"
+    ],
+    "out": "portrait",
+    "why": "A portrait is a painting, photograph, sculpture, or other artistic representation of a person, in which the face is always predominant. The intent is to display the likeness, personality, and even the mood of the person.",
+    "src": "https://en.wikipedia.org/wiki/Portrait",
+    "verified": true
+  },
+  {
+    "in": [
+      "printing_press",
+      "art"
+    ],
+    "out": "printmaking",
+    "why": "Printmaking is the process of creating artworks by printing, normally on paper, but also on fabric, wood, metal, and other surfaces. Prints are created by transferring ink from a matrix to a sheet of paper or other material, by a variety of techniques.",
+    "src": "https://en.wikipedia.org/wiki/Printmaking",
+    "verified": true
+  },
+  {
+    "in": [
+      "painting",
+      "water"
+    ],
+    "out": "watercolor",
+    "why": "Watercolor is a painting method in which the paints are made of pigments suspended in a water-based solution. The conventional and most common support for watercolor paintings is paper, usually special types of watercolor paper.",
+    "src": "https://en.wikipedia.org/wiki/Watercolor_painting",
+    "verified": true
+  },
+  {
+    "in": [
+      "book",
+      "painting"
+    ],
+    "out": "illustration",
+    "why": "An illustration is a decoration, interpretation, or visual explanation of a text, concept, or process, designed for integration in print and digitally published media, such as posters, flyers, magazines, books, teaching materials, animations, video games and films.",
+    "src": "https://en.wikipedia.org/wiki/Illustration",
+    "verified": true
+  },
+  {
+    "in": [
+      "writing",
+      "printing_press"
+    ],
+    "out": "typography",
+    "why": "Typography is the art and technique of arranging type to make written language legible and readable when displayed. The term is also applied to the style, arrangement, and appearance of the letters, numbers, and symbols created by the process.",
+    "src": "https://en.wikipedia.org/wiki/Typography",
+    "verified": true
+  },
+  {
+    "in": [
+      "typography",
+      "art"
+    ],
+    "out": "graphic_design",
+    "why": "Graphic design is a profession, academic discipline and applied art that involves creating visual communications intended to transmit specific messages to social groups, with specific objectives. It is an interdisciplinary branch of design and of the fine arts.",
+    "src": "https://en.wikipedia.org/wiki/Graphic_design",
+    "verified": true
+  },
+  {
+    "in": [
+      "movie_camera",
+      "painting"
+    ],
+    "out": "animation",
+    "why": "Animation is a filmmaking technique whereby pictures are created or manipulated and then played in sequence to create the illusion of moving images. In traditional animation, images are drawn or painted by hand on transparent celluloid sheets to be photographed and exhibited on film.",
+    "src": "https://en.wikipedia.org/wiki/Animation",
+    "verified": true
+  },
+  {
+    "in": [
+      "animation",
+      "japan"
+    ],
+    "out": "anime",
+    "why": "Outside Japan and in English, anime refers specifically to animation produced in Japan. Anime is distributed theatrically, through television broadcasts, directly to home media, and over the Internet.",
+    "src": "https://en.wikipedia.org/wiki/Anime",
+    "verified": true
+  },
+  {
+    "in": [
+      "animal",
+      "skin"
+    ],
+    "out": "taxidermy",
+    "why": "Taxidermy is the art of preserving an animal's body by mounting (over an armature) or stuffing, for the purpose of display or study. Animals are often, but not always, portrayed in a lifelike state.",
+    "src": "https://en.wikipedia.org/wiki/Taxidermy",
+    "verified": true
   }
 ]

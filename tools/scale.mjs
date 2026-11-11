@@ -577,6 +577,7 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* history and arts batch, 11 Nov */ 'novel', 'diary', 'dictionary', 'encyclopedia', 'origami',
           /* philosophy and religion batch, 11 Nov */ 'relic',
           /* umbrella pass, 11 Nov */ 'gum', 'juice', 'squash',
           /* corpus review, 11 Nov — missing basics added */ 'radon', 'humidity', 'knot', 'scroll', 'litre',
@@ -888,6 +889,8 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* history and arts batch, 11 Nov — abstract concepts and people, filed at the 10⁰ idea bucket */ 'civilization', 'historical_method', 'stone_age', 'paleolithic', 'mesolithic', 'neolithic_revolution', 'ancient_history', 'pharaoh', 'serfdom', 'nobility', 'chivalry', 'age_of_discovery', 'colonization', 'columbian_exchange', 'atlantic_slave_trade', 'age_of_enlightenment', 'scientific_revolution', 'french_revolution', 'american_revolution', 'great_depression', 'moon_landing', 'information_age', 'green_revolution', 'abolitionism', 'civil_rights_movement', 'inquisition', 'roman_empire', 'ancient_egypt', 'ancient_greece', 'ancient_rome', 'mesopotamia', 'hanseatic_league', 'holy_roman_empire', 'little_ice_age', 'spanish_flu', 'human_history', 'artist', 'genre', 'fable', 'fairy_tale', 'fantasy', 'science_fiction', 'horror_fiction', 'short_story', 'biography', 'autobiography', 'essay', 'epic_poetry', 'haiku', 'rhyme', 'sonnet', 'ode', 'writer', 'literature', 'prose', 'narration', 'drama', 'tragedy', 'choir', 'concert', 'musician', 'music_theory', 'singing', 'ballad', 'hymn', 'lullaby', 'national_anthem', 'folk_music', 'sonata', 'concerto', 'aria', 'blues', 'ballet', 'waltz', 'puppetry', 'acting', 'cubism', 'impressionism', 'surrealism', 'dada', 'pop_art', 'modernism', 'romanticism', 'abstract_art', 'calligraphy', 'collage', 'comics', 'manga', 'graffiti', 'mosaic', 'portrait', 'printmaking', 'watercolor', 'illustration', 'typography', 'graphic_design', 'animation', 'anime', 'taxidermy',
+          /* culture and education batch, 11 Nov — abstract concepts, filed at the 10⁰ idea bucket */ 'education', 'teaching', 'student', 'curriculum', 'exam', 'academic_degree', 'skill', 'pedagogy', 'information', 'data', 'communication', 'conversation', 'nonverbal_communication', 'body_language', 'culture', 'anthropology', 'cultural_anthropology', 'ethnography', 'ethnicity', 'nomad', 'cultural_heritage', 'popular_culture', 'oral_tradition', 'greeting', 'body_modification', 'tattoo', 'birthday', 'holiday', 'carnival', 'christmas', 'easter', 'halloween', 'diwali', 'new_years_eve', 'marriage', 'wedding', 'humanities', 'social_science', 'sociology', 'linguistics',
           /* philosophy and religion batch, 11 Nov — abstract concepts, filed at the 10⁰ idea bucket */ 'morality', 'truth', 'idea', 'concept', 'argument', 'fallacy', 'inference', 'deductive_reasoning', 'inductive_reasoning', 'hypothesis', 'fact', 'skepticism', 'empiricism', 'rationalism', 'free_will', 'determinism', 'existentialism', 'nihilism', 'utilitarianism', 'deontology', 'relativism', 'humanism', 'metaphysics', 'aesthetics', 'wisdom', 'virtue', 'conscience', 'thought_experiment', 'deity', 'theology', 'sacrifice', 'saint', 'heresy', 'pantheism', 'deism', 'salvation', 'hell', 'resurrection', 'apocalypse', 'creation_myth', 'taboo', 'magic', 'superstition', 'astrology', 'divination', 'folklore', 'funeral', 'cremation', 'fasting', 'curse', 'witchcraft', 'mysticism', 'secularism', 'totem', 'monster',
           /* economics batch, 11 Nov — abstract concepts, filed at the 10⁰ idea bucket */ 'goods', 'service', 'price', 'supply_and_demand', 'inflation', 'deflation', 'profit', 'business', 'company', 'corporation', 'wage', 'employment', 'unemployment', 'loan', 'mortgage', 'insurance', 'investment', 'stock_exchange', 'accounting', 'gdp', 'economic_growth', 'economics', 'monopoly', 'subsidy', 'sales_tax', 'property_tax', 'income_tax', 'international_trade', 'exchange_rate', 'pension', 'bankruptcy', 'black_market', 'protectionism', 'competition', 'commerce', 'productivity',
           /* R3 mathematics, 11 Nov — abstract concepts, filed at the 10⁰ idea bucket */ 'addition', 'subtraction', 'multiplication', 'arithmetic', 'exponentiation', 'square_root', 'logarithm', 'integer', 'negative_number', 'rational_number', 'real_number', 'complex_number', 'point', 'line', 'angle', 'polygon', 'perimeter', 'parallel', 'tangent', 'trigonometry', 'sine', 'sphere', 'volume', 'derivative', 'integral', 'matrix', 'sequence', 'series', 'conjecture', 'mathematics', 'percentage',
@@ -1236,6 +1239,8 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+          /* history and arts batch, 11 Nov */ 'archive', 'mural',
+          /* culture and education batch, 11 Nov */ 'museum',
           /* corpus review, 11 Nov — missing basics added */ 'central_heating',
           /* W2 continued — a mating flight happens tens of metres up, 5 Sep */
           'nuptial_flight',
@@ -1449,6 +1454,8 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'bird_wing', 'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+          /* history and arts batch, 11 Nov */ 'circus',
+          /* culture and education batch, 11 Nov */ 'university',
           /* philosophy and religion batch, 11 Nov */ 'monastery',
     'osu_castle', 'agra_fort', 'elephanta', 'jameh_isfahan', 'mahabalipuram', 'chola_temples', 'novodevichy',   // Chronicarum places 5 Sep
     /* verb outcomes, 5 Sep. a slab across a slope */
