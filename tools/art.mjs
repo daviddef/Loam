@@ -45690,6 +45690,38 @@ def('hour', () => [                                               // a twenty-fo
   ...Array.from({ length: 12 }, (_, i) => { const a = (i * Math.PI) / 6; return S(`M${n(30 + 17 * Math.sin(a))} ${n(30 - 17 * Math.cos(a))} L${n(30 + 20 * Math.sin(a))} ${n(30 - 20 * Math.cos(a))}`, 'ik', 1.4); }),
   S('M30 30 L30 14', 'ik', 2.6), S('M30 30 L38 38', 'ik', 1.6), C(30, 30, 2, 'ik')]);
 
+/* ── umbrella pass, 11 Nov: seven general terms the specific ones were missing ── */
+def('gum', () => [                                                // an amber bead of exudate, and the thread it pulls when you touch it
+  P('M4 14 L56 14 L56 24 L4 24 Z', 'lo'), S('M4 24 L56 24', 'ik', 1.6),
+  P('M30 24 Q42 28 40 38 Q38 48 30 48 Q22 48 20 38 Q18 28 30 24 Z', 'bs'),
+  P('M26 30 Q30 28 32 32 Q28 36 25 34 Z', 'hi'),
+  S('M30 48 Q31 54 29 58', 'bs', 2)]);
+def('juice', () => [                                              // a glass of it, with the half-fruit it came from
+  P('M14 14 L38 14 L35 52 L17 52 Z', 'hi'), P('M15.6 26 L36.4 26 L35 52 L17 52 Z', 'bs'),
+  S('M14 14 L38 14 L35 52 L17 52 Z', 'ik', 1.6), S('M46 12 L38 40', 'ik', 1.4),
+  C(47, 44, 9, 'bs'), C(47, 44, 6, 'hi'), S('M47 38 L47 50 M41 44 L53 44', 'bs', 1)]);
+def('polymerase', () => [                                         // an enzyme riding a template strand and leaving a new one behind it
+  S('M2 38 L58 38', 'gh', 2.4), S('M2 46 L30 46', 'gh', 2.4),
+  ...[8, 14, 20, 26].map(x => S(`M${x} 38 L${x} 46`, 'hi', 1.2)),
+  S('M30 46 Q40 54 56 50', 'bs', 2.4),
+  E(34, 30, 14, 11, 'bs'), E(32, 27, 7, 5, 'hi'), P('M30 38 L38 38 L34 44 Z', 'lo')]);
+def('canal', () => [                                              // a straight cut with a lock gate across it, which a river never is
+  P('M0 0 L60 0 L60 60 L0 60 Z', 'ground'), P('M0 20 L60 20 L60 40 L0 40 Z', 'bs'),
+  S('M0 20 L60 20 M0 40 L60 40', 'ik', 1.6), S('M34 16 L34 44', 'ik', 3),
+  P('M8 28 L22 28 L20 34 L10 34 Z', 'lo'), S('M15 28 L15 22', 'ik', 1.4),
+  S('M38 26 L52 26 M38 34 L52 34', 'hi', 1.2)]);
+def('squash', () => [                                             // a ribbed gourd on its stem
+  E(30, 36, 22, 17, 'bs'), E(30, 36, 11, 17, 'lo'), E(30, 36, 4, 17, 'bs'),
+  S('M30 19 L30 11 Q31 7 36 6', 'plant-lo', 3.2), P('M33 15 Q42 12 44 18 Q38 20 33 15 Z', 'plant-bs')]);
+def('fluid', () => [                                              // it takes the shape of whatever it is poured into
+  P('M8 20 L52 20 L48 54 L12 54 Z', 'lo'), P('M9 32 Q18 28 30 32 Q42 36 51 32 L48 54 L12 54 Z', 'bs'),
+  S('M8 20 L12 54 L48 54 L52 20', 'ik', 1.8), S('M16 40 Q24 36 30 40 Q36 44 44 40', 'hi', 1.4),
+  S('M20 8 Q30 2 40 8', 'ik', 1.4), P('M38 4 L44 9 L36 11 Z', 'ik')]);
+def('armor', () => [                                              // a breastplate, with the strap marks and the ridge that turns a blow
+  P('M14 10 Q30 18 46 10 L52 20 L46 36 Q44 50 30 54 Q16 50 14 36 L8 20 Z', 'bs'),
+  S('M30 18 L30 52', 'hi', 2), S('M14 10 Q30 18 46 10', 'ik', 1.8),
+  S('M16 30 Q30 36 44 30', 'lo', 1.6), C(15, 22, 1.6, 'hi'), C(45, 22, 1.6, 'hi')]);
+
 /* ── build ────────────────────────────────────────────────────────────────*/
 
 const out = {};

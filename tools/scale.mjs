@@ -56,6 +56,7 @@ const SCALE = {
           // sandboxels gapfill batch 1 — antiparticle and antimatter-atom scale, the same rack as proton/positron/hydrogen
           'antiproton', 'antihydrogen'],
   '-9':  [
+          /* umbrella pass, 11 Nov */ 'polymerase',
           /* corpus review, 11 Nov — missing basics added */ 'ester', 'thiol',
           /* W4 physiology fourth pass, 6 Sep */
           'pepsin', 'amylase', 'trypsin', 'lipase', 'prolactin', 'aldosterone',
@@ -576,6 +577,7 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* umbrella pass, 11 Nov */ 'gum', 'juice', 'squash',
           /* corpus review, 11 Nov — missing basics added */ 'radon', 'humidity', 'knot', 'scroll', 'litre',
           /* W4 physiology fourth pass, 6 Sep */
           'absorption', 'ossification', 'negative_feedback', 'differentiation', 'myelination', 'synaptic_plasticity',
@@ -885,6 +887,7 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* umbrella pass, 11 Nov */ 'fluid', 'armor',
           /* corpus review, 11 Nov — missing basics added */ 'kelvin', 'hour', 'inertia', 'torque', 'wavelength', 'kinetic_energy', 'potential_energy', 'absolute_zero', 'doppler_effect', 'diffraction', 'ohms_law', 'maxwells_equations', 'ideal_gas_law', 'conservation_of_energy', 'software', 'email', 'cryptography',
           /* W2 insects third pass, 6 Sep */
           'caste', 'termite_mound', 'swarm',
@@ -1739,6 +1742,7 @@ const SCALE = {
           // seashore batch 1 — the tide's rise and fall along a whole stretch of coastline, km scale like estuary/lagoon/fjord
           'tide'],
   '4':   [
+          /* umbrella pass, 11 Nov */ 'canal',
           /* corpus review, 11 Nov — compact objects sized by their real diameter: a white dwarf is Earth-sized, a neutron star about 20 km, a brown dwarf Jupiter-sized, a sunspot tens of thousands of km */ 'neutron_star', 'pulsar',
           /* corpus review, 11 Nov — sized by diameter to the nearest power of ten (Earth 1.3×10⁷ m, Jupiter 1.4×10⁸ m, Pluto 2.4×10⁶ m); they had all been filed under the 10⁹ ceiling */ 'phobos', 'deimos',
     /* places batch 45, 5 Sep. 82,388 ha of ice and rock */
