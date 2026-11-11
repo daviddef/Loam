@@ -16872,8 +16872,7 @@
       "plant",
       "wild"
     ],
-    "fact": "The world's largest land biome — a belt of pine, spruce and larch across the subarctic.",
-    "terminal": true
+    "fact": "The world's largest land biome — a belt of pine, spruce and larch across the subarctic."
   },
   {
     "id": "rainforest",
@@ -24215,7 +24214,6 @@
       "wild"
     ],
     "fact": "The upper beak hinges free of the skull instead of fusing to it, adding bite force.",
-    "terminal": true,
     "taxon": "tx_psittaciformes"
   },
   {
@@ -108034,5 +108032,929 @@
     ],
     "fact": "Italy's longest river, flowing east across the northern plain to the Adriatic Sea.",
     "src": "https://en.wikipedia.org/wiki/Po_(river)"
+  },
+  {
+    "id": "himalayas",
+    "name": "Himalayas",
+    "emoji": "🏔️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The mountain range between the Indian subcontinent and the Tibetan Plateau, holding most of Earth's highest peaks.",
+    "src": "https://en.wikipedia.org/wiki/Himalayas"
+  },
+  {
+    "id": "mount_everest",
+    "name": "Mount Everest",
+    "emoji": "🏔️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Earth's highest mountain above sea level, at about 8,849 metres, on the Nepal-China border.",
+    "src": "https://en.wikipedia.org/wiki/Mount_Everest"
+  },
+  {
+    "id": "k2",
+    "name": "K2",
+    "emoji": "🏔️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The second-highest mountain on Earth, in the Karakoram on the Pakistan-China border, and far harder to climb than Everest.",
+    "src": "https://en.wikipedia.org/wiki/K2"
+  },
+  {
+    "id": "rocky_mountains",
+    "name": "Rocky Mountains",
+    "emoji": "🏔️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The great North American range running from British Columbia in Canada to New Mexico in the United States.",
+    "src": "https://en.wikipedia.org/wiki/Rocky_Mountains"
+  },
+  {
+    "id": "appalachian_mountains",
+    "name": "Appalachian Mountains",
+    "emoji": "⛰️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "An old, worn-down range of eastern North America, running from Newfoundland to Alabama.",
+    "src": "https://en.wikipedia.org/wiki/Appalachian_Mountains"
+  },
+  {
+    "id": "pyrenees",
+    "name": "Pyrenees",
+    "emoji": "⛰️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The range that forms the border between France and Spain, with Andorra in its middle.",
+    "src": "https://en.wikipedia.org/wiki/Pyrenees"
+  },
+  {
+    "id": "ural_mountains",
+    "name": "Ural Mountains",
+    "emoji": "⛰️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The range running north to south through Russia, conventionally taken as the boundary between Europe and Asia.",
+    "src": "https://en.wikipedia.org/wiki/Ural_Mountains"
+  },
+  {
+    "id": "caucasus_mountains",
+    "name": "Caucasus Mountains",
+    "emoji": "⛰️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A range between the Black Sea and the Caspian Sea, long used as a dividing line between Europe and Asia.",
+    "src": "https://en.wikipedia.org/wiki/Caucasus_Mountains"
+  },
+  {
+    "id": "carpathian_mountains",
+    "name": "Carpathian Mountains",
+    "emoji": "⛰️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A great arc of mountains through Central and Eastern Europe, from Czechia to Romania.",
+    "src": "https://en.wikipedia.org/wiki/Carpathian_Mountains"
+  },
+  {
+    "id": "atlas_mountains",
+    "name": "Atlas Mountains",
+    "emoji": "⛰️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The range running across northwest Africa through Morocco, Algeria and Tunisia, separating the coast from the Sahara.",
+    "src": "https://en.wikipedia.org/wiki/Atlas_Mountains"
+  },
+  {
+    "id": "matterhorn",
+    "name": "Matterhorn",
+    "emoji": "🏔️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A steep pyramid-shaped peak in the Alps on the Swiss-Italian border, first climbed in 1865.",
+    "src": "https://en.wikipedia.org/wiki/Matterhorn"
+  },
+  {
+    "id": "aconcagua",
+    "name": "Aconcagua",
+    "emoji": "🏔️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The highest mountain in the Americas and the highest outside Asia, in the Argentine Andes at about 6,960 metres.",
+    "src": "https://en.wikipedia.org/wiki/Aconcagua"
+  },
+  {
+    "id": "denali",
+    "name": "Denali",
+    "emoji": "🏔️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The highest mountain in North America, in Alaska at about 6,190 metres, formerly called Mount McKinley.",
+    "src": "https://en.wikipedia.org/wiki/Denali"
+  },
+  {
+    "id": "tibetan_plateau",
+    "name": "Tibetan Plateau",
+    "emoji": "🏔️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A vast high plateau in Central Asia, known as the Roof of the World, source of many of Asia's great rivers.",
+    "src": "https://en.wikipedia.org/wiki/Tibetan_Plateau"
+  },
+  {
+    "id": "mount_etna",
+    "name": "Mount Etna",
+    "emoji": "🌋",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "Europe's tallest active volcano, on the east coast of Sicily, erupting often.",
+    "src": "https://en.wikipedia.org/wiki/Mount_Etna"
+  },
+  {
+    "id": "vesuvius",
+    "name": "Mount Vesuvius",
+    "emoji": "🌋",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The volcano that buried Pompeii and Herculaneum in AD 79, standing over the Bay of Naples.",
+    "src": "https://en.wikipedia.org/wiki/Mount_Vesuvius"
+  },
+  {
+    "id": "krakatoa",
+    "name": "Krakatoa",
+    "emoji": "🌋",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A volcanic island in Indonesia whose 1883 eruption was among the deadliest and loudest in recorded history.",
+    "src": "https://en.wikipedia.org/wiki/Krakatoa"
+  },
+  {
+    "id": "ring_of_fire",
+    "name": "Ring of Fire",
+    "emoji": "🔥",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The belt around the Pacific Ocean where most of Earth's earthquakes and volcanic eruptions occur.",
+    "src": "https://en.wikipedia.org/wiki/Ring_of_Fire"
+  },
+  {
+    "id": "mariana_trench",
+    "name": "Mariana Trench",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The deepest known part of Earth's oceans, in the western Pacific, nearly 11 kilometres down.",
+    "src": "https://en.wikipedia.org/wiki/Mariana_Trench"
+  },
+  {
+    "id": "mid_atlantic_ridge",
+    "name": "Mid-Atlantic Ridge",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "An underwater mountain chain running down the Atlantic where the plates move apart and new crust forms.",
+    "src": "https://en.wikipedia.org/wiki/Mid-Atlantic_Ridge"
+  },
+  {
+    "id": "gondwana",
+    "name": "Gondwana",
+    "emoji": "🌍",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The southern supercontinent that held South America, Africa, India, Antarctica and Australia before they drifted apart.",
+    "src": "https://en.wikipedia.org/wiki/Gondwana"
+  },
+  {
+    "id": "gobi_desert",
+    "name": "Gobi Desert",
+    "emoji": "🏜️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A cold desert of northern China and southern Mongolia, where dinosaur eggs were first found.",
+    "src": "https://en.wikipedia.org/wiki/Gobi_Desert"
+  },
+  {
+    "id": "kalahari_desert",
+    "name": "Kalahari Desert",
+    "emoji": "🏜️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A large semi-arid sandy region of southern Africa, home to the San people and many animals.",
+    "src": "https://en.wikipedia.org/wiki/Kalahari_Desert"
+  },
+  {
+    "id": "namib",
+    "name": "Namib",
+    "emoji": "🏜️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A coastal desert of southwestern Africa, considered the oldest on Earth, with some of the tallest sand dunes.",
+    "src": "https://en.wikipedia.org/wiki/Namib"
+  },
+  {
+    "id": "atacama_desert",
+    "name": "Atacama Desert",
+    "emoji": "🏜️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A desert strip in northern Chile, one of the driest places on Earth.",
+    "src": "https://en.wikipedia.org/wiki/Atacama_Desert"
+  },
+  {
+    "id": "arabian_desert",
+    "name": "Arabian Desert",
+    "emoji": "🏜️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A vast desert of the Arabian Peninsula, including the Empty Quarter, one of the largest sand deserts.",
+    "src": "https://en.wikipedia.org/wiki/Arabian_Desert"
+  },
+  {
+    "id": "negev",
+    "name": "Negev",
+    "emoji": "🏜️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A desert of southern Israel, covering more than half the country.",
+    "src": "https://en.wikipedia.org/wiki/Negev"
+  },
+  {
+    "id": "mojave_desert",
+    "name": "Mojave Desert",
+    "emoji": "🏜️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A desert in the southwestern United States, home to Death Valley and the Joshua tree.",
+    "src": "https://en.wikipedia.org/wiki/Mojave_Desert"
+  },
+  {
+    "id": "thar_desert",
+    "name": "Thar Desert",
+    "emoji": "🏜️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A large arid region on the border of India and Pakistan, also called the Great Indian Desert.",
+    "src": "https://en.wikipedia.org/wiki/Thar_Desert"
+  },
+  {
+    "id": "simpson_desert",
+    "name": "Simpson Desert",
+    "emoji": "🏜️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A sandy desert of central Australia, known for its long, parallel red dunes.",
+    "src": "https://en.wikipedia.org/wiki/Simpson_Desert"
+  },
+  {
+    "id": "patagonia",
+    "name": "Patagonia",
+    "emoji": "🏞️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The southern tip of South America, shared by Argentina and Chile, with steppe, glaciers and the Andes.",
+    "src": "https://en.wikipedia.org/wiki/Patagonia"
+  },
+  {
+    "id": "greenland",
+    "name": "Greenland",
+    "emoji": "🧊",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The world's largest island that is not a continent, mostly covered by an ice sheet, and an autonomous territory of Denmark.",
+    "src": "https://en.wikipedia.org/wiki/Greenland"
+  },
+  {
+    "id": "hawaii",
+    "name": "Hawaii",
+    "emoji": "🌺",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The Pacific island chain, and US state, built by volcanoes rising from the seafloor over a hotspot.",
+    "src": "https://en.wikipedia.org/wiki/Hawaii"
+  },
+  {
+    "id": "borneo",
+    "name": "Borneo",
+    "emoji": "🦧",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The third-largest island in the world, shared by Indonesia, Malaysia and Brunei, home to orangutans.",
+    "src": "https://en.wikipedia.org/wiki/Borneo"
+  },
+  {
+    "id": "sumatra",
+    "name": "Sumatra",
+    "emoji": "🐅",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A large island of western Indonesia, home to tigers, orangutans and rhinoceroses.",
+    "src": "https://en.wikipedia.org/wiki/Sumatra"
+  },
+  {
+    "id": "java",
+    "name": "Java",
+    "emoji": "🌋",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The most populous island on Earth, in Indonesia, containing its capital Jakarta.",
+    "src": "https://en.wikipedia.org/wiki/Java"
+  },
+  {
+    "id": "sicily",
+    "name": "Sicily",
+    "emoji": "🍋",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The largest island in the Mediterranean Sea, an autonomous region of Italy, with Mount Etna.",
+    "src": "https://en.wikipedia.org/wiki/Sicily"
+  },
+  {
+    "id": "sardinia",
+    "name": "Sardinia",
+    "emoji": "🏝️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The second-largest island in the Mediterranean Sea, an autonomous region of Italy.",
+    "src": "https://en.wikipedia.org/wiki/Sardinia"
+  },
+  {
+    "id": "crete",
+    "name": "Crete",
+    "emoji": "🏝️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The largest Greek island, birthplace of the Minoan civilization.",
+    "src": "https://en.wikipedia.org/wiki/Crete"
+  },
+  {
+    "id": "corsica",
+    "name": "Corsica",
+    "emoji": "🏝️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A Mediterranean island, part of France, and the birthplace of Napoleon Bonaparte.",
+    "src": "https://en.wikipedia.org/wiki/Corsica"
+  },
+  {
+    "id": "tasmania",
+    "name": "Tasmania",
+    "emoji": "🏝️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "An island state of Australia, south of the mainland across the Bass Strait.",
+    "src": "https://en.wikipedia.org/wiki/Tasmania"
+  },
+  {
+    "id": "new_guinea",
+    "name": "New Guinea",
+    "emoji": "🏝️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The second-largest island in the world, shared by Papua New Guinea and Indonesia, with enormous biodiversity.",
+    "src": "https://en.wikipedia.org/wiki/New_Guinea"
+  },
+  {
+    "id": "honshu",
+    "name": "Honshu",
+    "emoji": "🗾",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The largest island of Japan, home to Tokyo, Kyoto and Mount Fuji.",
+    "src": "https://en.wikipedia.org/wiki/Honshu"
+  },
+  {
+    "id": "tahiti",
+    "name": "Tahiti",
+    "emoji": "🏝️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The largest island of French Polynesia, in the South Pacific, formed by two volcanoes.",
+    "src": "https://en.wikipedia.org/wiki/Tahiti"
+  },
+  {
+    "id": "easter_island",
+    "name": "Easter Island",
+    "emoji": "🗿",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A remote Chilean island in the Pacific, famed for its giant moai statues.",
+    "src": "https://en.wikipedia.org/wiki/Easter_Island"
+  },
+  {
+    "id": "great_britain",
+    "name": "Great Britain",
+    "emoji": "🇬🇧",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The largest island in Europe, which holds England, Scotland and Wales.",
+    "src": "https://en.wikipedia.org/wiki/Great_Britain"
+  },
+  {
+    "id": "manhattan",
+    "name": "Manhattan",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The central borough of New York City, a densely built island between the Hudson and East rivers.",
+    "src": "https://en.wikipedia.org/wiki/Manhattan"
+  },
+  {
+    "id": "bermuda",
+    "name": "Bermuda",
+    "emoji": "🏝️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A British territory in the North Atlantic, a chain of islands on top of an extinct volcano.",
+    "src": "https://en.wikipedia.org/wiki/Bermuda"
+  },
+  {
+    "id": "azores",
+    "name": "Azores",
+    "emoji": "🏝️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A Portuguese archipelago of nine volcanic islands in the middle of the North Atlantic.",
+    "src": "https://en.wikipedia.org/wiki/Azores"
+  },
+  {
+    "id": "canary_islands",
+    "name": "Canary Islands",
+    "emoji": "🏝️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A Spanish archipelago off northwest Africa, volcanic in origin.",
+    "src": "https://en.wikipedia.org/wiki/Canary_Islands"
+  },
+  {
+    "id": "svalbard",
+    "name": "Svalbard",
+    "emoji": "🐻‍❄️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A Norwegian archipelago in the Arctic Ocean, home to polar bears and the Global Seed Vault.",
+    "src": "https://en.wikipedia.org/wiki/Svalbard"
+  },
+  {
+    "id": "falkland_islands",
+    "name": "Falkland Islands",
+    "emoji": "🐧",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A British-administered archipelago in the South Atlantic, east of Patagonia, claimed by Argentina.",
+    "src": "https://en.wikipedia.org/wiki/Falkland_Islands"
+  },
+  {
+    "id": "hong_kong",
+    "name": "Hong Kong",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A dense city of southern China on the South China Sea, a major financial centre.",
+    "src": "https://en.wikipedia.org/wiki/Hong_Kong"
+  },
+  {
+    "id": "siberia",
+    "name": "Siberia",
+    "emoji": "🥶",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The vast region of northern Asia, in Russia, famous for its harsh winters and its mineral wealth.",
+    "src": "https://en.wikipedia.org/wiki/Siberia"
+  },
+  {
+    "id": "scandinavia",
+    "name": "Scandinavia",
+    "emoji": "🏔️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The northern European region of Norway, Sweden and Denmark, linked by language and history.",
+    "src": "https://en.wikipedia.org/wiki/Scandinavia"
+  },
+  {
+    "id": "balkans",
+    "name": "Balkans",
+    "emoji": "⛰️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The mountainous peninsula of southeastern Europe between the Adriatic, Aegean and Black seas.",
+    "src": "https://en.wikipedia.org/wiki/Balkans"
+  },
+  {
+    "id": "iberian_peninsula",
+    "name": "Iberian Peninsula",
+    "emoji": "🏝️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The peninsula in southwestern Europe that holds Spain, Portugal, Andorra and Gibraltar.",
+    "src": "https://en.wikipedia.org/wiki/Iberian_Peninsula"
+  },
+  {
+    "id": "anatolia",
+    "name": "Anatolia",
+    "emoji": "🏺",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The Asian part of Turkey, a peninsula between the Black Sea and the Mediterranean, long a crossroads of empires.",
+    "src": "https://en.wikipedia.org/wiki/Anatolia"
+  },
+  {
+    "id": "levant",
+    "name": "Levant",
+    "emoji": "🏺",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The eastern Mediterranean region of the Middle East, from Syria and Lebanon to Israel and Jordan.",
+    "src": "https://en.wikipedia.org/wiki/Levant"
+  },
+  {
+    "id": "middle_east",
+    "name": "Middle East",
+    "emoji": "🕌",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A transcontinental region of western Asia and parts of Africa, where the earliest cities and writing arose.",
+    "src": "https://en.wikipedia.org/wiki/Middle_East"
+  },
+  {
+    "id": "southeast_asia",
+    "name": "Southeast Asia",
+    "emoji": "🌏",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The region of Asia south of China and east of India, split between the mainland and the islands.",
+    "src": "https://en.wikipedia.org/wiki/Southeast_Asia"
+  },
+  {
+    "id": "central_asia",
+    "name": "Central Asia",
+    "emoji": "🌏",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The landlocked region of Asia between the Caspian Sea and China, crossed by the Silk Road.",
+    "src": "https://en.wikipedia.org/wiki/Central_Asia"
+  },
+  {
+    "id": "east_asia",
+    "name": "East Asia",
+    "emoji": "🌏",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The eastern region of Asia, including China, Japan, Korea and Mongolia.",
+    "src": "https://en.wikipedia.org/wiki/East_Asia"
+  },
+  {
+    "id": "south_asia",
+    "name": "South Asia",
+    "emoji": "🌏",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The southern region of Asia, dominated by the Indian subcontinent and the Himalayas.",
+    "src": "https://en.wikipedia.org/wiki/South_Asia"
+  },
+  {
+    "id": "west_africa",
+    "name": "West Africa",
+    "emoji": "🌍",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The westernmost region of Africa, from Senegal to Nigeria, on the Gulf of Guinea.",
+    "src": "https://en.wikipedia.org/wiki/West_Africa"
+  },
+  {
+    "id": "east_africa",
+    "name": "East Africa",
+    "emoji": "🌍",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The eastern region of Africa, with the Great Rift Valley, Kilimanjaro and Lake Victoria.",
+    "src": "https://en.wikipedia.org/wiki/East_Africa"
+  },
+  {
+    "id": "horn_of_africa",
+    "name": "Horn of Africa",
+    "emoji": "🌍",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The peninsula of northeast Africa that juts into the Arabian Sea, holding Ethiopia, Somalia, Eritrea and Djibouti.",
+    "src": "https://en.wikipedia.org/wiki/Horn_of_Africa"
+  },
+  {
+    "id": "sub_saharan_africa",
+    "name": "Sub-Saharan Africa",
+    "emoji": "🌍",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The part of Africa south of the Sahara, home to most of the continent's people and countries.",
+    "src": "https://en.wikipedia.org/wiki/Sub-Saharan_Africa"
+  },
+  {
+    "id": "maghreb",
+    "name": "Maghreb",
+    "emoji": "🌍",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The region of northwest Africa between the Atlas Mountains, the Mediterranean and the Sahara.",
+    "src": "https://en.wikipedia.org/wiki/Maghreb"
+  },
+  {
+    "id": "caribbean",
+    "name": "Caribbean",
+    "emoji": "🏝️",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The sea and islands between North and South America, from Cuba to Trinidad.",
+    "src": "https://en.wikipedia.org/wiki/Caribbean"
+  },
+  {
+    "id": "latin_america",
+    "name": "Latin America",
+    "emoji": "🌎",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The parts of the Americas where Spanish, Portuguese and French are spoken, from Mexico to Chile.",
+    "src": "https://en.wikipedia.org/wiki/Latin_America"
+  },
+  {
+    "id": "central_america",
+    "name": "Central America",
+    "emoji": "🌎",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The narrow region linking North and South America, from Guatemala to Panama.",
+    "src": "https://en.wikipedia.org/wiki/Central_America"
+  },
+  {
+    "id": "oceania",
+    "name": "Oceania",
+    "emoji": "🌏",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The region of the Pacific that includes Australia, New Zealand and thousands of islands.",
+    "src": "https://en.wikipedia.org/wiki/Oceania"
+  },
+  {
+    "id": "polynesia",
+    "name": "Polynesia",
+    "emoji": "🌺",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The vast triangle of Pacific islands from Hawaii to New Zealand to Easter Island.",
+    "src": "https://en.wikipedia.org/wiki/Polynesia"
+  },
+  {
+    "id": "melanesia",
+    "name": "Melanesia",
+    "emoji": "🌏",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The Pacific region northeast of Australia, including New Guinea, Fiji and the Solomon Islands.",
+    "src": "https://en.wikipedia.org/wiki/Melanesia"
+  },
+  {
+    "id": "great_plains",
+    "name": "Great Plains",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The broad grassland of central North America, east of the Rocky Mountains.",
+    "src": "https://en.wikipedia.org/wiki/Great_Plains"
+  },
+  {
+    "id": "outback",
+    "name": "Outback",
+    "emoji": "🦘",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The vast, remote, arid interior of Australia, far from its coastal cities.",
+    "src": "https://en.wikipedia.org/wiki/Outback"
+  },
+  {
+    "id": "amazon_rainforest",
+    "name": "Amazon Rainforest",
+    "emoji": "🌳",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The largest tropical rainforest in the world, spanning nine countries in South America.",
+    "src": "https://en.wikipedia.org/wiki/Amazon_rainforest"
+  },
+  {
+    "id": "everglades",
+    "name": "Everglades",
+    "emoji": "🐊",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A vast subtropical wetland in southern Florida, a slow river of grass.",
+    "src": "https://en.wikipedia.org/wiki/Everglades"
+  },
+  {
+    "id": "victoria_falls",
+    "name": "Victoria Falls",
+    "emoji": "💦",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A waterfall on the Zambezi River, on the Zambia-Zimbabwe border, among the largest in the world.",
+    "src": "https://en.wikipedia.org/wiki/Victoria_Falls"
+  },
+  {
+    "id": "suez_canal",
+    "name": "Suez Canal",
+    "emoji": "🚢",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A sea-level waterway through Egypt that joins the Mediterranean to the Red Sea, opened in 1869.",
+    "src": "https://en.wikipedia.org/wiki/Suez_Canal"
+  },
+  {
+    "id": "strait_of_gibraltar",
+    "name": "Strait of Gibraltar",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The narrow strait where the Atlantic meets the Mediterranean, between Spain and Morocco, about 14 km wide.",
+    "src": "https://en.wikipedia.org/wiki/Strait_of_Gibraltar"
+  },
+  {
+    "id": "cape_of_good_hope",
+    "name": "Cape of Good Hope",
+    "emoji": "⛵",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "A rocky headland on the Atlantic coast of South Africa, long a landmark on the sea route to Asia.",
+    "src": "https://en.wikipedia.org/wiki/Cape_of_Good_Hope"
+  },
+  {
+    "id": "cape_horn",
+    "name": "Cape Horn",
+    "emoji": "⛵",
+    "shelf": "workshop",
+    "tags": [
+      "earth"
+    ],
+    "fact": "The southernmost headland of South America, in Chile, notorious for storms on the passage around it.",
+    "src": "https://en.wikipedia.org/wiki/Cape_Horn"
   }
 ]

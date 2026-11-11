@@ -115512,5 +115512,845 @@
     "why": "The Po is the longest river in Italy. It flows eastward across northern Italy, starting from the Cottian Alps. The river's length is 652 km (405 mi), or 682 km (424 mi) if the Maira, a right bank tributary, is included.",
     "src": "https://en.wikipedia.org/wiki/Po_(river)",
     "verified": true
+  },
+  {
+    "in": [
+      "mountain",
+      "india"
+    ],
+    "out": "himalayas",
+    "why": "The Himalayas, or Himalaya, is a mountain range in Asia separating the plains of the Indian subcontinent from the Tibetan Plateau. The range has some of the highest peaks on Earth, including the highest, Mount Everest.",
+    "src": "https://en.wikipedia.org/wiki/Himalayas",
+    "verified": true
+  },
+  {
+    "in": [
+      "himalayas",
+      "nepal"
+    ],
+    "out": "mount_everest",
+    "why": "Mount Everest is the highest mountain on Earth above sea level. It lies in the Mahalangur Himal sub-range of the Himalayas and marks part of the China–Nepal border at its summit.",
+    "src": "https://en.wikipedia.org/wiki/Mount_Everest",
+    "verified": true
+  },
+  {
+    "in": [
+      "himalayas",
+      "pakistan"
+    ],
+    "out": "k2",
+    "why": "K2, also known as Mount Godwin-Austen, at 8,611 metres (28,251 ft) above sea level, is the second-highest mountain on Earth, after Mount Everest at 8,849 metres (29,032 ft). It lies in the Karakoram range, partially in the Gilgit-Baltistan region of Pakistan-administered Kashmir and partially in the China-administered Trans-Karakoram Tract in the Taxkorgan Tajik Autonomous County of Xinjiang.",
+    "src": "https://en.wikipedia.org/wiki/K2",
+    "verified": true
+  },
+  {
+    "in": [
+      "mountain",
+      "canada"
+    ],
+    "out": "rocky_mountains",
+    "why": "The Rocky Mountains, also known as the Rockies, are a major mountain range and the largest mountain system in North America. The Rocky Mountains stretch 3,000 mi (4,800 km) in a straight-line distance from the northernmost part of Western Canada, to New Mexico in the Southwestern United States.",
+    "src": "https://en.wikipedia.org/wiki/Rocky_Mountains",
+    "verified": true
+  },
+  {
+    "in": [
+      "mountain",
+      "united_states"
+    ],
+    "out": "appalachian_mountains",
+    "why": "The Appalachian Mountains are a vast mountain range situated in eastern North America, extending roughly 2,050 miles (3,300 km) from central Alabama to Newfoundland along a generally southwest–northeast axis. Alongside the Appalachian Plateau province—with which they are not entirely synonymous—the mountains form a wider system comprising the region's backbone.",
+    "src": "https://en.wikipedia.org/wiki/Appalachian_Mountains",
+    "verified": true
+  },
+  {
+    "in": [
+      "mountain",
+      "spain"
+    ],
+    "out": "pyrenees",
+    "why": "The Pyrenees is a mountain range in southwestern Europe, straddling the France–Spain border. The Pyrenees extend nearly 500 kilometres (310 mi) from their union with the Cantabrian Mountains to Cap de Creus on the Mediterranean coast, reaching a maximum elevation of 3,404 metres (11,168 ft) at the peak of Aneto, in Huesca, Spain.",
+    "src": "https://en.wikipedia.org/wiki/Pyrenees",
+    "verified": true
+  },
+  {
+    "in": [
+      "mountain",
+      "russia"
+    ],
+    "out": "ural_mountains",
+    "why": "The Ural Mountains, or simply the Urals, are a mountain range in Eurasia that runs north–south mostly through Russia, from the coast of the Arctic Ocean to the river Ural and northwestern Kazakhstan near the Caspian Sea. The mountain range forms part of the conventional boundary between the continents of Europe and Asia, marking the separation between European Russia and Siberia.",
+    "src": "https://en.wikipedia.org/wiki/Ural_Mountains",
+    "verified": true
+  },
+  {
+    "in": [
+      "mountain",
+      "turkey"
+    ],
+    "out": "caucasus_mountains",
+    "why": "The Caucasus Mountains are a mountain range at the intersection of Asia and Europe. Stretching between the Black Sea and the Caspian Sea, they are surrounded by the Caucasus region and are home to Mount Elbrus, the highest peak in Europe at 5,642 metres (18,510 ft) above sea level.",
+    "src": "https://en.wikipedia.org/wiki/Caucasus_Mountains",
+    "verified": true
+  },
+  {
+    "in": [
+      "mountain",
+      "romania"
+    ],
+    "out": "carpathian_mountains",
+    "why": "The Carpathian Mountains or Carpathians are a range of mountains forming an arc across Central and Southeast Europe. Roughly 1,500 km (930 mi) long, it is the third-longest European mountain range after the Urals at 2,500 km (1,600 mi) and the Scandinavian Mountains at 1,700 km (1,100 mi).",
+    "src": "https://en.wikipedia.org/wiki/Carpathian_Mountains",
+    "verified": true
+  },
+  {
+    "in": [
+      "mountain",
+      "morocco"
+    ],
+    "out": "atlas_mountains",
+    "why": "The Atlas Mountains are a mountain range in the Maghreb in North Africa. They separate the Sahara from the Mediterranean Sea and the Atlantic Ocean; the mountain range stretches around 2,500 km (1,600 mi) through Morocco, Algeria and Tunisia.",
+    "src": "https://en.wikipedia.org/wiki/Atlas_Mountains",
+    "verified": true
+  },
+  {
+    "in": [
+      "alps",
+      "switzerland"
+    ],
+    "out": "matterhorn",
+    "why": "The Matterhorn is a mountain of the Alps, straddling the main watershed and border between Switzerland and Italy. It is a large, near-symmetric pyramidal peak in the extended Monte Rosa area of the Pennine Alps, whose summit is 4,478 metres (14,692 ft) above sea level, making it one of the highest summits in the Alps and Europe.",
+    "src": "https://en.wikipedia.org/wiki/Matterhorn",
+    "verified": true
+  },
+  {
+    "in": [
+      "andes",
+      "argentina"
+    ],
+    "out": "aconcagua",
+    "why": "Aconcagua is a mountain in the Principal Cordillera of the Andes range, located in Mendoza Province, Argentina. It is the highest mountain outside Asia.",
+    "src": "https://en.wikipedia.org/wiki/Aconcagua",
+    "verified": true
+  },
+  {
+    "in": [
+      "mountain",
+      "north_america"
+    ],
+    "out": "denali",
+    "why": "Denali, federally designated as Mount McKinley, is the highest mountain peak in North America, with a summit elevation of 20,310 feet (6,190 m) above sea level. Its vertical relief above the surrounding plateaus is one of the greatest on Earth, measuring about 18,000 feet (5,500 meters).",
+    "src": "https://en.wikipedia.org/wiki/Denali",
+    "verified": true
+  },
+  {
+    "in": [
+      "plateau",
+      "himalayas"
+    ],
+    "out": "tibetan_plateau",
+    "why": "The Tibetan Plateau, also known as the Qinghai–Tibet Plateau, Qingzang Plateau, is a vast elevated plateau located at the intersection of Central, South, and East Asia. Geographically, Tibet is located to the north of the Himalayas and the Indian subcontinent, and to the south of the Tarim Basin and the Mongolian Plateau.",
+    "src": "https://en.wikipedia.org/wiki/Tibetan_Plateau",
+    "verified": true
+  },
+  {
+    "in": [
+      "volcano",
+      "italy"
+    ],
+    "out": "mount_etna",
+    "why": "Mount Etna, or simply Etna, is an active stratovolcano on the east coast of Sicily, Italy, in the Metropolitan City of Catania, between the cities of Messina and Catania. It is located above the convergent plate margin between the African Plate and the Eurasian Plate.",
+    "src": "https://en.wikipedia.org/wiki/Mount_Etna",
+    "verified": true
+  },
+  {
+    "in": [
+      "volcano",
+      "ash"
+    ],
+    "out": "vesuvius",
+    "why": "Mount Vesuvius is a somma–stratovolcano located on the Gulf of Naples in Campania, Italy, about 9 km (5.6 mi) east of Naples and a short distance from the shore. It is one of several volcanoes forming the Campanian volcanic arc.",
+    "src": "https://en.wikipedia.org/wiki/Mount_Vesuvius",
+    "verified": true
+  },
+  {
+    "in": [
+      "volcano",
+      "indonesia"
+    ],
+    "out": "krakatoa",
+    "why": "Krakatoa, also transcribed Krakatau, is a caldera in the Sunda Strait between the islands of Java and Sumatra in the Indonesian province of Lampung. The caldera is part of a volcanic island group (Krakatoa archipelago) comprising four islands.",
+    "src": "https://en.wikipedia.org/wiki/Krakatoa",
+    "verified": true
+  },
+  {
+    "in": [
+      "volcano",
+      "pacific_ocean"
+    ],
+    "out": "ring_of_fire",
+    "why": "The Ring of Fire (also known as the Pacific Ring of Fire, the Rim of Fire, the Girdle of Fire or the Circum-Pacific belt) is a tectonic belt of earthquakes and volcanoes. It is about 40,000 km (25,000 mi) long and up to about 500 km (310 mi) wide, and surrounds most of the Pacific Ocean.",
+    "src": "https://en.wikipedia.org/wiki/Ring_of_Fire",
+    "verified": true
+  },
+  {
+    "in": [
+      "pacific_ocean",
+      "plate_tectonics"
+    ],
+    "out": "mariana_trench",
+    "why": "The Mariana Trench is the deepest oceanic trench on Earth, located in the western Pacific Ocean, about 200 kilometers (124 mi) east of the Mariana Islands. It is crescent-shaped and measures about 2,550 km (1,580 mi) in length and 69 km (43 mi) in width.",
+    "src": "https://en.wikipedia.org/wiki/Mariana_Trench",
+    "verified": true
+  },
+  {
+    "in": [
+      "atlantic_ocean",
+      "plate_tectonics"
+    ],
+    "out": "mid_atlantic_ridge",
+    "why": "The Mid-Atlantic Ridge is a mid-ocean ridge (a divergent or constructive plate boundary) located along the floor of the Atlantic Ocean, and part of the longest mountain range in the world. In the North Atlantic, the ridge separates North America from the Eurasian plate and the African plate, north and south of the Azores triple junction.",
+    "src": "https://en.wikipedia.org/wiki/Mid-Atlantic_Ridge",
+    "verified": true
+  },
+  {
+    "in": [
+      "pangaea",
+      "continental_drift"
+    ],
+    "out": "gondwana",
+    "why": "Gondwana, was a large landmass, commonly described as a supercontinent. The remnants of Gondwana make up around two-thirds of today's continental area, including South America, Africa, Antarctica, Australia, Zealandia, Arabia, and the Indian subcontinent.",
+    "src": "https://en.wikipedia.org/wiki/Gondwana",
+    "verified": true
+  },
+  {
+    "in": [
+      "desert",
+      "mongolia"
+    ],
+    "out": "gobi_desert",
+    "why": "The Gobi Desert is a large, cold desert and grassland region in southern Mongolia and North China. It is the sixth-largest desert in the world.",
+    "src": "https://en.wikipedia.org/wiki/Gobi_Desert",
+    "verified": true
+  },
+  {
+    "in": [
+      "desert",
+      "botswana"
+    ],
+    "out": "kalahari_desert",
+    "why": "The Kalahari Desert is a large semiarid sandy savanna in Southern Africa covering 900,000 km2 (350,000 sq mi), including much of Botswana, as well as parts of Namibia and South Africa.",
+    "src": "https://en.wikipedia.org/wiki/Kalahari_Desert",
+    "verified": true
+  },
+  {
+    "in": [
+      "desert",
+      "namibia"
+    ],
+    "out": "namib",
+    "why": "The Namib is a coastal desert in Southern Africa. According to the broadest definition, the Namib stretches for more than 2,000 kilometres (1,200 mi) along the Atlantic coasts of Angola, Namibia, and northwest South Africa, extending southward from the Carunjamba River in Angola, through Namibia and to the Olifants River in Western Cape, South Africa. The Namib's northernmost portion, which extends 450 kilometres (280 mi) from the Angola-Namibia border, is known as Moçâmedes Desert, while its southern portion appro",
+    "src": "https://en.wikipedia.org/wiki/Namib",
+    "verified": true
+  },
+  {
+    "in": [
+      "desert",
+      "chile"
+    ],
+    "out": "atacama_desert",
+    "why": "The Atacama Desert is a desert plateau located on the Pacific coast of South America, in the north of Chile. Stretching over a 1,600-kilometre-long (1,000-mile) strip of land west of the Andes Mountains, it covers an area of 105,000 km2 (41,000 mi2), which increases to 128,000 km2 (49,000 mi2) if the barren lower slopes of the Andes are included.",
+    "src": "https://en.wikipedia.org/wiki/Atacama_Desert",
+    "verified": true
+  },
+  {
+    "in": [
+      "desert",
+      "saudi_arabia"
+    ],
+    "out": "arabian_desert",
+    "why": "The Arabian Desert is a vast desert wilderness in West Asia that occupies almost the entire Arabian Peninsula with an area of 2,330,000 square kilometers (900,000 sq mi). It stretches from Yemen to the Persian Gulf and Oman to Jordan and Iraq.",
+    "src": "https://en.wikipedia.org/wiki/Arabian_Desert",
+    "verified": true
+  },
+  {
+    "in": [
+      "desert",
+      "israel"
+    ],
+    "out": "negev",
+    "why": "The Negev or Naqab is the name for a desert and semidesert area in southern Israel. Today, it forms the bulk of the Southern District of Israel, whose largest city and administrative capital is Beersheba (pop. 223,587), in the north of the Negev.",
+    "src": "https://en.wikipedia.org/wiki/Negev",
+    "verified": true
+  },
+  {
+    "in": [
+      "desert",
+      "united_states"
+    ],
+    "out": "mojave_desert",
+    "why": "The Mojave Desert is a desert in the rain shadow of the southern Sierra Nevada mountains and Transverse Ranges in the Southwestern United States. Named after the indigenous Mohave people, it lies mainly in southeastern California and southwestern Nevada, with small parts extending into Arizona and Utah.",
+    "src": "https://en.wikipedia.org/wiki/Mojave_Desert",
+    "verified": true
+  },
+  {
+    "in": [
+      "desert",
+      "india"
+    ],
+    "out": "thar_desert",
+    "why": "The Thar Desert, also known as the Great Indian Desert, is an arid region in the north-western part of the Indian subcontinent stretching across India and Pakistan. Covering an area of 264,091 km2 (101,966 sq mi), it is one of the largest subtropical deserts in Asia by area.",
+    "src": "https://en.wikipedia.org/wiki/Thar_Desert",
+    "verified": true
+  },
+  {
+    "in": [
+      "desert",
+      "australia"
+    ],
+    "out": "simpson_desert",
+    "why": "The Simpson Desert is a large area of dry, red sandy plain and dunes in the Northern Territory, South Australia and Queensland in central Australia. It is the fourth-largest Australian desert, with an area of 176,500 km2 (68,100 sq mi).",
+    "src": "https://en.wikipedia.org/wiki/Simpson_Desert",
+    "verified": true
+  },
+  {
+    "in": [
+      "plateau",
+      "argentina"
+    ],
+    "out": "patagonia",
+    "why": "Patagonia is a geographical region that encompasses the southern end of South America, governed by Argentina and Chile. The region comprises the southern section of the Andes mountains, featuring lakes, fjords, temperate rainforests, and glaciers in the west, and deserts, tablelands, and steppes to the east.",
+    "src": "https://en.wikipedia.org/wiki/Patagonia",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "ice_sheet"
+    ],
+    "out": "greenland",
+    "why": "Greenland is an autonomous territory of the Kingdom of Denmark and is the largest of the kingdom's three constituent parts by land area, the others being Denmark proper and the Faroe Islands. Citizens of Greenland are citizens of Denmark.",
+    "src": "https://en.wikipedia.org/wiki/Greenland",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "lava"
+    ],
+    "out": "hawaii",
+    "why": "Hawaii is an island state of the United States, in the Pacific Ocean about 2,000 miles (3,200 km) southwest of the U.S. mainland.",
+    "src": "https://en.wikipedia.org/wiki/Hawaii",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "rainforest"
+    ],
+    "out": "borneo",
+    "why": "Borneo is the third-largest island in the world, with an area of 748,168 km2 (288,869 sq mi), and population of 23,053,723 (2020 national censuses). Situated at the geographic centre of Maritime Southeast Asia, it is one of the Greater Sunda Islands, located north of Java, west of Sulawesi, and east of Sumatra.",
+    "src": "https://en.wikipedia.org/wiki/Borneo",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "indonesia"
+    ],
+    "out": "sumatra",
+    "why": "Sumatra is one of the Sunda Islands of western Indonesia. It is the largest island that is fully within Indonesian territory, as well as the sixth-largest island in the world.",
+    "src": "https://en.wikipedia.org/wiki/Sumatra",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "rice"
+    ],
+    "out": "java",
+    "why": "Java is one of the Greater Sunda Islands in the South East Asian country of Indonesia. It is bordered by the Indian Ocean to the south and the Java Sea (a part of the Pacific Ocean) to the north.",
+    "src": "https://en.wikipedia.org/wiki/Java",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "italy"
+    ],
+    "out": "sicily",
+    "why": "Sicily (Italian and Sicilian: Sicilia), officially the Sicilian Region, is an island in the central Mediterranean Sea and one of the twenty regions of Italy, situated south of the Italian Peninsula in continental Europe. With over 4.7 million inhabitants, including 1.2 million in and around the capital city of Palermo, it is both the largest and most populous island in the Mediterranean Sea.",
+    "src": "https://en.wikipedia.org/wiki/Sicily",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "mediterranean_sea"
+    ],
+    "out": "sardinia",
+    "why": "Sardinia, officially the Autonomous Region of Sardinia, is the second largest island in the Mediterranean Sea after Sicily, and one of the twenty regions of Italy. It is located 200 kilometres (110 nautical miles) west of the Italian Peninsula, 200 km (110 nmi) north of Tunisia, and 16.5 km (9 nmi) south of the French island of Corsica.",
+    "src": "https://en.wikipedia.org/wiki/Sardinia",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "labyrinth"
+    ],
+    "out": "crete",
+    "why": "Crete (KREET) is the largest and most populous island of Greece, the 89th largest island in the world, and the fifth largest island in the Mediterranean Sea, after Sicily, Sardinia, Cyprus, and Corsica. Crete is located approximately 100 km (62 mi) south of the Peloponnese, and about 300 km (190 mi) southwest of Anatolia.",
+    "src": "https://en.wikipedia.org/wiki/Crete",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "napoleon"
+    ],
+    "out": "corsica",
+    "why": "Corsica is an island in the Mediterranean Sea and one of the 18 regions of France. It is the fourth-largest island in the Mediterranean and lies southeast of the French mainland, west of the Italian Peninsula and immediately north of the Italian island of Sardinia, the nearest land mass.",
+    "src": "https://en.wikipedia.org/wiki/Corsica",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "australia"
+    ],
+    "out": "tasmania",
+    "why": "Tasmania is an island state of Australia. It is located 240 kilometres (150 miles) to the south of the Australian mainland, and is separated from it by the Bass Strait. The state encompasses the main island of Tasmania, the 26th-largest island in the world, and the surrounding 1000 islands.",
+    "src": "https://en.wikipedia.org/wiki/Tasmania",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "parrot"
+    ],
+    "out": "new_guinea",
+    "why": "New Guinea (also known as Papua or historically Irian) is the world's second-largest island, with an area of 785,753 km2 (303,381 sq mi). It has the third-largest remaining rainforest globally, and the highest plant biodiversity of any island.",
+    "src": "https://en.wikipedia.org/wiki/New_Guinea",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "japan"
+    ],
+    "out": "honshu",
+    "why": "Honshu, historically known as Akitsushima or Hondo, is the largest of Japan's four main islands.",
+    "src": "https://en.wikipedia.org/wiki/Honshu",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "reef"
+    ],
+    "out": "tahiti",
+    "why": "Tahiti is the largest island of the Windward group of the Society Islands in French Polynesia, an overseas collectivity of France. It is a tropical island located in the central part of the Pacific Ocean.",
+    "src": "https://en.wikipedia.org/wiki/Tahiti",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "statue"
+    ],
+    "out": "easter_island",
+    "why": "Easter Island is an island and special territory of Chile in the southeastern Pacific Ocean, at the southeasternmost point of the Polynesian Triangle in Oceania. The island is renowned for its nearly 1,000 extant monumental statues, called moai, which were created by the early Rapa Nui people.",
+    "src": "https://en.wikipedia.org/wiki/Easter_Island",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "united_kingdom"
+    ],
+    "out": "great_britain",
+    "why": "Great Britain is an island in the North Atlantic Ocean off the north-west coast of continental Europe, consisting of the countries England, Scotland and Wales, which comprise most of the United Kingdom. With an area of 209,331 km2 (80,823 sq mi), it is the largest of the British Isles, the largest European island, and the ninth-largest island in the world.",
+    "src": "https://en.wikipedia.org/wiki/Great_Britain",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "city"
+    ],
+    "out": "manhattan",
+    "why": "Manhattan is the most densely populated and geographically smallest of the five boroughs of New York City. Manhattan is coextensive with New York County, which is the smallest county by area in the U.S. state of New York, and one of the smallest in the United States.",
+    "src": "https://en.wikipedia.org/wiki/Manhattan",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "atlantic_ocean"
+    ],
+    "out": "bermuda",
+    "why": "Bermuda is a British Overseas Territory in the North Atlantic Ocean. The closest land outside the territory is in the US state of North Carolina, about 1,035 km (643 mi) to the west-northwest.",
+    "src": "https://en.wikipedia.org/wiki/Bermuda",
+    "verified": true
+  },
+  {
+    "in": [
+      "archipelago",
+      "portugal"
+    ],
+    "out": "azores",
+    "why": "The Azores, officially the Autonomous Region of the Azores, is an archipelago of Portugal, in the Atlantic Ocean, about 1,400 km (870 miles) west of the Portuguese mainland. Politically and administratively, together with Madeira, it is one of the two autonomous regions of Portugal and a special territory of the European Union.",
+    "src": "https://en.wikipedia.org/wiki/Azores",
+    "verified": true
+  },
+  {
+    "in": [
+      "archipelago",
+      "spain"
+    ],
+    "out": "canary_islands",
+    "why": "The Canary Islands or Canaries are an archipelago in the Atlantic Ocean and the southernmost autonomous community of Spain, located about 100 kilometres (60 mi) off the northwest coast of Africa. The archipelago has a population of over 2.2 million inhabitants, making it the most populous overseas special territory of the European Union.",
+    "src": "https://en.wikipedia.org/wiki/Canary_Islands",
+    "verified": true
+  },
+  {
+    "in": [
+      "archipelago",
+      "norway"
+    ],
+    "out": "svalbard",
+    "why": "Svalbard, formerly Spitsbergen or Spitzbergen, is a Norwegian archipelago that lies at the convergence of the Arctic Ocean with the Atlantic Ocean. North of mainland Europe, it lies about midway between the northern coast of Norway and the North Pole.",
+    "src": "https://en.wikipedia.org/wiki/Svalbard",
+    "verified": true
+  },
+  {
+    "in": [
+      "archipelago",
+      "argentina"
+    ],
+    "out": "falkland_islands",
+    "why": "The Falkland Islands, commonly referred to as the Falklands, is an archipelago in the South Atlantic Ocean on the Patagonian Shelf.",
+    "src": "https://en.wikipedia.org/wiki/Falkland_Islands",
+    "verified": true
+  },
+  {
+    "in": [
+      "city",
+      "china"
+    ],
+    "out": "hong_kong",
+    "why": "Hong Kong is a special administrative region of China. Situated on China's southern coast just south of Shenzhen, it consists of Hong Kong Island, Kowloon, and the New Territories. With 7.5 million residents in a 1,114-square-kilometre (430 sq mi) territory, Hong Kong is the fourth-most densely populated region in the world.",
+    "src": "https://en.wikipedia.org/wiki/Hong_Kong",
+    "verified": true
+  },
+  {
+    "in": [
+      "taiga",
+      "russia"
+    ],
+    "out": "siberia",
+    "why": "Siberia is an extensive geographical region comprising all of North Asia, from the Ural Mountains in the west (with the Ural River usually forming the southernmost portion of its western boundary) to the Pacific Ocean in the east.",
+    "src": "https://en.wikipedia.org/wiki/Siberia",
+    "verified": true
+  },
+  {
+    "in": [
+      "norway",
+      "sweden"
+    ],
+    "out": "scandinavia",
+    "why": "Scandinavia is a subregion of northern Europe that most commonly comprises Denmark, Norway, and Sweden, which share strong historical, cultural, and linguistic ties. It may also refer to the Scandinavian Peninsula (which excludes Denmark but includes part of northern Finland).",
+    "src": "https://en.wikipedia.org/wiki/Scandinavia",
+    "verified": true
+  },
+  {
+    "in": [
+      "bulgaria",
+      "greece"
+    ],
+    "out": "balkans",
+    "why": "The Balkans, corresponding partially with the Balkan Peninsula, is a geographical area in southeastern Europe with various geographical and historical definitions. The region takes its name from the Balkan Mountains that stretch throughout the whole of Bulgaria.",
+    "src": "https://en.wikipedia.org/wiki/Balkans",
+    "verified": true
+  },
+  {
+    "in": [
+      "spain",
+      "portugal"
+    ],
+    "out": "iberian_peninsula",
+    "why": "The Iberian Peninsula, also known as Iberia, is a peninsula in southwestern Europe. Mostly separated from the rest of continental Europe by the Pyrenees, the Iberian Peninsula includes Peninsular Spain and Continental Portugal, which together make up almost all of the region, as well as Andorra, Gibraltar, and a small part of Metropolitan France.",
+    "src": "https://en.wikipedia.org/wiki/Iberian_Peninsula",
+    "verified": true
+  },
+  {
+    "in": [
+      "turkey",
+      "peninsula"
+    ],
+    "out": "anatolia",
+    "why": "Anatolia, also known as Asia Minor, is a peninsula in West Asia that makes up the majority of the land area of Turkey.",
+    "src": "https://en.wikipedia.org/wiki/Anatolia",
+    "verified": true
+  },
+  {
+    "in": [
+      "israel",
+      "jordan"
+    ],
+    "out": "levant",
+    "why": "The Levant is a subregion of West Asia along the Eastern Mediterranean that forms part of the Middle East. The term is often used in conjunction with historical or cultural references.",
+    "src": "https://en.wikipedia.org/wiki/Levant",
+    "verified": true
+  },
+  {
+    "in": [
+      "iran",
+      "saudi_arabia"
+    ],
+    "out": "middle_east",
+    "why": "The Middle East is a geo-political region that is generally defined as encompassing all of Egypt and all of West Asia except for the Caucasus. It roughly corresponds with what was historically referred to in Western Europe as the Near East, which was juxtaposed with the Far East.",
+    "src": "https://en.wikipedia.org/wiki/Middle_East",
+    "verified": true
+  },
+  {
+    "in": [
+      "vietnam",
+      "thailand"
+    ],
+    "out": "southeast_asia",
+    "why": "Southeast Asia is the geographical south-eastern subregion of Asia, consisting of the regions that are situated south of China, east of the Indian subcontinent, and northwest of mainland Australia, which is a part of Oceania. Southeast Asia is bordered to the north by East Asia, to the west by South Asia and the Bay of Bengal, to the east by Oceania and the Pacific Ocean, and to the south by Australia and the Indian Ocean.",
+    "src": "https://en.wikipedia.org/wiki/Southeast_Asia",
+    "verified": true
+  },
+  {
+    "in": [
+      "kazakhstan",
+      "mongolia"
+    ],
+    "out": "central_asia",
+    "why": "Central Asia is a region of Asia consisting of Kyrgyzstan, Tajikistan, Turkmenistan, Uzbekistan, and most of Kazakhstan. The countries as a group are also colloquially referred to as the \"-stans\" as all have names ending with the Persian suffix \"-stan\" (meaning 'land') in both respective native languages and most other languages.",
+    "src": "https://en.wikipedia.org/wiki/Central_Asia",
+    "verified": true
+  },
+  {
+    "in": [
+      "china",
+      "japan"
+    ],
+    "out": "east_asia",
+    "why": "East Asia is a geocultural region of Asia. It includes China, Japan, Mongolia, North Korea, South Korea, and Taiwan, plus two special administrative regions of China: Hong Kong and Macau. The economies of China, Japan, South Korea, and Taiwan are among the world's largest, fastest-growing, and most prosperous.",
+    "src": "https://en.wikipedia.org/wiki/East_Asia",
+    "verified": true
+  },
+  {
+    "in": [
+      "india",
+      "pakistan"
+    ],
+    "out": "south_asia",
+    "why": "South Asia is the southern sub-region of Asia that is defined in both geographical and ethnic-cultural terms. South Asia, with a population of 2.04 billion, contains a quarter (25%) of the world's population.",
+    "src": "https://en.wikipedia.org/wiki/South_Asia",
+    "verified": true
+  },
+  {
+    "in": [
+      "ghana",
+      "nigeria"
+    ],
+    "out": "west_africa",
+    "why": "West Africa, also known as Western Africa, is the westernmost region of Africa. The United Nations defines Western Africa as the 16 countries of Benin, Burkina Faso, Cape Verde, The Gambia, Ghana, Guinea, Guinea-Bissau, Ivory Coast, Liberia, Mali, Mauritania, Niger, Nigeria, Senegal, Sierra Leone, and Togo, as well as Saint Helena, Ascension and Tristan da Cunha (a United Kingdom Overseas Territory).",
+    "src": "https://en.wikipedia.org/wiki/West_Africa",
+    "verified": true
+  },
+  {
+    "in": [
+      "kenya",
+      "tanzania"
+    ],
+    "out": "east_africa",
+    "why": "East Africa, also known as Eastern Africa or the East of Africa, is a region at the eastern edge of the African continent, distinguished by its unique geographical, historical, and cultural landscape. Defined in varying scopes, the region is recognized in the United Nations Statistics Division scheme as encompassing 18 sovereign states and 4 territories.",
+    "src": "https://en.wikipedia.org/wiki/East_Africa",
+    "verified": true
+  },
+  {
+    "in": [
+      "ethiopia",
+      "somalia"
+    ],
+    "out": "horn_of_africa",
+    "why": "The Horn of Africa (HOA), also known as the Somali Peninsula, is a large peninsula and geopolitical region located in the easternmost part of mainland Africa. It is the fourth largest peninsula in the world and is composed of Somalia, Djibouti, Ethiopia, Eritrea, and the partially recognised state of Somaliland.",
+    "src": "https://en.wikipedia.org/wiki/Horn_of_Africa",
+    "verified": true
+  },
+  {
+    "in": [
+      "africa",
+      "sahara"
+    ],
+    "out": "sub_saharan_africa",
+    "why": "Sub-Saharan Africa is the areas and regions of the continent of Africa that lie south of the Sahara. These include a great majority of Mainland Africa, including the Sahel, and Madagascar.",
+    "src": "https://en.wikipedia.org/wiki/Sub-Saharan_Africa",
+    "verified": true
+  },
+  {
+    "in": [
+      "morocco",
+      "egypt"
+    ],
+    "out": "maghreb",
+    "why": "The Maghreb, sometimes also called the Greater Maghreb or Northwest Africa, is the western part of the Arab world. The Maghreb region comprises western and central North Africa, including Algeria, Libya, Mauritania, Morocco, Tunisia, and the disputed territory of Western Sahara.",
+    "src": "https://en.wikipedia.org/wiki/Maghreb",
+    "verified": true
+  },
+  {
+    "in": [
+      "jamaica",
+      "cuba"
+    ],
+    "out": "caribbean",
+    "why": "The Caribbean is a geo-political region in the middle of the Americas centered around the Caribbean Sea in the North Atlantic Ocean, mostly overlapping with the West Indies. Bordered by North America to the north and also the west through Central America, and South America to the south, it comprises numerous islands, cays, islets, reefs, and banks.",
+    "src": "https://en.wikipedia.org/wiki/Caribbean",
+    "verified": true
+  },
+  {
+    "in": [
+      "mexico",
+      "brazil"
+    ],
+    "out": "latin_america",
+    "why": "Latin America is the cultural region of the Americas where Romance languages are predominantly spoken, primarily Spanish and Portuguese. Since it is defined according to its cultural identity instead of its geography, Latin America includes countries from both North and South America.",
+    "src": "https://en.wikipedia.org/wiki/Latin_America",
+    "verified": true
+  },
+  {
+    "in": [
+      "mexico",
+      "isthmus"
+    ],
+    "out": "central_america",
+    "why": "Central America is a subregion of North America. Its political boundaries are defined as bordering Mexico to the north, Colombia to the southeast, the Caribbean to the east, and the Pacific Ocean to the southwest. Central America is usually defined as consisting of seven countries: Belize, Costa Rica, El Salvador, Guatemala, Honduras, Nicaragua, and Panama, and also, in specialized contexts, including Mexico.",
+    "src": "https://en.wikipedia.org/wiki/Central_America",
+    "verified": true
+  },
+  {
+    "in": [
+      "australia",
+      "new_zealand"
+    ],
+    "out": "oceania",
+    "why": "Oceania is a geographical region including Australasia, Melanesia, Micronesia, and Polynesia. Outside of the English-speaking world, Oceania is generally considered a continent, while Mainland Australia is regarded as its continental landmass.",
+    "src": "https://en.wikipedia.org/wiki/Oceania",
+    "verified": true
+  },
+  {
+    "in": [
+      "fiji",
+      "ocean"
+    ],
+    "out": "polynesia",
+    "why": "Polynesia is a subregion of Oceania, made up of more than 1,000 islands scattered over the central and southern Pacific Ocean. The indigenous people who inhabit the islands of Polynesia are called Polynesians.",
+    "src": "https://en.wikipedia.org/wiki/Polynesia",
+    "verified": true
+  },
+  {
+    "in": [
+      "fiji",
+      "new_guinea"
+    ],
+    "out": "melanesia",
+    "why": "Melanesia is a subregion of Oceania in the southwestern Pacific Ocean. It extends from New Guinea in the west to the Fiji Islands in the east, and includes the Arafura Sea.",
+    "src": "https://en.wikipedia.org/wiki/Melanesia",
+    "verified": true
+  },
+  {
+    "in": [
+      "prairie",
+      "united_states"
+    ],
+    "out": "great_plains",
+    "why": "The Great Plains is a broad expanse of flatland in North America. The region stretches east of the Rocky Mountains, much of it covered in prairie, steppe, and grassland.",
+    "src": "https://en.wikipedia.org/wiki/Great_Plains",
+    "verified": true
+  },
+  {
+    "in": [
+      "australia",
+      "kangaroo"
+    ],
+    "out": "outback",
+    "why": "The Outback is a remote, vast, sparsely populated area of Australia. It is more remote than what Australians call \"the bush\".",
+    "src": "https://en.wikipedia.org/wiki/Outback",
+    "verified": true
+  },
+  {
+    "in": [
+      "rainforest",
+      "amazon_river"
+    ],
+    "out": "amazon_rainforest",
+    "why": "The Amazon rainforest, also called the Amazon jungle, Amazonia, or simply the Amazon, is a moist broadleaf tropical rainforest in the Amazon biome that covers most of the Amazon basin of South America. This basin encompasses 7 million km2 (2.7 million sq mi), of which 6 million km2 (2.3 million sq mi) are covered by the rainforest.",
+    "src": "https://en.wikipedia.org/wiki/Amazon_rainforest",
+    "verified": true
+  },
+  {
+    "in": [
+      "swamp",
+      "united_states"
+    ],
+    "out": "everglades",
+    "why": "The Everglades is a natural region of flooded grasslands in the southern portion of the U.S. state of Florida, comprising the southern half of the Kissimmee-Okeechobee-Everglades watershed. The Everglades is in the Neotropical realm.",
+    "src": "https://en.wikipedia.org/wiki/Everglades",
+    "verified": true
+  },
+  {
+    "in": [
+      "waterfall",
+      "zambezi"
+    ],
+    "out": "victoria_falls",
+    "why": "Victoria Falls is a waterfall on the Zambezi River, located on the border between Zambia and Zimbabwe. It is one of the world's largest waterfalls, with a width of 1,708 m (5,604 ft).",
+    "src": "https://en.wikipedia.org/wiki/Victoria_Falls",
+    "verified": true
+  },
+  {
+    "in": [
+      "canal",
+      "egypt"
+    ],
+    "out": "suez_canal",
+    "why": "The Suez Canal is an artificial sea-level waterway in Egypt, connecting the Mediterranean Sea to the Red Sea through the Isthmus of Suez and dividing Africa and Asia (and by extension, the Sinai Peninsula from the rest of Egypt). The 193.3-kilometre-long (120.1-mile) canal is a key trade route between Europe and Asia.",
+    "src": "https://en.wikipedia.org/wiki/Suez_Canal",
+    "verified": true
+  },
+  {
+    "in": [
+      "strait",
+      "spain"
+    ],
+    "out": "strait_of_gibraltar",
+    "why": "The Strait of Gibraltar, also known as the Straits of Gibraltar, is a strait that connects the Atlantic Ocean to the Mediterranean Sea and separates Europe from Africa. The two continents are separated by 7.7 nautical miles (14.3 km; 8.9 mi) at its narrowest point.",
+    "src": "https://en.wikipedia.org/wiki/Strait_of_Gibraltar",
+    "verified": true
+  },
+  {
+    "in": [
+      "cliff",
+      "africa"
+    ],
+    "out": "cape_of_good_hope",
+    "why": "The Cape of Good Hope is a rocky headland on the Atlantic coast of the Cape Peninsula in South Africa.",
+    "src": "https://en.wikipedia.org/wiki/Cape_of_Good_Hope",
+    "verified": true
+  },
+  {
+    "in": [
+      "cliff",
+      "chile"
+    ],
+    "out": "cape_horn",
+    "why": "Cape Horn is the southernmost headland of the Tierra del Fuego archipelago of southern Chile, and is located on the small Hornos Island. Although not the most southerly point of South America (which is Águila Islet), Cape Horn marks both the northern boundary of the Drake Passage and where the Atlantic and Pacific Oceans meet.",
+    "src": "https://en.wikipedia.org/wiki/Cape_Horn",
+    "verified": true
   }
 ]

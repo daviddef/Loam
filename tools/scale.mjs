@@ -1671,6 +1671,7 @@ const SCALE = {
           // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
           'intertidal_zone'],
   '3':   [
+          /* geography batch 2 (mountains, deserts, islands, regions), 12 Nov */ 'matterhorn', 'vesuvius', 'victoria_falls',
           /* family, home, food, dress, leisure, games and sport batch, 12 Nov — things and places */ 'zoo', 'amusement_park',
           /* corpus review, 11 Nov — sized by diameter to the nearest power of ten (Earth 1.3×10⁷ m, Jupiter 1.4×10⁸ m, Pluto 2.4×10⁶ m); they had all been filed under the 10⁹ ceiling */ 'planetesimal',
           /* corpus review, 11 Nov — missing basics added */ 'beach', 'bog',
@@ -1768,6 +1769,7 @@ const SCALE = {
           // seashore batch 1 — the tide's rise and fall along a whole stretch of coastline, km scale like estuary/lagoon/fjord
           'tide'],
   '4':   [
+          /* geography batch 2 (mountains, deserts, islands, regions), 12 Nov */ 'mount_everest', 'k2', 'aconcagua', 'denali', 'mount_etna', 'krakatoa', 'easter_island', 'manhattan', 'bermuda', 'hong_kong', 'strait_of_gibraltar', 'cape_of_good_hope', 'cape_horn',
           /* geography batch 1 (seas, rivers, lakes), 12 Nov */ 'bosporus', 'dardanelles', 'strait_of_hormuz', 'bering_strait', 'strait_of_dover',
           /* umbrella pass, 11 Nov */ 'canal',
           /* corpus review, 11 Nov — compact objects sized by their real diameter: a white dwarf is Earth-sized, a neutron star about 20 km, a brown dwarf Jupiter-sized, a sunspot tens of thousands of km */ 'neutron_star', 'pulsar',
@@ -1833,6 +1835,7 @@ const SCALE = {
           // aviation batch 1 — a whole airport site, several kilometres across, the same bucket as the LHC ring
           'airport'],
   '6':   [
+          /* geography batch 2 (mountains, deserts, islands, regions), 12 Nov */ 'himalayas', 'rocky_mountains', 'appalachian_mountains', 'pyrenees', 'ural_mountains', 'caucasus_mountains', 'carpathian_mountains', 'atlas_mountains', 'tibetan_plateau', 'mariana_trench', 'gobi_desert', 'kalahari_desert', 'namib', 'atacama_desert', 'arabian_desert', 'thar_desert', 'patagonia', 'greenland', 'hawaii', 'borneo', 'sumatra', 'java', 'new_guinea', 'honshu', 'great_britain', 'svalbard', 'scandinavia', 'balkans', 'iberian_peninsula', 'anatolia', 'levant', 'southeast_asia', 'central_asia', 'south_asia', 'west_africa', 'east_africa', 'horn_of_africa', 'maghreb', 'caribbean', 'central_america', 'melanesia', 'great_plains', 'outback', 'amazon_rainforest',
           /* geography batch 1 (seas, rivers, lakes), 12 Nov */ 'baltic_sea', 'black_sea', 'caribbean_sea', 'gulf_of_mexico', 'gulf_stream', 'north_sea', 'adriatic_sea', 'aegean_sea', 'ionian_sea', 'sargasso_sea', 'bering_sea', 'coral_sea', 'sea_of_japan', 'south_china_sea', 'yellow_sea', 'tasman_sea', 'philippine_sea', 'arabian_sea', 'bay_of_bengal', 'persian_gulf', 'red_sea', 'barents_sea', 'hudson_bay', 'caspian_sea', 'ross_sea', 'drake_passage', 'lake_tanganyika', 'great_lakes', 'lake_superior', 'lake_baikal', 'yangtze', 'yellow_river', 'mekong', 'indus_river', 'ganges', 'brahmaputra_river', 'euphrates', 'tigris', 'mississippi_river', 'missouri_river', 'colorado_river', 'columbia_river', 'rio_grande', 'st_lawrence_river', 'orinoco', 'parana_river', 'blue_nile', 'white_nile', 'congo_river', 'niger_river', 'zambezi', 'danube', 'rhine', 'seine', 'volga', 'elbe', 'tagus', 'ebro', 'po_river',
           /* corpus review, 11 Nov — sized by diameter to the nearest power of ten (Earth 1.3×10⁷ m, Jupiter 1.4×10⁸ m, Pluto 2.4×10⁶ m); they had all been filed under the 10⁹ ceiling */ 'pluto', 'europa', 'enceladus', 'mimas', 'titania', 'oberon', 'miranda', 'triton', 'charon', 'ceres', 'eris', 'dwarf_planet',
           /* corpus review, 11 Nov — missing basics added */ 'jet_stream', 'ice_sheet',
@@ -1916,6 +1919,7 @@ const SCALE = {
           // claim, filed at the real moons' own tier
           'kuiper_belt', 'oort_cloud', 'solar_wind'],
   '5':   [
+          /* geography batch 2 (mountains, deserts, islands, regions), 12 Nov */ 'negev', 'mojave_desert', 'simpson_desert', 'sicily', 'sardinia', 'crete', 'corsica', 'tasmania', 'tahiti', 'azores', 'canary_islands', 'falkland_islands', 'everglades', 'suez_canal',
           /* geography batch 1 (seas, rivers, lakes), 12 Nov */ 'irish_sea', 'english_channel', 'taiwan_strait', 'lake_victoria', 'lake_titicaca', 'lake_ladoga', 'lake_maracaibo', 'lake_van', 'lake_eyre', 'jordan_river', 'rio_de_la_plata', 'thames',
     /* places batch 44, 5 Sep. a delta of 5,165 km2 */
     'danube_delta',
@@ -1953,6 +1957,7 @@ const SCALE = {
           'atlantis', 'chicxulub_crater', 'sri_lanka', 'maldives', 'taiwan', 'brunei', 'fiji', 'samoa', 'portugal', 'netherlands', 'switzerland', 'ireland', 'austria', 'israel', 'lebanon',
           ],
   '7':   [
+          /* geography batch 2 (mountains, deserts, islands, regions), 12 Nov */ 'ring_of_fire', 'mid_atlantic_ridge', 'gondwana', 'siberia', 'middle_east', 'east_asia', 'sub_saharan_africa', 'latin_america', 'oceania', 'polynesia',
           /* geography batch 1 (seas, rivers, lakes), 12 Nov */ 'eurasia', 'americas', 'geoid', 'arctic_circle', 'antarctic_circle', 'international_date_line', 'atlantic_ocean', 'pacific_ocean', 'indian_ocean', 'southern_ocean', 'arctic_ocean',
           /* corpus review, 11 Nov — compact objects sized by their real diameter: a white dwarf is Earth-sized, a neutron star about 20 km, a brown dwarf Jupiter-sized, a sunspot tens of thousands of km */ 'white_dwarf', 'sunspot',
           /* corpus review, 11 Nov — sized by diameter to the nearest power of ten (Earth 1.3×10⁷ m, Jupiter 1.4×10⁸ m, Pluto 2.4×10⁶ m); they had all been filed under the 10⁹ ceiling */ 'mercury_planet', 'venus', 'earth', 'mars', 'io', 'ganymede', 'callisto', 'titan', 'great_red_spot', 'great_dark_spot', 'cassini_division', 'moon', 'planet', 'tidal_locking',
