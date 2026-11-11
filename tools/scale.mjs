@@ -577,6 +577,7 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* philosophy and religion batch, 11 Nov */ 'relic',
           /* umbrella pass, 11 Nov */ 'gum', 'juice', 'squash',
           /* corpus review, 11 Nov — missing basics added */ 'radon', 'humidity', 'knot', 'scroll', 'litre',
           /* W4 physiology fourth pass, 6 Sep */
@@ -887,6 +888,7 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* philosophy and religion batch, 11 Nov — abstract concepts, filed at the 10⁰ idea bucket */ 'morality', 'truth', 'idea', 'concept', 'argument', 'fallacy', 'inference', 'deductive_reasoning', 'inductive_reasoning', 'hypothesis', 'fact', 'skepticism', 'empiricism', 'rationalism', 'free_will', 'determinism', 'existentialism', 'nihilism', 'utilitarianism', 'deontology', 'relativism', 'humanism', 'metaphysics', 'aesthetics', 'wisdom', 'virtue', 'conscience', 'thought_experiment', 'deity', 'theology', 'sacrifice', 'saint', 'heresy', 'pantheism', 'deism', 'salvation', 'hell', 'resurrection', 'apocalypse', 'creation_myth', 'taboo', 'magic', 'superstition', 'astrology', 'divination', 'folklore', 'funeral', 'cremation', 'fasting', 'curse', 'witchcraft', 'mysticism', 'secularism', 'totem', 'monster',
           /* economics batch, 11 Nov — abstract concepts, filed at the 10⁰ idea bucket */ 'goods', 'service', 'price', 'supply_and_demand', 'inflation', 'deflation', 'profit', 'business', 'company', 'corporation', 'wage', 'employment', 'unemployment', 'loan', 'mortgage', 'insurance', 'investment', 'stock_exchange', 'accounting', 'gdp', 'economic_growth', 'economics', 'monopoly', 'subsidy', 'sales_tax', 'property_tax', 'income_tax', 'international_trade', 'exchange_rate', 'pension', 'bankruptcy', 'black_market', 'protectionism', 'competition', 'commerce', 'productivity',
           /* R3 mathematics, 11 Nov — abstract concepts, filed at the 10⁰ idea bucket */ 'addition', 'subtraction', 'multiplication', 'arithmetic', 'exponentiation', 'square_root', 'logarithm', 'integer', 'negative_number', 'rational_number', 'real_number', 'complex_number', 'point', 'line', 'angle', 'polygon', 'perimeter', 'parallel', 'tangent', 'trigonometry', 'sine', 'sphere', 'volume', 'derivative', 'integral', 'matrix', 'sequence', 'series', 'conjecture', 'mathematics', 'percentage',
           /* umbrella pass, 11 Nov */ 'fluid', 'armor',
@@ -1447,6 +1449,7 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'bird_wing', 'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+          /* philosophy and religion batch, 11 Nov */ 'monastery',
     'osu_castle', 'agra_fort', 'elephanta', 'jameh_isfahan', 'mahabalipuram', 'chola_temples', 'novodevichy',   // Chronicarum places 5 Sep
     /* verb outcomes, 5 Sep. a slab across a slope */
     'wind_slab',

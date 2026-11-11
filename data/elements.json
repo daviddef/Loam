@@ -97418,5 +97418,656 @@
     ],
     "fact": "Output per unit of input: how efficiently goods or services get made.",
     "src": "https://en.wikipedia.org/wiki/Productivity"
+  },
+  {
+    "id": "morality",
+    "name": "Morality",
+    "emoji": "⚖️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The standards by which communities and individuals evaluate actions, character and social arrangements.",
+    "src": "https://en.wikipedia.org/wiki/Morality"
+  },
+  {
+    "id": "truth",
+    "name": "Truth",
+    "emoji": "🔍",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Conformity to reality or fact — a property of sentences, propositions or beliefs.",
+    "src": "https://en.wikipedia.org/wiki/Truth"
+  },
+  {
+    "id": "idea",
+    "name": "Idea",
+    "emoji": "💡",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "In philosophy, a mental image of some object — and what beliefs are made of.",
+    "src": "https://en.wikipedia.org/wiki/Idea"
+  },
+  {
+    "id": "concept",
+    "name": "Concept",
+    "emoji": "🏷️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A unit of cognition that sorts things into kinds by their shared features.",
+    "src": "https://en.wikipedia.org/wiki/Concept"
+  },
+  {
+    "id": "argument",
+    "name": "Argument",
+    "emoji": "🗣️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Premises directed towards a conclusion, to give reasons.",
+    "src": "https://en.wikipedia.org/wiki/Argument"
+  },
+  {
+    "id": "fallacy",
+    "name": "Fallacy",
+    "emoji": "🪤",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Faulty reasoning that looks well-reasoned if no one notices.",
+    "src": "https://en.wikipedia.org/wiki/Fallacy"
+  },
+  {
+    "id": "inference",
+    "name": "Inference",
+    "emoji": "➡️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A step in reasoning from premises to their logical consequences.",
+    "src": "https://en.wikipedia.org/wiki/Inference"
+  },
+  {
+    "id": "deductive_reasoning",
+    "name": "Deductive Reasoning",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "If the premises are true, the conclusion cannot be false.",
+    "src": "https://en.wikipedia.org/wiki/Deductive_reasoning"
+  },
+  {
+    "id": "inductive_reasoning",
+    "name": "Inductive Reasoning",
+    "emoji": "🦢",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "From a sample to a conclusion about the whole — supported by probability, never by certainty.",
+    "src": "https://en.wikipedia.org/wiki/Inductive_reasoning"
+  },
+  {
+    "id": "hypothesis",
+    "name": "Hypothesis",
+    "emoji": "🧪",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A proposed explanation for a phenomenon, waiting to be tested.",
+    "src": "https://en.wikipedia.org/wiki/Hypothesis"
+  },
+  {
+    "id": "fact",
+    "name": "Fact",
+    "emoji": "📌",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A true datum about an occurrence in the real world.",
+    "src": "https://en.wikipedia.org/wiki/Fact"
+  },
+  {
+    "id": "skepticism",
+    "name": "Skepticism",
+    "emoji": "🤨",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Doubt towards knowledge claims that are seen as mere belief or dogma.",
+    "src": "https://en.wikipedia.org/wiki/Skepticism"
+  },
+  {
+    "id": "empiricism",
+    "name": "Empiricism",
+    "emoji": "👁️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The view that true knowledge comes from sensory experience and evidence.",
+    "src": "https://en.wikipedia.org/wiki/Empiricism"
+  },
+  {
+    "id": "rationalism",
+    "name": "Rationalism",
+    "emoji": "🧭",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Reason as the chief source and test of knowledge.",
+    "src": "https://en.wikipedia.org/wiki/Rationalism"
+  },
+  {
+    "id": "free_will",
+    "name": "Free Will",
+    "emoji": "🔓",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The capacity to choose between courses of action — the basis of moral responsibility.",
+    "src": "https://en.wikipedia.org/wiki/Free_will"
+  },
+  {
+    "id": "determinism",
+    "name": "Determinism",
+    "emoji": "⛓️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "All events within the universe can occur only in one possible way.",
+    "src": "https://en.wikipedia.org/wiki/Determinism"
+  },
+  {
+    "id": "existentialism",
+    "name": "Existentialism",
+    "emoji": "🌫️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The struggle to lead an authentic life despite the apparent absurdity of existence.",
+    "src": "https://en.wikipedia.org/wiki/Existentialism"
+  },
+  {
+    "id": "nihilism",
+    "name": "Nihilism",
+    "emoji": "🕳️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The rejection of any objectively meaningful purpose, moral value or truth.",
+    "src": "https://en.wikipedia.org/wiki/Nihilism"
+  },
+  {
+    "id": "utilitarianism",
+    "name": "Utilitarianism",
+    "emoji": "😊",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Act so as to maximise happiness and well-being for everyone affected.",
+    "src": "https://en.wikipedia.org/wiki/Utilitarianism"
+  },
+  {
+    "id": "deontology",
+    "name": "Deontology",
+    "emoji": "📏",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Rightness lies in the action's fit with rules and duties, not its consequences.",
+    "src": "https://en.wikipedia.org/wiki/Deontological_ethics"
+  },
+  {
+    "id": "relativism",
+    "name": "Relativism",
+    "emoji": "🔀",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Valuations are relative to the perspective of an observer or the context.",
+    "src": "https://en.wikipedia.org/wiki/Relativism"
+  },
+  {
+    "id": "humanism",
+    "name": "Humanism",
+    "emoji": "🧑",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Human agency as the starting point for moral and philosophical inquiry.",
+    "src": "https://en.wikipedia.org/wiki/Humanism"
+  },
+  {
+    "id": "metaphysics",
+    "name": "Metaphysics",
+    "emoji": "🌌",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The branch of philosophy on the basic nature of reality.",
+    "src": "https://en.wikipedia.org/wiki/Metaphysics"
+  },
+  {
+    "id": "aesthetics",
+    "name": "Aesthetics",
+    "emoji": "🎨",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The branch of philosophy that studies beauty and taste.",
+    "src": "https://en.wikipedia.org/wiki/Aesthetics"
+  },
+  {
+    "id": "wisdom",
+    "name": "Wisdom",
+    "emoji": "🦉",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Wit and virtue together: applying experience to complex questions of life.",
+    "src": "https://en.wikipedia.org/wiki/Wisdom"
+  },
+  {
+    "id": "virtue",
+    "name": "Virtue",
+    "emoji": "🌟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A trait of excellence — moral, social or intellectual.",
+    "src": "https://en.wikipedia.org/wiki/Virtue"
+  },
+  {
+    "id": "conscience",
+    "name": "Conscience",
+    "emoji": "🕊️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The inner process that links emotion and reasoning to one's own moral philosophy.",
+    "src": "https://en.wikipedia.org/wiki/Conscience"
+  },
+  {
+    "id": "thought_experiment",
+    "name": "Thought Experiment",
+    "emoji": "🛗",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An imaginary scenario meant to elucidate or test an argument or theory.",
+    "src": "https://en.wikipedia.org/wiki/Thought_experiment"
+  },
+  {
+    "id": "deity",
+    "name": "Deity",
+    "emoji": "🙏",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A supernatural being with authority over some aspect of the universe or life.",
+    "src": "https://en.wikipedia.org/wiki/Deity"
+  },
+  {
+    "id": "theology",
+    "name": "Theology",
+    "emoji": "📖",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The study of religious belief from a religious perspective.",
+    "src": "https://en.wikipedia.org/wiki/Theology"
+  },
+  {
+    "id": "sacrifice",
+    "name": "Sacrifice",
+    "emoji": "🔥",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "An act or offering made to a deity.",
+    "src": "https://en.wikipedia.org/wiki/Sacrifice"
+  },
+  {
+    "id": "saint",
+    "name": "Saint",
+    "emoji": "😇",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "In Christian belief, a person recognised as exceptionally holy or close to God.",
+    "src": "https://en.wikipedia.org/wiki/Saint"
+  },
+  {
+    "id": "relic",
+    "name": "Relic",
+    "emoji": "⚱️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The physical remains or personal effects of a saint, kept for veneration.",
+    "src": "https://en.wikipedia.org/wiki/Relic"
+  },
+  {
+    "id": "monastery",
+    "name": "Monastery",
+    "emoji": "⛪",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "society"
+    ],
+    "fact": "The buildings of a community of monks or nuns — or of a hermit living alone.",
+    "src": "https://en.wikipedia.org/wiki/Monastery"
+  },
+  {
+    "id": "heresy",
+    "name": "Heresy",
+    "emoji": "🚫",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A belief strongly at variance with a religious organisation's accepted beliefs.",
+    "src": "https://en.wikipedia.org/wiki/Heresy"
+  },
+  {
+    "id": "pantheism",
+    "name": "Pantheism",
+    "emoji": "🌳",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Reality and divinity are the same thing: the universe is the divine.",
+    "src": "https://en.wikipedia.org/wiki/Pantheism"
+  },
+  {
+    "id": "deism",
+    "name": "Deism",
+    "emoji": "⌚",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A creator who made the universe — known by reason and observation, not revelation.",
+    "src": "https://en.wikipedia.org/wiki/Deism"
+  },
+  {
+    "id": "salvation",
+    "name": "Salvation",
+    "emoji": "🛟",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The deliverance of the soul from ignorance or perpetual harm.",
+    "src": "https://en.wikipedia.org/wiki/Salvation"
+  },
+  {
+    "id": "hell",
+    "name": "Hell",
+    "emoji": "🔥",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A place or state in the afterlife where souls are punished.",
+    "src": "https://en.wikipedia.org/wiki/Hell"
+  },
+  {
+    "id": "resurrection",
+    "name": "Resurrection",
+    "emoji": "🌅",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Coming back to life after death.",
+    "src": "https://en.wikipedia.org/wiki/Resurrection"
+  },
+  {
+    "id": "apocalypse",
+    "name": "Apocalypse",
+    "emoji": "📯",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "An unveiling — the Greek for \"revelation, disclosure\".",
+    "src": "https://en.wikipedia.org/wiki/Apocalypse"
+  },
+  {
+    "id": "creation_myth",
+    "name": "Creation Myth",
+    "emoji": "🌍",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A symbolic narrative of how the world began and how people first came to live in it.",
+    "src": "https://en.wikipedia.org/wiki/Creation_myth"
+  },
+  {
+    "id": "taboo",
+    "name": "Taboo",
+    "emoji": "🚷",
+    "shelf": "workshop",
+    "tags": [
+      "society"
+    ],
+    "fact": "A social group's ban on something it finds repulsive, offensive, sacred or restricted.",
+    "src": "https://en.wikipedia.org/wiki/Taboo"
+  },
+  {
+    "id": "magic",
+    "name": "Magic",
+    "emoji": "🪄",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Beliefs, rituals or actions meant to manipulate natural or supernatural forces.",
+    "src": "https://en.wikipedia.org/wiki/Magic_(supernatural)"
+  },
+  {
+    "id": "superstition",
+    "name": "Superstition",
+    "emoji": "🐈‍⬛",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A belief or practice others consider irrational or supernatural — luck, fate, amulets.",
+    "src": "https://en.wikipedia.org/wiki/Superstition"
+  },
+  {
+    "id": "astrology",
+    "name": "Astrology",
+    "emoji": "♈",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Divination from the apparent positions of celestial objects — pseudoscience since the 18th century.",
+    "src": "https://en.wikipedia.org/wiki/Astrology"
+  },
+  {
+    "id": "divination",
+    "name": "Divination",
+    "emoji": "🔮",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "An attempt to gain insight into a question by a magic ritual or practice.",
+    "src": "https://en.wikipedia.org/wiki/Divination"
+  },
+  {
+    "id": "folklore",
+    "name": "Folklore",
+    "emoji": "🧚",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The expressive culture a group shares — learned outside any school curriculum.",
+    "src": "https://en.wikipedia.org/wiki/Folklore"
+  },
+  {
+    "id": "funeral",
+    "name": "Funeral",
+    "emoji": "⚰️",
+    "shelf": "workshop",
+    "tags": [
+      "society"
+    ],
+    "fact": "A ceremony for the final disposition of a corpse — burial, entombment or cremation.",
+    "src": "https://en.wikipedia.org/wiki/Funeral"
+  },
+  {
+    "id": "cremation",
+    "name": "Cremation",
+    "emoji": "🪔",
+    "shelf": "workshop",
+    "tags": [
+      "society"
+    ],
+    "fact": "Final disposition of a corpse by burning.",
+    "src": "https://en.wikipedia.org/wiki/Cremation"
+  },
+  {
+    "id": "fasting",
+    "name": "Fasting",
+    "emoji": "🥣",
+    "shelf": "workshop",
+    "tags": [
+      "society"
+    ],
+    "fact": "Refraining from eating — as a religious ritual or a hunger strike.",
+    "src": "https://en.wikipedia.org/wiki/Fasting"
+  },
+  {
+    "id": "totem",
+    "name": "Totem",
+    "emoji": "🪵",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "A spirit being, sacred object or symbol that serves as a clan's emblem — from the Ojibwe doodem.",
+    "src": "https://en.wikipedia.org/wiki/Totem"
+  },
+  {
+    "id": "curse",
+    "name": "Curse",
+    "emoji": "☠️",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "An expressed wish that adversity or misfortune will befall someone, a place or an object.",
+    "src": "https://en.wikipedia.org/wiki/Curse"
+  },
+  {
+    "id": "witchcraft",
+    "name": "Witchcraft",
+    "emoji": "🧙",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The use of magic by a witch — traditionally to inflict harm or misfortune.",
+    "src": "https://en.wikipedia.org/wiki/Witchcraft"
+  },
+  {
+    "id": "monster",
+    "name": "Monster",
+    "emoji": "👹",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "An imaginary creature of folklore, myth and horror, grotesque enough to cause terror.",
+    "src": "https://en.wikipedia.org/wiki/Monster"
+  },
+  {
+    "id": "mysticism",
+    "name": "Mysticism",
+    "emoji": "🧘",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "The experience of becoming one with God, the Absolute, or all that exists.",
+    "src": "https://en.wikipedia.org/wiki/Mysticism"
+  },
+  {
+    "id": "secularism",
+    "name": "Secularism",
+    "emoji": "🏛️",
+    "shelf": "workshop",
+    "tags": [
+      "society"
+    ],
+    "fact": "Conducting human affairs on naturalistic considerations, uninvolved with religion.",
+    "src": "https://en.wikipedia.org/wiki/Secularism"
   }
 ]
