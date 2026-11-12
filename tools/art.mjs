@@ -47591,6 +47591,36 @@ def('antarctic_ice_sheet', () => gFrame(box(3, 40, 54, 17, 'bs'), P('M3 40 Q14 1
 def('greenland_ice_sheet', () => gFrame(box(3, 42, 54, 15, 'lo'), P('M4 42 Q10 18 30 16 Q50 18 56 42 Z', 'hi'), S('M4 42 Q10 18 30 16 Q50 18 56 42', 'ik', 2), P('M3 42 L10 38 L14 42 Z M46 42 L52 38 L57 42 Z', 'bs'), S('M3 42 L57 42', 'ik', 1.8), ...gBear(32).slice(0, 0), ...gIce(8, 50, 10), ...gIce(40, 52, 12), S('M20 28 L28 24 M34 26 L42 30', 'ik', 1.2)));
 def('great_artesian_basin', () => gFrame(box(3, 3, 54, 14, 'hi'), box(3, 17, 54, 8, 'bs'), box(3, 25, 54, 10, 'lo'), box(3, 35, 54, 8, 'bs'), box(3, 43, 54, 14, 'ik'), S('M3 17 L57 17 M3 25 L57 25 M3 35 L57 35 M3 43 L57 43', 'ik', 1.4), S('M30 17 L30 28 M22 17 L22 28', 'hi', 2.4), S('M30 8 L30 17 M22 8 L22 17', 'ik', 1.8), P('M30 8 Q34 4 38 8', 'ik').slice(0, 0), S('M30 8 L34 4 M22 8 L26 4', 'ik', 1.8), C(30, 30, 1.6, 'hi'), C(22, 31, 1.6, 'hi'), C(44, 30, 1.6, 'hi'), C(14, 29, 1.6, 'hi')));
 
+/* ── islands, archipelagos and peninsulas, 12 Nov ── */
+const pArch = (...emb) => gAll(...gFrame(), box(3, 38, 54, 19, 'lo'), gWave(44, 'hi', 1.6), gWave(51, 'hi', 1.6), P('M8 40 Q12 32 20 36 Q24 40 18 42 Q12 44 8 40 Z', 'bs'), P('M28 38 Q34 28 42 34 Q46 38 40 42 Q32 44 28 38 Z', 'bs'), P('M46 44 Q50 40 54 44 Q50 48 46 44 Z', 'bs'), S('M8 40 Q12 32 20 36 M28 38 Q34 28 42 34', 'ik', 1.4), ...emb);
+const pPenD = ['M3 3 L57 3 L57 22 Q44 24 40 34 Q36 48 30 54 Q24 48 20 34 Q16 24 3 22 Z', 'M3 3 L3 57 L22 57 Q24 44 34 40 Q48 36 54 30 Q48 24 34 20 Q24 16 22 3 Z', 'M57 3 L57 57 L38 57 Q36 44 26 40 Q12 36 6 30 Q12 24 26 20 Q36 16 38 3 Z', 'M3 57 L57 57 L57 38 Q44 36 40 26 Q36 12 30 6 Q24 12 20 26 Q16 36 3 38 Z'];
+const pPen = (k, ...emb) => gAll(box(3, 3, 54, 54, 'lo'), P(pPenD[k], 'hi'), S(pPenD[k], 'ik', 1.8), gWave(k === 3 ? 12 : 52, 'hi', 1.4), S('M3 3 L57 3 L57 57 L3 57 Z', 'ik', 1.8), ...emb);
+const pIs = {
+  madeira: [20, gTree(24, 20, 1.2), gSun(46, 12, 4)], mayotte: [14, gPalm(30)], reunion: [18, gVolc(30, 10, 18, 20)], zanzibar: [18, gPalm(22), gSail(46, 46, 0.6)],
+  baffin_island: [26, gIce(8, 30, 12), gBear(44)], ellesmere_island: [24, gIce(8, 28, 12), gIce(42, 28, 12)], newfoundland_island: [22, gSail(46, 46, 0.7), gTree(26, 20)],
+  hispaniola: [20, gPeak(30, 12, 16, 18)], puerto_rico: [20, gPalm(30)], guadeloupe: [16, gVolc(30, 12, 12, 18)], martinique: [16, gVolc(30, 12, 12, 18), gSun(48, 10, 3)],
+  marajo: [20, gTree(24, 20), gFish(46, 48, 0.6, 'hi')], hokkaido: [22, gTree(24, 20), gTree(36, 22), gIce(46, 30, 8)], kyushu: [20, gVolc(30, 10, 14, 20)], shikoku: [18, gTree(30, 20, 1.2), gSail(46, 46, 0.6)],
+  jeju_island: [18, gVolc(30, 10, 14, 20)], bali: [18, gPalm(24), gSun(46, 12, 4)], timor: [22, gSail(46, 46, 0.6)], luzon: [22, gVolc(30, 10, 14, 20)], mindanao: [22, gVolc(26, 10, 14, 20), gPalm(44)],
+  sulawesi: [24, gTree(30, 20, 1.2), gVolc(18, 12, 10, 16)], phuket: [16, gPalm(30), gSail(46, 46, 0.6)], sakhalin: [14, gIce(8, 30, 10), gTree(30, 20)], socotra: [20, gTree(30, 20, 1.2)],
+  alexander_island: [22, gIce(10, 28, 12), gPeng(40, 28)], isle_of_man: [14, gTree(30, 20)], zealand: [20, gTree(24, 20), gSail(46, 46, 0.6)], american_samoa: [14, gPalm(30)], guam: [14, gPalm(30), gSun(46, 12, 4)],
+  new_britain: [20, gVolc(30, 10, 14, 20)], new_caledonia: [20, gPalm(30), gFish(46, 48, 0.6, 'hi')], north_island: [22, gVolc(30, 10, 14, 20)], south_island: [26, gPeak(24, 8, 18, 22), gIce(42, 30, 10)],
+};
+for (const [id, [w, ...emb]] of Object.entries(pIs)) def(id, () => gIsle(w, ...emb));
+const pAr = {
+  aleutian_islands: [gVolc(20, 16, 14, 14), gIce(42, 30, 10)], arctic_archipelago: [gIce(8, 30, 12), gBear(44)], greater_antilles: [gPalm(14), gSun(46, 10, 4)], cayman_islands: [gFish(30, 50, 0.7, 'hi'), gPalm(46)],
+  lesser_antilles: [gSun(46, 12, 4), gSail(30, 46, 0.6)], abc_islands: [gSail(30, 46, 0.6), gPalm(12)], tierra_del_fuego: [gPeng(14, 28), gIce(40, 30, 10)], andaman_and_nicobar_islands: [gPalm(14), gSail(42, 48, 0.6)],
+  british_indian_ocean_territory: [gPalm(30), gFish(46, 50, 0.6, 'hi')], ryukyu_islands: [gPalm(30), gSun(46, 12, 4)], kuril_islands: [gVolc(14, 14, 12, 14), gVolc(44, 14, 12, 14)], malay_archipelago: [gSun(46, 12, 4), gPalm(14)],
+  lesser_sunda_islands: [gVolc(30, 12, 12, 16)], maluku_islands: [gSail(30, 48, 0.6), gSun(46, 10, 4)], visayas: [gPalm(14), gSail(42, 48, 0.6)], balearic_islands: [gSail(30, 46, 0.7), gSun(46, 12, 4)],
+  british_isles: [gCloud(46)], channel_islands: [gSail(24, 48, 0.6)], faroe_islands: [gCloud(30), gTree(14, 26)], novaya_zemlya: [gIce(8, 30, 12), gIce(40, 30, 12)], french_polynesia: [gPalm(14), gPalm(46)],
+  northern_mariana_islands: [gPalm(14), gSun(46, 10, 4)],
+};
+for (const [id, emb] of Object.entries(pAr)) def(id, () => pArch(...emb));
+const pPe = {
+  baja_california_peninsula: [0, gPeak(30, 36, 10, 12)], yucatan_peninsula: [3, gTree(30, 24, 1.2)], arabian_peninsula: [2, gSun(20, 16, 5)], korea: [0, gPeak(30, 32, 12, 14)], mainland_southeast_asia: [0, gTree(30, 36, 1.2), gTree(14, 8)],
+  malay_peninsula: [0, gPalm(30)], kamchatka_peninsula: [0, gVolc(30, 24, 14, 16)], sinai_peninsula: [0, gPeak(30, 30, 14, 16)], crimea: [0, gSun(46, 10, 4)], antarctic_peninsula: [3, gPeng(30, 38), gIce(12, 12, 12)],
+};
+for (const [id, [k, ...emb]] of Object.entries(pPe)) def(id, () => pPen(k, ...emb));
+
 /* ── build ────────────────────────────────────────────────────────────────*/
 
 const out = {};

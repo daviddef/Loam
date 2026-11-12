@@ -121202,5 +121202,655 @@
     "why": "The Great Artesian Basin (GAB) of Australia is the largest and deepest artesian basin in the world, extending over 1,700,000 square kilometres (660,000 sq mi). Measured water temperatures range from 30 to 100 °C (86 to 212 °F).",
     "src": "https://en.wikipedia.org/wiki/Great_Artesian_Basin",
     "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "portugal"
+    ],
+    "out": "madeira",
+    "why": "Madeira, officially the Autonomous Region of Madeira, is an autonomous region of Portugal, in the Atlantic Ocean about 805 km (500 miles) southwest of mainland Portugal. Together with the Azores, it is one of the two autonomous regions of Portugal and a special territory of the European Union.",
+    "src": "https://en.wikipedia.org/wiki/Madeira",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "mozambique_channel"
+    ],
+    "out": "mayotte",
+    "why": "Mayotte, officially the Department of Mayotte, is an overseas department and region and single territorial collectivity of France. It is one of the overseas departments of France as well as one of the 18 regions of France, with the same status as the departments of Metropolitan France.",
+    "src": "https://en.wikipedia.org/wiki/Mayotte",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "indian_ocean"
+    ],
+    "out": "reunion",
+    "why": "Réunion is an island in the Indian Ocean that is an overseas department and region of France within the African region. Part of the Mascarene Islands, it is located approximately 679 kilometres (367 nautical miles) east of the island of Madagascar and 175 kilometres (94 nmi) southwest of the island of Mauritius.",
+    "src": "https://en.wikipedia.org/wiki/Réunion",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "tanzania"
+    ],
+    "out": "zanzibar",
+    "why": "Zanzibar is a Tanzanian semi-autonomous region off the coast of East Africa. It is located in the Indian Ocean, and consists of many small islands and two large ones: Unguja Island (the main island, referred to informally as Zanzibar Island) and Pemba Island.",
+    "src": "https://en.wikipedia.org/wiki/Zanzibar",
+    "verified": true
+  },
+  {
+    "in": [
+      "archipelago",
+      "bering_sea"
+    ],
+    "out": "aleutian_islands",
+    "why": "The Aleutian Islands, also called the Aleut Islands, or Aleutic Islands, are a chain of 14 main, larger volcanic islands and 55 smaller ones. Most of the islands belong to the U.S. state of Alaska, with the archipelago encompassing the Aleutians West Census Area and the Aleutians East Borough.",
+    "src": "https://en.wikipedia.org/wiki/Aleutian_Islands",
+    "verified": true
+  },
+  {
+    "in": [
+      "archipelago",
+      "canada"
+    ],
+    "out": "arctic_archipelago",
+    "why": "The Arctic Archipelago, also known as the Canadian Arctic Archipelago, is an archipelago lying to the north of the Canadian continental mainland, excluding Greenland (an autonomous territory of the Danish Realm, which is, by itself, much larger than the combined area of the archipelago), and Iceland (an independent country).",
+    "src": "https://en.wikipedia.org/wiki/Arctic_Archipelago",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "baffin_bay"
+    ],
+    "out": "baffin_island",
+    "why": "Baffin Island in the Canadian territory of Nunavut, is the largest island in Canada, the second-largest island in the Americas (behind Greenland), and the fifth-largest island in the world.",
+    "src": "https://en.wikipedia.org/wiki/Baffin_Island",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "ice"
+    ],
+    "out": "ellesmere_island",
+    "why": "Ellesmere Island is Canada's northernmost and third largest island, and the tenth largest in the world. It is slightly smaller than Great Britain.",
+    "src": "https://en.wikipedia.org/wiki/Ellesmere_Island",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "gulf_of_st_lawrence"
+    ],
+    "out": "newfoundland_island",
+    "why": "Newfoundland is a large island within the Canadian province of Newfoundland and Labrador. It is situated off the eastern coast of the North American mainland, to the south of Labrador.",
+    "src": "https://en.wikipedia.org/wiki/Newfoundland_(island)",
+    "verified": true
+  },
+  {
+    "in": [
+      "archipelago",
+      "cuba"
+    ],
+    "out": "greater_antilles",
+    "why": "The Greater Antilles is a grouping of the larger islands in the Caribbean Sea, including Cuba, Hispaniola, Puerto Rico, and Jamaica, together with Navassa Island and the Cayman Islands. Seven island states share the region of the Greater Antilles, with Haiti and the Dominican Republic sharing the island of Hispaniola.",
+    "src": "https://en.wikipedia.org/wiki/Greater_Antilles",
+    "verified": true
+  },
+  {
+    "in": [
+      "archipelago",
+      "jamaica"
+    ],
+    "out": "cayman_islands",
+    "why": "The Cayman Islands is a self-governing British Overseas Territory in the western Caribbean. With a population of over 90,000, it is the most populated of all the British Overseas Territories.",
+    "src": "https://en.wikipedia.org/wiki/Cayman_Islands",
+    "verified": true
+  },
+  {
+    "in": [
+      "haiti",
+      "dominican_republic"
+    ],
+    "out": "hispaniola",
+    "why": "Hispaniola is an island in the Greater Antilles of the Caribbean, located between Cuba and Puerto Rico. It is the most populous island in the West Indies and the second-largest by land area, after Cuba.",
+    "src": "https://en.wikipedia.org/wiki/Hispaniola",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "caribbean_sea"
+    ],
+    "out": "puerto_rico",
+    "why": "Puerto Rico (abbreviated PR), officially the Commonwealth of Puerto Rico, is a self-governing Caribbean archipelago and island organized as an unincorporated territory of the United States under the designation of commonwealth.",
+    "src": "https://en.wikipedia.org/wiki/Puerto_Rico",
+    "verified": true
+  },
+  {
+    "in": [
+      "archipelago",
+      "caribbean_sea"
+    ],
+    "out": "lesser_antilles",
+    "why": "The Lesser Antilles is a group of islands at the edge of the Caribbean Sea, forming part of the West Indies in the Caribbean region of the Americas. They are distinguished from the larger islands of the Greater Antilles to the west.",
+    "src": "https://en.wikipedia.org/wiki/Lesser_Antilles",
+    "verified": true
+  },
+  {
+    "in": [
+      "archipelago",
+      "venezuela"
+    ],
+    "out": "abc_islands",
+    "why": "The ABC islands are the physical group of Aruba, Bonaire, and Curaçao, the three westernmost islands of the Leeward Antilles in the Caribbean Sea. These islands have a shared political history and a status of Dutch underlying ownership, since the Anglo-Dutch Treaty of 1814 ceded them back to the Kingdom of the Netherlands, as Curaçao and Dependencies from 1815.",
+    "src": "https://en.wikipedia.org/wiki/ABC_islands",
+    "verified": true
+  },
+  {
+    "in": [
+      "lesser_antilles",
+      "france"
+    ],
+    "out": "guadeloupe",
+    "why": "Guadeloupe is an overseas department and region of France in the Caribbean. It consists of six inhabited islands—Basse-Terre, Grande-Terre, Marie-Galante, La Désirade, and two Îles des Saintes—and 30 uninhabited islets and 3 inhabited islets.",
+    "src": "https://en.wikipedia.org/wiki/Guadeloupe",
+    "verified": true
+  },
+  {
+    "in": [
+      "lesser_antilles",
+      "rum"
+    ],
+    "out": "martinique",
+    "why": "Martinique is an island in the Lesser Antilles of the West Indies, in the eastern Caribbean Sea. A part of the French West Indies (Antilles), Martinique is an overseas department and region and a single territorial collectivity of France.",
+    "src": "https://en.wikipedia.org/wiki/Martinique",
+    "verified": true
+  },
+  {
+    "in": [
+      "archipelago",
+      "strait_of_magellan"
+    ],
+    "out": "tierra_del_fuego",
+    "why": "Tierra del Fuego is an archipelago off the southernmost tip of the South American mainland, across the Strait of Magellan. The archipelago consists of the main island, Isla Grande de Tierra del Fuego, with an area of 73,746 km2 (28,473 sq mi), along with numerous smaller islands, including Cape Horn and Diego Ramírez Islands.",
+    "src": "https://en.wikipedia.org/wiki/Tierra_del_Fuego",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "amazon_river"
+    ],
+    "out": "marajo",
+    "why": "Marajó is a large coastal island in Pará, Brazil. It is the main and largest of the islands in the Marajó Archipelago. Marajó Island is separated from the mainland by Marajó Bay, Pará River, smaller rivers (especially Macacos and Tajapuru), Companhia River, Jacaré Grande River, Vieira Grande Bay and the Atlantic Ocean.",
+    "src": "https://en.wikipedia.org/wiki/Marajó",
+    "verified": true
+  },
+  {
+    "in": [
+      "archipelago",
+      "andaman_sea"
+    ],
+    "out": "andaman_and_nicobar_islands",
+    "why": "The Andaman and Nicobar Islands is a union territory of India comprising 836 islands, of which only 31 are inhabited. The islands are grouped into two main clusters: the northern Andaman Islands and the southern Nicobar Islands, separated by the 150 km (93 mi)-wide Ten Degree Channel.",
+    "src": "https://en.wikipedia.org/wiki/Andaman_and_Nicobar_Islands",
+    "verified": true
+  },
+  {
+    "in": [
+      "united_kingdom",
+      "indian_ocean"
+    ],
+    "out": "british_indian_ocean_territory",
+    "why": "The British Indian Ocean Territory (BIOT) is a British Overseas Territory situated in the Indian Ocean. The territory comprises the seven atolls of the Chagos Archipelago with over 1,000 individual islands, many very small, amounting to a total land area of 60 square kilometres (23 square miles).",
+    "src": "https://en.wikipedia.org/wiki/British_Indian_Ocean_Territory",
+    "verified": true
+  },
+  {
+    "in": [
+      "japan",
+      "snow"
+    ],
+    "out": "hokkaido",
+    "why": "Hokkaido is the second-largest and northernmost of Japan's four main islands. Together with its surrounding islands, it comprises the largest and northernmost prefecture, making up its own region.",
+    "src": "https://en.wikipedia.org/wiki/Hokkaido",
+    "verified": true
+  },
+  {
+    "in": [
+      "honshu",
+      "volcano"
+    ],
+    "out": "kyushu",
+    "why": "Kyushu is the third-largest and most southerly of Japan's four main islands. In the past, it has been known as Kyūkoku, Chinzei and Tsukushi-no-shima.",
+    "src": "https://en.wikipedia.org/wiki/Kyushu",
+    "verified": true
+  },
+  {
+    "in": [
+      "honshu",
+      "seto_inland_sea"
+    ],
+    "out": "shikoku",
+    "why": "Shikoku is the smallest of the four main islands of Japan. It is 225 kilometres (140 miles) long and between 50 and 150 kilometres (30 and 95 miles) wide. It has a population of 3.4 million, the least of Japan's four main islands.",
+    "src": "https://en.wikipedia.org/wiki/Shikoku",
+    "verified": true
+  },
+  {
+    "in": [
+      "archipelago",
+      "japan"
+    ],
+    "out": "ryukyu_islands",
+    "why": "The Ryukyu Islands, also known as the Nansei Islands or the Ryukyu Arc, are a chain of Japanese islands that stretch southwest from Kyushu to Taiwan.",
+    "src": "https://en.wikipedia.org/wiki/Ryukyu_Islands",
+    "verified": true
+  },
+  {
+    "in": [
+      "south_korea",
+      "volcano"
+    ],
+    "out": "jeju_island",
+    "why": "Jeju Island is South Korea's largest island. Alongside outlying islands, it is part of Jeju Province and makes up the majority of the province.",
+    "src": "https://en.wikipedia.org/wiki/Jeju_Island",
+    "verified": true
+  },
+  {
+    "in": [
+      "archipelago",
+      "sea_of_okhotsk"
+    ],
+    "out": "kuril_islands",
+    "why": "The Kuril Islands or Kurile Islands are a volcanic archipelago administered as part of Sakhalin Oblast in the Russian Far East. The islands stretch approximately 1,300 km (810 mi) northeast from Hokkaido in Japan to Kamchatka Peninsula in Russia, separating the Sea of Okhotsk from the north Pacific Ocean.",
+    "src": "https://en.wikipedia.org/wiki/Kuril_Islands",
+    "verified": true
+  },
+  {
+    "in": [
+      "archipelago",
+      "indonesia"
+    ],
+    "out": "malay_archipelago",
+    "why": "The Malay Archipelago is the archipelago between Mainland Southeast Asia and Australia, and is also called Insulindia or the Indo-Australian Archipelago. The name was taken from the 19th-century European concept of a Malay race, later based on the distribution of Austronesian languages.",
+    "src": "https://en.wikipedia.org/wiki/Malay_Archipelago",
+    "verified": true
+  },
+  {
+    "in": [
+      "archipelago",
+      "timor_sea"
+    ],
+    "out": "lesser_sunda_islands",
+    "why": "The Lesser Sunda Islands, now known as Nusa Tenggara Islands in Indonesia, is an archipelago in the Indonesian archipelago and Timor Leste. Most of the Lesser Sunda Islands are located within the Wallacea region, except for the Bali province which is west of the Wallace Line and is within the Sunda Shelf.",
+    "src": "https://en.wikipedia.org/wiki/Lesser_Sunda_Islands",
+    "verified": true
+  },
+  {
+    "in": [
+      "indonesia",
+      "tourism"
+    ],
+    "out": "bali",
+    "why": "Bali is an Indonesian island and province and the westernmost of the Lesser Sunda Islands. East of Java and west of Lombok, the province includes the island of Bali and a few smaller offshore islands, notably Nusa Penida, Nusa Lembongan, and Nusa Ceningan to the southeast.",
+    "src": "https://en.wikipedia.org/wiki/Bali",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "timor_sea"
+    ],
+    "out": "timor",
+    "why": "Timor is an island at the southern end of Maritime Southeast Asia, in the north of the Timor Sea. The name is a variant of timur, Malay for \"east\"; it is so called because it lies at the eastern end of the Lesser Sunda Islands.",
+    "src": "https://en.wikipedia.org/wiki/Timor",
+    "verified": true
+  },
+  {
+    "in": [
+      "philippines",
+      "island"
+    ],
+    "out": "luzon",
+    "why": "Luzon is the largest and most populous island in the Philippines. Located in the northern portion of the Philippine archipelago, it is the economic and political center of the nation.",
+    "src": "https://en.wikipedia.org/wiki/Luzon",
+    "verified": true
+  },
+  {
+    "in": [
+      "archipelago",
+      "spice"
+    ],
+    "out": "maluku_islands",
+    "why": "The Maluku Islands or the Moluccas are an archipelago in the eastern part of Indonesia. Tectonically they are located on the Halmahera plate within the Molucca Sea Collision Zone.",
+    "src": "https://en.wikipedia.org/wiki/Maluku_Islands",
+    "verified": true
+  },
+  {
+    "in": [
+      "philippines",
+      "rice"
+    ],
+    "out": "mindanao",
+    "why": "Mindanao is the second-largest island in the Philippines, after Luzon, and seventh-most populous island in the world. Located in the southern region of the archipelago, the island is part of an island group of the same name that also includes its adjacent islands, notably the Sulu Archipelago.",
+    "src": "https://en.wikipedia.org/wiki/Mindanao",
+    "verified": true
+  },
+  {
+    "in": [
+      "indonesia",
+      "earthquake"
+    ],
+    "out": "sulawesi",
+    "why": "Sulawesi, also known as Celebes, is an island in Indonesia. One of the four Greater Sunda Islands, and the world's 11th-largest island, it is situated east of Borneo, west of the Maluku Islands, and south of Mindanao and the Sulu Archipelago. Within Indonesia, only Sumatra, Borneo, and Papua are larger in territory, and only Java and Sumatra are more populous.",
+    "src": "https://en.wikipedia.org/wiki/Sulawesi",
+    "verified": true
+  },
+  {
+    "in": [
+      "philippines",
+      "archipelago"
+    ],
+    "out": "visayas",
+    "why": "The Visayas, or the Visayan Islands, are one of the three principal geographical divisions of the Philippines, along with Luzon and Mindanao. Located in the central part of the archipelago, it consists of several islands, primarily surrounding the Visayan Sea, although the Visayas are also considered the northeast extremity of the entire Sulu Sea.",
+    "src": "https://en.wikipedia.org/wiki/Visayas",
+    "verified": true
+  },
+  {
+    "in": [
+      "thailand",
+      "beach"
+    ],
+    "out": "phuket",
+    "why": "Phuket is one of the southern provinces (changwat) of Thailand. It consists of the island of Phuket, the country's largest island, and another 32 smaller islands off its coast.",
+    "src": "https://en.wikipedia.org/wiki/Phuket_province",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "sea_of_okhotsk"
+    ],
+    "out": "sakhalin",
+    "why": "Sakhalin is an island in Northeast Asia which is a part of Russia. Its north coast lies 6.5 km (4.0 mi) off the southeastern coast of Khabarovsk Krai, while its southern tip lies 40 kilometres (25 mi) north of the Japanese island of Hokkaido.",
+    "src": "https://en.wikipedia.org/wiki/Sakhalin",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "gulf_of_aden"
+    ],
+    "out": "socotra",
+    "why": "Socotra, locally known as Saqatri, is a Yemeni island in the Indian Ocean. It is situated between the Gulf of Aden, the Guardafui Channel and the Arabian Sea, and lies near major shipping routes.",
+    "src": "https://en.wikipedia.org/wiki/Socotra",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "antarctica"
+    ],
+    "out": "alexander_island",
+    "why": "Alexander Island, also known as Alexander I Island, Alexander I Land, Alexander Land, Alexander I Archipelago, and Zemlja Alexandra I, is the largest island of Antarctica. It lies in the Bellingshausen Sea west of Palmer Land, Antarctic Peninsula from which it is separated by Marguerite Bay and George VI Sound.",
+    "src": "https://en.wikipedia.org/wiki/Alexander_Island",
+    "verified": true
+  },
+  {
+    "in": [
+      "spain",
+      "beach"
+    ],
+    "out": "balearic_islands",
+    "why": "The Balearic Islands are an archipelago in the western Mediterranean Sea, off the eastern coast of the Iberian Peninsula, constituting an autonomous community and province of Spain, with Palma as their capital and largest city. With a population of 1,249,844, they are the 6th least populous autonomous community of Spain.",
+    "src": "https://en.wikipedia.org/wiki/Balearic_Islands",
+    "verified": true
+  },
+  {
+    "in": [
+      "archipelago",
+      "united_kingdom"
+    ],
+    "out": "british_isles",
+    "why": "The British Isles are an archipelago in the North Atlantic Ocean off the north-western coast of continental Europe, consisting of the islands of Great Britain, Ireland, the Isle of Man, the Inner and Outer Hebrides, the Northern Isles (Orkney and Shetland), and over six thousand smaller islands.",
+    "src": "https://en.wikipedia.org/wiki/British_Isles",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "irish_sea"
+    ],
+    "out": "isle_of_man",
+    "why": "The Isle of Man, also known simply as Man or Mann (man), is a self-governing British Crown Dependency in the Irish Sea, between Great Britain and Ireland. As head of state, Charles III holds the title Lord of Mann and is represented by a Lieutenant Governor.",
+    "src": "https://en.wikipedia.org/wiki/Isle_of_Man",
+    "verified": true
+  },
+  {
+    "in": [
+      "archipelago",
+      "english_channel"
+    ],
+    "out": "channel_islands",
+    "why": "The Channel Islands are an archipelago in the English Channel, off the French coast of Normandy. They are divided into two Crown Dependencies: the Bailiwick of Jersey, which is the largest of the islands; and the Bailiwick of Guernsey, consisting of Guernsey, Alderney, Sark, Herm and some smaller islands.",
+    "src": "https://en.wikipedia.org/wiki/Channel_Islands",
+    "verified": true
+  },
+  {
+    "in": [
+      "archipelago",
+      "denmark"
+    ],
+    "out": "faroe_islands",
+    "why": "The Faroe Islands, also known as the Faroes, are an archipelago in the North Atlantic Ocean and a rigsdel ('autonomous territory') of the Kingdom of Denmark. Located between Iceland, Norway, and the Hebrides and Shetland isles of Scotland, the islands have a population of 55,466 as of July 2026 and a land area of 1,393 km2 (538 sq mi).",
+    "src": "https://en.wikipedia.org/wiki/Faroe_Islands",
+    "verified": true
+  },
+  {
+    "in": [
+      "archipelago",
+      "kara_sea"
+    ],
+    "out": "novaya_zemlya",
+    "why": "Novaya Zemlya, also spelled Novaja Zemlja, is an archipelago in northern Russia. It is situated in the Arctic Ocean, in the extreme northeast of Europe, with Cape Flissingsky, on the northern island, considered the easternmost point of Europe.",
+    "src": "https://en.wikipedia.org/wiki/Novaya_Zemlya",
+    "verified": true
+  },
+  {
+    "in": [
+      "denmark",
+      "island"
+    ],
+    "out": "zealand",
+    "why": "Zealand is the largest and most populous island in Denmark proper (thus excluding Greenland and Disko Island, which are larger in size) at 7,031 km2 (2715 sq. mi.). Zealand had a population of 2,319,705 on 1 January 2020, comprising 40% of the country's population.",
+    "src": "https://en.wikipedia.org/wiki/Zealand",
+    "verified": true
+  },
+  {
+    "in": [
+      "samoa",
+      "united_states"
+    ],
+    "out": "american_samoa",
+    "why": "American Samoa is a self-governing, unincorporated and unorganized territory of the United States located in the south Pacific Ocean, within the Polynesia subregion of Oceania. It is 40 miles (64 km) southeast of the island country of Samoa, east of the International Date Line and the French territory of Wallis and Futuna, west of the Cook Islands, north of Tonga, and some 310 miles (500 km) south of Tokelau.",
+    "src": "https://en.wikipedia.org/wiki/American_Samoa",
+    "verified": true
+  },
+  {
+    "in": [
+      "polynesia",
+      "france"
+    ],
+    "out": "french_polynesia",
+    "why": "French Polynesia is an overseas collectivity of France and its sole overseas country; it is classified as a non-self-governing territory by the United Nations. It comprises 121 geographically dispersed islands and atolls stretching over more than 2,000 kilometres (1,200 mi) in the South Pacific Ocean.",
+    "src": "https://en.wikipedia.org/wiki/French_Polynesia",
+    "verified": true
+  },
+  {
+    "in": [
+      "micronesia",
+      "united_states"
+    ],
+    "out": "guam",
+    "why": "Guam is an organized, unincorporated territory of the United States in the Micronesia subregion of Oceania, in the western Pacific Ocean. Guam's capital is Hagåtña, and the most populous village is Dededo.",
+    "src": "https://en.wikipedia.org/wiki/Guam",
+    "verified": true
+  },
+  {
+    "in": [
+      "papua_new_guinea",
+      "island"
+    ],
+    "out": "new_britain",
+    "why": "New Britain (Tok Pisin: Niu Briten) is the largest island in the Bismarck Archipelago, part of the Islands Region of Papua New Guinea. It is separated from New Guinea by a northwest corner of the Solomon Sea (or with an island hop of Umboi the Dampier and Vitiaz Straits) and from New Ireland by St. George's Channel.",
+    "src": "https://en.wikipedia.org/wiki/New_Britain",
+    "verified": true
+  },
+  {
+    "in": [
+      "melanesia",
+      "france"
+    ],
+    "out": "new_caledonia",
+    "why": "New Caledonia is a French territory consisting of a group of islands in the southwest Pacific Ocean, 220 km (140 mi) southwest of Vanuatu and 1,210 km (750 mi) east of Australia. Located 16,100 km (10,000 mi) from Metropolitan France, it forms a sui generis collectivity of the French Republic, having a unique legal status enshrined in a dedicated chapter of the French Constitution.",
+    "src": "https://en.wikipedia.org/wiki/New_Caledonia",
+    "verified": true
+  },
+  {
+    "in": [
+      "micronesia",
+      "archipelago"
+    ],
+    "out": "northern_mariana_islands",
+    "why": "The Northern Mariana Islands, officially the Commonwealth of the Northern Mariana Islands (CNMI), is an unincorporated territory and commonwealth of the United States consisting of the 14 northern islands of the Mariana Archipelago in the northwestern Pacific Ocean. The southernmost, Guam, is a separate U.S. territory.",
+    "src": "https://en.wikipedia.org/wiki/Northern_Mariana_Islands",
+    "verified": true
+  },
+  {
+    "in": [
+      "new_zealand",
+      "volcano"
+    ],
+    "out": "north_island",
+    "why": "The North Island (co-officially Te Ika-a-Māui from Māori) is one of the two main islands of New Zealand, separated from the larger but less populous South Island by Cook Strait. With an area of 113,729 km2 (43,911 sq mi), it is the world's 14th-largest island, constituting 43% of New Zealand's land area.",
+    "src": "https://en.wikipedia.org/wiki/North_Island",
+    "verified": true
+  },
+  {
+    "in": [
+      "new_zealand",
+      "glacier"
+    ],
+    "out": "south_island",
+    "why": "The South Island (official alternative name Te Waipounamu, from Māori) is the larger of the two main islands of New Zealand by surface area, the other being the smaller but more populous North Island. With a population of 1,256,700 as of June 2025, the South Island is home to 24% of New Zealand's 5.3 million inhabitants.",
+    "src": "https://en.wikipedia.org/wiki/South_Island",
+    "verified": true
+  },
+  {
+    "in": [
+      "peninsula",
+      "mexico"
+    ],
+    "out": "baja_california_peninsula",
+    "why": "The Baja California peninsula is a peninsula in northwestern Mexico. It separates the Gulf of California from the Pacific Ocean.",
+    "src": "https://en.wikipedia.org/wiki/Baja_California_peninsula",
+    "verified": true
+  },
+  {
+    "in": [
+      "peninsula",
+      "gulf_of_mexico"
+    ],
+    "out": "yucatan_peninsula",
+    "why": "The Yucatán Peninsula is a large peninsula in southeast Mexico and adjacent portions of Belize and Guatemala. The peninsula extends towards the northeast, separating the Gulf of Mexico to the north and west of the peninsula from the Caribbean Sea to the east.",
+    "src": "https://en.wikipedia.org/wiki/Yucatán_Peninsula",
+    "verified": true
+  },
+  {
+    "in": [
+      "peninsula",
+      "saudi_arabia"
+    ],
+    "out": "arabian_peninsula",
+    "why": "The Arabian Peninsula, or simply Arabia, is a peninsula in West Asia. It accounts for the majority of the land situated on the Arabian plate.",
+    "src": "https://en.wikipedia.org/wiki/Arabian_Peninsula",
+    "verified": true
+  },
+  {
+    "in": [
+      "peninsula",
+      "south_korea"
+    ],
+    "out": "korea",
+    "why": "Korea is a peninsular region in East Asia consisting of the Korean Peninsula, Jeju Island, and smaller islands. Since the end of World War II in Asia in 1945, it has been politically divided at or near the 38th parallel between North Korea (Democratic People's Republic of Korea; DPRK) and South Korea (Republic of Korea; ROK).",
+    "src": "https://en.wikipedia.org/wiki/Korea",
+    "verified": true
+  },
+  {
+    "in": [
+      "thailand",
+      "mekong"
+    ],
+    "out": "mainland_southeast_asia",
+    "why": "Mainland Southeast Asia (historically known as Indochina and the Indochinese Peninsula; abbreviated MSEA) is the continental portion of Southeast Asia. It comprises the countries of Cambodia, Laos, Myanmar, Peninsular Malaysia, Singapore, Thailand, and Vietnam.",
+    "src": "https://en.wikipedia.org/wiki/Mainland_Southeast_Asia",
+    "verified": true
+  },
+  {
+    "in": [
+      "peninsula",
+      "malaysia"
+    ],
+    "out": "malay_peninsula",
+    "why": "The Malay Peninsula is located in Mainland Southeast Asia. The landmass runs approximately north–south, and at its terminus, Tanjung Piai, it is the southernmost point of the Asian continental mainland. The area contains Peninsular Malaysia, Southern Thailand, and the southernmost tip of Myanmar (Kawthaung).",
+    "src": "https://en.wikipedia.org/wiki/Malay_Peninsula",
+    "verified": true
+  },
+  {
+    "in": [
+      "peninsula",
+      "sea_of_okhotsk"
+    ],
+    "out": "kamchatka_peninsula",
+    "why": "The Kamchatka Peninsula is a 1,250-kilometre-long (777 mi) peninsula in the Russian Far East, with an area of about 270,000 km2 (100,000 sq mi). The Sea of Okhotsk bounds the peninsula's western coastline, immediately offshore of the peninsula and below the Bering Sea runs the 9,600-metre-deep (31,496 ft) Kuril–Kamchatka Trench.",
+    "src": "https://en.wikipedia.org/wiki/Kamchatka_Peninsula",
+    "verified": true
+  },
+  {
+    "in": [
+      "peninsula",
+      "egypt"
+    ],
+    "out": "sinai_peninsula",
+    "why": "The Sinai Peninsula, or simply Sinai, is a peninsula in Egypt, and the only part of the country located in West Asia. It is between the Mediterranean Sea to the north and the Red Sea to the south, and is a land bridge between Africa and Asia.",
+    "src": "https://en.wikipedia.org/wiki/Sinai_Peninsula",
+    "verified": true
+  },
+  {
+    "in": [
+      "peninsula",
+      "ukraine"
+    ],
+    "out": "crimea",
+    "why": "Crimea is a peninsula in Eastern Europe, on the northern coast of the Black Sea, almost entirely surrounded by the Black Sea and the smaller Sea of Azov. The Isthmus of Perekop connects the peninsula to Kherson Oblast in mainland Ukraine.",
+    "src": "https://en.wikipedia.org/wiki/Crimea",
+    "verified": true
+  },
+  {
+    "in": [
+      "peninsula",
+      "antarctica"
+    ],
+    "out": "antarctic_peninsula",
+    "why": "The Antarctic Peninsula, known as O'Higgins Land in Chile and Tierra de San Martin in Argentina, and originally as Graham Land in the United Kingdom and the Palmer Peninsula in the United States, is the northernmost part of mainland Antarctica.",
+    "src": "https://en.wikipedia.org/wiki/Antarctic_Peninsula",
+    "verified": true
   }
 ]
