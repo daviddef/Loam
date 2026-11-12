@@ -130482,5 +130482,375 @@
     "why": "Soil science is the study of soil as a natural resource on the surface of the Earth including soil formation, classification and mapping; physical, chemical, biological, and fertility properties of soils; and these properties in relation to the use and management of soils.",
     "src": "https://en.wikipedia.org/wiki/Soil_science",
     "verified": true
+  },
+  {
+    "in": [
+      "atmosphere",
+      "temperature"
+    ],
+    "out": "air_mass",
+    "why": "In meteorology, an air mass is a volume of air defined by its temperature and humidity. Air masses cover many hundreds or thousands of square miles, and adapt to the characteristics of the surface below them.",
+    "src": "https://en.wikipedia.org/wiki/Air_mass",
+    "verified": true
+  },
+  {
+    "in": [
+      "atmosphere",
+      "pressure"
+    ],
+    "out": "atmospheric_pressure",
+    "why": "Atmospheric pressure, also known as air pressure or barometric pressure, is the pressure within the atmosphere of Earth. The standard atmosphere is a unit of pressure.",
+    "src": "https://en.wikipedia.org/wiki/Atmospheric_pressure",
+    "verified": true
+  },
+  {
+    "in": [
+      "atmosphere",
+      "natural_science"
+    ],
+    "out": "atmospheric_science",
+    "why": "Atmospheric science is the study of the Earth's atmosphere and its various inner-working physical processes. Meteorology includes atmospheric chemistry and atmospheric physics with a major focus on weather forecasting.",
+    "src": "https://en.wikipedia.org/wiki/Atmospheric_science",
+    "verified": true
+  },
+  {
+    "in": [
+      "ozone",
+      "chlorine"
+    ],
+    "out": "ozone_depletion",
+    "why": "Ozone depletion in the stratosphere consists of two related phenomena observed since the late twentieth century: a lowered total amount of ozone in Earth's upper stratosphere, and a much larger springtime decrease around Earth's polar regions. The latter phenomenon over the south pole is referred to as the ozone hole.",
+    "src": "https://en.wikipedia.org/wiki/Ozone_depletion",
+    "verified": true
+  },
+  {
+    "in": [
+      "desert",
+      "refraction"
+    ],
+    "out": "mirage",
+    "why": "A mirage is a naturally occurring optical phenomenon in which light rays bend via refraction to produce a displaced image of distant objects or the sky. The word comes to English via the French, from the Latin mirari, meaning to look at, to wonder at.",
+    "src": "https://en.wikipedia.org/wiki/Mirage",
+    "verified": true
+  },
+  {
+    "in": [
+      "climate",
+      "science_journal"
+    ],
+    "out": "climatology",
+    "why": "Climatology or climate science is the scientific study of Earth's climate. Often this is defined as the distribution of weather conditions over a long period.",
+    "src": "https://en.wikipedia.org/wiki/Climatology",
+    "verified": true
+  },
+  {
+    "in": [
+      "climate",
+      "greenhouse_effect"
+    ],
+    "out": "climate_change",
+    "why": "Present-day climate change includes both global warming, the ongoing increase in global average temperature, and its wider effects on Earth's climate system. In a broader sense, climate change also includes previous long-term changes to Earth's climate.",
+    "src": "https://en.wikipedia.org/wiki/Climate_change",
+    "verified": true
+  },
+  {
+    "in": [
+      "climate",
+      "el_nino"
+    ],
+    "out": "climate_variability_and_change",
+    "why": "Climate variability includes all the variations in the climate that last longer than individual weather events, whereas the term climate change only refers to those variations that persist for a longer period of time, typically decades or more. Climate change may refer to any time in Earth's history, but the term is now commonly used to describe contemporary climate change, often popularly referred to as global warming.",
+    "src": "https://en.wikipedia.org/wiki/Climate_variability_and_change",
+    "verified": true
+  },
+  {
+    "in": [
+      "el_nino",
+      "ocean"
+    ],
+    "out": "el_nino_southern_oscillation",
+    "why": "El Niño–Southern Oscillation is a global climate phenomenon that manifests as fluctuations in sea surface temperatures over the tropical Pacific Ocean. The warming phase of the sea surface temperature is known as El Niño and the cooling phase as La Niña.",
+    "src": "https://en.wikipedia.org/wiki/El_Niño–Southern_Oscillation",
+    "verified": true
+  },
+  {
+    "in": [
+      "climate",
+      "map"
+    ],
+    "out": "koppen_climate_classification",
+    "why": "The Köppen climate classification divides Earth's climates into five main climate groups, with each group being divided based on patterns of seasonal precipitation and temperature. The five main groups are tropical, arid, temperate, continental, and polar.",
+    "src": "https://en.wikipedia.org/wiki/Köppen_climate_classification",
+    "verified": true
+  },
+  {
+    "in": [
+      "weather",
+      "satellite"
+    ],
+    "out": "weather_forecasting",
+    "why": "Weather forecasting or weather prediction is the application of science and technology to predict the conditions of the atmosphere for a given location and time. People have attempted to predict the weather informally for thousands of years and formally since the nineteenth century.",
+    "src": "https://en.wikipedia.org/wiki/Weather_forecasting",
+    "verified": true
+  },
+  {
+    "in": [
+      "atmospheric_pressure",
+      "storm"
+    ],
+    "out": "low_pressure_area",
+    "why": "In meteorology, a low-pressure area, low area, or low is a region where the atmospheric pressure is lower than that of surrounding locations. It is the opposite of a high-pressure area.",
+    "src": "https://en.wikipedia.org/wiki/Low-pressure_area",
+    "verified": true
+  },
+  {
+    "in": [
+      "atmospheric_pressure",
+      "anticyclone"
+    ],
+    "out": "high_pressure_area",
+    "why": "A high-pressure air system, high, or anticyclone, is an area near the surface of a planet where the atmospheric pressure is greater than the pressure in the surrounding regions. Highs are middle-scale meteorological features that result from interplays between the relatively larger-scale dynamics of an entire planet's atmospheric circulation.",
+    "src": "https://en.wikipedia.org/wiki/High-pressure_area",
+    "verified": true
+  },
+  {
+    "in": [
+      "rain",
+      "snow"
+    ],
+    "out": "precipitation",
+    "why": "In meteorology, precipitation is any product of the condensation of atmospheric water vapor that falls from clouds due to gravitational pull. The main forms of precipitation include drizzle, rain, rain and snow mixed, snow, ice pellets, graupel and hail.",
+    "src": "https://en.wikipedia.org/wiki/Precipitation",
+    "verified": true
+  },
+  {
+    "in": [
+      "season",
+      "sun"
+    ],
+    "out": "summer",
+    "why": "Summer or summertime is the hottest and brightest of the four temperate seasons, occurring after spring and before autumn. Starting on or around the summer solstice, daylight hours are the longest and darkness hours are the shortest, with day length decreasing as the season progresses after the solstice.",
+    "src": "https://en.wikipedia.org/wiki/Summer",
+    "verified": true
+  },
+  {
+    "in": [
+      "season",
+      "harvest"
+    ],
+    "out": "autumn",
+    "why": "Autumn, also known as fall in North American English, is one of the four temperate seasons on Earth. Outside the tropics, autumn marks the transition from summer to winter.",
+    "src": "https://en.wikipedia.org/wiki/Autumn",
+    "verified": true
+  },
+  {
+    "in": [
+      "season",
+      "snow"
+    ],
+    "out": "winter",
+    "why": "Winter is the coldest and darkest season of the year in temperate and polar climates. It occurs after autumn and before spring, when the hemisphere is oriented away from the Sun as a result of the tilt of Earth's axis.",
+    "src": "https://en.wikipedia.org/wiki/Winter",
+    "verified": true
+  },
+  {
+    "in": [
+      "season",
+      "drought"
+    ],
+    "out": "dry_season",
+    "why": "The dry season is a yearly period of low rainfall, especially in the tropics. The weather in the tropics is dominated by the tropical rain belt, which moves from the northern to the southern tropics and back over the course of the year.",
+    "src": "https://en.wikipedia.org/wiki/Dry_season",
+    "verified": true
+  },
+  {
+    "in": [
+      "season",
+      "rain"
+    ],
+    "out": "wet_season",
+    "why": "The wet season, sometimes called the rainy season or monsoon season, is the time of year when most of a region's average annual rainfall occurs.",
+    "src": "https://en.wikipedia.org/wiki/Wet_season",
+    "verified": true
+  },
+  {
+    "in": [
+      "atmosphere",
+      "jet_stream"
+    ],
+    "out": "atmospheric_circulation",
+    "why": "Atmospheric circulation is the large-scale movement of air and together with ocean circulation it is the means by which thermal energy is redistributed on the surface of Earth. Earth's atmospheric circulation varies from year to year, but the large-scale structure of its circulation remains fairly constant.",
+    "src": "https://en.wikipedia.org/wiki/Atmospheric_circulation",
+    "verified": true
+  },
+  {
+    "in": [
+      "storm",
+      "low_pressure_area"
+    ],
+    "out": "cyclone",
+    "why": "In meteorology, a cyclone is a large air mass that rotates around a strong center of low atmospheric pressure, counterclockwise in the Northern Hemisphere and clockwise in the Southern Hemisphere as viewed from above. Cyclones are characterized by inward-spiraling winds that rotate about a zone of low pressure.",
+    "src": "https://en.wikipedia.org/wiki/Cyclone",
+    "verified": true
+  },
+  {
+    "in": [
+      "atmospheric_circulation",
+      "tropics"
+    ],
+    "out": "hadley_cell",
+    "why": "The Hadley cell, also known as the Hadley circulation, is a global-scale tropical atmospheric circulation that features air rising near the equator, flowing poleward near the tropopause, cooling and descending in the subtropics, and then returning equatorward near the surface.",
+    "src": "https://en.wikipedia.org/wiki/Hadley_cell",
+    "verified": true
+  },
+  {
+    "in": [
+      "atmospheric_circulation",
+      "north_pole"
+    ],
+    "out": "polar_vortex",
+    "why": "A polar vortex, more formally a circumpolar vortex, is a large region of cold, rotating air; polar vortices encircle both of Earth's polar regions. Polar vortices also exist on other rotating, low-obliquity planetary bodies.",
+    "src": "https://en.wikipedia.org/wiki/Polar_vortex",
+    "verified": true
+  },
+  {
+    "in": [
+      "atmospheric_circulation",
+      "el_nino"
+    ],
+    "out": "walker_circulation",
+    "why": "The Walker circulation, also known as the Walker cell, is a conceptual model of the air flow in the tropics in the lower atmosphere. According to this model, parcels of air follow a closed circulation in the zonal and vertical directions.",
+    "src": "https://en.wikipedia.org/wiki/Walker_circulation",
+    "verified": true
+  },
+  {
+    "in": [
+      "desert",
+      "dust"
+    ],
+    "out": "dust_storm",
+    "why": "A dust storm, also called a sandstorm, is a meteorological phenomenon common in arid and semi-arid regions. Dust storms arise when a gust front or other strong wind blows loose sand and dirt from a dry surface.",
+    "src": "https://en.wikipedia.org/wiki/Dust_storm",
+    "verified": true
+  },
+  {
+    "in": [
+      "ocean",
+      "atmosphere"
+    ],
+    "out": "hydrosphere",
+    "why": "The hydrosphere is the combined body of water found on, under, and above the surface of a planet, minor planet, or natural satellite.",
+    "src": "https://en.wikipedia.org/wiki/Hydrosphere",
+    "verified": true
+  },
+  {
+    "in": [
+      "ice",
+      "earth"
+    ],
+    "out": "cryosphere",
+    "why": "The cryosphere is an umbrella term for those portions of Earth's surface where water is in solid form. This includes sea ice, ice on lakes or rivers, snow, glaciers, ice caps, ice sheets, and frozen ground, which includes permafrost.",
+    "src": "https://en.wikipedia.org/wiki/Cryosphere",
+    "verified": true
+  },
+  {
+    "in": [
+      "ice_sheet",
+      "ocean"
+    ],
+    "out": "ice_shelf",
+    "why": "An ice shelf is a large platform of glacial ice floating on the ocean, fed by one or multiple tributary glaciers. Ice shelves form along coastlines where the ice thickness is insufficient to displace the more dense surrounding ocean water.",
+    "src": "https://en.wikipedia.org/wiki/Ice_shelf",
+    "verified": true
+  },
+  {
+    "in": [
+      "ocean",
+      "natural_science"
+    ],
+    "out": "oceanography",
+    "why": "Oceanography, also known as oceanology, sea science, ocean science, and marine science, is the scientific study of the ocean, including its physics, chemistry, biology, and geology.",
+    "src": "https://en.wikipedia.org/wiki/Oceanography",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "measurement"
+    ],
+    "out": "sea_level",
+    "why": "Mean sea level, often shortened to sea level, is an average surface level of one or more among Earth's coastal bodies of water from which heights such as elevation may be measured.",
+    "src": "https://en.wikipedia.org/wiki/Sea_level",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "sediment"
+    ],
+    "out": "seabed",
+    "why": "The seabed is the bottom of an ocean. Alternatively, it is known as the seafloor, sea floor, ocean floor, or ocean bottom.",
+    "src": "https://en.wikipedia.org/wiki/Seabed",
+    "verified": true
+  },
+  {
+    "in": [
+      "water",
+      "natural_science"
+    ],
+    "out": "hydrology",
+    "why": "Hydrology is the scientific study of the movement, distribution, and management of water on Earth and other planets, including the water cycle, water resources, and drainage basin sustainability. A practitioner of hydrology is called a hydrologist.",
+    "src": "https://en.wikipedia.org/wiki/Hydrology",
+    "verified": true
+  },
+  {
+    "in": [
+      "lake",
+      "sea"
+    ],
+    "out": "body_of_water",
+    "why": "A body of water is a significant accumulation of water on the surface of the earth. The term most often refers to oceans, seas, and lakes, but it includes smaller pools of water such as ponds, wetlands, or more rarely, puddles.",
+    "src": "https://en.wikipedia.org/wiki/Body_of_water",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "map"
+    ],
+    "out": "hydrography",
+    "why": "Hydrography is the branch of applied sciences which deals with the measurement and description of the physical features of oceans, seas, coastal areas, lakes and rivers, as well as with the prediction of their change over time, for the primary purpose of safety of navigation and in support of all other marine activities.",
+    "src": "https://en.wikipedia.org/wiki/Hydrography",
+    "verified": true
+  },
+  {
+    "in": [
+      "lake",
+      "science_journal"
+    ],
+    "out": "limnology",
+    "why": "Limnology is the study of inland aquatic ecosystems. It includes aspects of the biological, chemical, physical, and geological characteristics of natural and man-made bodies of fresh and saline water.",
+    "src": "https://en.wikipedia.org/wiki/Limnology",
+    "verified": true
+  },
+  {
+    "in": [
+      "lake",
+      "desert"
+    ],
+    "out": "dry_lake",
+    "why": "A dry lake bed, also called a playa, is a basin or depression that formerly contained a standing surface water body, which disappears when evaporation processes exceed recharge. If the floor of a dry lake is covered by deposits of alkaline compounds, it is called an alkali flat.",
+    "src": "https://en.wikipedia.org/wiki/Dry_lake",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "watershed"
+    ],
+    "out": "drainage_basin",
+    "why": "A drainage basin is an area of land in which all flowing surface water converges to a single point, such as a river mouth, or flows into another body of water, such as a lake or ocean. A basin is separated from adjacent basins by a perimeter, the drainage divide, made up of a succession of elevated features, such as ridges and hills.",
+    "src": "https://en.wikipedia.org/wiki/Drainage_basin",
+    "verified": true
   }
 ]

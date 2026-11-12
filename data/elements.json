@@ -29237,7 +29237,6 @@
       "earth"
     ],
     "fact": "Sinking air spreads out at the surface as high pressure, clearing the sky it descends through.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -50337,7 +50336,6 @@
       "water"
     ],
     "fact": "Trade winds slacken every few years, Pacific upwelling stalls, and warm water spreads over cold.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -125275,5 +125273,412 @@
     ],
     "fact": "The study of soil as a natural resource.",
     "src": "https://en.wikipedia.org/wiki/Soil_science"
+  },
+  {
+    "id": "air_mass",
+    "name": "Air Mass",
+    "emoji": "🌬️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A large volume of air defined by its temperature and humidity.",
+    "src": "https://en.wikipedia.org/wiki/Air_mass"
+  },
+  {
+    "id": "atmospheric_pressure",
+    "name": "Atmospheric Pressure",
+    "emoji": "🌡️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The pressure of the air in Earth's atmosphere.",
+    "src": "https://en.wikipedia.org/wiki/Atmospheric_pressure"
+  },
+  {
+    "id": "atmospheric_science",
+    "name": "Atmospheric Science",
+    "emoji": "🌤️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The study of Earth's atmosphere and its physical processes.",
+    "src": "https://en.wikipedia.org/wiki/Atmospheric_science"
+  },
+  {
+    "id": "ozone_depletion",
+    "name": "Ozone Depletion",
+    "emoji": "🕳️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The thinning of the stratospheric ozone layer, worst over the poles in spring.",
+    "src": "https://en.wikipedia.org/wiki/Ozone_depletion"
+  },
+  {
+    "id": "mirage",
+    "name": "Mirage",
+    "emoji": "🏜️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An optical illusion in which refraction bends light into a displaced image.",
+    "src": "https://en.wikipedia.org/wiki/Mirage"
+  },
+  {
+    "id": "climatology",
+    "name": "Climatology",
+    "emoji": "🌡️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The scientific study of Earth's climate.",
+    "src": "https://en.wikipedia.org/wiki/Climatology"
+  },
+  {
+    "id": "climate_change",
+    "name": "Climate Change",
+    "emoji": "🌡️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The long-term warming of the planet and its wider effects on the climate.",
+    "src": "https://en.wikipedia.org/wiki/Climate_change"
+  },
+  {
+    "id": "climate_variability_and_change",
+    "name": "Climate Variability",
+    "emoji": "🌡️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Climate variations beyond single weather events, and those lasting decades or more.",
+    "src": "https://en.wikipedia.org/wiki/Climate_variability_and_change"
+  },
+  {
+    "id": "el_nino_southern_oscillation",
+    "name": "El Niño–Southern Oscillation",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Pacific Ocean temperature swings between warm El Niño and cool La Niña.",
+    "src": "https://en.wikipedia.org/wiki/El_Niño–Southern_Oscillation"
+  },
+  {
+    "id": "koppen_climate_classification",
+    "name": "Köppen Climate Classification",
+    "emoji": "🗺️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A system sorting Earth's climates into five main groups.",
+    "src": "https://en.wikipedia.org/wiki/Köppen_climate_classification"
+  },
+  {
+    "id": "weather_forecasting",
+    "name": "Weather Forecasting",
+    "emoji": "📺",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Using science and technology to predict the atmosphere for a place and time.",
+    "src": "https://en.wikipedia.org/wiki/Weather_forecasting"
+  },
+  {
+    "id": "low_pressure_area",
+    "name": "Low-Pressure Area",
+    "emoji": "🌀",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A region where air pressure is lower than its surroundings.",
+    "src": "https://en.wikipedia.org/wiki/Low-pressure_area"
+  },
+  {
+    "id": "high_pressure_area",
+    "name": "High-Pressure Area",
+    "emoji": "☀️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A region where air pressure is higher than its surroundings, also called an anticyclone.",
+    "src": "https://en.wikipedia.org/wiki/High-pressure_area"
+  },
+  {
+    "id": "precipitation",
+    "name": "Precipitation",
+    "emoji": "🌧️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Water that condenses in the air and falls from clouds as rain, snow or hail.",
+    "src": "https://en.wikipedia.org/wiki/Precipitation"
+  },
+  {
+    "id": "summer",
+    "name": "Summer",
+    "emoji": "☀️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The hottest and brightest temperate season, between spring and autumn.",
+    "src": "https://en.wikipedia.org/wiki/Summer"
+  },
+  {
+    "id": "autumn",
+    "name": "Autumn",
+    "emoji": "🍂",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The temperate season between summer and winter, also called fall.",
+    "src": "https://en.wikipedia.org/wiki/Autumn"
+  },
+  {
+    "id": "winter",
+    "name": "Winter",
+    "emoji": "❄️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The coldest, darkest season, when the hemisphere tilts away from the Sun.",
+    "src": "https://en.wikipedia.org/wiki/Winter"
+  },
+  {
+    "id": "dry_season",
+    "name": "Dry Season",
+    "emoji": "🏜️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The yearly period of low rainfall, especially in the tropics.",
+    "src": "https://en.wikipedia.org/wiki/Dry_season"
+  },
+  {
+    "id": "wet_season",
+    "name": "Wet Season",
+    "emoji": "🌧️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The time of year when most of a region's rain falls.",
+    "src": "https://en.wikipedia.org/wiki/Wet_season"
+  },
+  {
+    "id": "atmospheric_circulation",
+    "name": "Atmospheric Circulation",
+    "emoji": "🌀",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The large-scale movement of air that spreads heat around the Earth.",
+    "src": "https://en.wikipedia.org/wiki/Atmospheric_circulation"
+  },
+  {
+    "id": "cyclone",
+    "name": "Cyclone",
+    "emoji": "🌀",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A large air mass spiralling inward around a centre of low pressure.",
+    "src": "https://en.wikipedia.org/wiki/Cyclone"
+  },
+  {
+    "id": "hadley_cell",
+    "name": "Hadley Cell",
+    "emoji": "🌀",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The tropical air circulation that rises at the equator and sinks in the subtropics.",
+    "src": "https://en.wikipedia.org/wiki/Hadley_cell"
+  },
+  {
+    "id": "polar_vortex",
+    "name": "Polar Vortex",
+    "emoji": "🌀",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A large region of cold, rotating air encircling a pole.",
+    "src": "https://en.wikipedia.org/wiki/Polar_vortex"
+  },
+  {
+    "id": "walker_circulation",
+    "name": "Walker Circulation",
+    "emoji": "🌀",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A model of tropical air flow in a closed loop across the Pacific.",
+    "src": "https://en.wikipedia.org/wiki/Walker_circulation"
+  },
+  {
+    "id": "dust_storm",
+    "name": "Dust Storm",
+    "emoji": "🌫️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Strong wind lifting loose sand and dirt from a dry surface.",
+    "src": "https://en.wikipedia.org/wiki/Dust_storm"
+  },
+  {
+    "id": "hydrosphere",
+    "name": "Hydrosphere",
+    "emoji": "💧",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "All the water on, under and above the surface of a planet.",
+    "src": "https://en.wikipedia.org/wiki/Hydrosphere"
+  },
+  {
+    "id": "cryosphere",
+    "name": "Cryosphere",
+    "emoji": "🧊",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The parts of Earth where water is frozen solid.",
+    "src": "https://en.wikipedia.org/wiki/Cryosphere"
+  },
+  {
+    "id": "ice_shelf",
+    "name": "Ice Shelf",
+    "emoji": "🧊",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A large platform of glacial ice floating on the ocean.",
+    "src": "https://en.wikipedia.org/wiki/Ice_shelf"
+  },
+  {
+    "id": "oceanography",
+    "name": "Oceanography",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The scientific study of the ocean.",
+    "src": "https://en.wikipedia.org/wiki/Oceanography"
+  },
+  {
+    "id": "sea_level",
+    "name": "Sea Level",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The average level of the sea, from which heights are measured.",
+    "src": "https://en.wikipedia.org/wiki/Sea_level"
+  },
+  {
+    "id": "seabed",
+    "name": "Seabed",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The bottom of the ocean.",
+    "src": "https://en.wikipedia.org/wiki/Seabed"
+  },
+  {
+    "id": "hydrology",
+    "name": "Hydrology",
+    "emoji": "💧",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The scientific study of how water moves, is distributed and managed.",
+    "src": "https://en.wikipedia.org/wiki/Hydrology"
+  },
+  {
+    "id": "body_of_water",
+    "name": "Body of Water",
+    "emoji": "💧",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A significant accumulation of water on Earth's surface.",
+    "src": "https://en.wikipedia.org/wiki/Body_of_water"
+  },
+  {
+    "id": "hydrography",
+    "name": "Hydrography",
+    "emoji": "🗺️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The measurement and description of oceans, seas, lakes and rivers, chiefly for safe navigation.",
+    "src": "https://en.wikipedia.org/wiki/Hydrography"
+  },
+  {
+    "id": "limnology",
+    "name": "Limnology",
+    "emoji": "🏞️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The study of inland waters such as lakes.",
+    "src": "https://en.wikipedia.org/wiki/Limnology"
+  },
+  {
+    "id": "dry_lake",
+    "name": "Dry Lake",
+    "emoji": "🏜️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A basin that once held a lake, left dry when evaporation outpaced recharge.",
+    "src": "https://en.wikipedia.org/wiki/Dry_lake"
+  },
+  {
+    "id": "drainage_basin",
+    "name": "Drainage Basin",
+    "emoji": "🏞️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An area of land whose surface water all drains to one point.",
+    "src": "https://en.wikipedia.org/wiki/Drainage_basin"
   }
 ]
