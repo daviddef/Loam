@@ -129862,5 +129862,625 @@
     "why": "In particle physics, every type of particle of ordinary matter, as opposed to antimatter, is associated with an antiparticle with the same mass but with opposite physical charges, such as electric charge. For example, the antiparticle of the electron is the positron, also known as an antielectron.",
     "src": "https://en.wikipedia.org/wiki/Antiparticle",
     "verified": true
+  },
+  {
+    "in": [
+      "earth",
+      "natural_science"
+    ],
+    "out": "earth_science",
+    "why": "Earth science or geoscience includes all fields of natural science related to planet Earth. This is a branch of science dealing with the physical, chemical, and biological complex constitutions and synergistic linkages of Earth's four spheres: the biosphere, hydrosphere, atmosphere, and geosphere.",
+    "src": "https://en.wikipedia.org/wiki/Earth_science",
+    "verified": true
+  },
+  {
+    "in": [
+      "earth",
+      "forest"
+    ],
+    "out": "natural_environment",
+    "why": "The natural environment or natural world encompasses all biotic and abiotic things occurring naturally, meaning in this case not artificial. The term is most often applied to Earth or some parts of Earth.",
+    "src": "https://en.wikipedia.org/wiki/Natural_environment",
+    "verified": true
+  },
+  {
+    "in": [
+      "earth",
+      "mine"
+    ],
+    "out": "natural_resource",
+    "why": "Natural resources are resources that are drawn from nature and used with few modifications. This includes the sources of valued characteristics such as commercial and industrial use, aesthetic value, scientific interest, and cultural value.",
+    "src": "https://en.wikipedia.org/wiki/Natural_resource",
+    "verified": true
+  },
+  {
+    "in": [
+      "earthquake",
+      "flood"
+    ],
+    "out": "natural_disaster",
+    "why": "A natural disaster is the very harmful impact on a society or community brought by a natural phenomenon or hazard. Some examples of natural hazards include avalanches, droughts, earthquakes, floods, heat waves, landslides, tropical cyclones, volcanic activity and wildfires.",
+    "src": "https://en.wikipedia.org/wiki/Natural_disaster",
+    "verified": true
+  },
+  {
+    "in": [
+      "forest",
+      "drought"
+    ],
+    "out": "wildfire",
+    "why": "A wildfire and forest fire is an unplanned and uncontrolled fire in an area of combustible vegetation. Some natural forest ecosystems depend on wildfire.",
+    "src": "https://en.wikipedia.org/wiki/Wildfire",
+    "verified": true
+  },
+  {
+    "in": [
+      "earth",
+      "crust"
+    ],
+    "out": "internal_structure_of_earth",
+    "why": "The internal structure of Earth is the spatial variation of chemical and physical properties in the solid Earth. Its mechanical structure is of a rigid lithosphere, a semi-fluid asthenosphere, a semi-fluid mesosphere, a liquid outer core, and a solid, rigid inner core.",
+    "src": "https://en.wikipedia.org/wiki/Internal_structure_of_Earth",
+    "verified": true
+  },
+  {
+    "in": [
+      "earth_science",
+      "rock"
+    ],
+    "out": "geology",
+    "why": "Geology is a branch of natural science concerned with the Earth and other astronomical bodies, the rocks of which they are composed, and the processes by which they change over time.",
+    "src": "https://en.wikipedia.org/wiki/Geology",
+    "verified": true
+  },
+  {
+    "in": [
+      "crust",
+      "plate_tectonics"
+    ],
+    "out": "lithosphere",
+    "why": "A lithosphere is the rigid outermost rocky shell of a terrestrial planet or natural satellite. On Earth, it is composed of the crust and the lithospheric mantle, the topmost portion of the upper mantle that behaves elastically on time scales of up to thousands of years or more.",
+    "src": "https://en.wikipedia.org/wiki/Lithosphere",
+    "verified": true
+  },
+  {
+    "in": [
+      "sedimentary_rock",
+      "fossil"
+    ],
+    "out": "stratigraphy",
+    "why": "Stratigraphy is a branch of geology concerned with the study of rock layers and layering. It is primarily used in the study of sedimentary and layered volcanic rocks.",
+    "src": "https://en.wikipedia.org/wiki/Stratigraphy",
+    "verified": true
+  },
+  {
+    "in": [
+      "fault",
+      "mountain"
+    ],
+    "out": "thrust_fault",
+    "why": "A thrust fault is a break in the Earth's crust, across which older rocks are pushed above younger rocks.",
+    "src": "https://en.wikipedia.org/wiki/Thrust_fault",
+    "verified": true
+  },
+  {
+    "in": [
+      "geology",
+      "mineral"
+    ],
+    "out": "mineralogy",
+    "why": "Mineralogy is a subject of geology specializing in the scientific study of the chemistry, crystal structure, and physical properties of minerals and mineralized artifacts. Specific studies within mineralogy include the processes of mineral origin and formation, classification of minerals, their geographical distribution, and their utilization.",
+    "src": "https://en.wikipedia.org/wiki/Mineralogy",
+    "verified": true
+  },
+  {
+    "in": [
+      "mineral",
+      "basalt"
+    ],
+    "out": "pyroxene",
+    "why": "The pyroxenes are a group of important rock-forming inosilicate minerals found in many igneous and metamorphic rocks.",
+    "src": "https://en.wikipedia.org/wiki/Pyroxene",
+    "verified": true
+  },
+  {
+    "in": [
+      "mineral",
+      "powder"
+    ],
+    "out": "talc",
+    "why": "Talc, or talcum, is a clay mineral composed of hydrated magnesium silicate. Talc in powdered form, often combined with corn starch, is used as baby powder.",
+    "src": "https://en.wikipedia.org/wiki/Talc",
+    "verified": true
+  },
+  {
+    "in": [
+      "gemstone",
+      "mineral"
+    ],
+    "out": "jade",
+    "why": "Jade is an umbrella term for two different types of decorative rocks used for jewelry or ornaments. Jade is often referred to by either of two different silicate mineral names: nephrite, a silicate of calcium and magnesium, or jadeite, a silicate of sodium and aluminum.",
+    "src": "https://en.wikipedia.org/wiki/Jade",
+    "verified": true
+  },
+  {
+    "in": [
+      "geology",
+      "granite"
+    ],
+    "out": "petrology",
+    "why": "Petrology is the branch of geology that studies rocks, their mineralogy, composition, texture, structure and the conditions under which they form. Petrology has three subdivisions: igneous, metamorphic, and sedimentary petrology.",
+    "src": "https://en.wikipedia.org/wiki/Petrology",
+    "verified": true
+  },
+  {
+    "in": [
+      "earth",
+      "surveying"
+    ],
+    "out": "geodesy",
+    "why": "Geodesy or geodetics is the science of measuring and representing the geometry, gravity, and spatial orientation of Earth in temporally varying space. It is called planetary geodesy when studying other astronomical bodies, such as planets or circumplanetary systems.",
+    "src": "https://en.wikipedia.org/wiki/Geodesy",
+    "verified": true
+  },
+  {
+    "in": [
+      "earth",
+      "physics"
+    ],
+    "out": "geophysics",
+    "why": "Geophysics is a physical science concerned with the processes and properties of Earth and its surrounding space environment, studied using quantitative and observational methods. It focuses primarily on Earth's shape and its gravitational, magnetic, and electromagnetic fields.",
+    "src": "https://en.wikipedia.org/wiki/Geophysics",
+    "verified": true
+  },
+  {
+    "in": [
+      "earth_core",
+      "iron"
+    ],
+    "out": "earths_inner_core",
+    "why": "Earth's inner core is the innermost geologic layer of the planet Earth. It is primarily a solid ball with a radius that is a fraction of Earth's radius and about as large as most of the Moon's.",
+    "src": "https://en.wikipedia.org/wiki/Earth's_inner_core",
+    "verified": true
+  },
+  {
+    "in": [
+      "earth",
+      "magnetic_field"
+    ],
+    "out": "earths_magnetic_field",
+    "why": "Earth's magnetic field, also known as the geomagnetic field, is the magnetic field that extends from Earth's interior out into space, where it interacts with the solar wind, a stream of charged particles emanating from the Sun.",
+    "src": "https://en.wikipedia.org/wiki/Earth's_magnetic_field",
+    "verified": true
+  },
+  {
+    "in": [
+      "earthquake",
+      "measurement"
+    ],
+    "out": "seismology",
+    "why": "Seismology is the scientific study of earthquakes and the generation and propagation of elastic waves through planetary bodies. It also includes studies of the environmental effects of earthquakes such as tsunamis, other seismic sources such as volcanoes, plate tectonics, glaciers, rivers, oceanic microseisms, and the atmosphere, and artificial processes such as explosions.",
+    "src": "https://en.wikipedia.org/wiki/Seismology",
+    "verified": true
+  },
+  {
+    "in": [
+      "erosion",
+      "landform"
+    ],
+    "out": "geomorphology",
+    "why": "Geomorphology is the scientific study of the origin and evolution of topographic and bathymetric features generated by physical, chemical or biological processes operating at or near Earth's surface.",
+    "src": "https://en.wikipedia.org/wiki/Geomorphology",
+    "verified": true
+  },
+  {
+    "in": [
+      "mountain",
+      "valley"
+    ],
+    "out": "landform",
+    "why": "A landform is a land feature on the solid surface of the Earth or other planetary body. They may be natural or may be anthropogenic, caused or influenced by human activity.",
+    "src": "https://en.wikipedia.org/wiki/Landform",
+    "verified": true
+  },
+  {
+    "in": [
+      "earth",
+      "ocean"
+    ],
+    "out": "land",
+    "why": "Land, also known as dry land, ground, or earth, is the solid terrestrial surface of Earth not submerged by the ocean or another body of water. It includes all continents and islands.",
+    "src": "https://en.wikipedia.org/wiki/Land",
+    "verified": true
+  },
+  {
+    "in": [
+      "mountain",
+      "road"
+    ],
+    "out": "mountain_pass",
+    "why": "A mountain pass is a navigable route through a mountain range or over a ridge. Since mountain ranges can present formidable barriers to travel, passes have played a key role in trade, war, and both human and animal migration throughout history.",
+    "src": "https://en.wikipedia.org/wiki/Mountain_pass",
+    "verified": true
+  },
+  {
+    "in": [
+      "mountain",
+      "ridge"
+    ],
+    "out": "mountain_range",
+    "why": "A mountain range or hill range is a series of mountains or hills arranged in a line and connected by high ground. A mountain system or mountain belt is a group of mountain ranges with similarity in form, structure, and alignment that have arisen from the same cause, usually an orogeny.",
+    "src": "https://en.wikipedia.org/wiki/Mountain_range",
+    "verified": true
+  },
+  {
+    "in": [
+      "mountain",
+      "meadow"
+    ],
+    "out": "hill",
+    "why": "A hill is a landform that extends above the surrounding terrain. It often has a distinct summit, and is usually applied to peaks which are above elevation compared to the relative landmass, though not as prominent as mountains.",
+    "src": "https://en.wikipedia.org/wiki/Hill",
+    "verified": true
+  },
+  {
+    "in": [
+      "sediment",
+      "plate_tectonics"
+    ],
+    "out": "sedimentary_basin",
+    "why": "Sedimentary basins are region-scale depressions of the Earth's crust where subsidence has occurred and a thick sequence of sediments have accumulated to form a large body of sedimentary rock. They form when long-term subsidence creates a regional depression that provides accommodation space for accumulation of sediments.",
+    "src": "https://en.wikipedia.org/wiki/Sedimentary_basin",
+    "verified": true
+  },
+  {
+    "in": [
+      "sediment",
+      "river"
+    ],
+    "out": "alluvial_fan",
+    "why": "An alluvial fan is an accumulation of sediments that fans outwards from a concentrated source of sediments, such as a narrow canyon emerging from an escarpment. They are characteristic of mountainous terrain in arid to semiarid climates, but are also found in more humid environments subject to intense rainfall and in areas of modern glaciation.",
+    "src": "https://en.wikipedia.org/wiki/Alluvial_fan",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "rock"
+    ],
+    "out": "rapids",
+    "why": "Rapids are sections of a river where the river bed has a relatively steep gradient, causing an increase in water velocity and turbulence. Flow, gradient, constriction, and obstacles are four factors that are needed for a rapid to be created.",
+    "src": "https://en.wikipedia.org/wiki/Rapids",
+    "verified": true
+  },
+  {
+    "in": [
+      "glacier",
+      "moraine"
+    ],
+    "out": "glacial_landform",
+    "why": "Glacial landforms are landforms created by the action of glaciers. Most of today's glacial landforms were created by the movement of large ice sheets during the Quaternary glaciations.",
+    "src": "https://en.wikipedia.org/wiki/Glacial_landform",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "coast"
+    ],
+    "out": "bay",
+    "why": "A bay is a recessed, coastal body of water that directly connects to a larger main body of water, such as an ocean, a lake, or another bay. A large bay is usually called a gulf, sea, sound, or bight.",
+    "src": "https://en.wikipedia.org/wiki/Bay",
+    "verified": true
+  },
+  {
+    "in": [
+      "volcano",
+      "mantle"
+    ],
+    "out": "hotspot_geology",
+    "why": "In geology, hotspots are volcanic locales thought to be fed by underlying mantle that is anomalously hot compared with the surrounding mantle. Examples include the Hawaii, Iceland, and Yellowstone hotspots.",
+    "src": "https://en.wikipedia.org/wiki/Hotspot_(geology)",
+    "verified": true
+  },
+  {
+    "in": [
+      "island",
+      "concrete"
+    ],
+    "out": "artificial_island",
+    "why": "An artificial island or man-made island is an island that has been constructed by humans rather than formed through natural processes.",
+    "src": "https://en.wikipedia.org/wiki/Artificial_island",
+    "verified": true
+  },
+  {
+    "in": [
+      "sea",
+      "concrete"
+    ],
+    "out": "land_reclamation",
+    "why": "Land reclamation, often known as reclamation, and also known as land fill, is the process of creating new land from oceans, seas, riverbeds or lake beds. The land reclaimed is known as reclamation ground, reclaimed land, or land fill.",
+    "src": "https://en.wikipedia.org/wiki/Land_reclamation",
+    "verified": true
+  },
+  {
+    "in": [
+      "land_reclamation",
+      "farm"
+    ],
+    "out": "polder",
+    "why": "A polder is a low-lying tract of land that forms an artificial hydrological entity, enclosed by embankments known as dikes.",
+    "src": "https://en.wikipedia.org/wiki/Polder",
+    "verified": true
+  },
+  {
+    "in": [
+      "earth",
+      "time"
+    ],
+    "out": "history_of_earth",
+    "why": "The natural history of Earth concerns the development of planet Earth from its formation to the present day. Nearly all branches of natural science have contributed to the understanding of the main events of Earth's past, characterized by constant geological change and biological evolution.",
+    "src": "https://en.wikipedia.org/wiki/History_of_Earth",
+    "verified": true
+  },
+  {
+    "in": [
+      "geology",
+      "time"
+    ],
+    "out": "geological_history_of_earth",
+    "why": "The geological history of Earth follows the major geological events in Earth's past based on the geologic time scale, a system of chronological measurement based on the study of the planet's rock layers.",
+    "src": "https://en.wikipedia.org/wiki/Geological_history_of_Earth",
+    "verified": true
+  },
+  {
+    "in": [
+      "rock",
+      "time"
+    ],
+    "out": "geochronology",
+    "why": "Geochronology is the science of determining the age of rocks, fossils, and sediments using signatures inherent in the rocks themselves. Absolute geochronology can be accomplished through radioactive isotopes, whereas relative geochronology is provided by tools such as paleomagnetism and stable isotope ratios.",
+    "src": "https://en.wikipedia.org/wiki/Geochronology",
+    "verified": true
+  },
+  {
+    "in": [
+      "mass_extinction",
+      "glacier"
+    ],
+    "out": "late_ordovician_mass_extinction",
+    "why": "The Late Ordovician mass extinction, sometimes referred to as the end-Ordovician mass extinction or the Ordovician–Silurian extinction, is the first of the big five major mass extinction events in Earth's history.",
+    "src": "https://en.wikipedia.org/wiki/Late_Ordovician_mass_extinction",
+    "verified": true
+  },
+  {
+    "in": [
+      "mass_extinction",
+      "ocean"
+    ],
+    "out": "late_devonian_mass_extinction",
+    "why": "The Late Devonian mass extinction, also known as the Kellwasser event, was a mass extinction event which occurred at the boundary between the Frasnian and Famennian ages of the Late Devonian period. It is placed as one of the big five most severe mass extinction events in Earth's history, though the degree of severity is contested.",
+    "src": "https://en.wikipedia.org/wiki/Late_Devonian_mass_extinction",
+    "verified": true
+  },
+  {
+    "in": [
+      "mass_extinction",
+      "volcano"
+    ],
+    "out": "triassic_jurassic_extinction",
+    "why": "The Triassic–Jurassic extinction event, often called the Triassic–Jurassic mass extinction or end-Triassic extinction, marks the boundary between the Triassic and Jurassic periods. It represents one of five major extinction events during the Phanerozoic, profoundly affecting life on land and in the oceans.",
+    "src": "https://en.wikipedia.org/wiki/Triassic–Jurassic_extinction",
+    "verified": true
+  },
+  {
+    "in": [
+      "era",
+      "earth"
+    ],
+    "out": "precambrian",
+    "why": "The Precambrian is the earlier part of Earth's history, before the current Phanerozoic Eon. The Precambrian is so named because it preceded the Cambrian, the first period of the Phanerozoic Eon, which is named after Cambria, the Latinized name for Wales, where rocks from this age were first studied.",
+    "src": "https://en.wikipedia.org/wiki/Precambrian",
+    "verified": true
+  },
+  {
+    "in": [
+      "era",
+      "fossil"
+    ],
+    "out": "phanerozoic",
+    "why": "The Phanerozoic is the current and the latest of the four geologic eons in the Earth's geologic time scale, covering the time period from the Cambrian to the present.",
+    "src": "https://en.wikipedia.org/wiki/Phanerozoic",
+    "verified": true
+  },
+  {
+    "in": [
+      "phanerozoic",
+      "era"
+    ],
+    "out": "paleozoic",
+    "why": "The Paleozoic Era is the first of three geological eras of the Phanerozoic Eon. It succeeds the Neoproterozoic, the last era of the Proterozoic Eon, and ends at the start of the Mesozoic Era.",
+    "src": "https://en.wikipedia.org/wiki/Paleozoic",
+    "verified": true
+  },
+  {
+    "in": [
+      "paleozoic",
+      "cambrian_explosion"
+    ],
+    "out": "cambrian",
+    "why": "The Cambrian is the first geological period of the Paleozoic Era and the Phanerozoic Eon. It runs from the end of the preceding Ediacaran Period to the beginning of the Ordovician Period.",
+    "src": "https://en.wikipedia.org/wiki/Cambrian",
+    "verified": true
+  },
+  {
+    "in": [
+      "paleozoic",
+      "permian_triassic_extinction"
+    ],
+    "out": "permian",
+    "why": "The Permian is a geologic period and stratigraphic system. It is the sixth and last period of the Paleozoic Era; the following Triassic Period belongs to the Mesozoic Era.",
+    "src": "https://en.wikipedia.org/wiki/Permian",
+    "verified": true
+  },
+  {
+    "in": [
+      "era",
+      "dinosaur"
+    ],
+    "out": "mesozoic",
+    "why": "The Mesozoic Era is an era of Earth's geological history, comprising the Triassic, Jurassic and Cretaceous Periods. It is characterized by the dominance of archosaurian reptiles such as the dinosaurs, and of gymnosperms such as cycads, ginkgoaceae and araucarian conifers; a hot greenhouse climate; and the tectonic break-up of Pangaea.",
+    "src": "https://en.wikipedia.org/wiki/Mesozoic",
+    "verified": true
+  },
+  {
+    "in": [
+      "mesozoic",
+      "permian"
+    ],
+    "out": "triassic",
+    "why": "The Triassic is a geologic period and a stratigraphic system that spans from the end of the Permian Period to the beginning of the Jurassic Period. The Triassic Period is the first and shortest geologic period of the Mesozoic Era, and the seventh period of the Phanerozoic Eon.",
+    "src": "https://en.wikipedia.org/wiki/Triassic",
+    "verified": true
+  },
+  {
+    "in": [
+      "mesozoic",
+      "triassic"
+    ],
+    "out": "jurassic",
+    "why": "The Jurassic is a geologic period and stratigraphic system, spanning from the end of the Triassic Period to the beginning of the Cretaceous Period.",
+    "src": "https://en.wikipedia.org/wiki/Jurassic",
+    "verified": true
+  },
+  {
+    "in": [
+      "mesozoic",
+      "chalk"
+    ],
+    "out": "cretaceous",
+    "why": "The Cretaceous is a geological period. It is the third and final period of the Mesozoic Era, as well as the longest.",
+    "src": "https://en.wikipedia.org/wiki/Cretaceous",
+    "verified": true
+  },
+  {
+    "in": [
+      "era",
+      "mammal"
+    ],
+    "out": "cenozoic",
+    "why": "The Cenozoic Era is Earth's current geological era, representing the last stretch of Earth's history after the Mesozoic.",
+    "src": "https://en.wikipedia.org/wiki/Cenozoic",
+    "verified": true
+  },
+  {
+    "in": [
+      "cenozoic",
+      "cretaceous"
+    ],
+    "out": "paleogene",
+    "why": "The Paleogene Period is a geologic period and system that spans from the end of the Cretaceous Period to the beginning of the Neogene Period. It is the first period of the Cenozoic Era, the tenth period of the Phanerozoic and is divided into the Paleocene, Eocene, and Oligocene epochs.",
+    "src": "https://en.wikipedia.org/wiki/Paleogene",
+    "verified": true
+  },
+  {
+    "in": [
+      "cenozoic",
+      "paleogene"
+    ],
+    "out": "neogene",
+    "why": "The Neogene is a geologic period and system that spans from the end of the Paleogene Period to the beginning of the present Quaternary Period. It is the second period of the Cenozoic and the eleventh period of the Phanerozoic.",
+    "src": "https://en.wikipedia.org/wiki/Neogene",
+    "verified": true
+  },
+  {
+    "in": [
+      "cenozoic",
+      "ice_age"
+    ],
+    "out": "quaternary",
+    "why": "The Quaternary is the current and most recent of the three periods of the Cenozoic Era in the geologic time scale of the International Commission on Stratigraphy, as well as the current and most recent of the twelve periods of the Phanerozoic eon. It follows the Neogene Period and spans to the present.",
+    "src": "https://en.wikipedia.org/wiki/Quaternary",
+    "verified": true
+  },
+  {
+    "in": [
+      "quaternary",
+      "ice_age"
+    ],
+    "out": "holocene",
+    "why": "The Holocene is the current geological epoch. It follows the Last Glacial Period, which concluded with the Holocene glacial retreat.",
+    "src": "https://en.wikipedia.org/wiki/Holocene",
+    "verified": true
+  },
+  {
+    "in": [
+      "bush",
+      "desert"
+    ],
+    "out": "shrubland",
+    "why": "Shrubland, scrubland, scrub, brush, or bush is a plant community characterized by vegetation dominated by shrubs, often also including grasses, herbs, and geophytes. Shrubland may either occur naturally or be the result of human activity.",
+    "src": "https://en.wikipedia.org/wiki/Shrubland",
+    "verified": true
+  },
+  {
+    "in": [
+      "rainforest",
+      "tropics"
+    ],
+    "out": "jungle",
+    "why": "A jungle is an area of land covered with dense forest and tangled vegetation, usually in tropical climates. Application of the term has varied greatly during the past century.",
+    "src": "https://en.wikipedia.org/wiki/Jungle",
+    "verified": true
+  },
+  {
+    "in": [
+      "forest",
+      "oak"
+    ],
+    "out": "temperate_broadleaf_and_mixed_forests",
+    "why": "Temperate broadleaf and mixed forest is a temperate climate terrestrial habitat type defined by the World Wide Fund for Nature, including temperate forest, mixed coniferous forest, and temperate rainforest ecoregions.",
+    "src": "https://en.wikipedia.org/wiki/Temperate_broadleaf_and_mixed_forests",
+    "verified": true
+  },
+  {
+    "in": [
+      "swamp",
+      "reed"
+    ],
+    "out": "marsh",
+    "why": "In ecology, a marsh is a wetland that is dominated by herbaceous plants rather than by woody plants. More in general, the word can be used for any low-lying and seasonally waterlogged terrain.",
+    "src": "https://en.wikipedia.org/wiki/Marsh",
+    "verified": true
+  },
+  {
+    "in": [
+      "soil",
+      "lithosphere"
+    ],
+    "out": "pedosphere",
+    "why": "The pedosphere is the outermost layer of the Earth's crust that is composed of soil and subject to soil formation and erosion processes. It exists at the interface of the lithosphere, atmosphere, hydrosphere and biosphere.",
+    "src": "https://en.wikipedia.org/wiki/Pedosphere",
+    "verified": true
+  },
+  {
+    "in": [
+      "soil",
+      "nitrogen"
+    ],
+    "out": "soil_fertility",
+    "why": "Soil fertility refers to the ability of soil to sustain agricultural plant growth, that is, to provide plant habitat and result in sustained and consistent yields of high quality.",
+    "src": "https://en.wikipedia.org/wiki/Soil_fertility",
+    "verified": true
+  },
+  {
+    "in": [
+      "soil",
+      "science_journal"
+    ],
+    "out": "soil_science",
+    "why": "Soil science is the study of soil as a natural resource on the surface of the Earth including soil formation, classification and mapping; physical, chemical, biological, and fertility properties of soils; and these properties in relation to the use and management of soils.",
+    "src": "https://en.wikipedia.org/wiki/Soil_science",
+    "verified": true
   }
 ]

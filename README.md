@@ -27,17 +27,17 @@ validated and playtested first — before a line of Swift.
 | | |
 |---|---|
 | Domain | Dirt to Dinner, extending into chemistry, metallurgy, biology, medicine and the built world |
-| Elements | **11,020** (10,664 workshop · 356 folklore) |
-| Recipes | **12,995** (11,999 merges · 996 verb processes) |
+| Elements | **11,082** (10,726 workshop · 356 folklore) |
+| Recipes | **13,057** (12,061 merges · 996 verb processes) |
 | Starters | Stone · Water · Sun · Seed |
-| Reachable | **11,020 / 11,020** from the four starters |
-| Sourced | **12,995 / 12,995** recipes, every URL machine-verified |
-| Independently verified | **10,877 / 12,995** (84%) carry `verified: true` |
-| Routes per element | **1.18** · 9,440 still have exactly one |
+| Reachable | **11,082 / 11,082** from the four starters |
+| Sourced | **13,057 / 13,057** recipes, every URL machine-verified |
+| Independently verified | **10,939 / 13,057** (84%) carry `verified: true` |
+| Routes per element | **1.18** · 9,502 still have exactly one |
 | Hazards | **351**, covering 623 elements |
 | Scale span | **20 orders of magnitude**, 10^-10 m to 10^9 m |
 | Drawings | **10,315** hand-drawn; 705 on a family fallback — a tracked backlog, not a blocker |
-| Roles | **8,577 / 11,020** — what each noun is to a making |
+| Roles | **8,577 / 11,082** — what each noun is to a making |
 | Sense-checked | **1,848** single-word names read; 181 on the watchlist |
 | Places | **442 / 442** of a checklist that is part external, so it can disagree with us |
 | Parts lists | **1,114** written |
@@ -46,7 +46,7 @@ validated and playtested first — before a line of Swift.
 
 *Counted by `node tools/readme.mjs`. Every figure here is read from the corpus at
 build time, because this file previously spent a fortnight claiming 6,874 elements
-while the corpus held 7,423 — and then did it again, claiming 7,576 against 11,020.*
+while the corpus held 7,423 — and then did it again, claiming 7,576 against 11,082.*
 <!-- STATUS:END -->
 
 Run `node tools/graph.mjs path penicillin` for the headline chain: 22 steps from
