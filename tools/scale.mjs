@@ -152,6 +152,7 @@ const SCALE = {
           // protein scale as hemoglobin/enzyme/ferritin above
           'ricin'],
   '-6':  [
+          /* R3 AC biology 1 */ 'organelle', 'mitochondria', 'plastid',
           /* W4 physiology fourth pass, 6 Sep */
           'osteoblast', 'osteoclast', 'hepatocyte',
           /* W2 insects third pass, 6 Sep */
@@ -211,6 +212,7 @@ const SCALE = {
           // cell biology batch 1 — membrane-level processes, the same rack as action_potential/binary_fission
           'diffusion', 'osmosis', 'active_transport', 'endocytosis', 'exocytosis', 'phagocytosis'],
   '-5':  [
+          /* R3 AC biology 1 */ 'microbial_cyst', 'plant_cell',
           /* W4 physiology, 6 Sep */
           'platelet', 'villus',
           /* W2 arachnids and insects, 5 Sep */
@@ -287,6 +289,7 @@ const SCALE = {
           'clay', 'kaolin', 'clinker', 'malt', 'rubbed_flour', 'ash', 'charcoal', 'mince', 'cured_mince', 'scabies_mite',
           'lenticel', 'root_hair'],
   '-3':  [
+          /* R3 AC biology 1 */ 'hypha',
           /* W4 physiology fourth pass, 6 Sep */
           'periosteum', 'synovial_fluid', 'neural_tube', 'germ_layer',
           /* W2 insects third pass, 6 Sep */
@@ -899,6 +902,7 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* R3 AC biology 1 — abstract concepts, filed at the 10⁰ idea bucket */ 'abiogenesis', 'marine_life', 'model_organism', 'biology', 'microbiology', 'mycology', 'biomechanics', 'neuroscience', 'sense', 'paleontology', 'history_of_life', 'human_genome', 'hybrid_biology', 'phylogenetics', 'anatomy', 'dissection', 'ganglion', 'sensory_nervous_system', 'auditory_system', 'taste', 'olfactory_system', 'sense_of_smell', 'odor', 'somatosensory_system', 'visual_system', 'visual_perception', 'color_vision', 'fingerprint', 'fur', 'whiskers', 'pelvis', 'spinal_column', 'plant_anatomy', 'plant_morphology', 'shrub', 'vascular_tissue', 'biochemistry', 'chemical_biology', 'molecular_biology', 'biomolecule', 'alkaloid', 'biological_pigment', 'carotenoid', 'plant_hormone', 'lipid', 'physiology', 'blood_sugar_level', 'excretion', 'defecation', 'urination', 'biological_sex', 'female', 'male', 'fertilisation', 'menopause', 'plant_reproduction', 'developmental_biology', 'development_of_the_human_body', 'imago', 'longevity', 'ontogeny', 'botany', 'carnivorous_plant', 'cell_biology', 'cell_signaling', 'programmed_cell_death', 'ecology', 'biodiversity', 'endangered_species', 'invasive_species', 'sustainability', 'wildlife_conservation',
           /* R3 AB weather, climate, hydrosphere — abstract concepts, filed at the 10⁰ idea bucket */ 'atmospheric_pressure', 'atmospheric_science', 'ozone_depletion', 'climatology', 'climate_variability_and_change', 'koppen_climate_classification', 'weather_forecasting', 'precipitation', 'summer', 'autumn', 'winter', 'dry_season', 'wet_season', 'sea_level', 'hydrology', 'hydrography', 'limnology',
           /* R3 AA earth science and geological time — abstract concepts, filed at the 10⁰ idea bucket */ 'earth_science', 'natural_environment', 'natural_resource', 'natural_disaster', 'wildfire', 'geology', 'stratigraphy', 'mineralogy', 'pyroxene', 'talc', 'jade', 'petrology', 'geodesy', 'geophysics', 'seismology', 'geomorphology', 'land_reclamation', 'history_of_earth', 'geological_history_of_earth', 'geochronology', 'late_ordovician_mass_extinction', 'late_devonian_mass_extinction', 'triassic_jurassic_extinction', 'precambrian', 'phanerozoic', 'paleozoic', 'cambrian', 'permian', 'mesozoic', 'triassic', 'jurassic', 'cretaceous', 'cenozoic', 'paleogene', 'neogene', 'quaternary', 'holocene', 'soil_fertility', 'soil_science',
           /* R3 Z electromagnetism quantum relativity particles — abstract concepts, filed at the 10⁰ idea bucket */ 'ionizing_radiation', 'gauge_theory', 'quantum_gravity', 'atomic_physics', 'condensed_matter_physics', 'solid_state_physics', 'degenerate_matter', 'bose_einstein_condensate', 'magnetism', 'ferromagnetism', 'dipole', 'metamaterial', 'oil_drop_experiment', 'photoelectric_effect', 'electrostatics', 'coulombs_law', 'electric_field', 'electric_potential', 'electromagnetic_radiation', 'electromagnetic_spectrum', 'radio_wave', 'microwave', 'infrared', 'visible_spectrum', 'fluorescence', 'electromagnetic_field', 'electromotive_force', 'lorentz_force', 'eddy_current', 'magnetostatics', 'alternating_current', 'direct_current', 'electrical_impedance', 'electrical_resistance_and_conductance', 'capacitance', 'gain_electronics', 'inductance', 'kirchhoffs_circuit_laws', 'quantum_chromodynamics', 'quantum_electrodynamics', 'quantum_entanglement', 'quantum_field_theory', 'quantum_tunnelling', 'schrodinger_equation', 'wave_function', 'wave_particle_duality', 'general_relativity', 'special_relativity', 'principle_of_relativity', 'equivalence_principle', 'gravitational_singularity', 'lorentz_transformation', 'michelson_morley_experiment', 'speed_of_light', 'nuclear_physics', 'nucleosynthesis', 'particle_physics', 'physics_beyond_the_standard_model', 'string_theory', 'supersymmetry', 'particle_accelerator', 'tevatron', 'particle_detector', 'cloud_chamber', 'scattering',
@@ -2008,6 +2012,7 @@ const SCALE = {
           'atlantis', 'chicxulub_crater', 'sri_lanka', 'maldives', 'taiwan', 'brunei', 'fiji', 'samoa', 'portugal', 'netherlands', 'switzerland', 'ireland', 'austria', 'israel', 'lebanon',
           ],
   '7':   [
+          /* R3 AC biology 1 */ 'biosphere',
           /* R3 AB weather, climate, hydrosphere */ 'climate_change', 'el_nino_southern_oscillation', 'atmospheric_circulation', 'hadley_cell', 'polar_vortex', 'walker_circulation', 'hydrosphere', 'cryosphere',
           /* R3 AA earth science and geological time */ 'internal_structure_of_earth', 'lithosphere', 'earths_magnetic_field', 'land', 'pedosphere',
           /* physical sciences batch 1, 12 Nov: units and methods at the idea bucket, celestial things at their drawn scale */ 'lagrange_point', 'geostationary_orbit', 'low_earth_orbit', 'terrestrial_planet', 'giant_planet', 'natural_satellite', 'ring_system',
