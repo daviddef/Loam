@@ -49297,6 +49297,94 @@ const MI = {
 };
 for (const [id, fn] of Object.entries(MI)) def(id, () => gAll(fn().filter(s => s && s.length)));
 
+/* ── biology 8 and physical stragglers: fish and bird families, colours, units, 12 Nov ── */
+const jFrog = (x = 30, y = 36, s = 1, k = 'bs') => [E(x, y, 10 * s, 7 * s, k), C(n(x - 6 * s), n(y - 8 * s), 3.4 * s, k), C(n(x + 6 * s), n(y - 8 * s), 3.4 * s, k), C(n(x - 6 * s), n(y - 8.4 * s), 1.2 * s, 'ik'), C(n(x + 6 * s), n(y - 8.4 * s), 1.2 * s, 'ik'), S(`M${n(x - 6 * s)} ${n(y - 2 * s)} Q${x} ${n(y + 1 * s)} ${n(x + 6 * s)} ${n(y - 2 * s)}`, 'ik', 1.2 * s), S(`M${n(x - 8 * s)} ${n(y + 4 * s)} L${n(x - 14 * s)} ${n(y + 8 * s)} L${n(x - 10 * s)} ${n(y + 8 * s)} M${n(x + 8 * s)} ${n(y + 4 * s)} L${n(x + 14 * s)} ${n(y + 8 * s)} L${n(x + 10 * s)} ${n(y + 8 * s)}`, 'ik', 1.8 * s)];
+const jRuler = (x = 30, y = 30, w = 44, s = 1) => [box(n(x - w / 2), n(y - 5 * s), w, 10 * s, 'hi'), ...Array.from({ length: 11 }, (_, i) => S(`M${n(x - w / 2 + 2 + i * ((w - 4) / 10))} ${n(y - 5 * s)} L${n(x - w / 2 + 2 + i * ((w - 4) / 10))} ${n(y - (i % 5 === 0 ? -1 : 1.4) * s)}`, 'ik', 0.9))];
+const jStar = (x, y, r = 3, k = 'hi') => P(star5(x, y, r, n(r * 0.42)), k);
+const jSpiral = (x, y, r, k = 'bs', w = 2.2, rot = 0) => mtPlot(u => [x + Math.cos(u * 11 + rot) * r * u, y + Math.sin(u * 11 + rot) * r * u * 0.6], 0, 1, 60, k, w);
+const jAtom = (x = 30, y = 30, s = 1) => [C(x, y, 3.4 * s, 'hi'), ...[0, 1, 2].map(i => { const a = (i / 3) * Math.PI; return mtPlot(u => [x + Math.cos(u * 6.2832) * 16 * s * Math.cos(a) - Math.sin(u * 6.2832) * 6 * s * Math.sin(a), y + Math.cos(u * 6.2832) * 16 * s * Math.sin(a) + Math.sin(u * 6.2832) * 6 * s * Math.cos(a)], 0, 1, 40, 'ik', 1.2); })];
+const jTrefoil = (x = 30, y = 30, r = 20) => [C(x, y, r, 'hi'), ...[0, 1, 2].map(i => { const a = (i / 3) * Math.PI * 2 - Math.PI / 2; return P(`M${x} ${y} L${n(x + Math.cos(a - 0.5) * r)} ${n(y + Math.sin(a - 0.5) * r)} L${n(x + Math.cos(a + 0.5) * r)} ${n(y + Math.sin(a + 0.5) * r)} Z`, 'ik'); }), C(x, y, 3.4, 'hi')];
+const jBubble = (x, y, w, h, k = 'hi') => [E(x, y, w, h, k), P(`M${n(x - w * 0.4)} ${n(y + h * 0.7)} L${n(x - w * 0.7)} ${n(y + h * 1.5)} L${n(x - w * 0.1)} ${n(y + h * 0.9)} Z`, k)];
+const MJ = {
+  brachyura: () => [...fCrab(30, 34, 1.7, 'bs'), ...gAll(gSea(52).slice(0, 1))],
+  ophidiiformes: () => [S('M6 40 Q16 24 28 36 Q40 48 50 30', 'bs', 9), S('M6 40 Q16 24 28 36 Q40 48 50 30', 'hi', 4), C(50, 28, 5, 'bs'), C(52, 26, 1.2, 'ik'), S('M20 28 Q26 22 32 30', 'ik', 1), ...gAll(gSea(46).slice(0, 2))],
+  scorpaeniformes: () => [...dFish(28, 34, 1.6, 'bs', 5), S('M18 26 L16 14 M24 24 L24 10 M30 24 L32 10 M36 26 L40 14', 'ik', 1.4), S('M16 40 L12 50 M24 42 L22 52', 'ik', 1.4), ...gAll(gSea(52).slice(0, 1))],
+  batomorphi: () => [...dRay(30, 30, 1.2, 'bs'), S('M30 40 L30 56', 'ik', 1.6), S('M10 30 Q4 28 2 34 M50 30 Q56 28 58 34', 'bs', 3), S('M24 36 Q30 40 36 36', 'ik', 1)],
+  perciformes: () => [...dFish(28, 32, 1.8, 'hi', 5.4), S('M20 24 L20 40 M26 24 L26 40 M32 24 L32 40', 'ik', 1), S('M18 26 L14 16 L26 22 L30 12 L36 22', 'ik', 1.2), ...gAll(gSea(50).slice(0, 1))],
+  cyprinodontiformes: () => [...dFish(20, 24, 0.9, 'hi', 4), ...dFish(40, 34, 1, 'bs', 4), ...dFish(22, 44, 0.8, 'bs', 4), ...gAll(gSea(14)).slice(0, 0), ...[[10, 12], [48, 12], [50, 50]].map(([x, y]) => ring('ik', x, y, 2, 0.8))],
+  gobioidei: () => [E(28, 38, 14, 4, 'bs'), C(14, 36, 4.6, 'bs'), C(12, 34, 1.2, 'ik'), P('M24 34 L30 26 L36 34 Z', 'hi'), P('M40 38 L50 32 L50 44 Z', 'bs'), S('M2 46 Q12 40 22 46 Q34 40 44 46 Q52 42 58 46 L58 58 L2 58 Z', 'lo', 2), box(2, 48, 56, 10, 'lo')],
+  serranidae: () => [E(28, 32, 18, 11, 'bs'), P('M44 32 L56 22 L56 42 Z', 'bs'), P('M10 32 Q8 26 14 26 L22 30 L14 36 Q8 36 10 32 Z', 'ik'), C(16, 26, 1.8, 'hi'), C(16, 26, 0.8, 'ik'), S('M22 22 L24 14 L34 20 L38 12 L40 22', 'ik', 1.4), S('M28 26 L28 38 M34 26 L34 38', 'hi', 1.2), ...gAll(gSea(52).slice(0, 1))],
+  tetraodontidae: () => [C(30, 32, 16, 'hi'), ...Array.from({ length: 14 }, (_, i) => { const a = (i / 14) * Math.PI * 2; return S(`M${n(30 + Math.cos(a) * 16)} ${n(32 + Math.sin(a) * 16)} L${n(30 + Math.cos(a) * 21)} ${n(32 + Math.sin(a) * 21)}`, 'ik', 1.2); }), C(22, 28, 3, 'bs'), C(22, 28, 1.2, 'ik'), S('M16 38 Q20 42 24 38', 'ik', 1.4), P('M46 32 L56 26 L56 38 Z', 'bs')],
+  characiformes: () => [...dFish(28, 32, 1.8, 'bs', 5.4), S('M14 36 L16 40 L18 36 L20 40 L22 36', 'ik', 1.2), P('M14 34 L16 38 L18 34 Z', 'hi'), P('M18 34 L20 38 L22 34 Z', 'hi'), S('M28 24 L32 16 L36 24', 'ik', 1.2)],
+  ilish: () => [E(28, 30, 20, 6, 'hi'), P('M46 30 L58 22 L58 38 Z', 'hi'), C(14, 28, 1.4, 'ik'), S('M22 26 L22 34 M28 25 L28 35 M34 26 L34 34', 'bs', 1), ...gCloud(20), S('M10 52 L12 58 M26 52 L28 58 M42 52 L44 58', 'ik', 1.4)],
+  cypriniformes: () => [E(28, 32, 18, 12, 'bs'), P('M44 32 L56 24 L56 40 Z', 'bs'), C(16, 28, 1.6, 'ik'), S('M12 34 L8 38 M13 36 L10 42', 'ik', 1), ...Array.from({ length: 5 }, (_, i) => S(`M${20 + i * 5} 24 Q${22 + i * 5} 28 ${20 + i * 5} 32`, 'hi', 1)), ...Array.from({ length: 4 }, (_, i) => S(`M${22 + i * 5} 34 Q${24 + i * 5} 38 ${22 + i * 5} 42`, 'hi', 1)), ...gAll(gSea(54).slice(0, 1))],
+  galaxiidae: () => [...dFish(24, 36, 1.4, 'hi', 4), jStar(46, 14, 6, 'hi'), jStar(52, 28, 3, 'hi'), jStar(38, 8, 2.6, 'hi'), ...gAll(gSea(50).slice(0, 2))],
+  salmonidae: () => [...gSea(40).slice(0, 3), S('M6 44 Q22 10 50 38', 'lo', 0.1), P('M14 30 Q24 16 38 24 Q44 28 48 38 Q40 36 34 30 Q26 28 14 30 Z', 'bs'), P('M48 38 L56 30 L56 46 Z', 'bs'), C(18, 28, 1.2, 'ik'), S('M20 24 L24 22', 'ik', 1)],
+  loricariidae: () => [E(28, 36, 20, 7, 'bs'), ...Array.from({ length: 6 }, (_, i) => S(`M${16 + i * 5} 30 L${16 + i * 5} 42`, 'ik', 1.4)), E(10, 38, 5, 4, 'hi'), C(10, 38, 1.6, 'ik'), P('M46 36 L56 28 L56 44 Z', 'bs'), P('M22 30 L30 20 L36 30 Z', 'hi'), ...gAll(gSea(54).slice(0, 1))],
+  hylidae: () => [S('M0 30 Q30 24 60 32', 'lo', 4), pLf(10, 30, 1.4, 6), pLf(50, 32, 1.4, -6), ...jFrog(30, 24, 1.1, 'hi'), S('M24 30 L20 28 M36 30 L40 28', 'ik', 1.4), C(18, 28, 1.2, 'hi'), C(42, 28, 1.2, 'hi')],
+  leptodactylidae: () => [...jFrog(30, 38, 1.5, 'bs'), S('M12 52 L48 52', 'lo', 3), ...pGrass(8, 56, 0.7), ...pGrass(52, 56, 0.7)],
+  ranidae: () => [...gSea(44).slice(0, 2), E(30, 46, 22, 3, 'bs'), ...jFrog(30, 36, 1.5, 'hi'), S('M16 20 L16 28', 'ik', 0.1)],
+  columbidae: () => [...eBird(34, 34, 1.5, 'hi'), S('M6 54 Q20 46 34 48', 'ik', 1.6), ...[[10, 52], [18, 48], [26, 48]].map(([x, y]) => pLf(x, y, 0.5, 0)), C(12, 50, 1.4, 'bs')],
+  gruiformes: () => [E(32, 22, 10, 6, 'hi'), C(20, 16, 3, 'hi'), S('M18 14 L10 12', 'ik', 1.6), S('M22 18 Q26 26 32 22', 'ik', 1), S('M30 28 L28 54 M34 28 L38 54', 'ik', 1.6), P('M42 20 L56 14 L46 26 Z', 'hi'), C(19, 14, 0.9, 'ik'), S('M20 52 L34 52 M32 54 L42 54', 'ik', 1.2), S('M2 55 L58 55', 'lo', 2)],
+  corvidae: () => [...eBird(30, 34, 1.6, 'ik', 'bs'), S('M2 54 L58 54', 'lo', 3), C(21, 25, 1.2, 'hi'), S('M44 36 L52 40', 'ik', 2)],
+  cardinalidae: () => [...eBird(30, 34, 1.6, 'bs', 'hi'), P('M20 26 L22 16 L26 24 Z', 'bs'), E(14, 30, 4, 3, 'ik'), S('M2 52 L58 52', 'lo', 3)],
+  icterid: () => [S('M30 58 L30 18', 'lo', 3), E(30, 14, 4, 8, 'bs'), ...eBird(36, 38, 1.2, 'ik', 'hi'), E(24, 28, 3, 1.6, 'hi'), S('M46 50 L52 56', 'lo', 0)].filter(Boolean),
+  old_world_flycatcher: () => [...eBird(24, 34, 1.3, 'hi'), ...eFly(46, 14, 0.4, 'hi'), S('M40 20 L44 24', 'ik', 0), C(46, 22, 1.6, 'ik'), S('M2 50 L40 50', 'lo', 3)],
+  ploceidae: () => [S('M8 8 L52 8', 'lo', 3), S('M24 8 L24 26 M36 8 L36 26', 'ik', 1.2), E(30, 36, 11, 12, 'hi'), S('M22 32 L38 40 M22 40 L38 32', 'bs', 1), E(30, 47, 3, 2, 'ik'), ...eBird(46, 22, 0.7, 'bs')],
+  old_world_sparrow: () => [...eBird(30, 36, 1.5, 'bs'), S('M24 32 L36 30', 'ik', 2), S('M20 30 Q24 26 30 28', 'hi', 1.4), S('M2 54 L58 54', 'lo', 3), ...[[10, 48], [50, 46]].map(([x, y]) => E(x, y, 2, 1.4, 'hi'))],
+  starling: () => [...eBird(18, 20, 0.9, 'ik', 'hi'), ...eBird(40, 30, 1, 'ik', 'hi'), ...eBird(22, 46, 0.9, 'ik', 'hi'), ...[[8, 30], [50, 12], [52, 50]].map(([x, y]) => S(`M${x} ${y} Q${x + 3} ${y - 3} ${x + 6} ${y}`, 'bs', 1.2))],
+  antbird: () => [...eBird(24, 22, 1.2, 'bs'), ...[[14, 52], [24, 50], [36, 52], [46, 48]].map(([x, y]) => [E(x, y, 3, 1.8, 'ik'), C(x + 3, y, 1.4, 'ik'), S(`M${x - 2} ${y + 1} L${x - 3} ${y + 4} M${x + 1} ${y + 1} L${x + 1} ${y + 4}`, 'ik', 0.7)]).flat(), S('M2 56 L58 56', 'lo', 2)],
+  ovenbird_family: () => [P('M8 52 Q8 24 30 24 Q52 24 52 52 Z', 'bs'), S('M12 40 L48 40 M14 32 L46 32', 'ik', 0.8), E(22, 46, 4, 6, 'ik'), ...eBird(46, 14, 0.8, 'hi'), S('M2 52 L58 52', 'lo', 3)],
+  tyrant_flycatcher: () => [...eBird(26, 38, 1.4, 'hi'), P('M14 22 L18 12 L22 20 L26 12 L28 22 Z', 'bs'), ...eFly(46, 14, 0.4, 'hi'), C(48, 20, 1.6, 'ik'), S('M2 54 L50 54', 'lo', 3)],
+  sulidae: () => [...gSea(40).slice(0, 3), P('M8 8 L24 20 L20 24 Z', 'hi'), E(34, 28, 12, 4, 'hi'), P('M44 28 L58 22 L50 32 Z', 'hi'), S('M22 20 L10 6 M30 26 L14 36', 'ik', 2), C(26, 28, 1.2, 'ik'), P('M24 26 L16 30 L24 30 Z', 'ik')],
+  procellariiformes: () => [P('M2 26 Q16 14 30 28 Q44 14 58 26 Q44 24 30 36 Q16 24 2 26 Z', 'hi'), E(30, 32, 6, 4, 'hi'), C(26, 30, 3, 'hi'), P('M22 30 L14 32 L22 33 Z', 'ik'), S('M24 28 L20 26', 'ik', 1.2), ...gAll(gSea(46).slice(0, 2))],
+  procyonidae: () => [E(30, 34, 17, 15, 'bs'), P('M16 26 L14 14 L24 22 Z', 'bs'), P('M44 26 L46 14 L36 22 Z', 'bs'), box(12, 28, 36, 8, 'ik'), C(22, 32, 2.2, 'hi'), C(38, 32, 2.2, 'hi'), C(22, 32, 1, 'ik'), C(38, 32, 1, 'ik'), E(30, 42, 4, 3, 'ik'), E(30, 44, 7, 4, 'hi'), S('M22 8 L24 6 M38 8 L36 6', 'ik', 0)],
+  dasyuromorphia: () => [E(32, 38, 13, 7, 'ik'), E(16, 36, 5.6, 5, 'ik'), P('M12 32 L11 27 L16 31 Z', 'ik'), P('M17 30 L20 26 L21 33 Z', 'ik'), S('M20 38 L24 42 L26 38', 'hi', 1.4), P('M30 32 L38 36 L30 40 Z', 'hi'), S('M24 44 L24 50 M38 44 L38 50', 'ik', 2), S('M45 38 Q54 40 54 46', 'ik', 2.4), C(15, 35, 0.8, 'hi')],
+  peramelemorphia: () => [E(32, 38, 12, 8, 'bs'), P('M20 34 L4 38 L20 42 Z', 'bs'), E(24, 26, 3, 9, 'bs'), E(30, 26, 3, 9, 'bs'), E(24, 26, 1.2, 6, 'hi'), C(20, 36, 1.2, 'ik'), S('M24 46 L22 54 M38 46 L40 54', 'ik', 2), S('M44 38 Q54 36 56 30', 'ik', 1.6), S('M14 40 L8 38', 'hi', 0)],
+  urology: () => [P('M14 14 Q4 26 12 40 Q20 48 24 38 Q22 30 26 24 Q20 12 14 14 Z', 'bs'), P('M46 14 Q56 26 48 40 Q40 48 36 38 Q38 30 34 24 Q40 12 46 14 Z', 'bs'), S('M24 38 Q30 46 30 54 M36 38 Q30 46 30 54', 'ik', 1.4), ...hCross(50, 10, 0.7, 'hi')],
+  medical_test: () => [P('M24 6 L36 6 L36 46 Q36 54 30 54 Q24 54 24 46 Z', 'hi'), P('M24 30 L36 30 L36 46 Q36 54 30 54 Q24 54 24 46 Z', 'bs'), S('M22 6 L38 6', 'ik', 2), ...hClip(48, 20, 0.8)],
+  white: () => [...Array.from({ length: 6 }, (_, i) => { const a = (i / 6) * Math.PI; return S(`M${n(30 - Math.cos(a) * 20)} ${n(30 - Math.sin(a) * 20)} L${n(30 + Math.cos(a) * 20)} ${n(30 + Math.sin(a) * 20)}`, 'hi', 2.6); }), C(30, 30, 5, 'hi'), ...gCloud(30).slice(0, 0)],
+  black: () => [C(30, 30, 22, 'ik'), ring('hi', 30, 30, 22, 1.4), E(40, 22, 8, 6, 'bs')],
+  grey: () => [E(30, 36, 24, 10, 'bs'), C(16, 30, 9, 'bs'), C(30, 24, 11, 'hi'), C(44, 30, 9, 'bs'), E(30, 44, 22, 5, 'bs'), S('M14 52 L18 56 M30 52 L28 58 M44 52 L46 56', 'ik', 1.4)],
+  red: () => [C(30, 36, 18, 'hi'), P('M30 20 Q26 10 20 8 Q24 18 30 20 Z', 'bs'), S('M30 20 L30 12', 'ik', 2), P('M16 30 Q18 22 26 22', 'bs', 0).slice(0, 0), hHeart(30, 38, 0.9, 'ik')],
+  yellow: () => [...gSun(30, 30, 11), ...Array.from({ length: 12 }, (_, i) => { const a = (i / 12) * Math.PI * 2; return S(`M${n(30 + Math.cos(a) * 15)} ${n(30 + Math.sin(a) * 15)} L${n(30 + Math.cos(a) * 24)} ${n(30 + Math.sin(a) * 24)}`, 'hi', 2.4); })],
+  green: () => [pLf(30, 50, 3, 0), S('M30 50 L30 14', 'ik', 1.4), S('M30 40 L22 32 M30 32 L38 24 M30 26 L24 20', 'ik', 1), S('M30 50 L30 58', 'ik', 2)],
+  blue: () => [hDrop(30, 26, 3, 'hi'), ...gAll(gSea(44).slice(0, 3)), ring('ik', 30, 26, 0, 0).slice(0, 0)],
+  pink: () => [...pFlow(30, 28, 2.8, 5, 'hi', 'bs', 5.6), S('M30 40 L30 58', 'ik', 2), pLf(24, 52, 1.2, -4)],
+  purple: () => [...[[22, 20], [32, 20], [17, 28], [27, 28], [37, 28], [22, 36], [32, 36], [27, 44]].map(([x, y]) => C(x, y, 5.4, 'bs')), S('M28 14 L28 8 Q34 4 38 8', 'ik', 2), pLf(40, 12, 0.8, 4)],
+  brown: () => [E(30, 42, 22, 10, 'bs'), E(30, 40, 22, 6, 'hi'), ring('ik', 30, 40, 0, 0).slice(0, 0), S('M10 40 Q30 34 50 40', 'ik', 1), S('M20 24 L40 24', 'bs', 5), ...[[12, 36], [46, 36]].map(([x, y]) => E(x, y, 3, 6, 'ik'))],
+  field_research: () => [P('M6 52 L30 14 L54 52 Z', 'hi'), S('M30 14 L30 52', 'ik', 1.4), S('M2 52 L58 52', 'lo', 3), ring('ik', 44, 26, 7, 2.4), S('M49 31 L56 38', 'ik', 3), C(44, 26, 5, 'bs').slice(0, 5)],
+  information_science: () => [box(6, 12, 22, 34, 'hi'), S('M10 20 L24 20 M10 26 L24 26 M10 32 L20 32', 'ik', 1.2), C(40, 20, 4, 'bs'), C(52, 36, 4, 'bs'), C(36, 46, 4, 'bs'), S('M28 24 L36 21 M42 24 L50 33 M40 44 L48 38 M34 44 L30 40', 'ik', 1.4)],
+  methodology: () => [box(4, 22, 14, 14, 'hi'), box(23, 22, 14, 14, 'hi'), box(42, 22, 14, 14, 'hi'), ...mtArrow(18, 29, 23, 29, 'ik', 1.8), ...mtArrow(37, 29, 42, 29, 'ik', 1.8), S('M8 28 L14 28 M27 28 L33 28 M46 28 L52 28', 'ik', 1.2)],
+  qualitative_research: () => [...jBubble(20, 20, 14, 9, 'hi'), ...jBubble(40, 40, 14, 9, 'bs'), S('M12 18 L28 18 M12 23 L24 23', 'ik', 1.2), S('M32 38 L48 38 M32 43 L44 43', 'hi', 1.2)],
+  quantitative_research: () => [...mtAx(6, 52), box(12, 34, 7, 18, 'bs'), box(23, 22, 7, 30, 'hi'), box(34, 14, 7, 38, 'bs'), box(45, 28, 7, 24, 'hi')],
+  natural_units: () => [...jAtom(30, 30, 1.2), S('M6 52 L16 52 M44 52 L54 52', 'ik', 1.4), E(30, 52, 4, 3, 'hi')],
+  planck_units: () => [...Array.from({ length: 5 }, (_, i) => S(`M${12 + i * 9} 12 L${12 + i * 9} 48`, 'ik', 0.8)), ...Array.from({ length: 5 }, (_, i) => S(`M10 ${14 + i * 8.5} L50 ${14 + i * 8.5}`, 'ik', 0.8)), C(30, 30, 4, 'hi'), ring('ik', 30, 30, 4, 1)],
+  us_customary_units: () => [...jRuler(30, 24, 48, 1.2), ...[0, 1, 2, 3, 4].map(i => box(6, n(36 + i * 4), 48, 2.4, i % 2 ? 'hi' : 'bs')), box(6, 36, 14, 10, 'ik'), ...[[9, 39], [14, 39], [11, 42], [17, 42]].map(([x, y]) => C(x, y, 0.9, 'hi'))],
+  imperial_units: () => [...jRuler(30, 38, 48, 1.2), ...hCap(30, 22, 0.8, 'hi').slice(0, 0), P('M16 24 L20 12 L25 20 L30 8 L35 20 L40 12 L44 24 Z', 'hi'), box(16, 24, 28, 5, 'bs')],
+  standard_atmosphere_unit: () => [...hGauge(30, 28, 1.7, -0.4), S('M6 54 Q30 44 54 54', 'bs', 3), S('M10 12 Q30 2 50 12', 'lo', 1.6)],
+  dalton_unit: () => [...jAtom(22, 26, 0.9), box(32, 42, 24, 8, 'hi'), S('M40 42 L40 38 M46 42 L46 38', 'ik', 1.4), E(44, 34, 8, 4, 'bs'), C(12, 48, 2, 'hi'), S('M4 54 L56 54', 'lo', 2)],
+  pound_mass: () => [P('M12 54 L18 24 L42 24 L48 54 Z', 'bs'), E(30, 24, 12, 4, 'hi'), ring('ik', 30, 20, 5, 2.4), S('M20 40 Q30 44 40 40', 'hi', 1.4), S('M2 56 L58 56', 'lo', 2)],
+  degree_angle: () => [P('M6 48 L54 48 Q54 14 30 12 Q6 14 6 48 Z', 'hi'), S('M6 48 L54 48', 'ik', 1.6), ...Array.from({ length: 9 }, (_, i) => { const a = Math.PI - (i / 8) * Math.PI; return S(`M${n(30 + Math.cos(a) * 24)} ${n(48 - Math.sin(a) * 34)} L${n(30 + Math.cos(a) * 19)} ${n(48 - Math.sin(a) * 28)}`, 'ik', 1); }), S('M30 48 L46 24', 'ik', 1.4), C(30, 48, 2, 'ik')],
+  candela: () => [box(24, 30, 12, 24, 'hi'), P('M30 12 Q38 22 30 30 Q22 22 30 12 Z', 'bs'), S('M30 30 L30 34', 'ik', 1.4), ...Array.from({ length: 8 }, (_, i) => { const a = (i / 8) * Math.PI * 2; return S(`M${n(30 + Math.cos(a) * 12)} ${n(21 + Math.sin(a) * 12)} L${n(30 + Math.cos(a) * 17)} ${n(21 + Math.sin(a) * 17)}`, 'hi', 1.2); }), S('M18 54 L42 54', 'ik', 2)],
+  farad: () => [S('M4 30 L24 30 M36 30 L56 30', 'ik', 2.4), box(24, 14, 3, 32, 'hi'), box(33, 14, 3, 32, 'hi'), S('M14 12 L14 20 M10 16 L18 16', 'bs', 1.4), S('M44 12 L52 12', 'bs', 1.4)],
+  coulomb: () => [C(30, 30, 16, 'hi'), S('M30 20 L30 40 M20 30 L40 30', 'ik', 3), ...Array.from({ length: 8 }, (_, i) => { const a = (i / 8) * Math.PI * 2; return S(`M${n(30 + Math.cos(a) * 19)} ${n(30 + Math.sin(a) * 19)} L${n(30 + Math.cos(a) * 25)} ${n(30 + Math.sin(a) * 25)}`, 'bs', 1.2); })],
+  siemens_unit: () => [S('M2 30 L10 30 L14 20 L20 40 L26 20 L32 40 L38 20 L42 30 L58 30', 'ik', 2.2), S('M6 48 L54 48', 'hi', 2), P('M50 44 L56 48 L50 52 Z', 'hi')],
+  becquerel: () => [...jTrefoil(30, 30, 18), ...Array.from({ length: 6 }, (_, i) => S(`M${4 + i * 9} 54 L${4 + i * 9} 50`, 'ik', 1.2)), S('M2 56 L58 56', 'lo', 1.4)],
+  gray_unit: () => [...jTrefoil(18, 20, 10), ...mMan(40, 30, 0.9, 'bs'), S('M26 22 L34 26', 'ik', 1.4)],
+  sievert: () => [...jTrefoil(18, 20, 10), hHeart(40, 34, 1.4, 'hi'), S('M26 22 L34 28', 'ik', 1.4), S('M6 54 L54 54', 'lo', 2)],
+  night: () => [P('M26 8 Q10 14 10 32 Q10 52 30 54 Q42 54 50 44 Q36 46 28 36 Q20 26 26 8 Z', 'hi'), jStar(44, 16, 4), jStar(52, 30, 2.4), jStar(40, 36, 2), jStar(10, 52, 2.4), jStar(20, 6, 2)],
+  geosynchronous_orbit: () => [C(30, 30, 11, 'bs'), E(30, 30, 24, 10, 'lo'), ring('ik', 30, 30, 11, 0).slice(0, 0), S('M6 30 Q30 18 54 30', 'ik', 0.1), box(46, 18, 8, 5, 'hi'), S('M44 20 L40 20 M56 20 L60 20', 'ik', 1.4), S('M50 23 L50 27', 'ik', 1), mtPlot(u => [30 + Math.cos(u * 6.2832) * 24, 30 + Math.sin(u * 6.2832) * 24], 0, 1, 40, 'ik', 1)],
+  equatorial_coordinate_system: () => [ring('ik', 30, 30, 22, 1.6), E(30, 30, 22, 7, 'lo'), S('M30 8 L30 52', 'ik', 1.2), S('M8 30 L52 30', 'ik', 1.2), jStar(40, 20, 3.4, 'hi'), S('M40 20 L40 30', 'ik', 0.8), S('M30 30 L40 30', 'ik', 0.8), C(30, 30, 1.6, 'ik')],
+  centaurus: () => [E(32, 38, 14, 7, 'bs'), S('M22 42 L20 54 M28 44 L26 54 M38 44 L40 54 M44 42 L48 54', 'ik', 2), S('M22 36 L22 20', 'bs', 5), C(22, 16, 4, 'hi'), S('M22 22 L12 26', 'ik', 1.4), jStar(8, 8, 2.4), jStar(50, 10, 3), jStar(54, 24, 2)],
+  crux: () => [jStar(30, 8, 5), jStar(30, 52, 5), jStar(14, 30, 4), jStar(46, 28, 4), jStar(38, 38, 2.4, 'bs'), S('M30 12 L30 48 M18 30 L42 29', 'ik', 0.8)],
+  photometry_astronomy: () => [S('M8 52 L40 18', 'ik', 6), S('M8 52 L40 18', 'hi', 2.4), S('M36 14 L48 28', 'ik', 3), S('M44 10 Q54 6 56 16', 'ik', 1.4), jStar(16, 14, 4), jStar(48, 46, 3), S('M20 28 L30 28 M14 34 L26 34', 'lo', 1)],
+  galaxy_groups_and_clusters: () => [jSpiral(16, 18, 9, 'bs', 2, 0), jSpiral(42, 14, 7, 'hi', 2, 1), jSpiral(30, 36, 11, 'bs', 2.4, 2), jSpiral(12, 46, 6, 'hi', 1.8, 3), jSpiral(48, 46, 8, 'hi', 2, 4), C(16, 18, 1.6, 'hi'), C(30, 36, 2, 'hi')].filter(Boolean),
+  void_astronomy: () => [ring('ik', 30, 30, 20, 1.6), ...[[8, 12], [14, 50], [52, 14], [48, 52], [6, 32], [54, 34], [30, 5], [30, 56]].map(([x, y]) => C(x, y, 2, 'hi')), C(30, 30, 1.2, 'hi'), C(36, 26, 1, 'bs')],
+  galaxy_formation_and_evolution: () => [jSpiral(30, 30, 24, 'bs', 3, 0), jSpiral(30, 30, 20, 'hi', 2, 3.14), C(30, 30, 4, 'hi'), ...[[8, 10], [52, 12], [54, 50], [8, 52]].map(([x, y]) => C(x, y, 1.4, 'hi'))],
+};
+for (const [id, fn] of Object.entries(MJ)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
 /* ── build ────────────────────────────────────────────────────────────────*/
 
 const out = {};

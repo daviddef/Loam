@@ -24091,7 +24091,6 @@
       "wild"
     ],
     "fact": "Comb-like lamellae line the bill, worked upside-down in the mud to filter out its food.",
-    "terminal": true,
     "taxon": "tx_phoenicopteriformes"
   },
   {
@@ -24104,7 +24103,6 @@
       "wild"
     ],
     "fact": "A sheet of tendon locks the wing open at the shoulder, so it glides on the wind without spending muscle.",
-    "terminal": true,
     "taxon": "tx_diomedeidae"
   },
   {
@@ -34243,8 +34241,7 @@
     "tags": [
       "tool"
     ],
-    "fact": "Michael Faraday made the first rubber ones in 1824 — to hold hydrogen for lectures, not parties.",
-    "terminal": true
+    "fact": "Michael Faraday made the first rubber ones in 1824 — to hold hydrogen for lectures, not parties."
   },
   {
     "id": "ball",
@@ -132478,5 +132475,841 @@
     ],
     "fact": "A perception with no external stimulus that feels real.",
     "src": "https://en.wikipedia.org/wiki/Hallucination"
+  },
+  {
+    "id": "brachyura",
+    "name": "True Crabs",
+    "emoji": "🦀",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The true crabs, with a short abdomen tucked under the thorax.",
+    "src": "https://en.wikipedia.org/wiki/Brachyura"
+  },
+  {
+    "id": "ophidiiformes",
+    "name": "Cusk-eels",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An order of ray-finned fish with small heads and long slender bodies.",
+    "src": "https://en.wikipedia.org/wiki/Ophidiiformes"
+  },
+  {
+    "id": "scorpaeniformes",
+    "name": "Scorpionfish and Relatives",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A diverse order of ray-finned fish including stonefish and lionfish.",
+    "src": "https://en.wikipedia.org/wiki/Scorpaeniformes"
+  },
+  {
+    "id": "batomorphi",
+    "name": "Rays and Skates",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The rays, a division of cartilaginous fishes.",
+    "src": "https://en.wikipedia.org/wiki/Batomorphi"
+  },
+  {
+    "id": "perciformes",
+    "name": "Perch-like Fishes",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An order of ray-finned fish whose name means perch-like.",
+    "src": "https://en.wikipedia.org/wiki/Perciformes"
+  },
+  {
+    "id": "cyprinodontiformes",
+    "name": "Killifish and Relatives",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An order of mostly small freshwater fish, including killifish.",
+    "src": "https://en.wikipedia.org/wiki/Cyprinodontiformes"
+  },
+  {
+    "id": "gobioidei",
+    "name": "Gobies",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A suborder of fish, many called gobies.",
+    "src": "https://en.wikipedia.org/wiki/Gobioidei"
+  },
+  {
+    "id": "serranidae",
+    "name": "Sea Basses and Groupers",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A family of marine fish including sea basses.",
+    "src": "https://en.wikipedia.org/wiki/Serranidae"
+  },
+  {
+    "id": "tetraodontidae",
+    "name": "Pufferfish",
+    "emoji": "🐡",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The pufferfish family.",
+    "src": "https://en.wikipedia.org/wiki/Tetraodontidae"
+  },
+  {
+    "id": "characiformes",
+    "name": "Characins",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An order of ray-finned fish including piranhas and tetras.",
+    "src": "https://en.wikipedia.org/wiki/Characiformes"
+  },
+  {
+    "id": "ilish",
+    "name": "Hilsa",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The hilsa, a prized food fish and the national fish of Bangladesh.",
+    "src": "https://en.wikipedia.org/wiki/Ilish"
+  },
+  {
+    "id": "cypriniformes",
+    "name": "Carps and Minnows",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The order of carps, minnows, barbs and loaches.",
+    "src": "https://en.wikipedia.org/wiki/Cypriniformes"
+  },
+  {
+    "id": "galaxiidae",
+    "name": "Galaxiids",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A family of small freshwater fish of the Southern Hemisphere.",
+    "src": "https://en.wikipedia.org/wiki/Galaxiidae"
+  },
+  {
+    "id": "salmonidae",
+    "name": "Salmon Family",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The salmon family, coldwater predatory fish.",
+    "src": "https://en.wikipedia.org/wiki/Salmonidae"
+  },
+  {
+    "id": "loricariidae",
+    "name": "Armored Catfish",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The largest family of catfish, from tropical South America.",
+    "src": "https://en.wikipedia.org/wiki/Loricariidae"
+  },
+  {
+    "id": "hylidae",
+    "name": "Tree Frogs",
+    "emoji": "🐸",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The tree frogs and their allies.",
+    "src": "https://en.wikipedia.org/wiki/Hylidae"
+  },
+  {
+    "id": "leptodactylidae",
+    "name": "Southern Frogs",
+    "emoji": "🐸",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The southern frogs, named from the Greek for slender toes.",
+    "src": "https://en.wikipedia.org/wiki/Leptodactylidae"
+  },
+  {
+    "id": "ranidae",
+    "name": "True Frogs",
+    "emoji": "🐸",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The true frogs, the most widespread frog family.",
+    "src": "https://en.wikipedia.org/wiki/Ranidae"
+  },
+  {
+    "id": "columbidae",
+    "name": "Pigeons and Doves",
+    "emoji": "🕊️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The dove and pigeon family.",
+    "src": "https://en.wikipedia.org/wiki/Columbidae"
+  },
+  {
+    "id": "gruiformes",
+    "name": "Cranes, Rails and Relatives",
+    "emoji": "🦩",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An order of bird families whose name means crane form.",
+    "src": "https://en.wikipedia.org/wiki/Gruiformes"
+  },
+  {
+    "id": "corvidae",
+    "name": "Crows and Jays",
+    "emoji": "🐦‍⬛",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The crow family: crows, ravens, magpies and jays.",
+    "src": "https://en.wikipedia.org/wiki/Corvidae"
+  },
+  {
+    "id": "cardinalidae",
+    "name": "Cardinals and Grosbeaks",
+    "emoji": "🐦",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The cardinals, grosbeaks and buntings of the New World.",
+    "src": "https://en.wikipedia.org/wiki/Cardinalidae"
+  },
+  {
+    "id": "icterid",
+    "name": "Icterids",
+    "emoji": "🐦",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The New World blackbirds.",
+    "src": "https://en.wikipedia.org/wiki/Icterid"
+  },
+  {
+    "id": "old_world_flycatcher",
+    "name": "Old World Flycatchers",
+    "emoji": "🐦",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Small tree-dwelling insect-eaters of the Old World.",
+    "src": "https://en.wikipedia.org/wiki/Old_World_flycatcher"
+  },
+  {
+    "id": "ploceidae",
+    "name": "Weavers",
+    "emoji": "🐦",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The weavers, named for their intricately woven nests.",
+    "src": "https://en.wikipedia.org/wiki/Ploceidae"
+  },
+  {
+    "id": "old_world_sparrow",
+    "name": "Old World Sparrows",
+    "emoji": "🐦",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The true sparrows, a family of small passerine birds.",
+    "src": "https://en.wikipedia.org/wiki/Old_World_sparrow"
+  },
+  {
+    "id": "starling",
+    "name": "Starling",
+    "emoji": "🐦",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Glossy passerine birds known for mimicry and swarming murmurations.",
+    "src": "https://en.wikipedia.org/wiki/Starling"
+  },
+  {
+    "id": "antbird",
+    "name": "Antbirds",
+    "emoji": "🐜",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A large passerine family of tropical Central and South America.",
+    "src": "https://en.wikipedia.org/wiki/Antbird"
+  },
+  {
+    "id": "ovenbird_family",
+    "name": "Ovenbirds",
+    "emoji": "🐦",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Small suboscine birds of Central and South America, the furnariids.",
+    "src": "https://en.wikipedia.org/wiki/Ovenbird_(family)"
+  },
+  {
+    "id": "tyrant_flycatcher",
+    "name": "Tyrant Flycatchers",
+    "emoji": "🐦",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A family of New World passerines, the world's largest bird family.",
+    "src": "https://en.wikipedia.org/wiki/Tyrant_flycatcher"
+  },
+  {
+    "id": "sulidae",
+    "name": "Gannets and Boobies",
+    "emoji": "🐦",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The gannets and boobies, seabirds that plunge-dive for fish.",
+    "src": "https://en.wikipedia.org/wiki/Sulidae"
+  },
+  {
+    "id": "procellariiformes",
+    "name": "Tubenoses",
+    "emoji": "🐦",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The tubenoses: albatrosses, petrels and shearwaters.",
+    "src": "https://en.wikipedia.org/wiki/Procellariiformes"
+  },
+  {
+    "id": "procyonidae",
+    "name": "Raccoon Family",
+    "emoji": "🦝",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The raccoon family of the New World.",
+    "src": "https://en.wikipedia.org/wiki/Procyonidae"
+  },
+  {
+    "id": "dasyuromorphia",
+    "name": "Carnivorous Marsupials",
+    "emoji": "🦘",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An order of Australian carnivorous marsupials.",
+    "src": "https://en.wikipedia.org/wiki/Dasyuromorphia"
+  },
+  {
+    "id": "peramelemorphia",
+    "name": "Bandicoots and Bilbies",
+    "emoji": "🦘",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The bandicoots and bilbies.",
+    "src": "https://en.wikipedia.org/wiki/Peramelemorphia"
+  },
+  {
+    "id": "urology",
+    "name": "Urology",
+    "emoji": "🩺",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The branch of medicine for diseases of the urinary system.",
+    "src": "https://en.wikipedia.org/wiki/Urology"
+  },
+  {
+    "id": "medical_test",
+    "name": "Medical Test",
+    "emoji": "🧪",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A procedure to detect, diagnose or monitor disease.",
+    "src": "https://en.wikipedia.org/wiki/Medical_test"
+  },
+  {
+    "id": "white",
+    "name": "White",
+    "emoji": "⚪",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The lightest colour, that of snow, chalk and milk.",
+    "src": "https://en.wikipedia.org/wiki/White"
+  },
+  {
+    "id": "black",
+    "name": "Black",
+    "emoji": "⚫",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The colour that results from the absence of visible light.",
+    "src": "https://en.wikipedia.org/wiki/Black"
+  },
+  {
+    "id": "grey",
+    "name": "Grey",
+    "emoji": "🩶",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A neutral colour between black and white.",
+    "src": "https://en.wikipedia.org/wiki/Grey"
+  },
+  {
+    "id": "red",
+    "name": "Red",
+    "emoji": "🔴",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The colour at the long-wavelength end of visible light.",
+    "src": "https://en.wikipedia.org/wiki/Red"
+  },
+  {
+    "id": "yellow",
+    "name": "Yellow",
+    "emoji": "🟡",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A colour between green and orange.",
+    "src": "https://en.wikipedia.org/wiki/Yellow"
+  },
+  {
+    "id": "green",
+    "name": "Green",
+    "emoji": "🟢",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The colour between cyan and yellow.",
+    "src": "https://en.wikipedia.org/wiki/Green"
+  },
+  {
+    "id": "blue",
+    "name": "Blue",
+    "emoji": "🔵",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A primary colour between violet and cyan.",
+    "src": "https://en.wikipedia.org/wiki/Blue"
+  },
+  {
+    "id": "pink",
+    "name": "Pink",
+    "emoji": "🩷",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A pale tint of red, the colour of the pink flower.",
+    "src": "https://en.wikipedia.org/wiki/Pink"
+  },
+  {
+    "id": "purple",
+    "name": "Purple",
+    "emoji": "🟣",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A colour like violet light, made by combining red and blue.",
+    "src": "https://en.wikipedia.org/wiki/Purple"
+  },
+  {
+    "id": "brown",
+    "name": "Brown",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A darker, desaturated shade of orange.",
+    "src": "https://en.wikipedia.org/wiki/Brown"
+  },
+  {
+    "id": "field_research",
+    "name": "Field Research",
+    "emoji": "🧭",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Collecting raw data outside the laboratory, library or workplace.",
+    "src": "https://en.wikipedia.org/wiki/Field_research"
+  },
+  {
+    "id": "information_science",
+    "name": "Information Science",
+    "emoji": "ℹ️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The academic field concerned with collecting, storing and retrieving information.",
+    "src": "https://en.wikipedia.org/wiki/Information_science"
+  },
+  {
+    "id": "methodology",
+    "name": "Methodology",
+    "emoji": "📋",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The study of research methods.",
+    "src": "https://en.wikipedia.org/wiki/Methodology"
+  },
+  {
+    "id": "qualitative_research",
+    "name": "Qualitative Research",
+    "emoji": "💬",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Research gathering non-numerical data to understand social reality.",
+    "src": "https://en.wikipedia.org/wiki/Qualitative_research"
+  },
+  {
+    "id": "quantitative_research",
+    "name": "Quantitative Research",
+    "emoji": "🔢",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Research that quantifies the collection and analysis of data.",
+    "src": "https://en.wikipedia.org/wiki/Quantitative_research"
+  },
+  {
+    "id": "natural_units",
+    "name": "Natural Units",
+    "emoji": "⚛️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Measurement systems in which chosen physical constants are fixed.",
+    "src": "https://en.wikipedia.org/wiki/Natural_units"
+  },
+  {
+    "id": "planck_units",
+    "name": "Planck Units",
+    "emoji": "⚛️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A system of units defined from four universal constants.",
+    "src": "https://en.wikipedia.org/wiki/Planck_units"
+  },
+  {
+    "id": "us_customary_units",
+    "name": "US Customary Units",
+    "emoji": "🇺🇸",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The measurement system used in the United States.",
+    "src": "https://en.wikipedia.org/wiki/United_States_customary_units"
+  },
+  {
+    "id": "imperial_units",
+    "name": "Imperial Units",
+    "emoji": "👑",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The British system of units first defined by statute.",
+    "src": "https://en.wikipedia.org/wiki/Imperial_units"
+  },
+  {
+    "id": "standard_atmosphere_unit",
+    "name": "Standard Atmosphere",
+    "emoji": "🌍",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A unit of pressure used as a reference pressure.",
+    "src": "https://en.wikipedia.org/wiki/Standard_atmosphere_(unit)"
+  },
+  {
+    "id": "dalton_unit",
+    "name": "Dalton",
+    "emoji": "⚛️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The unified atomic mass unit.",
+    "src": "https://en.wikipedia.org/wiki/Dalton_(unit)"
+  },
+  {
+    "id": "pound_mass",
+    "name": "Pound",
+    "emoji": "⚖️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A unit of mass in the imperial and US customary systems.",
+    "src": "https://en.wikipedia.org/wiki/Pound_(mass)"
+  },
+  {
+    "id": "degree_angle",
+    "name": "Degree",
+    "emoji": "📐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A unit of plane angle.",
+    "src": "https://en.wikipedia.org/wiki/Degree_(angle)"
+  },
+  {
+    "id": "candela",
+    "name": "Candela",
+    "emoji": "🕯️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The SI unit of luminous intensity.",
+    "src": "https://en.wikipedia.org/wiki/Candela"
+  },
+  {
+    "id": "farad",
+    "name": "Farad",
+    "emoji": "⚡",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The unit of electrical capacitance.",
+    "src": "https://en.wikipedia.org/wiki/Farad"
+  },
+  {
+    "id": "coulomb",
+    "name": "Coulomb",
+    "emoji": "⚡",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The unit of electric charge.",
+    "src": "https://en.wikipedia.org/wiki/Coulomb"
+  },
+  {
+    "id": "siemens_unit",
+    "name": "Siemens",
+    "emoji": "⚡",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The unit of electric conductance.",
+    "src": "https://en.wikipedia.org/wiki/Siemens_(unit)"
+  },
+  {
+    "id": "becquerel",
+    "name": "Becquerel",
+    "emoji": "☢️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The unit of radioactivity.",
+    "src": "https://en.wikipedia.org/wiki/Becquerel"
+  },
+  {
+    "id": "gray_unit",
+    "name": "Gray",
+    "emoji": "☢️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The unit of ionizing radiation dose.",
+    "src": "https://en.wikipedia.org/wiki/Gray_(unit)"
+  },
+  {
+    "id": "sievert",
+    "name": "Sievert",
+    "emoji": "☢️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The unit representing the health risk of ionizing radiation.",
+    "src": "https://en.wikipedia.org/wiki/Sievert"
+  },
+  {
+    "id": "night",
+    "name": "Night",
+    "emoji": "🌙",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The period of darkness when the Sun is below the horizon.",
+    "src": "https://en.wikipedia.org/wiki/Night"
+  },
+  {
+    "id": "geosynchronous_orbit",
+    "name": "Geosynchronous Orbit",
+    "emoji": "🛰️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An orbit whose period matches the Earth's rotation.",
+    "src": "https://en.wikipedia.org/wiki/Geosynchronous_orbit"
+  },
+  {
+    "id": "equatorial_coordinate_system",
+    "name": "Equatorial Coordinate System",
+    "emoji": "🧭",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A celestial coordinate system for specifying positions of objects.",
+    "src": "https://en.wikipedia.org/wiki/Equatorial_coordinate_system"
+  },
+  {
+    "id": "centaurus",
+    "name": "Centaurus",
+    "emoji": "✨",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A bright southern constellation representing a centaur.",
+    "src": "https://en.wikipedia.org/wiki/Centaurus"
+  },
+  {
+    "id": "crux",
+    "name": "Crux",
+    "emoji": "✨",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The southern constellation of the Southern Cross.",
+    "src": "https://en.wikipedia.org/wiki/Crux"
+  },
+  {
+    "id": "photometry_astronomy",
+    "name": "Photometry",
+    "emoji": "🔭",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Measuring the intensity of light from astronomical objects.",
+    "src": "https://en.wikipedia.org/wiki/Photometry_(astronomy)"
+  },
+  {
+    "id": "galaxy_groups_and_clusters",
+    "name": "Galaxy Groups and Clusters",
+    "emoji": "🌌",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The largest known gravitationally bound objects.",
+    "src": "https://en.wikipedia.org/wiki/Galaxy_groups_and_clusters"
+  },
+  {
+    "id": "void_astronomy",
+    "name": "Cosmic Void",
+    "emoji": "🕳️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Vast spaces between filaments that contain very few galaxies.",
+    "src": "https://en.wikipedia.org/wiki/Void_(astronomy)"
+  },
+  {
+    "id": "galaxy_formation_and_evolution",
+    "name": "Galaxy Formation and Evolution",
+    "emoji": "🌌",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "How galaxies formed and have changed over time.",
+    "src": "https://en.wikipedia.org/wiki/Galaxy_formation_and_evolution"
   }
 ]

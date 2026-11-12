@@ -137042,5 +137042,765 @@
     "why": "A hallucination is a perception in the absence of an external context stimulus that has the compelling sense of reality.",
     "src": "https://en.wikipedia.org/wiki/Hallucination",
     "verified": true
+  },
+  {
+    "in": [
+      "crab",
+      "sea"
+    ],
+    "out": "brachyura",
+    "why": "Brachyura is an infraorder of decapod crustaceans comprising the true crabs. They typically have a very short projecting tail-like abdomen, usually hidden entirely under the thorax.",
+    "src": "https://en.wikipedia.org/wiki/Brachyura",
+    "verified": true
+  },
+  {
+    "in": [
+      "eel",
+      "fish"
+    ],
+    "out": "ophidiiformes",
+    "why": "Ophidiiformes is an order of ray-finned fish that includes the cusk-eels, pearlfishes, viviparous brotulas, and others. Members of this order have small heads and long slender bodies.",
+    "src": "https://en.wikipedia.org/wiki/Ophidiiformes",
+    "verified": true
+  },
+  {
+    "in": [
+      "fish",
+      "spine"
+    ],
+    "out": "scorpaeniformes",
+    "why": "The Scorpaeniformes are a diverse order of ray-finned fish, encompassing species such as the stonefish, lionfish, and sculpins. It is one of the five largest orders of bony fishes by number of species.",
+    "src": "https://en.wikipedia.org/wiki/Scorpaeniformes",
+    "verified": true
+  },
+  {
+    "in": [
+      "fish",
+      "ray"
+    ],
+    "out": "batomorphi",
+    "why": "Batomorphi is a division of cartilaginous fishes, commonly known as rays. Batomorphi, along with the shark division Selachii, both compose the subclass Elasmobranchii.",
+    "src": "https://en.wikipedia.org/wiki/Batomorphi",
+    "verified": true
+  },
+  {
+    "in": [
+      "perch",
+      "fish"
+    ],
+    "out": "perciformes",
+    "why": "Perciformes is an order of ray-finned fish in the clade Percomorpha. Perciformes means perch-like.",
+    "src": "https://en.wikipedia.org/wiki/Perciformes",
+    "verified": true
+  },
+  {
+    "in": [
+      "fish",
+      "desert"
+    ],
+    "out": "cyprinodontiformes",
+    "why": "Cyprinodontiformes is an order of ray-finned fish, comprising mostly small, freshwater fish. Many popular aquarium fish, such as killifish and live-bearers, are included.",
+    "src": "https://en.wikipedia.org/wiki/Cyprinodontiformes",
+    "verified": true
+  },
+  {
+    "in": [
+      "fish",
+      "rock"
+    ],
+    "out": "gobioidei",
+    "why": "The Gobioidei are a suborder of percomorph fish. Many of these fishes are called gobies.",
+    "src": "https://en.wikipedia.org/wiki/Gobioidei",
+    "verified": true
+  },
+  {
+    "in": [
+      "fish",
+      "grouper"
+    ],
+    "out": "serranidae",
+    "why": "Serranidae is a family of marine fish belonging to the order Perciformes. The family used to contain some of the sea basses and groupers, but taxonomic revisions split out groupers, soapfish, and anthias; as a consequence, this family is now much less speciose.",
+    "src": "https://en.wikipedia.org/wiki/Serranidae",
+    "verified": true
+  },
+  {
+    "in": [
+      "fish",
+      "balloon"
+    ],
+    "out": "tetraodontidae",
+    "why": "Tetraodontidae is a family of marine and freshwater fish in the order Tetraodontiformes. The family includes many familiar species variously called pufferfishes, puffers, balloonfishes, blowfishes, and globefishes.",
+    "src": "https://en.wikipedia.org/wiki/Tetraodontidae",
+    "verified": true
+  },
+  {
+    "in": [
+      "fish",
+      "school"
+    ],
+    "out": "characiformes",
+    "why": "Characiformes is an order of ray-finned fish, comprising the characins and their allies. They include the well-known piranha and tetras.",
+    "src": "https://en.wikipedia.org/wiki/Characiformes",
+    "verified": true
+  },
+  {
+    "in": [
+      "fish",
+      "monsoon"
+    ],
+    "out": "ilish",
+    "why": "The ilish, also known as the ilishi, hilsa, pulasa, hilsa herring or hilsa shad, is a species of fish related to the herring, in the family Clupeidae. It is a very popular and sought-after food in the Bengal region and is the national fish of Bangladesh.",
+    "src": "https://en.wikipedia.org/wiki/Ilish",
+    "verified": true
+  },
+  {
+    "in": [
+      "carp",
+      "fish"
+    ],
+    "out": "cypriniformes",
+    "why": "Cypriniformes is an order of ray-finned fish including the barbs, loaches, botias, carps, danionins, and minnows, amongst others.",
+    "src": "https://en.wikipedia.org/wiki/Cypriniformes",
+    "verified": true
+  },
+  {
+    "in": [
+      "fish",
+      "star"
+    ],
+    "out": "galaxiidae",
+    "why": "The Galaxiidae are a family of mostly small freshwater fish in the Southern Hemisphere. The majority live in Southern Australia or New Zealand.",
+    "src": "https://en.wikipedia.org/wiki/Galaxiidae",
+    "verified": true
+  },
+  {
+    "in": [
+      "salmon",
+      "trout"
+    ],
+    "out": "salmonidae",
+    "why": "Salmonidae is a family of ray-finned fish. The family includes salmon, trout, char, graylings, freshwater whitefishes, taimens and lenoks, all coldwater mid-level predatory fish.",
+    "src": "https://en.wikipedia.org/wiki/Salmonidae",
+    "verified": true
+  },
+  {
+    "in": [
+      "catfish",
+      "armor"
+    ],
+    "out": "loricariidae",
+    "why": "Loricariidae is the largest family of catfish. Loricariids originate from freshwater habitats of Costa Rica, Panama, and tropical and subtropical South America.",
+    "src": "https://en.wikipedia.org/wiki/Loricariidae",
+    "verified": true
+  },
+  {
+    "in": [
+      "frog",
+      "tree"
+    ],
+    "out": "hylidae",
+    "why": "Hylidae is a wide-ranging family of frogs commonly referred to as tree frogs and their allies. However, the hylids include a diversity of frog species, many of which do not live in trees, but are terrestrial or semiaquatic.",
+    "src": "https://en.wikipedia.org/wiki/Hylidae",
+    "verified": true
+  },
+  {
+    "in": [
+      "frog",
+      "jungle"
+    ],
+    "out": "leptodactylidae",
+    "why": "The southern frogs form the Leptodactylidae, a name that comes from Greek meaning a bird or other animal having slender toes. They are a diverse family of frogs.",
+    "src": "https://en.wikipedia.org/wiki/Leptodactylidae",
+    "verified": true
+  },
+  {
+    "in": [
+      "frog",
+      "pond"
+    ],
+    "out": "ranidae",
+    "why": "Ranidae is a family of frogs, sometimes called true frogs. They have the widest distribution of any frog family.",
+    "src": "https://en.wikipedia.org/wiki/Ranidae",
+    "verified": true
+  },
+  {
+    "in": [
+      "bird",
+      "peace"
+    ],
+    "out": "columbidae",
+    "why": "Columbidae is a bird family consisting of doves and pigeons. It is the only family in the order Columbiformes.",
+    "src": "https://en.wikipedia.org/wiki/Columbidae",
+    "verified": true
+  },
+  {
+    "in": [
+      "crane",
+      "bird"
+    ],
+    "out": "gruiformes",
+    "why": "The Gruiformes are an order containing a considerable number of living and extinct bird families, with a widespread geographical diversity. Gruiform means crane form.",
+    "src": "https://en.wikipedia.org/wiki/Gruiformes",
+    "verified": true
+  },
+  {
+    "in": [
+      "bird",
+      "raven"
+    ],
+    "out": "corvidae",
+    "why": "Corvidae is a cosmopolitan family of oscine passerine birds that contains the crows, ravens, rooks, magpies, jackdaws, jays, treepies, choughs, and nutcrackers.",
+    "src": "https://en.wikipedia.org/wiki/Corvidae",
+    "verified": true
+  },
+  {
+    "in": [
+      "bird",
+      "red"
+    ],
+    "out": "cardinalidae",
+    "why": "Cardinalidae is a family of New World-endemic passerine birds that consists of cardinals, grosbeaks, and buntings.",
+    "src": "https://en.wikipedia.org/wiki/Cardinalidae",
+    "verified": true
+  },
+  {
+    "in": [
+      "bird",
+      "meadow"
+    ],
+    "out": "icterid",
+    "why": "Icterids or New World blackbirds make up a family, the Icteridae, of small to medium-sized, often colorful, New World passerine birds.",
+    "src": "https://en.wikipedia.org/wiki/Icterid",
+    "verified": true
+  },
+  {
+    "in": [
+      "bird",
+      "fly"
+    ],
+    "out": "old_world_flycatcher",
+    "why": "The Old World flycatchers are a large family of small passerine birds restricted to the Old World. These are mainly small arboreal insectivores, many of which, as the name implies, take their prey on the wing.",
+    "src": "https://en.wikipedia.org/wiki/Old_World_flycatcher",
+    "verified": true
+  },
+  {
+    "in": [
+      "bird",
+      "grass"
+    ],
+    "out": "ploceidae",
+    "why": "Ploceidae is a family of small passerine birds, many of which are called weavers, weaverbirds, weaver finches, or bishops. These names come from the nests of intricately woven vegetation created by birds in this family.",
+    "src": "https://en.wikipedia.org/wiki/Ploceidae",
+    "verified": true
+  },
+  {
+    "in": [
+      "house_sparrow",
+      "bird"
+    ],
+    "out": "old_world_sparrow",
+    "why": "Old World sparrows are groups of small passerine birds forming the family Passeridae. They are also known as true sparrows, a name which is also used for a particular genus of the family Passer.",
+    "src": "https://en.wikipedia.org/wiki/Old_World_sparrow",
+    "verified": true
+  },
+  {
+    "in": [
+      "bird",
+      "wing"
+    ],
+    "out": "starling",
+    "why": "Starlings are small to medium-sized passerine birds known for the often dark, glossy iridescent sheen of their plumage; their complex vocalizations including mimicking; and their distinctive, often elaborate swarming behavior, known as murmuration.",
+    "src": "https://en.wikipedia.org/wiki/Starling",
+    "verified": true
+  },
+  {
+    "in": [
+      "bird",
+      "ant"
+    ],
+    "out": "antbird",
+    "why": "The antbirds are a large passerine bird family found across subtropical and tropical Central and South America, from Mexico to Argentina.",
+    "src": "https://en.wikipedia.org/wiki/Antbird",
+    "verified": true
+  },
+  {
+    "in": [
+      "bird",
+      "oven"
+    ],
+    "out": "ovenbird_family",
+    "why": "Ovenbirds or furnariids are a large family of small suboscine passerine birds found from Mexico and Central to southern South America. They form the family Furnariidae.",
+    "src": "https://en.wikipedia.org/wiki/Ovenbird_(family)",
+    "verified": true
+  },
+  {
+    "in": [
+      "bird",
+      "insect"
+    ],
+    "out": "tyrant_flycatcher",
+    "why": "The tyrant flycatchers comprise a family of passerine birds which is found throughout North and South America. It is the world's largest family of birds.",
+    "src": "https://en.wikipedia.org/wiki/Tyrant_flycatcher",
+    "verified": true
+  },
+  {
+    "in": [
+      "bird",
+      "fish"
+    ],
+    "out": "sulidae",
+    "why": "The bird family Sulidae comprises the gannets and boobies. Collectively called sulids, they are medium-large coastal seabirds that plunge-dive for fish and similar prey.",
+    "src": "https://en.wikipedia.org/wiki/Sulidae",
+    "verified": true
+  },
+  {
+    "in": [
+      "albatross",
+      "bird"
+    ],
+    "out": "procellariiformes",
+    "why": "Procellariiformes is an order of seabirds that comprises four families; the albatrosses, the petrels and shearwaters, and two families of storm petrels.",
+    "src": "https://en.wikipedia.org/wiki/Procellariiformes",
+    "verified": true
+  },
+  {
+    "in": [
+      "mammal",
+      "hand"
+    ],
+    "out": "procyonidae",
+    "why": "Procyonidae is a New World family of the order Carnivora. It includes the raccoons, ringtails, cacomistles, coatis, kinkajous, olingos, and olinguitos.",
+    "src": "https://en.wikipedia.org/wiki/Procyonidae",
+    "verified": true
+  },
+  {
+    "in": [
+      "marsupial",
+      "meat"
+    ],
+    "out": "dasyuromorphia",
+    "why": "Dasyuromorphia is an order comprising most of the Australian carnivorous marsupials.",
+    "src": "https://en.wikipedia.org/wiki/Dasyuromorphia",
+    "verified": true
+  },
+  {
+    "in": [
+      "marsupial",
+      "ear"
+    ],
+    "out": "peramelemorphia",
+    "why": "The order Peramelemorphia includes the bandicoots and bilbies. All members of the order are endemic to Australia-New Guinea.",
+    "src": "https://en.wikipedia.org/wiki/Peramelemorphia",
+    "verified": true
+  },
+  {
+    "in": [
+      "kidney",
+      "doctor"
+    ],
+    "out": "urology",
+    "why": "Urology is the branch of medicine that focuses on surgical and medical diseases of the urinary system. Organs under the domain of urology include the kidneys, adrenal glands, ureters, urinary bladder, and urethra.",
+    "src": "https://en.wikipedia.org/wiki/Urology",
+    "verified": true
+  },
+  {
+    "in": [
+      "blood",
+      "laboratory"
+    ],
+    "out": "medical_test",
+    "why": "A medical test is a medical procedure performed to detect, diagnose, or monitor diseases, disease processes, susceptibility, or to determine a course of treatment.",
+    "src": "https://en.wikipedia.org/wiki/Medical_test",
+    "verified": true
+  },
+  {
+    "in": [
+      "snow",
+      "milk"
+    ],
+    "out": "white",
+    "why": "White is the lightest color and is achromatic. It is the color of objects such as snow, chalk, and milk, and is the opposite of black.",
+    "src": "https://en.wikipedia.org/wiki/White",
+    "verified": true
+  },
+  {
+    "in": [
+      "coal",
+      "night"
+    ],
+    "out": "black",
+    "why": "Black is a color that results from the absence or complete absorption of visible light. It is an achromatic color, without chroma, like white and grey.",
+    "src": "https://en.wikipedia.org/wiki/Black",
+    "verified": true
+  },
+  {
+    "in": [
+      "ash",
+      "cloud"
+    ],
+    "out": "grey",
+    "why": "Grey or gray is an intermediate color between black and white. It is a neutral or achromatic color, meaning that it has no chroma.",
+    "src": "https://en.wikipedia.org/wiki/Grey",
+    "verified": true
+  },
+  {
+    "in": [
+      "blood",
+      "fire"
+    ],
+    "out": "red",
+    "why": "Red is the color at the long wavelength end of the visible spectrum of light, next to orange.",
+    "src": "https://en.wikipedia.org/wiki/Red",
+    "verified": true
+  },
+  {
+    "in": [
+      "sun",
+      "lemon"
+    ],
+    "out": "yellow",
+    "why": "Yellow is a color between green and orange on the spectrum of light.",
+    "src": "https://en.wikipedia.org/wiki/Yellow",
+    "verified": true
+  },
+  {
+    "in": [
+      "grass",
+      "leaf"
+    ],
+    "out": "green",
+    "why": "Green is the color between cyan and yellow on the visible spectrum.",
+    "src": "https://en.wikipedia.org/wiki/Green",
+    "verified": true
+  },
+  {
+    "in": [
+      "sky",
+      "water"
+    ],
+    "out": "blue",
+    "why": "Blue is one of the three primary colours in the additive colour model, as well as in the traditional colour theory. It lies between violet and cyan on the spectrum of visible light.",
+    "src": "https://en.wikipedia.org/wiki/Blue",
+    "verified": true
+  },
+  {
+    "in": [
+      "flamingo",
+      "rose"
+    ],
+    "out": "pink",
+    "why": "Pink is a pale tint of red or rose, the color of the pink flower.",
+    "src": "https://en.wikipedia.org/wiki/Pink",
+    "verified": true
+  },
+  {
+    "in": [
+      "grape",
+      "plum"
+    ],
+    "out": "purple",
+    "why": "Purple is a color similar in appearance to violet light. In the RYB color model historically used in the arts, purple is a secondary color created by combining red and blue pigments.",
+    "src": "https://en.wikipedia.org/wiki/Purple",
+    "verified": true
+  },
+  {
+    "in": [
+      "soil",
+      "wood"
+    ],
+    "out": "brown",
+    "why": "Brown is a color. It can be thought as a darker, typically desaturated shade of orange, and can often be produced by combining red and yellow with another color, namely blue.",
+    "src": "https://en.wikipedia.org/wiki/Brown",
+    "verified": true
+  },
+  {
+    "in": [
+      "research",
+      "field"
+    ],
+    "out": "field_research",
+    "why": "Field research, field studies, or fieldwork is the collection of raw data outside a laboratory, library, or workplace setting. The approaches and methods used in field research vary across disciplines.",
+    "src": "https://en.wikipedia.org/wiki/Field_research",
+    "verified": true
+  },
+  {
+    "in": [
+      "data",
+      "library"
+    ],
+    "out": "information_science",
+    "why": "Information science is an academic field that is primarily concerned with the analysis, collection, classification, manipulation, storage, retrieval, movement, dissemination, and protection of information.",
+    "src": "https://en.wikipedia.org/wiki/Information_science",
+    "verified": true
+  },
+  {
+    "in": [
+      "research",
+      "experiment"
+    ],
+    "out": "methodology",
+    "why": "In its most common sense, methodology is the study of research methods. However, the term can also refer to the methods themselves or to the philosophical discussion of associated background assumptions.",
+    "src": "https://en.wikipedia.org/wiki/Methodology",
+    "verified": true
+  },
+  {
+    "in": [
+      "research",
+      "survey"
+    ],
+    "out": "qualitative_research",
+    "why": "Qualitative research is a type of research that aims to gather and analyse non-numerical (descriptive) data in order to gain an understanding of individuals' social reality, including understanding their attitudes, beliefs, and motivation.",
+    "src": "https://en.wikipedia.org/wiki/Qualitative_research",
+    "verified": true
+  },
+  {
+    "in": [
+      "research",
+      "statistics"
+    ],
+    "out": "quantitative_research",
+    "why": "Quantitative research is a research strategy that focuses on quantifying the collection and analysis of data. It is formed from a deductive approach where emphasis is placed on the testing of theory.",
+    "src": "https://en.wikipedia.org/wiki/Quantitative_research",
+    "verified": true
+  },
+  {
+    "in": [
+      "atom",
+      "light"
+    ],
+    "out": "natural_units",
+    "why": "In physics, natural unit systems are measurement systems for which selected physical constants have been set through nondimensionalization of physical units.",
+    "src": "https://en.wikipedia.org/wiki/Natural_units",
+    "verified": true
+  },
+  {
+    "in": [
+      "light",
+      "gravity"
+    ],
+    "out": "planck_units",
+    "why": "In particle physics and physical cosmology, Planck units are a system of units of measurement defined exclusively in terms of four universal physical constants.",
+    "src": "https://en.wikipedia.org/wiki/Planck_units",
+    "verified": true
+  },
+  {
+    "in": [
+      "inch",
+      "mile"
+    ],
+    "out": "us_customary_units",
+    "why": "United States customary units form a system of measurement units commonly used in the United States and most U.S. territories. The United States customary system developed from English units that were in use in the British Empire before the U.S. became an independent country.",
+    "src": "https://en.wikipedia.org/wiki/United_States_customary_units",
+    "verified": true
+  },
+  {
+    "in": [
+      "empire",
+      "length"
+    ],
+    "out": "imperial_units",
+    "why": "The imperial system of units, imperial system or imperial units is the system of units first defined in the British Weights and Measures Act and which continued to be developed through a series of Weights and Measures Acts and amendments.",
+    "src": "https://en.wikipedia.org/wiki/Imperial_units",
+    "verified": true
+  },
+  {
+    "in": [
+      "atmosphere",
+      "sea"
+    ],
+    "out": "standard_atmosphere_unit",
+    "why": "The standard atmosphere is a unit of pressure. It is sometimes used as a reference pressure or standard pressure.",
+    "src": "https://en.wikipedia.org/wiki/Standard_atmosphere_(unit)",
+    "verified": true
+  },
+  {
+    "in": [
+      "atom",
+      "weight"
+    ],
+    "out": "dalton_unit",
+    "why": "The dalton, or unified atomic mass unit, is a unit of mass.",
+    "src": "https://en.wikipedia.org/wiki/Dalton_(unit)",
+    "verified": true
+  },
+  {
+    "in": [
+      "mass",
+      "scale"
+    ],
+    "out": "pound_mass",
+    "why": "The pound or pound-mass is a unit of mass used in both the British imperial and United States customary systems of measurement. Various definitions have been used; the most common today is the international avoirdupois pound.",
+    "src": "https://en.wikipedia.org/wiki/Pound_(mass)",
+    "verified": true
+  },
+  {
+    "in": [
+      "angle",
+      "measurement"
+    ],
+    "out": "degree_angle",
+    "why": "A degree is a unit of measurement of a plane angle. The unit of angular measure in the International System of Units is the radian.",
+    "src": "https://en.wikipedia.org/wiki/Degree_(angle)",
+    "verified": true
+  },
+  {
+    "in": [
+      "light",
+      "candle"
+    ],
+    "out": "candela",
+    "why": "Candela is the SI unit of luminous intensity. It measures the luminous power per unit solid angle emitted in a particular direction.",
+    "src": "https://en.wikipedia.org/wiki/Candela",
+    "verified": true
+  },
+  {
+    "in": [
+      "capacitance",
+      "charge"
+    ],
+    "out": "farad",
+    "why": "The farad is the unit of electrical capacitance, the ability of a body to store an electrical charge, in the International System of Units.",
+    "src": "https://en.wikipedia.org/wiki/Farad",
+    "verified": true
+  },
+  {
+    "in": [
+      "charge",
+      "ampere"
+    ],
+    "out": "coulomb",
+    "why": "The coulomb is the unit of electric charge in the International System of Units.",
+    "src": "https://en.wikipedia.org/wiki/Coulomb",
+    "verified": true
+  },
+  {
+    "in": [
+      "electricity",
+      "ohm"
+    ],
+    "out": "siemens_unit",
+    "why": "The siemens is the unit of electric conductance, electric susceptance, and electric admittance in the International System of Units. One siemens is equal to the reciprocal of one ohm and is also referred to as the mho.",
+    "src": "https://en.wikipedia.org/wiki/Siemens_(unit)",
+    "verified": true
+  },
+  {
+    "in": [
+      "atom",
+      "radiation"
+    ],
+    "out": "becquerel",
+    "why": "The becquerel is the unit of radioactivity in the International System of Units.",
+    "src": "https://en.wikipedia.org/wiki/Becquerel",
+    "verified": true
+  },
+  {
+    "in": [
+      "radiation",
+      "dose"
+    ],
+    "out": "gray_unit",
+    "why": "The gray is the unit of ionizing radiation dose in the International System of Units, defined as the absorption of one joule of radiation energy per kilogram of matter.",
+    "src": "https://en.wikipedia.org/wiki/Gray_(unit)",
+    "verified": true
+  },
+  {
+    "in": [
+      "dose",
+      "health"
+    ],
+    "out": "sievert",
+    "why": "The sievert is a derived unit in the International System of Units intended to represent the stochastic health risk of ionizing radiation, which is defined as the probability of causing radiation-induced cancer and genetic damage.",
+    "src": "https://en.wikipedia.org/wiki/Sievert",
+    "verified": true
+  },
+  {
+    "in": [
+      "moon",
+      "star"
+    ],
+    "out": "night",
+    "why": "Night, or nighttime, is the period of darkness when the Sun is below the horizon. Daylight illuminates one side of Earth, leaving the other in darkness.",
+    "src": "https://en.wikipedia.org/wiki/Night",
+    "verified": true
+  },
+  {
+    "in": [
+      "orbit",
+      "day"
+    ],
+    "out": "geosynchronous_orbit",
+    "why": "A geosynchronous orbit is an Earth-centered orbit with an orbital period that matches Earth's rotation on its axis. The synchronization of rotation and orbital period means that, for an observer on Earth's surface, an object in geosynchronous orbit returns to exactly the same position in the sky after a period of one sidereal day.",
+    "src": "https://en.wikipedia.org/wiki/Geosynchronous_orbit",
+    "verified": true
+  },
+  {
+    "in": [
+      "equator",
+      "star"
+    ],
+    "out": "equatorial_coordinate_system",
+    "why": "The equatorial coordinate system is a celestial coordinate system widely used to specify the positions of celestial objects.",
+    "src": "https://en.wikipedia.org/wiki/Equatorial_coordinate_system",
+    "verified": true
+  },
+  {
+    "in": [
+      "constellation",
+      "horse"
+    ],
+    "out": "centaurus",
+    "why": "Centaurus is a bright constellation in the southern sky. In Greek mythology, Centaurus represents a centaur; a creature that is half human, half horse.",
+    "src": "https://en.wikipedia.org/wiki/Centaurus",
+    "verified": true
+  },
+  {
+    "in": [
+      "constellation",
+      "cross"
+    ],
+    "out": "crux",
+    "why": "Crux is a constellation of the southern sky that is centred on four bright stars in a cross-shaped asterism commonly known as the Southern Cross. It lies on the southern end of the Milky Way's visible band.",
+    "src": "https://en.wikipedia.org/wiki/Crux",
+    "verified": true
+  },
+  {
+    "in": [
+      "telescope",
+      "light"
+    ],
+    "out": "photometry_astronomy",
+    "why": "In astronomy, photometry is a technique used in astronomy that is concerned with measuring the flux or intensity of light radiated by astronomical objects.",
+    "src": "https://en.wikipedia.org/wiki/Photometry_(astronomy)",
+    "verified": true
+  },
+  {
+    "in": [
+      "galaxy",
+      "cluster"
+    ],
+    "out": "galaxy_groups_and_clusters",
+    "why": "Galaxy groups and clusters are the largest known gravitationally bound objects to have arisen thus far in the process of cosmic structure formation. They form the densest part of the large-scale structure of the universe.",
+    "src": "https://en.wikipedia.org/wiki/Galaxy_groups_and_clusters",
+    "verified": true
+  },
+  {
+    "in": [
+      "galaxy",
+      "space"
+    ],
+    "out": "void_astronomy",
+    "why": "Cosmic voids are vast spaces between filaments, the largest-scale structures in the universe, which contain very few or no galaxies.",
+    "src": "https://en.wikipedia.org/wiki/Void_(astronomy)",
+    "verified": true
+  },
+  {
+    "in": [
+      "galaxy",
+      "universe"
+    ],
+    "out": "galaxy_formation_and_evolution",
+    "why": "In cosmology, the study of galaxy formation and evolution is concerned with the processes that formed a heterogeneous universe from a homogeneous beginning, the formation of the first galaxies, the way galaxies change over time, and the processes that have generated the variety of structures observed in nearby galaxies.",
+    "src": "https://en.wikipedia.org/wiki/Galaxy_formation_and_evolution",
+    "verified": true
   }
 ]
