@@ -289,6 +289,7 @@ const SCALE = {
           'clay', 'kaolin', 'clinker', 'malt', 'rubbed_flour', 'ash', 'charcoal', 'mince', 'cured_mince', 'scabies_mite',
           'lenticel', 'root_hair'],
   '-3':  [
+          /* R3 AF invertebrates and animal behaviour */ 'ostracod', 'scale_insect', 'whitefly', 'caenorhabditis_elegans',
           /* R3 AC biology 1 */ 'hypha',
           /* W4 physiology fourth pass, 6 Sep */
           'periosteum', 'synovial_fluid', 'neural_tube', 'germ_layer',
@@ -352,6 +353,7 @@ const SCALE = {
           'parasitism',
           'root_cap', 'root_meristem', 'elongation_zone'],
   '-2':  [
+          /* R3 AF invertebrates and animal behaviour */ 'jumping_spider', 'hexapoda', 'pterygota', 'phasmatodea', 'weevil', 'drosophila_melanogaster', 'botfly', 'crane_fly', 'calliphoridae', 'tabanidae', 'leafhopper', 'hymenoptera', 'fire_ant', 'carpenter_ant', 'bumblebee', 'africanized_bee', 'hornet', 'geometer_moth', 'pieris_brassicae', 'swallowtail_butterfly', 'odonata', 'damselfly', 'mole_cricket',
           /* economy, industry and business batch, 12 Nov */ 'euro', 'japanese_yen',
           /* family, home, food, dress, leisure, games and sport batch, 12 Nov — things and places */ 'condom', 'candy', 'biscuit', 'dice', 'dominoes',
           /* corpus review, 11 Nov — missing basics added */ 'tennessine', 'oganesson', 'tonsil',
@@ -585,6 +587,7 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* R3 AF invertebrates and animal behaviour */ 'scallop', 'decapod', 'malacostraca', 'chelicerata', 'xiphosura', 'polychaete',
           /* R3 AE birds and bats */ 'common_quail', 'bulbul', 'finch', 'lark', 'new_world_warbler', 'european_robin', 'house_sparrow', 'sunbird', 'tit_bird', 'wren',
           /* R3 AD fish amphibians reptiles */ 'stickleback', 'guppy', 'anchovy', 'sardine', 'sprat', 'smelt_fish', 'salamander', 'newt', 'gecko', 'skink',
           /* physical sciences batch 2: chemistry and atoms; fields at the idea bucket, atoms and molecules at their scale */ 'chromatography', 'calcium_carbonate', 'silicate', 'gel', 'crystallization', 'amorphous_solid',
@@ -904,6 +907,7 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* R3 AF invertebrates and animal behaviour — abstract concepts, filed at the 10⁰ idea bucket */ 'eurypterid', 'bilateria', 'animal_coloration', 'animal_locomotion', 'animal_migration', 'instinct', 'sociality', 'herd', 'ornithischia', 'ostracoderm', 'acanthodii', 'sirenia', 'passerine', 'galliformes', 'ara_bird',
           /* R3 AE birds and bats — abstract concepts, filed at the 10⁰ idea bucket */ 'seabird', 'palaeognathae', 'accipiter', 'falcon', 'old_world_vulture', 'osprey', 'secretarybird', 'nightjar', 'auk', 'gull', 'sandpiper', 'tern', 'dodo', 'passenger_pigeon', 'rock_dove', 'hornbill', 'hoopoe', 'kingfisher', 'cuckoo', 'grouse', 'guinea_fowl', 'peafowl', 'common_pheasant', 'domestic_turkey', 'loon', 'bustard', 'songbird', 'bird_of_paradise', 'corvus', 'eurasian_magpie', 'honeyeater', 'lyrebird', 'shrike', 'red_winged_blackbird', 'mockingbird', 'common_nightingale', 'common_starling', 'common_myna', 'swallow', 'thrush_bird', 'american_robin', 'darter', 'frigatebird', 'shoebill', 'stork', 'honeyguide', 'budgerigar', 'cockatoo', 'moa', 'eurasian_eagle_owl', 'tyto', 'tinamou', 'trogon', 'resplendent_quetzal', 'megabat', 'microbat', 'pteropus',
           /* R3 AD fish amphibians reptiles — abstract concepts, filed at the 10⁰ idea bucket */ 'eel', 'flying_fish', 'milkfish', 'oarfish', 'mullet_fish', 'stingray', 'skate_fish', 'sawfish', 'electric_ray', 'barracuda', 'cichlid', 'tilapia', 'plaice', 'turbot', 'alaska_pollock', 'cod', 'haddock', 'mahi_mahi', 'grouper', 'european_seabass', 'siamese_fighting_fish', 'perch', 'remora', 'ocean_sunfish', 'wrasse', 'lungfish', 'arapaima', 'chimaera', 'sturgeon', 'herring', 'carp', 'trout', 'catfish', 'bichir', 'coral_reef_fish', 'deep_sea_fish', 'chondrichthyes', 'osteichthyes', 'actinopterygii', 'agnatha', 'true_toad', 'crocodylia', 'alligator', 'caiman', 'chameleon', 'green_iguana', 'horned_lizard', 'eastern_copperhead', 'cottonmouth', 'boidae', 'coral_snake', 'garter_snake', 'sea_snake', 'mamba', 'naja', 'common_snapping_turtle', 'alligator_snapping_turtle', 'painted_turtle', 'red_eared_slider', 'sea_turtle', 'tortoise', 'galapagos_tortoise', 'synapsida', 'dimetrodon',
           /* R3 AC biology 1 — abstract concepts, filed at the 10⁰ idea bucket */ 'abiogenesis', 'marine_life', 'model_organism', 'biology', 'microbiology', 'mycology', 'biomechanics', 'neuroscience', 'sense', 'paleontology', 'history_of_life', 'human_genome', 'hybrid_biology', 'phylogenetics', 'anatomy', 'dissection', 'ganglion', 'sensory_nervous_system', 'auditory_system', 'taste', 'olfactory_system', 'sense_of_smell', 'odor', 'somatosensory_system', 'visual_system', 'visual_perception', 'color_vision', 'fingerprint', 'fur', 'whiskers', 'pelvis', 'spinal_column', 'plant_anatomy', 'plant_morphology', 'shrub', 'vascular_tissue', 'biochemistry', 'chemical_biology', 'molecular_biology', 'biomolecule', 'alkaloid', 'biological_pigment', 'carotenoid', 'plant_hormone', 'lipid', 'physiology', 'blood_sugar_level', 'excretion', 'defecation', 'urination', 'biological_sex', 'female', 'male', 'fertilisation', 'menopause', 'plant_reproduction', 'developmental_biology', 'development_of_the_human_body', 'imago', 'longevity', 'ontogeny', 'botany', 'carnivorous_plant', 'cell_biology', 'cell_signaling', 'programmed_cell_death', 'ecology', 'biodiversity', 'endangered_species', 'invasive_species', 'sustainability', 'wildlife_conservation',

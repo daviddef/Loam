@@ -133062,5 +133062,485 @@
     "why": "Pteropus is a genus of megabats which are among the largest bats in the world. They are commonly known as fruit bats or flying foxes, among other colloquial names.",
     "src": "https://en.wikipedia.org/wiki/Pteropus",
     "verified": true
+  },
+  {
+    "in": [
+      "clam",
+      "sea"
+    ],
+    "out": "scallop",
+    "why": "Scallop is a common name that encompasses various species of marine bivalve molluscs in the taxonomic family Pectinidae, the scallops.",
+    "src": "https://en.wikipedia.org/wiki/Scallop",
+    "verified": true
+  },
+  {
+    "in": [
+      "spider",
+      "eye"
+    ],
+    "out": "jumping_spider",
+    "why": "Jumping spiders are spiders in the family Salticidae, making it the largest family of spiders. Jumping spiders have some of the best vision among arthropods, being capable of stereoptic color vision, and use sight in courtship, hunting, and navigation.",
+    "src": "https://en.wikipedia.org/wiki/Jumping_spider",
+    "verified": true
+  },
+  {
+    "in": [
+      "crab",
+      "shrimp"
+    ],
+    "out": "decapod",
+    "why": "A decapod is a crustacean in the large order of Decapoda within the class Malacostraca, including crabs, lobsters, crayfish, shrimp, and prawns. Most decapods are scavengers.",
+    "src": "https://en.wikipedia.org/wiki/Decapod",
+    "verified": true
+  },
+  {
+    "in": [
+      "crab",
+      "crustacean"
+    ],
+    "out": "malacostraca",
+    "why": "Malacostraca is the second largest of the six classes of pancrustaceans after insects. Its members, the malacostracans, display a great diversity of body forms and include crabs, lobsters, spiny lobsters, crayfish, shrimp, krill, prawns, isopods, amphipods, mantis shrimp, and many other less familiar animals.",
+    "src": "https://en.wikipedia.org/wiki/Malacostraca",
+    "verified": true
+  },
+  {
+    "in": [
+      "crustacean",
+      "shell"
+    ],
+    "out": "ostracod",
+    "why": "Ostracods, or ostracodes, are a class of the Crustacea, sometimes known as seed shrimp.",
+    "src": "https://en.wikipedia.org/wiki/Ostracod",
+    "verified": true
+  },
+  {
+    "in": [
+      "insect",
+      "leg"
+    ],
+    "out": "hexapoda",
+    "why": "The subphylum Hexapoda or hexapods comprises the largest clade of arthropods and includes most of the extant arthropod species. It includes the crown group class Insecta, as well as the much smaller group Entognatha.",
+    "src": "https://en.wikipedia.org/wiki/Hexapoda",
+    "verified": true
+  },
+  {
+    "in": [
+      "insect",
+      "wing"
+    ],
+    "out": "pterygota",
+    "why": "Pterygota is a subclass of insects that includes all winged insects and groups which lost them secondarily.",
+    "src": "https://en.wikipedia.org/wiki/Pterygota",
+    "verified": true
+  },
+  {
+    "in": [
+      "insect",
+      "stick"
+    ],
+    "out": "phasmatodea",
+    "why": "The Phasmatodea are an order of insects whose members are variously known as stick insects, stick bugs, walkingsticks, stick animals, or bug sticks.",
+    "src": "https://en.wikipedia.org/wiki/Phasmatodea",
+    "verified": true
+  },
+  {
+    "in": [
+      "beetle",
+      "grain"
+    ],
+    "out": "weevil",
+    "why": "Weevils are beetles belonging to the superfamily Curculionoidea, known for their very long snouts. They are usually small and herbivorous.",
+    "src": "https://en.wikipedia.org/wiki/Weevil",
+    "verified": true
+  },
+  {
+    "in": [
+      "fly",
+      "fruit"
+    ],
+    "out": "drosophila_melanogaster",
+    "why": "Drosophila melanogaster is a species of fly in the family Drosophilidae. The species is often referred to as the fruit fly or lesser fruit fly, or less commonly the vinegar fly, pomace fly, or banana fly.",
+    "src": "https://en.wikipedia.org/wiki/Drosophila_melanogaster",
+    "verified": true
+  },
+  {
+    "in": [
+      "fly",
+      "parasite"
+    ],
+    "out": "botfly",
+    "why": "Botflies, also known as warble flies, heel flies, and gadflies, are flies of the family Oestridae. Their larvae are internal parasites of mammals, some species growing in the host's flesh and others within the gut.",
+    "src": "https://en.wikipedia.org/wiki/Botfly",
+    "verified": true
+  },
+  {
+    "in": [
+      "fly",
+      "crane"
+    ],
+    "out": "crane_fly",
+    "why": "A crane fly or crane-fly, the larva called a leatherjacket, is a member of the dipteran superfamily Tipuloidea.",
+    "src": "https://en.wikipedia.org/wiki/Crane_fly",
+    "verified": true
+  },
+  {
+    "in": [
+      "fly",
+      "meat"
+    ],
+    "out": "calliphoridae",
+    "why": "The Calliphoridae, commonly known as blowflies, blow flies, carrion flies, bluebottles, or greenbottles, are a family of insects in the order Diptera. The maggot larvae, often used as fishing bait, are known as gentles.",
+    "src": "https://en.wikipedia.org/wiki/Calliphoridae",
+    "verified": true
+  },
+  {
+    "in": [
+      "fly",
+      "horse"
+    ],
+    "out": "tabanidae",
+    "why": "Horse flies and deer flies are true flies in the family Tabanidae in the insect order Diptera. The adults are often large and agile in flight.",
+    "src": "https://en.wikipedia.org/wiki/Tabanidae",
+    "verified": true
+  },
+  {
+    "in": [
+      "insect",
+      "leaf"
+    ],
+    "out": "leafhopper",
+    "why": "Leafhopper is the common name for any species from the family Cicadellidae. These minute insects, colloquially known as hoppers, are plant feeders that suck plant sap from grass, shrubs, or trees.",
+    "src": "https://en.wikipedia.org/wiki/Leafhopper",
+    "verified": true
+  },
+  {
+    "in": [
+      "insect",
+      "scale"
+    ],
+    "out": "scale_insect",
+    "why": "Scale insects are small insects of the order Hemiptera, suborder Sternorrhyncha. Of dramatically variable appearance and extreme sexual dimorphism, they comprise the infraorder Coccomorpha.",
+    "src": "https://en.wikipedia.org/wiki/Scale_insect",
+    "verified": true
+  },
+  {
+    "in": [
+      "fly",
+      "plant"
+    ],
+    "out": "whitefly",
+    "why": "Whiteflies are hemipterans that typically feed on the undersides of plant leaves. They are classified in the family Aleyrodidae, the only family in the superfamily Aleyrodoidea.",
+    "src": "https://en.wikipedia.org/wiki/Whitefly",
+    "verified": true
+  },
+  {
+    "in": [
+      "bee",
+      "ant"
+    ],
+    "out": "hymenoptera",
+    "why": "Hymenoptera is a large order of insects, comprising the sawflies, wasps, bees, and ants.",
+    "src": "https://en.wikipedia.org/wiki/Hymenoptera",
+    "verified": true
+  },
+  {
+    "in": [
+      "ant",
+      "fire"
+    ],
+    "out": "fire_ant",
+    "why": "Fire ants are several species of ants in the genus Solenopsis. Solenopsis are stinging ants, and most of their common names reflect this, for example, ginger ants and tropical fire ants.",
+    "src": "https://en.wikipedia.org/wiki/Fire_ant",
+    "verified": true
+  },
+  {
+    "in": [
+      "ant",
+      "wood"
+    ],
+    "out": "carpenter_ant",
+    "why": "Camponotus, the carpenter ants, are a genus of ants in the subfamily Formicinae found nearly worldwide except in Antarctica and a few islands. This genus is the most species-rich genus of ants in terms of described species.",
+    "src": "https://en.wikipedia.org/wiki/Carpenter_ant",
+    "verified": true
+  },
+  {
+    "in": [
+      "bee",
+      "garden"
+    ],
+    "out": "bumblebee",
+    "why": "A bumblebee, or bumble bee, humble-bee, is any of the species in the genus Bombus, part of Apidae, one of the bee families. This genus is the only extant group in the tribe Bombini.",
+    "src": "https://en.wikipedia.org/wiki/Bumblebee",
+    "verified": true
+  },
+  {
+    "in": [
+      "bee",
+      "africa"
+    ],
+    "out": "africanized_bee",
+    "why": "The Africanized bee, also known as the Africanized honey bee and colloquially as the killer bee, is a hybrid of the western honey bee, produced originally by crossbreeding of the African honey bee with various European honey bee subspecies.",
+    "src": "https://en.wikipedia.org/wiki/Africanized_bee",
+    "verified": true
+  },
+  {
+    "in": [
+      "wasp",
+      "giant"
+    ],
+    "out": "hornet",
+    "why": "Hornets are wasps of the genus Vespa in the subfamily Vespinae, the vespine wasps. They are the largest of the eusocial wasps.",
+    "src": "https://en.wikipedia.org/wiki/Hornet",
+    "verified": true
+  },
+  {
+    "in": [
+      "moth",
+      "caterpillar"
+    ],
+    "out": "geometer_moth",
+    "why": "The geometer moths are moths belonging to the family Geometridae of the insect order Lepidoptera, the moths and butterflies. Their scientific name derives from the Ancient Greek for earth measure in reference to the way their larvae, or inchworms, appear to measure the earth as they move along in a looping fashion.",
+    "src": "https://en.wikipedia.org/wiki/Geometer_moth",
+    "verified": true
+  },
+  {
+    "in": [
+      "butterfly",
+      "cabbage"
+    ],
+    "out": "pieris_brassicae",
+    "why": "Pieris brassicae, the large white, also called cabbage butterfly, cabbage white, cabbage moth, is a butterfly in the family Pieridae. It is a close relative of the small white.",
+    "src": "https://en.wikipedia.org/wiki/Pieris_brassicae",
+    "verified": true
+  },
+  {
+    "in": [
+      "butterfly",
+      "swallow"
+    ],
+    "out": "swallowtail_butterfly",
+    "why": "Swallowtail butterflies are large, colorful butterflies in the family Papilionidae. Though the majority are tropical, members of the family inhabit every continent except Antarctica.",
+    "src": "https://en.wikipedia.org/wiki/Swallowtail_butterfly",
+    "verified": true
+  },
+  {
+    "in": [
+      "dragonfly",
+      "damselfly"
+    ],
+    "out": "odonata",
+    "why": "Odonata is an order of predatory flying insects that includes dragonflies, damselflies, as well as the three relict species of damsel-dragonflies, the latter two often grouped together.",
+    "src": "https://en.wikipedia.org/wiki/Odonata",
+    "verified": true
+  },
+  {
+    "in": [
+      "dragonfly",
+      "pond"
+    ],
+    "out": "damselfly",
+    "why": "Damselflies are flying insects of the suborder Zygoptera in the order Odonata. They are similar to dragonflies, which form the suborder Anisoptera, but are usually smaller and have slimmer bodies.",
+    "src": "https://en.wikipedia.org/wiki/Damselfly",
+    "verified": true
+  },
+  {
+    "in": [
+      "cricket",
+      "soil"
+    ],
+    "out": "mole_cricket",
+    "why": "Mole crickets are members of the insect family Gryllotalpidae, in the order Orthoptera. Mole crickets are cylindrical-bodied, fossorial insects as adults, with small eyes and shovel-like fore limbs highly developed for burrowing.",
+    "src": "https://en.wikipedia.org/wiki/Mole_cricket",
+    "verified": true
+  },
+  {
+    "in": [
+      "spider",
+      "scorpion"
+    ],
+    "out": "chelicerata",
+    "why": "The subphylum Chelicerata constitutes one of the two major living subdivisions of the phylum Arthropoda, alongside Mandibulata. Chelicerates include the sea spiders, horseshoe crabs, and arachnids, as well as a number of extinct lineages, such as the eurypterids and chasmataspidids.",
+    "src": "https://en.wikipedia.org/wiki/Chelicerata",
+    "verified": true
+  },
+  {
+    "in": [
+      "scorpion",
+      "sea"
+    ],
+    "out": "eurypterid",
+    "why": "Eurypterids, often informally called sea scorpions, are a group of extinct marine arthropods that form the order Eurypterida.",
+    "src": "https://en.wikipedia.org/wiki/Eurypterid",
+    "verified": true
+  },
+  {
+    "in": [
+      "crab",
+      "living_fossil"
+    ],
+    "out": "xiphosura",
+    "why": "Xiphosura is an order of arthropods related to arachnids. They are more commonly known as horseshoe crabs, a name applied more specifically to the only extant family, Limulidae.",
+    "src": "https://en.wikipedia.org/wiki/Xiphosura",
+    "verified": true
+  },
+  {
+    "in": [
+      "nematode",
+      "laboratory"
+    ],
+    "out": "caenorhabditis_elegans",
+    "why": "Caenorhabditis elegans is a free-living transparent nematode that lives in temperate soil environments. It is the type species of its genus.",
+    "src": "https://en.wikipedia.org/wiki/Caenorhabditis_elegans",
+    "verified": true
+  },
+  {
+    "in": [
+      "worm",
+      "bristle"
+    ],
+    "out": "polychaete",
+    "why": "Polychaeta is a paraphyletic class of generally marine annelid worms, commonly called bristle worms or polychaetes. Each body segment has a pair of fleshy protrusions called parapodia which bear many chitinous bristles called chaetae, hence their name.",
+    "src": "https://en.wikipedia.org/wiki/Polychaete",
+    "verified": true
+  },
+  {
+    "in": [
+      "animal",
+      "symmetry"
+    ],
+    "out": "bilateria",
+    "why": "Bilateria is a large clade of animals characterised by bilateral symmetry during embryonic development. This means their body plans are laid around a longitudinal axis with a front or head and a rear or tail end, as well as a left-right symmetrical belly and back surface.",
+    "src": "https://en.wikipedia.org/wiki/Bilateria",
+    "verified": true
+  },
+  {
+    "in": [
+      "animal",
+      "camouflage"
+    ],
+    "out": "animal_coloration",
+    "why": "Animal coloration is the general appearance of an animal resulting from the reflection or emission of light from its surfaces. Some animals are brightly coloured, while others are hard to see.",
+    "src": "https://en.wikipedia.org/wiki/Animal_coloration",
+    "verified": true
+  },
+  {
+    "in": [
+      "animal",
+      "motion"
+    ],
+    "out": "animal_locomotion",
+    "why": "In ethology, animal locomotion is any of a variety of methods that animals use to move from one place to another. Some modes of locomotion are self-propelled, running, swimming, jumping, flying, hopping, soaring and gliding.",
+    "src": "https://en.wikipedia.org/wiki/Animal_locomotion",
+    "verified": true
+  },
+  {
+    "in": [
+      "animal",
+      "season"
+    ],
+    "out": "animal_migration",
+    "why": "Animal migration is the relatively long-distance movement of individual animals, usually on a seasonal basis. It is the most common form of migration in ecology.",
+    "src": "https://en.wikipedia.org/wiki/Animal_migration",
+    "verified": true
+  },
+  {
+    "in": [
+      "animal",
+      "mind"
+    ],
+    "out": "instinct",
+    "why": "Instinct is the inherent inclination of a living organism towards a particular complex behaviour, containing innate elements.",
+    "src": "https://en.wikipedia.org/wiki/Instinct",
+    "verified": true
+  },
+  {
+    "in": [
+      "animal",
+      "society"
+    ],
+    "out": "sociality",
+    "why": "Sociality is the degree to which individuals in an animal population tend to associate in social groups and form cooperative societies. Sociality is a survival response to evolutionary pressures.",
+    "src": "https://en.wikipedia.org/wiki/Sociality",
+    "verified": true
+  },
+  {
+    "in": [
+      "cow",
+      "group"
+    ],
+    "out": "herd",
+    "why": "A herd is a social group of certain animals of the same species, either wild or domestic. The form of collective animal behavior associated with this is called herding.",
+    "src": "https://en.wikipedia.org/wiki/Herd",
+    "verified": true
+  },
+  {
+    "in": [
+      "dinosaur",
+      "pelvis"
+    ],
+    "out": "ornithischia",
+    "why": "Ornithischia is an extinct clade of mainly herbivorous dinosaurs characterized by a pelvic structure superficially similar to that of birds. The name Ornithischia, or bird-hipped, reflects this similarity.",
+    "src": "https://en.wikipedia.org/wiki/Ornithischia",
+    "verified": true
+  },
+  {
+    "in": [
+      "fish",
+      "armor"
+    ],
+    "out": "ostracoderm",
+    "why": "Ostracodermi or ostracoderms is an informal group of vertebrate animals that include all armored jawless fish of the Paleozoic Era.",
+    "src": "https://en.wikipedia.org/wiki/Ostracoderm",
+    "verified": true
+  },
+  {
+    "in": [
+      "shark",
+      "spine"
+    ],
+    "out": "acanthodii",
+    "why": "Acanthodii or acanthodians is an extinct class of gnathostomes, jawed fishes. They are currently considered to represent a paraphyletic grade of various fish lineages basal to extant Chondrichthyes, which includes living sharks, rays, and chimaeras.",
+    "src": "https://en.wikipedia.org/wiki/Acanthodii",
+    "verified": true
+  },
+  {
+    "in": [
+      "manatee",
+      "dugong"
+    ],
+    "out": "sirenia",
+    "why": "The Sirenia, commonly referred to as sea cows or sirenians, are an order of fully aquatic, herbivorous mammals that inhabit swamps, rivers, estuaries, marine wetlands, and coastal marine waters.",
+    "src": "https://en.wikipedia.org/wiki/Sirenia",
+    "verified": true
+  },
+  {
+    "in": [
+      "bird",
+      "perch"
+    ],
+    "out": "passerine",
+    "why": "A passerine is any bird of the order Passeriformes. Sometimes known as perching birds, passerines generally have an anisodactyl arrangement of their toes, which facilitates perching.",
+    "src": "https://en.wikipedia.org/wiki/Passerine",
+    "verified": true
+  },
+  {
+    "in": [
+      "chicken",
+      "turkey"
+    ],
+    "out": "galliformes",
+    "why": "Galliformes, also known as gallinaceous birds or landfowl, is an order of heavy-bodied terrestrial birds.",
+    "src": "https://en.wikipedia.org/wiki/Galliformes",
+    "verified": true
+  },
+  {
+    "in": [
+      "parrot",
+      "jungle"
+    ],
+    "out": "ara_bird",
+    "why": "Ara is a Neotropical genus of macaws.",
+    "src": "https://en.wikipedia.org/wiki/Ara_(bird)",
+    "verified": true
   }
 ]
