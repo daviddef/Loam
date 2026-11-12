@@ -250,6 +250,7 @@ html,body{margin:0;height:100%;overflow:hidden;background:var(--lk-paper);font-f
  <div class="rate"><div class="rl"><span>Game speed</span><span class="spd" id="spd" role="group" aria-label="Game speed"><button data-s=".5">½×</button><button data-s="1" class="on">1×</button><button data-s="2">2×</button><button data-s="3">3×</button></span></div></div>
  <label class="lk-switch" title="Matryoshka mode: whatever is defeated opens into what it is made of (water into hydrogen and oxygen), two levels deep; pieces of the same side that make a recipe fuse back together. Works in any fight, no teams needed.">Matryoshka mode<input type="checkbox" id="oSplit"><span></span></label>
  <label class="lk-switch" title="Habitats: sea creatures need a lake and die on dry ground, flyers and ghosts cross walls, diggers go under brick, land animals cannot swim. Off: only swimmers and flyers cross lakes.">Habitats<input type="checkbox" id="oHab" checked><span></span></label>
+ <label class="lk-switch" title="Trial: snakes grow when they eat">Snakes grow (trial)<input type="checkbox" id="oGrow" checked><span></span></label>
  <label class="lk-switch">Team battle<input type="checkbox" id="oTeam"><span></span></label>
  <div id="teams"><button class="chip sel" data-t="0" style="background:#E0872E">Ochre</button><button class="chip" data-t="1" style="background:#3E8FB8">Blue</button></div>
  <label class="lk-switch">Shuffle tab<input type="checkbox" id="oShuf"><span></span></label>
@@ -669,6 +670,7 @@ const ART_F={
  b_brick:['craft',[['p','M6 22 L12 15 H55 L48 22 Z','#E39A74'],['p','M6 22 H48 V51 H6 Z','#B9593B'],['p','M48 22 L55 15 V44 L48 51 Z','#8F3F2A'],['s','M6 31.5 H48 M6 41 H48 M20 22 V31.5 M34 31.5 V41 M20 41 V51 M42 22 V31.5','#EAD9BC',1.8],['s','M12 15 L6 22 M48 22 L55 15','#3a2216',1.6]],[6,15,55,51]],
  b_stone:['mineral',[['p','M6 22 L12 15 H55 L48 22 Z','#D2CEC4'],['p','M6 22 H48 V51 H6 Z','#9A968C'],['p','M48 22 L55 15 V44 L48 51 Z','#6E6A62'],['s','M6 37 H48 M24 22 V37 M36 37 V51 M14 37 V51','#4F4B45',2],['p','M9 25 H21 V34 H9 Z','#AEAAA0']],[6,15,55,51]],
  b_lake:['water',[['p','M8 32 Q8 18 28 18 Q52 16 54 32 Q56 46 34 48 Q10 50 8 32 Z','#2E6A99'],['p','M10 32 Q10 20 28 20 Q50 18 52 32 Q54 44 34 46 Q12 48 10 32 Z','#8CC8E4'],['p','M14 32 Q14 24 28 24 Q46 22 48 32 Q50 41 34 42 Q16 44 14 32 Z','#5FA5D6'],['s','M18 32 Q24 28 30 32 T42 32 M24 39 Q30 35 36 39','#EAF6FD',2.4]],[8,16,56,50]],
+ b_fire:['fire',[['p','M30 5 Q47 22 42 36 Q53 31 50 46 Q48 58 30 58 Q12 58 10 44 Q10 31 21 26 Q19 39 27 39 Q22 22 30 5 Z','lo'],['p','M30 29 Q40 40 35 50 Q33 56 28 54 Q21 50 26 41 Q28 36 30 29 Z','#FFD84A']],[8,5,52,58]],
  b_erase:['craft',[['p','M12 38 L34 14 L52 28 L32 52 H18 Z','#E8A0A0'],['p','M12 38 L34 14 L40 19 L18 43 Z','#F6F1E8'],['s','M32 52 H52','#34261a',2.4]],[10,14,54,52]],
  b_maze:['craft',[['s','M10 10 H50 V50 H18 V24 H38 V38','#C4694A',6]],[7,7,53,53]],
  b_river:['water',[['p','M4 24 Q20 14 34 26 T58 22 V36 Q44 46 30 36 T4 40 Z','#4F8FC0'],['s','M10 30 Q18 26 26 30 M36 30 Q44 26 52 30','#EAF6FD',2.2]],[4,14,58,46]],
@@ -680,6 +682,7 @@ const BUILD={
  b_brick:{i:'b_brick',n:'Brick wall',t:'b',e:1,g:'build',f:'Drag to lay a wall. Walkers and swimmers cannot cross; flyers and ghosts pass over; ants and moles dig under. Shells, rockets and bombs knock bricks out.',build:1,cell:1,hp:90,br:0},
  b_stone:{i:'b_stone',n:'Stone wall',t:'b',e:1,g:'build',f:'Tougher than brick. Only flyers and ghosts get past it; diggers cannot. Takes a few blasts to break.',build:1,cell:3,hp:240,br:0},
  b_lake:{i:'b_lake',n:'Lake',t:'b',e:1,g:'build',f:'Land animals cannot cross. Swimmers and flyers can, and whales and sharks need it to live. If anyone is stranded, it dries up in sudden death.',build:1,cell:2,hp:70,br:2},
+ b_fire:{i:'b_fire',n:'Wall of fire',t:'b',e:1,g:'build fire',f:'Drag to light a line of flames. Most things will not cross it, and what is pushed into it burns. Flyers pass over, fire things do not mind, water and ice put it out. It burns out after about 40 seconds. Trial.',build:1,cell:4,hp:60,br:0},
  b_erase:{i:'b_erase',n:'Eraser',t:'b',e:1,g:'build',f:'Drag to rub out walls and water.',build:1,cell:0,hp:0,br:1},
  b_maze:{i:'b_maze',n:'Random maze',t:'b',e:1,g:'build',f:'Fills the board with a brick maze. Click once.',build:1,act:'maze'},
  b_river:{i:'b_river',n:'River',t:'b',e:1,g:'build',f:'A river across the middle with one bridge. Click once.',build:1,act:'river'},
@@ -1162,7 +1165,7 @@ function mkUnit(id,x,y,g,tm){
  const S=statsFor(id),sz=S.r*3.2;
  const u={id,S,g,tm,x,y,z:26,vx:rnd(-85,85),vy:rnd(-45,45),vz:rnd(300,430),kx:0,ky:0,hp:S.hp,mx:S.hp,rad:S.r*.9,k:sz/60,face:Math.random()<.5?1:-1,ang:0,sx:1,sy:1,ph:Math.random()*6,t:0,
   state:'move',stt:0,cd:rnd(.1,.5),grace:.2,landed:false,tgt:null,rt:0,flash:0,burn:0,freeze:0,sick:0,sickBy:null,burnBy:null,dead:false,bounce:0,spin:0,
-  pp:[0,0],pv:[0,0],blink:rnd(1,4),kills:0,hurtT:0,hop:0,cheer:rnd(0,2)};u.uid=++UID;u.tk={};u.enr=0;u.lh=null;u.how='';u.px=x;u.py=y;u.fp=Math.max(6,u.rad*.5);u.hab=habOfId(id);u.dry=false;u.los=true;u.wp=null;u.np=false;u.stuck=false;u.spec=SPEC.test(EL[id].n);u.pdB=1e9;u.pdT=T;u.lastTg=null;u.gen=0;u.sib=null;u.fz=null;u.fzC=0;u.fzAge=0;u.nofz=0;u.fs=u.face;u.spin=rnd(-7,7);u.stun=0;u.jit=0;u.stepK=0;u.ghostT=0;u.pend=null;return u}
+  pp:[0,0],pv:[0,0],blink:rnd(1,4),kills:0,hurtT:0,hop:0,cheer:rnd(0,2)};u.uid=++UID;u.tk={};u.enr=0;u.lh=null;u.how='';u.px=x;u.py=y;u.fp=Math.max(6,u.rad*.5);u.hab=habOfId(id);u.dry=false;u.fpr=kindOfId(id)==='fire';u.los=true;u.wp=null;u.np=false;u.stuck=false;u.spec=SPEC.test(EL[id].n);u.pdB=1e9;u.pdT=T;u.lastTg=null;u.gen=0;u.sib=null;u.fz=null;u.fzC=0;u.fzAge=0;u.nofz=0;u.fs=u.face;u.spin=rnd(-7,7);u.stun=0;u.jit=0;u.stepK=0;u.ghostT=0;u.pend=null;return u}
 /* Team battle: when the mode is switched on (or the board is cleared, or a new match is poured after a win) the game waits. Units land and stand still; nothing moves,
    aims or strikes until both teams have someone on the field and Fight! is pressed (or Enter). */
 const teamN=t=>U.reduce((n,u)=>n+(!u.dead&&u.g==='team'+t?1:0),0);
@@ -1226,6 +1229,7 @@ const ROLEN={p:'predator',g:'grazer'};
 const power=S=>S.hp*S.dmg/Math.max(.2,S.cd);
 function whyKO(u,src,done){
  const P=[];
+ if(!src&&u.fireT!=null&&T-u.fireT<4)return{parts:['burned in a wall of fire']};
  if(u.dry&&hbOf(u)==='water'&&(!src||src===u||(u.lh&&u.lh.dot)))return{parts:['stranded out of water: a '+EL[u.id].n.toLowerCase()+' needs a lake']};
  if(!src||src===u)return{parts:['a force of nature, with nobody to credit']};
  const lh=u.lh||{};
@@ -1255,8 +1259,18 @@ function ashCloud(u,first,dt){const r=u.S.r,n=first?Math.round(10+r*.7):Math.max
   else pt({k:'spark',x:u.x+rnd(-u.rad,u.rad)*.6,y:u.y,z:r*rnd(.3,1.5),vx:rnd(-20,20),vz:rnd(30,90),l:.5,m:.5,c:'#FF9A2B',g:-40})}}
 function bigDeath(u){const r=u.S.r;ring(u.x,u.y,r*2.3,'rgba(255,255,255,.55)',3,.7);ring(u.x,u.y,r*1.5,'rgba(255,240,200,.8)',5,.4);dust(u.x,u.y,12+(r/4|0),90+r);
  pt({k:'glow',x:u.x,y:u.y,z:r,l:.3,m:.3,s:r*1.5});for(let i=0;i<8;i++){const a=Math.random()*6.283;puff({x:u.x+Math.cos(a)*r*.4,y:u.y+Math.sin(a)*r*.2,z:rnd(0,r*1.3),vx:Math.cos(a)*rnd(20,70),vy:Math.sin(a)*rnd(10,30),vz:rnd(20,70),l:rnd(.8,1.3),s:r*rnd(.35,.55),hot:.2,cool:.4,gr:.7,a:.7})}}
+/* trial: snakes grow when they eat. A snake that beats an animal grows (more for a bigger meal, less as it nears twice its size), heals a little, and hits harder. A game rule, not data. */
+const GROWRX=/\b(snakes?|serpent|python|cobra|viper|anaconda|boa|mamba|adder|rattlesnake)\b/i,GROWCAP=2.2;let growOn=true,growShown=false;const GCACHE={};
+const growsOf=id=>{if(id in GCACHE)return GCACHE[id];const f=fateOf(id);return GCACHE[id]=(f==='animal'||f==='folk')&&GROWRX.test(EL[id].n)};
+function grow(u,v){if(!growOn||u.dead||!growsOf(u.id)||fateOf(v.id)!=='animal')return;const g0=u.gr||1;if(g0>=GROWCAP-.02)return;
+ const add=clamp(.06+.2*(v.mx/Math.max(1,u.mx)),.06,.3),g1=Math.min(GROWCAP,g0*(1+add*(GROWCAP-g0)/(GROWCAP-1))),m=g1/g0;
+ if(!u.sOwn){u.S=Object.assign({},u.S);u.sOwn=true}
+ u.S.r*=m;u.S.dmg*=Math.pow(m,.8);const nm=u.mx*Math.pow(m,1.6);u.hp=Math.min(nm,u.hp+(nm-u.mx)+nm*.12);u.mx=nm;u.gr=g1;u.rad=u.S.r*.9;u.k=u.S.r*3.2/60;u.fp=Math.max(6,u.rad*.5);u.ate=(u.ate||0)+1;
+ ring(u.x,u.y,u.S.r*1.6,'#9bd34a',3,.4);txt(u.x,u.y,u.S.r*2.6,'GREW x'+g1.toFixed(1),'#9bd34a',16);
+ if(!growShown){growShown=true;TOAST.show({head:'<b>'+esc(EL[u.id].n)+'</b> ate '+esc(EL[v.id].n)+' and grew',body:'Trial game rule: a snake grows with every meal, up to about twice its size.',ms:3200})}}
 function kill(u,src,dx,dy){
  if(trySplit(u,src))return;
+ if(src&&src!==u&&!src.dead)grow(src,u);
  u.dead=true;u.vz=380+u.S.r*4;u.z=Math.max(u.z,1);u.kx=dx*(380+u.S.r0*8)+rnd(-80,80);u.ky=dy*160;u.spin=(Math.random()<.5?-1:1)*rnd(7,13);u.bounce=0;u.state='dead';u.t=0;u.deadAt=T;if(u.spec){u.vz=60;u.kx*=.15;u.ky*=.15;u.spin=0;for(let i=0;i<10;i++)pt({k:'smoke',x:u.x+rnd(-u.rad,u.rad),y:u.y,z:u.S.r*rnd(.3,1.6),vz:rnd(30,90),vx:rnd(-20,20),l:rnd(.7,1.3),m:1.3,s:rnd(4,9),c:'#e8f6ff',a:.5})}
  if(!u.spec&&kindOfId(u.id)==='abstract'){u.fadeT=T;u.vz=0;u.z=0;u.kx=u.ky=0;u.spin=0}
  const L0=lifeOf(u.id),fired=!u.spec&&(L0==='beast'||L0==='myth'||L0==='plant')&&(u.burn>0||(src&&src!==u&&src.S&&src.S.burn));
@@ -1302,7 +1316,7 @@ function updCard(dt){cardT-=dt;if(cardT>0)return;cardT=.1;const c=$('#ucard');
  let b=null,bd=1e9;for(const u of U){if(u.dead)continue;const d=Math.hypot(u.x-ptr.x,(u.y-u.z-u.S.r*1.1)-ptr.y);if(d<u.S.r*1.7&&d<bd){bd=d;b=u}}
  if(!b){c.classList.remove('on');HU=null;return}
  HU=b;const e=EL[b.id],how=b.how?b.how.charAt(0).toUpperCase()+b.how.slice(1):'Poured in';
- let h='<h5><i style="background:'+gcol(b.g)+'"></i>'+esc(e.n)+'</h5><div class="hw">'+esc(how)+'</div><div class="mu">HP '+Math.max(0,Math.round(b.hp))+'/'+b.mx+' · '+b.kills+' KO'+(b.kills===1?'':'s')+(splitMode?' · gen '+b.gen:'')+'</div>';
+ let h='<h5><i style="background:'+gcol(b.g)+'"></i>'+esc(e.n)+'</h5><div class="hw">'+esc(how)+'</div><div class="mu">HP '+Math.max(0,Math.round(b.hp))+'/'+b.mx+' · '+b.kills+' KO'+(b.kills===1?'':'s')+(splitMode?' · gen '+b.gen:'')+(b.gr?' · size x'+b.gr.toFixed(1):'')+'</div>';
  if(splitMode){
   const s=SP[b.id];h+='<div class="sg">'+(s&&b.gen<2?'Falls apart into <b>'+s.p.map(i=>esc(EL[i].n)).join(' + ')+'</b> <span class="mu">('+TIER[s.t]+')</span>':s?'Final form: dies for real':'Nothing inside: just falls over')+'</div>';
   const fp=FP[b.id];if(fp){const m=[];for(const p of fp){const f=FU[[b.id,p].sort().join('|')];if(f&&m.length<2)m.push('+ '+esc(EL[p].n)+' → <b>'+esc(EL[f.o].n)+'</b>')}if(m.length)h+='<div class="sg">'+m.join('<br>')+'</div>'}}
@@ -1427,12 +1441,12 @@ const habOfId=id=>(habRule(id)||{h:'land'}).h;
 const hbOf=u=>habOn?u.hab:(u.hab==='land'?'land':'amph');
 const HNUM={land:0,amph:1,water:2,air:3,phase:3,burrow:4};
 /* what a cell does to a unit of a habitat: v 1 brick, 3 stone, 2 lake, 0 open ground */
-function hBlk(h,v,dry){if(!v)return h==='water'&&!dry;if(h==='air'||h==='phase')return false;if(v===2)return h!=='water'&&h!=='amph';if(h==='water')return v!==2;if(h==='burrow')return v===3;return true}
+function hBlk(h,v,dry){if(!v)return h==='water'&&!dry;if(h==='air'||h==='phase')return false;if(v===4)return h==='water'&&!dry;if(v===2)return h!=='water'&&h!=='amph';if(h==='water')return v!==2;if(h==='burrow')return v===3;return true}
 /* ───────────── terrain: walls and lakes to build barriers and mazes ───────────── */
 const SPEC=/\b(ghost|spirit|banshee|wraith|spectre|specter|phantom|poltergeist|apparition|wisp|shade|revenant)\b/i;
 const CS=24,WH=26;
 let GC=0,GR=0,OB=null,OH=null,obN=0,terDirty=true,navStamp=0,wallList=[],wallDirty=true,wtT=0,pLast=null;
-let bfsD=null,bfsP=null,bfsQ=null,bfsS=null;const BL=[[null,null],[null,null],[null,null],[null,null],[null,null]];
+let bfsD=null,bfsP=null,bfsQ=null,bfsS=null;const BL=[[null,null],[null,null],[null,null],[null,null],[null,null],[null,null],[null,null],[null,null],[null,null],[null,null]];
 function initGrid(){const c=Math.ceil(W/CS)+1,r=Math.ceil(H/CS)+1,n=c*r,no=new Uint8Array(n),nh=new Float32Array(n);obN=0;
  if(OB)for(let y=0;y<Math.min(r,GR);y++)for(let x=0;x<Math.min(c,GC);x++){const v=OB[y*GC+x];no[y*c+x]=v;nh[y*c+x]=OH[y*GC+x];if(v)obN++}
  waterDirty=true;GC=c;GR=r;OB=no;OH=nh;bfsD=new Int32Array(n);bfsP=new Int32Array(n);bfsQ=new Int32Array(n);bfsS=new Int32Array(n);navStamp=0;terDirty=wallDirty=true}
@@ -1445,15 +1459,16 @@ function paintAt(x,y,b){const cx=Math.floor(x/CS),cy=Math.floor(y/CS),r=b.br||0;
 function paintLine(x0,y0,x1,y1,b){const d=Math.hypot(x1-x0,y1-y0),n=Math.max(1,Math.ceil(d/(CS*.5)));for(let i=0;i<=n;i++)paintAt(x0+(x1-x0)*i/n,y0+(y1-y0)*i/n,b)}
 function breakCell(i){const v=OB[i],cx=i%GC,cy=(i/GC)|0,x=(cx+.5)*CS,y=(cy+.5)*CS;OB[i]=0;OH[i]=0;obN--;terDirty=wallDirty=waterDirty=true;
  if(v===2){for(let k=0;k<4;k++)bubble(x+rnd(-8,8),y,rnd(0,10),'#CFE6F6');return}
+ if(v===4){for(let k=0;k<3;k++)pt({k:'smoke',x:x+rnd(-8,8),y,z:rnd(4,16),vz:rnd(30,70),vx:rnd(-10,10),l:rnd(.6,1),m:1,s:rnd(5,9),c:'#e9e2d6',a:.45});return}
  const cols=v===3?['#B8B4AA','#8A857B','#5d5850']:['#C46A4A','#A9503A','#EAD9BC'];confetti(x,y,8,cols,220);dust(x,y,6,60);sfx('hit',.6)}
 function hitTerrain(x,y,rad,dmg){if(!obN)return;const c0=Math.max(0,Math.floor((x-rad)/CS)),c1=Math.min(GC-1,Math.floor((x+rad)/CS)),r0=Math.max(0,Math.floor((y-rad)/CS)),r1=Math.min(GR-1,Math.floor((y+rad)/CS));
  for(let cy=r0;cy<=r1;cy++)for(let cx=c0;cx<=c1;cx++){const i=cy*GC+cx,v=OB[i];if(!(v&1))continue;const d=Math.hypot((cx+.5)*CS-x,(cy+.5)*CS-y);if(d>rad)continue;OH[i]-=dmg*2.4*(1-d/rad*.6);if(OH[i]<=0)breakCell(i)}}
 function clearTerrain(){if(!OB)return;for(let i=0;i<OB.length;i++)if(OB[i]&&Math.random()<.25){const x=(i%GC+.5)*CS,y=((i/GC)|0)*CS+CS;dust(x,y,1,30)}OB.fill(0);OH.fill(0);obN=0;mazeBox=null;terDirty=wallDirty=waterDirty=true;$('#sudden').textContent='SUDDEN DEATH'}
 function ensureBL(){if(!terDirty&&BL[0][0])return;const n=GC*GR,HS=['land','amph','water','air','burrow'];
- for(let ty=0;ty<5;ty++){const b=new Uint8Array(n),h=HS[ty];for(let i=0;i<n;i++)b[i]=hBlk(h,OB[i],false)?1:0;BL[ty][0]=b;
+ for(let ty=0;ty<10;ty++){const b=new Uint8Array(n),h=HS[ty%5],fear=ty<5&&ty!==3;for(let i=0;i<n;i++)b[i]=(hBlk(h,OB[i],false)||(fear&&OB[i]===4))?1:0;BL[ty][0]=b;
   const d=new Uint8Array(n);for(let y=0;y<GR;y++)for(let x=0;x<GC;x++){let m=0;for(let j=-1;j<=1&&!m;j++){const yy=y+j;if(yy<0||yy>=GR)continue;for(let i=-1;i<=1;i++){const xx=x+i;if(xx<0||xx>=GC)continue;if(b[yy*GC+xx]){m=1;break}}}d[y*GC+x]=m}BL[ty][1]=d}
  terDirty=false}
-const blIdx=u=>{const h=hbOf(u);return h==='water'&&u.dry?1:HNUM[h]};
+const blIdx=u=>{const h=hbOf(u);return(h==='water'&&u.dry?1:HNUM[h])+(u.fpr?5:0)};
 function sight(x0,y0,x1,y1,u){if(!obN)return true;const h=u?hbOf(u):'land';if(h==='air'||h==='phase')return true;const d=Math.hypot(x1-x0,y1-y0),n=Math.ceil(d/8);for(let i=1;i<n;i++){const k=cellIdx(x0+(x1-x0)*i/n,y0+(y1-y0)*i/n);if(k>=0&&(OB[k]&1)&&!(h==='burrow'&&OB[k]===1))return false}return true}
 function lineClearNav(u,x1,y1){const bl=BL[blIdx(u)][u.fp>12?1:0],x0=u.x,y0=u.y,d=Math.hypot(x1-x0,y1-y0),n=Math.ceil(d/10);for(let i=2;i<=n;i++){const k=cellIdx(x0+(x1-x0)*i/n,y0+(y1-y0)*i/n);if(k>=0&&bl[k])return false}return true}
 function bfs(u){ensureBL();const bl=BL[blIdx(u)][u.fp>12?1:0],st=++navStamp,cx=clamp(Math.floor(u.x/CS),0,GC-1),cy=clamp(Math.floor(u.y/CS),0,GR-1),s=cy*GC+cx;
@@ -1487,7 +1502,17 @@ function terrainCollide(){if(!obN)return;
   else eject(u)}}
 /* a water creature on dry ground cannot move and slowly dies (data/habitat.json: stranded) */
 let strandedShown=0;
-function habTick(dt){if(setup)return;
+let fireAcc=0;
+function fireTick(dt){if(!obN)return;fireAcc+=dt;if(fireAcc<.25)return;const d=fireAcc;fireAcc=0;
+ for(let i=0;i<OB.length;i++){if(OB[i]!==4)continue;OH[i]-=1.5*d;const x=(i%GC+.5)*CS,y=((i/GC)|0)*CS+CS*.9;
+  if(Math.random()<d*3*FXR())fireP(x,y,rnd(4,18),6);
+  if(OH[i]<=0)breakCell(i)}
+ for(const u of U){if(u.dead||!u.landed||u.fpr)continue;const k=cellIdx(u.x,u.y);if(k<0||OB[k]!==4)continue;
+  const kd=kindOfId(u.id);
+  if(MU.douse.indexOf(kd)>=0){OH[k]-=40*d;matchFx(u,'steam');continue}
+  const h=hbOf(u);if(h==='air'||h==='phase')continue;
+  if(!(u.burn>0))fireP(u.x,u.y,u.S.r*1.2,u.S.r*.5);u.burn=Math.max(u.burn,2.5);u.burnBy=null;u.fireT=T}}
+function habTick(dt){if(setup)return;fireTick(dt);
  for(const u of U){if(u.dead||!u.landed)continue;
   if(hbOf(u)!=='water'){u.dry=false;continue}
   const k=OB?cellIdx(u.x,u.y):-1;u.dry=!(k>=0&&OB[k]===2);
@@ -1545,8 +1570,8 @@ function drawMazeFloor(){if(!mazeBox)return;const b=mazeBox;ctx.save();ctx.begin
  const gr=ctx.createRadialGradient(b.x+b.w/2,b.y+b.h/2,Math.min(b.w,b.h)*.25,b.x+b.w/2,b.y+b.h/2,Math.max(b.w,b.h)*.7);gr.addColorStop(0,'rgba(0,0,0,0)');gr.addColorStop(1,'rgba(98,70,34,.28)');ctx.fillStyle=gr;ctx.fillRect(b.x,b.y,b.w,b.h);ctx.restore()}
 function drawWallShadows(){if(!obN)return;if(wallDirty)rebuildWalls();const wl=(cx,cy)=>cx>=0&&cy>=0&&cx<GC&&cy<GR&&(OB[cy*GC+cx]&1);
  ctx.fillStyle='rgba(58,38,18,.26)';ctx.beginPath();
- for(const w of wallList){const px=w.x*CS,py=w.y*CS;if(!wl(w.x,w.y+1))ctx.rect(px+2,py+CS,CS+7,10);if(!wl(w.x+1,w.y))ctx.rect(px+CS,py+7,8,CS+3)}ctx.fill()}
-function rebuildWalls(){wallList=[];for(let y=0;y<GR;y++)for(let x=0;x<GC;x++){const v=OB[y*GC+x];if(v&1)wallList.push({i:y*GC+x,x,y,key:(y+1)*CS})}wallDirty=false}
+ for(const w of wallList){if(OB[w.i]===4)continue;const px=w.x*CS,py=w.y*CS;if(!wl(w.x,w.y+1))ctx.rect(px+2,py+CS,CS+7,10);if(!wl(w.x+1,w.y))ctx.rect(px+CS,py+7,8,CS+3)}ctx.fill()}
+function rebuildWalls(){wallList=[];for(let y=0;y<GR;y++)for(let x=0;x<GC;x++){const v=OB[y*GC+x];if((v&1)||v===4)wallList.push({i:y*GC+x,x,y,key:(y+1)*CS})}wallDirty=false}
 const WSP=new Map();
 addEventListener('resize',()=>{WSP.clear();waterDirty=true});
 const BRK={1:{top:['#E8A47E','#E09870','#EBAA86','#DC8E68','#E49C76'],fr:['#BE5F40','#B4563A','#C8684A','#AA4E34','#B85B3E'],mor:'#7C3A28',tmor:'#C97C58',edge:'#3A2216'},
@@ -1584,7 +1609,11 @@ function wallSprite(v,mask,vr,dmg,s){const key=v+'|'+mask+'|'+vr+'|'+dmg+'|'+s,h
  if(!S){g.moveTo(0,CS);g.lineTo(CS,CS)}
  g.stroke();
  const o={c,ox:pad,oy:pad+WH};WSP.set(key,o);return o}
-function drawWall(w){const i=w.i,v=OB[i],hmax=v===3?240:90,wl=(cx,cy)=>cx>=0&&cy>=0&&cx<GC&&cy<GR&&(OB[cy*GC+cx]&1);
+function drawFire(w){const x=(w.x+.5)*CS,y=(w.y+.92)*CS,a=Math.max(.3,Math.min(1,OH[w.i]/18)),t=T*8+w.x*1.7+w.y*2.3;
+ ctx.fillStyle='rgba(255,140,40,'+(.22*a)+')';ctx.beginPath();ctx.ellipse(x,y,CS*.62,CS*.3,0,0,6.283);ctx.fill();
+ for(let k=0;k<3;k++){const ph=t+k*2.1,h=(15+7*Math.sin(ph*1.3)+k*3)*a,wd=6.5+2*Math.sin(ph),ox=(k-1)*6.5+Math.sin(ph*.8)*2;
+  ctx.fillStyle=k===1?'#FFD84A':k===0?'#E8531F':'#F28A2A';ctx.beginPath();ctx.moveTo(x+ox-wd,y);ctx.quadraticCurveTo(x+ox-wd*.6,y-h*.6,x+ox+Math.sin(ph*1.7)*3,y-h);ctx.quadraticCurveTo(x+ox+wd*.6,y-h*.5,x+ox+wd,y);ctx.closePath();ctx.fill()}}
+function drawWall(w){if(OB[w.i]===4){drawFire(w);return}const i=w.i,v=OB[i],hmax=v===3?240:90,wl=(cx,cy)=>cx>=0&&cy>=0&&cx<GC&&cy<GR&&(OB[cy*GC+cx]&1);
  const mask=(wl(w.x,w.y-1)?1:0)|(wl(w.x+1,w.y)?2:0)|(wl(w.x,w.y+1)?4:0)|(wl(w.x-1,w.y)?8:0),dmg=OH[i]<hmax*.25?2:OH[i]<hmax*.55?1:0;
  const s=Math.max(1,Math.ceil(DPR)),sp=wallSprite(v,mask,(hsh(w.x,w.y,9)*3)|0,dmg,s);
  ctx.drawImage(sp.c,w.x*CS-sp.ox,w.y*CS-sp.oy,sp.c.width/s,sp.c.height/s)}
@@ -2045,7 +2074,7 @@ function showTip(b){const id=b.dataset.i,e=EL[id],bar=(l,v,c)=>'<span>'+l+'</spa
  let h='<h4>'+e.n+'</h4><p>'+e.f+'</p>';
  if(e.force)h+='<div class="tg">Force: click or drag on the board</div>';
  else if(e.build)h+='<div class="tg">'+(e.act?'Click to place':'Terrain: drag on the board')+'</div>';
- else{const S=statsFor(id),tg=[];if(S.burn)tg.push('burns');if(S.freeze)tg.push('freezes');if(S.sick)tg.push(e.t==='d'?'infects':'venom');if(S.aura)tg.push('radiation');if(S.kind==='ranged')tg.push('ranged');if(S.kind==='kami')tg.push('explodes');if(S.kind==='heal')tg.push('heals');if(S.arm<1)tg.push('armoured');if(S.role)tg.push(ROLEN[S.role]+' (game rule)');if(S.regen)tg.push('regrows');if(SP[id])tg.push('splits into '+SP[id].p.map(i=>EL[i].n).join(' + '));
+ else{const S=statsFor(id),tg=[];if(S.burn)tg.push('burns');if(S.freeze)tg.push('freezes');if(S.sick)tg.push(e.t==='d'?'infects':'venom');if(S.aura)tg.push('radiation');if(S.kind==='ranged')tg.push('ranged');if(S.kind==='kami')tg.push('explodes');if(S.kind==='heal')tg.push('heals');if(S.arm<1)tg.push('armoured');if(S.role)tg.push(ROLEN[S.role]+' (game rule)');if(S.regen)tg.push('regrows');if(growsOf(id))tg.push('grows when it eats (trial game rule)');if(SP[id])tg.push('splits into '+SP[id].p.map(i=>EL[i].n).join(' + '));
   h+='<div class="b">'+bar('HP',S.hp/240,'#7FB05A')+bar('SPD',(S.sp/US/1.3-36)/110,'#5FA8D3')+bar('ATK',S.dmg*(S.kind==='mg'?3:1)/40,'#E0872E')+'</div>'+(tg.length?'<div class="tg">'+tg.join(' · ')+'</div>':'')+'<div class="tg">Right-click or press L: open in Loam</div>'}
  tip.innerHTML=h;const r=b.getBoundingClientRect();tip.style.left=clamp(r.left+r.width/2-115,8,innerWidth-238)+'px';tip.style.top=(r.top-tip.offsetHeight-12)+'px';tip.classList.add('on');tip.style.top=(r.top-tip.offsetHeight-12)+'px'}
 let hintOn=true;function hint(on){if(on===false&&hintOn){hintOn=false;$('#hint').style.opacity=0}}
@@ -2080,6 +2109,8 @@ $('#bOpts').onclick=()=>optsSet(!$('.opts').classList.contains('open'));
 cv.addEventListener('pointerdown',()=>{if(PH)optsSet(false)});
 $('#oHab').onchange=e=>{habOn=e.target.checked;terDirty=true;for(const u of U)if(u.dry&&!habOn)u.dry=false;try{localStorage.setItem('loamHab',habOn?1:0)}catch(x){}};
 try{if(localStorage.getItem('loamHab')==='0'){$('#oHab').checked=false;habOn=false}}catch(x){}
+$('#oGrow').onchange=e=>{growOn=e.target.checked;try{localStorage.setItem('loamGrow',growOn?1:0)}catch(x){}};
+try{if(localStorage.getItem('loamGrow')==='0'){$('#oGrow').checked=false;growOn=false}}catch(x){}
 $('#oShake').onchange=e=>{shakeK=e.target.checked?.35:0;try{localStorage.setItem('loamShake',e.target.checked?1:0)}catch(x){}};
 try{if(localStorage.getItem('loamShake')==='0'){$('#oShake').checked=false;shakeK=0}}catch(x){}
 document.querySelectorAll('.chip').forEach(c=>c.onclick=()=>{team=+c.dataset.t;document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('sel',x===c));updSetup()});
