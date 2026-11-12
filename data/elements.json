@@ -14614,8 +14614,7 @@
       "water"
     ],
     "fact": "An ornamental Amur carp bred for colour in Niigata, Japan since the 1820s — released to the wild, it reverts to its ancestor's plain colouring in a few generations.",
-    "taxon": "tx_cypriniformes",
-    "terminal": true
+    "taxon": "tx_cypriniformes"
   },
   {
     "id": "european_eel",
@@ -51195,7 +51194,6 @@
       "water"
     ],
     "fact": "One of two living jawless vertebrate lineages, feeding through a toothed sucking disc, not a jaw.",
-    "terminal": true,
     "soleRoute": true,
     "taxon": "tx_vertebrata"
   },
@@ -59620,8 +59618,7 @@
     "tags": [
       "medicine"
     ],
-    "fact": "Human papillomavirus infecting skin through the smallest of breaks — a wound is the virus's actual entrance.",
-    "terminal": true
+    "fact": "Human papillomavirus infecting skin through the smallest of breaks — a wound is the virus's actual entrance."
   },
   {
     "id": "clostridium_tetani",
@@ -126549,5 +126546,830 @@
     ],
     "fact": "Protecting wild species and their habitats.",
     "src": "https://en.wikipedia.org/wiki/Wildlife_conservation"
+  },
+  {
+    "id": "eel",
+    "name": "Eel",
+    "emoji": "🐍",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Long, snake-shaped ray-finned fish that change greatly from larva to adult.",
+    "src": "https://en.wikipedia.org/wiki/Eel"
+  },
+  {
+    "id": "flying_fish",
+    "name": "Flying Fish",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Saltwater fish that glide through the air above the waves.",
+    "src": "https://en.wikipedia.org/wiki/Flying_fish"
+  },
+  {
+    "id": "milkfish",
+    "name": "Milkfish",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A widespread Indo-Pacific fish, the only living member of its family.",
+    "src": "https://en.wikipedia.org/wiki/Milkfish"
+  },
+  {
+    "id": "oarfish",
+    "name": "Oarfish",
+    "emoji": "🐉",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Very long, rarely seen ocean fish of the open sea.",
+    "src": "https://en.wikipedia.org/wiki/Oarfish"
+  },
+  {
+    "id": "mullet_fish",
+    "name": "Mullet",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Coastal fish eaten around the Mediterranean since Roman times.",
+    "src": "https://en.wikipedia.org/wiki/Mullet_(fish)"
+  },
+  {
+    "id": "stickleback",
+    "name": "Stickleback",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Small spiny fish of fresh, brackish and sea water in the north.",
+    "src": "https://en.wikipedia.org/wiki/Stickleback"
+  },
+  {
+    "id": "stingray",
+    "name": "Stingray",
+    "emoji": "🪼",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Flat cartilaginous fish with stinging tails.",
+    "src": "https://en.wikipedia.org/wiki/Stingray"
+  },
+  {
+    "id": "skate_fish",
+    "name": "Skate",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Flat cartilaginous fish of the ray family Rajidae.",
+    "src": "https://en.wikipedia.org/wiki/Skate_(fish)"
+  },
+  {
+    "id": "sawfish",
+    "name": "Sawfish",
+    "emoji": "🪚",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Giant rays with a long toothed snout like a saw.",
+    "src": "https://en.wikipedia.org/wiki/Sawfish"
+  },
+  {
+    "id": "electric_ray",
+    "name": "Electric Ray",
+    "emoji": "⚡",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Rays that stun prey with an electric discharge.",
+    "src": "https://en.wikipedia.org/wiki/Electric_ray"
+  },
+  {
+    "id": "barracuda",
+    "name": "Barracuda",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A large predatory saltwater fish of tropical oceans.",
+    "src": "https://en.wikipedia.org/wiki/Barracuda"
+  },
+  {
+    "id": "cichlid",
+    "name": "Cichlid",
+    "emoji": "🐠",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A huge, diverse family of freshwater fish.",
+    "src": "https://en.wikipedia.org/wiki/Cichlid"
+  },
+  {
+    "id": "tilapia",
+    "name": "Tilapia",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Cichlid fish of great economic importance, widely farmed.",
+    "src": "https://en.wikipedia.org/wiki/Tilapia"
+  },
+  {
+    "id": "guppy",
+    "name": "Guppy",
+    "emoji": "🐠",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A small, colourful livebearing aquarium fish.",
+    "src": "https://en.wikipedia.org/wiki/Guppy"
+  },
+  {
+    "id": "plaice",
+    "name": "Plaice",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A flatfish; the European plaice is the commercially important one.",
+    "src": "https://en.wikipedia.org/wiki/Plaice"
+  },
+  {
+    "id": "turbot",
+    "name": "Turbot",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A large flatfish of the Northeast Atlantic, Baltic and Mediterranean.",
+    "src": "https://en.wikipedia.org/wiki/Turbot"
+  },
+  {
+    "id": "alaska_pollock",
+    "name": "Alaska Pollock",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A schooling North Pacific fish of the cod family.",
+    "src": "https://en.wikipedia.org/wiki/Alaska_pollock"
+  },
+  {
+    "id": "cod",
+    "name": "Cod",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The demersal fish of the genus Gadus.",
+    "src": "https://en.wikipedia.org/wiki/Cod"
+  },
+  {
+    "id": "haddock",
+    "name": "Haddock",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A saltwater fish of the cod family.",
+    "src": "https://en.wikipedia.org/wiki/Haddock"
+  },
+  {
+    "id": "mahi_mahi",
+    "name": "Mahi-mahi",
+    "emoji": "🐠",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A surface-dwelling fish of warm open seas, also called dolphinfish.",
+    "src": "https://en.wikipedia.org/wiki/Mahi-mahi"
+  },
+  {
+    "id": "grouper",
+    "name": "Grouper",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Marine fish once counted among the seabasses, now a family of their own.",
+    "src": "https://en.wikipedia.org/wiki/Grouper"
+  },
+  {
+    "id": "european_seabass",
+    "name": "European Seabass",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A mostly ocean-going fish of European and North African coasts.",
+    "src": "https://en.wikipedia.org/wiki/European_seabass"
+  },
+  {
+    "id": "siamese_fighting_fish",
+    "name": "Betta",
+    "emoji": "🐠",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The betta, a freshwater fish of Southeast Asia.",
+    "src": "https://en.wikipedia.org/wiki/Siamese_fighting_fish"
+  },
+  {
+    "id": "perch",
+    "name": "Perch",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A freshwater fish of the genus Perca.",
+    "src": "https://en.wikipedia.org/wiki/Perch"
+  },
+  {
+    "id": "remora",
+    "name": "Remora",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The suckerfish that clings to sharks and other large animals.",
+    "src": "https://en.wikipedia.org/wiki/Remora"
+  },
+  {
+    "id": "ocean_sunfish",
+    "name": "Ocean Sunfish",
+    "emoji": "🌞",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "One of the largest ray-finned fish in the world.",
+    "src": "https://en.wikipedia.org/wiki/Ocean_sunfish"
+  },
+  {
+    "id": "wrasse",
+    "name": "Wrasse",
+    "emoji": "🐠",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A large family of marine fish, many of them brightly coloured.",
+    "src": "https://en.wikipedia.org/wiki/Wrasse"
+  },
+  {
+    "id": "lungfish",
+    "name": "Lungfish",
+    "emoji": "🫁",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Freshwater fish that can breathe air.",
+    "src": "https://en.wikipedia.org/wiki/Lungfish"
+  },
+  {
+    "id": "arapaima",
+    "name": "Arapaima",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A very large Amazon fish, also called the pirarucu.",
+    "src": "https://en.wikipedia.org/wiki/Arapaima"
+  },
+  {
+    "id": "chimaera",
+    "name": "Ghost Shark",
+    "emoji": "👻",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Cartilaginous fish known as ghost sharks.",
+    "src": "https://en.wikipedia.org/wiki/Chimaera_(fish)"
+  },
+  {
+    "id": "sturgeon",
+    "name": "Sturgeon",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Ancient fish of the family Acipenseridae, descended from earlier fish.",
+    "src": "https://en.wikipedia.org/wiki/Sturgeon"
+  },
+  {
+    "id": "anchovy",
+    "name": "Anchovy",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Small, common forage fish of the family Engraulidae.",
+    "src": "https://en.wikipedia.org/wiki/Anchovy"
+  },
+  {
+    "id": "herring",
+    "name": "Herring",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Forage fish that move in large schools near coasts.",
+    "src": "https://en.wikipedia.org/wiki/Herring"
+  },
+  {
+    "id": "sardine",
+    "name": "Sardine",
+    "emoji": "🥫",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Small, oily forage fish of the herring group.",
+    "src": "https://en.wikipedia.org/wiki/Sardine"
+  },
+  {
+    "id": "sprat",
+    "name": "Sprat",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Small forage fish of the genus Sprattus.",
+    "src": "https://en.wikipedia.org/wiki/Sprat"
+  },
+  {
+    "id": "carp",
+    "name": "Carp",
+    "emoji": "🎏",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Freshwater fish of the very large family Cyprinidae.",
+    "src": "https://en.wikipedia.org/wiki/Carp"
+  },
+  {
+    "id": "smelt_fish",
+    "name": "Smelt",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Small fish of the family Osmeridae, found in oceans, rivers and lakes.",
+    "src": "https://en.wikipedia.org/wiki/Smelt_(fish)"
+  },
+  {
+    "id": "trout",
+    "name": "Trout",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Carnivorous freshwater fish of the salmon family.",
+    "src": "https://en.wikipedia.org/wiki/Trout"
+  },
+  {
+    "id": "catfish",
+    "name": "Catfish",
+    "emoji": "🐱",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Fish named for barbels that look like a cat's whiskers.",
+    "src": "https://en.wikipedia.org/wiki/Catfish"
+  },
+  {
+    "id": "bichir",
+    "name": "Bichir",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Archaic freshwater fish of tropical Africa and the Nile.",
+    "src": "https://en.wikipedia.org/wiki/Bichir"
+  },
+  {
+    "id": "coral_reef_fish",
+    "name": "Coral Reef Fish",
+    "emoji": "🐠",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Marine fish that live among coral reefs.",
+    "src": "https://en.wikipedia.org/wiki/Coral_reef_fish"
+  },
+  {
+    "id": "deep_sea_fish",
+    "name": "Deep-sea Fish",
+    "emoji": "🔦",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Fish that live in the darkness below the sunlit waters.",
+    "src": "https://en.wikipedia.org/wiki/Deep-sea_fish"
+  },
+  {
+    "id": "chondrichthyes",
+    "name": "Cartilaginous Fish",
+    "emoji": "🦈",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The jawed fish whose skeletons are mostly cartilage.",
+    "src": "https://en.wikipedia.org/wiki/Chondrichthyes"
+  },
+  {
+    "id": "osteichthyes",
+    "name": "Bony Fish",
+    "emoji": "🦴",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The bony fish, whose skeletons are mostly bone.",
+    "src": "https://en.wikipedia.org/wiki/Osteichthyes"
+  },
+  {
+    "id": "actinopterygii",
+    "name": "Ray-finned Fish",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The ray-finned fish, nearly all the fish alive today.",
+    "src": "https://en.wikipedia.org/wiki/Actinopterygii"
+  },
+  {
+    "id": "agnatha",
+    "name": "Jawless Fish",
+    "emoji": "🐟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The jawless fish, such as lampreys and hagfishes.",
+    "src": "https://en.wikipedia.org/wiki/Agnatha"
+  },
+  {
+    "id": "salamander",
+    "name": "Salamander",
+    "emoji": "🦎",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Lizard-like amphibians with a tail in both larva and adult.",
+    "src": "https://en.wikipedia.org/wiki/Salamander"
+  },
+  {
+    "id": "newt",
+    "name": "Newt",
+    "emoji": "🦎",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A semiaquatic salamander whose young phase is called an eft.",
+    "src": "https://en.wikipedia.org/wiki/Newt"
+  },
+  {
+    "id": "true_toad",
+    "name": "True Toad",
+    "emoji": "🐸",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Any member of the toad family Bufonidae.",
+    "src": "https://en.wikipedia.org/wiki/True_toad"
+  },
+  {
+    "id": "crocodylia",
+    "name": "Crocodilians",
+    "emoji": "🐊",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The order of semiaquatic predatory reptiles, closest living relatives of birds.",
+    "src": "https://en.wikipedia.org/wiki/Crocodylia"
+  },
+  {
+    "id": "alligator",
+    "name": "Alligator",
+    "emoji": "🐊",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A large crocodilian; the American and Chinese alligators survive.",
+    "src": "https://en.wikipedia.org/wiki/Alligator"
+  },
+  {
+    "id": "caiman",
+    "name": "Caiman",
+    "emoji": "🐊",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A Central and South American relative of the alligator.",
+    "src": "https://en.wikipedia.org/wiki/Caiman"
+  },
+  {
+    "id": "chameleon",
+    "name": "Chameleon",
+    "emoji": "🦎",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Old World lizards famed for shifting colour.",
+    "src": "https://en.wikipedia.org/wiki/Chameleon"
+  },
+  {
+    "id": "gecko",
+    "name": "Gecko",
+    "emoji": "🦎",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Small, mostly carnivorous lizards of warm climates.",
+    "src": "https://en.wikipedia.org/wiki/Gecko"
+  },
+  {
+    "id": "green_iguana",
+    "name": "Green Iguana",
+    "emoji": "🦎",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A large, tree-living, mostly plant-eating lizard.",
+    "src": "https://en.wikipedia.org/wiki/Green_iguana"
+  },
+  {
+    "id": "horned_lizard",
+    "name": "Horned Lizard",
+    "emoji": "🦎",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "North American lizards with horns and flat, rounded bodies.",
+    "src": "https://en.wikipedia.org/wiki/Horned_lizard"
+  },
+  {
+    "id": "skink",
+    "name": "Skink",
+    "emoji": "🦎",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "One of the most diverse families of lizards.",
+    "src": "https://en.wikipedia.org/wiki/Skink"
+  },
+  {
+    "id": "eastern_copperhead",
+    "name": "Copperhead",
+    "emoji": "🐍",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A venomous pit viper of the eastern United States.",
+    "src": "https://en.wikipedia.org/wiki/Eastern_copperhead"
+  },
+  {
+    "id": "cottonmouth",
+    "name": "Cottonmouth",
+    "emoji": "🐍",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A semiaquatic venomous pit viper of the southeastern United States.",
+    "src": "https://en.wikipedia.org/wiki/Agkistrodon_piscivorus"
+  },
+  {
+    "id": "boidae",
+    "name": "Boa Family",
+    "emoji": "🐍",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The boas, a family of nonvenomous snakes that includes some of the world's largest.",
+    "src": "https://en.wikipedia.org/wiki/Boidae"
+  },
+  {
+    "id": "coral_snake",
+    "name": "Coral Snake",
+    "emoji": "🐍",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Elapid snakes in two groups, Old World and New World.",
+    "src": "https://en.wikipedia.org/wiki/Coral_snake"
+  },
+  {
+    "id": "garter_snake",
+    "name": "Garter Snake",
+    "emoji": "🐍",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Small to medium snakes of North and Central America.",
+    "src": "https://en.wikipedia.org/wiki/Garter_snake"
+  },
+  {
+    "id": "sea_snake",
+    "name": "Sea Snake",
+    "emoji": "🐍",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Elapid snakes that live in the sea.",
+    "src": "https://en.wikipedia.org/wiki/Sea_snake"
+  },
+  {
+    "id": "mamba",
+    "name": "Mamba",
+    "emoji": "🐍",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Fast-moving, highly venomous snakes of the genus Dendroaspis.",
+    "src": "https://en.wikipedia.org/wiki/Mamba"
+  },
+  {
+    "id": "naja",
+    "name": "Cobra Genus",
+    "emoji": "🐍",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The genus of true cobras, venomous snakes of Africa and Asia.",
+    "src": "https://en.wikipedia.org/wiki/Naja"
+  },
+  {
+    "id": "common_snapping_turtle",
+    "name": "Snapping Turtle",
+    "emoji": "🐢",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A large freshwater turtle of eastern North America.",
+    "src": "https://en.wikipedia.org/wiki/Common_snapping_turtle"
+  },
+  {
+    "id": "alligator_snapping_turtle",
+    "name": "Alligator Snapping Turtle",
+    "emoji": "🐢",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The largest freshwater turtle in North America.",
+    "src": "https://en.wikipedia.org/wiki/Alligator_snapping_turtle"
+  },
+  {
+    "id": "painted_turtle",
+    "name": "Painted Turtle",
+    "emoji": "🐢",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "North America's most widespread native turtle.",
+    "src": "https://en.wikipedia.org/wiki/Painted_turtle"
+  },
+  {
+    "id": "red_eared_slider",
+    "name": "Red-eared Slider",
+    "emoji": "🐢",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A popular pet turtle and the most invasive chelonian.",
+    "src": "https://en.wikipedia.org/wiki/Red-eared_slider"
+  },
+  {
+    "id": "sea_turtle",
+    "name": "Sea Turtle",
+    "emoji": "🐢",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Marine reptiles of the order Testudines.",
+    "src": "https://en.wikipedia.org/wiki/Sea_turtle"
+  },
+  {
+    "id": "tortoise",
+    "name": "Tortoise",
+    "emoji": "🐢",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Land-dwelling turtles of the family Testudinidae.",
+    "src": "https://en.wikipedia.org/wiki/Tortoise"
+  },
+  {
+    "id": "galapagos_tortoise",
+    "name": "Galápagos Tortoise",
+    "emoji": "🐢",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A very large tortoise of the Galápagos.",
+    "src": "https://en.wikipedia.org/wiki/Galápagos_tortoise"
+  },
+  {
+    "id": "plesiosaur",
+    "name": "Plesiosaur",
+    "emoji": "🦕",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Extinct Mesozoic marine reptiles with long necks and paddle limbs.",
+    "src": "https://en.wikipedia.org/wiki/Plesiosaur"
+  },
+  {
+    "id": "synapsida",
+    "name": "Synapsids",
+    "emoji": "🦎",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The group that includes all mammals and their extinct relatives.",
+    "src": "https://en.wikipedia.org/wiki/Synapsida"
+  },
+  {
+    "id": "dimetrodon",
+    "name": "Dimetrodon",
+    "emoji": "🦎",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An extinct synapsid of the Permian with a large sail on its back.",
+    "src": "https://en.wikipedia.org/wiki/Dimetrodon"
   }
 ]
