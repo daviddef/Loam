@@ -124746,7 +124746,7 @@
   {
     "in": [
       "topology",
-      "set"
+      "set_math"
     ],
     "out": "general_topology",
     "why": "In mathematics, general topology (or point set topology) is the branch of topology that deals with the basic set-theoretic definitions and constructions used in topology. It is the foundation of most other branches of topology, including differential topology, geometric topology, and algebraic topology.",
@@ -124755,7 +124755,7 @@
   },
   {
     "in": [
-      "set",
+      "set_math",
       "space"
     ],
     "out": "topological_space",
@@ -124785,7 +124785,7 @@
   },
   {
     "in": [
-      "set",
+      "set_math",
       "limit"
     ],
     "out": "open_set",
@@ -124905,7 +124905,7 @@
   },
   {
     "in": [
-      "set",
+      "set_math",
       "polygon"
     ],
     "out": "convex_set",
@@ -125291,6 +125291,1066 @@
     "out": "commutative_algebra",
     "why": "Commutative algebra, first known as ideal theory, is the branch of algebra that studies commutative rings, their ideals, and modules over such rings. Both algebraic geometry and algebraic number theory build on commutative algebra.",
     "src": "https://en.wikipedia.org/wiki/Commutative_algebra",
+    "verified": true
+  },
+  {
+    "in": [
+      "algorithm",
+      "division"
+    ],
+    "out": "euclidean_algorithm",
+    "why": "In mathematics, the Euclidean algorithm, or Euclid's algorithm, is an efficient method for computing the greatest common divisor (GCD) of two integers, the largest number that divides them both without a remainder. It is named after the ancient Greek mathematician Euclid, who first described it in his Elements (c. 300 BC).",
+    "src": "https://en.wikipedia.org/wiki/Euclidean_algorithm",
+    "verified": true
+  },
+  {
+    "in": [
+      "integer",
+      "division"
+    ],
+    "out": "modular_arithmetic",
+    "why": "In mathematics, modular arithmetic is a system of arithmetic operations for integers, differing from the usual ones in that numbers \"wrap around\" when reaching or exceeding a certain value, called the modulus. The modern approach to number theory using modular arithmetic was developed by Carl Friedrich Gauss in his book Disquisitiones Arithmeticae, published in 1801.",
+    "src": "https://en.wikipedia.org/wiki/Modular_arithmetic",
+    "verified": true
+  },
+  {
+    "in": [
+      "square_root",
+      "exponentiation"
+    ],
+    "out": "nth_root",
+    "why": "In mathematics, an nth root of a number x is the number r which, when n copies are multiplied together, yields x. The positive integer n is called the index or degree, and the number x of which the root is taken is the radicand.",
+    "src": "https://en.wikipedia.org/wiki/Nth_root",
+    "verified": true
+  },
+  {
+    "in": [
+      "integer",
+      "symmetry"
+    ],
+    "out": "parity_mathematics",
+    "why": "In mathematics, parity is the property of an integer of whether it is even or odd. An integer is even if it is divisible by 2, and odd if it is not.",
+    "src": "https://en.wikipedia.org/wiki/Parity_(mathematics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "probability",
+      "hypothesis"
+    ],
+    "out": "bayesian_inference",
+    "why": "Bayesian inference is a method of statistical inference in which Bayes' theorem is used to calculate a probability of a hypothesis, given prior evidence, and update it as more information becomes available. Fundamentally, Bayesian inference uses a prior distribution to estimate posterior probabilities.",
+    "src": "https://en.wikipedia.org/wiki/Bayesian_inference",
+    "verified": true
+  },
+  {
+    "in": [
+      "statistics",
+      "data"
+    ],
+    "out": "correlation",
+    "why": "In statistics, correlation is a type of statistical relationship between two random variables or bivariate data. It usually refers to the extent to which a pair of quantities are linearly related.",
+    "src": "https://en.wikipedia.org/wiki/Correlation",
+    "verified": true
+  },
+  {
+    "in": [
+      "statistics",
+      "line"
+    ],
+    "out": "regression_analysis",
+    "why": "In statistical modeling, regression analysis is a statistical method for estimating the relationship between a dependent variable (often called the outcome or response variable, or a label in machine learning parlance) and one or more independent variables (often called regressors, predictors, covariates, explanatory variables or features).",
+    "src": "https://en.wikipedia.org/wiki/Regression_analysis",
+    "verified": true
+  },
+  {
+    "in": [
+      "statistics",
+      "multiplication"
+    ],
+    "out": "covariance",
+    "why": "In probability theory and statistics, covariance is a measure of the joint variability of two random variables. The sign of the covariance shows the tendency in the linear relationship between the variables.",
+    "src": "https://en.wikipedia.org/wiki/Covariance",
+    "verified": true
+  },
+  {
+    "in": [
+      "data",
+      "map"
+    ],
+    "out": "data_visualization",
+    "why": "Data and information visualization is the practice of designing and creating graphic or visual representations of quantitative and qualitative data and information with the help of static, dynamic or interactive visual items.",
+    "src": "https://en.wikipedia.org/wiki/Data_and_information_visualization",
+    "verified": true
+  },
+  {
+    "in": [
+      "hypothesis",
+      "statistics"
+    ],
+    "out": "design_of_experiments",
+    "why": "The design of experiments (DOE), also known as experimental design, refers to the construction of procedures that attempt to explain how changes in one aspect of a system will lead to changes in other aspects of a system.",
+    "src": "https://en.wikipedia.org/wiki/Design_of_experiments",
+    "verified": true
+  },
+  {
+    "in": [
+      "hypothesis",
+      "medicine"
+    ],
+    "out": "randomized_controlled_trial",
+    "why": "A randomized controlled trial (RCT) is a type of statistical experiment designed to evaluate the efficacy or safety of an intervention by minimizing bias through the random allocation of participants to one or more comparison groups.",
+    "src": "https://en.wikipedia.org/wiki/Randomized_controlled_trial",
+    "verified": true
+  },
+  {
+    "in": [
+      "average",
+      "data"
+    ],
+    "out": "median",
+    "why": "The median of a set of numbers is the value separating the higher half from the lower half of a data sample, a population, or a probability distribution. For a data set, it may be thought of as the \"middle\" value.",
+    "src": "https://en.wikipedia.org/wiki/Median",
+    "verified": true
+  },
+  {
+    "in": [
+      "average",
+      "population"
+    ],
+    "out": "mode_statistics",
+    "why": "In statistics, the mode is the value that appears most often in a set of data values. If X is a discrete random variable, the mode is the value x at which the probability mass function P(X) takes its maximum value, i.e., x = argmaxxi P(X = xi).",
+    "src": "https://en.wikipedia.org/wiki/Mode_(statistics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "statistics",
+      "square_root"
+    ],
+    "out": "standard_deviation",
+    "why": "In statistics, the standard deviation is a measure of the amount of variation of the values of a variable about its (arithmetic) average. A low standard deviation indicates that the values of a set tend to be close to their average, while a high standard deviation indicates that the values are spread out over a wider range.",
+    "src": "https://en.wikipedia.org/wiki/Standard_deviation",
+    "verified": true
+  },
+  {
+    "in": [
+      "statistics",
+      "survey"
+    ],
+    "out": "standard_error",
+    "why": "The standard error (SE) of a statistic is the standard deviation of its sampling distribution. It is the square root of the variance of an estimator of a parameter, as in the standard error of the mean.",
+    "src": "https://en.wikipedia.org/wiki/Standard_error",
+    "verified": true
+  },
+  {
+    "in": [
+      "hypothesis",
+      "data"
+    ],
+    "out": "statistical_hypothesis_test",
+    "why": "A statistical hypothesis test is a method of statistical inference used to decide whether the data provides sufficient evidence to reject a particular hypothesis. A statistical hypothesis test typically involves a calculation of a test statistic.",
+    "src": "https://en.wikipedia.org/wiki/Statistical_hypothesis_test",
+    "verified": true
+  },
+  {
+    "in": [
+      "survey",
+      "population"
+    ],
+    "out": "survey_methodology",
+    "why": "Survey methodology is \"the study of survey methods\". As a field of applied statistics concentrating on human-research surveys, survey methodology studies the sampling of individual units from a population and associated techniques of survey data collection, such as questionnaire construction and methods for improving the number and accuracy of responses to surveys. Survey methodology targets instruments or procedures that ask one or more questions that may or may not be answered.",
+    "src": "https://en.wikipedia.org/wiki/Survey_methodology",
+    "verified": true
+  },
+  {
+    "in": [
+      "population",
+      "data"
+    ],
+    "out": "statistical_population",
+    "why": "In statistics, a population is a set of similar items which is of interest for some question or experiment. A statistical population can be a group of existing objects (e.g. the set of all stars within the Milky Way galaxy) or a hypothetical and potentially infinite group of objects conceived as a generalization from experience (e.g. the set of all possible hands in a game of poker).",
+    "src": "https://en.wikipedia.org/wiki/Statistical_population",
+    "verified": true
+  },
+  {
+    "in": [
+      "probability",
+      "theorem"
+    ],
+    "out": "probability_theory",
+    "why": "Probability theory or probability calculus is the branch of mathematics concerned with probability. Although there are several different probability interpretations, probability theory treats the concept in a rigorous mathematical manner by expressing it through a set of axioms.",
+    "src": "https://en.wikipedia.org/wiki/Probability_theory",
+    "verified": true
+  },
+  {
+    "in": [
+      "theorem",
+      "average"
+    ],
+    "out": "central_limit_theorem",
+    "why": "In probability theory, the central limit theorem (CLT) states that, under appropriate conditions, the distribution of a normalized version of the sample mean converges to a standard normal distribution. This holds even if the original variables themselves are not normally distributed.",
+    "src": "https://en.wikipedia.org/wiki/Central_limit_theorem",
+    "verified": true
+  },
+  {
+    "in": [
+      "probability",
+      "average"
+    ],
+    "out": "expected_value",
+    "why": "In probability theory, the expected value (also called expectation, mean, or first moment) is a generalization of the weighted average. Provided that it is finite, the expected value can be interpreted as the long-run average of results from independent repetitions of the same random experiment, as formalized by the law of large numbers.",
+    "src": "https://en.wikipedia.org/wiki/Expected_value",
+    "verified": true
+  },
+  {
+    "in": [
+      "probability",
+      "limit"
+    ],
+    "out": "law_of_large_numbers",
+    "why": "In probability theory, the law of large numbers is a mathematical law which states that the average of the results obtained from a large number of independent random samples converges to the true value, if it exists. More formally, the law of large numbers states that given a sample of independent and identically distributed values, the sample mean converges to the true mean.",
+    "src": "https://en.wikipedia.org/wiki/Law_of_large_numbers",
+    "verified": true
+  },
+  {
+    "in": [
+      "probability",
+      "sequence"
+    ],
+    "out": "markov_chain",
+    "why": "In probability theory and statistics, a Markov chain or Markov process is a stochastic process describing a sequence of possible events in which the probability of each event depends only on the state attained in the previous event. A countably infinite sequence, in which the chain moves state at discrete time steps, gives a discrete-time Markov chain (DTMC).",
+    "src": "https://en.wikipedia.org/wiki/Markov_chain",
+    "verified": true
+  },
+  {
+    "in": [
+      "probability",
+      "function"
+    ],
+    "out": "probability_density_function",
+    "why": "In probability theory, a probability density function (PDF), density function, or simply density of an absolutely continuous random variable, is a function whose value at any given point in the sample space (the set of possible values taken by the random variable) can be interpreted as providing a \"relative probability\" that the value of the random variable would be equal to that point.",
+    "src": "https://en.wikipedia.org/wiki/Probability_density_function",
+    "verified": true
+  },
+  {
+    "in": [
+      "probability",
+      "data"
+    ],
+    "out": "probability_distribution",
+    "why": "In probability theory and statistics, a probability distribution describes how probabilities are assigned to the possible results of a random phenomenon—more precisely, to events, which are sets of possible outcomes of a probabilistic experiment. Informally, a probability distribution tells us how likely different results are.",
+    "src": "https://en.wikipedia.org/wiki/Probability_distribution",
+    "verified": true
+  },
+  {
+    "in": [
+      "probability",
+      "number"
+    ],
+    "out": "random_variable",
+    "why": "A random variable (also called random quantity, aleatory variable, or stochastic variable) is a mathematical formalization of a quantity or object which depends on random events.",
+    "src": "https://en.wikipedia.org/wiki/Random_variable",
+    "verified": true
+  },
+  {
+    "in": [
+      "probability",
+      "time"
+    ],
+    "out": "stochastic_process",
+    "why": "In probability theory and related fields a stochastic or random process is a mathematical object usually defined as a family of random variables in a probability space, where the index of the family often has the interpretation of time. Stochastic processes are widely used as mathematical models of systems and phenomena that appear to vary in a random manner.",
+    "src": "https://en.wikipedia.org/wiki/Stochastic_process",
+    "verified": true
+  },
+  {
+    "in": [
+      "average",
+      "multiplication"
+    ],
+    "out": "variance",
+    "why": "In probability theory and statistics, variance is a measure of dispersion, meaning it is a measure of how far a set of numbers are spread out from their average value. It is defined as the expected value of the squared deviation from the mean of a random variable.",
+    "src": "https://en.wikipedia.org/wiki/Variance",
+    "verified": true
+  },
+  {
+    "in": [
+      "integer",
+      "set_math"
+    ],
+    "out": "discrete_mathematics",
+    "why": "Discrete mathematics is the study of mathematical structures that can be considered \"discrete\" (in a way analogous to discrete variables, having a one-to-one correspondence (bijection) with natural numbers), rather than \"continuous\" (analogously to continuous functions). Objects studied in discrete mathematics include integers, graphs, and statements in logic.",
+    "src": "https://en.wikipedia.org/wiki/Discrete_mathematics",
+    "verified": true
+  },
+  {
+    "in": [
+      "integer",
+      "theorem"
+    ],
+    "out": "number_theory",
+    "why": "Number theory is a branch of mathematics devoted primarily to the study of the integers and arithmetic functions. Number theorists study prime numbers as well as the properties of mathematical objects constructed from integers (for example, rational numbers), or defined as generalizations of the integers (for example, algebraic integers).",
+    "src": "https://en.wikipedia.org/wiki/Number_theory",
+    "verified": true
+  },
+  {
+    "in": [
+      "prime_number",
+      "logarithm"
+    ],
+    "out": "prime_number_theorem",
+    "why": "In mathematics, the prime number theorem (PNT) describes the asymptotic distribution of prime numbers among the positive integers. It formalizes the intuitive idea that primes become less common as they become larger by precisely quantifying the rate at which this occurs.",
+    "src": "https://en.wikipedia.org/wiki/Prime_number_theorem",
+    "verified": true
+  },
+  {
+    "in": [
+      "prime_number",
+      "infinity"
+    ],
+    "out": "euclids_theorem",
+    "why": "Euclid's theorem is a fundamental statement in number theory that asserts that there are infinitely many prime numbers. It was first proven by Euclid in his work Elements.",
+    "src": "https://en.wikipedia.org/wiki/Euclid's_theorem",
+    "verified": true
+  },
+  {
+    "in": [
+      "prime_number",
+      "multiplication"
+    ],
+    "out": "fundamental_theorem_of_arithmetic",
+    "why": "In mathematics, the fundamental theorem of arithmetic, also called the unique factorization theorem and prime factorization theorem, states that every integer greater than 1 is either prime or can be represented uniquely as a product of prime numbers, up to the order of the factors.",
+    "src": "https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic",
+    "verified": true
+  },
+  {
+    "in": [
+      "rational_number",
+      "field"
+    ],
+    "out": "algebraic_number_field",
+    "why": "In mathematics, an algebraic number field (or simply number field) is an extension field of the field of rational numbers such that the field extension has finite degree (and hence is an algebraic field extension).",
+    "src": "https://en.wikipedia.org/wiki/Algebraic_number_field",
+    "verified": true
+  },
+  {
+    "in": [
+      "conjecture",
+      "prime_number"
+    ],
+    "out": "riemann_hypothesis",
+    "why": "In mathematics, the Riemann hypothesis is a conjecture about the zeros of the Riemann zeta function. Many consider it to be the most important unsolved problem in pure mathematics.",
+    "src": "https://en.wikipedia.org/wiki/Riemann_hypothesis",
+    "verified": true
+  },
+  {
+    "in": [
+      "equation",
+      "integer"
+    ],
+    "out": "diophantine_equation",
+    "why": "In mathematics, a Diophantine equation is a polynomial equation with integer coefficients, for which only integer solutions are of interest. A linear Diophantine equation equates the sum of two or more unknowns, with coefficients, to a constant.",
+    "src": "https://en.wikipedia.org/wiki/Diophantine_equation",
+    "verified": true
+  },
+  {
+    "in": [
+      "theorem",
+      "exponentiation"
+    ],
+    "out": "fermats_last_theorem",
+    "why": "In number theory, Fermat's Last Theorem (sometimes called Fermat's conjecture, especially in older texts) states that there are no positive integers a,b,c,n with n>2 such that an+bn=cn. The cases n=1 and n=2 have been known since antiquity to have infinitely many solutions.",
+    "src": "https://en.wikipedia.org/wiki/Fermat's_Last_Theorem",
+    "verified": true
+  },
+  {
+    "in": [
+      "logic",
+      "set_math"
+    ],
+    "out": "mathematical_logic",
+    "why": "Mathematical logic is the study of logic within mathematics. This is commonly done by means of formal systems called formal logics that define rules of reasoning and the axioms they satisfy.",
+    "src": "https://en.wikipedia.org/wiki/Mathematical_logic",
+    "verified": true
+  },
+  {
+    "in": [
+      "turing_machine",
+      "logic"
+    ],
+    "out": "computability_theory",
+    "why": "Computability theory, also known as recursion theory, is a branch of mathematical logic, computer science, and the theory of computation that originated in the 1930s with the study of computable functions and Turing degrees. The field has since expanded to include the study of generalized computability and definability.",
+    "src": "https://en.wikipedia.org/wiki/Computability_theory",
+    "verified": true
+  },
+  {
+    "in": [
+      "function",
+      "algorithm"
+    ],
+    "out": "computable_function",
+    "why": "Computable functions are the basic objects of study in computability theory. Informally, a function is computable if there is an algorithm that computes the value of the function for every value of its argument.",
+    "src": "https://en.wikipedia.org/wiki/Computable_function",
+    "verified": true
+  },
+  {
+    "in": [
+      "logic",
+      "function"
+    ],
+    "out": "first_order_logic",
+    "why": "In mathematics, philosophy, linguistics, and computer science, first-order logic (FOL), also called predicate logic, predicate calculus, or quantificational logic, is a type of formal system. First-order logic uses quantified variables over non-logical objects, and allows the use of sentences that contain variables.",
+    "src": "https://en.wikipedia.org/wiki/First-order_logic",
+    "verified": true
+  },
+  {
+    "in": [
+      "theorem",
+      "paradox"
+    ],
+    "out": "godels_incompleteness_theorems",
+    "why": "Gödel's incompleteness theorems are two theorems of mathematical logic that are concerned with the limits of provability in formal axiomatic theories. These results, published by Kurt Gödel in 1931, are important both in mathematical logic and in philosophy of mathematics.",
+    "src": "https://en.wikipedia.org/wiki/Gödel's_incompleteness_theorems",
+    "verified": true
+  },
+  {
+    "in": [
+      "proof",
+      "sequence"
+    ],
+    "out": "mathematical_induction",
+    "why": "Mathematical induction is a method for proving that a statement P(n) is true for every natural number n, that is, that the infinitely many cases P(0),P(1),P(2),P(3),… all hold. This is done by first proving a simple case, then also showing that if we assume the claim is true for a given case, then the next case is also true.",
+    "src": "https://en.wikipedia.org/wiki/Mathematical_induction",
+    "verified": true
+  },
+  {
+    "in": [
+      "logic",
+      "boolean_algebra"
+    ],
+    "out": "propositional_logic",
+    "why": "Propositional logic is a branch of classical logic. It is also called statement logic, sentential calculus, propositional calculus, sentential logic, or sometimes zeroth-order logic. Sometimes, it is called first-order propositional logic to contrast it with System F, but it is distinct from first-order logic.",
+    "src": "https://en.wikipedia.org/wiki/Propositional_logic",
+    "verified": true
+  },
+  {
+    "in": [
+      "counting",
+      "discrete_mathematics"
+    ],
+    "out": "combinatorics",
+    "why": "Combinatorics is an area of mathematics primarily concerned with counting, both as a means and as an end to obtaining results, and certain properties of finite structures. It is closely related to many other areas of mathematics and has many applications ranging from logic to statistical physics and from evolutionary biology to computer science.",
+    "src": "https://en.wikipedia.org/wiki/Combinatorics",
+    "verified": true
+  },
+  {
+    "in": [
+      "computer",
+      "theorem"
+    ],
+    "out": "theoretical_computer_science",
+    "why": "Theoretical computer science is a subfield of computer science and mathematics that focuses on the abstract and mathematical foundations of computation. It is difficult to circumscribe the theoretical areas precisely.",
+    "src": "https://en.wikipedia.org/wiki/Theoretical_computer_science",
+    "verified": true
+  },
+  {
+    "in": [
+      "computer",
+      "logic"
+    ],
+    "out": "abstract_machine",
+    "why": "In computer science, an abstract machine is a theoretical model that allows for a detailed and precise analysis of how a computer system functions. It is similar to a mathematical function in that it receives inputs and produces outputs based on predefined rules.",
+    "src": "https://en.wikipedia.org/wiki/Abstract_machine",
+    "verified": true
+  },
+  {
+    "in": [
+      "integral",
+      "algorithm"
+    ],
+    "out": "numerical_integration",
+    "why": "In analysis, numerical integration comprises a broad family of algorithms for calculating the numerical value of a definite integral. The term numerical quadrature (often abbreviated to quadrature) is more or less a synonym for \"numerical integration\", especially as applied to one-dimensional integrals.",
+    "src": "https://en.wikipedia.org/wiki/Numerical_integration",
+    "verified": true
+  },
+  {
+    "in": [
+      "code",
+      "algebra"
+    ],
+    "out": "coding_theory",
+    "why": "Coding theory is the study of the properties of codes and their respective fitness for specific applications. Codes are used for data compression, cryptography, error detection and correction, data transmission and data storage.",
+    "src": "https://en.wikipedia.org/wiki/Coding_theory",
+    "verified": true
+  },
+  {
+    "in": [
+      "data",
+      "code"
+    ],
+    "out": "data_compression",
+    "why": "In information theory, data compression, source coding, or bit-rate reduction is the process of encoding information using fewer bits than the original representation. Any particular compression is either lossy or lossless.",
+    "src": "https://en.wikipedia.org/wiki/Data_compression",
+    "verified": true
+  },
+  {
+    "in": [
+      "code",
+      "feedback"
+    ],
+    "out": "error_detection_and_correction",
+    "why": "In information theory and coding theory with applications in computer science and telecommunications, error detection and correction (EDAC) or error control are techniques that enable reliable delivery of digital data over unreliable communication channels. Many communication channels are subject to channel noise, and thus errors may be introduced during transmission from the source to a receiver.",
+    "src": "https://en.wikipedia.org/wiki/Error_detection_and_correction",
+    "verified": true
+  },
+  {
+    "in": [
+      "algorithm",
+      "time"
+    ],
+    "out": "computational_complexity_theory",
+    "why": "In theoretical computer science and mathematics, computational complexity theory focuses on classifying computational problems according to their resource usage, and explores the relationships between these classifications. A computational problem is a task solved by a computer and is solvable by mechanical application of mathematical steps, such as an algorithm.",
+    "src": "https://en.wikipedia.org/wiki/Computational_complexity_theory",
+    "verified": true
+  },
+  {
+    "in": [
+      "conjecture",
+      "algorithm"
+    ],
+    "out": "p_versus_np_problem",
+    "why": "The P versus NP problem is a major unsolved problem in theoretical computer science. Informally, it asks whether every decision problem for which a proposed positive answer can be quickly verified can also be quickly solved.",
+    "src": "https://en.wikipedia.org/wiki/P_versus_NP_problem",
+    "verified": true
+  },
+  {
+    "in": [
+      "data",
+      "tree"
+    ],
+    "out": "data_structure",
+    "why": "In computer science, a data structure is a way to organize and store data that is usually chosen for efficient access to data. More precisely, a data structure is the physical implementation of a data type, including specifications of the data organization and storage format, as well as functions or operations for working with this data.",
+    "src": "https://en.wikipedia.org/wiki/Data_structure",
+    "verified": true
+  },
+  {
+    "in": [
+      "language",
+      "algebra"
+    ],
+    "out": "formal_language",
+    "why": "In logic, mathematics, computer science, and linguistics, a formal language is a set of strings whose symbols are taken from a set called \"alphabet\". The alphabet of a formal language consists of symbols that concatenate into strings (also called \"words\").",
+    "src": "https://en.wikipedia.org/wiki/Formal_language",
+    "verified": true
+  },
+  {
+    "in": [
+      "turing_machine",
+      "theorem"
+    ],
+    "out": "theory_of_computation",
+    "why": "In theoretical computer science and mathematics, the theory of computation is the branch that deals with what problems can be solved on a model of computation using an algorithm, how efficiently they can be solved and to what degree (e.g., approximate solutions versus precise ones).",
+    "src": "https://en.wikipedia.org/wiki/Theory_of_computation",
+    "verified": true
+  },
+  {
+    "in": [
+      "set_math",
+      "zero"
+    ],
+    "out": "empty_set",
+    "why": "In mathematics, the empty set or void set is the unique set having no elements; its size or cardinality (count of elements in a set) is zero. Some axiomatic set theories ensure that the empty set exists by including an axiom of empty set, while in other theories, its existence can be deduced.",
+    "src": "https://en.wikipedia.org/wiki/Empty_set",
+    "verified": true
+  },
+  {
+    "in": [
+      "set_math",
+      "line"
+    ],
+    "out": "subset",
+    "why": "In mathematics, a set A is a subset of a set B if and only if all elements of A are also elements of B; B is then a superset of A. It is possible for A and B to be equal; if they are unequal, then A is a proper subset of B. The relationship of one set being a subset of another is called inclusion (or sometimes containment).",
+    "src": "https://en.wikipedia.org/wiki/Subset",
+    "verified": true
+  },
+  {
+    "in": [
+      "axiom",
+      "set_math"
+    ],
+    "out": "axiom_of_choice",
+    "why": "In mathematics, the axiom of choice, abbreviated AC or AoC, is an axiom of set theory. Informally put, the axiom of choice says that given any collection of non-empty sets, one can identify another set containing one element chosen from each set, even if the collection is infinite.",
+    "src": "https://en.wikipedia.org/wiki/Axiom_of_choice",
+    "verified": true
+  },
+  {
+    "in": [
+      "set_math",
+      "number"
+    ],
+    "out": "cardinality",
+    "why": "In mathematics, cardinality is an inherent property of sets, roughly meaning the number of individual objects they contain, which may be infinite. The concept is understood through one-to-one correspondences between sets.",
+    "src": "https://en.wikipedia.org/wiki/Cardinality",
+    "verified": true
+  },
+  {
+    "in": [
+      "set_math",
+      "symmetry"
+    ],
+    "out": "equivalence_relation",
+    "why": "In mathematics, an equivalence relation is a binary relation that is reflexive, symmetric, and transitive. The equipollence relation between line segments in geometry is a common example of an equivalence relation.",
+    "src": "https://en.wikipedia.org/wiki/Equivalence_relation",
+    "verified": true
+  },
+  {
+    "in": [
+      "set_math",
+      "geometry"
+    ],
+    "out": "intersection_set_theory",
+    "why": "In set theory, the intersection of two sets A and B is the set containing all elements of A that also belong to B or equivalently, all elements of B that also belong to A.",
+    "src": "https://en.wikipedia.org/wiki/Intersection_(set_theory)",
+    "verified": true
+  },
+  {
+    "in": [
+      "set_math",
+      "paradox"
+    ],
+    "out": "naive_set_theory",
+    "why": "Naive set theory is any of several set theories used in the discussion of the foundations of mathematics. Unlike axiomatic set theories, which are defined using formal logic, naive set theory is defined informally, in natural language.",
+    "src": "https://en.wikipedia.org/wiki/Naive_set_theory",
+    "verified": true
+  },
+  {
+    "in": [
+      "paradox",
+      "logic"
+    ],
+    "out": "russells_paradox",
+    "why": "In mathematical logic, Russell's paradox (also known as Russell's antinomy) is a set-theoretic paradox published by the British philosopher and mathematician, Bertrand Russell, in 1901. Russell's paradox shows that every set theory that contains an unrestricted comprehension principle leads to contradictions.",
+    "src": "https://en.wikipedia.org/wiki/Russell's_paradox",
+    "verified": true
+  },
+  {
+    "in": [
+      "set_math",
+      "addition"
+    ],
+    "out": "union_set_theory",
+    "why": "In set theory, the union of a collection of sets is the set of all elements in the collection. It is one of the fundamental operations through which sets can be combined and related to each other.",
+    "src": "https://en.wikipedia.org/wiki/Union_(set_theory)",
+    "verified": true
+  },
+  {
+    "in": [
+      "set_math",
+      "circle"
+    ],
+    "out": "venn_diagram",
+    "why": "A Venn diagram is a widely used diagram style that shows the logical relation between sets, popularized by John Venn in the 1880s. The diagrams are used to teach elementary set theory, and to illustrate simple set relationships in probability, logic, statistics, linguistics and computer science.",
+    "src": "https://en.wikipedia.org/wiki/Venn_diagram",
+    "verified": true
+  },
+  {
+    "in": [
+      "network",
+      "theorem"
+    ],
+    "out": "graph_theory",
+    "why": "In mathematics and computer science, graph theory is the study of graphs, which are mathematical structures used to model pairwise relations between objects. A graph in this context is made up of vertices (also called nodes or points) which are connected by edges (also called arcs, links, or lines).",
+    "src": "https://en.wikipedia.org/wiki/Graph_theory",
+    "verified": true
+  },
+  {
+    "in": [
+      "network",
+      "set_math"
+    ],
+    "out": "graph_discrete_mathematics",
+    "why": "In discrete mathematics, particularly in graph theory, a graph is a structure consisting of a set of objects where some pairs of the objects are in some sense \"related\". The objects are represented by abstractions called vertices (also called nodes or points) and each of the related pairs of vertices is called an edge (also called link or line).",
+    "src": "https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "limit",
+      "infinity"
+    ],
+    "out": "limit_of_a_function",
+    "why": "In mathematics, the limit of a function is a fundamental concept in calculus and analysis concerning the behavior of that function near a particular input which may or may not be in the domain of the function. Formal definitions, first devised in the early 19th century, are given below.",
+    "src": "https://en.wikipedia.org/wiki/Limit_of_a_function",
+    "verified": true
+  },
+  {
+    "in": [
+      "limit",
+      "sequence"
+    ],
+    "out": "limit_of_a_sequence",
+    "why": "In mathematics, the limit of a sequence is the value that the terms of a sequence \"tend to\", and is often denoted using the lim symbol. If such a limit exists and is finite, the sequence is called convergent.",
+    "src": "https://en.wikipedia.org/wiki/Limit_of_a_sequence",
+    "verified": true
+  },
+  {
+    "in": [
+      "sequence",
+      "golden_ratio"
+    ],
+    "out": "fibonacci_sequence",
+    "why": "In mathematics, the Fibonacci sequence is a sequence in which each element is the sum of the two elements that precede it. Numbers that are part of the Fibonacci sequence are known as Fibonacci numbers, commonly denoted Fn .",
+    "src": "https://en.wikipedia.org/wiki/Fibonacci_sequence",
+    "verified": true
+  },
+  {
+    "in": [
+      "theorem",
+      "calculus"
+    ],
+    "out": "fundamental_theorem_of_calculus",
+    "why": "The fundamental theorem of calculus is a theorem that links the concept of differentiating a function (calculating its slopes, or rate of change at every point on its domain) with the concept of integrating a function (calculating the area under its graph, or the cumulative effect of small contributions). Roughly speaking, the two operations can be thought of as inverses of each other.",
+    "src": "https://en.wikipedia.org/wiki/Fundamental_theorem_of_calculus",
+    "verified": true
+  },
+  {
+    "in": [
+      "function",
+      "curve"
+    ],
+    "out": "continuous_function",
+    "why": "In mathematics, a continuous function is a function such that a small variation of its argument induces at most a small variation of its value. This implies there are no abrupt changes in value, known as discontinuities.",
+    "src": "https://en.wikipedia.org/wiki/Continuous_function",
+    "verified": true
+  },
+  {
+    "in": [
+      "calculus",
+      "derivative"
+    ],
+    "out": "differential_calculus",
+    "why": "In mathematics, differential calculus is a subfield of calculus that studies the rates at which quantities change. The primary objects of study in differential calculus are the derivative of a function, related notions such as the differential, and their applications.",
+    "src": "https://en.wikipedia.org/wiki/Differential_calculus",
+    "verified": true
+  },
+  {
+    "in": [
+      "equation",
+      "derivative"
+    ],
+    "out": "differential_equation",
+    "why": "In mathematics, a differential equation is an equation that relates one or more unknown functions and their derivatives. In applications, the functions generally represent physical quantities, the derivatives represent their rates of change, and the differential equation defines a relationship between the two.",
+    "src": "https://en.wikipedia.org/wiki/Differential_equation",
+    "verified": true
+  },
+  {
+    "in": [
+      "integral",
+      "exponential_function"
+    ],
+    "out": "laplace_transform",
+    "why": "In mathematics, the Laplace transform, named after Pierre-Simon Laplace, is an integral transform that converts a function of a real variable to a function of a complex variable s (in the complex-valued frequency domain, also known as s-domain or s-plane).",
+    "src": "https://en.wikipedia.org/wiki/Laplace_transform",
+    "verified": true
+  },
+  {
+    "in": [
+      "calculus",
+      "space"
+    ],
+    "out": "multivariable_calculus",
+    "why": "Multivariable calculus (also known as multivariate calculus) is the extension of calculus in one variable to functions of several variables: the differentiation and integration of functions involving multiple variables (multivariate), rather than just one. Multivariable calculus may be thought of as an elementary part of calculus on Euclidean space.",
+    "src": "https://en.wikipedia.org/wiki/Multivariable_calculus",
+    "verified": true
+  },
+  {
+    "in": [
+      "integral",
+      "volume"
+    ],
+    "out": "multiple_integral",
+    "why": "In mathematics (specifically multivariable calculus), a multiple integral is a definite integral of a function of several real variables.",
+    "src": "https://en.wikipedia.org/wiki/Multiple_integral",
+    "verified": true
+  },
+  {
+    "in": [
+      "derivative",
+      "function"
+    ],
+    "out": "partial_derivative",
+    "why": "In mathematics, a partial derivative of a function of several variables is its derivative with respect to one of those variables, with the others held constant (as opposed to the total derivative, in which all variables are allowed to vary). Partial derivatives are used in vector calculus and differential geometry.",
+    "src": "https://en.wikipedia.org/wiki/Partial_derivative",
+    "verified": true
+  },
+  {
+    "in": [
+      "equation",
+      "symmetry"
+    ],
+    "out": "laplaces_equation",
+    "why": "In mathematics and physics, Laplace's equation is a second-order partial differential equation named after Pierre-Simon Laplace, who first studied its properties in 1786.",
+    "src": "https://en.wikipedia.org/wiki/Laplace's_equation",
+    "verified": true
+  },
+  {
+    "in": [
+      "calculus",
+      "vector_space"
+    ],
+    "out": "vector_calculus",
+    "why": "Vector calculus or vector analysis is a branch of mathematics concerned with the differentiation and integration of vector fields, primarily in three-dimensional Euclidean space. The term vector calculus is sometimes used as a synonym for the broader subject of multivariable calculus, which spans vector calculus as well as partial differentiation and multiple integration.",
+    "src": "https://en.wikipedia.org/wiki/Vector_calculus",
+    "verified": true
+  },
+  {
+    "in": [
+      "euclidean_vector",
+      "derivative"
+    ],
+    "out": "del",
+    "why": "Del, or nabla, is an operator used in mathematics (particularly in vector calculus) as a vector differential operator. When applied to a function defined on a one-dimensional domain, it denotes the standard derivative of the function as defined in calculus.",
+    "src": "https://en.wikipedia.org/wiki/Del",
+    "verified": true
+  },
+  {
+    "in": [
+      "series",
+      "derivative"
+    ],
+    "out": "taylor_series",
+    "why": "In mathematical analysis, the Taylor series or Taylor expansion of a function is an infinite sum of terms that are expressed in terms of the function's derivatives at a single point. For most common functions, the function and the sum of its Taylor series are equal near this point.",
+    "src": "https://en.wikipedia.org/wiki/Taylor_series",
+    "verified": true
+  },
+  {
+    "in": [
+      "calculus",
+      "limit"
+    ],
+    "out": "mathematical_analysis",
+    "why": "Mathematical analysis is the branch of mathematics that studies functions, spaces, and operators through methods of approximation and convergence. It grew out of calculus, especially the use of derivatives and integrals to study variable quantities, and in the 19th century its foundations were reformulated with greater rigor.",
+    "src": "https://en.wikipedia.org/wiki/Mathematical_analysis",
+    "verified": true
+  },
+  {
+    "in": [
+      "function",
+      "polynomial"
+    ],
+    "out": "approximation_theory",
+    "why": "In mathematics, approximation theory is concerned with how functions can best be approximated with simpler functions, and with quantitatively characterizing the errors introduced thereby. What is meant by best and simpler will depend on the application.",
+    "src": "https://en.wikipedia.org/wiki/Approximation_theory",
+    "verified": true
+  },
+  {
+    "in": [
+      "algorithm",
+      "calculus"
+    ],
+    "out": "numerical_analysis",
+    "why": "Numerical analysis is the study of algorithms for the problems of continuous mathematics. These algorithms involve real or complex variables (in contrast to discrete mathematics), and typically use numerical approximation in addition to symbolic manipulation.",
+    "src": "https://en.wikipedia.org/wiki/Numerical_analysis",
+    "verified": true
+  },
+  {
+    "in": [
+      "complex_number",
+      "function"
+    ],
+    "out": "complex_analysis",
+    "why": "Complex analysis, traditionally known as the theory of functions of a complex variable, is the branch of mathematical analysis that studies complex-valued functions of one or more complex variables.",
+    "src": "https://en.wikipedia.org/wiki/Complex_analysis",
+    "verified": true
+  },
+  {
+    "in": [
+      "integral",
+      "complex_number"
+    ],
+    "out": "cauchys_integral_formula",
+    "why": "In mathematics, Cauchy's integral formula, named after Augustin-Louis Cauchy, is a central statement in complex analysis. It expresses the fact that a holomorphic function defined on a disk is completely determined by its values on the boundary of the disk, and it provides integral formulas for all derivatives of a holomorphic function.",
+    "src": "https://en.wikipedia.org/wiki/Cauchy's_integral_formula",
+    "verified": true
+  },
+  {
+    "in": [
+      "complex_number",
+      "exponential_function"
+    ],
+    "out": "eulers_formula",
+    "why": "Euler's formula is a mathematical formula in complex analysis that establishes the fundamental relationship between the trigonometric functions and the complex exponential function. It is named after Leonhard Euler, who mentioned the formula in his influential 1748 treatise Introductio in analysin infinitorum.",
+    "src": "https://en.wikipedia.org/wiki/Euler's_formula",
+    "verified": true
+  },
+  {
+    "in": [
+      "e_constant",
+      "pi"
+    ],
+    "out": "eulers_identity",
+    "why": "In mathematics, Euler's identity (also known as Euler's equation) is an equality in which e is Euler's number, the base of natural logarithms, i is the imaginary unit, and pi is the ratio of the circumference of a circle to its diameter. Euler's identity is named after the Swiss mathematician Leonhard Euler.",
+    "src": "https://en.wikipedia.org/wiki/Euler's_identity",
+    "verified": true
+  },
+  {
+    "in": [
+      "complex_number",
+      "derivative"
+    ],
+    "out": "holomorphic_function",
+    "why": "In mathematics, a holomorphic function is a complex-valued function of one or more complex variables that is complex differentiable in a neighbourhood of each point in a domain in complex coordinate space. The existence of a complex derivative in a neighbourhood is a very strong condition: It implies that a holomorphic function is infinitely differentiable and locally equal to its own Taylor series (is analytic).",
+    "src": "https://en.wikipedia.org/wiki/Holomorphic_function",
+    "verified": true
+  },
+  {
+    "in": [
+      "complex_number",
+      "surface"
+    ],
+    "out": "riemann_surface",
+    "why": "In mathematics, particularly in complex analysis, a Riemann surface is a connected one-dimensional complex manifold. These surfaces were first studied by and are named after Bernhard Riemann.",
+    "src": "https://en.wikipedia.org/wiki/Riemann_surface",
+    "verified": true
+  },
+  {
+    "in": [
+      "function",
+      "vector_space"
+    ],
+    "out": "functional_analysis",
+    "why": "Functional analysis is a branch of mathematical analysis, the core of which is formed by the study of vector spaces endowed with some kind of limit-related structure (for example, inner product, norm, or topology) and the linear functions defined on these spaces and suitably respecting these structures.",
+    "src": "https://en.wikipedia.org/wiki/Functional_analysis",
+    "verified": true
+  },
+  {
+    "in": [
+      "vector_space",
+      "metric_space"
+    ],
+    "out": "hilbert_space",
+    "why": "The mathematical concept of a Hilbert space generalizes the notion of Euclidean space. It extends the methods of Euclidean geometry and calculus from the two-dimensional Euclidean plane and three-dimensional space to spaces of any finite or infinite dimension.",
+    "src": "https://en.wikipedia.org/wiki/Hilbert_space",
+    "verified": true
+  },
+  {
+    "in": [
+      "function",
+      "signal"
+    ],
+    "out": "harmonic_analysis",
+    "why": "Harmonic analysis is an area of mathematical analysis that emerged from the study of harmonic functions, and especially their boundary behavior. The methods of harmonic analysis decompose functions and related objects, such as measures, into components based on symmetries, scales, spectra, or oscillation.",
+    "src": "https://en.wikipedia.org/wiki/Harmonic_analysis",
+    "verified": true
+  },
+  {
+    "in": [
+      "function",
+      "sine"
+    ],
+    "out": "fourier_analysis",
+    "why": "In mathematics, the sciences, and engineering, Fourier analysis is the study of the way general functions on the real line, circle, integers, finite cyclic group or general locally compact Abelian group may be represented or approximated by sums of trigonometric functions or more conveniently, complex exponentials.",
+    "src": "https://en.wikipedia.org/wiki/Fourier_analysis",
+    "verified": true
+  },
+  {
+    "in": [
+      "series",
+      "sine"
+    ],
+    "out": "fourier_series",
+    "why": "A Fourier series is a series expansion of a periodic function into a sum of trigonometric functions. The Fourier series is an example of a trigonometric series.",
+    "src": "https://en.wikipedia.org/wiki/Fourier_series",
+    "verified": true
+  },
+  {
+    "in": [
+      "signal",
+      "sine"
+    ],
+    "out": "fourier_transform",
+    "why": "In mathematics, the Fourier transform (FT) is an integral transform that takes a function as input and outputs another function that describes the extent to which various frequencies are present in the original function. The output of the transform is a complex valued function of frequency.",
+    "src": "https://en.wikipedia.org/wiki/Fourier_transform",
+    "verified": true
+  },
+  {
+    "in": [
+      "real_number",
+      "limit"
+    ],
+    "out": "real_analysis",
+    "why": "Real analysis is the part of mathematical analysis, especially as taught in undergraduate and graduate courses, that develops calculus rigorously over the real numbers and Euclidean spaces. Introductory real analysis is sometimes called advanced calculus, and studies limits, continuity, compactness, differentiation, integration, and series.",
+    "src": "https://en.wikipedia.org/wiki/Real_analysis",
+    "verified": true
+  },
+  {
+    "in": [
+      "calculus",
+      "function"
+    ],
+    "out": "calculus_of_variations",
+    "why": "The calculus of variations (or variational calculus) is a field of mathematical analysis that uses variations, which are small changes in functions and functionals, to find maxima and minima of functionals: mappings from a set of functions to the real numbers. Functionals are often expressed as definite integrals involving functions and their derivatives.",
+    "src": "https://en.wikipedia.org/wiki/Calculus_of_variations",
+    "verified": true
+  },
+  {
+    "in": [
+      "competition",
+      "cooperation"
+    ],
+    "out": "game_theory",
+    "why": "Game theory is the field of applied mathematics that models interactions between multiple agents as \"games\" of strategy between \"players\". It is a scientific method of describing, predicting, evaluating, and selecting choices (or \"actions\"), often with the view of maximizing utility outcomes (or \"payoffs\") for one or more players.",
+    "src": "https://en.wikipedia.org/wiki/Game_theory",
+    "verified": true
+  },
+  {
+    "in": [
+      "equation",
+      "time"
+    ],
+    "out": "dynamical_systems_theory",
+    "why": "Dynamical systems theory is an area of mathematics used to describe the behavior of complex dynamical systems, usually by employing differential equations or difference equations. When differential equations are employed, the theory is called continuous dynamical systems.",
+    "src": "https://en.wikipedia.org/wiki/Dynamical_systems_theory",
+    "verified": true
+  },
+  {
+    "in": [
+      "function",
+      "time"
+    ],
+    "out": "dynamical_system",
+    "why": "In mathematics, a dynamical system is a system in which a function describes the time dependence of a point in an ambient space, such as in a parametric curve. Examples include the mathematical models that describe the swinging of a clock pendulum, the flow of water in a pipe, the random motion of particles in the air, and the number of fish each springtime in a lake.",
+    "src": "https://en.wikipedia.org/wiki/Dynamical_system",
+    "verified": true
+  },
+  {
+    "in": [
+      "feedback",
+      "equation"
+    ],
+    "out": "control_theory",
+    "why": "Control theory is a field of control engineering and applied mathematics that deals with the control of dynamical systems. The aim is to develop a model or algorithm governing the application of system inputs to drive the system to a desired state, while minimizing any delay, overshoot, or steady-state error and ensuring a level of control stability; often with the aim to achieve a degree of optimality.",
+    "src": "https://en.wikipedia.org/wiki/Control_theory",
+    "verified": true
+  },
+  {
+    "in": [
+      "function",
+      "set_math"
+    ],
+    "out": "category_theory",
+    "why": "Category theory is a general theory of mathematical structures and their relations. It was introduced by Samuel Eilenberg and Saunders Mac Lane in the mid-20th century in their foundational work on algebraic topology.",
+    "src": "https://en.wikipedia.org/wiki/Category_theory",
+    "verified": true
+  },
+  {
+    "in": [
+      "theorem",
+      "axiom"
+    ],
+    "out": "pure_mathematics",
+    "why": "In the context of the philosophy of mathematics, pure mathematics is an informal term to describe the study of mathematical concepts independently of any application outside mathematics. These concepts may originate in real-world concerns, and the results obtained may later turn out to be useful for practical applications, but research is not primarily motivated by such applications.",
+    "src": "https://en.wikipedia.org/wiki/Pure_mathematics",
     "verified": true
   }
 ]
