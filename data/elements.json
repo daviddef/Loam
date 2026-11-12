@@ -20611,8 +20611,7 @@
     "tags": [
       "tool"
     ],
-    "fact": "Runways, taxiways, hangars and a tower, all working as one system to move aircraft, not just park them.",
-    "terminal": true
+    "fact": "Runways, taxiways, hangars and a tower, all working as one system to move aircraft, not just park them."
   },
   {
     "id": "dna_helicase",
@@ -32396,7 +32395,6 @@
       "tool"
     ],
     "fact": "A locomotive coupled to any number of unpowered wagons — the wagons don't move themselves.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -33194,7 +33192,6 @@
       "tool"
     ],
     "fact": "Daimler's 1898 double-decker, one of the first motor buses, put 20 passengers on a car's own drivetrain.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -136234,5 +136231,742 @@
     ],
     "fact": "A textile art woven by hand on a loom to create images.",
     "src": "https://en.wikipedia.org/wiki/Tapestry"
+  },
+  {
+    "id": "invention",
+    "name": "Invention",
+    "emoji": "💡",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A unique or novel device, method, composition, idea or process.",
+    "src": "https://en.wikipedia.org/wiki/Invention"
+  },
+  {
+    "id": "aswan_high_dam",
+    "name": "Aswan High Dam",
+    "emoji": "🏞️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An embankment dam across the Nile that controls flooding and generates hydroelectricity.",
+    "src": "https://en.wikipedia.org/wiki/Aswan_High_Dam"
+  },
+  {
+    "id": "itaipu_dam",
+    "name": "Itaipu Dam",
+    "emoji": "🏞️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A hydroelectric dam on the border of Brazil and Paraguay.",
+    "src": "https://en.wikipedia.org/wiki/Itaipu_Dam"
+  },
+  {
+    "id": "three_gorges_dam",
+    "name": "Three Gorges Dam",
+    "emoji": "🏞️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A hydroelectric gravity dam spanning the Yangtze River in China.",
+    "src": "https://en.wikipedia.org/wiki/Three_Gorges_Dam"
+  },
+  {
+    "id": "flood_management",
+    "name": "Flood Management",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Methods used to reduce or prevent the harm of flood waters.",
+    "src": "https://en.wikipedia.org/wiki/Flood_management"
+  },
+  {
+    "id": "levee",
+    "name": "Levee",
+    "emoji": "🏞️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An elevated ridge beside a river that protects against flooding.",
+    "src": "https://en.wikipedia.org/wiki/Levee"
+  },
+  {
+    "id": "tower_bridge",
+    "name": "Tower Bridge",
+    "emoji": "🌉",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A combined bascule and suspension bridge across the Thames in London.",
+    "src": "https://en.wikipedia.org/wiki/Tower_Bridge"
+  },
+  {
+    "id": "channel_tunnel",
+    "name": "Channel Tunnel",
+    "emoji": "🚆",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A railway tunnel beneath the English Channel.",
+    "src": "https://en.wikipedia.org/wiki/Channel_Tunnel"
+  },
+  {
+    "id": "diesel_engine",
+    "name": "Diesel Engine",
+    "emoji": "⚙️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An engine that ignites diesel fuel by compressing the air in the cylinder.",
+    "src": "https://en.wikipedia.org/wiki/Diesel_engine"
+  },
+  {
+    "id": "robotics",
+    "name": "Robotics",
+    "emoji": "🤖",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The study and practice of the design, construction and use of robots.",
+    "src": "https://en.wikipedia.org/wiki/Robotics"
+  },
+  {
+    "id": "simple_machine",
+    "name": "Simple Machine",
+    "emoji": "⚙️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A mechanical device that changes the direction or size of a force.",
+    "src": "https://en.wikipedia.org/wiki/Simple_machine"
+  },
+  {
+    "id": "inclined_plane",
+    "name": "Inclined Plane",
+    "emoji": "📐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A flat tilted surface used to raise or lower a load.",
+    "src": "https://en.wikipedia.org/wiki/Inclined_plane"
+  },
+  {
+    "id": "screw_mechanism",
+    "name": "Screw",
+    "emoji": "🔩",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A mechanism that converts rotational motion to linear motion.",
+    "src": "https://en.wikipedia.org/wiki/Screw_mechanism"
+  },
+  {
+    "id": "wheel_and_axle",
+    "name": "Wheel and Axle",
+    "emoji": "🛞",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A simple machine of a wheel attached to a smaller axle.",
+    "src": "https://en.wikipedia.org/wiki/Wheel_and_axle"
+  },
+  {
+    "id": "container",
+    "name": "Container",
+    "emoji": "📦",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Any receptacle or enclosure for holding an item.",
+    "src": "https://en.wikipedia.org/wiki/Container"
+  },
+  {
+    "id": "transport",
+    "name": "Transport",
+    "emoji": "🚚",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The intentional movement of people, animals and goods from place to place.",
+    "src": "https://en.wikipedia.org/wiki/Transport"
+  },
+  {
+    "id": "public_transport",
+    "name": "Public Transport",
+    "emoji": "🚌",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Transport open to the general public on fixed routes and schedules.",
+    "src": "https://en.wikipedia.org/wiki/Public_transport"
+  },
+  {
+    "id": "travel",
+    "name": "Travel",
+    "emoji": "🧳",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The movement of people between distant places.",
+    "src": "https://en.wikipedia.org/wiki/Travel"
+  },
+  {
+    "id": "freight_transport",
+    "name": "Freight Transport",
+    "emoji": "🚛",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The physical process of transporting commercial goods and cargo.",
+    "src": "https://en.wikipedia.org/wiki/Freight_transport"
+  },
+  {
+    "id": "land_transport",
+    "name": "Land Transport",
+    "emoji": "🛤️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Moving people, animals and goods over land-based routes.",
+    "src": "https://en.wikipedia.org/wiki/Land_transport"
+  },
+  {
+    "id": "passport",
+    "name": "Passport",
+    "emoji": "🛂",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A travel document that certifies a person's identity and nationality.",
+    "src": "https://en.wikipedia.org/wiki/Passport"
+  },
+  {
+    "id": "vehicle",
+    "name": "Vehicle",
+    "emoji": "🚗",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A machine designed to transport people, cargo or both.",
+    "src": "https://en.wikipedia.org/wiki/Vehicle"
+  },
+  {
+    "id": "road_transport",
+    "name": "Road Transport",
+    "emoji": "🚚",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Transport that uses roads.",
+    "src": "https://en.wikipedia.org/wiki/Road_transport"
+  },
+  {
+    "id": "highway",
+    "name": "Highway",
+    "emoji": "🛣️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Any public road or other public way on land.",
+    "src": "https://en.wikipedia.org/wiki/Highway"
+  },
+  {
+    "id": "controlled_access_highway",
+    "name": "Controlled-Access Highway",
+    "emoji": "🛣️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A highway designed for high-speed traffic with regulated entry and exit.",
+    "src": "https://en.wikipedia.org/wiki/Controlled-access_highway"
+  },
+  {
+    "id": "trail",
+    "name": "Trail",
+    "emoji": "🥾",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A path through an undeveloped natural area for walkers and riders.",
+    "src": "https://en.wikipedia.org/wiki/Trail"
+  },
+  {
+    "id": "car",
+    "name": "Car",
+    "emoji": "🚗",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A motor vehicle with wheels that mainly carries people on roads.",
+    "src": "https://en.wikipedia.org/wiki/Car"
+  },
+  {
+    "id": "cycling",
+    "name": "Cycling",
+    "emoji": "🚴",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Riding a bicycle or other pedal-driven human-powered vehicle.",
+    "src": "https://en.wikipedia.org/wiki/Cycling"
+  },
+  {
+    "id": "rickshaw",
+    "name": "Rickshaw",
+    "emoji": "🛺",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A light cart pulled by one person carrying one passenger.",
+    "src": "https://en.wikipedia.org/wiki/Rickshaw"
+  },
+  {
+    "id": "driving",
+    "name": "Driving",
+    "emoji": "🚘",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The controlled operation and movement of a land vehicle.",
+    "src": "https://en.wikipedia.org/wiki/Driving"
+  },
+  {
+    "id": "parking",
+    "name": "Parking",
+    "emoji": "🅿️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Stopping a vehicle and usually leaving it unoccupied.",
+    "src": "https://en.wikipedia.org/wiki/Parking"
+  },
+  {
+    "id": "filling_station",
+    "name": "Filling Station",
+    "emoji": "⛽",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A facility that sells fuel and engine lubricants for motor vehicles.",
+    "src": "https://en.wikipedia.org/wiki/Filling_station"
+  },
+  {
+    "id": "traffic",
+    "name": "Traffic",
+    "emoji": "🚦",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The movement of vehicles and pedestrians along land routes.",
+    "src": "https://en.wikipedia.org/wiki/Traffic"
+  },
+  {
+    "id": "traffic_collision",
+    "name": "Traffic Collision",
+    "emoji": "💥",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "When a vehicle collides with another vehicle, a person or an obstruction.",
+    "src": "https://en.wikipedia.org/wiki/Traffic_collision"
+  },
+  {
+    "id": "saddle",
+    "name": "Saddle",
+    "emoji": "🏇",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A supportive seat for a rider, fastened to an animal's back.",
+    "src": "https://en.wikipedia.org/wiki/Saddle"
+  },
+  {
+    "id": "train_station",
+    "name": "Train Station",
+    "emoji": "🚉",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A railway facility where trains stop to load or unload passengers or freight.",
+    "src": "https://en.wikipedia.org/wiki/Train_station"
+  },
+  {
+    "id": "railway_track",
+    "name": "Railway Track",
+    "emoji": "🛤️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The structure of rails, sleepers and ballast on which trains run.",
+    "src": "https://en.wikipedia.org/wiki/Railway_track"
+  },
+  {
+    "id": "rapid_transit",
+    "name": "Rapid Transit",
+    "emoji": "🚇",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "High-capacity public transport built in urban areas.",
+    "src": "https://en.wikipedia.org/wiki/Rapid_transit"
+  },
+  {
+    "id": "london_underground",
+    "name": "London Underground",
+    "emoji": "🚇",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The rapid transit system serving Greater London.",
+    "src": "https://en.wikipedia.org/wiki/London_Underground"
+  },
+  {
+    "id": "new_york_city_subway",
+    "name": "New York City Subway",
+    "emoji": "🚇",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The rapid transit system of New York City.",
+    "src": "https://en.wikipedia.org/wiki/New_York_City_Subway"
+  },
+  {
+    "id": "high_speed_rail",
+    "name": "High-Speed Rail",
+    "emoji": "🚄",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Rail transport with trains much faster than traditional rail.",
+    "src": "https://en.wikipedia.org/wiki/High-speed_rail"
+  },
+  {
+    "id": "shinkansen",
+    "name": "Shinkansen",
+    "emoji": "🚄",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The bullet train network of high-speed railway lines in Japan.",
+    "src": "https://en.wikipedia.org/wiki/Shinkansen"
+  },
+  {
+    "id": "monorail",
+    "name": "Monorail",
+    "emoji": "🚝",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Urban rail on which trains run on or hang from a single rail.",
+    "src": "https://en.wikipedia.org/wiki/Monorail"
+  },
+  {
+    "id": "trans_siberian_railway",
+    "name": "Trans-Siberian Railway",
+    "emoji": "🚂",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The railway system connecting European Russia to the Russian Far East.",
+    "src": "https://en.wikipedia.org/wiki/Trans-Siberian_Railway"
+  },
+  {
+    "id": "aircraft",
+    "name": "Aircraft",
+    "emoji": "✈️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A vehicle that can fly by gaining support from the air.",
+    "src": "https://en.wikipedia.org/wiki/Aircraft"
+  },
+  {
+    "id": "aviation",
+    "name": "Aviation",
+    "emoji": "🛫",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The activities surrounding mechanical flight and the aircraft industry.",
+    "src": "https://en.wikipedia.org/wiki/Aviation"
+  },
+  {
+    "id": "air_traffic_control",
+    "name": "Air Traffic Control",
+    "emoji": "🗼",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A service where ground-based controllers direct aircraft to prevent collisions.",
+    "src": "https://en.wikipedia.org/wiki/Air_traffic_control"
+  },
+  {
+    "id": "aircraft_engine",
+    "name": "Aircraft Engine",
+    "emoji": "🛩️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The power component of an aircraft propulsion system.",
+    "src": "https://en.wikipedia.org/wiki/Aircraft_engine"
+  },
+  {
+    "id": "airline",
+    "name": "Airline",
+    "emoji": "🛫",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A company that provides a regular service of air transportation.",
+    "src": "https://en.wikipedia.org/wiki/Airline"
+  },
+  {
+    "id": "fixed_wing_aircraft",
+    "name": "Fixed-Wing Aircraft",
+    "emoji": "✈️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A heavier-than-air aircraft that flies using aerodynamic lift.",
+    "src": "https://en.wikipedia.org/wiki/Fixed-wing_aircraft"
+  },
+  {
+    "id": "jet_aircraft",
+    "name": "Jet Aircraft",
+    "emoji": "✈️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An aircraft propelled by one or more jet engines.",
+    "src": "https://en.wikipedia.org/wiki/Jet_aircraft"
+  },
+  {
+    "id": "unmanned_aerial_vehicle",
+    "name": "Unmanned Aerial Vehicle",
+    "emoji": "🛸",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An aircraft with no human aboard, autonomous or remotely controlled.",
+    "src": "https://en.wikipedia.org/wiki/Unmanned_aerial_vehicle"
+  },
+  {
+    "id": "maritime_transport",
+    "name": "Maritime Transport",
+    "emoji": "🚢",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The transport of people or goods via waterways.",
+    "src": "https://en.wikipedia.org/wiki/Maritime_transport"
+  },
+  {
+    "id": "barge",
+    "name": "Barge",
+    "emoji": "🛶",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A flat-bottomed boat without its own means of propulsion.",
+    "src": "https://en.wikipedia.org/wiki/Barge"
+  },
+  {
+    "id": "cargo_ship",
+    "name": "Cargo Ship",
+    "emoji": "🚢",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A merchant ship that carries goods across seas and oceans.",
+    "src": "https://en.wikipedia.org/wiki/Cargo_ship"
+  },
+  {
+    "id": "ferry",
+    "name": "Ferry",
+    "emoji": "⛴️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A boat that carries passengers and sometimes vehicles across water.",
+    "src": "https://en.wikipedia.org/wiki/Ferry"
+  },
+  {
+    "id": "fishing_vessel",
+    "name": "Fishing Vessel",
+    "emoji": "🎣",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A boat or ship used to catch fish.",
+    "src": "https://en.wikipedia.org/wiki/Fishing_vessel"
+  },
+  {
+    "id": "hovercraft",
+    "name": "Hovercraft",
+    "emoji": "🚤",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An amphibious craft that rides on a cushion of air.",
+    "src": "https://en.wikipedia.org/wiki/Hovercraft"
+  },
+  {
+    "id": "merchant_ship",
+    "name": "Merchant Ship",
+    "emoji": "⛵",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A watercraft that transports cargo or carries passengers for hire.",
+    "src": "https://en.wikipedia.org/wiki/Merchant_ship"
+  },
+  {
+    "id": "passenger_ship",
+    "name": "Passenger Ship",
+    "emoji": "🛳️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A merchant ship whose main job is to carry passengers.",
+    "src": "https://en.wikipedia.org/wiki/Passenger_ship"
+  },
+  {
+    "id": "riverboat",
+    "name": "Riverboat",
+    "emoji": "🛥️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A watercraft designed for lakes, rivers and artificial waterways.",
+    "src": "https://en.wikipedia.org/wiki/Riverboat"
+  },
+  {
+    "id": "sailing_ship",
+    "name": "Sailing Ship",
+    "emoji": "⛵",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A sea-going vessel that uses sails on masts to harness the wind.",
+    "src": "https://en.wikipedia.org/wiki/Sailing_ship"
+  },
+  {
+    "id": "shipbuilding",
+    "name": "Shipbuilding",
+    "emoji": "⚓",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The construction of ships and other floating vessels.",
+    "src": "https://en.wikipedia.org/wiki/Shipbuilding"
+  },
+  {
+    "id": "steamship",
+    "name": "Steamship",
+    "emoji": "🚢",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A steam-powered vessel driven by propellers or paddlewheels.",
+    "src": "https://en.wikipedia.org/wiki/Steamship"
+  },
+  {
+    "id": "tanker_ship",
+    "name": "Tanker",
+    "emoji": "🛢️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A ship designed to carry liquids or gases in bulk.",
+    "src": "https://en.wikipedia.org/wiki/Tanker_(ship)"
+  },
+  {
+    "id": "cable_transport",
+    "name": "Cable Transport",
+    "emoji": "🚡",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Transport modes that use cables, often in cable cars.",
+    "src": "https://en.wikipedia.org/wiki/Cable_transport"
+  },
+  {
+    "id": "pipeline",
+    "name": "Pipeline",
+    "emoji": "🛢️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A system of pipes for long-distance transport of a liquid or gas.",
+    "src": "https://en.wikipedia.org/wiki/Pipeline"
   }
 ]

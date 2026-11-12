@@ -140462,5 +140462,675 @@
     "why": "Tapestry is a form of textile art which was traditionally woven by hand on a loom. Normally it is used to create images rather than patterns.",
     "src": "https://en.wikipedia.org/wiki/Tapestry",
     "verified": true
+  },
+  {
+    "in": [
+      "idea",
+      "tool"
+    ],
+    "out": "invention",
+    "why": "An invention is a unique or novel device, method, composition, idea, or process. An invention may be an improvement upon a machine, product, or process for increasing efficiency or lowering cost.",
+    "src": "https://en.wikipedia.org/wiki/Invention",
+    "verified": true
+  },
+  {
+    "in": [
+      "dam",
+      "nile"
+    ],
+    "out": "aswan_high_dam",
+    "why": "The Aswan High Dam, often called simply Aswan Dam, was built across the Nile in Aswan, Egypt. One of the world's largest embankment dams, it was developed by the Egyptian government to control flooding, increase water storage for irrigation, and generate hydroelectricity.",
+    "src": "https://en.wikipedia.org/wiki/Aswan_High_Dam",
+    "verified": true
+  },
+  {
+    "in": [
+      "dam",
+      "brazil"
+    ],
+    "out": "itaipu_dam",
+    "why": "The Itaipu Dam is a hydroelectric dam on the Parana River located on the border between Brazil and Paraguay.",
+    "src": "https://en.wikipedia.org/wiki/Itaipu_Dam",
+    "verified": true
+  },
+  {
+    "in": [
+      "dam",
+      "china"
+    ],
+    "out": "three_gorges_dam",
+    "why": "The Three Gorges Dam, officially known as the Yangtze River Three Gorges Water Conservancy Project, is a hydroelectric gravity dam that spans the Yangtze River in central China, downstream of the Three Gorges.",
+    "src": "https://en.wikipedia.org/wiki/Three_Gorges_Dam",
+    "verified": true
+  },
+  {
+    "in": [
+      "flood",
+      "dam"
+    ],
+    "out": "flood_management",
+    "why": "Flood management or flood control are methods used to reduce or prevent the detrimental effects of flood waters. Flooding can be caused by a mix of both natural processes, such as extreme weather upstream, and human changes to waterbodies and runoff.",
+    "src": "https://en.wikipedia.org/wiki/Flood_management",
+    "verified": true
+  },
+  {
+    "in": [
+      "river",
+      "bank"
+    ],
+    "out": "levee",
+    "why": "A levee is an elevated ridge alongside the banks of a river, often intended to protect against flooding of the area adjoining the river. Alternatively, it is called a dike, dyke, floodbank, or stop bank.",
+    "src": "https://en.wikipedia.org/wiki/Levee",
+    "verified": true
+  },
+  {
+    "in": [
+      "bridge",
+      "tower"
+    ],
+    "out": "tower_bridge",
+    "why": "Tower Bridge is a combined bascule, suspension, and, for a time, cantilever bridge in London. It crosses the River Thames close to the Tower of London and is one of the London bridges owned and maintained by the City Bridge Foundation.",
+    "src": "https://en.wikipedia.org/wiki/Tower_Bridge",
+    "verified": true
+  },
+  {
+    "in": [
+      "tunnel",
+      "sea"
+    ],
+    "out": "channel_tunnel",
+    "why": "The Channel Tunnel, sometimes referred to as the Chunnel, is a railway tunnel beneath the English Channel which connects the United Kingdom with northern France. It remains the only fixed link between Great Britain and the European mainland.",
+    "src": "https://en.wikipedia.org/wiki/Channel_Tunnel",
+    "verified": true
+  },
+  {
+    "in": [
+      "engine",
+      "oil"
+    ],
+    "out": "diesel_engine",
+    "why": "A diesel engine is an internal combustion engine in which ignition of diesel fuel is caused by the elevated temperature of the air in the cylinder due to mechanical compression; thus, the diesel engine is also called a compression-ignition engine.",
+    "src": "https://en.wikipedia.org/wiki/Diesel_engine",
+    "verified": true
+  },
+  {
+    "in": [
+      "robot",
+      "engineering"
+    ],
+    "out": "robotics",
+    "why": "Robotics is the interdisciplinary study and practice of the design, construction, operation, and use of robots. A roboticist is someone who specializes in robotics.",
+    "src": "https://en.wikipedia.org/wiki/Robotics",
+    "verified": true
+  },
+  {
+    "in": [
+      "machine",
+      "lever"
+    ],
+    "out": "simple_machine",
+    "why": "A simple machine is a mechanical device that changes the direction or magnitude of a force. In general, they can be defined as the simplest mechanisms that use mechanical advantage to multiply force.",
+    "src": "https://en.wikipedia.org/wiki/Simple_machine",
+    "verified": true
+  },
+  {
+    "in": [
+      "hill",
+      "machine"
+    ],
+    "out": "inclined_plane",
+    "why": "An inclined plane, also known as a ramp, is a flat supporting surface tilted at an angle, with one end higher than the other, used as an aid for raising or lowering a load. The inclined plane is one of the six classical simple machines defined by Renaissance scientists.",
+    "src": "https://en.wikipedia.org/wiki/Inclined_plane",
+    "verified": true
+  },
+  {
+    "in": [
+      "screw",
+      "machine"
+    ],
+    "out": "screw_mechanism",
+    "why": "The screw is a mechanism that converts rotational motion to linear motion, and a torque to a linear force. It is one of the six classical simple machines.",
+    "src": "https://en.wikipedia.org/wiki/Screw_mechanism",
+    "verified": true
+  },
+  {
+    "in": [
+      "wheel",
+      "lever"
+    ],
+    "out": "wheel_and_axle",
+    "why": "The wheel and axle is a simple machine, consisting of a wheel attached to a smaller axle so that these two parts rotate together, in which a force is transferred from one to the other. The wheel and axle can be viewed as a version of the lever.",
+    "src": "https://en.wikipedia.org/wiki/Wheel_and_axle",
+    "verified": true
+  },
+  {
+    "in": [
+      "box",
+      "ship"
+    ],
+    "out": "container",
+    "why": "A container is any receptacle or enclosure for holding an item. Things kept inside a container are protected on several sides by being inside its structure.",
+    "src": "https://en.wikipedia.org/wiki/Container",
+    "verified": true
+  },
+  {
+    "in": [
+      "road",
+      "vehicle"
+    ],
+    "out": "transport",
+    "why": "Transport or transportation is the intentional movement of humans, animals, and goods from one location to another. Modes of transport include air, land, water, cable, pipelines, and space.",
+    "src": "https://en.wikipedia.org/wiki/Transport",
+    "verified": true
+  },
+  {
+    "in": [
+      "bus",
+      "city"
+    ],
+    "out": "public_transport",
+    "why": "Public transport, also known as public transportation, public transit, mass transit, or simply transit, refers to forms of transport made available for use by the general public. Public transport systems typically operate on fixed routes and schedules and charge a standardized fare.",
+    "src": "https://en.wikipedia.org/wiki/Public_transport",
+    "verified": true
+  },
+  {
+    "in": [
+      "road",
+      "passport"
+    ],
+    "out": "travel",
+    "why": "Travel is the movement of people between distant geographical locations. Travel can be done by foot, bicycle, automobile, train, boat, bus, airplane, ship or other means, with or without luggage, and can be one way or round trip.",
+    "src": "https://en.wikipedia.org/wiki/Travel",
+    "verified": true
+  },
+  {
+    "in": [
+      "cargo",
+      "train"
+    ],
+    "out": "freight_transport",
+    "why": "Freight transport, also referred to as freight forwarding, is the physical process of transporting commercial products and merchandise goods and cargo. This is by different transportation modes, including air, water, railways, pipelines, and road transports.",
+    "src": "https://en.wikipedia.org/wiki/Freight_transport",
+    "verified": true
+  },
+  {
+    "in": [
+      "road",
+      "wheel"
+    ],
+    "out": "land_transport",
+    "why": "Land transport is the transport or purposeful movement of people, animals and goods from one location to another via land-based routes. This is in contrast with other main types of transport such as maritime transport, which moves over waterbodies, and aviation, which moves via flight through the atmosphere.",
+    "src": "https://en.wikipedia.org/wiki/Land_transport",
+    "verified": true
+  },
+  {
+    "in": [
+      "paper",
+      "border"
+    ],
+    "out": "passport",
+    "why": "A passport is a formal travel document issued by a government that certifies a person's identity and nationality for international travel. A passport allows its bearer to enter and temporarily reside in a foreign country, access local aid and protection, and obtain consular assistance from their government.",
+    "src": "https://en.wikipedia.org/wiki/Passport",
+    "verified": true
+  },
+  {
+    "in": [
+      "wheel",
+      "engine"
+    ],
+    "out": "vehicle",
+    "why": "A vehicle is a machine designed for self-propulsion, usually to transport people, cargo, or both. The term vehicle typically refers to ground transport vehicles such as human-powered land vehicles and animal-powered transports.",
+    "src": "https://en.wikipedia.org/wiki/Vehicle",
+    "verified": true
+  },
+  {
+    "in": [
+      "road",
+      "bus"
+    ],
+    "out": "road_transport",
+    "why": "Road transport or road transportation is a type of transport using roads. Transport on roads can be roughly grouped into the transportation of goods and transportation of people.",
+    "src": "https://en.wikipedia.org/wiki/Road_transport",
+    "verified": true
+  },
+  {
+    "in": [
+      "road",
+      "city"
+    ],
+    "out": "highway",
+    "why": "A highway in the broadest sense of the term is any public or private road or other public way on land, including not just major roads but also other public roads and rights of way.",
+    "src": "https://en.wikipedia.org/wiki/Highway",
+    "verified": true
+  },
+  {
+    "in": [
+      "highway",
+      "bridge"
+    ],
+    "out": "controlled_access_highway",
+    "why": "A controlled-access highway is a type of highway that has been designed for high-speed vehicular traffic, with all traffic flow regulated. Common English terms are freeway, motorway, and expressway.",
+    "src": "https://en.wikipedia.org/wiki/Controlled-access_highway",
+    "verified": true
+  },
+  {
+    "in": [
+      "road",
+      "forest"
+    ],
+    "out": "trail",
+    "why": "A trail, also known as a path or track, is a dirt road or a small paved road, usually through an undeveloped natural area, that is designed primarily for use by pedestrians, equestrians and non-motorized vehicles.",
+    "src": "https://en.wikipedia.org/wiki/Trail",
+    "verified": true
+  },
+  {
+    "in": [
+      "automobile",
+      "road"
+    ],
+    "out": "car",
+    "why": "A car, or an automobile, is a motor vehicle with wheels. Most definitions of cars state that they run primarily on roads, seat a few people, have four wheels, and mainly transport people rather than cargo.",
+    "src": "https://en.wikipedia.org/wiki/Car",
+    "verified": true
+  },
+  {
+    "in": [
+      "bicycle",
+      "road"
+    ],
+    "out": "cycling",
+    "why": "Cycling, also known as bicycling or biking, is the activity of riding a bicycle or other types of pedal-driven human-powered vehicles such as balance bikes, unicycles, tricycles, and quadricycles. Cycling is practised around the world for purposes including transport, recreation, exercise, and competitive sport.",
+    "src": "https://en.wikipedia.org/wiki/Cycling",
+    "verified": true
+  },
+  {
+    "in": [
+      "bicycle",
+      "cart"
+    ],
+    "out": "rickshaw",
+    "why": "A rickshaw, originally denoted a pulled rickshaw, is a two- or three-wheeled cart generally pulled by one person and carrying one passenger.",
+    "src": "https://en.wikipedia.org/wiki/Rickshaw",
+    "verified": true
+  },
+  {
+    "in": [
+      "car",
+      "road"
+    ],
+    "out": "driving",
+    "why": "Driving is the controlled operation and movement of a land vehicle, including cars, taxis, ambulances, fire engines, tanks, vans, trucks and buses.",
+    "src": "https://en.wikipedia.org/wiki/Driving",
+    "verified": true
+  },
+  {
+    "in": [
+      "car",
+      "building"
+    ],
+    "out": "parking",
+    "why": "Parking is the act of stopping and disengaging a vehicle and usually leaving it unoccupied. Parking on one or both sides of a road is often permitted, though sometimes with restrictions.",
+    "src": "https://en.wikipedia.org/wiki/Parking",
+    "verified": true
+  },
+  {
+    "in": [
+      "car",
+      "fuel"
+    ],
+    "out": "filling_station",
+    "why": "A filling station is a facility that sells fuel and engine lubricants for motor vehicles. It serves as a local fuel depot and retailer.",
+    "src": "https://en.wikipedia.org/wiki/Filling_station",
+    "verified": true
+  },
+  {
+    "in": [
+      "traffic_light",
+      "road"
+    ],
+    "out": "traffic",
+    "why": "Traffic is the movement of vehicles and pedestrians along land routes. Traffic laws govern and regulate traffic, while rules of the road include traffic laws and informal rules that may have developed over time to facilitate the orderly and timely flow of traffic.",
+    "src": "https://en.wikipedia.org/wiki/Traffic",
+    "verified": true
+  },
+  {
+    "in": [
+      "car",
+      "vehicle"
+    ],
+    "out": "traffic_collision",
+    "why": "A traffic collision, also known as a motor vehicle collision or car crash, occurs when a vehicle collides with another vehicle, pedestrian, animal, road debris, or other moving or stationary obstruction, such as a tree, boulder, pole, or structure.",
+    "src": "https://en.wikipedia.org/wiki/Traffic_collision",
+    "verified": true
+  },
+  {
+    "in": [
+      "horse",
+      "leather"
+    ],
+    "out": "saddle",
+    "why": "A saddle is a supportive structure for a rider of an animal, fastened to an animal's back by a girth. The most common type is equestrian.",
+    "src": "https://en.wikipedia.org/wiki/Saddle",
+    "verified": true
+  },
+  {
+    "in": [
+      "train",
+      "building"
+    ],
+    "out": "train_station",
+    "why": "A train station, railroad station, or railway station is a railway facility where trains stop to load or unload passengers, freight, or both. It generally consists of at least one platform, one track, and a station building providing such ancillary services as ticket sales, waiting rooms, and baggage service.",
+    "src": "https://en.wikipedia.org/wiki/Train_station",
+    "verified": true
+  },
+  {
+    "in": [
+      "railway",
+      "steel"
+    ],
+    "out": "railway_track",
+    "why": "Railway track is the structure on a railway consisting of the rails, fasteners, sleepers and ballast, plus the underlying subgrade. It enables trains to move by providing a dependable, durable, and unobstructed surface for their wheels to roll on.",
+    "src": "https://en.wikipedia.org/wiki/Railway_track",
+    "verified": true
+  },
+  {
+    "in": [
+      "train",
+      "city"
+    ],
+    "out": "rapid_transit",
+    "why": "Rapid transit, commonly referred to as metro, is a type of high-capacity public transport that is generally built in urban areas. A grade separated rapid transit line below ground surface through a tunnel can be regionally called a subway, tube, metro or underground.",
+    "src": "https://en.wikipedia.org/wiki/Rapid_transit",
+    "verified": true
+  },
+  {
+    "in": [
+      "rapid_transit",
+      "london"
+    ],
+    "out": "london_underground",
+    "why": "The London Underground, also known simply as the Underground or as the Tube, is a rapid transit system serving Greater London and parts of the adjacent home counties in England.",
+    "src": "https://en.wikipedia.org/wiki/London_Underground",
+    "verified": true
+  },
+  {
+    "in": [
+      "rapid_transit",
+      "city"
+    ],
+    "out": "new_york_city_subway",
+    "why": "The New York City Subway is a rapid transit system in New York City, serving four of the city's five boroughs: Manhattan, Brooklyn, Queens, and the Bronx.",
+    "src": "https://en.wikipedia.org/wiki/New_York_City_Subway",
+    "verified": true
+  },
+  {
+    "in": [
+      "train",
+      "speed"
+    ],
+    "out": "high_speed_rail",
+    "why": "High-speed rail is a type of rail transport network utilizing trains that run significantly faster than those of traditional rail, using an integrated system of specialized rolling stock and dedicated tracks.",
+    "src": "https://en.wikipedia.org/wiki/High-speed_rail",
+    "verified": true
+  },
+  {
+    "in": [
+      "high_speed_rail",
+      "japan"
+    ],
+    "out": "shinkansen",
+    "why": "The Shinkansen, colloquially known in English as the bullet train, is a network of primarily high-speed railway lines in Japan. The system was developed to provide connections between Tokyo and other regions of the country.",
+    "src": "https://en.wikipedia.org/wiki/Shinkansen",
+    "verified": true
+  },
+  {
+    "in": [
+      "train",
+      "rail"
+    ],
+    "out": "monorail",
+    "why": "A monorail is a form of urban rail transit in which trains run on or are suspended from a single rail or beam. Monorails typically provide intermediate transport capacity, generally greater than trams and less than heavy metro systems.",
+    "src": "https://en.wikipedia.org/wiki/Monorail",
+    "verified": true
+  },
+  {
+    "in": [
+      "railway",
+      "russia"
+    ],
+    "out": "trans_siberian_railway",
+    "why": "The Trans-Siberian Railway, historically known as the Great Siberian Route and often shortened to Transsib, is a large railway system that connects European Russia to the Russian Far East. It is the longest railway line in the world.",
+    "src": "https://en.wikipedia.org/wiki/Trans-Siberian_Railway",
+    "verified": true
+  },
+  {
+    "in": [
+      "airplane",
+      "air"
+    ],
+    "out": "aircraft",
+    "why": "An aircraft or aerial vehicle is a vehicle that can fly by gaining support from the air. It counters the force of gravity by using either static lift or the dynamic lift of an airfoil, or, in a few cases, direct downward thrust from its engines.",
+    "src": "https://en.wikipedia.org/wiki/Aircraft",
+    "verified": true
+  },
+  {
+    "in": [
+      "airplane",
+      "airport"
+    ],
+    "out": "aviation",
+    "why": "Aviation includes the activities surrounding mechanical flight and the aircraft industry. Aircraft include fixed-wing and rotary-wing types, morphable wings, wing-less lifting bodies, as well as lighter-than-air aircraft such as hot air balloons and airships.",
+    "src": "https://en.wikipedia.org/wiki/Aviation",
+    "verified": true
+  },
+  {
+    "in": [
+      "airport",
+      "tower"
+    ],
+    "out": "air_traffic_control",
+    "why": "Air traffic control is a service provided by ground-based air traffic controllers who direct aircraft on the ground and through controlled airspace. The primary purpose of air traffic control is to prevent collisions, organise and expedite the flow of air traffic, and provide information and other support for pilots.",
+    "src": "https://en.wikipedia.org/wiki/Air_traffic_control",
+    "verified": true
+  },
+  {
+    "in": [
+      "aircraft",
+      "engine"
+    ],
+    "out": "aircraft_engine",
+    "why": "An aircraft engine, often referred to as an aero engine, is the power component of an aircraft propulsion system. Aircraft using power components are referred to as powered flight.",
+    "src": "https://en.wikipedia.org/wiki/Aircraft_engine",
+    "verified": true
+  },
+  {
+    "in": [
+      "airplane",
+      "company"
+    ],
+    "out": "airline",
+    "why": "An airline is a company that provides a regular service of air transportation for passengers or freight. Airlines use aircraft to supply these services.",
+    "src": "https://en.wikipedia.org/wiki/Airline",
+    "verified": true
+  },
+  {
+    "in": [
+      "aircraft",
+      "wing"
+    ],
+    "out": "fixed_wing_aircraft",
+    "why": "A fixed-wing aircraft is a heavier-than-air aircraft, such as an airplane, which is capable of flight using aerodynamic lift. Fixed-wing aircraft are distinct from rotary-wing aircraft, in which a rotor mounted on a spinning shaft generates lift, and ornithopters, in which the wings oscillate to generate lift.",
+    "src": "https://en.wikipedia.org/wiki/Fixed-wing_aircraft",
+    "verified": true
+  },
+  {
+    "in": [
+      "airplane",
+      "jet_fuel"
+    ],
+    "out": "jet_aircraft",
+    "why": "A jet aircraft, or simply jet, is an aircraft propelled by one or more jet engines. Jets are nearly always fixed-wing aircraft, though a wide range of different types of jet aircraft exists, both for civilian and military purposes.",
+    "src": "https://en.wikipedia.org/wiki/Jet_aircraft",
+    "verified": true
+  },
+  {
+    "in": [
+      "drone",
+      "aircraft"
+    ],
+    "out": "unmanned_aerial_vehicle",
+    "why": "An unmanned aerial vehicle, commonly known as an aerial drone or simply drone, is an aircraft with no human pilot, crew, or passengers on board, which instead is either autonomous or controlled remotely.",
+    "src": "https://en.wikipedia.org/wiki/Unmanned_aerial_vehicle",
+    "verified": true
+  },
+  {
+    "in": [
+      "ship",
+      "sea"
+    ],
+    "out": "maritime_transport",
+    "why": "Maritime transport, or ocean transport, or more generally waterborne transport, is the transport of people or goods via waterways.",
+    "src": "https://en.wikipedia.org/wiki/Maritime_transport",
+    "verified": true
+  },
+  {
+    "in": [
+      "boat",
+      "river"
+    ],
+    "out": "barge",
+    "why": "A barge is typically a flat-bottomed boat which does not have its own means of mechanical propulsion. Their original use was on inland waterways, while modern use is on both inland and marine water environments.",
+    "src": "https://en.wikipedia.org/wiki/Barge",
+    "verified": true
+  },
+  {
+    "in": [
+      "ship",
+      "cargo"
+    ],
+    "out": "cargo_ship",
+    "why": "A cargo ship or freighter is a merchant ship designed to transport goods, commodities, and materials across seas and oceans. These ships form the backbone of international trade, carrying the majority of global freight by volume.",
+    "src": "https://en.wikipedia.org/wiki/Cargo_ship",
+    "verified": true
+  },
+  {
+    "in": [
+      "boat",
+      "car"
+    ],
+    "out": "ferry",
+    "why": "A ferry is a boat or ship that transports passengers, and occasionally vehicles and cargo, across a body of water. A small passenger ferry with multiple stops is sometimes referred to as a water taxi or water bus.",
+    "src": "https://en.wikipedia.org/wiki/Ferry",
+    "verified": true
+  },
+  {
+    "in": [
+      "ship",
+      "fish"
+    ],
+    "out": "fishing_vessel",
+    "why": "A fishing vessel is a boat or ship used to catch fish and other valuable nektonic aquatic animals in the sea, lake or river. Humans have used different kinds of surface vessels in commercial, artisanal and recreational fishing.",
+    "src": "https://en.wikipedia.org/wiki/Fishing_vessel",
+    "verified": true
+  },
+  {
+    "in": [
+      "boat",
+      "air"
+    ],
+    "out": "hovercraft",
+    "why": "A hovercraft, also known as an air-cushion vehicle, is an amphibious craft capable of travelling over land, water, mud, ice, and various other surfaces. Hovercraft use blowers to produce a large volume of air below the hull, or air cushion, that is slightly above atmospheric pressure.",
+    "src": "https://en.wikipedia.org/wiki/Hovercraft",
+    "verified": true
+  },
+  {
+    "in": [
+      "ship",
+      "trade"
+    ],
+    "out": "merchant_ship",
+    "why": "A merchant ship, merchant vessel, trading vessel, or merchantman is a watercraft that transports cargo or carries passengers for hire. This is in contrast to pleasure craft, which are used for personal recreation, and naval ships, which are used for military purposes.",
+    "src": "https://en.wikipedia.org/wiki/Merchant_ship",
+    "verified": true
+  },
+  {
+    "in": [
+      "ship",
+      "travel"
+    ],
+    "out": "passenger_ship",
+    "why": "A passenger ship is a merchant ship whose primary function is to carry passengers on the sea.",
+    "src": "https://en.wikipedia.org/wiki/Passenger_ship",
+    "verified": true
+  },
+  {
+    "in": [
+      "steam",
+      "river"
+    ],
+    "out": "riverboat",
+    "why": "A riverboat is a watercraft designed for inland navigation on lakes, rivers, and artificial waterways. They are generally equipped and outfitted as work boats in one of the carrying trades, for freight or people transport.",
+    "src": "https://en.wikipedia.org/wiki/Riverboat",
+    "verified": true
+  },
+  {
+    "in": [
+      "ship",
+      "sail"
+    ],
+    "out": "sailing_ship",
+    "why": "A sailing ship is a sea-going vessel that uses sails mounted on masts to harness the power of wind and propel the vessel. There is a variety of sail plans that propel sailing ships, employing square-rigged or fore-and-aft sails.",
+    "src": "https://en.wikipedia.org/wiki/Sailing_ship",
+    "verified": true
+  },
+  {
+    "in": [
+      "ship",
+      "wood"
+    ],
+    "out": "shipbuilding",
+    "why": "Shipbuilding is the construction of ships and other floating vessels. In modern times, it normally takes place in a specialized facility known as a shipyard.",
+    "src": "https://en.wikipedia.org/wiki/Shipbuilding",
+    "verified": true
+  },
+  {
+    "in": [
+      "ship",
+      "steam"
+    ],
+    "out": "steamship",
+    "why": "A steamship, often referred to as a steamer, is a type of steam-powered vessel, typically ocean-faring and seaworthy, that is propelled by one or more steam engines that typically move propellers or paddlewheels.",
+    "src": "https://en.wikipedia.org/wiki/Steamship",
+    "verified": true
+  },
+  {
+    "in": [
+      "ship",
+      "oil"
+    ],
+    "out": "tanker_ship",
+    "why": "A tanker, or tank ship, is a ship designed to transport or store liquids or gases in bulk. Major types of tanker ship include the oil tanker, the chemical tanker, cargo ships, and a gas carrier.",
+    "src": "https://en.wikipedia.org/wiki/Tanker_(ship)",
+    "verified": true
+  },
+  {
+    "in": [
+      "cable",
+      "mountain"
+    ],
+    "out": "cable_transport",
+    "why": "Cable transport is a broad class of transport modes that have cables. They transport passengers and goods, often in vehicles called cable cars.",
+    "src": "https://en.wikipedia.org/wiki/Cable_transport",
+    "verified": true
+  },
+  {
+    "in": [
+      "pipe",
+      "oil"
+    ],
+    "out": "pipeline",
+    "why": "A pipeline is a system of pipes for long-distance transportation of a liquid or gas, typically to a market area for consumption.",
+    "src": "https://en.wikipedia.org/wiki/Pipeline",
+    "verified": true
   }
 ]

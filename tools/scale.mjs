@@ -593,6 +593,7 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* technology 3 */ 'screw_mechanism', 'passport', 'cycling', 'rickshaw', 'saddle',
           /* technology 2 */ 'photometer', 'machete', 'wheelbarrow', 'chainsaw', 'cathode_ray_tube', 'dentures', 'grenade', 'bayonet', 'handgun', 'theodolite', 'binoculars', 'fiber', 'crochet', 'embroidery', 'hand_spinning', 'sewing',
           /* technology 1 */ 'calculator', 'mobile_device', 'iphone', 'barcode', 'optical_disc', 'sensor', 'oscilloscope', 'remote_control',
           /* fish, bird families, colours, units, astronomy (AJ) */ 'brachyura', 'ophidiiformes', 'cyprinodontiformes', 'gobioidei', 'tetraodontidae', 'characiformes', 'ilish', 'cypriniformes', 'galaxiidae', 'hylidae', 'leptodactylidae', 'ranidae', 'cardinalidae', 'icterid', 'old_world_flycatcher', 'ploceidae', 'old_world_sparrow', 'starling', 'antbird', 'ovenbird_family', 'tyrant_flycatcher',
@@ -918,6 +919,7 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* technology 3 — abstract concepts, filed at the 10⁰ idea bucket */ 'invention', 'simple_machine', 'inclined_plane', 'wheel_and_axle', 'public_transport', 'freight_transport', 'traffic', 'traffic_collision', 'aviation', 'air_traffic_control', 'airline', 'maritime_transport', 'shipbuilding',
           /* technology 2 — abstract concepts, filed at the 10⁰ idea bucket */ 'instrumentation', 'drilling', 'irrigation_sprinkler', 'ironing', 'centrifuge', 'flat_panel_display', 'podcast', 'printing', 'amateur_radio', 'radio_broadcasting', 'sound_recording_and_reproduction', 'speech_synthesis', 'telecommunications', 'telegraphy', 'cable_television', 'satellite_television', 'text_messaging', 'video', 'video_camera', 'electrocardiography', 'endoscopy', 'medical_imaging', 'medical_ultrasound', 'radiography', 'weapon', 'military_technology', 'horses_in_warfare', 'stealth_technology', 'bomb', 'cluster_munition', 'land_mine', 'napalm', 'battle_axe', 'boomerang', 'firearm', 'weapon_of_mass_destruction', 'biological_warfare', 'chemical_weapon', 'nuclear_weapon', 'chinese_calendar', 'gregorian_calendar', 'islamic_calendar', 'julian_calendar', 'leap_year', 'coordinated_universal_time', 'daylight_saving_time', 'celestial_navigation', 'optical_fiber', 'anti_reflective_coating', 'diffraction_grating', 'photography', 'digital_photography', 'fine_art_photography', 'interferometry', 'space_exploration', 'exploration_of_mars', 'spaceflight', 'rocket_engine', 'nasa', 'apollo_program', 'soviet_space_program', 'vostok_programme', 'roscosmos', 'european_space_agency', 'cnsa', 'vostok_1', 'linen',
           /* technology 1 — abstract concepts, filed at the 10⁰ idea bucket */ 'agricultural_science', 'weed', 'gardening', 'intensive_farming', 'organic_farming', 'sustainable_agriculture', 'subsistence_agriculture', 'animal_husbandry', 'breed', 'agronomy', 'horticulture', 'plant_breeding', 'cultivar', 'pesticide', 'tillage', 'biotechnology', 'genetic_engineering', 'genetically_modified_organism', 'computing', 'information_technology', 'computer_security', 'malware', 'digital_data', 'data_communication', 'open_source', 'computer_science', 'large_language_model', 'machine_learning', 'computer_architecture', 'computer_simulation', 'parallel_computing', 'computer_hardware', 'personal_computer', 'application_software', 'spreadsheet', 'word_processor', 'android_operating_system', 'linux', 'microsoft_windows', 'ms_dos', 'unix', 'user_interface', 'authentication', 'data_storage', 'wifi', 'internet_protocol_suite', 'search_engine', 'website', 'computer_programming', 'character_encoding', 'c_programming_language', 'css', 'javascript', 'programming_paradigm', 'functional_programming', 'object_oriented_programming', 'electronics', 'consumer_electronics', 'signal_processing', 'signal_to_noise_ratio', 'circuit_design', 'semiconductor_device', 'amplifier', 'circuit_breaker', 'waveguide', 'engineering', 'nuclear_technology', 'technical_drawing', 'civil_engineering', 'architectural_engineering', 'mechanical_engineering', 'aerospace_engineering', 'biomedical_engineering', 'chemical_engineering', 'electrical_engineering', 'industrial_engineering', 'military_engineering', 'software_engineering', 'automation', 'industrial_robot', 'mechanization', 'standardization', 'waste_management', 'biofuel', 'fossil_fuel', 'renewable_energy', 'geothermal_power', 'solar_energy', 'electric_light', 'electric_power_distribution', 'gas_turbine', 'desalination', 'detergent', 'laundry', 'refrigeration', 'sanitation', 'water_supply', 'abrasive', 'explosive', 'fireworks', 'petrochemical', 'woodworking', 'carpentry', 'metallurgy', 'metalworking', 'die_casting', 'extrusion', 'heat_treating', 'laser_cutting', 'rolling_metalworking', 'steelmaking', 'masonry', 'lighting', 'hvac',
           /* fish, bird families, colours, units, astronomy (AJ) — abstract concepts, filed at the 10⁰ idea bucket */ 'scorpaeniformes', 'batomorphi', 'perciformes', 'serranidae', 'salmonidae', 'loricariidae', 'columbidae', 'gruiformes', 'corvidae', 'sulidae', 'procellariiformes', 'procyonidae', 'dasyuromorphia', 'peramelemorphia', 'urology', 'medical_test', 'white', 'black', 'grey', 'red', 'yellow', 'green', 'blue', 'pink', 'purple', 'brown', 'field_research', 'information_science', 'methodology', 'qualitative_research', 'quantitative_research', 'natural_units', 'planck_units', 'us_customary_units', 'imperial_units', 'standard_atmosphere_unit', 'pound_mass', 'degree_angle', 'candela', 'farad', 'coulomb', 'siemens_unit', 'becquerel', 'gray_unit', 'sievert', 'night', 'photometry_astronomy',
@@ -1299,6 +1301,7 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+          /* technology 3 */ 'levee', 'tower_bridge', 'diesel_engine', 'robotics', 'container', 'transport', 'travel', 'vehicle', 'car', 'driving', 'parking', 'filling_station', 'aircraft_engine', 'unmanned_aerial_vehicle', 'barge', 'ferry', 'fishing_vessel', 'hovercraft', 'riverboat',
           /* technology 2 */ 'combine_harvester', 'cultivator', 'lawn_mower', 'home_appliance', 'air_conditioning', 'clothes_dryer', 'dishwasher', 'potters_wheel', 'broadcasting', 'photocopier', 'military_aircraft', 'attack_aircraft', 'bomber', 'fighter_aircraft', 'battleship', 'galley', 'naval_mine', 'ship_of_the_line', 'warship', 'rifle', 'shotgun', 'gun', 'ballista', 'catapult', 'electron_microscope', 'optical_telescope', 'spacecraft', 'launch_vehicle', 'space_station', 'mir', 'space_shuttle', 'soyuz', 'tapestry',
           /* technology 1 */ 'aquaculture', 'beekeeping', 'orchard', 'stable', 'supercomputer', 'eniac', 'oil_well', 'water_tower', 'facade', 'tower_block',
           /* plants, fungi, protists (AH) */ 'cupressus', 'douglas_fir', 'podocarpus', 'sequoioideae', 'arecaceae', 'hickory', 'ficus_sycomorus', 'platanus',
@@ -1524,6 +1527,7 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'bird_wing', 'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+          /* technology 3 */ 'train_station', 'aircraft', 'fixed_wing_aircraft', 'jet_aircraft', 'cargo_ship', 'merchant_ship', 'passenger_ship', 'sailing_ship', 'steamship', 'tanker_ship',
           /* technology 2 */ 'alma', 'maunakea_observatories',
           /* technology 1 */ 'power_station', 'cooling_tower', 'pumping_station', 'chemical_plant', 'quarry',
           /* R3 AA earth science and geological time */ 'rapids',
@@ -1735,6 +1739,7 @@ const SCALE = {
           // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
           'intertidal_zone'],
   '3':   [
+          /* technology 3 */ 'aswan_high_dam', 'itaipu_dam', 'three_gorges_dam', 'flood_management', 'channel_tunnel', 'land_transport', 'road_transport', 'highway', 'controlled_access_highway', 'trail', 'railway_track', 'rapid_transit', 'monorail', 'cable_transport', 'pipeline',
           /* technology 1 */ 'electric_power_transmission', 'sanitary_sewer', 'qanat', 'infrastructure',
           /* R3 AA earth science and geological time */ 'mountain_pass', 'hill', 'artificial_island',
           /* seas, straits, lakes, rivers and canals batch 2, 12 Nov */ 'west_lake',
@@ -1837,6 +1842,7 @@ const SCALE = {
           // seashore batch 1 — the tide's rise and fall along a whole stretch of coastline, km scale like estuary/lagoon/fjord
           'tide'],
   '4':   [
+          /* technology 3 */ 'london_underground', 'new_york_city_subway', 'high_speed_rail', 'shinkansen',
           /* technology 1 */ 'hydropower',
           /* R3 AB weather, climate, hydrosphere */ 'mirage', 'dry_lake',
           /* R3 AA earth science and geological time */ 'landform', 'alluvial_fan', 'glacial_landform', 'bay', 'polder', 'marsh',
@@ -1910,6 +1916,7 @@ const SCALE = {
           // aviation batch 1 — a whole airport site, several kilometres across, the same bucket as the LHC ring
           'airport'],
   '6':   [
+          /* technology 3 */ 'trans_siberian_railway',
           /* R3 AB weather, climate, hydrosphere */ 'air_mass', 'cyclone', 'ice_shelf', 'oceanography', 'seabed',
           /* R3 AA earth science and geological time */ 'earths_inner_core', 'mountain_range', 'sedimentary_basin', 'hotspot_geology', 'shrubland', 'jungle', 'temperate_broadleaf_and_mixed_forests',
           /* physical sciences batch 1, 12 Nov: units and methods at the idea bucket, celestial things at their drawn scale */ 'minor_planet', 'meteor_shower', 'impact_event',
