@@ -129162,5 +129162,705 @@
     "why": "Gloss is an optical property which indicates how well a surface reflects light in a specular (mirror-like) direction. It is one of the important parameters that are used to describe the visual appearance of an object.",
     "src": "https://en.wikipedia.org/wiki/Gloss_(optics)",
     "verified": true
+  },
+  {
+    "in": [
+      "radiation",
+      "ion"
+    ],
+    "out": "ionizing_radiation",
+    "why": "Ionizing radiation consists of subatomic particles or electromagnetic waves that have enough energy per individual photon or particle to ionize atoms or molecules by detaching electrons from them. Some particles can travel at a large fraction of the speed of light; their electromagnetic waves are on the high-energy portion of the electromagnetic spectrum.",
+    "src": "https://en.wikipedia.org/wiki/Ionizing_radiation",
+    "verified": true
+  },
+  {
+    "in": [
+      "quantum_mechanics",
+      "symmetry"
+    ],
+    "out": "gauge_theory",
+    "why": "In physics, a gauge theory is a type of field theory in which the Lagrangian, and hence the dynamics of the system itself, does not change under local transformations according to certain smooth families of operations. Formally, the Lagrangian is invariant under these transformations.",
+    "src": "https://en.wikipedia.org/wiki/Gauge_theory",
+    "verified": true
+  },
+  {
+    "in": [
+      "quantum_mechanics",
+      "gravity"
+    ],
+    "out": "quantum_gravity",
+    "why": "Quantum gravity is a field of theoretical physics that seeks unification of the theory of gravity with the principles of quantum mechanics. It deals with environments in which neither gravitational nor quantum effects can be ignored, such as in the vicinity of black holes or similar compact astrophysical objects, as well as in the early stages of the universe moments after the Big Bang.",
+    "src": "https://en.wikipedia.org/wiki/Quantum_gravity",
+    "verified": true
+  },
+  {
+    "in": [
+      "physics",
+      "atom"
+    ],
+    "out": "atomic_physics",
+    "why": "Atomic physics is the field of physics that studies atoms as an isolated system of electrons and an atomic nucleus. Atomic physics typically refers to the study of atomic structure and the interaction between atoms.",
+    "src": "https://en.wikipedia.org/wiki/Atomic_physics",
+    "verified": true
+  },
+  {
+    "in": [
+      "physics",
+      "solid"
+    ],
+    "out": "condensed_matter_physics",
+    "why": "Condensed matter physics is the field of physics that deals with the macroscopic and microscopic physical properties of matter, especially the solid and liquid phases, that arise from electromagnetic forces between atoms and electrons. More generally, the subject deals with condensed phases of matter: systems of many constituents with strong interactions among them.",
+    "src": "https://en.wikipedia.org/wiki/Condensed_matter_physics",
+    "verified": true
+  },
+  {
+    "in": [
+      "physics",
+      "crystal"
+    ],
+    "out": "solid_state_physics",
+    "why": "Solid-state physics is the study of rigid matter, or solids, through methods such as solid-state chemistry, quantum mechanics, crystallography, electromagnetism, and metallurgy. It is the largest branch of condensed matter physics.",
+    "src": "https://en.wikipedia.org/wiki/Solid-state_physics",
+    "verified": true
+  },
+  {
+    "in": [
+      "white_dwarf",
+      "quantum_mechanics"
+    ],
+    "out": "degenerate_matter",
+    "why": "Degenerate matter occurs when the Pauli exclusion principle significantly alters a state of matter at low temperature. The term is used in astrophysics to refer to dense stellar objects such as white dwarfs and neutron stars, where thermal pressure alone is not enough to prevent gravitational collapse.",
+    "src": "https://en.wikipedia.org/wiki/Degenerate_matter",
+    "verified": true
+  },
+  {
+    "in": [
+      "boson",
+      "temperature"
+    ],
+    "out": "bose_einstein_condensate",
+    "why": "In condensed matter physics, a Bose–Einstein condensate is a state of matter that is typically formed when a gas of bosons at very low densities is cooled to temperatures very close to absolute zero. Under such conditions, a large fraction of bosons occupy the lowest quantum state, at which microscopic quantum-mechanical phenomena, particularly wavefunction interference, become apparent macroscopically.",
+    "src": "https://en.wikipedia.org/wiki/Bose–Einstein_condensate",
+    "verified": true
+  },
+  {
+    "in": [
+      "magnet",
+      "magnetic_field"
+    ],
+    "out": "magnetism",
+    "why": "Magnetism is the class of physical attributes that occur through a magnetic field, which allows objects to attract or repel each other. Because both electric currents and magnetic moments of elementary particles give rise to a magnetic field, magnetism is one of two aspects of electromagnetism.",
+    "src": "https://en.wikipedia.org/wiki/Magnetism",
+    "verified": true
+  },
+  {
+    "in": [
+      "magnetism",
+      "iron"
+    ],
+    "out": "ferromagnetism",
+    "why": "Ferromagnetism is a property of certain materials (such as iron) that results in a significant, observable magnetic permeability, and in many cases, a significant magnetic coercivity, allowing the material to form a permanent magnet. Ferromagnetic materials are noticeably attracted to a magnet, which is a consequence of their substantial magnetic permeability.",
+    "src": "https://en.wikipedia.org/wiki/Ferromagnetism",
+    "verified": true
+  },
+  {
+    "in": [
+      "charge",
+      "magnet"
+    ],
+    "out": "dipole",
+    "why": "In physics, a dipole is an electromagnetic phenomenon which occurs in two ways: An electric dipole formed by the separation of the positive and negative electric charges. A magnetic dipole represents a sufficiently small magnet such as those due to atoms, molecules, and electrons.",
+    "src": "https://en.wikipedia.org/wiki/Dipole",
+    "verified": true
+  },
+  {
+    "in": [
+      "materials_science",
+      "wave_physics"
+    ],
+    "out": "metamaterial",
+    "why": "A metamaterial is an engineered material whose properties arise not from the chemical composition of its base substances, but from their deliberately designed internal structure. These properties are often rare or absent in naturally occurring materials.",
+    "src": "https://en.wikipedia.org/wiki/Metamaterial",
+    "verified": true
+  },
+  {
+    "in": [
+      "electron",
+      "experiment"
+    ],
+    "out": "oil_drop_experiment",
+    "why": "The oil drop experiment was performed by Robert A. Millikan and Harvey Fletcher to measure the elementary electric charge, the charge of the electron. The experiment took place in the Ryerson Physical Laboratory at the University of Chicago.",
+    "src": "https://en.wikipedia.org/wiki/Oil_drop_experiment",
+    "verified": true
+  },
+  {
+    "in": [
+      "photon",
+      "electron"
+    ],
+    "out": "photoelectric_effect",
+    "why": "The photoelectric effect is the emission of electrons from a material caused by electromagnetic radiation such as ultraviolet light. Electrons emitted in this manner are called photoelectrons.",
+    "src": "https://en.wikipedia.org/wiki/Photoelectric_effect",
+    "verified": true
+  },
+  {
+    "in": [
+      "static_electricity",
+      "charge"
+    ],
+    "out": "electrostatics",
+    "why": "Electrostatics is a branch of physics that studies slow-moving or stationary electric charges on macroscopic objects where quantum effects can be neglected. Under these circumstances, the electric field, electric potential, and the charge density are related without complications from magnetic effects.",
+    "src": "https://en.wikipedia.org/wiki/Electrostatics",
+    "verified": true
+  },
+  {
+    "in": [
+      "charge",
+      "force"
+    ],
+    "out": "coulombs_law",
+    "why": "Coulomb's inverse-square law, or simply Coulomb's law, is a scientific law of physics that describes the amount of force between two electrically charged particles at rest. This electric force is conventionally called the electrostatic force or Coulomb force.",
+    "src": "https://en.wikipedia.org/wiki/Coulomb's_law",
+    "verified": true
+  },
+  {
+    "in": [
+      "electrostatics",
+      "force"
+    ],
+    "out": "electric_field",
+    "why": "An electric field is a physical field that surrounds electrically charged particles such as electrons. In classical electromagnetism, the electric field of a single charge, or group of charges, describes their capacity to exert attractive or repulsive forces on another charged object.",
+    "src": "https://en.wikipedia.org/wiki/Electric_field",
+    "verified": true
+  },
+  {
+    "in": [
+      "voltage",
+      "electric_field"
+    ],
+    "out": "electric_potential",
+    "why": "Electric potential, also known as the electrostatic potential or electric field potential, is a field of scalar quantities through space that gives, for each point in space, the electric potential energy per unit of electric charge that a point charge would have if it was located at that point.",
+    "src": "https://en.wikipedia.org/wiki/Electric_potential",
+    "verified": true
+  },
+  {
+    "in": [
+      "light",
+      "radiation"
+    ],
+    "out": "electromagnetic_radiation",
+    "why": "In physics, electromagnetic radiation or an electromagnetic wave is a self-propagating wave of the electromagnetic field that carries momentum and radiant energy through space. It encompasses a broad spectrum, classified by frequency, ranging from radio waves, microwaves, infrared, visible light, ultraviolet, X-rays, to gamma rays.",
+    "src": "https://en.wikipedia.org/wiki/Electromagnetic_radiation",
+    "verified": true
+  },
+  {
+    "in": [
+      "spectrum",
+      "electromagnetic_radiation"
+    ],
+    "out": "electromagnetic_spectrum",
+    "why": "The electromagnetic spectrum is the full range of electromagnetic radiation, organized by frequency or wavelength. The spectrum is divided into separate bands, with different names for the electromagnetic waves within each band.",
+    "src": "https://en.wikipedia.org/wiki/Electromagnetic_spectrum",
+    "verified": true
+  },
+  {
+    "in": [
+      "radio",
+      "electromagnetic_radiation"
+    ],
+    "out": "radio_wave",
+    "why": "Radio waves are a type of electromagnetic radiation with the lowest frequencies and the longest wavelengths in the electromagnetic spectrum. They were formerly called Hertzian waves.",
+    "src": "https://en.wikipedia.org/wiki/Radio_wave",
+    "verified": true
+  },
+  {
+    "in": [
+      "oven",
+      "electromagnetic_radiation"
+    ],
+    "out": "microwave",
+    "why": "Microwave is a form of electromagnetic radiation with wavelengths shorter than other radio waves but longer than infrared waves.",
+    "src": "https://en.wikipedia.org/wiki/Microwave",
+    "verified": true
+  },
+  {
+    "in": [
+      "heat",
+      "electromagnetic_radiation"
+    ],
+    "out": "infrared",
+    "why": "Infrared radiation is electromagnetic radiation with wavelengths longer than that of visible light but shorter than microwaves. The infrared spectral band begins with the waves that are just longer than those of red light, the longest waves in the visible spectrum, so infrared is, per definition, invisible to the human eye.",
+    "src": "https://en.wikipedia.org/wiki/Infrared",
+    "verified": true
+  },
+  {
+    "in": [
+      "rainbow",
+      "electromagnetic_spectrum"
+    ],
+    "out": "visible_spectrum",
+    "why": "The visible spectrum is the band of the electromagnetic spectrum that is visible to the human eye. Electromagnetic radiation in this range of wavelengths is called visible light, or simply light.",
+    "src": "https://en.wikipedia.org/wiki/Visible_spectrum",
+    "verified": true
+  },
+  {
+    "in": [
+      "phosphor",
+      "ultraviolet"
+    ],
+    "out": "fluorescence",
+    "why": "Fluorescence is one of two kinds of photoluminescence, the emission of light by a substance that has absorbed light or other electromagnetic radiation. When exposed to ultraviolet radiation, many substances will glow with colored visible light.",
+    "src": "https://en.wikipedia.org/wiki/Fluorescence",
+    "verified": true
+  },
+  {
+    "in": [
+      "electric_field",
+      "magnetic_field"
+    ],
+    "out": "electromagnetic_field",
+    "why": "An electromagnetic field is a physical field, varying in space and time, that represents the electric and magnetic influences generated by and acting upon electric charges. The field at any point in space and time can be regarded as a combination of an electric field and a magnetic field.",
+    "src": "https://en.wikipedia.org/wiki/Electromagnetic_field",
+    "verified": true
+  },
+  {
+    "in": [
+      "voltage",
+      "battery"
+    ],
+    "out": "electromotive_force",
+    "why": "In electromagnetism and electronics, electromotive force or electromotance is an energy transfer to an electric circuit per unit of electric charge, measured in volts. Devices called electrical transducers provide an emf by converting other forms of energy into electrical energy.",
+    "src": "https://en.wikipedia.org/wiki/Electromotive_force",
+    "verified": true
+  },
+  {
+    "in": [
+      "charge",
+      "magnetic_field"
+    ],
+    "out": "lorentz_force",
+    "why": "In electromagnetism, the Lorentz force is the force exerted on a charged particle by electric and magnetic fields. It determines how charged particles move in electromagnetic environments and underlies many physical phenomena, from the operation of electric motors and particle accelerators to the behavior of plasmas.",
+    "src": "https://en.wikipedia.org/wiki/Lorentz_force",
+    "verified": true
+  },
+  {
+    "in": [
+      "magnetic_field",
+      "conductor"
+    ],
+    "out": "eddy_current",
+    "why": "In electromagnetism, an eddy current is a loop of electric current induced within conductors by a changing magnetic field in the conductor according to Faraday's law of induction or by the relative motion of a conductor in a magnetic field. Eddy currents flow in closed loops within conductors, in planes perpendicular to the magnetic field.",
+    "src": "https://en.wikipedia.org/wiki/Eddy_current",
+    "verified": true
+  },
+  {
+    "in": [
+      "magnetism",
+      "electrostatics"
+    ],
+    "out": "magnetostatics",
+    "why": "Magnetostatics is the study of magnetic fields in systems where the currents are steady, not changing with time. It is the magnetic analogue of electrostatics, where the charges are stationary.",
+    "src": "https://en.wikipedia.org/wiki/Magnetostatics",
+    "verified": true
+  },
+  {
+    "in": [
+      "electricity",
+      "frequency"
+    ],
+    "out": "alternating_current",
+    "why": "Alternating current is an electric current that periodically reverses direction and changes its magnitude continuously with time, in contrast to direct current, which flows only in one direction.",
+    "src": "https://en.wikipedia.org/wiki/Alternating_current",
+    "verified": true
+  },
+  {
+    "in": [
+      "electricity",
+      "charge"
+    ],
+    "out": "direct_current",
+    "why": "Direct current is one-directional flow of electric charge. An electrochemical cell is a prime example of direct current power.",
+    "src": "https://en.wikipedia.org/wiki/Direct_current",
+    "verified": true
+  },
+  {
+    "in": [
+      "resistance",
+      "alternating_current"
+    ],
+    "out": "electrical_impedance",
+    "why": "In electrical engineering, impedance is the opposition to alternating current presented by the combined effect of resistance and reactance in a circuit. Quantitatively, the impedance of a two-terminal circuit element is the ratio of the complex representation of the sinusoidal voltage between its terminals, to the complex representation of the current flowing through it.",
+    "src": "https://en.wikipedia.org/wiki/Electrical_impedance",
+    "verified": true
+  },
+  {
+    "in": [
+      "resistance",
+      "conductor"
+    ],
+    "out": "electrical_resistance_and_conductance",
+    "why": "The electrical resistance of an object is a measure of its opposition to the flow of electric current. Its reciprocal quantity is electrical conductance, measuring the ease with which an electric current passes.",
+    "src": "https://en.wikipedia.org/wiki/Electrical_resistance_and_conductance",
+    "verified": true
+  },
+  {
+    "in": [
+      "capacitor",
+      "charge"
+    ],
+    "out": "capacitance",
+    "why": "Capacitance is the ability of an object to store electric charge. It is measured by the change in charge in response to a difference in electric potential, expressed as the ratio of those quantities.",
+    "src": "https://en.wikipedia.org/wiki/Capacitance",
+    "verified": true
+  },
+  {
+    "in": [
+      "transistor",
+      "signal"
+    ],
+    "out": "gain_electronics",
+    "why": "In electronics, gain is a measure of the ability of a two-port circuit, often an amplifier, to increase the power or amplitude of a signal from the input to the output port by adding energy converted from some power supply to the signal. It is usually defined as the mean ratio of the signal amplitude or power at the output port to the amplitude or power at the input port.",
+    "src": "https://en.wikipedia.org/wiki/Gain_(electronics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "inductor",
+      "magnetic_field"
+    ],
+    "out": "inductance",
+    "why": "Inductance is a tendency of an electrical conductor to oppose a change in the electric current flowing through it. The electric current produces a magnetic field around the conductor.",
+    "src": "https://en.wikipedia.org/wiki/Inductance",
+    "verified": true
+  },
+  {
+    "in": [
+      "circuit",
+      "scientific_law"
+    ],
+    "out": "kirchhoffs_circuit_laws",
+    "why": "Kirchhoff's circuit laws are two equalities that deal with the current and potential difference, commonly known as voltage, in the lumped element model of electrical circuits. They were first described by German physicist Gustav Kirchhoff.",
+    "src": "https://en.wikipedia.org/wiki/Kirchhoff's_circuit_laws",
+    "verified": true
+  },
+  {
+    "in": [
+      "quark",
+      "force"
+    ],
+    "out": "quantum_chromodynamics",
+    "why": "In theoretical physics, quantum chromodynamics is the study of the strong interaction between quarks mediated by gluons. Quarks are fundamental particles that make up composite hadrons such as the proton, neutron and pion.",
+    "src": "https://en.wikipedia.org/wiki/Quantum_chromodynamics",
+    "verified": true
+  },
+  {
+    "in": [
+      "photon",
+      "quantum_mechanics"
+    ],
+    "out": "quantum_electrodynamics",
+    "why": "In particle physics, quantum electrodynamics is the relativistic quantum field theory of electrodynamics. It describes how light and matter interact.",
+    "src": "https://en.wikipedia.org/wiki/Quantum_electrodynamics",
+    "verified": true
+  },
+  {
+    "in": [
+      "quantum_mechanics",
+      "particle"
+    ],
+    "out": "quantum_entanglement",
+    "why": "Quantum entanglement is the phenomenon in which the quantum state of each particle in a group cannot be described independently of the state of the others, even when the particles are separated by a large distance. The topic of quantum entanglement is at the heart of the disparity between classical physics and quantum physics: entanglement is a primary feature of quantum mechanics not present in classical mechanics.",
+    "src": "https://en.wikipedia.org/wiki/Quantum_entanglement",
+    "verified": true
+  },
+  {
+    "in": [
+      "quantum_mechanics",
+      "field"
+    ],
+    "out": "quantum_field_theory",
+    "why": "In theoretical physics, quantum field theory is a theoretical framework that combines field theory, special relativity and quantum mechanics. It is used in particle physics to construct physical models of subatomic particles and in condensed matter physics to construct models of quasiparticles.",
+    "src": "https://en.wikipedia.org/wiki/Quantum_field_theory",
+    "verified": true
+  },
+  {
+    "in": [
+      "quantum_mechanics",
+      "probability"
+    ],
+    "out": "quantum_tunnelling",
+    "why": "In physics, quantum tunnelling, barrier penetration, or simply tunnelling is a quantum mechanical phenomenon in which an object such as an electron or atom passes through a potential energy barrier that, according to classical mechanics, should not be passable due to the object not having sufficient energy to pass or surmount the barrier. Tunnelling is a consequence of the wave nature of matter and quantum indeterminacy.",
+    "src": "https://en.wikipedia.org/wiki/Quantum_tunnelling",
+    "verified": true
+  },
+  {
+    "in": [
+      "quantum_mechanics",
+      "partial_differential_equation"
+    ],
+    "out": "schrodinger_equation",
+    "why": "The Schrödinger equation is a partial differential equation that governs the wave function of a non-relativistic quantum-mechanical system. Its discovery was a significant landmark in the development of quantum mechanics.",
+    "src": "https://en.wikipedia.org/wiki/Schrödinger_equation",
+    "verified": true
+  },
+  {
+    "in": [
+      "quantum_mechanics",
+      "wave_physics"
+    ],
+    "out": "wave_function",
+    "why": "In quantum mechanics, a wave function is a mathematical description of the quantum state of an isolated quantum system. The most common symbols for a wave function are the Greek letters psi.",
+    "src": "https://en.wikipedia.org/wiki/Wave_function",
+    "verified": true
+  },
+  {
+    "in": [
+      "electron",
+      "wave_physics"
+    ],
+    "out": "wave_particle_duality",
+    "why": "Wave–particle duality is the concept in quantum mechanics that fundamental entities of the universe, like photons and electrons, exhibit particle or wave properties according to the experimental circumstances. It expresses the inability of the classical concepts such as particle or wave to fully describe the behavior of quantum objects.",
+    "src": "https://en.wikipedia.org/wiki/Wave–particle_duality",
+    "verified": true
+  },
+  {
+    "in": [
+      "relativity",
+      "gravity"
+    ],
+    "out": "general_relativity",
+    "why": "General relativity, also known as the general theory of relativity, and as Einstein's theory of gravity, is the geometric theory of gravitation published by Albert Einstein and is the accepted description of the gravitation of macroscopic objects in modern physics.",
+    "src": "https://en.wikipedia.org/wiki/General_relativity",
+    "verified": true
+  },
+  {
+    "in": [
+      "relativity",
+      "speed_of_light"
+    ],
+    "out": "special_relativity",
+    "why": "In physics, the special theory of relativity, or simply special relativity, is a scientific theory of the relationship between space and time. In Albert Einstein's paper, On the Electrodynamics of Moving Bodies, the theory is presented as being based on just two postulates.",
+    "src": "https://en.wikipedia.org/wiki/Special_relativity",
+    "verified": true
+  },
+  {
+    "in": [
+      "relativity",
+      "frame_of_reference"
+    ],
+    "out": "principle_of_relativity",
+    "why": "In physics, the principle of relativity is the idea that the laws of physics should remain consistent over time and from one place to another. Several principles of relativity have been successfully applied during the development of physics, implicitly in Newtonian mechanics and explicitly in Albert Einstein's special relativity and general relativity.",
+    "src": "https://en.wikipedia.org/wiki/Principle_of_relativity",
+    "verified": true
+  },
+  {
+    "in": [
+      "gravity",
+      "inertia"
+    ],
+    "out": "equivalence_principle",
+    "why": "The equivalence principle is the hypothesis that the observed equivalence of gravitational and inertial mass is a consequence of nature. The weak form, known for centuries, relates to masses of any composition in free fall taking the same trajectories and landing at identical times.",
+    "src": "https://en.wikipedia.org/wiki/Equivalence_principle",
+    "verified": true
+  },
+  {
+    "in": [
+      "black_hole",
+      "general_relativity"
+    ],
+    "out": "gravitational_singularity",
+    "why": "In theoretical physics, a gravitational singularity, spacetime singularity, or simply singularity, is a theoretical condition in which gravity is predicted to be so intense that spacetime itself would break down catastrophically.",
+    "src": "https://en.wikipedia.org/wiki/Gravitational_singularity",
+    "verified": true
+  },
+  {
+    "in": [
+      "special_relativity",
+      "spacetime"
+    ],
+    "out": "lorentz_transformation",
+    "why": "In physics, the Lorentz transformations are a six-parameter family of linear transformations from a coordinate frame in spacetime to another frame that moves at a constant velocity relative to the former. The respective inverse transformation is then parameterized by the negative of this velocity.",
+    "src": "https://en.wikipedia.org/wiki/Lorentz_transformation",
+    "verified": true
+  },
+  {
+    "in": [
+      "light",
+      "experiment"
+    ],
+    "out": "michelson_morley_experiment",
+    "why": "The Michelson–Morley experiment was an attempt to measure the motion of the Earth relative to the luminiferous aether, a supposed medium permeating space that was thought to be the carrier of light waves.",
+    "src": "https://en.wikipedia.org/wiki/Michelson–Morley_experiment",
+    "verified": true
+  },
+  {
+    "in": [
+      "light",
+      "speed"
+    ],
+    "out": "speed_of_light",
+    "why": "The speed of light is the speed of electromagnetic waves. Light travels at slower speed inside materials like glass or water; its highest speed is in a vacuum. The speed of light in vacuum is a universal physical constant.",
+    "src": "https://en.wikipedia.org/wiki/Speed_of_light",
+    "verified": true
+  },
+  {
+    "in": [
+      "physics",
+      "nucleus"
+    ],
+    "out": "nuclear_physics",
+    "why": "Nuclear physics is the field of physics that studies atomic nuclei and their constituents and interactions, in addition to the study of other forms of nuclear matter. Nuclear physics should not be confused with atomic physics, which studies the atom as a whole, including its electrons.",
+    "src": "https://en.wikipedia.org/wiki/Nuclear_physics",
+    "verified": true
+  },
+  {
+    "in": [
+      "fusion",
+      "star"
+    ],
+    "out": "nucleosynthesis",
+    "why": "Nucleosynthesis is the process that creates new atomic nuclei from pre-existing nucleons and nuclei. According to current theories, the first nuclei were formed a few minutes after the Big Bang through nuclear reactions in a process called Big Bang nucleosynthesis.",
+    "src": "https://en.wikipedia.org/wiki/Nucleosynthesis",
+    "verified": true
+  },
+  {
+    "in": [
+      "electron",
+      "radioactivity"
+    ],
+    "out": "beta_particle",
+    "why": "A beta particle, also called beta ray or beta radiation, is a high-energy, high-speed electron or positron emitted by the radioactive decay of an atomic nucleus, known as beta decay.",
+    "src": "https://en.wikipedia.org/wiki/Beta_particle",
+    "verified": true
+  },
+  {
+    "in": [
+      "physics",
+      "quark"
+    ],
+    "out": "particle_physics",
+    "why": "Particle physics or high-energy physics is the study of fundamental particles and forces that constitute matter and radiation. The field also studies combinations of elementary particles up to the scale of protons and neutrons, while the study of combinations of protons and neutrons is called nuclear physics.",
+    "src": "https://en.wikipedia.org/wiki/Particle_physics",
+    "verified": true
+  },
+  {
+    "in": [
+      "particle_physics",
+      "dark_matter"
+    ],
+    "out": "physics_beyond_the_standard_model",
+    "why": "Physics beyond the Standard Model is the theoretical developments needed to explain the deficiencies of the Standard Model, such as the inability to explain the fundamental parameters of the Standard Model, the strong CP problem, neutrino oscillations, matter–antimatter asymmetry, and the nature of dark matter and dark energy.",
+    "src": "https://en.wikipedia.org/wiki/Physics_beyond_the_Standard_Model",
+    "verified": true
+  },
+  {
+    "in": [
+      "theoretical_physics",
+      "string"
+    ],
+    "out": "string_theory",
+    "why": "In physics, string theory is a theoretical framework in which the point-like particles of particle physics are replaced by one-dimensional objects called strings. String theory describes how these strings move through space and interact with each other by vibrations.",
+    "src": "https://en.wikipedia.org/wiki/String_theory",
+    "verified": true
+  },
+  {
+    "in": [
+      "boson",
+      "lepton"
+    ],
+    "out": "supersymmetry",
+    "why": "Supersymmetry is a theoretical framework in physics that suggests the existence of a symmetry between particles with integer spin and particles with half-integer spin. It proposes that for every known particle, there exists a partner particle with different spin properties.",
+    "src": "https://en.wikipedia.org/wiki/Supersymmetry",
+    "verified": true
+  },
+  {
+    "in": [
+      "physics",
+      "matter"
+    ],
+    "out": "particle",
+    "why": "In the physical sciences, a particle, or corpuscle in older texts, is a separate part of a larger system. Depending on the system they vary greatly in size or quantity, from subatomic particles like the electron, to microscopic particles like atoms and molecules, to macroscopic particles like powders and other granular materials.",
+    "src": "https://en.wikipedia.org/wiki/Particle",
+    "verified": true
+  },
+  {
+    "in": [
+      "particle",
+      "magnet"
+    ],
+    "out": "particle_accelerator",
+    "why": "A particle accelerator is a machine that uses electromagnetic fields to propel ions to very high speeds and energies to contain them in well-defined beams. Small accelerators are used for fundamental research in particle physics.",
+    "src": "https://en.wikipedia.org/wiki/Particle_accelerator",
+    "verified": true
+  },
+  {
+    "in": [
+      "particle_accelerator",
+      "proton"
+    ],
+    "out": "tevatron",
+    "why": "The Tevatron was a circular particle accelerator in the United States, at the Fermi National Accelerator Laboratory, called Fermilab, east of Batavia, Illinois, and was the highest energy particle collider until the Large Hadron Collider was built near Geneva, Switzerland.",
+    "src": "https://en.wikipedia.org/wiki/Tevatron",
+    "verified": true
+  },
+  {
+    "in": [
+      "particle",
+      "measurement"
+    ],
+    "out": "particle_detector",
+    "why": "In experimental and applied particle physics, nuclear physics, and nuclear engineering, a particle detector, also known as a radiation detector, is a device used to detect, track, and identify ionizing particles, such as those produced by nuclear decay, cosmic radiation, or reactions in a particle accelerator.",
+    "src": "https://en.wikipedia.org/wiki/Particle_detector",
+    "verified": true
+  },
+  {
+    "in": [
+      "particle_detector",
+      "cloud"
+    ],
+    "out": "cloud_chamber",
+    "why": "A cloud chamber, also known as a Wilson chamber, is a particle detector used for visualizing the passage of ionizing radiation. A cloud chamber consists of a sealed environment containing a supersaturated vapor of water or alcohol.",
+    "src": "https://en.wikipedia.org/wiki/Cloud_chamber",
+    "verified": true
+  },
+  {
+    "in": [
+      "particle",
+      "light"
+    ],
+    "out": "scattering",
+    "why": "In physics, scattering is a wide range of physical processes where moving particles or radiation of some form, such as light or sound, are forced to deflect from a straight trajectory or are blocked by localized non-uniformities in the propagation medium through which they pass.",
+    "src": "https://en.wikipedia.org/wiki/Scattering",
+    "verified": true
+  },
+  {
+    "in": [
+      "particle",
+      "atom"
+    ],
+    "out": "subatomic_particle",
+    "why": "In physics, a subatomic particle is a particle smaller than an atom. According to the Standard Model of particle physics, a subatomic particle can be a composite particle or an elementary particle.",
+    "src": "https://en.wikipedia.org/wiki/Subatomic_particle",
+    "verified": true
+  },
+  {
+    "in": [
+      "boson",
+      "gauge_theory"
+    ],
+    "out": "gauge_boson",
+    "why": "In particle physics, a gauge boson is a bosonic elementary particle that acts as the force carrier for elementary fermions. Elementary particles whose interactions are described by a gauge theory interact with each other by the exchange of gauge bosons, usually as virtual particles.",
+    "src": "https://en.wikipedia.org/wiki/Gauge_boson",
+    "verified": true
+  },
+  {
+    "in": [
+      "particle",
+      "antimatter"
+    ],
+    "out": "antiparticle",
+    "why": "In particle physics, every type of particle of ordinary matter, as opposed to antimatter, is associated with an antiparticle with the same mass but with opposite physical charges, such as electric charge. For example, the antiparticle of the electron is the positron, also known as an antielectron.",
+    "src": "https://en.wikipedia.org/wiki/Antiparticle",
+    "verified": true
   }
 ]

@@ -123823,5 +123823,775 @@
     ],
     "fact": "An optical property of how well a surface reflects light in a mirror-like direction.",
     "src": "https://en.wikipedia.org/wiki/Gloss_(optics)"
+  },
+  {
+    "id": "ionizing_radiation",
+    "name": "Ionizing Radiation",
+    "emoji": "☢️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Radiation with enough energy to knock electrons off atoms and molecules.",
+    "src": "https://en.wikipedia.org/wiki/Ionizing_radiation"
+  },
+  {
+    "id": "gauge_theory",
+    "name": "Gauge Theory",
+    "emoji": "🧮",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A field theory whose equations stay unchanged under local transformations.",
+    "src": "https://en.wikipedia.org/wiki/Gauge_theory"
+  },
+  {
+    "id": "quantum_gravity",
+    "name": "Quantum Gravity",
+    "emoji": "🌀",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The search for a theory joining gravity with quantum mechanics.",
+    "src": "https://en.wikipedia.org/wiki/Quantum_gravity"
+  },
+  {
+    "id": "atomic_physics",
+    "name": "Atomic Physics",
+    "emoji": "⚛️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The branch of physics that studies atoms as electrons around a nucleus.",
+    "src": "https://en.wikipedia.org/wiki/Atomic_physics"
+  },
+  {
+    "id": "condensed_matter_physics",
+    "name": "Condensed Matter Physics",
+    "emoji": "🧊",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The physics of solids, liquids and other dense phases of matter.",
+    "src": "https://en.wikipedia.org/wiki/Condensed_matter_physics"
+  },
+  {
+    "id": "solid_state_physics",
+    "name": "Solid-State Physics",
+    "emoji": "💎",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The study of rigid matter, the largest branch of condensed matter physics.",
+    "src": "https://en.wikipedia.org/wiki/Solid-state_physics"
+  },
+  {
+    "id": "degenerate_matter",
+    "name": "Degenerate Matter",
+    "emoji": "⚫",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Matter so dense that the Pauli exclusion principle holds a star up.",
+    "src": "https://en.wikipedia.org/wiki/Degenerate_matter"
+  },
+  {
+    "id": "bose_einstein_condensate",
+    "name": "Bose–Einstein Condensate",
+    "emoji": "🧊",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A state of matter in which cooled bosons share the lowest quantum state.",
+    "src": "https://en.wikipedia.org/wiki/Bose–Einstein_condensate"
+  },
+  {
+    "id": "magnetism",
+    "name": "Magnetism",
+    "emoji": "🧲",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The force by which magnetic fields make objects attract or repel.",
+    "src": "https://en.wikipedia.org/wiki/Magnetism"
+  },
+  {
+    "id": "ferromagnetism",
+    "name": "Ferromagnetism",
+    "emoji": "🧲",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The strong magnetism of iron and a few other materials, which can become permanent magnets.",
+    "src": "https://en.wikipedia.org/wiki/Ferromagnetism"
+  },
+  {
+    "id": "dipole",
+    "name": "Dipole",
+    "emoji": "➕",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A pair of separated opposite charges, or a tiny magnet.",
+    "src": "https://en.wikipedia.org/wiki/Dipole"
+  },
+  {
+    "id": "metamaterial",
+    "name": "Metamaterial",
+    "emoji": "🧩",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A material whose properties come from its designed structure, not its chemistry.",
+    "src": "https://en.wikipedia.org/wiki/Metamaterial"
+  },
+  {
+    "id": "oil_drop_experiment",
+    "name": "Oil Drop Experiment",
+    "emoji": "🛢️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Millikan and Fletcher's experiment that measured the charge of the electron.",
+    "src": "https://en.wikipedia.org/wiki/Oil_drop_experiment"
+  },
+  {
+    "id": "photoelectric_effect",
+    "name": "Photoelectric Effect",
+    "emoji": "☀️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Light knocking electrons out of a material.",
+    "src": "https://en.wikipedia.org/wiki/Photoelectric_effect"
+  },
+  {
+    "id": "electrostatics",
+    "name": "Electrostatics",
+    "emoji": "⚡",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The physics of electric charges at rest.",
+    "src": "https://en.wikipedia.org/wiki/Electrostatics"
+  },
+  {
+    "id": "coulombs_law",
+    "name": "Coulomb's Law",
+    "emoji": "⚡",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The law giving the force between two charges at rest, falling with the square of distance.",
+    "src": "https://en.wikipedia.org/wiki/Coulomb's_law"
+  },
+  {
+    "id": "electric_field",
+    "name": "Electric Field",
+    "emoji": "⚡",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The field around a charge that pushes or pulls other charges.",
+    "src": "https://en.wikipedia.org/wiki/Electric_field"
+  },
+  {
+    "id": "electric_potential",
+    "name": "Electric Potential",
+    "emoji": "⚡",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The electric potential energy per unit of charge at each point in space.",
+    "src": "https://en.wikipedia.org/wiki/Electric_potential"
+  },
+  {
+    "id": "electromagnetic_radiation",
+    "name": "Electromagnetic Radiation",
+    "emoji": "📡",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Self-propagating waves of the electromagnetic field, from radio waves to gamma rays.",
+    "src": "https://en.wikipedia.org/wiki/Electromagnetic_radiation"
+  },
+  {
+    "id": "electromagnetic_spectrum",
+    "name": "Electromagnetic Spectrum",
+    "emoji": "🌈",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The full range of electromagnetic radiation, sorted by frequency.",
+    "src": "https://en.wikipedia.org/wiki/Electromagnetic_spectrum"
+  },
+  {
+    "id": "radio_wave",
+    "name": "Radio Wave",
+    "emoji": "📻",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Electromagnetic waves with the longest wavelengths of all.",
+    "src": "https://en.wikipedia.org/wiki/Radio_wave"
+  },
+  {
+    "id": "microwave",
+    "name": "Microwave",
+    "emoji": "🍿",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Electromagnetic waves shorter than radio waves but longer than infrared.",
+    "src": "https://en.wikipedia.org/wiki/Microwave"
+  },
+  {
+    "id": "infrared",
+    "name": "Infrared",
+    "emoji": "🌡️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Electromagnetic radiation just beyond red light, felt as heat and invisible to the eye.",
+    "src": "https://en.wikipedia.org/wiki/Infrared"
+  },
+  {
+    "id": "visible_spectrum",
+    "name": "Visible Spectrum",
+    "emoji": "🌈",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The band of electromagnetic radiation the human eye can see.",
+    "src": "https://en.wikipedia.org/wiki/Visible_spectrum"
+  },
+  {
+    "id": "fluorescence",
+    "name": "Fluorescence",
+    "emoji": "🔆",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Light given off by a substance while it absorbs other light, such as ultraviolet.",
+    "src": "https://en.wikipedia.org/wiki/Fluorescence"
+  },
+  {
+    "id": "electromagnetic_field",
+    "name": "Electromagnetic Field",
+    "emoji": "🧲",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The combined electric and magnetic field acting on charges.",
+    "src": "https://en.wikipedia.org/wiki/Electromagnetic_field"
+  },
+  {
+    "id": "electromotive_force",
+    "name": "Electromotive Force",
+    "emoji": "🔋",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The energy a source gives each unit of charge in a circuit, measured in volts.",
+    "src": "https://en.wikipedia.org/wiki/Electromotive_force"
+  },
+  {
+    "id": "lorentz_force",
+    "name": "Lorentz Force",
+    "emoji": "🧲",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The force electric and magnetic fields exert on a moving charge.",
+    "src": "https://en.wikipedia.org/wiki/Lorentz_force"
+  },
+  {
+    "id": "eddy_current",
+    "name": "Eddy Current",
+    "emoji": "🌀",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Loops of current induced in a conductor by a changing magnetic field.",
+    "src": "https://en.wikipedia.org/wiki/Eddy_current"
+  },
+  {
+    "id": "magnetostatics",
+    "name": "Magnetostatics",
+    "emoji": "🧲",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The study of magnetic fields made by steady currents.",
+    "src": "https://en.wikipedia.org/wiki/Magnetostatics"
+  },
+  {
+    "id": "alternating_current",
+    "name": "Alternating Current",
+    "emoji": "〰️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Electric current that keeps reversing direction.",
+    "src": "https://en.wikipedia.org/wiki/Alternating_current"
+  },
+  {
+    "id": "direct_current",
+    "name": "Direct Current",
+    "emoji": "➖",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Electric charge flowing in one direction only.",
+    "src": "https://en.wikipedia.org/wiki/Direct_current"
+  },
+  {
+    "id": "electrical_impedance",
+    "name": "Electrical Impedance",
+    "emoji": "🔌",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A circuit's opposition to alternating current, combining resistance and reactance.",
+    "src": "https://en.wikipedia.org/wiki/Electrical_impedance"
+  },
+  {
+    "id": "electrical_resistance_and_conductance",
+    "name": "Resistance and Conductance",
+    "emoji": "🔌",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "How strongly an object resists current, and its reciprocal, how easily current passes.",
+    "src": "https://en.wikipedia.org/wiki/Electrical_resistance_and_conductance"
+  },
+  {
+    "id": "capacitance",
+    "name": "Capacitance",
+    "emoji": "🔋",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The ability of an object to store electric charge.",
+    "src": "https://en.wikipedia.org/wiki/Capacitance"
+  },
+  {
+    "id": "gain_electronics",
+    "name": "Gain",
+    "emoji": "📶",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "How much a circuit, often an amplifier, increases the power or size of a signal.",
+    "src": "https://en.wikipedia.org/wiki/Gain_(electronics)"
+  },
+  {
+    "id": "inductance",
+    "name": "Inductance",
+    "emoji": "🧲",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A conductor's tendency to oppose changes in the current flowing through it.",
+    "src": "https://en.wikipedia.org/wiki/Inductance"
+  },
+  {
+    "id": "kirchhoffs_circuit_laws",
+    "name": "Kirchhoff's Circuit Laws",
+    "emoji": "🔌",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Two laws on current and voltage in circuits, from Gustav Kirchhoff.",
+    "src": "https://en.wikipedia.org/wiki/Kirchhoff's_circuit_laws"
+  },
+  {
+    "id": "quantum_chromodynamics",
+    "name": "Quantum Chromodynamics",
+    "emoji": "🔴",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The theory of the strong force between quarks, carried by gluons.",
+    "src": "https://en.wikipedia.org/wiki/Quantum_chromodynamics"
+  },
+  {
+    "id": "quantum_electrodynamics",
+    "name": "Quantum Electrodynamics",
+    "emoji": "⚛️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The quantum theory of how light and matter interact.",
+    "src": "https://en.wikipedia.org/wiki/Quantum_electrodynamics"
+  },
+  {
+    "id": "quantum_entanglement",
+    "name": "Quantum Entanglement",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Particles sharing one quantum state, even when far apart.",
+    "src": "https://en.wikipedia.org/wiki/Quantum_entanglement"
+  },
+  {
+    "id": "quantum_field_theory",
+    "name": "Quantum Field Theory",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The framework that joins field theory, special relativity and quantum mechanics.",
+    "src": "https://en.wikipedia.org/wiki/Quantum_field_theory"
+  },
+  {
+    "id": "quantum_tunnelling",
+    "name": "Quantum Tunnelling",
+    "emoji": "🚇",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A particle passing through a barrier it classically lacks the energy to cross.",
+    "src": "https://en.wikipedia.org/wiki/Quantum_tunnelling"
+  },
+  {
+    "id": "schrodinger_equation",
+    "name": "Schrödinger Equation",
+    "emoji": "🐈",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The equation governing how a quantum system's wave function changes.",
+    "src": "https://en.wikipedia.org/wiki/Schrödinger_equation"
+  },
+  {
+    "id": "wave_function",
+    "name": "Wave Function",
+    "emoji": "〰️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The mathematical description of a quantum system's state.",
+    "src": "https://en.wikipedia.org/wiki/Wave_function"
+  },
+  {
+    "id": "wave_particle_duality",
+    "name": "Wave–Particle Duality",
+    "emoji": "☯️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Photons and electrons show wave or particle behaviour depending on the experiment.",
+    "src": "https://en.wikipedia.org/wiki/Wave–particle_duality"
+  },
+  {
+    "id": "general_relativity",
+    "name": "General Relativity",
+    "emoji": "🌌",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Einstein's geometric theory of gravitation.",
+    "src": "https://en.wikipedia.org/wiki/General_relativity"
+  },
+  {
+    "id": "special_relativity",
+    "name": "Special Relativity",
+    "emoji": "🚀",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Einstein's theory of the relationship between space and time.",
+    "src": "https://en.wikipedia.org/wiki/Special_relativity"
+  },
+  {
+    "id": "principle_of_relativity",
+    "name": "Principle of Relativity",
+    "emoji": "🚆",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The idea that the laws of physics stay the same for every observer moving steadily.",
+    "src": "https://en.wikipedia.org/wiki/Principle_of_relativity"
+  },
+  {
+    "id": "equivalence_principle",
+    "name": "Equivalence Principle",
+    "emoji": "🛗",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The principle that gravitational and inertial mass are equivalent.",
+    "src": "https://en.wikipedia.org/wiki/Equivalence_principle"
+  },
+  {
+    "id": "gravitational_singularity",
+    "name": "Gravitational Singularity",
+    "emoji": "🕳️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A point where gravity is predicted to be so intense that spacetime breaks down.",
+    "src": "https://en.wikipedia.org/wiki/Gravitational_singularity"
+  },
+  {
+    "id": "lorentz_transformation",
+    "name": "Lorentz Transformation",
+    "emoji": "📐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The transformations relating spacetime coordinates between frames moving at constant velocity.",
+    "src": "https://en.wikipedia.org/wiki/Lorentz_transformation"
+  },
+  {
+    "id": "michelson_morley_experiment",
+    "name": "Michelson–Morley Experiment",
+    "emoji": "🔦",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The experiment that failed to detect the aether, the supposed carrier of light.",
+    "src": "https://en.wikipedia.org/wiki/Michelson–Morley_experiment"
+  },
+  {
+    "id": "speed_of_light",
+    "name": "Speed of Light",
+    "emoji": "💡",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The speed of electromagnetic waves, greatest in a vacuum.",
+    "src": "https://en.wikipedia.org/wiki/Speed_of_light"
+  },
+  {
+    "id": "nuclear_physics",
+    "name": "Nuclear Physics",
+    "emoji": "☢️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The physics of atomic nuclei and their interactions.",
+    "src": "https://en.wikipedia.org/wiki/Nuclear_physics"
+  },
+  {
+    "id": "nucleosynthesis",
+    "name": "Nucleosynthesis",
+    "emoji": "⭐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The process that builds new atomic nuclei from protons, neutrons and older nuclei.",
+    "src": "https://en.wikipedia.org/wiki/Nucleosynthesis"
+  },
+  {
+    "id": "beta_particle",
+    "name": "Beta Particle",
+    "emoji": "☢️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A fast electron or positron thrown out by a decaying nucleus.",
+    "src": "https://en.wikipedia.org/wiki/Beta_particle"
+  },
+  {
+    "id": "particle_physics",
+    "name": "Particle Physics",
+    "emoji": "⚛️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The study of the fundamental particles and forces of matter and radiation.",
+    "src": "https://en.wikipedia.org/wiki/Particle_physics"
+  },
+  {
+    "id": "physics_beyond_the_standard_model",
+    "name": "Beyond the Standard Model",
+    "emoji": "❓",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Theories trying to explain what the Standard Model cannot.",
+    "src": "https://en.wikipedia.org/wiki/Physics_beyond_the_Standard_Model"
+  },
+  {
+    "id": "string_theory",
+    "name": "String Theory",
+    "emoji": "🎻",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A theory in which particles are tiny vibrating strings.",
+    "src": "https://en.wikipedia.org/wiki/String_theory"
+  },
+  {
+    "id": "supersymmetry",
+    "name": "Supersymmetry",
+    "emoji": "🪞",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A proposed symmetry pairing every particle with a partner of different spin.",
+    "src": "https://en.wikipedia.org/wiki/Supersymmetry"
+  },
+  {
+    "id": "particle",
+    "name": "Particle",
+    "emoji": "🔘",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A separate part of a larger system, from electrons to grains of powder.",
+    "src": "https://en.wikipedia.org/wiki/Particle"
+  },
+  {
+    "id": "particle_accelerator",
+    "name": "Particle Accelerator",
+    "emoji": "⭕",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A machine that uses electromagnetic fields to speed particles into beams.",
+    "src": "https://en.wikipedia.org/wiki/Particle_accelerator"
+  },
+  {
+    "id": "tevatron",
+    "name": "Tevatron",
+    "emoji": "⭕",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A circular particle accelerator at Fermilab in Illinois.",
+    "src": "https://en.wikipedia.org/wiki/Tevatron"
+  },
+  {
+    "id": "particle_detector",
+    "name": "Particle Detector",
+    "emoji": "📟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A device that detects, tracks and identifies ionizing particles.",
+    "src": "https://en.wikipedia.org/wiki/Particle_detector"
+  },
+  {
+    "id": "cloud_chamber",
+    "name": "Cloud Chamber",
+    "emoji": "☁️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A sealed chamber of supersaturated vapor that shows the tracks of ionizing radiation.",
+    "src": "https://en.wikipedia.org/wiki/Cloud_chamber"
+  },
+  {
+    "id": "scattering",
+    "name": "Scattering",
+    "emoji": "💫",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Moving particles or radiation deflected from a straight path.",
+    "src": "https://en.wikipedia.org/wiki/Scattering"
+  },
+  {
+    "id": "subatomic_particle",
+    "name": "Subatomic Particle",
+    "emoji": "⚛️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A particle smaller than an atom.",
+    "src": "https://en.wikipedia.org/wiki/Subatomic_particle"
+  },
+  {
+    "id": "gauge_boson",
+    "name": "Gauge Boson",
+    "emoji": "🧮",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A force-carrying elementary particle exchanged between fermions.",
+    "src": "https://en.wikipedia.org/wiki/Gauge_boson"
+  },
+  {
+    "id": "antiparticle",
+    "name": "Antiparticle",
+    "emoji": "🪞",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The partner of a particle with the same mass and opposite charges.",
+    "src": "https://en.wikipedia.org/wiki/Antiparticle"
   }
 ]
