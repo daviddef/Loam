@@ -135432,5 +135432,1615 @@
     "why": "The Rhizaria are a diverse and species-rich clade of mostly unicellular eukaryotes. Except for the chlorarachniophytes and three species in the genus Paulinella in the phylum Cercozoa, they are all non-photosynthetic.",
     "src": "https://en.wikipedia.org/wiki/Rhizaria",
     "verified": true
+  },
+  {
+    "in": [
+      "doctor",
+      "patient"
+    ],
+    "out": "health",
+    "why": "Health has a variety of definitions which have been used for different purposes over time and is a multidimensional concept. It commonly refers to physical and emotional well-being.",
+    "src": "https://en.wikipedia.org/wiki/Health",
+    "verified": true
+  },
+  {
+    "in": [
+      "mind",
+      "doctor"
+    ],
+    "out": "mental_health",
+    "why": "Mental health encompasses emotional, psychological, and social well-being, influencing cognition, perception, and behavior. Mental health plays a crucial role in an individual's daily life when managing stress, engaging with others, and contributing to life overall.",
+    "src": "https://en.wikipedia.org/wiki/Mental_health",
+    "verified": true
+  },
+  {
+    "in": [
+      "food",
+      "weight"
+    ],
+    "out": "diet_nutrition",
+    "why": "In nutrition, diet is the sum of food consumed by a person or other organism. The word diet often implies the use of specific intake of nutrition for health or weight-management reasons.",
+    "src": "https://en.wikipedia.org/wiki/Diet_(nutrition)",
+    "verified": true
+  },
+  {
+    "in": [
+      "food",
+      "medicine"
+    ],
+    "out": "dietary_supplement",
+    "why": "A dietary supplement is a manufactured product intended to supplement a person's diet in the form of a pill, capsule, tablet, powder, or liquid. A supplement can provide nutrients that are either extracted from food sources or are synthesized.",
+    "src": "https://en.wikipedia.org/wiki/Dietary_supplement",
+    "verified": true
+  },
+  {
+    "in": [
+      "food",
+      "plant"
+    ],
+    "out": "food_group",
+    "why": "Food groups categorise foods for educational purposes, usually grouping together foods with similar nutritional properties or biological classifications. Food groups are often used in nutrition guides, although the number of groups used can vary widely.",
+    "src": "https://en.wikipedia.org/wiki/Food_group",
+    "verified": true
+  },
+  {
+    "in": [
+      "bath",
+      "water"
+    ],
+    "out": "bathing",
+    "why": "Bathing is the immersion of the body, wholly or partially, usually in water, but often in another medium such as hot air. It is most commonly practised as part of personal cleansing, and less frequently for relaxation or as a leisure activity.",
+    "src": "https://en.wikipedia.org/wiki/Bathing",
+    "verified": true
+  },
+  {
+    "in": [
+      "tooth",
+      "soap"
+    ],
+    "out": "oral_hygiene",
+    "why": "Oral hygiene is the practice of keeping one's oral cavity clean and free of disease and other problems by regular brushing of the teeth and adopting good hygiene habits. It is important that oral hygiene be carried out on a regular basis to enable prevention of dental disease and bad breath.",
+    "src": "https://en.wikipedia.org/wiki/Oral_hygiene",
+    "verified": true
+  },
+  {
+    "in": [
+      "razor",
+      "beard"
+    ],
+    "out": "shaving",
+    "why": "Shaving is the removal of hair, by using a razor or any other kind of bladed implement, to slice it down to the level of the skin or otherwise.",
+    "src": "https://en.wikipedia.org/wiki/Shaving",
+    "verified": true
+  },
+  {
+    "in": [
+      "muscle",
+      "fitness"
+    ],
+    "out": "physical_fitness",
+    "why": "Physical fitness is a state of health and well-being and, more specifically, the ability to perform aspects of sports, occupations, and daily activities. Physical fitness is generally achieved through proper nutrition, moderate-vigorous physical exercise, and sufficient rest along with a formal recovery plan.",
+    "src": "https://en.wikipedia.org/wiki/Physical_fitness",
+    "verified": true
+  },
+  {
+    "in": [
+      "weight",
+      "scale"
+    ],
+    "out": "body_mass_index",
+    "why": "Body mass index is a value derived from the mass and height of a person. BMI is calculated as the body mass, in kilograms, divided by the square of the body height, in square meters.",
+    "src": "https://en.wikipedia.org/wiki/Body_mass_index",
+    "verified": true
+  },
+  {
+    "in": [
+      "muscle",
+      "lung"
+    ],
+    "out": "exercise_physical",
+    "why": "Exercise or working out is physical activity that enhances or maintains fitness and overall health. It is performed for various reasons, including weight loss or maintenance, to aid growth and improve strength, develop muscles and the cardiovascular system, hone athletic skills, improve health, or simply for enjoyment.",
+    "src": "https://en.wikipedia.org/wiki/Exercise",
+    "verified": true
+  },
+  {
+    "in": [
+      "fat",
+      "weight"
+    ],
+    "out": "obesity_condition",
+    "why": "Obesity is a medical condition, considered a disease by multiple organizations, in which excess body fat has accumulated to such an extent that it can have negative effects on health.",
+    "src": "https://en.wikipedia.org/wiki/Obesity",
+    "verified": true
+  },
+  {
+    "in": [
+      "fat",
+      "muscle"
+    ],
+    "out": "weight_loss",
+    "why": "In medicine, health, or physical fitness, weight loss is a reduction of the total body mass, by a mean loss of fluid, body fat, or lean mass. Weight loss can either occur unintentionally because of malnourishment or an underlying disease, or from a conscious effort to improve an actual or perceived overweight or obesity.",
+    "src": "https://en.wikipedia.org/wiki/Weight_loss",
+    "verified": true
+  },
+  {
+    "in": [
+      "mother",
+      "baby"
+    ],
+    "out": "breastfeeding",
+    "why": "Breastfeeding is the feeding of breast milk to an infant. Infants may suckle directly from the breast, or milk may be extracted with a breast pump and then fed to the infant.",
+    "src": "https://en.wikipedia.org/wiki/Breastfeeding",
+    "verified": true
+  },
+  {
+    "in": [
+      "fertility",
+      "doctor"
+    ],
+    "out": "infertility",
+    "why": "In biology, infertility is the inability of a male and female organism to reproduce. It is usually not the natural state of a healthy organism that has reached sexual maturity.",
+    "src": "https://en.wikipedia.org/wiki/Infertility",
+    "verified": true
+  },
+  {
+    "in": [
+      "safety",
+      "helmet"
+    ],
+    "out": "occupational_safety_and_health",
+    "why": "Occupational safety and health is a multidisciplinary field concerned with the safety, health, and welfare of people at work. It is related to the fields of occupational medicine and occupational hygiene and aligns with workplace health promotion initiatives.",
+    "src": "https://en.wikipedia.org/wiki/Occupational_safety_and_health",
+    "verified": true
+  },
+  {
+    "in": [
+      "mask",
+      "glove"
+    ],
+    "out": "personal_protective_equipment",
+    "why": "Personal protective equipment is protective clothing, helmets, goggles, or other garments or equipment designed to protect the wearer's body from injury or infection. The hazards addressed by protective equipment include physical, electrical, heat, chemical, biohazards, and airborne particulate matter.",
+    "src": "https://en.wikipedia.org/wiki/Personal_protective_equipment",
+    "verified": true
+  },
+  {
+    "in": [
+      "drug",
+      "patient"
+    ],
+    "out": "medication",
+    "why": "Medication is a drug used to diagnose, cure, treat, or prevent disease. Drug therapy is an important part of the medical field and relies on the science of pharmacology for continual advancement and on pharmacy for all forms of management.",
+    "src": "https://en.wikipedia.org/wiki/Medication",
+    "verified": true
+  },
+  {
+    "in": [
+      "vaccine",
+      "needle"
+    ],
+    "out": "vaccination",
+    "why": "Vaccination is the administration of a vaccine to help the immune system develop immunity from a disease. Vaccines contain a microorganism or virus in a weakened, live or killed state, or proteins or toxins from the organism.",
+    "src": "https://en.wikipedia.org/wiki/Vaccination",
+    "verified": true
+  },
+  {
+    "in": [
+      "vaccine",
+      "fear"
+    ],
+    "out": "vaccine_hesitancy",
+    "why": "Vaccine hesitancy is a delay in acceptance or refusal of vaccines despite availability and supporting evidence of effectivity. The term also includes accepting vaccines but remaining uncertain about their use or using certain vaccines but not others.",
+    "src": "https://en.wikipedia.org/wiki/Vaccine_hesitancy",
+    "verified": true
+  },
+  {
+    "in": [
+      "vaccine",
+      "cow"
+    ],
+    "out": "smallpox_vaccine",
+    "why": "The smallpox vaccine is used to prevent smallpox infection caused by the variola virus. It is the first vaccine to have been developed against a contagious disease.",
+    "src": "https://en.wikipedia.org/wiki/Smallpox_vaccine",
+    "verified": true
+  },
+  {
+    "in": [
+      "drug",
+      "doctor"
+    ],
+    "out": "prescription_drug",
+    "why": "A prescription drug is a pharmaceutical drug that is permitted to be dispensed only to those with a medical prescription. In contrast, over-the-counter drugs can be obtained without a prescription.",
+    "src": "https://en.wikipedia.org/wiki/Prescription_drug",
+    "verified": true
+  },
+  {
+    "in": [
+      "drug",
+      "brain"
+    ],
+    "out": "amphetamine",
+    "why": "Amphetamine is a central nervous system stimulant that is used in the treatment of attention deficit hyperactivity disorder and narcolepsy. Historically, it has been used to treat nasal congestion and depression.",
+    "src": "https://en.wikipedia.org/wiki/Amphetamine",
+    "verified": true
+  },
+  {
+    "in": [
+      "drug",
+      "anxiety"
+    ],
+    "out": "benzodiazepine",
+    "why": "Benzodiazepines, colloquially known as benzos, are a class of central nervous system depressant drugs whose core chemical structure is the fusion of a benzene ring and a diazepine ring. They are prescribed to treat conditions such as anxiety disorders, insomnia, and seizures.",
+    "src": "https://en.wikipedia.org/wiki/Benzodiazepine",
+    "verified": true
+  },
+  {
+    "in": [
+      "drink",
+      "brain"
+    ],
+    "out": "alcohol_intoxication",
+    "why": "Alcohol intoxication, commonly described in higher doses as drunkenness or inebriation, and known in overdose as alcohol poisoning, is the behavior and physical effects caused by recent consumption of alcohol.",
+    "src": "https://en.wikipedia.org/wiki/Alcohol_intoxication",
+    "verified": true
+  },
+  {
+    "in": [
+      "caffeine",
+      "drug"
+    ],
+    "out": "stimulant",
+    "why": "Stimulants are a class of psychoactive drugs that increase alertness. They are used for various purposes, such as enhancing attention, motivation, cognition, mood, and physical activity.",
+    "src": "https://en.wikipedia.org/wiki/Stimulant",
+    "verified": true
+  },
+  {
+    "in": [
+      "tobacco",
+      "smoke"
+    ],
+    "out": "tobacco_smoking",
+    "why": "Tobacco smoking is the practice of burning tobacco and the absorption of the resulting smoke into one's body. The smoke may be inhaled, as is done with cigarettes, or released from the mouth, as is done with pipes and cigars.",
+    "src": "https://en.wikipedia.org/wiki/Tobacco_smoking",
+    "verified": true
+  },
+  {
+    "in": [
+      "poppy",
+      "drug"
+    ],
+    "out": "opium",
+    "why": "Opium is the dried latex obtained from the seed capsules of the opium poppy. Approximately twelve percent of opium is made up of the analgesic alkaloid morphine, which is processed chemically to produce heroin and other synthetic opioids for medicinal use and for the illegal drug trade.",
+    "src": "https://en.wikipedia.org/wiki/Opium",
+    "verified": true
+  },
+  {
+    "in": [
+      "drug",
+      "mind"
+    ],
+    "out": "substance_use_disorder",
+    "why": "Substance use disorder is the persistent use of drugs despite substantial harm and adverse consequences to self and others. Related terms include substance use problems and problematic drug or alcohol use.",
+    "src": "https://en.wikipedia.org/wiki/Substance_use_disorder",
+    "verified": true
+  },
+  {
+    "in": [
+      "liquor",
+      "disease"
+    ],
+    "out": "alcoholism",
+    "why": "Alcoholism is the continued drinking of alcohol despite the user being unable to manage the problems it causes. Some definitions require evidence of dependence and withdrawal.",
+    "src": "https://en.wikipedia.org/wiki/Alcoholism",
+    "verified": true
+  },
+  {
+    "in": [
+      "drug",
+      "party"
+    ],
+    "out": "recreational_drug_use",
+    "why": "Recreational drug use is the use of one or more psychoactive drugs to induce an altered state of consciousness, either for pleasure or for some other casual purpose or pastime. When a psychoactive drug enters the user's body, it induces an intoxicating effect.",
+    "src": "https://en.wikipedia.org/wiki/Recreational_drug_use",
+    "verified": true
+  },
+  {
+    "in": [
+      "tobacco",
+      "paper"
+    ],
+    "out": "cigarette",
+    "why": "A cigarette is a thin cylinder of tobacco rolled in thin paper for smoking. Igniting one end causes it to smolder, and the smoker inhales the resulting smoke through the other end.",
+    "src": "https://en.wikipedia.org/wiki/Cigarette",
+    "verified": true
+  },
+  {
+    "in": [
+      "tobacco",
+      "doctor"
+    ],
+    "out": "smoking_cessation",
+    "why": "Smoking cessation, usually called quitting smoking or stopping smoking, is the process of discontinuing tobacco smoking. Tobacco smoke contains nicotine, which is addictive and can cause dependence.",
+    "src": "https://en.wikipedia.org/wiki/Smoking_cessation",
+    "verified": true
+  },
+  {
+    "in": [
+      "drug",
+      "disease"
+    ],
+    "out": "substance_dependence",
+    "why": "Substance dependence, also known as drug dependence, is a biopsychological situation whereby an individual's functionality is dependent on the necessitated re-consumption of a psychoactive substance because of an adaptive state that has developed within the individual from psychoactive substance consumption.",
+    "src": "https://en.wikipedia.org/wiki/Substance_dependence",
+    "verified": true
+  },
+  {
+    "in": [
+      "drug",
+      "cell"
+    ],
+    "out": "pharmacology",
+    "why": "Pharmacology is the science of drugs and medications, including a substance's origin, composition and interaction with biological systems; specifically through pharmacokinetics, pharmacodynamics, therapeutic use, and toxicology.",
+    "src": "https://en.wikipedia.org/wiki/Pharmacology",
+    "verified": true
+  },
+  {
+    "in": [
+      "drug",
+      "blood"
+    ],
+    "out": "pharmacokinetics",
+    "why": "Pharmacokinetics is a branch of pharmacology dedicated to describing how the body affects a specific substance after administration.",
+    "src": "https://en.wikipedia.org/wiki/Pharmacokinetics",
+    "verified": true
+  },
+  {
+    "in": [
+      "drug",
+      "shop"
+    ],
+    "out": "pharmacy_profession",
+    "why": "Pharmacy is the science and practice of dispensing, preparing, reviewing safety and efficacy, monitoring, discovering, producing, and consulting about medications, aiming to ensure the safe, effective, and affordable use of medicines.",
+    "src": "https://en.wikipedia.org/wiki/Pharmacy",
+    "verified": true
+  },
+  {
+    "in": [
+      "drug",
+      "human"
+    ],
+    "out": "pharmacist",
+    "why": "A pharmacist, also known as a chemist in Commonwealth English, is a healthcare professional who is knowledgeable about preparation, mechanism of action, clinical usage and legislation of medications in order to dispense them safely to the public and to provide consultancy services.",
+    "src": "https://en.wikipedia.org/wiki/Pharmacist",
+    "verified": true
+  },
+  {
+    "in": [
+      "ambulance",
+      "doctor"
+    ],
+    "out": "emergency_medical_services",
+    "why": "Emergency medical services, also known as ambulance services, pre-hospital care, or paramedic services, are emergency services that provide urgent pre-hospital treatment and stabilisation for serious illness and injuries and transport to definitive care.",
+    "src": "https://en.wikipedia.org/wiki/Emergency_medical_services",
+    "verified": true
+  },
+  {
+    "in": [
+      "bandage",
+      "wound"
+    ],
+    "out": "first_aid",
+    "why": "First aid is the first and immediate assistance given to any person with a medical emergency, with care provided to preserve life, prevent the condition from worsening, or to promote recovery until medical services arrive.",
+    "src": "https://en.wikipedia.org/wiki/First_aid",
+    "verified": true
+  },
+  {
+    "in": [
+      "doctor",
+      "hospital"
+    ],
+    "out": "health_care",
+    "why": "Health care or healthcare, is the improvement or maintenance of health via the prevention, diagnosis, treatment, amelioration or cure of disease, illness, injury, and other physical and mental impairments in people. Health care is delivered by health professionals and allied health fields.",
+    "src": "https://en.wikipedia.org/wiki/Health_care",
+    "verified": true
+  },
+  {
+    "in": [
+      "animal",
+      "doctor"
+    ],
+    "out": "veterinary_medicine",
+    "why": "Veterinary medicine is the branch of medicine concerned with the prevention, management, diagnosis, and treatment of disease, disorder, and injury in non-human animals. Its scope is wide, covering all animal species, both domesticated and wild, with a wide range of conditions that can affect different species.",
+    "src": "https://en.wikipedia.org/wiki/Veterinary_medicine",
+    "verified": true
+  },
+  {
+    "in": [
+      "ethics",
+      "doctor"
+    ],
+    "out": "medical_ethics",
+    "why": "Medical ethics is an applied branch of ethics which analyzes the practice of clinical medicine and related scientific research. Medical ethics is based on a set of values that professionals can refer to in the case of any confusion or conflict.",
+    "src": "https://en.wikipedia.org/wiki/Medical_ethics",
+    "verified": true
+  },
+  {
+    "in": [
+      "hospital",
+      "ambulance"
+    ],
+    "out": "emergency_department",
+    "why": "An emergency department, also known as an emergency room, accident and emergency, or casualty, is a medical treatment facility specializing in emergency medicine, the acute care of patients who present without prior appointment; either by their own means or by that of an ambulance.",
+    "src": "https://en.wikipedia.org/wiki/Emergency_department",
+    "verified": true
+  },
+  {
+    "in": [
+      "hospital",
+      "mind"
+    ],
+    "out": "psychiatric_hospital",
+    "why": "A psychiatric hospital, also known as a mental health hospital, a behavioral health hospital, or an asylum is a specialized medical facility that focuses on the treatment of severe mental disorders.",
+    "src": "https://en.wikipedia.org/wiki/Psychiatric_hospital",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "skeleton"
+    ],
+    "out": "human_body",
+    "why": "The human body is composed of many different types of cells that together create tissues and subsequently organs and then organ systems. The external human body consists of a head, hair, neck, torso, arms, hands, legs, and feet.",
+    "src": "https://en.wikipedia.org/wiki/Human_body",
+    "verified": true
+  },
+  {
+    "in": [
+      "eye",
+      "nose"
+    ],
+    "out": "face",
+    "why": "The face is the front part of the head of a human or other animal, featuring the eyes, nose and mouth, and the surrounding area.",
+    "src": "https://en.wikipedia.org/wiki/Face",
+    "verified": true
+  },
+  {
+    "in": [
+      "eye",
+      "lens"
+    ],
+    "out": "human_eye",
+    "why": "The human eye is a sensory organ in the visual system that reacts to visible light allowing eyesight. Other functions include maintaining the circadian rhythm, and keeping balance.",
+    "src": "https://en.wikipedia.org/wiki/Human_eye",
+    "verified": true
+  },
+  {
+    "in": [
+      "mouth",
+      "stomach"
+    ],
+    "out": "gastrointestinal_tract",
+    "why": "The gastrointestinal tract, also called the GI tract, digestive tract, gut and the alimentary canal, is the tract or passageway of the digestive system. The tract is one of the largest of the body's systems.",
+    "src": "https://en.wikipedia.org/wiki/Gastrointestinal_tract",
+    "verified": true
+  },
+  {
+    "in": [
+      "skeleton",
+      "muscle"
+    ],
+    "out": "human_leg",
+    "why": "The human leg is the lower limb of the human body, including the thigh, knee, lower leg, ankle, foot, or sometimes even the hip region.",
+    "src": "https://en.wikipedia.org/wiki/Human_leg",
+    "verified": true
+  },
+  {
+    "in": [
+      "tooth",
+      "doctor"
+    ],
+    "out": "dentistry",
+    "why": "Dentistry, also known as dental medicine and oral medicine, is the branch of medicine focused on the teeth, gums, and mouth. It consists of the study, diagnosis, prevention, management, and treatment of diseases, disorders, and conditions of the mouth.",
+    "src": "https://en.wikipedia.org/wiki/Dentistry",
+    "verified": true
+  },
+  {
+    "in": [
+      "tooth",
+      "metal"
+    ],
+    "out": "dental_restoration",
+    "why": "Dental restoration, dental fillings, or simply fillings are dentistry treatments used to restore the function, integrity, and morphology of tooth structure lost due to decay, trauma, or wear.",
+    "src": "https://en.wikipedia.org/wiki/Dental_restoration",
+    "verified": true
+  },
+  {
+    "in": [
+      "tooth",
+      "sugar"
+    ],
+    "out": "tooth_decay",
+    "why": "Tooth decay, also known as caries, is the breakdown of teeth due to acids produced by bacteria. The resulting dental cavities may be many different colors, from yellow to black.",
+    "src": "https://en.wikipedia.org/wiki/Tooth_decay",
+    "verified": true
+  },
+  {
+    "in": [
+      "heart",
+      "doctor"
+    ],
+    "out": "cardiology",
+    "why": "Cardiology is the study of the heart. Cardiology is a branch of medicine that deals with disorders of the heart and the cardiovascular system, and it is a sub-specialty of internal medicine.",
+    "src": "https://en.wikipedia.org/wiki/Cardiology",
+    "verified": true
+  },
+  {
+    "in": [
+      "skin",
+      "doctor"
+    ],
+    "out": "dermatology",
+    "why": "Dermatology is the branch of medicine dealing with the skin and integumentary system. It is a specialty with both medical and surgical aspects.",
+    "src": "https://en.wikipedia.org/wiki/Dermatology",
+    "verified": true
+  },
+  {
+    "in": [
+      "stomach",
+      "doctor"
+    ],
+    "out": "gastroenterology",
+    "why": "Gastroenterology is the branch of medicine focused on the digestive system and its disorders.",
+    "src": "https://en.wikipedia.org/wiki/Gastroenterology",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "hospital"
+    ],
+    "out": "geriatrics",
+    "why": "Geriatrics, or geriatric medicine, is a medical specialty focused on addressing the unique health needs of older adults.",
+    "src": "https://en.wikipedia.org/wiki/Geriatrics",
+    "verified": true
+  },
+  {
+    "in": [
+      "blood",
+      "doctor"
+    ],
+    "out": "hematology",
+    "why": "Hematology is the branch of medicine concerned with the study of the cause, prognosis, treatment, and prevention of diseases related to blood.",
+    "src": "https://en.wikipedia.org/wiki/Hematology",
+    "verified": true
+  },
+  {
+    "in": [
+      "virus",
+      "cell"
+    ],
+    "out": "immunology",
+    "why": "Immunology is a branch of biology and medicine that covers the study of immune systems in all organisms.",
+    "src": "https://en.wikipedia.org/wiki/Immunology",
+    "verified": true
+  },
+  {
+    "in": [
+      "brain",
+      "doctor"
+    ],
+    "out": "neurology",
+    "why": "Neurology is the branch of medicine dealing with the diagnosis and treatment of all categories of conditions and diseases involving the nervous system, which comprises the brain, the spinal cord and the peripheral nerves.",
+    "src": "https://en.wikipedia.org/wiki/Neurology",
+    "verified": true
+  },
+  {
+    "in": [
+      "baby",
+      "doctor"
+    ],
+    "out": "obstetrics_and_gynaecology",
+    "why": "Obstetrics and gynaecology is the medical specialty that encompasses the two subspecialties of obstetrics, covering pregnancy, childbirth, and the postpartum period, and gynaecology. The specialization is an important part of care for women's health.",
+    "src": "https://en.wikipedia.org/wiki/Obstetrics_and_gynaecology",
+    "verified": true
+  },
+  {
+    "in": [
+      "cancer",
+      "doctor"
+    ],
+    "out": "oncology",
+    "why": "Oncology is a branch of medicine that deals with the study, treatment, diagnosis, and prevention of cancer. A medical professional who practices oncology is an oncologist.",
+    "src": "https://en.wikipedia.org/wiki/Oncology",
+    "verified": true
+  },
+  {
+    "in": [
+      "eye",
+      "doctor"
+    ],
+    "out": "ophthalmology",
+    "why": "Ophthalmology is the branch of medicine that deals with the diagnosis, treatment, and surgery of eye diseases and disorders.",
+    "src": "https://en.wikipedia.org/wiki/Ophthalmology",
+    "verified": true
+  },
+  {
+    "in": [
+      "eye",
+      "glasses"
+    ],
+    "out": "optometry",
+    "why": "Optometry is the healthcare practice concerned with examining the eyes for visual defects, prescribing corrective lenses, and detecting eye abnormalities.",
+    "src": "https://en.wikipedia.org/wiki/Optometry",
+    "verified": true
+  },
+  {
+    "in": [
+      "ear",
+      "doctor"
+    ],
+    "out": "otorhinolaryngology",
+    "why": "Otorhinolaryngology, also known as otolaryngology, otolaryngology, head and neck surgery, or ear, nose, and throat, is a surgical subspecialty within medicine that deals with the surgical and medical management of conditions of the head and neck.",
+    "src": "https://en.wikipedia.org/wiki/Otorhinolaryngology",
+    "verified": true
+  },
+  {
+    "in": [
+      "disease",
+      "cell"
+    ],
+    "out": "pathology",
+    "why": "Pathology is the study of disease. The word pathology also refers to the study of disease in general, incorporating a wide range of biology research fields and medical practices.",
+    "src": "https://en.wikipedia.org/wiki/Pathology",
+    "verified": true
+  },
+  {
+    "in": [
+      "child",
+      "doctor"
+    ],
+    "out": "pediatrics",
+    "why": "Pediatrics, also spelled paediatrics and also known as underage medicine, is the branch of medicine that involves the medical care of infants, toddlers, children, adolescents, and young adults.",
+    "src": "https://en.wikipedia.org/wiki/Pediatrics",
+    "verified": true
+  },
+  {
+    "in": [
+      "mind",
+      "medicine"
+    ],
+    "out": "psychiatry",
+    "why": "Psychiatry is the medical specialty devoted to the diagnosis, treatment, and prevention of mental conditions. These include matters related to cognition, perceptions, mood, emotion, and behavior.",
+    "src": "https://en.wikipedia.org/wiki/Psychiatry",
+    "verified": true
+  },
+  {
+    "in": [
+      "health",
+      "city"
+    ],
+    "out": "public_health",
+    "why": "Public health is the science of preventing disease, prolonging life and promoting health through the organized efforts and informed choices of society, organizations, public and private, communities and individuals.",
+    "src": "https://en.wikipedia.org/wiki/Public_health",
+    "verified": true
+  },
+  {
+    "in": [
+      "life",
+      "death"
+    ],
+    "out": "life_expectancy",
+    "why": "Human life expectancy is a statistical measure of the estimate of the average remaining years of life at a given age. The most commonly used measure is life expectancy at birth.",
+    "src": "https://en.wikipedia.org/wiki/Life_expectancy",
+    "verified": true
+  },
+  {
+    "in": [
+      "vaccine",
+      "health"
+    ],
+    "out": "preventive_healthcare",
+    "why": "Preventive healthcare or prophylaxis is the application of healthcare measures to prevent diseases. Disease and disability are affected by environmental factors, genetic predisposition, disease agents, and lifestyle choices.",
+    "src": "https://en.wikipedia.org/wiki/Preventive_healthcare",
+    "verified": true
+  },
+  {
+    "in": [
+      "lung",
+      "doctor"
+    ],
+    "out": "pulmonology",
+    "why": "Pulmonology, pneumology or pneumonology is a medical specialty that deals with diseases involving the respiratory tract.",
+    "src": "https://en.wikipedia.org/wiki/Pulmonology",
+    "verified": true
+  },
+  {
+    "in": [
+      "x_ray",
+      "doctor"
+    ],
+    "out": "radiology",
+    "why": "Radiology is the medical specialty that uses medical imaging to diagnose diseases and guide treatment within the bodies of humans and other animals.",
+    "src": "https://en.wikipedia.org/wiki/Radiology",
+    "verified": true
+  },
+  {
+    "in": [
+      "toxin",
+      "doctor"
+    ],
+    "out": "toxicology",
+    "why": "Toxicology is a scientific discipline, overlapping with biology, chemistry, pharmacology, and medicine, that involves the study of the adverse effects of chemical substances on living organisms and the practice of diagnosing and treating exposures to toxins and toxicants.",
+    "src": "https://en.wikipedia.org/wiki/Toxicology",
+    "verified": true
+  },
+  {
+    "in": [
+      "medicine",
+      "magic"
+    ],
+    "out": "quackery",
+    "why": "Quackery, often synonymous with health fraud, is the promotion of fraudulent or ignorant medical practices. A quack is a fraudulent or ignorant pretender to medical skill.",
+    "src": "https://en.wikipedia.org/wiki/Quackery",
+    "verified": true
+  },
+  {
+    "in": [
+      "medicine",
+      "needle"
+    ],
+    "out": "alternative_medicine",
+    "why": "Alternative medicine comprises practices that aim to achieve the healing effects of medicine, but that lack biological plausibility, testability, repeatability, or supporting evidence of effectiveness. Such practices are not part of mainstream evidence-based medicine.",
+    "src": "https://en.wikipedia.org/wiki/Alternative_medicine",
+    "verified": true
+  },
+  {
+    "in": [
+      "herb",
+      "drug"
+    ],
+    "out": "herbal_medicine",
+    "why": "Herbal medicine, also called herbalism, phytomedicine or phytotherapy, is the study of pharmacognosy and the use of medicinal plants, which are a basis of traditional medicine.",
+    "src": "https://en.wikipedia.org/wiki/Herbal_medicine",
+    "verified": true
+  },
+  {
+    "in": [
+      "medicine",
+      "culture"
+    ],
+    "out": "traditional_medicine",
+    "why": "Traditional medicine, also known as Indigenous medicine or folk medicine, refers to the knowledge, skills, and practices rooted in the cultural beliefs of various societies, especially Indigenous groups, used with the intent of treating illness and maintaining health.",
+    "src": "https://en.wikipedia.org/wiki/Traditional_medicine",
+    "verified": true
+  },
+  {
+    "in": [
+      "medicine",
+      "india"
+    ],
+    "out": "ayurveda",
+    "why": "Ayurveda is an alternative medicine system with historical roots in the Indian subcontinent. It is heavily practised throughout India and Nepal.",
+    "src": "https://en.wikipedia.org/wiki/Ayurveda",
+    "verified": true
+  },
+  {
+    "in": [
+      "medicine",
+      "china"
+    ],
+    "out": "traditional_chinese_medicine",
+    "why": "Traditional Chinese medicine is an alternative medical practice drawn from traditional medicine in China. A large share of its claims are pseudoscientific, with the majority of treatments having no robust evidence of effectiveness or logical mechanism of action.",
+    "src": "https://en.wikipedia.org/wiki/Traditional_Chinese_medicine",
+    "verified": true
+  },
+  {
+    "in": [
+      "needle",
+      "china"
+    ],
+    "out": "acupuncture",
+    "why": "Acupuncture is a form of alternative medicine and a component of traditional Chinese medicine in which thin needles are inserted into the body.",
+    "src": "https://en.wikipedia.org/wiki/Acupuncture",
+    "verified": true
+  },
+  {
+    "in": [
+      "mother",
+      "medicine"
+    ],
+    "out": "abortion",
+    "why": "Abortion is the termination of a pregnancy by removal or expulsion of an embryo or fetus.",
+    "src": "https://en.wikipedia.org/wiki/Abortion",
+    "verified": true
+  },
+  {
+    "in": [
+      "surgery",
+      "bone"
+    ],
+    "out": "amputation",
+    "why": "Amputation is the removal of a limb or other body part by trauma, medical illness, or surgery. As a surgical measure, it is used to control pain or a disease process in the affected limb, such as malignancy or gangrene.",
+    "src": "https://en.wikipedia.org/wiki/Amputation",
+    "verified": true
+  },
+  {
+    "in": [
+      "organ",
+      "surgery"
+    ],
+    "out": "transplantation_medicine",
+    "why": "Transplantation is a medical procedure in which an organ, tissue, or cells are removed from one organism and placed in a recipient organism, often to replace a damaged or missing function.",
+    "src": "https://en.wikipedia.org/wiki/Transplantation_(medicine)",
+    "verified": true
+  },
+  {
+    "in": [
+      "surgery",
+      "skin"
+    ],
+    "out": "plastic_surgery",
+    "why": "Plastic surgery is a surgical specialty involving restoration, reconstruction, or alteration of the human body. It can be divided into two main categories: reconstructive surgery and cosmetic surgery.",
+    "src": "https://en.wikipedia.org/wiki/Plastic_surgery",
+    "verified": true
+  },
+  {
+    "in": [
+      "patient",
+      "death"
+    ],
+    "out": "palliative_care",
+    "why": "Palliative care is an interdisciplinary medical care-giving approach aimed at optimizing quality of life and mitigating or reducing suffering among people with serious, complex, and often terminal illnesses.",
+    "src": "https://en.wikipedia.org/wiki/Palliative_care",
+    "verified": true
+  },
+  {
+    "in": [
+      "doctor",
+      "hand"
+    ],
+    "out": "physical_examination",
+    "why": "In a physical examination, medical examination, clinical examination, or medical checkup, a medical practitioner examines a patient for any possible medical signs or symptoms of a medical condition.",
+    "src": "https://en.wikipedia.org/wiki/Physical_examination",
+    "verified": true
+  },
+  {
+    "in": [
+      "death",
+      "doctor"
+    ],
+    "out": "autopsy_medical",
+    "why": "An autopsy, also referred to as post-mortem examination, obduction, necropsy, or autopsia cadaverum, is a surgical procedure that consists of a thorough examination of a corpse by dissection to determine the cause, mode, and manner of death.",
+    "src": "https://en.wikipedia.org/wiki/Autopsy",
+    "verified": true
+  },
+  {
+    "in": [
+      "tumor",
+      "needle"
+    ],
+    "out": "biopsy_medical",
+    "why": "A biopsy is a medical test commonly performed by medical doctors of many specialities, including surgeons, interventional radiologists, interventional cardiologists, dermatologists, pulmonologists, urologists, ophthalmologists, internists, family physicians, otolaryngologists.",
+    "src": "https://en.wikipedia.org/wiki/Biopsy",
+    "verified": true
+  },
+  {
+    "in": [
+      "blood",
+      "artery"
+    ],
+    "out": "blood_pressure_medical",
+    "why": "Blood pressure is the pressure of circulating blood against the walls of blood vessels. Most of this pressure results from the heart pumping blood through the circulatory system.",
+    "src": "https://en.wikipedia.org/wiki/Blood_pressure",
+    "verified": true
+  },
+  {
+    "in": [
+      "blood",
+      "needle"
+    ],
+    "out": "blood_test",
+    "why": "A blood test is a laboratory analysis performed on a blood sample that is usually extracted from a vein in the arm using a hypodermic needle, or via fingerprick.",
+    "src": "https://en.wikipedia.org/wiki/Blood_test",
+    "verified": true
+  },
+  {
+    "in": [
+      "blood",
+      "hospital"
+    ],
+    "out": "blood_transfusion",
+    "why": "Blood transfusion refers to the intravenous transfer of blood products into a human or other animal. Apart from the setting of major trauma, whole blood is rarely transfused in modern practice.",
+    "src": "https://en.wikipedia.org/wiki/Blood_transfusion",
+    "verified": true
+  },
+  {
+    "in": [
+      "eye",
+      "patient"
+    ],
+    "out": "eye_examination",
+    "why": "An eye examination, commonly known as an eye test, is a series of tests performed to assess vision and ability to focus on both far and near and discern objects. It also includes other tests and examinations of the eyes.",
+    "src": "https://en.wikipedia.org/wiki/Eye_examination",
+    "verified": true
+  },
+  {
+    "in": [
+      "spine",
+      "needle"
+    ],
+    "out": "lumbar_puncture",
+    "why": "Lumbar puncture, also known as a spinal tap, is a medical procedure in which a needle is inserted into the spinal canal, most commonly to collect cerebrospinal fluid for diagnostic testing.",
+    "src": "https://en.wikipedia.org/wiki/Lumbar_puncture",
+    "verified": true
+  },
+  {
+    "in": [
+      "cell",
+      "doctor"
+    ],
+    "out": "pap_test",
+    "why": "The Papanicolaou test, also known as Pap smear, cervical smear, or smear test, is a method of cervical screening used to detect potentially precancerous and cancerous processes in the cervix.",
+    "src": "https://en.wikipedia.org/wiki/Pap_test",
+    "verified": true
+  },
+  {
+    "in": [
+      "heart",
+      "hand"
+    ],
+    "out": "pulse_medical",
+    "why": "In medicine, pulse is the rhythmic expansion and contraction of an artery in response to the cardiac cycle.",
+    "src": "https://en.wikipedia.org/wiki/Pulse",
+    "verified": true
+  },
+  {
+    "in": [
+      "cancer",
+      "drug"
+    ],
+    "out": "chemotherapy_medical",
+    "why": "Chemotherapy is the type of cancer treatment that uses one or more anti-cancer drugs in a standard regimen.",
+    "src": "https://en.wikipedia.org/wiki/Chemotherapy",
+    "verified": true
+  },
+  {
+    "in": [
+      "muscle",
+      "doctor"
+    ],
+    "out": "physical_therapy",
+    "why": "Physical therapy, also known as physiotherapy, is a healthcare profession, as well as the care provided by physical therapists. It focuses on promoting, maintaining, or restoring health through patient education, physical interventions, disease prevention, and health promotion.",
+    "src": "https://en.wikipedia.org/wiki/Physical_therapy",
+    "verified": true
+  },
+  {
+    "in": [
+      "radiation",
+      "cancer"
+    ],
+    "out": "radiation_therapy",
+    "why": "Radiation therapy or radiotherapy is a treatment using ionizing radiation, generally provided as part of cancer therapy to either kill or control the growth of malignant cells.",
+    "src": "https://en.wikipedia.org/wiki/Radiation_therapy",
+    "verified": true
+  },
+  {
+    "in": [
+      "fever",
+      "medicine"
+    ],
+    "out": "symptomatic_treatment",
+    "why": "Symptomatic treatment, also called supportive care, supportive therapy, or palliative treatment, is any medical therapy of a disease that only affects its symptoms, not the underlying cause.",
+    "src": "https://en.wikipedia.org/wiki/Symptomatic_treatment",
+    "verified": true
+  },
+  {
+    "in": [
+      "skin",
+      "fat"
+    ],
+    "out": "acne_vulgaris",
+    "why": "Acne, also known as acne vulgaris, is a long-term skin condition that occurs when dead skin cells and sebum clog hair follicles. Typical features of the condition include blackheads or whiteheads, pimples, oily skin, and possible scarring.",
+    "src": "https://en.wikipedia.org/wiki/Acne",
+    "verified": true
+  },
+  {
+    "in": [
+      "lung",
+      "infection"
+    ],
+    "out": "bronchitis_disease",
+    "why": "Bronchitis is inflammation of the bronchi in the lungs that causes coughing. Bronchitis usually begins as an infection in the nose, ears, throat, or sinuses.",
+    "src": "https://en.wikipedia.org/wiki/Bronchitis",
+    "verified": true
+  },
+  {
+    "in": [
+      "heart",
+      "disease"
+    ],
+    "out": "cardiovascular_disease",
+    "why": "Cardiovascular disease is any disease involving the heart or blood vessels.",
+    "src": "https://en.wikipedia.org/wiki/Cardiovascular_disease",
+    "verified": true
+  },
+  {
+    "in": [
+      "artery",
+      "disease"
+    ],
+    "out": "aneurysm_condition",
+    "why": "An aneurysm is an outward bulging, likened to a bubble or balloon, caused by a localized, abnormal, weak spot on a blood vessel wall. Aneurysms may be a result of a hereditary condition or an acquired disease.",
+    "src": "https://en.wikipedia.org/wiki/Aneurysm",
+    "verified": true
+  },
+  {
+    "in": [
+      "heart",
+      "death"
+    ],
+    "out": "cardiac_arrest",
+    "why": "Cardiac arrest is a condition in which the heart suddenly and unexpectedly stops beating or beats in a way which fails to produce pulse. When the heart stops, blood cannot circulate properly through the body and the blood flow to the brain and other organs is decreased.",
+    "src": "https://en.wikipedia.org/wiki/Cardiac_arrest",
+    "verified": true
+  },
+  {
+    "in": [
+      "blood",
+      "disease"
+    ],
+    "out": "hypertension_disease",
+    "why": "Hypertension, also known as high blood pressure, is a long-term medical condition in which the blood pressure in the arteries is persistently elevated. High blood pressure usually does not cause symptoms itself.",
+    "src": "https://en.wikipedia.org/wiki/Hypertension",
+    "verified": true
+  },
+  {
+    "in": [
+      "lung",
+      "smoke"
+    ],
+    "out": "copd",
+    "why": "Chronic obstructive pulmonary disease is a long-term lung condition that makes it progressively harder to breathe. It occurs when the airways and lung tissue become damaged, leading to reduced airflow and reduced efficiency of oxygen exchange in the lungs.",
+    "src": "https://en.wikipedia.org/wiki/Chronic_obstructive_pulmonary_disease",
+    "verified": true
+  },
+  {
+    "in": [
+      "liver",
+      "disease"
+    ],
+    "out": "cirrhosis_disease",
+    "why": "Cirrhosis, also known as liver cirrhosis, hepatic cirrhosis, chronic liver failure, chronic hepatic failure, and end-stage liver disease, is a chronic condition of the liver in which the normal functioning tissue is replaced with scar tissue.",
+    "src": "https://en.wikipedia.org/wiki/Cirrhosis",
+    "verified": true
+  },
+  {
+    "in": [
+      "liver",
+      "virus"
+    ],
+    "out": "hepatitis_disease",
+    "why": "Hepatitis is inflammation of the liver tissue. Some people or animals with hepatitis have no symptoms, whereas others develop yellow discoloration of the skin and whites of the eyes, poor appetite, vomiting, tiredness, abdominal pain, and diarrhea.",
+    "src": "https://en.wikipedia.org/wiki/Hepatitis",
+    "verified": true
+  },
+  {
+    "in": [
+      "brain",
+      "pain"
+    ],
+    "out": "migraine_condition",
+    "why": "Migraine is a neurological disorder that causes moderate-to-severe headaches. The pain often affects one side of the head, but can affect both.",
+    "src": "https://en.wikipedia.org/wiki/Migraine",
+    "verified": true
+  },
+  {
+    "in": [
+      "nerve",
+      "disease"
+    ],
+    "out": "multiple_sclerosis",
+    "why": "Multiple sclerosis is a chronic and neurodegenerative autoimmune disease in which the immune system attacks myelin, the insulating cover of nerve cells, causing damage to the central nervous system. This impairs the nervous system's ability to transmit signals.",
+    "src": "https://en.wikipedia.org/wiki/Multiple_sclerosis",
+    "verified": true
+  },
+  {
+    "in": [
+      "lung",
+      "death"
+    ],
+    "out": "respiratory_failure",
+    "why": "Respiratory failure results from inadequate gas exchange by the respiratory system, meaning that the arterial oxygen, carbon dioxide, or both cannot be kept at normal levels.",
+    "src": "https://en.wikipedia.org/wiki/Respiratory_failure",
+    "verified": true
+  },
+  {
+    "in": [
+      "wound",
+      "bone"
+    ],
+    "out": "injury_medical",
+    "why": "Injury is physiological damage to an organism. The response to injury, whether in humans, in other animals, in plants, in fungi, or in single-celled eukaryotes, is substantially shared, implying that the mechanisms are ancient.",
+    "src": "https://en.wikipedia.org/wiki/Injury",
+    "verified": true
+  },
+  {
+    "in": [
+      "skin",
+      "wound"
+    ],
+    "out": "bruise_injury",
+    "why": "A bruise, also known as a contusion, is a type of hematoma of tissue, the most common cause being capillaries damaged by trauma, causing localized bleeding that extravasates into the surrounding interstitial tissues.",
+    "src": "https://en.wikipedia.org/wiki/Bruise",
+    "verified": true
+  },
+  {
+    "in": [
+      "brain",
+      "wound"
+    ],
+    "out": "brain_injury",
+    "why": "Brain injury, also known as brain damage or neurotrauma, is the destruction or degeneration of brain cells. It may result from external trauma, such as accidents or falls, or from internal factors, such as strokes, infections, or metabolic disorders.",
+    "src": "https://en.wikipedia.org/wiki/Brain_injury",
+    "verified": true
+  },
+  {
+    "in": [
+      "brain",
+      "helmet"
+    ],
+    "out": "concussion_injury",
+    "why": "A concussion, also known as a mild traumatic brain injury, is a head injury that temporarily affects brain functioning. Symptoms may include headache, dizziness, difficulty with thinking and concentration, sleep disturbances, a brief period of memory loss, brief loss of consciousness.",
+    "src": "https://en.wikipedia.org/wiki/Concussion",
+    "verified": true
+  },
+  {
+    "in": [
+      "blood",
+      "bandage"
+    ],
+    "out": "bleeding_medical",
+    "why": "Bleeding, hemorrhage, haemorrhage or blood loss, is blood escaping from the circulatory system from damaged blood vessels. Bleeding can occur internally, or externally through a puncture in the skin.",
+    "src": "https://en.wikipedia.org/wiki/Bleeding",
+    "verified": true
+  },
+  {
+    "in": [
+      "blood",
+      "pressure"
+    ],
+    "out": "shock_circulatory",
+    "why": "Shock is the state of insufficient blood flow to the tissues of the body as a result of problems with the circulatory system. Initial symptoms of shock may include weakness, elevated heart rate, fast breathing, sweating, anxiety, and increased thirst.",
+    "src": "https://en.wikipedia.org/wiki/Shock_(circulatory)",
+    "verified": true
+  },
+  {
+    "in": [
+      "bacteria",
+      "spore"
+    ],
+    "out": "anthrax_disease",
+    "why": "Anthrax is an infection caused by the bacterium Bacillus anthracis or Bacillus cereus biovar anthracis. Infection typically occurs by contact with the skin, inhalation, or intestinal absorption.",
+    "src": "https://en.wikipedia.org/wiki/Anthrax",
+    "verified": true
+  },
+  {
+    "in": [
+      "coronavirus",
+      "pandemic"
+    ],
+    "out": "covid_19",
+    "why": "Coronavirus disease is a contagious disease caused by the coronavirus SARS-CoV. The disease spread worldwide, resulting in the COVID pandemic.",
+    "src": "https://en.wikipedia.org/wiki/COVID-19",
+    "verified": true
+  },
+  {
+    "in": [
+      "food",
+      "bacteria"
+    ],
+    "out": "foodborne_illness",
+    "why": "Foodborne illness, also known as foodborne disease and food poisoning, is any illness resulting from the contamination of food by pathogenic bacteria, viruses, or parasites, as well as prions, and toxins such as aflatoxins in peanuts, poisonous mushrooms, and various species of beans.",
+    "src": "https://en.wikipedia.org/wiki/Foodborne_illness",
+    "verified": true
+  },
+  {
+    "in": [
+      "fungus",
+      "disease"
+    ],
+    "out": "fungal_infection",
+    "why": "Fungal infection, also known as mycosis, is a disease caused by fungi. Different types are traditionally divided according to the part of the body affected: superficial, subcutaneous, and systemic.",
+    "src": "https://en.wikipedia.org/wiki/Fungal_infection",
+    "verified": true
+  },
+  {
+    "in": [
+      "stomach",
+      "virus"
+    ],
+    "out": "gastroenteritis",
+    "why": "Gastroenteritis, also known as infectious diarrhea, is an inflammation of the gastrointestinal tract including the stomach and intestine. Symptoms may include diarrhea, vomiting, and abdominal pain.",
+    "src": "https://en.wikipedia.org/wiki/Gastroenteritis",
+    "verified": true
+  },
+  {
+    "in": [
+      "hand",
+      "foot"
+    ],
+    "out": "hand_foot_and_mouth_disease",
+    "why": "Hand, foot, and mouth disease is a common infection caused by a group of enteroviruses. It typically begins with a fever and feeling generally unwell.",
+    "src": "https://en.wikipedia.org/wiki/Hand,_foot,_and_mouth_disease",
+    "verified": true
+  },
+  {
+    "in": [
+      "tick",
+      "disease"
+    ],
+    "out": "lyme_disease",
+    "why": "Lyme disease, also known as Lyme borreliosis, is a tick-borne disease caused by species of Borrelia bacteria, transmitted by blood-feeding ticks in the genus Ixodes. It is the most common disease spread by ticks in the Northern Hemisphere.",
+    "src": "https://en.wikipedia.org/wiki/Lyme_disease",
+    "verified": true
+  },
+  {
+    "in": [
+      "lung",
+      "virus"
+    ],
+    "out": "pneumonia_disease",
+    "why": "Pneumonia is an inflammatory condition of the lung primarily affecting the small air sacs known as alveoli. Symptoms typically include some combination of productive or dry cough, chest pain, fever, and difficulty breathing.",
+    "src": "https://en.wikipedia.org/wiki/Pneumonia",
+    "verified": true
+  },
+  {
+    "in": [
+      "mite",
+      "disease"
+    ],
+    "out": "scabies_disease",
+    "why": "Scabies is a contagious human skin infestation by the tiny mite Sarcoptes scabiei, variety hominis.",
+    "src": "https://en.wikipedia.org/wiki/Scabies",
+    "verified": true
+  },
+  {
+    "in": [
+      "fever",
+      "bacteria"
+    ],
+    "out": "scarlet_fever",
+    "why": "Scarlet fever, also known as scarlatina and scarlatiniform rash, is an infectious disease caused by Streptococcus pyogenes, a Group A streptococcus. It most commonly affects children and young adolescents.",
+    "src": "https://en.wikipedia.org/wiki/Scarlet_fever",
+    "verified": true
+  },
+  {
+    "in": [
+      "virus",
+      "disease"
+    ],
+    "out": "sexually_transmitted_infection",
+    "why": "A sexually transmitted infection, also known as a sexually transmitted disease or venereal disease, is an infection that is spread by sexual activity.",
+    "src": "https://en.wikipedia.org/wiki/Sexually_transmitted_infection",
+    "verified": true
+  },
+  {
+    "in": [
+      "virus",
+      "mouth"
+    ],
+    "out": "herpes_disease",
+    "why": "Herpes simplex, often known simply as herpes, is a viral infection caused by the herpes simplex virus. Herpes infections are categorized by the area of the body that is infected.",
+    "src": "https://en.wikipedia.org/wiki/Herpes",
+    "verified": true
+  },
+  {
+    "in": [
+      "louse",
+      "bacteria"
+    ],
+    "out": "typhus_disease",
+    "why": "Typhus, also known as typhus fever, is a group of infectious diseases that include epidemic typhus, scrub typhus, and murine typhus. Common symptoms such as fever, headache, and a rash typically begin one to two weeks after exposure.",
+    "src": "https://en.wikipedia.org/wiki/Typhus",
+    "verified": true
+  },
+  {
+    "in": [
+      "mosquito",
+      "fever"
+    ],
+    "out": "west_nile_fever",
+    "why": "West Nile fever is an infection by the West Nile virus, which is typically spread by mosquitoes.",
+    "src": "https://en.wikipedia.org/wiki/West_Nile_fever",
+    "verified": true
+  },
+  {
+    "in": [
+      "eye",
+      "disease"
+    ],
+    "out": "visual_impairment",
+    "why": "Visual or vision impairment is the partial or total inability of visual perception. In the absence of treatment such as corrective eyewear, assistive devices, and medical treatment, visual impairment may cause the individual difficulties with normal daily tasks, including reading and walking.",
+    "src": "https://en.wikipedia.org/wiki/Visual_impairment",
+    "verified": true
+  },
+  {
+    "in": [
+      "lens",
+      "glasses"
+    ],
+    "out": "refractive_error",
+    "why": "Refractive error is a problem with focusing light accurately on the retina due to the shape of the eye and/or cornea. The most common types of refractive error are near-sightedness, far-sightedness, astigmatism, and presbyopia.",
+    "src": "https://en.wikipedia.org/wiki/Refractive_error",
+    "verified": true
+  },
+  {
+    "in": [
+      "brain",
+      "muscle"
+    ],
+    "out": "cerebral_palsy",
+    "why": "Cerebral palsy is a group of movement disorders that appear in early childhood. Signs and symptoms vary among people and over time, but include poor coordination, stiff muscles, weak muscles, and tremors.",
+    "src": "https://en.wikipedia.org/wiki/Cerebral_palsy",
+    "verified": true
+  },
+  {
+    "in": [
+      "eye",
+      "genetics"
+    ],
+    "out": "color_blindness",
+    "why": "Color blindness or color vision deficiency is the decreased ability to see color, differences in color, or distinguish shades of color. The severity of color blindness ranges from mostly unnoticeable to full absence of color perception.",
+    "src": "https://en.wikipedia.org/wiki/Color_blindness",
+    "verified": true
+  },
+  {
+    "in": [
+      "chromosome",
+      "baby"
+    ],
+    "out": "down_syndrome",
+    "why": "Down syndrome or Down's syndrome, also known as trisomy, is a genetic disorder caused by the presence of all or part of a third copy of a chromosome. It is usually associated with developmental delays, mild to moderate intellectual disability, and characteristic physical features.",
+    "src": "https://en.wikipedia.org/wiki/Down_syndrome",
+    "verified": true
+  },
+  {
+    "in": [
+      "brain",
+      "learning"
+    ],
+    "out": "learning_disability",
+    "why": "Learning disability, or learning disorder, is a condition in the brain that causes difficulties comprehending or processing information and can be caused by several different factors.",
+    "src": "https://en.wikipedia.org/wiki/Learning_disability",
+    "verified": true
+  },
+  {
+    "in": [
+      "brain",
+      "reading"
+    ],
+    "out": "dyslexia_condition",
+    "why": "Dyslexia, also known as word blindness, is a learning disability that affects either reading, writing, or speaking. Different people are affected to different degrees.",
+    "src": "https://en.wikipedia.org/wiki/Dyslexia",
+    "verified": true
+  },
+  {
+    "in": [
+      "mind",
+      "disease"
+    ],
+    "out": "intellectual_disability",
+    "why": "Intellectual disability, also disorder of intellectual development and known as learning difficulty in the United Kingdom, is a generalized neurodevelopmental disorder characterized by significant impairment in intellectual and adaptive functioning.",
+    "src": "https://en.wikipedia.org/wiki/Intellectual_disability",
+    "verified": true
+  },
+  {
+    "in": [
+      "wheelchair",
+      "muscle"
+    ],
+    "out": "physical_disability",
+    "why": "A physical disability is a limitation on a person's physical functioning or limitations in executing activities. The term physical disability is very broad, and a range of disabilities are included.",
+    "src": "https://en.wikipedia.org/wiki/Physical_disability",
+    "verified": true
+  },
+  {
+    "in": [
+      "brain",
+      "tumor"
+    ],
+    "out": "brain_tumor",
+    "why": "A brain tumor, sometimes referred to as brain cancer, occurs when a group of cells within the brain grow out of control, creating a mass. There are two main types of tumors: malignant tumors and benign tumors.",
+    "src": "https://en.wikipedia.org/wiki/Brain_tumor",
+    "verified": true
+  },
+  {
+    "in": [
+      "cancer",
+      "milk"
+    ],
+    "out": "breast_cancer",
+    "why": "Breast cancer is a cancer that develops from breast tissue.",
+    "src": "https://en.wikipedia.org/wiki/Breast_cancer",
+    "verified": true
+  },
+  {
+    "in": [
+      "cancer",
+      "colon"
+    ],
+    "out": "colorectal_cancer",
+    "why": "Colorectal cancer, also known as bowel cancer, colon cancer, intestinal cancer, or rectal cancer, is the development of cancer from the colon or rectum, characterized by the uncontrolled growth of colon cells that can invade or spread to other parts of the body.",
+    "src": "https://en.wikipedia.org/wiki/Colorectal_cancer",
+    "verified": true
+  },
+  {
+    "in": [
+      "cancer",
+      "lung"
+    ],
+    "out": "lung_cancer",
+    "why": "Lung cancer is a malignant tumor that originates in the tissues of the lungs. Lung cancer is caused by genetic damage to the DNA of cells in the airways, often caused by cigarette smoking or inhaling damaging chemicals.",
+    "src": "https://en.wikipedia.org/wiki/Lung_cancer",
+    "verified": true
+  },
+  {
+    "in": [
+      "cancer",
+      "lymph"
+    ],
+    "out": "lymphoma_cancer",
+    "why": "Lymphoma is a group of blood and lymph tumors that develop from lymphocytes. The name typically refers to just the cancerous versions rather than all such tumors.",
+    "src": "https://en.wikipedia.org/wiki/Lymphoma",
+    "verified": true
+  },
+  {
+    "in": [
+      "cancer",
+      "bladder"
+    ],
+    "out": "prostate_cancer",
+    "why": "Prostate cancer is the uncontrolled growth of cells in the prostate, a gland below the bladder. Abnormal growth of prostate tissue is usually detected through screening tests, typically blood tests.",
+    "src": "https://en.wikipedia.org/wiki/Prostate_cancer",
+    "verified": true
+  },
+  {
+    "in": [
+      "skin",
+      "tumor"
+    ],
+    "out": "skin_cancer",
+    "why": "Skin cancers are cancers that arise from the skin. They are due to the development of abnormal cells that have the ability to invade or spread to other parts of the body.",
+    "src": "https://en.wikipedia.org/wiki/Skin_cancer",
+    "verified": true
+  },
+  {
+    "in": [
+      "anxiety",
+      "disease"
+    ],
+    "out": "anxiety_disorder",
+    "why": "Anxiety disorders are a group of mental disorders characterized by significant and uncontrollable feelings of anxiety and fear such that a person's social, occupational, and personal functions are significantly impaired.",
+    "src": "https://en.wikipedia.org/wiki/Anxiety_disorder",
+    "verified": true
+  },
+  {
+    "in": [
+      "fear",
+      "spider"
+    ],
+    "out": "phobia_fear",
+    "why": "A phobia is an anxiety disorder, defined by an irrational, unrealistic, persistent and excessive fear of an object or situation. Phobias typically result in a rapid onset of fear.",
+    "src": "https://en.wikipedia.org/wiki/Phobia",
+    "verified": true
+  },
+  {
+    "in": [
+      "food",
+      "mind"
+    ],
+    "out": "eating_disorder",
+    "why": "An eating disorder is a mental disorder defined by abnormal eating behaviors that adversely affect a person's physical or mental health. These behaviors may include eating too much food or too little food, as well as body image issues.",
+    "src": "https://en.wikipedia.org/wiki/Eating_disorder",
+    "verified": true
+  },
+  {
+    "in": [
+      "mood",
+      "disease"
+    ],
+    "out": "mood_disorder",
+    "why": "A mood disorder, also known as an affective disorder, is any of a group of conditions of mental and behavioral disorder where the main underlying characteristic is a disturbance in the person's mood.",
+    "src": "https://en.wikipedia.org/wiki/Mood_disorder",
+    "verified": true
+  },
+  {
+    "in": [
+      "sleep",
+      "disease"
+    ],
+    "out": "sleep_disorder",
+    "why": "A sleep disorder, or somnipathy, is a medical disorder that disrupts an individual's sleep patterns and quality. This can cause serious health issues and affect physical, mental, and emotional well-being.",
+    "src": "https://en.wikipedia.org/wiki/Sleep_disorder",
+    "verified": true
+  },
+  {
+    "in": [
+      "brain",
+      "sleep"
+    ],
+    "out": "coma_condition",
+    "why": "A coma is a prolonged state of deep unconsciousness in which a person cannot be awakened, fails to respond normally to stimuli, lacks a normal sleep-wake cycle and does not initiate voluntary actions.",
+    "src": "https://en.wikipedia.org/wiki/Coma",
+    "verified": true
+  },
+  {
+    "in": [
+      "brain",
+      "coma_condition"
+    ],
+    "out": "vegetative_state",
+    "why": "A vegetative state or post-coma unresponsiveness is a disorder of consciousness in which patients with severe brain damage are in a state of partial arousal rather than true awareness.",
+    "src": "https://en.wikipedia.org/wiki/Vegetative_state",
+    "verified": true
+  },
+  {
+    "in": [
+      "toxin",
+      "death"
+    ],
+    "out": "poison_substance",
+    "why": "In science, a poison is any chemical substance that is harmful or lethal to a living organism.",
+    "src": "https://en.wikipedia.org/wiki/Poison",
+    "verified": true
+  },
+  {
+    "in": [
+      "toxin",
+      "cell"
+    ],
+    "out": "toxicity",
+    "why": "Toxicity is the degree to which a chemical substance or a particular mixture of substances can damage an organism.",
+    "src": "https://en.wikipedia.org/wiki/Toxicity",
+    "verified": true
+  },
+  {
+    "in": [
+      "mushroom",
+      "poison_substance"
+    ],
+    "out": "mushroom_poisoning",
+    "why": "Mushroom poisoning is poisoning resulting from the ingestion of toxic mushrooms. Symptoms can vary from slight gastrointestinal discomfort to death.",
+    "src": "https://en.wikipedia.org/wiki/Mushroom_poisoning",
+    "verified": true
+  },
+  {
+    "in": [
+      "brain",
+      "disease"
+    ],
+    "out": "psychosis_condition",
+    "why": "In psychopathology, psychosis is the inability to distinguish what is or is not real. Examples of psychotic symptoms are delusions, hallucinations, and disorganized or incoherent thoughts or speech.",
+    "src": "https://en.wikipedia.org/wiki/Psychosis",
+    "verified": true
+  },
+  {
+    "in": [
+      "mind",
+      "lie"
+    ],
+    "out": "delusion_belief",
+    "why": "A delusion is a fixed belief that is not amenable to change in light of conflicting evidence.",
+    "src": "https://en.wikipedia.org/wiki/Delusion",
+    "verified": true
+  },
+  {
+    "in": [
+      "mind",
+      "eye"
+    ],
+    "out": "hallucination_perception",
+    "why": "A hallucination is a perception in the absence of an external context stimulus that has the compelling sense of reality.",
+    "src": "https://en.wikipedia.org/wiki/Hallucination",
+    "verified": true
   }
 ]
