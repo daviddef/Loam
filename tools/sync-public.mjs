@@ -56,6 +56,8 @@ const PUBLIC = [
   'prototype/template.html',
   'prototype/art-render.js',
   'prototype/index.html',
+  // The built Battle game (one self-contained file). Its source, loam-kit and battle/, stay private: see NEVER.
+  'prototype/battle.html',
   // The payload split: index.html carries the graph, these two arrive after.
   'prototype/prose.json',
   'prototype/art.json',
@@ -156,6 +158,10 @@ const NEVER = [/^RESEARCH.*\.md$/, /^research\//, /^LEADS.*\.md$/, /^ROADMAP\.md
                // A local cache of Wikipedia title resolutions, rebuilt on
                // demand and expiring after thirty days. Derived, churns on
                // every run, and stale the moment it is committed.
+               // The app is public, the code is not: Battle's source and the shared UI
+               // kit it is built from stay in the private repo, and only the built
+               // prototype/battle.html ships (it is on the PUBLIC list above).
+               /^battle\//, /^loam-kit\//, /^tools\/kit\.mjs$/,
                /^data\/sources-cache\.json$/,
                // The user's own kitchen photos, used to hand-verify the
                // barcode scanner against real products — personal, not code.

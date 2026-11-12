@@ -38479,8 +38479,7 @@
       "belief",
       "build"
     ],
-    "fact": "An Islamic place of worship with a mihrab, a niche set into the wall to indicate the direction of Mecca, so that everyone can pray facing the same way.",
-    "terminal": true
+    "fact": "An Islamic place of worship with a mihrab, a niche set into the wall to indicate the direction of Mecca, so that everyone can pray facing the same way."
   },
   {
     "id": "church",
@@ -39528,7 +39527,6 @@
       "belief"
     ],
     "fact": "Protestant tradition begun 1517 by Martin Luther's Ninety-five Theses against indulgences.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -44940,8 +44938,7 @@
     "tags": [
       "tool"
     ],
-    "fact": "A pouch on two cords, whirled overhead and released to hurl a stone farther than a bare throw.",
-    "terminal": true
+    "fact": "A pouch on two cords, whirled overhead and released to hurl a stone farther than a bare throw."
   },
   {
     "id": "macuahuitl",
@@ -54418,7 +54415,6 @@
       "earth"
     ],
     "fact": "Capital Vientiane. Prince Fa Ngum founded its precolonial kingdom, Lan Xang — 'a million elephants' — in the 1300s.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -54487,7 +54483,6 @@
       "earth"
     ],
     "fact": "Capital Pyongyang. Its border with the South, fixed by the 1953 armistice, is among the most militarised on Earth.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -138384,5 +138379,5427 @@
     ],
     "fact": "A port city and the capital of Rivers State in Nigeria.",
     "src": "https://en.wikipedia.org/wiki/Port_Harcourt"
+  },
+  {
+    "id": "calgary",
+    "name": "Calgary",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The largest city in the Canadian province of Alberta.",
+    "src": "https://en.wikipedia.org/wiki/Calgary"
+  },
+  {
+    "id": "montreal",
+    "name": "Montreal",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The largest city in Quebec, named for Mount Royal.",
+    "src": "https://en.wikipedia.org/wiki/Montreal"
+  },
+  {
+    "id": "ottawa",
+    "name": "Ottawa",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Canada, where the Ottawa and Rideau rivers meet.",
+    "src": "https://en.wikipedia.org/wiki/Ottawa"
+  },
+  {
+    "id": "guadalajara",
+    "name": "Guadalajara",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of the western Mexican state of Jalisco.",
+    "src": "https://en.wikipedia.org/wiki/Guadalajara"
+  },
+  {
+    "id": "ciudad_juarez",
+    "name": "Ciudad Juárez",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The most populous city in Chihuahua, once called El Paso del Norte.",
+    "src": "https://en.wikipedia.org/wiki/Ciudad_Juárez"
+  },
+  {
+    "id": "leon_guanajuato",
+    "name": "León",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The most populous city in the Mexican state of Guanajuato.",
+    "src": "https://en.wikipedia.org/wiki/León,_Guanajuato"
+  },
+  {
+    "id": "merida_yucatan",
+    "name": "Mérida",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and largest city of the Mexican state of Yucatan.",
+    "src": "https://en.wikipedia.org/wiki/Mérida,_Yucatán"
+  },
+  {
+    "id": "monterrey",
+    "name": "Monterrey",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Nuevo Leon and anchor of Mexico's second largest metropolitan area.",
+    "src": "https://en.wikipedia.org/wiki/Monterrey"
+  },
+  {
+    "id": "puebla_city",
+    "name": "Puebla",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and largest city of the Mexican state of Puebla.",
+    "src": "https://en.wikipedia.org/wiki/Puebla_(city)"
+  },
+  {
+    "id": "tijuana",
+    "name": "Tijuana",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The most populous city in northern Mexico.",
+    "src": "https://en.wikipedia.org/wiki/Tijuana"
+  },
+  {
+    "id": "veracruz_city",
+    "name": "Veracruz",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A major Mexican port city on the Gulf of Mexico.",
+    "src": "https://en.wikipedia.org/wiki/Veracruz_(city)"
+  },
+  {
+    "id": "baltimore",
+    "name": "Baltimore",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The most populous city in the U.S. state of Maryland.",
+    "src": "https://en.wikipedia.org/wiki/Baltimore"
+  },
+  {
+    "id": "cleveland",
+    "name": "Cleveland",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A city in Ohio on the southern shore of Lake Erie.",
+    "src": "https://en.wikipedia.org/wiki/Cleveland"
+  },
+  {
+    "id": "dallas",
+    "name": "Dallas",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A major city in northern Texas.",
+    "src": "https://en.wikipedia.org/wiki/Dallas"
+  },
+  {
+    "id": "denver",
+    "name": "Denver",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Colorado, just east of the Rocky Mountains.",
+    "src": "https://en.wikipedia.org/wiki/Denver"
+  },
+  {
+    "id": "detroit",
+    "name": "Detroit",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The most populous city in Michigan, across the river from Canada.",
+    "src": "https://en.wikipedia.org/wiki/Detroit"
+  },
+  {
+    "id": "minneapolis",
+    "name": "Minneapolis",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The most populous city in Minnesota.",
+    "src": "https://en.wikipedia.org/wiki/Minneapolis"
+  },
+  {
+    "id": "nashville_tennessee",
+    "name": "Nashville",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Tennessee, on the Cumberland River.",
+    "src": "https://en.wikipedia.org/wiki/Nashville,_Tennessee"
+  },
+  {
+    "id": "phoenix_arizona",
+    "name": "Phoenix",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and most populous city of Arizona.",
+    "src": "https://en.wikipedia.org/wiki/Phoenix,_Arizona"
+  },
+  {
+    "id": "pittsburgh",
+    "name": "Pittsburgh",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A Pennsylvania city where two rivers meet to form the Ohio.",
+    "src": "https://en.wikipedia.org/wiki/Pittsburgh"
+  },
+  {
+    "id": "san_antonio",
+    "name": "San Antonio",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A major city in southern Texas.",
+    "src": "https://en.wikipedia.org/wiki/San_Antonio"
+  },
+  {
+    "id": "san_diego",
+    "name": "San Diego",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A Pacific coast city in Southern California beside the Mexican border.",
+    "src": "https://en.wikipedia.org/wiki/San_Diego"
+  },
+  {
+    "id": "silicon_valley",
+    "name": "Silicon Valley",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A global center for high technology and innovation in California.",
+    "src": "https://en.wikipedia.org/wiki/Silicon_Valley"
+  },
+  {
+    "id": "st_louis",
+    "name": "St. Louis",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "An independent city in Missouri near where the Mississippi and Missouri meet.",
+    "src": "https://en.wikipedia.org/wiki/St._Louis"
+  },
+  {
+    "id": "guatemala_city",
+    "name": "Guatemala City",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The national capital and largest city of Guatemala.",
+    "src": "https://en.wikipedia.org/wiki/Guatemala_City"
+  },
+  {
+    "id": "kingston_jamaica",
+    "name": "Kingston",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Jamaica, beside a natural harbour.",
+    "src": "https://en.wikipedia.org/wiki/Kingston,_Jamaica"
+  },
+  {
+    "id": "managua",
+    "name": "Managua",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Nicaragua, on the shore of Lake Managua.",
+    "src": "https://en.wikipedia.org/wiki/Managua"
+  },
+  {
+    "id": "panama_city",
+    "name": "Panama City",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and largest city of Panama.",
+    "src": "https://en.wikipedia.org/wiki/Panama_City"
+  },
+  {
+    "id": "port_au_prince",
+    "name": "Port-au-Prince",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and most populous city of Haiti.",
+    "src": "https://en.wikipedia.org/wiki/Port-au-Prince"
+  },
+  {
+    "id": "san_jose_costa_rica",
+    "name": "San José",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and largest city of Costa Rica.",
+    "src": "https://en.wikipedia.org/wiki/San_José,_Costa_Rica"
+  },
+  {
+    "id": "san_juan_puerto_rico",
+    "name": "San Juan",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Puerto Rico, once called Ciudad de Puerto Rico.",
+    "src": "https://en.wikipedia.org/wiki/San_Juan,_Puerto_Rico"
+  },
+  {
+    "id": "san_salvador",
+    "name": "San Salvador",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and largest city of El Salvador.",
+    "src": "https://en.wikipedia.org/wiki/San_Salvador"
+  },
+  {
+    "id": "santo_domingo",
+    "name": "Santo Domingo",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of the Dominican Republic and the largest metropolitan area in the Caribbean.",
+    "src": "https://en.wikipedia.org/wiki/Santo_Domingo"
+  },
+  {
+    "id": "tegucigalpa",
+    "name": "Tegucigalpa",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and largest city of Honduras.",
+    "src": "https://en.wikipedia.org/wiki/Tegucigalpa"
+  },
+  {
+    "id": "arequipa",
+    "name": "Arequipa",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The second most populous city of Peru.",
+    "src": "https://en.wikipedia.org/wiki/Arequipa"
+  },
+  {
+    "id": "asuncion",
+    "name": "Asunción",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Paraguay, on the Paraguay River.",
+    "src": "https://en.wikipedia.org/wiki/Asunción"
+  },
+  {
+    "id": "cordoba_argentina",
+    "name": "Córdoba",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The second-most populous city in Argentina.",
+    "src": "https://en.wikipedia.org/wiki/Córdoba,_Argentina"
+  },
+  {
+    "id": "guayaquil",
+    "name": "Guayaquil",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The largest city, economic capital and main port of Ecuador.",
+    "src": "https://en.wikipedia.org/wiki/Guayaquil"
+  },
+  {
+    "id": "la_paz",
+    "name": "La Paz",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The seat of government of Bolivia.",
+    "src": "https://en.wikipedia.org/wiki/La_Paz"
+  },
+  {
+    "id": "maracaibo",
+    "name": "Maracaibo",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A northwestern Venezuelan city beside Lake Maracaibo.",
+    "src": "https://en.wikipedia.org/wiki/Maracaibo"
+  },
+  {
+    "id": "rosario",
+    "name": "Rosario",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The largest city of Santa Fe province, on the Parana River.",
+    "src": "https://en.wikipedia.org/wiki/Rosario"
+  },
+  {
+    "id": "santa_cruz_de_la_sierra",
+    "name": "Santa Cruz de la Sierra",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The largest city in Bolivia, in the eastern lowlands.",
+    "src": "https://en.wikipedia.org/wiki/Santa_Cruz_de_la_Sierra"
+  },
+  {
+    "id": "valencia_venezuela",
+    "name": "Valencia (Venezuela)",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A Venezuelan industrial hub and capital of Carabobo State.",
+    "src": "https://en.wikipedia.org/wiki/Valencia,_Venezuela"
+  },
+  {
+    "id": "valparaiso",
+    "name": "Valparaíso",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A major seaport and naval base city in Chile.",
+    "src": "https://en.wikipedia.org/wiki/Valparaíso"
+  },
+  {
+    "id": "belem",
+    "name": "Belém",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The gateway to the Amazon River in northern Brazil.",
+    "src": "https://en.wikipedia.org/wiki/Belém"
+  },
+  {
+    "id": "belo_horizonte",
+    "name": "Belo Horizonte",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and largest city of the Brazilian state of Minas Gerais.",
+    "src": "https://en.wikipedia.org/wiki/Belo_Horizonte"
+  },
+  {
+    "id": "curitiba",
+    "name": "Curitiba",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and largest city of Parana in Southern Brazil.",
+    "src": "https://en.wikipedia.org/wiki/Curitiba"
+  },
+  {
+    "id": "fortaleza",
+    "name": "Fortaleza",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and largest city of Ceara in Northeastern Brazil.",
+    "src": "https://en.wikipedia.org/wiki/Fortaleza"
+  },
+  {
+    "id": "manaus",
+    "name": "Manaus",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and largest city of the Brazilian state of Amazonas.",
+    "src": "https://en.wikipedia.org/wiki/Manaus"
+  },
+  {
+    "id": "porto_alegre",
+    "name": "Porto Alegre",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and largest city of Rio Grande do Sul.",
+    "src": "https://en.wikipedia.org/wiki/Porto_Alegre"
+  },
+  {
+    "id": "recife",
+    "name": "Recife",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Pernambuco on Brazil's northeastern Atlantic coast.",
+    "src": "https://en.wikipedia.org/wiki/Recife"
+  },
+  {
+    "id": "salvador_bahia",
+    "name": "Salvador",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Bahia, known for its cuisine, music and architecture.",
+    "src": "https://en.wikipedia.org/wiki/Salvador,_Bahia"
+  },
+  {
+    "id": "sao_luis_maranhao",
+    "name": "São Luís",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Maranhao, on an island in the Atlantic estuary.",
+    "src": "https://en.wikipedia.org/wiki/São_Luís,_Maranhão"
+  },
+  {
+    "id": "cali",
+    "name": "Cali",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The most populous city in southwest Colombia.",
+    "src": "https://en.wikipedia.org/wiki/Cali"
+  },
+  {
+    "id": "cartagena_colombia",
+    "name": "Cartagena",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A major port on the Caribbean coast of Colombia.",
+    "src": "https://en.wikipedia.org/wiki/Cartagena,_Colombia"
+  },
+  {
+    "id": "medellin",
+    "name": "Medellín",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Antioquia and second-largest city in Colombia.",
+    "src": "https://en.wikipedia.org/wiki/Medellín"
+  },
+  {
+    "id": "almaty",
+    "name": "Almaty",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The most populous city in Kazakhstan, in the mountain foothills.",
+    "src": "https://en.wikipedia.org/wiki/Almaty"
+  },
+  {
+    "id": "astana",
+    "name": "Astana",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Kazakhstan, on the Ishim river.",
+    "src": "https://en.wikipedia.org/wiki/Astana"
+  },
+  {
+    "id": "busan",
+    "name": "Busan",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The second most populous city in South Korea and its busiest port.",
+    "src": "https://en.wikipedia.org/wiki/Busan"
+  },
+  {
+    "id": "daegu",
+    "name": "Daegu",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A large city in southeastern South Korea.",
+    "src": "https://en.wikipedia.org/wiki/Daegu"
+  },
+  {
+    "id": "daejeon",
+    "name": "Daejeon",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A South Korean technology and research city.",
+    "src": "https://en.wikipedia.org/wiki/Daejeon"
+  },
+  {
+    "id": "kaohsiung",
+    "name": "Kaohsiung",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The largest city in southern Taiwan.",
+    "src": "https://en.wikipedia.org/wiki/Kaohsiung"
+  },
+  {
+    "id": "pyongyang",
+    "name": "Pyongyang",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and largest city of North Korea.",
+    "src": "https://en.wikipedia.org/wiki/Pyongyang"
+  },
+  {
+    "id": "taichung",
+    "name": "Taichung",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The largest city in central Taiwan.",
+    "src": "https://en.wikipedia.org/wiki/Taichung"
+  },
+  {
+    "id": "changchun",
+    "name": "Changchun",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Jilin Province on the Songliao Plain.",
+    "src": "https://en.wikipedia.org/wiki/Changchun"
+  },
+  {
+    "id": "changsha",
+    "name": "Changsha",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Hunan, on the Xiang River.",
+    "src": "https://en.wikipedia.org/wiki/Changsha"
+  },
+  {
+    "id": "chongqing",
+    "name": "Chongqing",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The only inland direct-administered municipality of China.",
+    "src": "https://en.wikipedia.org/wiki/Chongqing"
+  },
+  {
+    "id": "dalian",
+    "name": "Dalian",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A major port city in Liaoning province.",
+    "src": "https://en.wikipedia.org/wiki/Dalian"
+  },
+  {
+    "id": "fuzhou",
+    "name": "Fuzhou",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Fujian.",
+    "src": "https://en.wikipedia.org/wiki/Fuzhou"
+  },
+  {
+    "id": "hangzhou",
+    "name": "Hangzhou",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Zhejiang, famed for West Lake.",
+    "src": "https://en.wikipedia.org/wiki/Hangzhou"
+  },
+  {
+    "id": "harbin",
+    "name": "Harbin",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Heilongjiang in Northeast China.",
+    "src": "https://en.wikipedia.org/wiki/Harbin"
+  },
+  {
+    "id": "hefei",
+    "name": "Hefei",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Anhui province.",
+    "src": "https://en.wikipedia.org/wiki/Hefei"
+  },
+  {
+    "id": "jinan",
+    "name": "Jinan",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Shandong province.",
+    "src": "https://en.wikipedia.org/wiki/Jinan"
+  },
+  {
+    "id": "kunming",
+    "name": "Kunming",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and largest city of Yunnan.",
+    "src": "https://en.wikipedia.org/wiki/Kunming"
+  },
+  {
+    "id": "lanzhou",
+    "name": "Lanzhou",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Gansu, on the Yellow River.",
+    "src": "https://en.wikipedia.org/wiki/Lanzhou"
+  },
+  {
+    "id": "luoyang",
+    "name": "Luoyang",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A city in Henan where the Luo and Yellow rivers meet.",
+    "src": "https://en.wikipedia.org/wiki/Luoyang"
+  },
+  {
+    "id": "nanchang",
+    "name": "Nanchang",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Jiangxi, near Poyang Lake.",
+    "src": "https://en.wikipedia.org/wiki/Nanchang"
+  },
+  {
+    "id": "nanning",
+    "name": "Nanning",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The Green City, capital of Guangxi.",
+    "src": "https://en.wikipedia.org/wiki/Nanning"
+  },
+  {
+    "id": "ningbo",
+    "name": "Ningbo",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A sub-provincial city in northeastern Zhejiang.",
+    "src": "https://en.wikipedia.org/wiki/Ningbo"
+  },
+  {
+    "id": "qingdao",
+    "name": "Qingdao",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A Shandong city looking out to the Yellow Sea.",
+    "src": "https://en.wikipedia.org/wiki/Qingdao"
+  },
+  {
+    "id": "quanzhou",
+    "name": "Quanzhou",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A port city beside the Taiwan Strait in southern Fujian.",
+    "src": "https://en.wikipedia.org/wiki/Quanzhou"
+  },
+  {
+    "id": "shenyang",
+    "name": "Shenyang",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Liaoning, once called Mukden.",
+    "src": "https://en.wikipedia.org/wiki/Shenyang"
+  },
+  {
+    "id": "shenzhen",
+    "name": "Shenzhen",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A special economic zone in Guangdong beside Hong Kong.",
+    "src": "https://en.wikipedia.org/wiki/Shenzhen"
+  },
+  {
+    "id": "shijiazhuang",
+    "name": "Shijiazhuang",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Hebei Province.",
+    "src": "https://en.wikipedia.org/wiki/Shijiazhuang"
+  },
+  {
+    "id": "suzhou",
+    "name": "Suzhou",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A tourist destination and industrial hub in Jiangsu.",
+    "src": "https://en.wikipedia.org/wiki/Suzhou"
+  },
+  {
+    "id": "taiyuan",
+    "name": "Taiyuan",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Shanxi.",
+    "src": "https://en.wikipedia.org/wiki/Taiyuan"
+  },
+  {
+    "id": "tianjin",
+    "name": "Tianjin",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A municipality on the shore of the Bohai Sea.",
+    "src": "https://en.wikipedia.org/wiki/Tianjin"
+  },
+  {
+    "id": "urumqi",
+    "name": "Ürümqi",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Xinjiang.",
+    "src": "https://en.wikipedia.org/wiki/Ürümqi"
+  },
+  {
+    "id": "wuhan",
+    "name": "Wuhan",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Hubei.",
+    "src": "https://en.wikipedia.org/wiki/Wuhan"
+  },
+  {
+    "id": "xiamen",
+    "name": "Xiamen",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A sub-provincial city in Fujian, once called Amoy.",
+    "src": "https://en.wikipedia.org/wiki/Xiamen"
+  },
+  {
+    "id": "zhengzhou",
+    "name": "Zhengzhou",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Henan Province.",
+    "src": "https://en.wikipedia.org/wiki/Zhengzhou"
+  },
+  {
+    "id": "fukuoka",
+    "name": "Fukuoka",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A Kyushu city on Hakata Bay and a center of commerce.",
+    "src": "https://en.wikipedia.org/wiki/Fukuoka"
+  },
+  {
+    "id": "hiroshima",
+    "name": "Hiroshima",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Hiroshima Prefecture.",
+    "src": "https://en.wikipedia.org/wiki/Hiroshima"
+  },
+  {
+    "id": "kobe",
+    "name": "Kobe",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Hyogo Prefecture and a major port.",
+    "src": "https://en.wikipedia.org/wiki/Kobe"
+  },
+  {
+    "id": "nagoya",
+    "name": "Nagoya",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The largest city in the Chubu region of Japan.",
+    "src": "https://en.wikipedia.org/wiki/Nagoya"
+  },
+  {
+    "id": "sapporo",
+    "name": "Sapporo",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Hokkaido.",
+    "src": "https://en.wikipedia.org/wiki/Sapporo"
+  },
+  {
+    "id": "sendai",
+    "name": "Sendai",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The largest city in the Tohoku region of Japan.",
+    "src": "https://en.wikipedia.org/wiki/Sendai"
+  },
+  {
+    "id": "yokohama",
+    "name": "Yokohama",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The second-largest city in Japan.",
+    "src": "https://en.wikipedia.org/wiki/Yokohama"
+  },
+  {
+    "id": "chittagong",
+    "name": "Chittagong",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The second-largest city in Bangladesh.",
+    "src": "https://en.wikipedia.org/wiki/Chittagong"
+  },
+  {
+    "id": "dhaka",
+    "name": "Dhaka",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and largest city of Bangladesh.",
+    "src": "https://en.wikipedia.org/wiki/Dhaka"
+  },
+  {
+    "id": "herat",
+    "name": "Herat",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A major city in western Afghanistan.",
+    "src": "https://en.wikipedia.org/wiki/Herat"
+  },
+  {
+    "id": "kandahar",
+    "name": "Kandahar",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A major city in southern Afghanistan.",
+    "src": "https://en.wikipedia.org/wiki/Kandahar"
+  },
+  {
+    "id": "sylhet",
+    "name": "Sylhet",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A metropolitan city in northeastern Bangladesh.",
+    "src": "https://en.wikipedia.org/wiki/Sylhet"
+  },
+  {
+    "id": "agra",
+    "name": "Agra",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A city on the Yamuna river in Uttar Pradesh.",
+    "src": "https://en.wikipedia.org/wiki/Agra"
+  },
+  {
+    "id": "amritsar",
+    "name": "Amritsar",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The second-largest city in Indian Punjab.",
+    "src": "https://en.wikipedia.org/wiki/Amritsar"
+  },
+  {
+    "id": "ahmedabad",
+    "name": "Ahmedabad",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The most populous city in Gujarat.",
+    "src": "https://en.wikipedia.org/wiki/Ahmedabad"
+  },
+  {
+    "id": "bengaluru",
+    "name": "Bengaluru",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and largest city of Karnataka.",
+    "src": "https://en.wikipedia.org/wiki/Bengaluru"
+  },
+  {
+    "id": "bhopal",
+    "name": "Bhopal",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The City of Lakes, capital of Madhya Pradesh.",
+    "src": "https://en.wikipedia.org/wiki/Bhopal"
+  },
+  {
+    "id": "bhubaneswar",
+    "name": "Bhubaneswar",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and largest city of Odisha.",
+    "src": "https://en.wikipedia.org/wiki/Bhubaneswar"
+  },
+  {
+    "id": "chandigarh",
+    "name": "Chandigarh",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A planned city that is the shared capital of Punjab and Haryana.",
+    "src": "https://en.wikipedia.org/wiki/Chandigarh"
+  },
+  {
+    "id": "chennai",
+    "name": "Chennai",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Tamil Nadu, on the Coromandel Coast.",
+    "src": "https://en.wikipedia.org/wiki/Chennai"
+  },
+  {
+    "id": "coimbatore",
+    "name": "Coimbatore",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A metropolitan city in Tamil Nadu among the Western Ghats.",
+    "src": "https://en.wikipedia.org/wiki/Coimbatore"
+  },
+  {
+    "id": "guwahati",
+    "name": "Guwahati",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The largest city in northeastern India.",
+    "src": "https://en.wikipedia.org/wiki/Guwahati"
+  },
+  {
+    "id": "hyderabad",
+    "name": "Hyderabad",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Telangana, on the Musi River.",
+    "src": "https://en.wikipedia.org/wiki/Hyderabad"
+  },
+  {
+    "id": "indore",
+    "name": "Indore",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The largest city of Madhya Pradesh.",
+    "src": "https://en.wikipedia.org/wiki/Indore"
+  },
+  {
+    "id": "jaipur",
+    "name": "Jaipur",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and largest city of Rajasthan.",
+    "src": "https://en.wikipedia.org/wiki/Jaipur"
+  },
+  {
+    "id": "jodhpur",
+    "name": "Jodhpur",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The second-largest city of Rajasthan.",
+    "src": "https://en.wikipedia.org/wiki/Jodhpur"
+  },
+  {
+    "id": "kanpur",
+    "name": "Kanpur",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A large city in Uttar Pradesh, once called Cawnpore.",
+    "src": "https://en.wikipedia.org/wiki/Kanpur"
+  },
+  {
+    "id": "lucknow",
+    "name": "Lucknow",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Uttar Pradesh.",
+    "src": "https://en.wikipedia.org/wiki/Lucknow"
+  },
+  {
+    "id": "ludhiana",
+    "name": "Ludhiana",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The most populous city in Indian Punjab.",
+    "src": "https://en.wikipedia.org/wiki/Ludhiana"
+  },
+  {
+    "id": "madurai",
+    "name": "Madurai",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The cultural capital of Tamil Nadu.",
+    "src": "https://en.wikipedia.org/wiki/Madurai"
+  },
+  {
+    "id": "mysore",
+    "name": "Mysore",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A city in the southern Indian state of Karnataka.",
+    "src": "https://en.wikipedia.org/wiki/Mysore"
+  },
+  {
+    "id": "nagpur",
+    "name": "Nagpur",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The largest city in central India.",
+    "src": "https://en.wikipedia.org/wiki/Nagpur"
+  },
+  {
+    "id": "patna",
+    "name": "Patna",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Bihar, once Pataliputra.",
+    "src": "https://en.wikipedia.org/wiki/Patna"
+  },
+  {
+    "id": "pune",
+    "name": "Pune",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A city in Maharashtra on the Deccan Plateau.",
+    "src": "https://en.wikipedia.org/wiki/Pune"
+  },
+  {
+    "id": "prayagraj",
+    "name": "Prayagraj",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A metropolis in Uttar Pradesh, formerly Allahabad.",
+    "src": "https://en.wikipedia.org/wiki/Prayagraj"
+  },
+  {
+    "id": "raipur",
+    "name": "Raipur",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Chhattisgarh.",
+    "src": "https://en.wikipedia.org/wiki/Raipur"
+  },
+  {
+    "id": "ranchi",
+    "name": "Ranchi",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Jharkhand.",
+    "src": "https://en.wikipedia.org/wiki/Ranchi"
+  },
+  {
+    "id": "srinagar",
+    "name": "Srinagar",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The largest city and summer capital of Jammu and Kashmir.",
+    "src": "https://en.wikipedia.org/wiki/Srinagar"
+  },
+  {
+    "id": "surat",
+    "name": "Surat",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A former large seaport in Gujarat at the mouth of the Tapti.",
+    "src": "https://en.wikipedia.org/wiki/Surat"
+  },
+  {
+    "id": "thiruvananthapuram",
+    "name": "Thiruvananthapuram",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Kerala, also known as Trivandrum.",
+    "src": "https://en.wikipedia.org/wiki/Thiruvananthapuram"
+  },
+  {
+    "id": "vadodara",
+    "name": "Vadodara",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A city in Gujarat, also known as Baroda.",
+    "src": "https://en.wikipedia.org/wiki/Vadodara"
+  },
+  {
+    "id": "varanasi",
+    "name": "Varanasi",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A city on the Ganges central to Hindu pilgrimage.",
+    "src": "https://en.wikipedia.org/wiki/Varanasi"
+  },
+  {
+    "id": "visakhapatnam",
+    "name": "Visakhapatnam",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The largest city in Andhra Pradesh, between the Eastern Ghats and the sea.",
+    "src": "https://en.wikipedia.org/wiki/Visakhapatnam"
+  },
+  {
+    "id": "faisalabad",
+    "name": "Faisalabad",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The primary industrial center of Pakistani Punjab.",
+    "src": "https://en.wikipedia.org/wiki/Faisalabad"
+  },
+  {
+    "id": "gujranwala",
+    "name": "Gujranwala",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The City of Wrestlers in Pakistani Punjab.",
+    "src": "https://en.wikipedia.org/wiki/Gujranwala"
+  },
+  {
+    "id": "hyderabad_pakistan",
+    "name": "Hyderabad (Pakistan)",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The second-largest city in Sindh.",
+    "src": "https://en.wikipedia.org/wiki/Hyderabad,_Pakistan"
+  },
+  {
+    "id": "karachi",
+    "name": "Karachi",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The largest city in Pakistan.",
+    "src": "https://en.wikipedia.org/wiki/Karachi"
+  },
+  {
+    "id": "lahore",
+    "name": "Lahore",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Pakistani Punjab and second-largest city of Pakistan.",
+    "src": "https://en.wikipedia.org/wiki/Lahore"
+  },
+  {
+    "id": "multan",
+    "name": "Multan",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A city in Punjab on the Chenab River.",
+    "src": "https://en.wikipedia.org/wiki/Multan"
+  },
+  {
+    "id": "peshawar",
+    "name": "Peshawar",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Khyber Pakhtunkhwa.",
+    "src": "https://en.wikipedia.org/wiki/Peshawar"
+  },
+  {
+    "id": "rawalpindi",
+    "name": "Rawalpindi",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A Punjab city on the Soan River beside Islamabad.",
+    "src": "https://en.wikipedia.org/wiki/Rawalpindi"
+  },
+  {
+    "id": "islamabad",
+    "name": "Islamabad",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital city of Pakistan.",
+    "src": "https://en.wikipedia.org/wiki/Islamabad"
+  },
+  {
+    "id": "cebu_city",
+    "name": "Cebu City",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A highly urbanized city in the Central Visayas.",
+    "src": "https://en.wikipedia.org/wiki/Cebu_City"
+  },
+  {
+    "id": "chiang_mai",
+    "name": "Chiang Mai",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The largest city in northern Thailand, in the highlands.",
+    "src": "https://en.wikipedia.org/wiki/Chiang_Mai"
+  },
+  {
+    "id": "davao_city",
+    "name": "Davao City",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The largest Philippine city by land area.",
+    "src": "https://en.wikipedia.org/wiki/Davao_City"
+  },
+  {
+    "id": "johor_bahru",
+    "name": "Johor Bahru",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of the Malaysian state of Johor.",
+    "src": "https://en.wikipedia.org/wiki/Johor_Bahru"
+  },
+  {
+    "id": "kuala_lumpur",
+    "name": "Kuala Lumpur",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and most populous city of Malaysia.",
+    "src": "https://en.wikipedia.org/wiki/Kuala_Lumpur"
+  },
+  {
+    "id": "mandalay",
+    "name": "Mandalay",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The second-largest city in Myanmar, on the Irrawaddy.",
+    "src": "https://en.wikipedia.org/wiki/Mandalay"
+  },
+  {
+    "id": "quezon_city",
+    "name": "Quezon City",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The most populous city in the Philippines.",
+    "src": "https://en.wikipedia.org/wiki/Quezon_City"
+  },
+  {
+    "id": "phnom_penh",
+    "name": "Phnom Penh",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and most populous city of Cambodia.",
+    "src": "https://en.wikipedia.org/wiki/Phnom_Penh"
+  },
+  {
+    "id": "vientiane",
+    "name": "Vientiane",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Laos, on the Mekong.",
+    "src": "https://en.wikipedia.org/wiki/Vientiane"
+  },
+  {
+    "id": "yangon",
+    "name": "Yangon",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The largest city of Myanmar, once Rangoon.",
+    "src": "https://en.wikipedia.org/wiki/Yangon"
+  },
+  {
+    "id": "bandung",
+    "name": "Bandung",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of West Java.",
+    "src": "https://en.wikipedia.org/wiki/Bandung"
+  },
+  {
+    "id": "makassar",
+    "name": "Makassar",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The largest city in Eastern Indonesia.",
+    "src": "https://en.wikipedia.org/wiki/Makassar"
+  },
+  {
+    "id": "malang",
+    "name": "Malang",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A landlocked city in East Java.",
+    "src": "https://en.wikipedia.org/wiki/Malang"
+  },
+  {
+    "id": "medan",
+    "name": "Medan",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of North Sumatra.",
+    "src": "https://en.wikipedia.org/wiki/Medan"
+  },
+  {
+    "id": "padang",
+    "name": "Padang",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of West Sumatra.",
+    "src": "https://en.wikipedia.org/wiki/Padang"
+  },
+  {
+    "id": "palembang",
+    "name": "Palembang",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of South Sumatra, on the Musi River.",
+    "src": "https://en.wikipedia.org/wiki/Palembang"
+  },
+  {
+    "id": "semarang",
+    "name": "Semarang",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Central Java and an important port.",
+    "src": "https://en.wikipedia.org/wiki/Semarang"
+  },
+  {
+    "id": "surabaya",
+    "name": "Surabaya",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The second-largest city in Indonesia, on the Madura Strait.",
+    "src": "https://en.wikipedia.org/wiki/Surabaya"
+  },
+  {
+    "id": "yogyakarta",
+    "name": "Yogyakarta",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Indonesia's only royal city still ruled by a monarchy.",
+    "src": "https://en.wikipedia.org/wiki/Yogyakarta"
+  },
+  {
+    "id": "can_tho",
+    "name": "Cần Thơ",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A Mekong Delta city noted for its floating markets.",
+    "src": "https://en.wikipedia.org/wiki/Cần_Thơ"
+  },
+  {
+    "id": "da_nang",
+    "name": "Da Nang",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A major city on Vietnam's South Central Coast.",
+    "src": "https://en.wikipedia.org/wiki/Da_Nang"
+  },
+  {
+    "id": "haiphong",
+    "name": "Haiphong",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The third-largest city in Vietnam, on the Gulf of Tonkin.",
+    "src": "https://en.wikipedia.org/wiki/Haiphong"
+  },
+  {
+    "id": "ho_chi_minh_city",
+    "name": "Ho Chi Minh City",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The most populous city of Vietnam, formerly Saigon.",
+    "src": "https://en.wikipedia.org/wiki/Ho_Chi_Minh_City"
+  },
+  {
+    "id": "hue",
+    "name": "Huế",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A cultural hub in central Vietnam.",
+    "src": "https://en.wikipedia.org/wiki/Huế"
+  },
+  {
+    "id": "abu_dhabi",
+    "name": "Abu Dhabi",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of the United Arab Emirates, on a T-shaped island.",
+    "src": "https://en.wikipedia.org/wiki/Abu_Dhabi"
+  },
+  {
+    "id": "aden",
+    "name": "Aden",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "An ancient port city on the Gulf of Aden.",
+    "src": "https://en.wikipedia.org/wiki/Aden"
+  },
+  {
+    "id": "aleppo",
+    "name": "Aleppo",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A city in northern Syria.",
+    "src": "https://en.wikipedia.org/wiki/Aleppo"
+  },
+  {
+    "id": "amman",
+    "name": "Amman",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and largest city of Jordan.",
+    "src": "https://en.wikipedia.org/wiki/Amman"
+  },
+  {
+    "id": "baku",
+    "name": "Baku",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Azerbaijan, the lowest lying national capital in the world.",
+    "src": "https://en.wikipedia.org/wiki/Baku"
+  },
+  {
+    "id": "basra",
+    "name": "Basra",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A port city in southern Iraq.",
+    "src": "https://en.wikipedia.org/wiki/Basra"
+  },
+  {
+    "id": "beirut",
+    "name": "Beirut",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and largest city of Lebanon.",
+    "src": "https://en.wikipedia.org/wiki/Beirut"
+  },
+  {
+    "id": "doha",
+    "name": "Doha",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and financial hub of Qatar.",
+    "src": "https://en.wikipedia.org/wiki/Doha"
+  },
+  {
+    "id": "erbil",
+    "name": "Erbil",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of the Kurdistan Region of Iraq.",
+    "src": "https://en.wikipedia.org/wiki/Erbil"
+  },
+  {
+    "id": "jeddah",
+    "name": "Jeddah",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Saudi Arabia's main commercial center, on the Red Sea.",
+    "src": "https://en.wikipedia.org/wiki/Jeddah"
+  },
+  {
+    "id": "jericho",
+    "name": "Jericho",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A city in the Jordan Valley.",
+    "src": "https://en.wikipedia.org/wiki/Jericho"
+  },
+  {
+    "id": "kuwait_city",
+    "name": "Kuwait City",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Kuwait, on the Persian Gulf.",
+    "src": "https://en.wikipedia.org/wiki/Kuwait_City"
+  },
+  {
+    "id": "mosul",
+    "name": "Mosul",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A major city in northern Iraq.",
+    "src": "https://en.wikipedia.org/wiki/Mosul"
+  },
+  {
+    "id": "muscat",
+    "name": "Muscat",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and most populous city of Oman.",
+    "src": "https://en.wikipedia.org/wiki/Muscat"
+  },
+  {
+    "id": "sanaa",
+    "name": "Sanaa",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and largest city of Yemen.",
+    "src": "https://en.wikipedia.org/wiki/Sanaa"
+  },
+  {
+    "id": "tbilisi",
+    "name": "Tbilisi",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Georgia, on the Kura River.",
+    "src": "https://en.wikipedia.org/wiki/Tbilisi"
+  },
+  {
+    "id": "tel_aviv",
+    "name": "Tel Aviv",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A coastal city on the Israeli Mediterranean coast.",
+    "src": "https://en.wikipedia.org/wiki/Tel_Aviv"
+  },
+  {
+    "id": "tyre_lebanon",
+    "name": "Tyre",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "One of the oldest continuously inhabited cities and an early Phoenician metropolis.",
+    "src": "https://en.wikipedia.org/wiki/Tyre,_Lebanon"
+  },
+  {
+    "id": "yerevan",
+    "name": "Yerevan",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Armenia, on the Hrazdan River.",
+    "src": "https://en.wikipedia.org/wiki/Yerevan"
+  },
+  {
+    "id": "ahvaz",
+    "name": "Ahvaz",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Khuzestan, on the Karun River.",
+    "src": "https://en.wikipedia.org/wiki/Ahvaz"
+  },
+  {
+    "id": "isfahan",
+    "name": "Isfahan",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Isfahan Province in Iran.",
+    "src": "https://en.wikipedia.org/wiki/Isfahan"
+  },
+  {
+    "id": "kermanshah",
+    "name": "Kermanshah",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Kermanshah province in western Iran.",
+    "src": "https://en.wikipedia.org/wiki/Kermanshah"
+  },
+  {
+    "id": "mashhad",
+    "name": "Mashhad",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The second-most-populous city in Iran.",
+    "src": "https://en.wikipedia.org/wiki/Mashhad"
+  },
+  {
+    "id": "qom",
+    "name": "Qom",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Qom province in Iran.",
+    "src": "https://en.wikipedia.org/wiki/Qom"
+  },
+  {
+    "id": "shiraz",
+    "name": "Shiraz",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Fars province in Iran.",
+    "src": "https://en.wikipedia.org/wiki/Shiraz"
+  },
+  {
+    "id": "tabriz",
+    "name": "Tabriz",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of East Azerbaijan province in northwestern Iran.",
+    "src": "https://en.wikipedia.org/wiki/Tabriz"
+  },
+  {
+    "id": "adana",
+    "name": "Adana",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A large city in southern Turkey on the Seyhan River.",
+    "src": "https://en.wikipedia.org/wiki/Adana"
+  },
+  {
+    "id": "ankara",
+    "name": "Ankara",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital city of Turkey, in central Anatolia.",
+    "src": "https://en.wikipedia.org/wiki/Ankara"
+  },
+  {
+    "id": "antalya",
+    "name": "Antalya",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of tourism in Turkey, on the southwest coast.",
+    "src": "https://en.wikipedia.org/wiki/Antalya"
+  },
+  {
+    "id": "bursa",
+    "name": "Bursa",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A city in northwestern Turkey.",
+    "src": "https://en.wikipedia.org/wiki/Bursa"
+  },
+  {
+    "id": "gaziantep",
+    "name": "Gaziantep",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A major city in south-central Turkey.",
+    "src": "https://en.wikipedia.org/wiki/Gaziantep"
+  },
+  {
+    "id": "izmir",
+    "name": "İzmir",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The largest metropolitan area on the Aegean Sea.",
+    "src": "https://en.wikipedia.org/wiki/İzmir"
+  },
+  {
+    "id": "bratislava",
+    "name": "Bratislava",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Slovakia, on the Danube.",
+    "src": "https://en.wikipedia.org/wiki/Bratislava"
+  },
+  {
+    "id": "minsk",
+    "name": "Minsk",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and largest city of Belarus.",
+    "src": "https://en.wikipedia.org/wiki/Minsk"
+  },
+  {
+    "id": "sarajevo",
+    "name": "Sarajevo",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and largest city of Bosnia and Herzegovina.",
+    "src": "https://en.wikipedia.org/wiki/Sarajevo"
+  },
+  {
+    "id": "sofia",
+    "name": "Sofia",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Bulgaria, at the foot of Vitosha mountain.",
+    "src": "https://en.wikipedia.org/wiki/Sofia"
+  },
+  {
+    "id": "zagreb",
+    "name": "Zagreb",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Croatia, on the Sava River.",
+    "src": "https://en.wikipedia.org/wiki/Zagreb"
+  },
+  {
+    "id": "gdansk",
+    "name": "Gdańsk",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A Baltic port city in northern Poland, historically Danzig.",
+    "src": "https://en.wikipedia.org/wiki/Gdańsk"
+  },
+  {
+    "id": "krakow",
+    "name": "Kraków",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "One of the oldest cities in Poland, on the Vistula.",
+    "src": "https://en.wikipedia.org/wiki/Kraków"
+  },
+  {
+    "id": "lodz",
+    "name": "Łódź",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A former industrial centre in central Poland.",
+    "src": "https://en.wikipedia.org/wiki/Łódź"
+  },
+  {
+    "id": "poznan",
+    "name": "Poznań",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A city on the Warta in west Poland.",
+    "src": "https://en.wikipedia.org/wiki/Poznań"
+  },
+  {
+    "id": "wroclaw",
+    "name": "Wrocław",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The historical capital of Silesia.",
+    "src": "https://en.wikipedia.org/wiki/Wrocław"
+  },
+  {
+    "id": "chelyabinsk",
+    "name": "Chelyabinsk",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The largest city of Chelyabinsk Oblast.",
+    "src": "https://en.wikipedia.org/wiki/Chelyabinsk"
+  },
+  {
+    "id": "kazan",
+    "name": "Kazan",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Tatarstan, where the Volga and Kazanka meet.",
+    "src": "https://en.wikipedia.org/wiki/Kazan"
+  },
+  {
+    "id": "nizhny_novgorod",
+    "name": "Nizhny Novgorod",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A Volga city once known as Gorky.",
+    "src": "https://en.wikipedia.org/wiki/Nizhny_Novgorod"
+  },
+  {
+    "id": "novosibirsk",
+    "name": "Novosibirsk",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The largest city of Siberia.",
+    "src": "https://en.wikipedia.org/wiki/Novosibirsk"
+  },
+  {
+    "id": "omsk",
+    "name": "Omsk",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A city in southwestern Siberia.",
+    "src": "https://en.wikipedia.org/wiki/Omsk"
+  },
+  {
+    "id": "rostov_on_don",
+    "name": "Rostov-on-Don",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A port city on the Don River.",
+    "src": "https://en.wikipedia.org/wiki/Rostov-on-Don"
+  },
+  {
+    "id": "saint_petersburg",
+    "name": "Saint Petersburg",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The second-largest city in Russia, on the Neva.",
+    "src": "https://en.wikipedia.org/wiki/Saint_Petersburg"
+  },
+  {
+    "id": "ufa",
+    "name": "Ufa",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Bashkortostan.",
+    "src": "https://en.wikipedia.org/wiki/Ufa"
+  },
+  {
+    "id": "vladivostok",
+    "name": "Vladivostok",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The Russian Far East's largest city, on the Sea of Japan.",
+    "src": "https://en.wikipedia.org/wiki/Vladivostok"
+  },
+  {
+    "id": "volgograd",
+    "name": "Volgograd",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A Volga city formerly Tsaritsyn and Stalingrad.",
+    "src": "https://en.wikipedia.org/wiki/Volgograd"
+  },
+  {
+    "id": "yekaterinburg",
+    "name": "Yekaterinburg",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The largest city of the Urals, once Sverdlovsk.",
+    "src": "https://en.wikipedia.org/wiki/Yekaterinburg"
+  },
+  {
+    "id": "dnipro",
+    "name": "Dnipro",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A Ukrainian city on the river that gives it its name.",
+    "src": "https://en.wikipedia.org/wiki/Dnipro"
+  },
+  {
+    "id": "donetsk",
+    "name": "Donetsk",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "An industrial city in eastern Ukraine.",
+    "src": "https://en.wikipedia.org/wiki/Donetsk"
+  },
+  {
+    "id": "kharkiv",
+    "name": "Kharkiv",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The second-largest city in Ukraine.",
+    "src": "https://en.wikipedia.org/wiki/Kharkiv"
+  },
+  {
+    "id": "lviv",
+    "name": "Lviv",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The largest city in western Ukraine.",
+    "src": "https://en.wikipedia.org/wiki/Lviv"
+  },
+  {
+    "id": "odesa",
+    "name": "Odesa",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A major Black Sea seaport of Ukraine.",
+    "src": "https://en.wikipedia.org/wiki/Odesa"
+  },
+  {
+    "id": "riga",
+    "name": "Riga",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and largest city of Latvia.",
+    "src": "https://en.wikipedia.org/wiki/Riga"
+  },
+  {
+    "id": "tallinn",
+    "name": "Tallinn",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Estonia, on the Gulf of Finland.",
+    "src": "https://en.wikipedia.org/wiki/Tallinn"
+  },
+  {
+    "id": "vilnius",
+    "name": "Vilnius",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and largest city of Lithuania.",
+    "src": "https://en.wikipedia.org/wiki/Vilnius"
+  },
+  {
+    "id": "antwerp",
+    "name": "Antwerp",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Antwerp Province in Belgium.",
+    "src": "https://en.wikipedia.org/wiki/Antwerp"
+  },
+  {
+    "id": "the_hague",
+    "name": "The Hague",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of South Holland.",
+    "src": "https://en.wikipedia.org/wiki/The_Hague"
+  },
+  {
+    "id": "rotterdam",
+    "name": "Rotterdam",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The second-largest city in the Netherlands, at the mouth of the Rhine delta.",
+    "src": "https://en.wikipedia.org/wiki/Rotterdam"
+  },
+  {
+    "id": "bordeaux",
+    "name": "Bordeaux",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A port city on the Garonne in southwestern France.",
+    "src": "https://en.wikipedia.org/wiki/Bordeaux"
+  },
+  {
+    "id": "lyon",
+    "name": "Lyon",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A French city where the Rhone and Saone meet.",
+    "src": "https://en.wikipedia.org/wiki/Lyon"
+  },
+  {
+    "id": "marseille",
+    "name": "Marseille",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A Mediterranean city in Provence.",
+    "src": "https://en.wikipedia.org/wiki/Marseille"
+  },
+  {
+    "id": "nantes",
+    "name": "Nantes",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A French city on the Loire near the Atlantic.",
+    "src": "https://en.wikipedia.org/wiki/Nantes"
+  },
+  {
+    "id": "nice",
+    "name": "Nice",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A city on the French Riviera.",
+    "src": "https://en.wikipedia.org/wiki/Nice"
+  },
+  {
+    "id": "strasbourg",
+    "name": "Strasbourg",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The official seat of the European Parliament.",
+    "src": "https://en.wikipedia.org/wiki/Strasbourg"
+  },
+  {
+    "id": "toulouse",
+    "name": "Toulouse",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A city on the Garonne in southern France.",
+    "src": "https://en.wikipedia.org/wiki/Toulouse"
+  },
+  {
+    "id": "dusseldorf",
+    "name": "Düsseldorf",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of North Rhine-Westphalia.",
+    "src": "https://en.wikipedia.org/wiki/Düsseldorf"
+  },
+  {
+    "id": "dresden",
+    "name": "Dresden",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of the German state of Saxony.",
+    "src": "https://en.wikipedia.org/wiki/Dresden"
+  },
+  {
+    "id": "frankfurt",
+    "name": "Frankfurt",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The most populous city in Hesse.",
+    "src": "https://en.wikipedia.org/wiki/Frankfurt"
+  },
+  {
+    "id": "nuremberg",
+    "name": "Nuremberg",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The largest city in Franconia.",
+    "src": "https://en.wikipedia.org/wiki/Nuremberg"
+  },
+  {
+    "id": "stuttgart",
+    "name": "Stuttgart",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Baden-Wurttemberg, on the Neckar.",
+    "src": "https://en.wikipedia.org/wiki/Stuttgart"
+  },
+  {
+    "id": "belfast",
+    "name": "Belfast",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and main port of Northern Ireland.",
+    "src": "https://en.wikipedia.org/wiki/Belfast"
+  },
+  {
+    "id": "birmingham",
+    "name": "Birmingham",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The largest local authority district in England.",
+    "src": "https://en.wikipedia.org/wiki/Birmingham"
+  },
+  {
+    "id": "cardiff",
+    "name": "Cardiff",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and largest city of Wales.",
+    "src": "https://en.wikipedia.org/wiki/Cardiff"
+  },
+  {
+    "id": "glasgow",
+    "name": "Glasgow",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The most populous city in Scotland, on the Clyde.",
+    "src": "https://en.wikipedia.org/wiki/Glasgow"
+  },
+  {
+    "id": "leeds",
+    "name": "Leeds",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The largest settlement in Yorkshire.",
+    "src": "https://en.wikipedia.org/wiki/Leeds"
+  },
+  {
+    "id": "porto",
+    "name": "Porto",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The second largest city in Portugal.",
+    "src": "https://en.wikipedia.org/wiki/Porto"
+  },
+  {
+    "id": "genoa",
+    "name": "Genoa",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Liguria in northern Italy.",
+    "src": "https://en.wikipedia.org/wiki/Genoa"
+  },
+  {
+    "id": "palermo",
+    "name": "Palermo",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and largest city of Sicily.",
+    "src": "https://en.wikipedia.org/wiki/Palermo"
+  },
+  {
+    "id": "syracuse_sicily",
+    "name": "Syracuse (Sicily)",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A city in Sicily in southern Italy.",
+    "src": "https://en.wikipedia.org/wiki/Syracuse,_Sicily"
+  },
+  {
+    "id": "turin",
+    "name": "Turin",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Piedmont in northern Italy.",
+    "src": "https://en.wikipedia.org/wiki/Turin"
+  },
+  {
+    "id": "seville",
+    "name": "Seville",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Andalusia, on the Guadalquivir.",
+    "src": "https://en.wikipedia.org/wiki/Seville"
+  },
+  {
+    "id": "valencia",
+    "name": "Valencia",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of the Valencian Community, on the east coast of Spain.",
+    "src": "https://en.wikipedia.org/wiki/Valencia"
+  },
+  {
+    "id": "zaragoza",
+    "name": "Zaragoza",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of Aragon, on the Ebro.",
+    "src": "https://en.wikipedia.org/wiki/Zaragoza"
+  },
+  {
+    "id": "auckland",
+    "name": "Auckland",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "A large metropolitan city in New Zealand's North Island.",
+    "src": "https://en.wikipedia.org/wiki/Auckland"
+  },
+  {
+    "id": "adelaide",
+    "name": "Adelaide",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of South Australia.",
+    "src": "https://en.wikipedia.org/wiki/Adelaide"
+  },
+  {
+    "id": "brisbane",
+    "name": "Brisbane",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital of the Australian state of Queensland.",
+    "src": "https://en.wikipedia.org/wiki/Brisbane"
+  },
+  {
+    "id": "perth",
+    "name": "Perth",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "The capital and largest city of Western Australia.",
+    "src": "https://en.wikipedia.org/wiki/Perth"
+  },
+  {
+    "id": "western_philosophy",
+    "name": "Western Philosophy",
+    "emoji": "🏛️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The philosophical thought and traditions of the Western world.",
+    "src": "https://en.wikipedia.org/wiki/Western_philosophy"
+  },
+  {
+    "id": "ancient_greek_philosophy",
+    "name": "Ancient Greek Philosophy",
+    "emoji": "🏛️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The philosophy of the ancient Greeks, from logic to ethics.",
+    "src": "https://en.wikipedia.org/wiki/Ancient_Greek_philosophy"
+  },
+  {
+    "id": "medieval_philosophy",
+    "name": "Medieval Philosophy",
+    "emoji": "📜",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The philosophy of the Middle Ages.",
+    "src": "https://en.wikipedia.org/wiki/Medieval_philosophy"
+  },
+  {
+    "id": "renaissance_philosophy",
+    "name": "Renaissance Philosophy",
+    "emoji": "🎨",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The philosophical thought of the European Renaissance.",
+    "src": "https://en.wikipedia.org/wiki/Renaissance_philosophy"
+  },
+  {
+    "id": "modern_philosophy",
+    "name": "Modern Philosophy",
+    "emoji": "🧐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Philosophy developed in the modern era.",
+    "src": "https://en.wikipedia.org/wiki/Modern_philosophy"
+  },
+  {
+    "id": "contemporary_philosophy",
+    "name": "Contemporary Philosophy",
+    "emoji": "🧐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The present period of Western philosophy.",
+    "src": "https://en.wikipedia.org/wiki/Contemporary_philosophy"
+  },
+  {
+    "id": "eastern_philosophy",
+    "name": "Eastern Philosophy",
+    "emoji": "☯️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The philosophies that originated in Asia.",
+    "src": "https://en.wikipedia.org/wiki/Eastern_philosophy"
+  },
+  {
+    "id": "chinese_philosophy",
+    "name": "Chinese Philosophy",
+    "emoji": "☯️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The philosophical traditions of China.",
+    "src": "https://en.wikipedia.org/wiki/Chinese_philosophy"
+  },
+  {
+    "id": "indian_philosophy",
+    "name": "Indian Philosophy",
+    "emoji": "🕉️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The philosophical traditions of the Indian subcontinent.",
+    "src": "https://en.wikipedia.org/wiki/Indian_philosophy"
+  },
+  {
+    "id": "analytic_philosophy",
+    "name": "Analytic Philosophy",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A school of contemporary philosophy that stresses analysis, clear prose and formal logic.",
+    "src": "https://en.wikipedia.org/wiki/Analytic_philosophy"
+  },
+  {
+    "id": "hedonism",
+    "name": "Hedonism",
+    "emoji": "🍷",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Philosophical views that prioritize pleasure.",
+    "src": "https://en.wikipedia.org/wiki/Hedonism"
+  },
+  {
+    "id": "legalism_chinese_philosophy",
+    "name": "Legalism",
+    "emoji": "⚖️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A Chinese school emphasizing law, administration and regulation.",
+    "src": "https://en.wikipedia.org/wiki/Legalism_(Chinese_philosophy)"
+  },
+  {
+    "id": "phenomenology_philosophy",
+    "name": "Phenomenology",
+    "emoji": "👁️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A philosophical study of conscious experience.",
+    "src": "https://en.wikipedia.org/wiki/Phenomenology_(philosophy)"
+  },
+  {
+    "id": "positivism",
+    "name": "Positivism",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The school holding that genuine knowledge comes from sensory experience, reason and logic.",
+    "src": "https://en.wikipedia.org/wiki/Positivism"
+  },
+  {
+    "id": "pragmatism",
+    "name": "Pragmatism",
+    "emoji": "🛠️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A tradition that treats language and thought as tools for solving problems.",
+    "src": "https://en.wikipedia.org/wiki/Pragmatism"
+  },
+  {
+    "id": "sophist",
+    "name": "Sophist",
+    "emoji": "🗣️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A professional travelling teacher in ancient Greece.",
+    "src": "https://en.wikipedia.org/wiki/Sophist"
+  },
+  {
+    "id": "thomism",
+    "name": "Thomism",
+    "emoji": "⛪",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A philosophical and theological school of the Dominican tradition.",
+    "src": "https://en.wikipedia.org/wiki/Thomism"
+  },
+  {
+    "id": "buddhist_philosophy",
+    "name": "Buddhist Philosophy",
+    "emoji": "☸️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The philosophical system that developed within Buddhism.",
+    "src": "https://en.wikipedia.org/wiki/Buddhist_philosophy"
+  },
+  {
+    "id": "christian_philosophy",
+    "name": "Christian Philosophy",
+    "emoji": "✝️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Philosophy developed by Christians or in relation to Christianity.",
+    "src": "https://en.wikipedia.org/wiki/Christian_philosophy"
+  },
+  {
+    "id": "hindu_philosophy",
+    "name": "Hindu Philosophy",
+    "emoji": "🕉️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The philosophical systems that developed alongside Hindu traditions.",
+    "src": "https://en.wikipedia.org/wiki/Hindu_philosophy"
+  },
+  {
+    "id": "islamic_philosophy",
+    "name": "Islamic Philosophy",
+    "emoji": "☪️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Philosophy that emerges from the Islamic tradition.",
+    "src": "https://en.wikipedia.org/wiki/Islamic_philosophy"
+  },
+  {
+    "id": "good_and_evil",
+    "name": "Good and Evil",
+    "emoji": "☯️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A common dichotomy in philosophy, religion and psychology.",
+    "src": "https://en.wikipedia.org/wiki/Good_and_evil"
+  },
+  {
+    "id": "is_ought_problem",
+    "name": "Is–Ought Problem",
+    "emoji": "⚖️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The question of whether moral statements can follow from statements of fact.",
+    "src": "https://en.wikipedia.org/wiki/Is–ought_problem"
+  },
+  {
+    "id": "plagiarism",
+    "name": "Plagiarism",
+    "emoji": "📋",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Presenting another person's words or ideas as one's own.",
+    "src": "https://en.wikipedia.org/wiki/Plagiarism"
+  },
+  {
+    "id": "value_ethics",
+    "name": "Value (Ethics)",
+    "emoji": "💎",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The degree of importance of something or an action.",
+    "src": "https://en.wikipedia.org/wiki/Value_(ethics)"
+  },
+  {
+    "id": "consequentialism",
+    "name": "Consequentialism",
+    "emoji": "🎯",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The ethical view that consequences decide whether conduct is right.",
+    "src": "https://en.wikipedia.org/wiki/Consequentialism"
+  },
+  {
+    "id": "a_priori_and_a_posteriori",
+    "name": "A Priori and A Posteriori",
+    "emoji": "🧠",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The two categories of knowledge: independent of experience, or dependent on it.",
+    "src": "https://en.wikipedia.org/wiki/A_priori_and_a_posteriori"
+  },
+  {
+    "id": "critical_thinking",
+    "name": "Critical Thinking",
+    "emoji": "🧐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Analyzing facts, evidence and arguments to reach sound conclusions.",
+    "src": "https://en.wikipedia.org/wiki/Critical_thinking"
+  },
+  {
+    "id": "dialectic",
+    "name": "Dialectic",
+    "emoji": "💬",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A method of argument that progresses by resolving contradictions.",
+    "src": "https://en.wikipedia.org/wiki/Dialectic"
+  },
+  {
+    "id": "common_sense",
+    "name": "Common Sense",
+    "emoji": "🧠",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Knowledge and judgement held more or less universally without reflection.",
+    "src": "https://en.wikipedia.org/wiki/Common_sense"
+  },
+  {
+    "id": "experience",
+    "name": "Experience",
+    "emoji": "🧗",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Conscious events, perceptions and the practical knowledge they produce.",
+    "src": "https://en.wikipedia.org/wiki/Experience"
+  },
+  {
+    "id": "luck",
+    "name": "Luck",
+    "emoji": "🍀",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The belief that improbable events befall us.",
+    "src": "https://en.wikipedia.org/wiki/Luck"
+  },
+  {
+    "id": "opinion",
+    "name": "Opinion",
+    "emoji": "💬",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A judgement or viewpoint that is not conclusive.",
+    "src": "https://en.wikipedia.org/wiki/Opinion"
+  },
+  {
+    "id": "proposition",
+    "name": "Proposition",
+    "emoji": "📝",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The meaning of a declarative sentence and a bearer of truth.",
+    "src": "https://en.wikipedia.org/wiki/Proposition"
+  },
+  {
+    "id": "worldview",
+    "name": "Worldview",
+    "emoji": "🌐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A fundamental orientation of a person or society toward the world.",
+    "src": "https://en.wikipedia.org/wiki/Worldview"
+  },
+  {
+    "id": "naturalism_philosophy",
+    "name": "Naturalism",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The position that only natural laws and forces operate in the universe.",
+    "src": "https://en.wikipedia.org/wiki/Naturalism_(philosophy)"
+  },
+  {
+    "id": "ontology",
+    "name": "Ontology",
+    "emoji": "🧩",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The philosophical study of being.",
+    "src": "https://en.wikipedia.org/wiki/Ontology"
+  },
+  {
+    "id": "abstraction",
+    "name": "Abstraction",
+    "emoji": "🔷",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The process of generalizing concepts from specific examples.",
+    "src": "https://en.wikipedia.org/wiki/Abstraction"
+  },
+  {
+    "id": "existence",
+    "name": "Existence",
+    "emoji": "🌌",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The state of having being or reality.",
+    "src": "https://en.wikipedia.org/wiki/Existence"
+  },
+  {
+    "id": "meaning_of_life",
+    "name": "Meaning of Life",
+    "emoji": "❓",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The question of life's inherent significance.",
+    "src": "https://en.wikipedia.org/wiki/Meaning_of_life"
+  },
+  {
+    "id": "mental_representation",
+    "name": "Mental Representation",
+    "emoji": "🧠",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A hypothetical internal symbol that represents external reality.",
+    "src": "https://en.wikipedia.org/wiki/Mental_representation"
+  },
+  {
+    "id": "reality",
+    "name": "Reality",
+    "emoji": "🌍",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The totality of existence, contrasted with appearance.",
+    "src": "https://en.wikipedia.org/wiki/Reality"
+  },
+  {
+    "id": "idealism",
+    "name": "Idealism",
+    "emoji": "💭",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The view that consciousness or spirit is the highest reality.",
+    "src": "https://en.wikipedia.org/wiki/Idealism"
+  },
+  {
+    "id": "materialism",
+    "name": "Materialism",
+    "emoji": "🧱",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The view that matter is the fundamental substance of nature.",
+    "src": "https://en.wikipedia.org/wiki/Materialism"
+  },
+  {
+    "id": "mind_body_dualism",
+    "name": "Mind–Body Dualism",
+    "emoji": "🧠",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The view that mind and body are distinct and separable.",
+    "src": "https://en.wikipedia.org/wiki/Mind–body_dualism"
+  },
+  {
+    "id": "monism",
+    "name": "Monism",
+    "emoji": "⭕",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The attribution of oneness to a concept such as existence.",
+    "src": "https://en.wikipedia.org/wiki/Monism"
+  },
+  {
+    "id": "philosophy_of_science",
+    "name": "Philosophy of Science",
+    "emoji": "🔭",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The branch of philosophy concerned with the foundations and methods of science.",
+    "src": "https://en.wikipedia.org/wiki/Philosophy_of_science"
+  },
+  {
+    "id": "natural_philosophy",
+    "name": "Natural Philosophy",
+    "emoji": "🔭",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The older systematic study of nature and the physical universe.",
+    "src": "https://en.wikipedia.org/wiki/Natural_philosophy"
+  },
+  {
+    "id": "paradigm",
+    "name": "Paradigm",
+    "emoji": "🔄",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A distinct set of concepts and thought patterns in a field.",
+    "src": "https://en.wikipedia.org/wiki/Paradigm"
+  },
+  {
+    "id": "pseudoscience",
+    "name": "Pseudoscience",
+    "emoji": "🔮",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Claims presented as scientific that are incompatible with the scientific method.",
+    "src": "https://en.wikipedia.org/wiki/Pseudoscience"
+  },
+  {
+    "id": "reductionism",
+    "name": "Reductionism",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The idea that complex phenomena can be described in terms of simpler ones.",
+    "src": "https://en.wikipedia.org/wiki/Reductionism"
+  },
+  {
+    "id": "philosophy_of_language",
+    "name": "Philosophy of Language",
+    "emoji": "🗣️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The study of the nature of language.",
+    "src": "https://en.wikipedia.org/wiki/Philosophy_of_language"
+  },
+  {
+    "id": "philosophy_of_mathematics",
+    "name": "Philosophy of Mathematics",
+    "emoji": "➗",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The branch of philosophy that deals with the nature of mathematics.",
+    "src": "https://en.wikipedia.org/wiki/Philosophy_of_mathematics"
+  },
+  {
+    "id": "philosophy_of_mind",
+    "name": "Philosophy of Mind",
+    "emoji": "🧠",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The branch of philosophy that deals with the nature of the mind.",
+    "src": "https://en.wikipedia.org/wiki/Philosophy_of_mind"
+  },
+  {
+    "id": "philosophy_of_religion",
+    "name": "Philosophy of Religion",
+    "emoji": "🕊️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The philosophical examination of religious themes and concepts.",
+    "src": "https://en.wikipedia.org/wiki/Philosophy_of_religion"
+  },
+  {
+    "id": "political_philosophy",
+    "name": "Political Philosophy",
+    "emoji": "🏛️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The study of the foundations of politics.",
+    "src": "https://en.wikipedia.org/wiki/Political_philosophy"
+  },
+  {
+    "id": "comparative_religion",
+    "name": "Comparative Religion",
+    "emoji": "📚",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "The systematic comparison of the world's religions.",
+    "src": "https://en.wikipedia.org/wiki/Comparative_religion"
+  },
+  {
+    "id": "folk_religion",
+    "name": "Folk Religion",
+    "emoji": "🏮",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "Forms of religion distinct from organized religion.",
+    "src": "https://en.wikipedia.org/wiki/Folk_religion"
+  },
+  {
+    "id": "religious_studies",
+    "name": "Religious Studies",
+    "emoji": "📖",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "The study of religion from a historical or scientific perspective.",
+    "src": "https://en.wikipedia.org/wiki/Religious_studies"
+  },
+  {
+    "id": "goddess",
+    "name": "Goddess",
+    "emoji": "👸",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "A female deity.",
+    "src": "https://en.wikipedia.org/wiki/Goddess"
+  },
+  {
+    "id": "lords_prayer",
+    "name": "Lord's Prayer",
+    "emoji": "🙏",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "A central Christian prayer, also known as Our Father.",
+    "src": "https://en.wikipedia.org/wiki/Lord's_Prayer"
+  },
+  {
+    "id": "apologetics",
+    "name": "Apologetics",
+    "emoji": "🛡️",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "The defense of religious doctrines through systematic argument.",
+    "src": "https://en.wikipedia.org/wiki/Apologetics"
+  },
+  {
+    "id": "apostasy",
+    "name": "Apostasy",
+    "emoji": "🚪",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "The abandonment or renunciation of a religion.",
+    "src": "https://en.wikipedia.org/wiki/Apostasy"
+  },
+  {
+    "id": "celibacy",
+    "name": "Celibacy",
+    "emoji": "🔒",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "The state of voluntarily being unmarried, often tied to a religious role.",
+    "src": "https://en.wikipedia.org/wiki/Celibacy"
+  },
+  {
+    "id": "iconoclasm",
+    "name": "Iconoclasm",
+    "emoji": "🔨",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "The destruction of icons and images, often for religious or political reasons.",
+    "src": "https://en.wikipedia.org/wiki/Iconoclasm"
+  },
+  {
+    "id": "idolatry",
+    "name": "Idolatry",
+    "emoji": "🗿",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "The worship of an idol as though it were a deity.",
+    "src": "https://en.wikipedia.org/wiki/Idolatry"
+  },
+  {
+    "id": "liturgy",
+    "name": "Liturgy",
+    "emoji": "🕯️",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "The customary public ritual of worship of a religious group.",
+    "src": "https://en.wikipedia.org/wiki/Liturgy"
+  },
+  {
+    "id": "prophecy",
+    "name": "Prophecy",
+    "emoji": "🔮",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "A message communicated to a prophet by a supernatural entity.",
+    "src": "https://en.wikipedia.org/wiki/Prophecy"
+  },
+  {
+    "id": "religious_conversion",
+    "name": "Religious Conversion",
+    "emoji": "🔄",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "The adoption of one religious denomination's beliefs to the exclusion of others.",
+    "src": "https://en.wikipedia.org/wiki/Religious_conversion"
+  },
+  {
+    "id": "veneration_of_the_dead",
+    "name": "Veneration of the Dead",
+    "emoji": "🕯️",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "Honoring the dead, including ancestors, out of love and respect.",
+    "src": "https://en.wikipedia.org/wiki/Veneration_of_the_dead"
+  },
+  {
+    "id": "spirituality",
+    "name": "Spirituality",
+    "emoji": "🧘",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "A concept whose meaning has developed and expanded over time.",
+    "src": "https://en.wikipedia.org/wiki/Spirituality"
+  },
+  {
+    "id": "eschatology",
+    "name": "Eschatology",
+    "emoji": "⏳",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "Beliefs about the end of the age, of history or of the world.",
+    "src": "https://en.wikipedia.org/wiki/Eschatology"
+  },
+  {
+    "id": "mandate_of_heaven",
+    "name": "Mandate of Heaven",
+    "emoji": "☁️",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "A Chinese doctrine in which Heaven grants a virtuous ruler the right to rule.",
+    "src": "https://en.wikipedia.org/wiki/Mandate_of_Heaven"
+  },
+  {
+    "id": "mystical_or_religious_experience",
+    "name": "Mystical Experience",
+    "emoji": "✨",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "A subjective experience interpreted within a religious framework.",
+    "src": "https://en.wikipedia.org/wiki/Mystical_or_religious_experience"
+  },
+  {
+    "id": "paranormal",
+    "name": "Paranormal",
+    "emoji": "👻",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "Phenomena said to lie beyond normal scientific understanding.",
+    "src": "https://en.wikipedia.org/wiki/Paranormal"
+  },
+  {
+    "id": "supernatural",
+    "name": "Supernatural",
+    "emoji": "✨",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "Phenomena or entities beyond the laws of nature.",
+    "src": "https://en.wikipedia.org/wiki/Supernatural"
+  },
+  {
+    "id": "sacredness",
+    "name": "Sacredness",
+    "emoji": "🛐",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "Something set apart for the worship of a deity or worthy of reverence.",
+    "src": "https://en.wikipedia.org/wiki/Sacredness"
+  },
+  {
+    "id": "burial",
+    "name": "Burial",
+    "emoji": "⚰️",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "A method of final disposition in which a dead body is placed into the ground or a structure.",
+    "src": "https://en.wikipedia.org/wiki/Burial"
+  },
+  {
+    "id": "cemetery",
+    "name": "Cemetery",
+    "emoji": "🪦",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "A place where the remains of many dead people are buried.",
+    "src": "https://en.wikipedia.org/wiki/Cemetery"
+  },
+  {
+    "id": "anti_clericalism",
+    "name": "Anti-Clericalism",
+    "emoji": "✊",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "Opposition to religious authority in social or political matters.",
+    "src": "https://en.wikipedia.org/wiki/Anti-clericalism"
+  },
+  {
+    "id": "creed",
+    "name": "Creed",
+    "emoji": "📜",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "A statement of the shared beliefs of a community.",
+    "src": "https://en.wikipedia.org/wiki/Creed"
+  },
+  {
+    "id": "cult",
+    "name": "Cult",
+    "emoji": "🔥",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "A social group with unusual, often extreme, beliefs and rituals.",
+    "src": "https://en.wikipedia.org/wiki/Cult"
+  },
+  {
+    "id": "schism",
+    "name": "Schism",
+    "emoji": "✂️",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "A division within an organization, most often a religious body.",
+    "src": "https://en.wikipedia.org/wiki/Schism"
+  },
+  {
+    "id": "sect",
+    "name": "Sect",
+    "emoji": "🔱",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "A subgroup that emerges as an offshoot of a larger belief system.",
+    "src": "https://en.wikipedia.org/wiki/Sect"
+  },
+  {
+    "id": "state_religion",
+    "name": "State Religion",
+    "emoji": "🏛️",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "A religion officially endorsed by a sovereign state.",
+    "src": "https://en.wikipedia.org/wiki/State_religion"
+  },
+  {
+    "id": "theism",
+    "name": "Theism",
+    "emoji": "☝️",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "Belief in God or gods.",
+    "src": "https://en.wikipedia.org/wiki/Theism"
+  },
+  {
+    "id": "fundamentalism",
+    "name": "Fundamentalism",
+    "emoji": "📕",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "A tendency toward strict literal interpretation of scriptures and dogmas.",
+    "src": "https://en.wikipedia.org/wiki/Fundamentalism"
+  },
+  {
+    "id": "orthodoxy",
+    "name": "Orthodoxy",
+    "emoji": "☦️",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "Adherence to a correct or classically accepted creed.",
+    "src": "https://en.wikipedia.org/wiki/Orthodoxy"
+  },
+  {
+    "id": "paganism",
+    "name": "Paganism",
+    "emoji": "🌳",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "A term for polytheistic religious practices, from early Christianity.",
+    "src": "https://en.wikipedia.org/wiki/Paganism"
+  },
+  {
+    "id": "panentheism",
+    "name": "Panentheism",
+    "emoji": "🌌",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "The belief that the divine pervades the universe and extends beyond it.",
+    "src": "https://en.wikipedia.org/wiki/Panentheism"
+  },
+  {
+    "id": "freethought",
+    "name": "Freethought",
+    "emoji": "🕊️",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "A movement of beliefs formed independently of authority or dogma.",
+    "src": "https://en.wikipedia.org/wiki/Freethought"
+  },
+  {
+    "id": "gnosticism",
+    "name": "Gnosticism",
+    "emoji": "🗝️",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "Religious and philosophical systems of early Christian sects and other faiths.",
+    "src": "https://en.wikipedia.org/wiki/Gnosticism"
+  },
+  {
+    "id": "old_testament",
+    "name": "Old Testament",
+    "emoji": "📜",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "The first division of the Christian Bible.",
+    "src": "https://en.wikipedia.org/wiki/Old_Testament"
+  },
+  {
+    "id": "new_testament",
+    "name": "New Testament",
+    "emoji": "📖",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "The second division of the Christian Bible.",
+    "src": "https://en.wikipedia.org/wiki/New_Testament"
+  },
+  {
+    "id": "holy_spirit",
+    "name": "Holy Spirit",
+    "emoji": "🕊️",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "A concept within Abrahamic religions.",
+    "src": "https://en.wikipedia.org/wiki/Holy_Spirit"
+  },
+  {
+    "id": "predestination",
+    "name": "Predestination",
+    "emoji": "🎯",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "The doctrine that all events have been willed by God.",
+    "src": "https://en.wikipedia.org/wiki/Predestination"
+  },
+  {
+    "id": "halakha",
+    "name": "Halakha",
+    "emoji": "⚖️",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "The collective body of Jewish religious law.",
+    "src": "https://en.wikipedia.org/wiki/Halakha"
+  },
+  {
+    "id": "kashrut",
+    "name": "Kashrut",
+    "emoji": "🍽️",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "The Jewish dietary laws.",
+    "src": "https://en.wikipedia.org/wiki/Kashrut"
+  },
+  {
+    "id": "catholic_church",
+    "name": "Catholic Church",
+    "emoji": "⛪",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "The largest Christian church.",
+    "src": "https://en.wikipedia.org/wiki/Catholic_Church"
+  },
+  {
+    "id": "eastern_catholic_churches",
+    "name": "Eastern Catholic Churches",
+    "emoji": "⛪",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "Eastern Christian churches in full communion with the pope.",
+    "src": "https://en.wikipedia.org/wiki/Eastern_Catholic_Churches"
+  },
+  {
+    "id": "eastern_christianity",
+    "name": "Eastern Christianity",
+    "emoji": "☦️",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "One of the two major classifications of Christian church bodies.",
+    "src": "https://en.wikipedia.org/wiki/Eastern_Christianity"
+  },
+  {
+    "id": "eastern_orthodox_church",
+    "name": "Eastern Orthodox Church",
+    "emoji": "☦️",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "The second-largest Christian body in the world.",
+    "src": "https://en.wikipedia.org/wiki/Eastern_Orthodox_Church"
+  },
+  {
+    "id": "ecumenical_patriarchate_of_constantinople",
+    "name": "Ecumenical Patriarchate",
+    "emoji": "☦️",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "One of the autocephalous churches of the Eastern Orthodox Church.",
+    "src": "https://en.wikipedia.org/wiki/Ecumenical_Patriarchate_of_Constantinople"
+  },
+  {
+    "id": "russian_orthodox_church",
+    "name": "Russian Orthodox Church",
+    "emoji": "☦️",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "The largest of the Eastern Orthodox churches.",
+    "src": "https://en.wikipedia.org/wiki/Russian_Orthodox_Church"
+  },
+  {
+    "id": "oriental_orthodox_churches",
+    "name": "Oriental Orthodox Churches",
+    "emoji": "✝️",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "A communion of Eastern Christian churches.",
+    "src": "https://en.wikipedia.org/wiki/Oriental_Orthodox_Churches"
+  },
+  {
+    "id": "coptic_orthodox_church",
+    "name": "Coptic Orthodox Church",
+    "emoji": "☥",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "An Oriental Orthodox church based in Egypt.",
+    "src": "https://en.wikipedia.org/wiki/Coptic_Orthodox_Church"
+  },
+  {
+    "id": "ethiopian_orthodox_tewahedo_church",
+    "name": "Ethiopian Orthodox Church",
+    "emoji": "✝️",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "The largest of the Oriental Orthodox Churches.",
+    "src": "https://en.wikipedia.org/wiki/Ethiopian_Orthodox_Tewahedo_Church"
+  },
+  {
+    "id": "nontrinitarianism",
+    "name": "Nontrinitarianism",
+    "emoji": "1️⃣",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "Christianity that does not adhere to the doctrine of the Trinity.",
+    "src": "https://en.wikipedia.org/wiki/Nontrinitarianism"
+  },
+  {
+    "id": "unitarianism",
+    "name": "Unitarianism",
+    "emoji": "🕊️",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "A nontrinitarian movement affirming the unitary nature of God.",
+    "src": "https://en.wikipedia.org/wiki/Unitarianism"
+  },
+  {
+    "id": "protestantism",
+    "name": "Protestantism",
+    "emoji": "⛪",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "A form of Christianity that originated in the Reformation.",
+    "src": "https://en.wikipedia.org/wiki/Protestantism"
+  },
+  {
+    "id": "arminianism",
+    "name": "Arminianism",
+    "emoji": "📘",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "A theological tradition within Protestantism.",
+    "src": "https://en.wikipedia.org/wiki/Arminianism"
+  },
+  {
+    "id": "reformed_christianity",
+    "name": "Reformed Christianity",
+    "emoji": "📘",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "A major branch of Protestantism, also called Calvinism.",
+    "src": "https://en.wikipedia.org/wiki/Reformed_Christianity"
+  },
+  {
+    "id": "evangelicalism",
+    "name": "Evangelicalism",
+    "emoji": "📣",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "A Protestant movement that emphasizes preaching the gospel.",
+    "src": "https://en.wikipedia.org/wiki/Evangelicalism"
+  },
+  {
+    "id": "catholicity",
+    "name": "Catholicity",
+    "emoji": "⛪",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "Beliefs and practices widely accepted across Christian denominations.",
+    "src": "https://en.wikipedia.org/wiki/Catholicity"
+  },
+  {
+    "id": "purgatory",
+    "name": "Purgatory",
+    "emoji": "🔥",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "A Catholic belief in a state of purification before Heaven.",
+    "src": "https://en.wikipedia.org/wiki/Purgatory"
+  },
+  {
+    "id": "ecumenism",
+    "name": "Ecumenism",
+    "emoji": "🤝",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "The principle that Christians of different denominations should work together.",
+    "src": "https://en.wikipedia.org/wiki/Ecumenism"
+  },
+  {
+    "id": "grace_in_christianity",
+    "name": "Grace in Christianity",
+    "emoji": "🎁",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "God's favor, a gift that cannot be earned.",
+    "src": "https://en.wikipedia.org/wiki/Grace_in_Christianity"
+  },
+  {
+    "id": "second_coming",
+    "name": "Second Coming",
+    "emoji": "☁️",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "The belief that Jesus Christ will return to Earth.",
+    "src": "https://en.wikipedia.org/wiki/Second_Coming"
+  },
+  {
+    "id": "islamic_schools_and_branches",
+    "name": "Islamic Schools and Branches",
+    "emoji": "☪️",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "The sects, legal schools and theological schools of Islam.",
+    "src": "https://en.wikipedia.org/wiki/Islamic_schools_and_branches"
+  },
+  {
+    "id": "fiqh",
+    "name": "Fiqh",
+    "emoji": "⚖️",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "Islamic jurisprudence.",
+    "src": "https://en.wikipedia.org/wiki/Fiqh"
+  },
+  {
+    "id": "halal",
+    "name": "Halal",
+    "emoji": "✅",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "What is permissible in Islam.",
+    "src": "https://en.wikipedia.org/wiki/Halal"
+  },
+  {
+    "id": "haram",
+    "name": "Haram",
+    "emoji": "⛔",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "An Arabic term meaning sinful or prohibited.",
+    "src": "https://en.wikipedia.org/wiki/Haram"
+  },
+  {
+    "id": "imam",
+    "name": "Imam",
+    "emoji": "🕌",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "The leader of prayers in Islam.",
+    "src": "https://en.wikipedia.org/wiki/Imam"
+  },
+  {
+    "id": "manichaeism",
+    "name": "Manichaeism",
+    "emoji": "☯️",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "A dualistic religion of light against darkness.",
+    "src": "https://en.wikipedia.org/wiki/Manichaeism"
+  },
+  {
+    "id": "dhammapada",
+    "name": "Dhammapada",
+    "emoji": "📿",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "A collection of sayings in verse, a well-known Buddhist scripture.",
+    "src": "https://en.wikipedia.org/wiki/Dhammapada"
+  },
+  {
+    "id": "qi",
+    "name": "Qi",
+    "emoji": "💨",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "A vital force believed to be part of all living things.",
+    "src": "https://en.wikipedia.org/wiki/Qi"
+  },
+  {
+    "id": "swastika",
+    "name": "Swastika",
+    "emoji": "☸️",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "An ancient cross-cultural symbol of many religions.",
+    "src": "https://en.wikipedia.org/wiki/Swastika"
+  },
+  {
+    "id": "tantra",
+    "name": "Tantra",
+    "emoji": "🕉️",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "An esoteric yogic tradition of the Indian subcontinent.",
+    "src": "https://en.wikipedia.org/wiki/Tantra"
+  },
+  {
+    "id": "diamond_sutra",
+    "name": "Diamond Sutra",
+    "emoji": "💎",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "A Mahayana Buddhist sutra of the perfection of wisdom.",
+    "src": "https://en.wikipedia.org/wiki/Diamond_Sutra"
+  },
+  {
+    "id": "pali_canon",
+    "name": "Pali Canon",
+    "emoji": "📜",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "The standard scriptures of Theravada Buddhism.",
+    "src": "https://en.wikipedia.org/wiki/Pali_Canon"
+  },
+  {
+    "id": "buddhist_canons",
+    "name": "Buddhist Canons",
+    "emoji": "📜",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "The various scriptural collections of Buddhism.",
+    "src": "https://en.wikipedia.org/wiki/Buddhist_canons"
+  },
+  {
+    "id": "vajrayana",
+    "name": "Vajrayana",
+    "emoji": "⚡",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "A tantric vehicle of Mahayana Buddhism.",
+    "src": "https://en.wikipedia.org/wiki/Vajrayana"
+  },
+  {
+    "id": "kumbh_mela",
+    "name": "Kumbh Mela",
+    "emoji": "🛕",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "A Hindu pilgrimage held at four locations.",
+    "src": "https://en.wikipedia.org/wiki/Kumbh_Mela"
+  },
+  {
+    "id": "ramayana",
+    "name": "Ramayana",
+    "emoji": "📜",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "A Hindu epic poem from ancient India.",
+    "src": "https://en.wikipedia.org/wiki/Ramayana"
+  },
+  {
+    "id": "vedanta",
+    "name": "Vedanta",
+    "emoji": "🕉️",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "One of the orthodox schools of Hindu philosophy.",
+    "src": "https://en.wikipedia.org/wiki/Vedanta"
+  },
+  {
+    "id": "tao_te_ching",
+    "name": "Tao Te Ching",
+    "emoji": "📜",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "An ancient Chinese classic and foundational Taoist text.",
+    "src": "https://en.wikipedia.org/wiki/Tao_Te_Ching"
+  },
+  {
+    "id": "zhuangzi_book",
+    "name": "Zhuangzi",
+    "emoji": "🦋",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "An ancient Chinese text and a foundational Taoist work.",
+    "src": "https://en.wikipedia.org/wiki/Zhuangzi_(book)"
+  },
+  {
+    "id": "kojiki",
+    "name": "Kojiki",
+    "emoji": "📜",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "An early Japanese chronicle of myths and legends.",
+    "src": "https://en.wikipedia.org/wiki/Kojiki"
+  },
+  {
+    "id": "avesta",
+    "name": "Avesta",
+    "emoji": "🔥",
+    "shelf": "workshop",
+    "tags": [
+      "belief"
+    ],
+    "fact": "The religious texts of Zoroastrianism.",
+    "src": "https://en.wikipedia.org/wiki/Avesta"
+  },
+  {
+    "id": "carrion",
+    "name": "Carrion",
+    "emoji": "🍖",
+    "shelf": "workshop",
+    "tags": [
+      "animal"
+    ],
+    "fact": "The decaying flesh of dead animals. It starts to decay at the moment of death.",
+    "src": "https://en.wikipedia.org/wiki/Carrion"
+  },
+  {
+    "id": "rigor_mortis",
+    "name": "Rigor Mortis",
+    "emoji": "🥶",
+    "shelf": "workshop",
+    "tags": [
+      "body"
+    ],
+    "fact": "Muscle stiffening after death: in humans it can start within an hour and peaks near 13 hours.",
+    "src": "https://en.wikipedia.org/wiki/Rigor_mortis"
+  },
+  {
+    "id": "putrefaction",
+    "name": "Putrefaction",
+    "emoji": "🤢",
+    "shelf": "workshop",
+    "tags": [
+      "body"
+    ],
+    "fact": "The fifth stage of death, when bacteria and fungi digest the body and the smell begins.",
+    "src": "https://en.wikipedia.org/wiki/Putrefaction"
+  },
+  {
+    "id": "headstone",
+    "name": "Headstone",
+    "emoji": "🪦",
+    "shelf": "workshop",
+    "tags": [
+      "build",
+      "society"
+    ],
+    "fact": "A tombstone was first the stone lid of a stone coffin. Granite is among the most durable.",
+    "src": "https://en.wikipedia.org/wiki/Headstone"
+  },
+  {
+    "id": "burying_beetle",
+    "name": "Burying Beetle",
+    "emoji": "🪲",
+    "shelf": "workshop",
+    "tags": [
+      "animal",
+      "wild"
+    ],
+    "fact": "Finds a dead animal by smell, buries it from rivals, and both parents raise the young on it.",
+    "src": "https://en.wikipedia.org/wiki/Burying_beetle"
+  },
+  {
+    "id": "forensic_entomology",
+    "name": "Forensic Entomology",
+    "emoji": "🔎",
+    "shelf": "workshop",
+    "tags": [
+      "idea",
+      "society"
+    ],
+    "fact": "Reading the insects on a body to estimate how long since death.",
+    "src": "https://en.wikipedia.org/wiki/Forensic_entomology"
+  },
+  {
+    "id": "chinese_folk_religion",
+    "name": "Chinese Folk Religion",
+    "emoji": "🏮",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The traditional religious practices of Han Chinese.",
+    "src": "https://en.wikipedia.org/wiki/Chinese_folk_religion"
+  },
+  {
+    "id": "african_traditional_religions",
+    "name": "African Traditional Religions",
+    "emoji": "🥁",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The diverse, mostly oral religions of Africa.",
+    "src": "https://en.wikipedia.org/wiki/African_traditional_religions"
+  },
+  {
+    "id": "yoruba_religion",
+    "name": "Yoruba Religion",
+    "emoji": "🥁",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The traditional religion of the Yoruba people.",
+    "src": "https://en.wikipedia.org/wiki/Yoruba_religion"
+  },
+  {
+    "id": "prehistoric_religion",
+    "name": "Prehistoric Religion",
+    "emoji": "🪨",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The religious practice of prehistoric cultures.",
+    "src": "https://en.wikipedia.org/wiki/Prehistoric_religion"
+  },
+  {
+    "id": "ancient_celtic_religion",
+    "name": "Ancient Celtic Religion",
+    "emoji": "☘️",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The religion of the ancient Celtic peoples of Europe.",
+    "src": "https://en.wikipedia.org/wiki/Ancient_Celtic_religion"
+  },
+  {
+    "id": "ancient_egyptian_religion",
+    "name": "Ancient Egyptian Religion",
+    "emoji": "☥",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The polytheistic beliefs and rituals of ancient Egypt.",
+    "src": "https://en.wikipedia.org/wiki/Ancient_Egyptian_religion"
+  },
+  {
+    "id": "ancient_greek_religion",
+    "name": "Ancient Greek Religion",
+    "emoji": "🏛️",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The polytheistic religion of ancient Greece.",
+    "src": "https://en.wikipedia.org/wiki/Ancient_Greek_religion"
+  },
+  {
+    "id": "ancient_mesopotamian_religion",
+    "name": "Ancient Mesopotamian Religion",
+    "emoji": "🏺",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The religion of ancient Mesopotamia.",
+    "src": "https://en.wikipedia.org/wiki/Ancient_Mesopotamian_religion"
+  },
+  {
+    "id": "aztec_religion",
+    "name": "Aztec Religion",
+    "emoji": "🌞",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The polytheistic religion of the Aztecs.",
+    "src": "https://en.wikipedia.org/wiki/Aztec_religion"
+  },
+  {
+    "id": "germanic_paganism",
+    "name": "Germanic Paganism",
+    "emoji": "🌲",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The traditional religion of the Germanic peoples.",
+    "src": "https://en.wikipedia.org/wiki/Germanic_paganism"
+  },
+  {
+    "id": "maya_religion",
+    "name": "Maya Religion",
+    "emoji": "🌞",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The traditional religion of the Maya peoples.",
+    "src": "https://en.wikipedia.org/wiki/Maya_religion"
+  },
+  {
+    "id": "old_norse_religion",
+    "name": "Old Norse Religion",
+    "emoji": "⚡",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The pagan religion of the North Germanic peoples.",
+    "src": "https://en.wikipedia.org/wiki/Old_Norse_religion"
+  },
+  {
+    "id": "religion_in_ancient_rome",
+    "name": "Religion in Ancient Rome",
+    "emoji": "🏛️",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The polytheistic religion of ancient Rome.",
+    "src": "https://en.wikipedia.org/wiki/Religion_in_ancient_Rome"
+  },
+  {
+    "id": "religion_in_pre_islamic_arabia",
+    "name": "Pre-Islamic Arabian Religion",
+    "emoji": "🌙",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Arab polytheism before Islam.",
+    "src": "https://en.wikipedia.org/wiki/Religion_in_pre-Islamic_Arabia"
+  },
+  {
+    "id": "slavic_paganism",
+    "name": "Slavic Paganism",
+    "emoji": "🌳",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The pre-Christian religion of the Slavic peoples.",
+    "src": "https://en.wikipedia.org/wiki/Slavic_paganism"
+  },
+  {
+    "id": "western_esotericism",
+    "name": "Western Esotericism",
+    "emoji": "🔮",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "A range of loosely related Western ideas and movements.",
+    "src": "https://en.wikipedia.org/wiki/Western_esotericism"
+  },
+  {
+    "id": "freemasonry",
+    "name": "Freemasonry",
+    "emoji": "📐",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Fraternal groups tracing their origins to medieval stonemasons.",
+    "src": "https://en.wikipedia.org/wiki/Freemasonry"
+  },
+  {
+    "id": "new_age",
+    "name": "New Age",
+    "emoji": "🔮",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "A range of modern Western spiritual practices and beliefs.",
+    "src": "https://en.wikipedia.org/wiki/New_Age"
+  },
+  {
+    "id": "new_religious_movement",
+    "name": "New Religious Movement",
+    "emoji": "🆕",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "A religious group of modern origin outside the mainstream.",
+    "src": "https://en.wikipedia.org/wiki/New_religious_movement"
+  },
+  {
+    "id": "modern_paganism",
+    "name": "Modern Paganism",
+    "emoji": "🌙",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "New religious movements drawing on pre-modern pagan beliefs.",
+    "src": "https://en.wikipedia.org/wiki/Modern_paganism"
+  },
+  {
+    "id": "satanism",
+    "name": "Satanism",
+    "emoji": "🐐",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Beliefs based on Satan.",
+    "src": "https://en.wikipedia.org/wiki/Satanism"
+  },
+  {
+    "id": "legendary_creature",
+    "name": "Legendary Creature",
+    "emoji": "🐉",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "A supernatural being of folklore and legend.",
+    "src": "https://en.wikipedia.org/wiki/Legendary_creature"
+  },
+  {
+    "id": "comparative_mythology",
+    "name": "Comparative Mythology",
+    "emoji": "📚",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The comparison of myths across cultures.",
+    "src": "https://en.wikipedia.org/wiki/Comparative_mythology"
+  },
+  {
+    "id": "paradise",
+    "name": "Paradise",
+    "emoji": "🌴",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "A place of everlasting happiness.",
+    "src": "https://en.wikipedia.org/wiki/Paradise"
+  },
+  {
+    "id": "adam_and_eve",
+    "name": "Adam and Eve",
+    "emoji": "🍎",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The first man and woman of the Abrahamic creation myth.",
+    "src": "https://en.wikipedia.org/wiki/Adam_and_Eve"
+  },
+  {
+    "id": "cain_and_abel",
+    "name": "Cain and Abel",
+    "emoji": "🗡️",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The first two sons of Adam and Eve.",
+    "src": "https://en.wikipedia.org/wiki/Cain_and_Abel"
+  },
+  {
+    "id": "daniel_biblical_figure",
+    "name": "Daniel",
+    "emoji": "🦁",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The main character of the Book of Daniel.",
+    "src": "https://en.wikipedia.org/wiki/Daniel_(biblical_figure)"
+  },
+  {
+    "id": "david",
+    "name": "David",
+    "emoji": "🪨",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The second king of the united Kingdom of Israel.",
+    "src": "https://en.wikipedia.org/wiki/David"
+  },
+  {
+    "id": "elijah",
+    "name": "Elijah",
+    "emoji": "🔥",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "A prophet and miracle worker of ancient Israel.",
+    "src": "https://en.wikipedia.org/wiki/Elijah"
+  },
+  {
+    "id": "ezra",
+    "name": "Ezra",
+    "emoji": "📜",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "A Jewish scribe and priest of the Second Temple period.",
+    "src": "https://en.wikipedia.org/wiki/Ezra"
+  },
+  {
+    "id": "isaac",
+    "name": "Isaac",
+    "emoji": "🐏",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The second Hebrew patriarch.",
+    "src": "https://en.wikipedia.org/wiki/Isaac"
+  },
+  {
+    "id": "isaiah",
+    "name": "Isaiah",
+    "emoji": "📜",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The Israelite prophet of the Book of Isaiah.",
+    "src": "https://en.wikipedia.org/wiki/Isaiah"
+  },
+  {
+    "id": "ishmael",
+    "name": "Ishmael",
+    "emoji": "🏜️",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The first son of Abraham.",
+    "src": "https://en.wikipedia.org/wiki/Ishmael"
+  },
+  {
+    "id": "jacob",
+    "name": "Jacob",
+    "emoji": "🪜",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The third Hebrew patriarch, later named Israel.",
+    "src": "https://en.wikipedia.org/wiki/Jacob"
+  },
+  {
+    "id": "joseph_genesis",
+    "name": "Joseph (Genesis)",
+    "emoji": "🧥",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "A dream interpreter of the Book of Genesis.",
+    "src": "https://en.wikipedia.org/wiki/Joseph_(Genesis)"
+  },
+  {
+    "id": "noah",
+    "name": "Noah",
+    "emoji": "🚢",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The last of the patriarchs before the flood.",
+    "src": "https://en.wikipedia.org/wiki/Noah"
+  },
+  {
+    "id": "solomon",
+    "name": "Solomon",
+    "emoji": "👑",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "A king of the Kingdom of Israel, successor of David.",
+    "src": "https://en.wikipedia.org/wiki/Solomon"
+  },
+  {
+    "id": "yahweh",
+    "name": "Yahweh",
+    "emoji": "✡️",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The national god of ancient Israel and Judah.",
+    "src": "https://en.wikipedia.org/wiki/Yahweh"
+  },
+  {
+    "id": "achilles",
+    "name": "Achilles",
+    "emoji": "🛡️",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The greatest Greek warrior of the Trojan War.",
+    "src": "https://en.wikipedia.org/wiki/Achilles"
+  },
+  {
+    "id": "amazons",
+    "name": "Amazons",
+    "emoji": "🏹",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Female warriors and hunters of Greek mythology.",
+    "src": "https://en.wikipedia.org/wiki/Amazons"
+  },
+  {
+    "id": "jade_emperor",
+    "name": "Jade Emperor",
+    "emoji": "👑",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "A representation of the primordial god in Chinese folk religion.",
+    "src": "https://en.wikipedia.org/wiki/Jade_Emperor"
+  },
+  {
+    "id": "three_sovereigns_and_five_emperors",
+    "name": "Three Sovereigns and Five Emperors",
+    "emoji": "👑",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The sage emperors of Chinese mythology.",
+    "src": "https://en.wikipedia.org/wiki/Three_Sovereigns_and_Five_Emperors"
+  },
+  {
+    "id": "yellow_emperor",
+    "name": "Yellow Emperor",
+    "emoji": "🏯",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "A legendary Chinese leader and culture hero.",
+    "src": "https://en.wikipedia.org/wiki/Yellow_Emperor"
+  },
+  {
+    "id": "yu_the_great",
+    "name": "Yu the Great",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "A legendary sage-king of China credited with flood control.",
+    "src": "https://en.wikipedia.org/wiki/Yu_the_Great"
+  },
+  {
+    "id": "enki",
+    "name": "Enki",
+    "emoji": "💧",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The Mesopotamian god of wisdom, crafts and fresh water.",
+    "src": "https://en.wikipedia.org/wiki/Enki"
+  },
+  {
+    "id": "enlil",
+    "name": "Enlil",
+    "emoji": "🌬️",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "An ancient Mesopotamian god of wind and storms.",
+    "src": "https://en.wikipedia.org/wiki/Enlil"
+  },
+  {
+    "id": "inanna",
+    "name": "Inanna",
+    "emoji": "⭐",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The Mesopotamian goddess of war and love.",
+    "src": "https://en.wikipedia.org/wiki/Inanna"
+  },
+  {
+    "id": "great_spirit",
+    "name": "Great Spirit",
+    "emoji": "🦅",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "A supreme life force in Indigenous North American belief.",
+    "src": "https://en.wikipedia.org/wiki/Great_Spirit"
+  },
+  {
+    "id": "avalokitesvara",
+    "name": "Avalokiteśvara",
+    "emoji": "🪷",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The Bodhisattva of Great Compassion.",
+    "src": "https://en.wikipedia.org/wiki/Avalokiteśvara"
+  },
+  {
+    "id": "tengri",
+    "name": "Tengri",
+    "emoji": "☁️",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The God of Heaven of the nomadic steppe peoples.",
+    "src": "https://en.wikipedia.org/wiki/Tengri"
+  },
+  {
+    "id": "centaur",
+    "name": "Centaur",
+    "emoji": "🐴",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "A Greek mythical creature, half human and half horse.",
+    "src": "https://en.wikipedia.org/wiki/Centaur"
+  },
+  {
+    "id": "personifications_of_death",
+    "name": "Personifications of Death",
+    "emoji": "💀",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Death portrayed as a character in myth and story.",
+    "src": "https://en.wikipedia.org/wiki/Personifications_of_death"
+  },
+  {
+    "id": "demon",
+    "name": "Demon",
+    "emoji": "👹",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "An evil or malevolent supernatural entity.",
+    "src": "https://en.wikipedia.org/wiki/Demon"
+  },
+  {
+    "id": "lilith",
+    "name": "Lilith",
+    "emoji": "🌙",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "A feminine figure of Mesopotamian and Jewish mythology.",
+    "src": "https://en.wikipedia.org/wiki/Lilith"
+  },
+  {
+    "id": "devil",
+    "name": "Devil",
+    "emoji": "😈",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The mythical personification of evil.",
+    "src": "https://en.wikipedia.org/wiki/Devil"
+  },
+  {
+    "id": "satan",
+    "name": "Satan",
+    "emoji": "😈",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The entity who entices humans into sin.",
+    "src": "https://en.wikipedia.org/wiki/Satan"
+  },
+  {
+    "id": "fairy",
+    "name": "Fairy",
+    "emoji": "🧚",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "A mythical being of European folklore.",
+    "src": "https://en.wikipedia.org/wiki/Fairy"
+  },
+  {
+    "id": "leprechaun",
+    "name": "Leprechaun",
+    "emoji": "🍀",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "A small mischievous being of Irish folklore.",
+    "src": "https://en.wikipedia.org/wiki/Leprechaun"
+  },
+  {
+    "id": "jinn",
+    "name": "Jinn",
+    "emoji": "🧞",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "Supernatural beings of Islam and Arabic folklore.",
+    "src": "https://en.wikipedia.org/wiki/Jinn"
+  },
+  {
+    "id": "vampire",
+    "name": "Vampire",
+    "emoji": "🧛",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "A mythical creature that feeds on blood.",
+    "src": "https://en.wikipedia.org/wiki/Vampire"
+  },
+  {
+    "id": "yokai",
+    "name": "Yōkai",
+    "emoji": "👺",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "The supernatural entities and spirits of Japanese folklore.",
+    "src": "https://en.wikipedia.org/wiki/Yōkai"
+  },
+  {
+    "id": "zombie",
+    "name": "Zombie",
+    "emoji": "🧟",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "A legendary undead being raised from a corpse.",
+    "src": "https://en.wikipedia.org/wiki/Zombie"
+  },
+  {
+    "id": "el_dorado",
+    "name": "El Dorado",
+    "emoji": "🏺",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "A mythical city of gold in South America.",
+    "src": "https://en.wikipedia.org/wiki/El_Dorado"
+  },
+  {
+    "id": "holy_grail",
+    "name": "Holy Grail",
+    "emoji": "🏆",
+    "shelf": "workshop",
+    "tags": [
+      "myth"
+    ],
+    "fact": "A treasure of Arthurian literature, often a cup.",
+    "src": "https://en.wikipedia.org/wiki/Holy_Grail"
   }
 ]

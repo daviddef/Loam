@@ -18,6 +18,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Loam">
+<style id="kit">__KIT_CSS__</style>
 <style>
   :root{
     /* Two faces. Neither is on anyone's list of tells, and both were drawn
@@ -79,6 +80,26 @@ __CATEGORY_CSS__
     --on-accent:#FFF8EA;
     --shade:43,33,24;
   }
+  /* ── the shared kit (loam-kit/) ───────────────────────────────────────
+     The kit's components read --lk-* tokens. Here they are Loam's own roles, so
+     a Loam theme (dark, paper, a ground) restyles them with nothing else to do.
+     Declared on body, because body.lt redefines the roles on body itself. */
+  body{
+    --lk-paper:var(--cream);--lk-card:var(--card);--lk-line:var(--line);--lk-ink:var(--ink);
+    --lk-mute:var(--ink-soft);--lk-soft:var(--ink-soft);--lk-faint:color-mix(in srgb,var(--ink-soft) 60%,var(--card));
+    --lk-accent:var(--orange);--lk-accent-soft:color-mix(in srgb,var(--orange) 18%,var(--card));
+    --lk-hover:color-mix(in srgb,var(--orange) 9%,var(--card));--lk-track:var(--line);--lk-knob:var(--cream);
+    --lk-surface:var(--surface);--lk-on-accent:var(--on-accent);--lk-accent-ink:var(--brick);--lk-danger:var(--brick);
+    --lk-pop-bg:var(--ink);--lk-pop-ink:var(--cream);
+    --lk-display:var(--face-name);--lk-body:var(--face-name);
+    --lk-tag-comp-bg:#1f3a4d;--lk-tag-comp-fg:#9cc9e6;--lk-tag-parts-bg:#4a3419;--lk-tag-parts-fg:#f0c27a;
+    --lk-tag-recipe-bg:#27401d;--lk-tag-recipe-fg:#b5dc96;--lk-tag-rule-bg:#3d3123;--lk-tag-rule-fg:#bfae92;
+  }
+  body.lt{
+    --lk-tag-comp-bg:#D8E8F4;--lk-tag-comp-fg:#2b6a94;--lk-tag-parts-bg:#F6E3C4;--lk-tag-parts-fg:#a5601a;
+    --lk-tag-recipe-bg:#E3EFD8;--lk-tag-recipe-fg:#4c7a2e;--lk-tag-rule-bg:#EAE2D0;--lk-tag-rule-fg:#7a6a52;
+  }
+
   body.t-manual .art [data-f]{fill:none;stroke:var(--s-paperInk);stroke-width:1.5;
                               stroke-linejoin:round;stroke-linecap:round}
   body.t-manual .art [data-s]{stroke:var(--s-paperInk)}
@@ -426,6 +447,24 @@ __CATEGORY_CSS__
   }
   aside .chip .n.long,aside .chip .n.vlong{font-size:9px}
   aside .chip .rl,aside .chip .ac{display:none}
+  /* The shelf, in the kit's language: a pill lifts toward you when you reach for it,
+     and the drawing is a little larger so it reads before the name does. */
+  aside .chip{transition:transform .18s cubic-bezier(.3,1.7,.5,1),background .15s,border-color .15s}
+  aside .chip:hover{transform:translateY(-2px) rotate(-1.2deg);background:var(--lk-hover);border-color:var(--lk-accent)}
+  aside .chip:active{transform:translateY(0) scale(.97)}
+  aside .chip .art{width:22px;height:22px}
+  @media (prefers-reduced-motion:reduce){ aside .chip:hover{transform:none} }
+  /* ☆ Favourites — star a chip to keep it in a short list of your own, at the top of the shelf. */
+  aside .chip .st{flex:none;width:16px;height:16px;display:grid;place-items:center;font-size:12px;line-height:1;
+    color:var(--lk-faint);opacity:0;cursor:pointer;border-radius:50%;margin-left:-3px;
+    transition:opacity .12s,transform .15s,color .12s}
+  aside .chip:hover .st,aside .chip:focus-within .st{opacity:.85}
+  aside .chip.mine .st{opacity:1;color:var(--lk-accent)}
+  aside .chip .st:hover{transform:scale(1.3);color:var(--lk-accent)}
+  @media (hover:none){ aside .chip .st{opacity:.5} }
+  aside h2.mine{color:var(--lk-accent);cursor:default}
+  aside h2.mine i{background:var(--lk-accent)}
+  aside .mine-empty{margin:0 2px 6px;padding:8px 10px;font:600 11px/1.3 var(--face-name)}
 
   /* The "what is this" button. Quiet until you go looking for it, because the
      board is a workbench and not a form — but always in the same place, so
@@ -1114,8 +1153,9 @@ __CATEGORY_CSS__
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .line .chev{font-size:9px;color:#B9A88C;flex:none;transition:transform .2s}
   #card:not(.mini) .line .chev{transform:rotate(180deg)}
-  .dot{width:7px;height:7px;border-radius:99px;flex:none}
-  .dot.workshop{background:var(--avocado)} .dot.folklore{background:#9B6BC4}
+  .line .lk-tag{margin:0;flex:none}
+  .prov{display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap}
+  .prov .lk-tag{margin:0}
   .more{
     max-height:0;overflow:hidden;transition:max-height .24s ease;
     padding:0 11px;
@@ -1125,10 +1165,7 @@ __CATEGORY_CSS__
   .fact{display:none}
   .cfoot{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
   .cbtns{display:flex;gap:6px;flex:none}
-  .inner button.ghost{
-    background:var(--surface);color:var(--ink-soft);border:1.5px solid var(--line);border-radius:99px;
-    padding:4px 10px;font:600 11px var(--face-name);cursor:pointer;
-  }
+  /* the pill buttons in a card are the kit's (.lk-btn.is-small); .ghost stays as the hook the variants below use */
   @keyframes drain{from{width:100%}to{width:0}}
   .timer{position:absolute;left:0;bottom:0;height:2px;background:var(--discovery);
     opacity:.45;animation:drain 6s linear forwards}
@@ -1138,17 +1175,13 @@ __CATEGORY_CSS__
      whole button dropping to the next line reads far better than that. */
   .cardrow{display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap}
 
-  #toast{
-    position:fixed;left:50%;bottom:104px;transform:translateX(-50%);z-index:150;
-    background:var(--ink);color:var(--cream);font:600 13px var(--face-name);
-    padding:9px 17px;border-radius:99px;opacity:0;transition:opacity .25s;pointer-events:none;
-  }
-  #toast.on{opacity:.95}
+  /* the toast is the kit's (.lk-toast); Loam only says where it sits */
+  #toast{position:fixed;left:50%;bottom:104px;z-index:150;font-family:var(--face-name)}
   /* wrap, not shrink: five buttons in a narrow sheet with nowrap don't
      overflow, they each shrink until their own label wraps mid-word — a
      whole button dropping to the next line reads far better than that. */
   .cardrow{display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap}
-  .inner button.ghost{background:var(--surface);color:var(--ink-soft);border-color:var(--line);font-size:13px;padding:9px 15px}
+  .inner button.ghost{color:var(--ink-soft);font-size:13px;padding:9px 15px}
 
   /* sheet: codex + provenance */
   #sheet{
@@ -1377,29 +1410,7 @@ __CATEGORY_CSS__
      only the note under it and the switch itself — so the row does not move
      and you are never reading a button that describes the state you are not in. */
   .switches{display:flex;flex-direction:column;gap:7px;margin-bottom:6px}
-  .switch{
-    display:flex;align-items:center;gap:12px;width:100%;text-align:left;cursor:pointer;
-    padding:10px 12px;border-radius:11px;background:var(--surface);border:1.5px solid var(--line);
-  }
-  .switch b{font:700 13.5px var(--face-name);color:var(--ink)}
-  .switch i{font-style:normal;font-size:11.5px;color:var(--ink-soft)}
-  .switch .stx{flex:1;min-width:0}
-  .switch .knob{
-    flex:none;position:relative;width:40px;height:23px;border-radius:99px;
-    background:rgba(var(--shade),.26);border:1px solid var(--line);
-    transition:background .16s,border-color .16s;
-  }
-  .switch .knob::after{
-    content:'';position:absolute;top:2px;left:2px;width:17px;height:17px;border-radius:50%;
-    background:var(--ink-soft);transition:transform .16s,background .16s;
-  }
-  .switch.on{border-color:var(--orange);background:color-mix(in srgb,var(--orange) 10%,var(--card))}
-  .switch.on b{color:var(--brick)}
-  .switch.on .knob{background:var(--orange);border-color:var(--orange)}
-  .switch.on .knob::after{transform:translateX(17px);background:var(--on-accent)}
-  @media (prefers-reduced-motion:reduce){
-    .switch .knob,.switch .knob::after{transition:none}
-  }
+  /* the switch itself is the kit's (.lk-toggle) */
   .gmark{
     display:inline-flex;align-items:center;justify-content:center;
     width:19px;height:19px;margin-right:7px;border-radius:5px;vertical-align:-4px;
@@ -1475,7 +1486,7 @@ __CATEGORY_CSS__
   :root[data-depth="kid"] ul.tree.bed .cat,
   :root[data-depth="kid"] .atom .z,
   :root[data-depth="kid"] .pnums,
-  :root[data-depth="kid"] .stepbody .src{display:none}
+  :root[data-depth="kid"] .stepbody .src,:root[data-depth="kid"] .stepbody .prov{display:none}
   :root[data-depth="kid"] .why{font-size:14px;line-height:1.55}
   :root[data-depth="kid"] .stepbody p{font-size:13.5px}
   :root[data-depth="scientist"] .pfrom{display:block}
@@ -1756,19 +1767,8 @@ __CATEGORY_CSS__
     position:absolute;top:64px;right:var(--asw,238px);z-index:6;
     display:flex;flex-direction:column;gap:4px;margin:0;
   }
-  #asideTabs .atab{
-    display:flex;align-items:center;justify-content:center;
-    width:30px;height:30px;padding:0;cursor:pointer;
-    background:color-mix(in srgb,var(--surface) 94%,transparent);backdrop-filter:blur(10px);
-    border:2px solid var(--line);border-right:none;border-radius:9px 0 0 9px;
-    color:var(--ink-soft);transition:color .15s,border-color .15s;
-  }
-  #asideTabs .atab:hover{color:var(--ink)}
-  #asideTabs .atab.on{
-    color:var(--orange);border-color:var(--orange);
-    /* the pane's own ground, so the active tab and the pane read as one piece */
-    background:var(--surface);
-  }
+  /* the tabs themselves are the kit's (.lk-seamtab); the active one takes the pane's own
+     ground (--lk-surface), so the tab and the pane read as one piece */
   @media(max-width:720px){ #asideTabs{display:none} }
   /* Tapping the active tab again folds the pane away, the same gesture the
      periodic dock's own tab already offers. The tab strip stays — it is on the
@@ -2168,6 +2168,14 @@ __CATEGORY_CSS__
      on desktop and sat there inert. */
   body.shelf-shut aside{display:none}
   header button:disabled{opacity:.38;cursor:default}
+  /* tactile buttons, the same lip-and-press feel as the Battle UI (loam-kit .lk-ibtn) */
+  header button:not(:disabled){box-shadow:0 2px 0 var(--line);transition:transform .12s,box-shadow .12s,border-color .12s}
+  header button:not(:disabled):hover{transform:translateY(-1px);box-shadow:0 3px 0 var(--line)}
+  header button:not(:disabled):active{transform:translateY(2px);box-shadow:none}
+  .verb{box-shadow:0 3px 0 var(--line);transition:transform .12s,box-shadow .12s}
+  .verb:not(.locked):hover{transform:translateY(-2px)}
+  .verb:not(.locked):active{transform:translateY(2px);box-shadow:none}
+  @media (prefers-reduced-motion:reduce){header button,.verb{transition:none}}
   header button.on{border-color:var(--orange);color:var(--orange)}
   #shelfToggle.off{color:var(--ink-soft);opacity:.65}
 
@@ -2225,6 +2233,8 @@ __CATEGORY_CSS__
   <button id="undo" title="Nothing to undo yet" disabled><span class="gl" style="--g:16px">__UI_UNDO__</span></button>
   <button id="reset" title="Start over — wipes everything you have found" aria-haspopup="true">Reset</button>
   <button id="nudge" title="Put two things on the bench that go together"><span class="gl" style="--g:16px">__UI_NUDGE__</span></button>
+  <button id="lookBtn" title="Look: sticker, paper or ground (shared with Battle)"><span class="gl" style="--g:16px" id="lookIcon"></span></button>
+  <button id="battleBtn" title="Battle: fight with what you have found (opens Loam Attack)"><span class="gl" style="--g:16px" id="battleIcon"></span></button>
   <button id="scanBtn" title="Scan a barcode or read a label"><span class="gl" style="--g:16px">__UI_SCAN__</span></button>
   <button id="shelfToggle" title="Hide the shelf">▤</button>
   <button id="settings" title="Settings"><span class="gl" style="--g:15px">__UI_SETTINGS__</span></button>
@@ -2304,16 +2314,16 @@ __CATEGORY_CSS__
          not — NOT the periodic chart, which stays docked at the bottom for
          the scientist view above. -->
     <div id="asideTabs">
-      <button class="atab on" data-asidetab="elements" title="Elements — every element in the game"><span class="gl" style="--g:19px">__UI_ELEMENTS__</span></button>
-      <button class="atab" data-asidetab="proteins" title="Proteins — the twenty amino acids"><span class="gl" style="--g:19px">__UI_AMINO__</span></button>
-      <button class="atab" data-asidetab="animals" title="Animals — browse by classification"><span class="gl" style="--g:19px">__UI_ANIMALS__</span></button>
-      <button class="atab" data-asidetab="plants" title="Plants — everything that grows">🌱</button>
-      <button class="atab" data-asidetab="toxins" title="Toxins — hazards, carcinogens, poisons">☣</button>
-      <button class="atab" data-asidetab="ragdoll" title="Ragdoll — what any of this does to a person">🧍</button>
-      <button class="atab" data-asidetab="microbes" title="Microbes — bacteria, viruses, parasites">🦠</button>
-      <button class="atab" data-asidetab="periodic" title="The periodic table's own elements">⚛</button>
-      <button class="atab" data-asidetab="favourites" title="Favourites — elements you've starred">★</button>
-      <button class="atab" data-asidetab="info" title="Info — follows whatever you last tapped">ⓘ</button>
+      <button class="atab lk-seamtab on" data-asidetab="elements" title="Elements — every element in the game"><span class="gl" style="--g:19px">__UI_ELEMENTS__</span></button>
+      <button class="atab lk-seamtab" data-asidetab="proteins" title="Proteins — the twenty amino acids"><span class="gl" style="--g:19px">__UI_AMINO__</span></button>
+      <button class="atab lk-seamtab" data-asidetab="animals" title="Animals — browse by classification"><span class="gl" style="--g:19px">__UI_ANIMALS__</span></button>
+      <button class="atab lk-seamtab" data-asidetab="plants" title="Plants — everything that grows">🌱</button>
+      <button class="atab lk-seamtab" data-asidetab="toxins" title="Toxins — hazards, carcinogens, poisons">☣</button>
+      <button class="atab lk-seamtab" data-asidetab="ragdoll" title="Ragdoll — what any of this does to a person">🧍</button>
+      <button class="atab lk-seamtab" data-asidetab="microbes" title="Microbes — bacteria, viruses, parasites">🦠</button>
+      <button class="atab lk-seamtab" data-asidetab="periodic" title="The periodic table's own elements">⚛</button>
+      <button class="atab lk-seamtab" data-asidetab="favourites" title="Favourites — elements you've starred">★</button>
+      <button class="atab lk-seamtab" data-asidetab="info" title="Info — follows whatever you last tapped">ⓘ</button>
     </div>
     <div id="asideShelf" class="apane"></div>
     <div id="asideElements" class="apane on"></div>
@@ -2337,8 +2347,9 @@ __CATEGORY_CSS__
   </div>
 </div>
 <div id="card" class="card"><div class="inner" id="inner"></div></div>
-<div id="toast"></div>
+<div id="toast" class="lk-toast"></div>
 
+<script id="kit-js">__KIT_JS__</script>
 <script>
 const DATA = __GAME_DATA__;
 const {elements, recipes, verbs} = DATA;
@@ -2765,15 +2776,15 @@ function showTransfer() {
        else. Copy it out to carry it to another machine, or paste one back in.</p>
     <h2>Take it with you</h2>
     <div class="cardrow">
-      <button class="ghost" id="saveCopy">Copy my game (${kb} kB)</button>
-      <button class="ghost" id="saveShow">Show it</button>
+      <button class="lk-btn is-small ghost" id="saveCopy">Copy my game (${kb} kB)</button>
+      <button class="lk-btn is-small ghost" id="saveShow">Show it</button>
     </div>
     <pre id="saveText" class="savebox" hidden>${text.replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]))}</pre>
     <h2>Bring one back</h2>
     <textarea id="saveIn" class="search" rows="4" style="resize:vertical;font-size:12px"
       placeholder="Paste a saved game here…"></textarea>
     <div class="cardrow" style="margin-top:8px">
-      <button class="ghost danger" id="saveLoad">Replace my game with this</button>
+      <button class="lk-btn is-small ghost danger" id="saveLoad">Replace my game with this</button>
     </div>
     <p class="hint2">Bringing one back replaces what is in this browser. Copy yours out first if you
        want to keep it. Free play is never carried across — it is a mode, not progress.</p>`;
@@ -3003,7 +3014,23 @@ if (savedPrefs) Object.assign(prefs, savedPrefs);
 // defaulting them the same way would silently repaint every existing player's
 // game the first time they came back.
 if (savedPrefs && !savedPrefs.chrome) prefs.chrome = savedPrefs.theme === 'manual' ? 'light' : 'dark';
-const savePrefs = () => { try { localStorage.setItem('loam.prefs', JSON.stringify(prefs)); } catch {} };
+const savePrefs = () => {
+  try { localStorage.setItem('loam.prefs', JSON.stringify(prefs)); } catch {}
+  try { if (LoamKit.theme() !== lookOf()) LoamKit.setTheme(lookOf()); } catch {}   // keep Battle's look in step
+};
+// One look across Loam and Battle. The kit names three (sticker, paper, ground); Loam has finer controls
+// (drawing style, ground, light or dark chrome). Each kit look is a preset of those, and the nearest
+// preset is what Battle is shown when Loam's own settings are somewhere in between.
+const LOOKS = {
+  sticker: { theme: 'specimen', chrome: 'light', ground: 'paper' },
+  paper:   { theme: 'manual',   chrome: 'light', ground: 'paper' },
+  ground:  { theme: 'specimen', chrome: 'dark',  ground: 'tray'  },
+};
+const lookOf = () => prefs.chrome === 'dark' ? 'ground' : prefs.theme === 'manual' ? 'paper' : 'sticker';
+function setLook(name) {
+  const l = LOOKS[name]; if (!l) return;
+  Object.assign(prefs, l); applyPrefs(); savePrefs(); LoamKit.setTheme(name);
+}
 
 // Free play hands you the whole world at once. Real progress is put aside
 // first and handed back when you turn it off, so testing can never cost you
@@ -3192,11 +3219,8 @@ const sfx = {
 };
 const board = document.getElementById('board');
 const toastEl = document.getElementById('toast');
-let toastT;
-function toast(msg, ms = 2200) {
-  toastEl.textContent = msg; toastEl.classList.add('on');
-  clearTimeout(toastT); toastT = setTimeout(() => toastEl.classList.remove('on'), ms);
-}
+const toaster = LoamKit.toaster(toastEl);
+function toast(msg, ms = 2200) { toaster.text(msg, ms); }
 
 // ---------- taxonomy ----------
 // An element can carry several tags, so families are resolved in priority
@@ -3382,6 +3406,11 @@ function renderCount() {
     : 'Open your codex';
 }
 
+// ☆ Favourites on the shelf: the same set the Favourites tab and the Quick View star already use
+// (saved with the game), surfaced as a short list above the families, with a star on every chip.
+function toggleMine(id) { toggleFavourite(id); renderShelf(); }
+const mineStar = e => found.has(e.id)
+  ? `<i class="st" data-mine="${e.id}" title="${favourites.has(e.id) ? 'Remove from Favourites' : 'Add to Favourites'}">${favourites.has(e.id) ? '★' : '☆'}</i>` : '';
 function renderShelf() {
   const ul = unlockedVerbs();
   const groups = FAMILIES.map(f => [f, elements.filter(e => found.has(e.id) && familyOf(e).id === f.id)])
@@ -3416,8 +3445,21 @@ function renderShelf() {
         `</h2><div class="shelf">` +
         show.map(e => {
           const f = familyOf(e);
-          return `<span class="chip fam-${f.id} live" data-fam="${f.id}" data-spawn="${e.id}">` +
-                 `${chipHTML(e)}<i class="cnt">${secrets.get(e.id)}</i></span>`;
+          return `<span class="chip fam-${f.id} live${favourites.has(e.id) ? ' mine' : ''}" data-fam="${f.id}" data-spawn="${e.id}">` +
+                 `${chipHTML(e)}<i class="cnt">${secrets.get(e.id)}</i>${mineStar(e)}</span>`;
+        }).join('') + `</div>`;
+    })() +
+    // Mine: your own short list, under Ready and above the families.
+    (() => {
+      if (q) return '';
+      const m = [...favourites].map(id => byId[id]).filter(e => e && found.has(e.id));
+      if (!m.length) return found.size > 12
+        ? `<h2 class="mine"><i></i>Favourites<em>0</em></h2><div class="lk-drop mine-empty">Star ☆ a chip to keep it here.</div>` : '';
+      return `<h2 class="mine"><i></i>Favourites<em>${m.length}</em></h2><div class="shelf">` +
+        m.map(e => {
+          const f = familyOf(e), n = secrets.get(e.id) ?? 0;
+          return `<span class="chip fam-${f.id}${n ? ' live' : ' spent'} mine" data-fam="${f.id}" data-spawn="${e.id}">` +
+                 `${chipHTML(e)}${n ? `<i class="cnt">${n}</i>` : ''}${mineStar(e)}</span>`;
         }).join('') + `</div>`;
     })() +
     groups.map(([f, g]) => {
@@ -3430,8 +3472,8 @@ function renderShelf() {
         (live ? `<b class="lv">${live}</b>` : '') + `<span class="cv">${shut ? '▸' : '▾'}</span></h2>` +
         (shut ? '' : `<div class="shelf">` + hits.map(e => {
           const n = secrets.get(e.id) ?? 0;
-          return `<span class="chip fam-${f.id}${n ? ' live' : ' spent'}" data-fam="${f.id}" data-spawn="${e.id}">` +
-                 `${chipHTML(e)}${n ? `<i class="cnt">${n}</i>` : ''}</span>`;
+          return `<span class="chip fam-${f.id}${n ? ' live' : ' spent'}${favourites.has(e.id) ? ' mine' : ''}" data-fam="${f.id}" data-spawn="${e.id}">` +
+                 `${chipHTML(e)}${n ? `<i class="cnt">${n}</i>` : ''}${mineStar(e)}</span>`;
         }).join('') + `</div>`);
     }).join('') +
     // Searching the shelf should reach the whole world, not just your half of
@@ -5699,7 +5741,7 @@ function showScannedProduct(hubEl) {
     ${nutrition ? `<div class="offSection">Per 100g</div><table class="nutriTable">${nutrition}</table>` : ''}
     ${s.text ? `<div class="offSection">Ingredients</div><p class="why" style="margin-top:0">${s.text.replace(/[<>]/g, '')}</p>` : ''}
     <div class="cardrow" style="margin-top:9px">
-      <button class="ghost" id="hubRemove">Remove from canvas</button>
+      <button class="lk-btn is-small ghost" id="hubRemove">Remove from canvas</button>
     </div>`;
   openSheet('Scanned product');
   document.getElementById('hubRemove').onclick = () => {
@@ -5786,17 +5828,17 @@ function showCard(r, e) {
     <div class="line">
       <span class="big">${glyph(e.id, 34)}</span>
       <b>${e.name}</b>
-      <i class="dot ${e.shelf}" title="${isFolk ? 'a story we tell' : 'how it works'}"></i>
+      ${LoamKit.tag(isFolk ? 'f' : 'w', isFolk ? 'a story we tell' : 'how it works')}
       <span class="chev">▾</span>
     </div>
     <div class="more">
       <p class="why">${prefs.depth === 'kid' ? e.fact : r.why}</p>
       <div class="cfoot">
-        ${r.src ? `<a class="src" href="${r.src}" target="_blank" rel="noopener">Check this${r.verified ? ' ✓' : ''}</a>` : '<span></span>'}
+        ${r.src ? `<span class="prov"><a class="src" href="${r.src}" target="_blank" rel="noopener">Check this</a>${r.verified ? LoamKit.tag('v', 'the source was independently checked against the live article') : ''}</span>` : '<span></span>'}
         ${r.srcBand ? `<a class="src" href="${r.srcBand}" target="_blank" rel="noopener" title="where the ${r.at}\u00b0C comes from">the ${r.at}\u00b0C</a>` : ''}
         <span class="cbtns">
-          <button class="ghost" data-info="${e.id}" title="What is ${e.name}?">Read about it</button>
-          <button class="ghost" data-trace="${e.id}">Trace it</button>
+          <button class="lk-btn is-small ghost" data-info="${e.id}" title="What is ${e.name}?">Read about it</button>
+          <button class="lk-btn is-small ghost" data-trace="${e.id}">Trace it</button>
         </span>
       </div>
     </div>
@@ -7541,7 +7583,7 @@ function ptRender() {
   document.getElementById('ptHead').innerHTML =
     `<b>The periodic table</b>` +
     `<span>${held} of the ${PLAYABLE_ATOM.size} you can hold are on your shelf</span>` +
-    `<button class="ghost" id="ptClose" title="Close the table">Close</button>`;
+    `<button class="lk-btn is-small ghost" id="ptClose" title="Close the table">Close</button>`;
   // Laid out the way a wall chart is: group numbers along the top, period
   // numbers down the side, and inside each tile the atomic number small at the
   // top, the symbol large, and the name under it. Everything is shifted one row
@@ -8727,8 +8769,11 @@ function setAsideTab(tab) {
   asideTab = tab;
   for (const [t, id] of Object.entries(ASIDE_PANE))
     document.getElementById(id).classList.toggle('on', t === tab);
-  document.querySelectorAll('#asideTabs .atab').forEach(b =>
-    b.classList.toggle('on', b.dataset.asidetab === tab));
+  document.querySelectorAll('#asideTabs .atab').forEach(b => {
+    const was = b.classList.contains('on'), now = b.dataset.asidetab === tab;
+    b.classList.toggle('on', now);
+    if (now && !was) { b.classList.remove('bump'); void b.offsetWidth; b.classList.add('bump'); }   // a little nudge as it takes the seam
+  });
   if (tab === 'info') renderAsideInfo();
   if (tab === 'elements') renderAsideElements();
   if (tab === 'proteins') renderAsideProteins();
@@ -9119,11 +9164,11 @@ function showHint(id) {
       <div class="pnums">Not made yet</div></div>
     <div class="hintbox">${body}</div>
     ${upstreamHazardHTML(id)}
-    ${best && lvl < 2 ? `<div class="cardrow"><button class="ghost" data-more="${id}">
+    ${best && lvl < 2 ? `<div class="cardrow"><button class="lk-btn is-small ghost" data-more="${id}">
         ${lvl === 0 ? 'Give me a nudge' : 'Just tell me'}</button></div>` : ''}
     ${pathHTML}
     ${found.has(id) ? '' : `<div class="cardrow" style="margin-top:10px">
-       <button class="ghost" data-entry-any="${id}">See its full entry</button></div>`}
+       <button class="lk-btn is-small ghost" data-entry-any="${id}">See its full entry</button></div>`}
     <p class="hint2">Ingredients are never used up — take as many from the shelf as you like.</p>`;
   openSheet(`How to make ${nameOf(e)}`);
 }
@@ -9236,8 +9281,8 @@ function quickViewHTML(id) {
     ${conditionHTML(id)}
     __TABS__
     ${(!owned || hiddenIn > 0) ? `<div class="cardrow" style="margin:10px 0 10px">
-      ${!owned ? `<button class="ghost" data-hint="${id}">How do I make it?</button>` : ''}
-      ${hiddenIn > 0 ? `<button class="ghost" data-hint="${id}">Other ways to make it</button>` : ''}
+      ${!owned ? `<button class="lk-btn is-small ghost" data-hint="${id}">How do I make it?</button>` : ''}
+      ${hiddenIn > 0 ? `<button class="lk-btn is-small ghost" data-hint="${id}">Other ways to make it</button>` : ''}
     </div>` : ''}
     <h2>Made from${knownIn.length ? ` · ${knownIn.length}` : ''}</h2>
     ${knownIn.length ? rows(knownIn, 'in')
@@ -9355,7 +9400,7 @@ function stepCard(r, i) {
         <span class="arw">→</span>${bit(r.out)}<span class="tw why">▸</span></div>
       <div class="stepwhy fold">
         <p>${r.why}</p>
-        ${r.src ? `<a class="src" href="${r.src}" target="_blank" rel="noopener">Check this${r.verified ? ' ✓' : ''}</a>` : ''}
+        ${r.src ? `<span class="prov"><a class="src" href="${r.src}" target="_blank" rel="noopener">Check this</a>${r.verified ? LoamKit.tag('v', 'the source was independently checked against the live article') : ''}</span>` : ''}
         ${r.srcBand ? `<a class="src" href="${r.srcBand}" target="_blank" rel="noopener" title="where the ${r.at}\u00b0C comes from">the ${r.at}\u00b0C</a>` : ''}
       </div>
     </div></div>`;
@@ -9623,15 +9668,15 @@ function showCodex(q = '') {
   document.getElementById('sheetBody').innerHTML =
     `<input id="q" class="search" placeholder="Search your discoveries…" value="${q}" autocomplete="off">` +
     `<div class="cardrow" style="margin:10px 0 2px">` +
-    `<button class="ghost" id="ptBtn">Periodic table</button>` +
-    `<button class="ghost icon" id="aaBtn" title="Amino acids"><span class="gl" style="--g:16px">__UI_AMINO__</span></button>` +
-    `<button class="ghost icon" id="ladderBtn" title="The ladder"><span class="gl" style="--g:16px">__UI_LADDER__</span></button>` +
-    `<button class="ghost icon" id="timeBtn" title="When things arrived">🕐</button>` +
-    `<button class="ghost icon${codexAll ? ' on' : ''}" id="allBtn" title="${codexAll ? 'Only what I have' : 'Show all ' + elements.length}"><span class="gl" style="--g:16px">__UI_EYE__</span></button>` +
+    `<button class="lk-btn is-small ghost" id="ptBtn">Periodic table</button>` +
+    `<button class="lk-btn is-small ghost icon" id="aaBtn" title="Amino acids"><span class="gl" style="--g:16px">__UI_AMINO__</span></button>` +
+    `<button class="lk-btn is-small ghost icon" id="ladderBtn" title="The ladder"><span class="gl" style="--g:16px">__UI_LADDER__</span></button>` +
+    `<button class="lk-btn is-small ghost icon" id="timeBtn" title="When things arrived">🕐</button>` +
+    `<button class="lk-btn is-small ghost icon${codexAll ? ' on' : ''}" id="allBtn" title="${codexAll ? 'Only what I have' : 'Show all ' + elements.length}"><span class="gl" style="--g:16px">__UI_EYE__</span></button>` +
     // The eye and the padlock look adjacent and are not: the eye only SHOWS you
     // what you have not found, free play actually hands it to you. The titles
     // have to carry that difference, because the icons cannot.
-    `<button class="ghost icon${prefs.freePlay ? ' on' : ''}" id="fpBtn" title="${prefs.freePlay
+    `<button class="lk-btn is-small ghost icon${prefs.freePlay ? ' on' : ''}" id="fpBtn" title="${prefs.freePlay
         ? 'Leave free play — your own progress comes back'
         : 'Free play — unlock everything. Your progress is put aside, not lost.'}"><span class="gl" style="--g:16px">__UI_FREEPLAY__</span></button></div>` +
     `<div id="codexList">${codexResults(q)}</div>`;
@@ -9941,7 +9986,7 @@ function showSettings() {
   // A two-way choice is a switch, not two buttons you read and compare. Six
   // stacked full-width rows were saying the same thing three times over.
   const toggle = (label, note, on, attr) =>
-    `<button class="switch${on ? ' on' : ''}" ${attr} role="switch" aria-checked="${on}">
+    `<button class="lk-toggle${on ? ' on' : ''}" ${attr} role="switch" aria-checked="${on}">
        <span class="stx"><b>${label}</b><i>${note}</i></span><span class="knob"></span>
      </button>`;
   const prefToggle = (key, label, onVal, offVal, noteOn, noteOff) =>
@@ -10383,9 +10428,9 @@ function showLabelReader(prefill = '', scannedProducts = null) {
        snap a photo of the text if the barcode won't scan. Every one this world knows becomes a card,
        with the whole chain back to stone, water, sun and seed.</p>
     <div class="cardrow" style="margin:0 0 9px">
-      <button class="ghost" id="labelScan">Scan a barcode</button>
-      <button class="ghost" id="lrSnap">Photo of the text</button>
-      <button class="ghost" id="lrPhoto">Choose a photo</button>
+      <button class="lk-btn is-small ghost" id="labelScan">Scan a barcode</button>
+      <button class="lk-btn is-small ghost" id="lrSnap">Photo of the text</button>
+      <button class="lk-btn is-small ghost" id="lrPhoto">Choose a photo</button>
       <input type="file" id="lrSnapFile" accept="image/*" capture="environment" hidden>
       <input type="file" id="lrFile" accept="image/*" hidden>
     </div>
@@ -10393,8 +10438,8 @@ function showLabelReader(prefill = '', scannedProducts = null) {
     <textarea id="labelIn" class="search" rows="4" style="resize:vertical;font-size:13px"
       placeholder="Ingredients: Skim Milk, Mango (8%), Sugar, Cream (Milk)…">${prefill}</textarea>
     <div class="cardrow" style="margin:9px 0">
-      <button class="ghost" id="labelGo">Read it</button>
-      <button class="ghost" id="labelDemo">Try an example</button>
+      <button class="lk-btn is-small ghost" id="labelGo">Read it</button>
+      <button class="lk-btn is-small ghost" id="labelDemo">Try an example</button>
     </div>
     <div id="labelOut"></div>`;
   openSheet('Read a label');
@@ -10716,18 +10761,18 @@ function showBarcodeScan(onIngredients, autoAction) {
     <div class="cardrow" style="margin:0 0 9px" ${skipEntry ? 'hidden' : ''}>
       <input id="bcIn" class="search" inputmode="numeric" autocomplete="off"
         placeholder="e.g. 9310072020278" style="flex:1;padding:9px 12px">
-      <button class="ghost" id="bcGo">Look it up</button>
+      <button class="lk-btn is-small ghost" id="bcGo">Look it up</button>
     </div>
     <div class="cardrow" id="bcCameraRow" style="margin:0 0 9px" hidden>
-      <button class="ghost" id="bcCamera">Scan with the camera</button>
-      <button class="ghost" id="bcSnap">Take a photo</button>
-      <button class="ghost" id="bcPhoto">Choose photos</button>
+      <button class="lk-btn is-small ghost" id="bcCamera">Scan with the camera</button>
+      <button class="lk-btn is-small ghost" id="bcSnap">Take a photo</button>
+      <button class="lk-btn is-small ghost" id="bcPhoto">Choose photos</button>
       <input type="file" id="bcFile" accept="image/*" multiple hidden>
       <input type="file" id="bcSnapFile" accept="image/*" capture="environment" hidden>
     </div>
     <video id="bcVideo" playsinline muted></video>
     <div class="cardrow" id="bcCameraControls" style="margin:0 0 9px" hidden>
-      <button class="ghost" id="bcStopCam">Stop the camera</button>
+      <button class="lk-btn is-small ghost" id="bcStopCam">Stop the camera</button>
     </div>
     <p id="bcDebug" class="hint2" hidden></p>
     <div id="bcStatus"></div>
@@ -10762,7 +10807,7 @@ function showBarcodeScan(onIngredients, autoAction) {
         ${s.text ? '' : '<i>No ingredients text on record</i>'}</div>
       </div>`).join('') +
       (withText.length ? `<div class="cardrow" style="margin-top:9px">
-         <button class="ghost" id="bcUse">Read ingredients from ${withText.length === 1 ? 'this product' : withText.length + ' products'}</button></div>`
+         <button class="lk-btn is-small ghost" id="bcUse">Read ingredients from ${withText.length === 1 ? 'this product' : withText.length + ' products'}</button></div>`
        : '');
     const use = document.getElementById('bcUse');
     // OFF's own ingredients_text field never carries the "Ingredients:"
@@ -11012,7 +11057,7 @@ function labelResultHTML(parsed, forHub) {
     // the button has to show up for that case too; pasted text with zero
     // found/near has nothing placeable and stays button-less.
     (found.length || near.length || (forHub && parsed.length) ? `<div class="cardrow" style="margin:10px 0">
-        <button class="ghost" id="labelPut">${forHub ? 'Add to canvas' : `Put ${found.length + near.length} on the bench`}</button></div>` : '') +
+        <button class="lk-btn is-small ghost" id="labelPut">${forHub ? 'Add to canvas' : `Put ${found.length + near.length} on the bench`}</button></div>` : '') +
     (vague.length ? `<h2>Says nothing · ${vague.length}</h2>` + vague.map(p =>
       `<div class="ent"><span class="g">${p.text}</span></div><p class="hint2">${p.note}</p>`).join('') : '') +
     (unknown.length ? `<h2>Not in this world yet · ${unknown.length}</h2><div class="shelf">` +
@@ -11252,6 +11297,8 @@ document.getElementById('aside').addEventListener('click', ev => {
   if (tx) return showTaxon(tx.dataset.taxon);
 });
 document.getElementById('aside').addEventListener('pointerdown', ev => {
+  const mn = ev.target.closest('[data-mine]');
+  if (mn) { ev.preventDefault(); return toggleMine(mn.dataset.mine); }
   // The hazard mark is a control, and a card is dragged on pointerdown — so
   // it has to be claimed here beside data-info, not left to a click that the
   // drag has already swallowed. Tapping it was starting a drag instead.
@@ -11338,6 +11385,21 @@ document.getElementById('nudge').addEventListener('click', () => {
   toast(`Try something with ${nameOf(byId[r.in[0]])}`);
 });
 document.getElementById('scanBtn').addEventListener('click', () => showBarcodeScan(showLabelReader));
+// Battle: Loam Attack is the other half of this project. It reads what you have found from this same browser storage,
+// so save first, then open it on its Found tab. Everything in the corpus is still searchable there.
+document.getElementById('battleIcon').innerHTML = LoamKit.icon('fight');
+document.getElementById('lookIcon').innerHTML = LoamKit.icon('theme');
+document.getElementById('lookBtn').addEventListener('click', () => {
+  const n = Object.keys(LOOKS), next = n[(n.indexOf(lookOf()) + 1) % n.length];
+  setLook(next); toast('Look: ' + LoamKit.themes[next].label);
+});
+// a look chosen in Battle carries over
+try { const t = localStorage.getItem('loamTheme'); if (t && LOOKS[t] && t !== lookOf()) setLook(t); else LoamKit.setTheme(lookOf(), false); } catch {}
+document.getElementById('battleBtn').addEventListener('click', () => {
+  try { save(); } catch {}
+  const w = window.open('battle.html?found', 'loamBattle');
+  if (!w) location.href = 'battle.html?found';
+});
 document.getElementById('scanTools').addEventListener('click', ev => {
   const b = ev.target.closest('[data-scan]');
   if (b) showBarcodeScan(showLabelReader, b.dataset.scan);

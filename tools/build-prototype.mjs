@@ -40,6 +40,13 @@ const effects = { routes: effectsSrc.$routes, effects: effectsSrc.effects,
                   verbs: effectsSrc.verbs, hazards: effectsSrc.hazards, hazardIds,
                   signs: effectsSrc.$signs, outcomes: effectsSrc.outcomes };
 const artRender = readFileSync(u('../prototype/art-render.js'), 'utf8');
+// The shared interface kit (loam-kit/). Rebuilt here so it can never lag data/palette.json.
+// Components only: Loam keeps its own themes and maps the kit's --lk-* tokens onto its roles.
+import { execFileSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
+execFileSync(process.execPath, [fileURLToPath(new URL('./kit.mjs', import.meta.url))], { stdio: 'inherit' });
+const kitCss = readFileSync(u('../loam-kit/dist/loam-kit-ui.css'), 'utf8');
+const kitJs  = readFileSync(u('../loam-kit/dist/loam-kit.js'), 'utf8');
 
 /**
  * Emit the palette as CSS custom properties.
@@ -118,6 +125,8 @@ for (const [token, value] of [
   ['__PALETTE_CSS__', paletteCSS()],
   ['__CATEGORY_CSS__', catCSS()],
   ['__ART_RENDER__', artRender],
+  ['__KIT_CSS__', kitCss],
+  ['__KIT_JS__', kitJs],
 ]) {
   if (!html.includes(token)) { console.error(`template is missing ${token}`); process.exit(1); }
   html = html.replaceAll(token, value);
