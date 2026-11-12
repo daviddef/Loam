@@ -122482,5 +122482,705 @@
     "why": "The Royal National Park is a protected national park in the Sutherland Shire local government area in Southern Sydney and in the City of Wollongong local government area in the Illawarra region of New South Wales, Australia. The national park is near the localities of Loftus, Otford and Waterfall.",
     "src": "https://en.wikipedia.org/wiki/Royal_National_Park",
     "verified": true
+  },
+  {
+    "in": [
+      "united_kingdom",
+      "cricket"
+    ],
+    "out": "england",
+    "why": "England is a country that is part of the United Kingdom. England shares a land border with Scotland to the north and another land border with Wales to the west, and is surrounded by the North Sea to the east, the English Channel to the south, the Celtic Sea to the south-west, and the Irish Sea to the west.",
+    "src": "https://en.wikipedia.org/wiki/England",
+    "verified": true
+  },
+  {
+    "in": [
+      "united_kingdom",
+      "mountain"
+    ],
+    "out": "scotland",
+    "why": "Scotland is a country that is part of the United Kingdom, consisting of the northern part of the island of Great Britain and adjacent islands, principally in the archipelagos of the Hebrides and the Northern Isles.",
+    "src": "https://en.wikipedia.org/wiki/Scotland",
+    "verified": true
+  },
+  {
+    "in": [
+      "united_kingdom",
+      "coal"
+    ],
+    "out": "wales",
+    "why": "Wales is a country that is part of the United Kingdom. Located on the island of Great Britain, it is bordered by the Irish Sea to the north and west, England to the east, the Bristol Channel to the south, and the Celtic Sea to the south-west.",
+    "src": "https://en.wikipedia.org/wiki/Wales",
+    "verified": true
+  },
+  {
+    "in": [
+      "united_kingdom",
+      "ireland"
+    ],
+    "out": "northern_ireland",
+    "why": "Northern Ireland is a part of the United Kingdom in the north-east of the island of Ireland. It has been variously described as a country, province or region.",
+    "src": "https://en.wikipedia.org/wiki/Northern_Ireland",
+    "verified": true
+  },
+  {
+    "in": [
+      "spain",
+      "mediterranean_sea"
+    ],
+    "out": "gibraltar",
+    "why": "Gibraltar is a British Overseas Territory and city located near the southern tip of the Iberian Peninsula, on the Bay of Gibraltar, near the exit of the Mediterranean Sea into the Atlantic Ocean (Strait of Gibraltar). It is bordered to the north by Spain (Campo de Gibraltar).",
+    "src": "https://en.wikipedia.org/wiki/Gibraltar",
+    "verified": true
+  },
+  {
+    "in": [
+      "spain",
+      "olive"
+    ],
+    "out": "andalusia",
+    "why": "Andalusia is the southernmost autonomous community in Peninsular Spain, located in the south of the Iberian Peninsula, in southwestern Europe.",
+    "src": "https://en.wikipedia.org/wiki/Andalusia",
+    "verified": true
+  },
+  {
+    "in": [
+      "spain",
+      "romance_languages"
+    ],
+    "out": "catalonia",
+    "why": "Catalonia is an autonomous community of Spain, designated as a nationality by its Statute of Autonomy. Its territory is situated on the northeast of the Iberian Peninsula, to the south of the Pyrenees mountain range.",
+    "src": "https://en.wikipedia.org/wiki/Catalonia",
+    "verified": true
+  },
+  {
+    "in": [
+      "spain",
+      "atlantic_ocean"
+    ],
+    "out": "galicia",
+    "why": "Galicia is an autonomous community of Spain and historic nationality under Spanish law. Located in the northwest Iberian Peninsula, it includes the provinces of A Coruña, Lugo, Ourense, and Pontevedra.",
+    "src": "https://en.wikipedia.org/wiki/Galicia_(Spain)",
+    "verified": true
+  },
+  {
+    "in": [
+      "france",
+      "celts"
+    ],
+    "out": "brittany",
+    "why": "Brittany is a peninsula, historical region and cultural area in the north-west of modern France, covering the western part of what was known as Armorica in Roman Gaul. It became an independent kingdom and then a duchy before being united with the Kingdom of France in 1532 as a province governed as a separate nation under the crown.",
+    "src": "https://en.wikipedia.org/wiki/Brittany",
+    "verified": true
+  },
+  {
+    "in": [
+      "france",
+      "wine"
+    ],
+    "out": "provence",
+    "why": "Provence is a geographical, cultural region and historical province of southeastern France, which stretches from the left bank of the lower Rhône to the west to the Italian border to the east; it is bordered by the Mediterranean Sea to the south.",
+    "src": "https://en.wikipedia.org/wiki/Provence",
+    "verified": true
+  },
+  {
+    "in": [
+      "germany",
+      "beer"
+    ],
+    "out": "bavaria",
+    "why": "Bavaria, officially the Free State of Bavaria, is a landlocked state of Germany. It borders the states of Baden-Württemberg to the west, Hesse to the north-west, and Thuringia and Saxony to the north, as well as the countries of Switzerland and Austria to the south and the Czech Republic to the east.",
+    "src": "https://en.wikipedia.org/wiki/Bavaria",
+    "verified": true
+  },
+  {
+    "in": [
+      "italy",
+      "renaissance"
+    ],
+    "out": "tuscany",
+    "why": "Tuscany is a region of central Italy. The capital and largest city is Florence.",
+    "src": "https://en.wikipedia.org/wiki/Tuscany",
+    "verified": true
+  },
+  {
+    "in": [
+      "belgium",
+      "netherlands"
+    ],
+    "out": "flanders",
+    "why": "Flanders is the Dutch-speaking northern part of Belgium. However, there are several overlapping definitions, including ones related to culture, language, politics, and history, and sometimes involving neighbouring countries.",
+    "src": "https://en.wikipedia.org/wiki/Flanders",
+    "verified": true
+  },
+  {
+    "in": [
+      "belgium",
+      "french"
+    ],
+    "out": "wallonia",
+    "why": "Wallonia, officially the Walloon Region is one of the three regions of Belgium—along with Flanders and Brussels. Covering the southern portion of the country, Wallonia is primarily French-speaking.",
+    "src": "https://en.wikipedia.org/wiki/Wallonia",
+    "verified": true
+  },
+  {
+    "in": [
+      "romania",
+      "carpathian_mountains"
+    ],
+    "out": "transylvania",
+    "why": "Transylvania is a historical and cultural region in Central Europe, encompassing central Romania. The region's natural border to the east and south is the Carpathian Mountains, and to the west it is the Apuseni Mountains.",
+    "src": "https://en.wikipedia.org/wiki/Transylvania",
+    "verified": true
+  },
+  {
+    "in": [
+      "canada",
+      "lake_ontario"
+    ],
+    "out": "ontario",
+    "why": "Ontario is the southernmost province of Canada. Located in Central Canada, Ontario is the country's most populous province.",
+    "src": "https://en.wikipedia.org/wiki/Ontario",
+    "verified": true
+  },
+  {
+    "in": [
+      "canada",
+      "french"
+    ],
+    "out": "quebec",
+    "why": "Quebec is Canada's largest province by area. Located in Central Canada, it is the country's only Francophone-majority province. It is home to speakers of Québécois French.",
+    "src": "https://en.wikipedia.org/wiki/Quebec",
+    "verified": true
+  },
+  {
+    "in": [
+      "united_states",
+      "atlantic_ocean"
+    ],
+    "out": "new_england",
+    "why": "New England is a region consisting of six states in the Northeastern United States: Connecticut, Maine, Massachusetts, New Hampshire, Rhode Island, and Vermont. It is bordered by the state of New York to the west and by the Canadian provinces of New Brunswick to the northeast and Quebec to the north.",
+    "src": "https://en.wikipedia.org/wiki/New_England",
+    "verified": true
+  },
+  {
+    "in": [
+      "united_states",
+      "manhattan"
+    ],
+    "out": "new_york_state",
+    "why": "New York, also called New York State, is a state located in the Northeastern United States. Bordering New England to its east, Pennsylvania and New Jersey to the south, and Canada to its north, New York extends into both the Atlantic Ocean and the Great Lakes.",
+    "src": "https://en.wikipedia.org/wiki/New_York_(state)",
+    "verified": true
+  },
+  {
+    "in": [
+      "united_states",
+      "coal"
+    ],
+    "out": "pennsylvania",
+    "why": "Pennsylvania, officially the Commonwealth of Pennsylvania, is a state located in the Mid-Atlantic, Northeastern, Appalachian, and Great Lakes regions of the United States.",
+    "src": "https://en.wikipedia.org/wiki/Pennsylvania",
+    "verified": true
+  },
+  {
+    "in": [
+      "united_states",
+      "orange"
+    ],
+    "out": "florida",
+    "why": "Florida is a state in the Southeastern and South Atlantic regions of the United States. It borders the Gulf of Mexico to the west, Alabama to the northwest, Georgia to the north, the Atlantic Ocean to the east, the Straits of Florida to the south, and The Bahamas to the southeast.",
+    "src": "https://en.wikipedia.org/wiki/Florida",
+    "verified": true
+  },
+  {
+    "in": [
+      "united_states",
+      "oil"
+    ],
+    "out": "texas",
+    "why": "Texas is a state in the United States. Located in the south-central part of the country, it borders Louisiana, Arkansas, Oklahoma, and New Mexico. It also borders Mexico along the Rio Grande, and has a coastline on the Gulf of Mexico.",
+    "src": "https://en.wikipedia.org/wiki/Texas",
+    "verified": true
+  },
+  {
+    "in": [
+      "united_states",
+      "gold"
+    ],
+    "out": "california",
+    "why": "California is a state in the Western United States. It is bordered by Oregon to the north, the Mexican state of Baja California to the south, Nevada to the east, Arizona to the southeast, and the Pacific Ocean to the west.",
+    "src": "https://en.wikipedia.org/wiki/California",
+    "verified": true
+  },
+  {
+    "in": [
+      "united_states",
+      "maize"
+    ],
+    "out": "midwestern_united_states",
+    "why": "The Midwestern United States (also referred to as the Midwest, the Heartland, the American Midwest, Middle America, or the Middle West) is one of the four census regions defined by the United States Census Bureau. It occupies the northern central part of the United States.",
+    "src": "https://en.wikipedia.org/wiki/Midwestern_United_States",
+    "verified": true
+  },
+  {
+    "in": [
+      "united_states",
+      "cotton"
+    ],
+    "out": "southern_united_states",
+    "why": "The Southern United States (sometimes Dixie, also referred to as the Southern States, the American South, the Southland, Dixieland, or simply the South) is one of the four census regions of the United States as defined by the U.S. Census Bureau. It is between the Atlantic Ocean and the Western United States, with the Midwestern and Northeastern United States to its north and the Gulf of Mexico and Mexico to its south.",
+    "src": "https://en.wikipedia.org/wiki/Southern_United_States",
+    "verified": true
+  },
+  {
+    "in": [
+      "united_states",
+      "rocky_mountains"
+    ],
+    "out": "western_united_states",
+    "why": "The Western United States (also called the American West, the Western States, the Far West, the Western territories, and the West) is one of the four census regions defined by the United States Census Bureau. As American settlement in the U.S. expanded westward, the meaning of the term the West changed.",
+    "src": "https://en.wikipedia.org/wiki/Western_United_States",
+    "verified": true
+  },
+  {
+    "in": [
+      "united_states",
+      "appalachian_mountains"
+    ],
+    "out": "northeastern_united_states",
+    "why": "The Northeastern United States (also referred to as the Northeast, the East Coast, or the American Northeast) form one of the four census regions defined by the United States Census Bureau. Located on the Atlantic coast of North America, the region borders Canada to its north, the Southern United States to its south, the Midwestern United States to its west, and the Atlantic Ocean to its east.",
+    "src": "https://en.wikipedia.org/wiki/Northeastern_United_States",
+    "verified": true
+  },
+  {
+    "in": [
+      "china",
+      "tea"
+    ],
+    "out": "yunnan",
+    "why": "Yunnan is an inland province in Southwestern China. The capital of the province is Kunming.",
+    "src": "https://en.wikipedia.org/wiki/Yunnan",
+    "verified": true
+  },
+  {
+    "in": [
+      "china",
+      "giant_panda"
+    ],
+    "out": "sichuan",
+    "why": "Sichuan is an inland province in Southwestern China. It is located in the Sichuan Basin and Tibetan Plateau—between the Jinsha River to the west, the Daba Mountains to the north, and the Yunnan–Guizhou Plateau to the south. Its capital city is Chengdu, and the province's population stands at 83 million.",
+    "src": "https://en.wikipedia.org/wiki/Sichuan",
+    "verified": true
+  },
+  {
+    "in": [
+      "china",
+      "pearl_river"
+    ],
+    "out": "guangdong",
+    "why": "Guangdong is a coastal province in South China, on the north shore of the South China Sea with Guangzhou as the capital.",
+    "src": "https://en.wikipedia.org/wiki/Guangdong",
+    "verified": true
+  },
+  {
+    "in": [
+      "china",
+      "silk_road"
+    ],
+    "out": "xinjiang",
+    "why": "Xinjiang, officially the Xinjiang Uygur Autonomous Region (XUAR), is an autonomous region of the People's Republic of China (PRC), in the northwest of the country at the crossroads of Central Asia and East Asia. It is the largest province-level division of China by area.",
+    "src": "https://en.wikipedia.org/wiki/Xinjiang",
+    "verified": true
+  },
+  {
+    "in": [
+      "china",
+      "tibetan_plateau"
+    ],
+    "out": "tibet",
+    "why": "Tibet is a region in the western part of East Asia, covering much of the Tibetan Plateau. It is the homeland of the Tibetans.",
+    "src": "https://en.wikipedia.org/wiki/Tibet",
+    "verified": true
+  },
+  {
+    "in": [
+      "china",
+      "tropical_climate"
+    ],
+    "out": "hainan",
+    "why": "Hainan is an island and the southernmost province of China, consisting of the eponymous Hainan Island and various smaller islands in the South China Sea under the province's administration. Its name literally means \"South of the Sea\".",
+    "src": "https://en.wikipedia.org/wiki/Hainan",
+    "verified": true
+  },
+  {
+    "in": [
+      "china",
+      "yellow_river"
+    ],
+    "out": "shandong",
+    "why": "Shandong is a coastal province in East China. It is China's second-most populous province, with 101.5 million people at the 2020 census. Jinan is the capital, while Linyi is the largest city by area and population.",
+    "src": "https://en.wikipedia.org/wiki/Shandong",
+    "verified": true
+  },
+  {
+    "in": [
+      "china",
+      "silk"
+    ],
+    "out": "zhejiang",
+    "why": "Zhejiang is a coastal province in East China. Its capital and largest city is Hangzhou, with other notable cities including Ningbo, Yiwu and Wenzhou. Zhejiang is bordered by Jiangsu and Shanghai to the north, Anhui to the northwest, Jiangxi to the west and Fujian to the south.",
+    "src": "https://en.wikipedia.org/wiki/Zhejiang",
+    "verified": true
+  },
+  {
+    "in": [
+      "china",
+      "mongolia"
+    ],
+    "out": "inner_mongolia",
+    "why": "Inner Mongolia, officially the Inner Mongolia Autonomous Region (IMAR), is an autonomous region of China. Its border includes two-thirds of the length of China's border with the country of Mongolia, as well as a small section with Russia (Zabaykalsky Krai).",
+    "src": "https://en.wikipedia.org/wiki/Inner_Mongolia",
+    "verified": true
+  },
+  {
+    "in": [
+      "china",
+      "snow"
+    ],
+    "out": "heilongjiang",
+    "why": "Heilongjiang is an inland province in northeast China. It is the northernmost and easternmost province of the country and contains China's northernmost point (in Mohe City along the Amur) and easternmost point (at the confluence of the Amur and Ussuri rivers). The province is bordered by Jilin to the south and Inner Mongolia to the west.",
+    "src": "https://en.wikipedia.org/wiki/Heilongjiang",
+    "verified": true
+  },
+  {
+    "in": [
+      "india",
+      "spice"
+    ],
+    "out": "kerala",
+    "why": "Kerala, officially Keralam, is a state on the Malabar Coast of southern India. It was formed on 1 November 1956 under the States Reorganisation Act, which unified the country's Malayalam-speaking regions into a single state.",
+    "src": "https://en.wikipedia.org/wiki/Kerala",
+    "verified": true
+  },
+  {
+    "in": [
+      "india",
+      "sikhism"
+    ],
+    "out": "punjab",
+    "why": "Punjab is a geographical, ethnolinguistic, and historical region in South Asia, located in its northwestern part, comprising areas of modern-day Pakistan and northwestern India. Lahore is its largest city and historic capital, with other major cities including Faisalabad, Rawalpindi, Gujranwala, Multan, and Sialkot in Pakistan; alongside Ludhiana, Amritsar, Chandigarh, Jalandhar, and Patiala in India.",
+    "src": "https://en.wikipedia.org/wiki/Punjab",
+    "verified": true
+  },
+  {
+    "in": [
+      "india",
+      "thar_desert"
+    ],
+    "out": "rajasthan",
+    "why": "Rajasthan is a state in northwestern India. It is the largest Indian state by area and the seventh largest by population.",
+    "src": "https://en.wikipedia.org/wiki/Rajasthan",
+    "verified": true
+  },
+  {
+    "in": [
+      "india",
+      "arabian_sea"
+    ],
+    "out": "gujarat",
+    "why": "Gujarat is a state along the western coast of India. Its coastline is the longest in the country, most of which lies on the Kathiawar peninsula. Gujarat is the fifth-largest Indian state by area.",
+    "src": "https://en.wikipedia.org/wiki/Gujarat",
+    "verified": true
+  },
+  {
+    "in": [
+      "india",
+      "deccan_plateau"
+    ],
+    "out": "maharashtra",
+    "why": "Maharashtra is a state in the western peninsular region of India occupying a substantial portion of the Deccan Plateau. It is bordered by the Arabian Sea to the west, the Indian states of Karnataka and Goa to the south, Telangana to the southeast and Chhattisgarh to the east, Gujarat and Madhya Pradesh to the north, and the Indian union territory of Dadra and Nagar Haveli and Daman and Diu to the northwest.",
+    "src": "https://en.wikipedia.org/wiki/Maharashtra",
+    "verified": true
+  },
+  {
+    "in": [
+      "india",
+      "bay_of_bengal"
+    ],
+    "out": "west_bengal",
+    "why": "West Bengal is a state in the eastern part of India. It is situated along the Bay of Bengal.",
+    "src": "https://en.wikipedia.org/wiki/West_Bengal",
+    "verified": true
+  },
+  {
+    "in": [
+      "india",
+      "hinduism"
+    ],
+    "out": "tamil_nadu",
+    "why": "Tamil Nadu is the southernmost state of India. The tenth largest Indian state by area and the sixth largest by population, it is the home of the Tamils, who speak the Tamil language, the state's official language and the first to be recognised as a classical language in India. Chennai is the state's largest city and capital.",
+    "src": "https://en.wikipedia.org/wiki/Tamil_Nadu",
+    "verified": true
+  },
+  {
+    "in": [
+      "india",
+      "beach"
+    ],
+    "out": "goa",
+    "why": "Goa is a state on the southwestern coast of India within the Konkan region. It is geographically separated from the Deccan highlands by the Western Ghats.",
+    "src": "https://en.wikipedia.org/wiki/Goa",
+    "verified": true
+  },
+  {
+    "in": [
+      "india",
+      "brahmaputra_river"
+    ],
+    "out": "assam",
+    "why": "Assam is a state in Northeast India, located south of the Eastern Himalayas along the Brahmaputra Valley and Barak River valleys. It is the second largest state in northeastern India by area.",
+    "src": "https://en.wikipedia.org/wiki/Assam",
+    "verified": true
+  },
+  {
+    "in": [
+      "india",
+      "western_ghats"
+    ],
+    "out": "karnataka",
+    "why": "Karnataka is a state on the southwestern coast of India. It was formed as Mysore State on 1 November 1956, with the passage of the States Reorganisation Act, and renamed in 1973. The state is bordered by the Lakshadweep Sea to the west, Goa to the northwest, Maharashtra to the north, Telangana to the northeast, Andhra Pradesh to the east, Tamil Nadu to the southeast, and Kerala to the southwest.",
+    "src": "https://en.wikipedia.org/wiki/Karnataka",
+    "verified": true
+  },
+  {
+    "in": [
+      "india",
+      "wheat"
+    ],
+    "out": "uttar_pradesh",
+    "why": "Uttar Pradesh is a state located in northern part of India. With over 241 million inhabitants, it is India's most populated state. The state is bordered by Rajasthan to the west, Haryana, Himachal Pradesh and Delhi to the northwest, Uttarakhand and Nepal to the north, Bihar to the east, Madhya Pradesh, Chhattisgarh and Jharkhand to the south.",
+    "src": "https://en.wikipedia.org/wiki/Uttar_Pradesh",
+    "verified": true
+  },
+  {
+    "in": [
+      "india",
+      "himalayas"
+    ],
+    "out": "kashmir",
+    "why": "Kashmir is the northernmost geographical region of the Indian subcontinent. Until the mid-19th century, the term Kashmir denoted only the Kashmir Valley between the Great Himalayas and the Pir Panjal Range.",
+    "src": "https://en.wikipedia.org/wiki/Kashmir",
+    "verified": true
+  },
+  {
+    "in": [
+      "pakistan",
+      "indus_river"
+    ],
+    "out": "sindh",
+    "why": "Sindh is a province of Pakistan, located in the southeastern region of the country. It is the third-largest Pakistani province by land area and second-largest by population.",
+    "src": "https://en.wikipedia.org/wiki/Sindh",
+    "verified": true
+  },
+  {
+    "in": [
+      "pakistan",
+      "iran"
+    ],
+    "out": "balochistan",
+    "why": "Balochistan is a historical region in West and South Asia, located in the Iranian plateau's far southeast and bordering the Indian plate and the Arabian Sea coastline. This arid region of desert and mountains is primarily populated by ethnic Baloch people.",
+    "src": "https://en.wikipedia.org/wiki/Balochistan",
+    "verified": true
+  },
+  {
+    "in": [
+      "pakistan",
+      "afghanistan"
+    ],
+    "out": "khyber_pakhtunkhwa",
+    "why": "Khyber Pakhtunkhwa (abbreviated KP) is a province of Pakistan. Located in the northwestern region of the country, Khyber Pakhtunkhwa is the fourth largest province of Pakistan by land area and the third-largest province by population.",
+    "src": "https://en.wikipedia.org/wiki/Khyber_Pakhtunkhwa",
+    "verified": true
+  },
+  {
+    "in": [
+      "indonesia",
+      "sumatra"
+    ],
+    "out": "aceh",
+    "why": "Aceh is the westernmost province of Indonesia. It is located on the northern end of Sumatra island, with Banda Aceh being its capital and largest city. It is bordered by the Indian Ocean to the west, Strait of Malacca to the northeast, and the province of North Sumatra to the east as its sole land border.",
+    "src": "https://en.wikipedia.org/wiki/Aceh",
+    "verified": true
+  },
+  {
+    "in": [
+      "malaysia",
+      "island"
+    ],
+    "out": "penang",
+    "why": "Penang is a Malaysian state located on the northwest coast of Peninsular Malaysia. It is divided into two parts by the Strait of Malacca: Penang Island to the west, where the capital city George Town is located, and Seberang Perai on the mainland Malay Peninsula to the east.",
+    "src": "https://en.wikipedia.org/wiki/Penang",
+    "verified": true
+  },
+  {
+    "in": [
+      "france",
+      "guyana"
+    ],
+    "out": "french_guiana",
+    "why": "French Guiana is an overseas department and region of France located on the northern coast of South America in the Guianas and the West Indies. Bordered by Suriname to the west and Brazil to the east and south.",
+    "src": "https://en.wikipedia.org/wiki/French_Guiana",
+    "verified": true
+  },
+  {
+    "in": [
+      "brazil",
+      "gold"
+    ],
+    "out": "minas_gerais",
+    "why": "Minas Gerais is one of the 27 federative units of Brazil, being the fourth largest state by area and the second largest in number of inhabitants.",
+    "src": "https://en.wikipedia.org/wiki/Minas_Gerais",
+    "verified": true
+  },
+  {
+    "in": [
+      "kurds",
+      "iraq"
+    ],
+    "out": "kurdistan",
+    "why": "Kurdistan, or Greater Kurdistan, is a roughly defined geo-cultural region and stateless nation in West Asia wherein the Kurds form a prominent majority population and the Kurdish culture, languages, and national identity have historically been based. Geographically, Kurdistan roughly encompasses the northwestern Zagros and the eastern Taurus mountain ranges.",
+    "src": "https://en.wikipedia.org/wiki/Kurdistan",
+    "verified": true
+  },
+  {
+    "in": [
+      "israel",
+      "egypt"
+    ],
+    "out": "gaza_strip",
+    "why": "The Gaza Strip, also known simply as Gaza, is the smaller of the two Palestinian territories (the other being the West Bank) that make up the State of Palestine in the Southern Levant region of West Asia. Gaza is bordered by Egypt on the southwest, Israel on the east and north, and the Mediterranean Sea to the west.",
+    "src": "https://en.wikipedia.org/wiki/Gaza_Strip",
+    "verified": true
+  },
+  {
+    "in": [
+      "saudi_arabia",
+      "red_sea"
+    ],
+    "out": "hejaz",
+    "why": "The Hejaz or Hijaz is a historical region of the Arabian Peninsula that includes the majority of the western region of Saudi Arabia, covering the cities of Mecca, Medina, Jeddah, Tabuk, Yanbu, Taif and Al-Bahah. It is thus known as the \"Western Province\", and it is bordered in the west by the Red Sea, in the north by Jordan and the Gulf of Aqaba, in the east by the Najd, and in the south by South Arabia.",
+    "src": "https://en.wikipedia.org/wiki/Hejaz",
+    "verified": true
+  },
+  {
+    "in": [
+      "saudi_arabia",
+      "arabian_desert"
+    ],
+    "out": "najd",
+    "why": "Najd, alternatively romanized as Nejd, is a historical region of the Arabian Peninsula that includes most of the central region of Saudi Arabia. It is roughly bounded by the Hejaz region to the west, the Nafud desert in al-Jawf to the north, the ad-Dahna Desert in al-Ahsa to the east, and the Rub' al-Khali to the south, though it lacks precise boundaries due to varying geographical and political limits throughout history.",
+    "src": "https://en.wikipedia.org/wiki/Najd",
+    "verified": true
+  },
+  {
+    "in": [
+      "iran",
+      "central_asia"
+    ],
+    "out": "khorasan",
+    "why": "Khorasan is a historical eastern region in the Iranian Plateau in West and Central Asia that encompasses western and northern Afghanistan, northeastern Iran, the eastern halves of Turkmenistan and Uzbekistan, western Tajikistan, and portions of Kyrgyzstan and Kazakhstan. The extent of the region referred to as Khorasan varied over time.",
+    "src": "https://en.wikipedia.org/wiki/Greater_Khorasan",
+    "verified": true
+  },
+  {
+    "in": [
+      "caucasus_mountains",
+      "europe"
+    ],
+    "out": "caucasus",
+    "why": "The Caucasus is a geographical region spanning Eastern Europe and Western Asia. It is situated between the Black Sea and the Caspian Sea, comprising parts of Southern Russia, Georgia, Armenia, and Azerbaijan.",
+    "src": "https://en.wikipedia.org/wiki/Caucasus",
+    "verified": true
+  },
+  {
+    "in": [
+      "asia",
+      "middle_east"
+    ],
+    "out": "west_asia",
+    "why": "West Asia (also called Western Asia or Southwest Asia) is the westernmost region of Asia. As defined by most academics, UN bodies and other institutions, the subregion consists of Anatolia, the Arabian Peninsula, Iran, Mesopotamia, the Armenian highlands, the Levant, the Sinai Peninsula and the South Caucasus.",
+    "src": "https://en.wikipedia.org/wiki/Western_Asia",
+    "verified": true
+  },
+  {
+    "in": [
+      "argentina",
+      "chile"
+    ],
+    "out": "southern_cone",
+    "why": "The Southern Cone is a geographical and cultural subregion composed of the southernmost areas of South America, mostly south of the Tropic of Capricorn. Traditionally, it covers Argentina, Chile, and Uruguay, bounded on the west by the Pacific Ocean and on the east by the Atlantic Ocean.",
+    "src": "https://en.wikipedia.org/wiki/Southern_Cone",
+    "verified": true
+  },
+  {
+    "in": [
+      "africa",
+      "congo_river"
+    ],
+    "out": "central_africa",
+    "why": "Central Africa is a subregion of the African continent comprising various countries according to different definitions. Middle Africa is an analogous term used by the United Nations in its geoscheme for Africa and consists of the following countries: Angola, Cameroon, Central African Republic, Chad, Democratic Republic of the Congo, Equatorial Guinea, Gabon, Republic of the Congo, and São Tomé and Príncipe.",
+    "src": "https://en.wikipedia.org/wiki/Central_Africa",
+    "verified": true
+  },
+  {
+    "in": [
+      "africa",
+      "mediterranean_sea"
+    ],
+    "out": "north_africa",
+    "why": "North Africa, also known as Northern Africa, is a region encompassing the northern portion of the African continent. There is no singularly accepted scope for the region.",
+    "src": "https://en.wikipedia.org/wiki/North_Africa",
+    "verified": true
+  },
+  {
+    "in": [
+      "africa",
+      "south_africa"
+    ],
+    "out": "southern_africa",
+    "why": "Southern Africa is the southernmost region of Africa. No definition is agreed upon, but some groupings include the United Nations geoscheme, the intergovernmental Southern African Development Community, and the physical geography definition based on the physical characteristics of the land. The most restrictive definition considers the region of Southern Africa to consist of Botswana, Eswatini, Lesotho, Namibia, and South Africa, while other definitions also include several other countries from the area.",
+    "src": "https://en.wikipedia.org/wiki/Southern_Africa",
+    "verified": true
+  },
+  {
+    "in": [
+      "arabic",
+      "middle_east"
+    ],
+    "out": "arab_world",
+    "why": "The Arab world comprises a large group of countries, mainly located in West Asia and North Africa. While the majority of people in the Arab world are ethnically Arab, there are also significant populations of other ethnic groups such as Berbers, Kurds, Somalis and Nubians, among other groups.",
+    "src": "https://en.wikipedia.org/wiki/Arab_world",
+    "verified": true
+  },
+  {
+    "in": [
+      "europe",
+      "united_states"
+    ],
+    "out": "western_world",
+    "why": "The Western world, also known as the West, primarily refers to various nations and states in Europe, the Americas, and Australasia. The Western world likewise is called the Occident in contrast to the Eastern world known as the Orient.",
+    "src": "https://en.wikipedia.org/wiki/Western_world",
+    "verified": true
+  },
+  {
+    "in": [
+      "tropic_of_cancer",
+      "tropic_of_capricorn"
+    ],
+    "out": "tropics",
+    "why": "The tropics are the region of Earth surrounding the equator, where the Sun may shine directly overhead. This contrasts with the temperate or polar regions of Earth, where the Sun can never be directly overhead.",
+    "src": "https://en.wikipedia.org/wiki/Tropics",
+    "verified": true
   }
 ]

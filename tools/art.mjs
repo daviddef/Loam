@@ -47683,6 +47683,52 @@ def('mount_pelee', () => gAll(...gFrame(), ...gGround(40), gWave(46, 'hi', 1.6),
 def('mount_st_helens', () => ldVol(30, 18, 40, 30, gCloud(30), S('M24 18 L36 18', 'hi', 3)));
 def('mauna_loa', () => gAll(...gFrame(), ...gGround(48), P('M3 48 Q30 12 57 48 Z', 'ik'), S('M20 28 L40 28', 'hi', 2), gWave(54, 'hi', 1.6)));
 
+/* ── regions, provinces and states, 12 Nov ── */
+const ldB = [
+  'M14 22 Q20 10 34 12 Q48 12 48 26 Q50 40 36 48 Q22 52 14 42 Q8 32 14 22 Z',
+  'M24 8 Q40 8 42 20 Q44 34 38 48 Q28 54 22 48 Q14 36 18 24 Q18 12 24 8 Z',
+  'M8 26 Q16 16 30 20 Q46 14 52 26 Q50 40 36 42 Q20 48 10 40 Q4 32 8 26 Z',
+  'M12 14 L48 14 Q52 24 40 32 Q32 42 30 52 Q24 42 20 32 Q8 24 12 14 Z',
+  'M18 8 L30 10 Q36 22 32 34 Q36 46 28 52 L16 50 Q22 36 16 28 Q12 16 18 8 Z',
+  'M16 26 Q24 18 36 22 Q46 24 44 34 Q38 44 26 42 Q14 40 16 26 Z',
+  'M12 14 L40 14 L40 20 L48 20 L48 46 L12 46 Z',
+  'M10 16 L30 12 L50 16 L50 30 L36 34 L32 50 L24 50 L20 34 L10 30 Z',
+];
+const ldCrown = (x, y) => P(`M${x - 6} ${y + 5} L${x - 6} ${y - 3} L${x - 3} ${y} L${x} ${y - 4} L${x + 3} ${y} L${x + 6} ${y - 3} L${x + 6} ${y + 5} Z`, 'ik');
+const ldMug = (x, y) => [box(x - 4, y - 5, 8, 10, 'ik'), S(`M${x + 4} ${y - 3} Q${x + 8} ${y - 3} ${x + 8} ${y} Q${x + 8} ${y + 3} ${x + 4} ${y + 3}`, 'ik', 1.6), S(`M${x - 4} ${y - 5} Q${x} ${y - 8} ${x + 4} ${y - 5}`, 'ik', 1.6)];
+const ldCastle = (x, y) => [box(x - 7, y - 3, 14, 10, 'ik'), box(x - 7, y - 6, 3, 3, 'ik'), box(x - 1.5, y - 6, 3, 3, 'ik'), box(x + 4, y - 6, 3, 3, 'ik')];
+const ldDome = (x, y) => [P(`M${x - 7} ${y + 5} Q${x - 7} ${y - 5} ${x} ${y - 5} Q${x + 7} ${y - 5} ${x + 7} ${y + 5} Z`, 'ik'), S(`M${x} ${y - 5} L${x} ${y - 9}`, 'ik', 1.4)];
+const ldCres = (x, y) => [C(x, y, 5, 'ik'), C(x + 2, y - 1, 4, 'hi')];
+const ldTower = (x, y) => [P(`M${x - 6} ${y + 6} L${x - 4} ${y} L${x - 2} ${y - 4} L${x + 2} ${y - 4} L${x + 4} ${y} L${x + 6} ${y + 6} Z`, 'ik'), S(`M${x - 5} ${y + 2} L${x + 5} ${y + 2} M${x - 3} ${y - 2} L${x + 3} ${y - 2}`, 'hi', 1)];
+const ldSnow = (x, y) => S(`M${x - 4} ${y} L${x + 4} ${y} M${x} ${y - 4} L${x} ${y + 4} M${x - 3} ${y - 3} L${x + 3} ${y + 3} M${x - 3} ${y + 3} L${x + 3} ${y - 3}`, 'ik', 1.4);
+const ldGrapes = (x, y) => [C(x - 2, y, 2.4, 'ik'), C(x + 2, y, 2.4, 'ik'), C(x, y + 3.6, 2.4, 'ik'), S(`M${x} ${y - 2} L${x + 2} ${y - 6}`, 'ik', 1.4)];
+const ldCactusS = x => [S(`M${x} 52 L${x} 42`, 'ik', 2), S(`M${x} 48 L${x - 3} 48 L${x - 3} 44 M${x} 46 L${x + 3} 46 L${x + 3} 42`, 'ik', 1.4)];
+const ldPk = (x, y) => gPeak(x, y, 14, 12);
+const ldReg = (k, ...emb) => gAll(...gMapBlob(ldB[k]), ...emb);
+const ldRg = {
+  england: [0, ldCrown(10, 12), gSun(49, 11, 4)], scotland: [4, ldPk(44, 8), gSun(10, 10, 4)], wales: [0, ldPk(44, 8), ldCrown(10, 12)], northern_ireland: [5, gTree(10, 46, 0.9), gWave(52, 'ik', 1.4)],
+  gibraltar: [5, ldPk(10, 6), gWave(52, 'ik', 1.4)], andalusia: [2, gSun(49, 10, 4), gTree(10, 48, 0.9)], catalonia: [0, S('M44 8 L56 8 M44 12 L56 12 M44 16 L56 16', 'ik', 1.6), gSail(12, 52, 0.7)],
+  galicia: [3, gWave(52, 'ik', 1.4), gSail(50, 28, 0.7)], brittany: [3, gSail(50, 26, 0.7), gWave(52, 'ik', 1.4)], provence: [0, ldGrapes(48, 12), gSun(10, 10, 4)], bavaria: [6, ldMug(50, 12), gTree(10, 52, 0.8)],
+  tuscany: [0, gTree(10, 46, 0.9), gTree(50, 46, 0.9)], flanders: [2, gTurbine(10), gWave(52, 'ik', 1.4)], wallonia: [2, gTree(10, 46, 0.9), gTree(50, 46, 0.9)], transylvania: [0, ldCastle(49, 12), ldPk(10, 6)],
+  ontario: [2, gWave(50, 'ik', 1.4), gWave(54, 'ik', 1.4), gTree(10, 12, 0.8)], quebec: [1, gStar(50, 12, 4), gTree(10, 46, 0.9)], new_england: [1, gTree(10, 46, 0.9), gTree(50, 46, 0.9), gWave(54, 'ik', 1.4)],
+  new_york_state: [6, ldTower(50, 52), gWave(54, 'ik', 1.4)], pennsylvania: [6, ldDome(50, 12), gTree(10, 52, 0.8)], florida: [4, gSun(49, 10, 4), gWave(52, 'ik', 1.4)], texas: [7, gStar(10, 10, 4), gStar(50, 52, 3)],
+  california: [4, gSun(49, 10, 4), gWave(52, 'ik', 1.4)], midwestern_united_states: [6, ldGr(10, 18, 26), gSun(50, 10, 4)], southern_united_states: [2, ldGr(10, 18), gSun(49, 10, 4)], western_united_states: [2, ldPk(10, 6), ldPk(40, 6)],
+  northeastern_united_states: [1, gTree(10, 46, 0.9), gTree(50, 46, 0.9), gWave(54, 'ik', 1.4)], yunnan: [0, ldPk(10, 6), gSun(49, 10, 4)], sichuan: [0, S('M10 52 L10 40 M15 52 L15 38 M20 52 L20 42', 'ik', 2.4), gSun(49, 10, 4)],
+  guangdong: [3, gSail(50, 26, 0.7), gWave(52, 'ik', 1.4)], xinjiang: [2, ldPk(10, 6), gSun(49, 10, 4)], tibet: [2, ldPk(10, 6), ldPk(40, 6)], hainan: [5, gTree(10, 46, 0.9), gWave(52, 'ik', 1.4)],
+  shandong: [3, ldGr(10, 18), gSun(49, 10, 4)], zhejiang: [0, gSail(50, 26, 0.7), gWave(52, 'ik', 1.4)], inner_mongolia: [2, gYurt(12, 46), gSun(49, 10, 4)], heilongjiang: [1, ldSnow(10, 12), ldSnow(50, 50)],
+  kerala: [4, gTree(46, 40, 0.9), gWave(52, 'ik', 1.4)], punjab: [0, ldGr(10, 18, 26), gSun(49, 10, 4)], rajasthan: [2, gSun(49, 10, 4), ldCactusS(10)], gujarat: [3, gSail(50, 26, 0.7), gWave(52, 'ik', 1.4)],
+  maharashtra: [0, ldPk(10, 6), gWave(52, 'ik', 1.4)], west_bengal: [1, gFish(48, 14, 0.9), gWave(52, 'ik', 1.4)], tamil_nadu: [3, ldTower(50, 14), gWave(52, 'ik', 1.4)], goa: [4, gTree(46, 40, 0.9), gWave(52, 'ik', 1.4)],
+  assam: [2, gTree(10, 46, 0.9), gWave(52, 'ik', 1.4)], karnataka: [0, ldPk(10, 6), gSun(49, 10, 4)], uttar_pradesh: [0, ldDome(50, 12), gWave(52, 'ik', 1.4)], kashmir: [1, ldPk(40, 6), ldSnow(10, 12)],
+  sindh: [1, gWave(50, 'ik', 1.4), gSun(49, 10, 4)], balochistan: [2, gSun(49, 10, 4), ldCactusS(10)], khyber_pakhtunkhwa: [1, ldPk(40, 6), gSun(10, 10, 4)], aceh: [4, ldDome(46, 14), gWave(52, 'ik', 1.4)],
+  penang: [5, gSail(50, 26, 0.7), gWave(52, 'ik', 1.4)], french_guiana: [0, S('M50 22 L50 8', 'ik', 2.4), P('M47 10 L50 4 L53 10 Z', 'ik'), gTree(10, 46, 0.9)], minas_gerais: [0, ldPk(10, 6), gSun(49, 10, 4)],
+  kurdistan: [2, ldPk(10, 6), ldPk(40, 6)], gaza_strip: [4, gWave(52, 'ik', 1.4), gSun(49, 10, 4)], hejaz: [1, box(46, 8, 8, 8, 'ik'), gSun(10, 10, 4)], najd: [2, gSun(49, 10, 4), ldCactusS(10)],
+  khorasan: [2, gSun(49, 10, 4), ldPk(10, 6)], caucasus: [2, ldPk(10, 6), ldPk(40, 6)], west_asia: [2, gSun(49, 10, 4), ldCres(10, 12)], southern_cone: [1, ldPk(40, 6), gWave(54, 'ik', 1.4)],
+  central_africa: [0, gTree(10, 46, 0.9), gTree(50, 46, 0.9)], north_africa: [2, gSun(49, 10, 4), gWave(54, 'ik', 1.4)], southern_africa: [3, gStar(50, 12, 4), gWave(54, 'ik', 1.4)], arab_world: [2, ldCres(10, 12), gSun(49, 10, 4)],
+  western_world: [2, gStar(10, 12, 4), gStar(50, 12, 4)],
+};
+for (const [id, [k, ...emb]] of Object.entries(ldRg)) def(id, () => ldReg(k, ...emb));
+def('tropics', () => gAll(...gFrame(), box(3, 20, 54, 20, 'lo'), S('M3 20 L57 20 M3 40 L57 40', 'ik', 1.6), S('M3 30 L57 30', 'hi', 1.6), gSun(30, 10, 5), gWave(50, 'ik', 1.4)));
+
 /* ── build ────────────────────────────────────────────────────────────────*/
 
 const out = {};

@@ -17690,8 +17690,7 @@
       "wild"
     ],
     "fact": "Evolved an extra 'thumb' from a wrist bone just to grip bamboo, despite being classed a carnivore.",
-    "taxon": "tx_ailuropoda",
-    "terminal": true
+    "taxon": "tx_ailuropoda"
   },
   {
     "id": "sun_bear",
@@ -43836,8 +43835,7 @@
     "tags": [
       "earth"
     ],
-    "fact": "Latitude 23.4°N — the northernmost point where the Sun sits directly overhead, on the June solstice.",
-    "terminal": true
+    "fact": "Latitude 23.4°N — the northernmost point where the Sun sits directly overhead, on the June solstice."
   },
   {
     "id": "tropic_of_capricorn",
@@ -43847,8 +43845,7 @@
     "tags": [
       "earth"
     ],
-    "fact": "Latitude 23.4°S — the southernmost point where the Sun sits directly overhead, on the December solstice.",
-    "terminal": true
+    "fact": "Latitude 23.4°S — the southernmost point where the Sun sits directly overhead, on the December solstice."
   },
   {
     "id": "steppe",
@@ -116305,5 +116302,845 @@
     ],
     "fact": "Protected national park south of Sydney, New South Wales.",
     "src": "https://en.wikipedia.org/wiki/Royal_National_Park"
+  },
+  {
+    "id": "england",
+    "name": "England",
+    "emoji": "🏰",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Country that is part of the United Kingdom, on the island of Great Britain.",
+    "src": "https://en.wikipedia.org/wiki/England"
+  },
+  {
+    "id": "scotland",
+    "name": "Scotland",
+    "emoji": "🏔️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Country of the United Kingdom covering the northern part of Great Britain and its adjacent islands.",
+    "src": "https://en.wikipedia.org/wiki/Scotland"
+  },
+  {
+    "id": "wales",
+    "name": "Wales",
+    "emoji": "⛏️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Country of the United Kingdom on the island of Great Britain, bordered by England to the east.",
+    "src": "https://en.wikipedia.org/wiki/Wales"
+  },
+  {
+    "id": "northern_ireland",
+    "name": "Northern Ireland",
+    "emoji": "☘️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Part of the United Kingdom in the north-east of the island of Ireland.",
+    "src": "https://en.wikipedia.org/wiki/Northern_Ireland"
+  },
+  {
+    "id": "gibraltar",
+    "name": "Gibraltar",
+    "emoji": "🪨",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "British Overseas Territory near the southern tip of the Iberian Peninsula.",
+    "src": "https://en.wikipedia.org/wiki/Gibraltar"
+  },
+  {
+    "id": "andalusia",
+    "name": "Andalusia",
+    "emoji": "🫒",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Southernmost autonomous community of Peninsular Spain.",
+    "src": "https://en.wikipedia.org/wiki/Andalusia"
+  },
+  {
+    "id": "catalonia",
+    "name": "Catalonia",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Autonomous community of Spain in the northeast of the Iberian Peninsula.",
+    "src": "https://en.wikipedia.org/wiki/Catalonia"
+  },
+  {
+    "id": "galicia",
+    "name": "Galicia",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Autonomous community in the northwest of Spain and the Iberian Peninsula.",
+    "src": "https://en.wikipedia.org/wiki/Galicia_(Spain)"
+  },
+  {
+    "id": "brittany",
+    "name": "Brittany",
+    "emoji": "⚓",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Peninsula and historical region in the north-west of France.",
+    "src": "https://en.wikipedia.org/wiki/Brittany"
+  },
+  {
+    "id": "provence",
+    "name": "Provence",
+    "emoji": "🍇",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Historical region of southeastern France between the lower Rhône and the Italian border.",
+    "src": "https://en.wikipedia.org/wiki/Provence"
+  },
+  {
+    "id": "bavaria",
+    "name": "Bavaria",
+    "emoji": "🍺",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Landlocked state of Germany, officially the Free State of Bavaria.",
+    "src": "https://en.wikipedia.org/wiki/Bavaria"
+  },
+  {
+    "id": "tuscany",
+    "name": "Tuscany",
+    "emoji": "🏛️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Region of central Italy whose capital and largest city is Florence.",
+    "src": "https://en.wikipedia.org/wiki/Tuscany"
+  },
+  {
+    "id": "flanders",
+    "name": "Flanders",
+    "emoji": "🏘️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Dutch-speaking northern part of Belgium.",
+    "src": "https://en.wikipedia.org/wiki/Flanders"
+  },
+  {
+    "id": "wallonia",
+    "name": "Wallonia",
+    "emoji": "🏘️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "French-speaking southern region of Belgium.",
+    "src": "https://en.wikipedia.org/wiki/Wallonia"
+  },
+  {
+    "id": "transylvania",
+    "name": "Transylvania",
+    "emoji": "🏰",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Historical region in Central Europe covering central Romania.",
+    "src": "https://en.wikipedia.org/wiki/Transylvania"
+  },
+  {
+    "id": "ontario",
+    "name": "Ontario",
+    "emoji": "🍁",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Southernmost province of Canada and its most populous.",
+    "src": "https://en.wikipedia.org/wiki/Ontario"
+  },
+  {
+    "id": "quebec",
+    "name": "Quebec",
+    "emoji": "⚜️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Canada's largest province by area and its only Francophone-majority one.",
+    "src": "https://en.wikipedia.org/wiki/Quebec"
+  },
+  {
+    "id": "new_england",
+    "name": "New England",
+    "emoji": "🍂",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Region of six states in the northeastern United States.",
+    "src": "https://en.wikipedia.org/wiki/New_England"
+  },
+  {
+    "id": "new_york_state",
+    "name": "New York (state)",
+    "emoji": "🗽",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "State in the northeastern United States, on the Atlantic Ocean and the Great Lakes.",
+    "src": "https://en.wikipedia.org/wiki/New_York_(state)"
+  },
+  {
+    "id": "pennsylvania",
+    "name": "Pennsylvania",
+    "emoji": "🔔",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Commonwealth of the United States, in the Mid-Atlantic, Northeastern and Great Lakes regions.",
+    "src": "https://en.wikipedia.org/wiki/Pennsylvania"
+  },
+  {
+    "id": "florida",
+    "name": "Florida",
+    "emoji": "🍊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "State in the southeastern United States, between the Gulf of Mexico and the Atlantic.",
+    "src": "https://en.wikipedia.org/wiki/Florida"
+  },
+  {
+    "id": "texas",
+    "name": "Texas",
+    "emoji": "🤠",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "State in the south-central United States, bordering Mexico along the Rio Grande.",
+    "src": "https://en.wikipedia.org/wiki/Texas"
+  },
+  {
+    "id": "california",
+    "name": "California",
+    "emoji": "🌴",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Most populous state of the United States, on the Pacific coast.",
+    "src": "https://en.wikipedia.org/wiki/California"
+  },
+  {
+    "id": "midwestern_united_states",
+    "name": "Midwestern United States",
+    "emoji": "🌽",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "One of the four census regions of the United States, in the northern central part of the country.",
+    "src": "https://en.wikipedia.org/wiki/Midwestern_United_States"
+  },
+  {
+    "id": "southern_united_states",
+    "name": "Southern United States",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "One of the four census regions of the United States, between the Atlantic and the Gulf of Mexico.",
+    "src": "https://en.wikipedia.org/wiki/Southern_United_States"
+  },
+  {
+    "id": "western_united_states",
+    "name": "Western United States",
+    "emoji": "🏜️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "One of the four census regions of the United States, also called the American West.",
+    "src": "https://en.wikipedia.org/wiki/Western_United_States"
+  },
+  {
+    "id": "northeastern_united_states",
+    "name": "Northeastern United States",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "One of the four census regions of the United States, on the Atlantic coast.",
+    "src": "https://en.wikipedia.org/wiki/Northeastern_United_States"
+  },
+  {
+    "id": "yunnan",
+    "name": "Yunnan",
+    "emoji": "🍵",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Inland province in Southwestern China whose capital is Kunming.",
+    "src": "https://en.wikipedia.org/wiki/Yunnan"
+  },
+  {
+    "id": "sichuan",
+    "name": "Sichuan",
+    "emoji": "🐼",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Inland province in Southwestern China whose capital is Chengdu.",
+    "src": "https://en.wikipedia.org/wiki/Sichuan"
+  },
+  {
+    "id": "guangdong",
+    "name": "Guangdong",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Coastal province in South China, on the north shore of the South China Sea.",
+    "src": "https://en.wikipedia.org/wiki/Guangdong"
+  },
+  {
+    "id": "xinjiang",
+    "name": "Xinjiang",
+    "emoji": "🐪",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Autonomous region in northwest China, its largest province-level division.",
+    "src": "https://en.wikipedia.org/wiki/Xinjiang"
+  },
+  {
+    "id": "tibet",
+    "name": "Tibet",
+    "emoji": "🏔️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Region in the western part of East Asia, covering much of the Tibetan Plateau.",
+    "src": "https://en.wikipedia.org/wiki/Tibet"
+  },
+  {
+    "id": "hainan",
+    "name": "Hainan",
+    "emoji": "🏝️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Island and southernmost province of China, in the South China Sea.",
+    "src": "https://en.wikipedia.org/wiki/Hainan"
+  },
+  {
+    "id": "shandong",
+    "name": "Shandong",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Coastal province in East China whose capital is Jinan.",
+    "src": "https://en.wikipedia.org/wiki/Shandong"
+  },
+  {
+    "id": "zhejiang",
+    "name": "Zhejiang",
+    "emoji": "🧵",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Coastal province in East China whose capital is Hangzhou.",
+    "src": "https://en.wikipedia.org/wiki/Zhejiang"
+  },
+  {
+    "id": "inner_mongolia",
+    "name": "Inner Mongolia",
+    "emoji": "🐎",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Autonomous region of China bordering the country of Mongolia.",
+    "src": "https://en.wikipedia.org/wiki/Inner_Mongolia"
+  },
+  {
+    "id": "heilongjiang",
+    "name": "Heilongjiang",
+    "emoji": "❄️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Inland province in northeast China, the country's northernmost and easternmost.",
+    "src": "https://en.wikipedia.org/wiki/Heilongjiang"
+  },
+  {
+    "id": "kerala",
+    "name": "Kerala",
+    "emoji": "🌴",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "State on the Malabar Coast of southern India, formed in 1956.",
+    "src": "https://en.wikipedia.org/wiki/Kerala"
+  },
+  {
+    "id": "punjab",
+    "name": "Punjab",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Region of South Asia across northwestern India and Pakistan, with Lahore as its historic capital.",
+    "src": "https://en.wikipedia.org/wiki/Punjab"
+  },
+  {
+    "id": "rajasthan",
+    "name": "Rajasthan",
+    "emoji": "🏜️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "State in northwestern India, the largest by area.",
+    "src": "https://en.wikipedia.org/wiki/Rajasthan"
+  },
+  {
+    "id": "gujarat",
+    "name": "Gujarat",
+    "emoji": "🏭",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "State on the western coast of India with the longest coastline in the country.",
+    "src": "https://en.wikipedia.org/wiki/Gujarat"
+  },
+  {
+    "id": "maharashtra",
+    "name": "Maharashtra",
+    "emoji": "🏙️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "State in western India that occupies much of the Deccan Plateau.",
+    "src": "https://en.wikipedia.org/wiki/Maharashtra"
+  },
+  {
+    "id": "west_bengal",
+    "name": "West Bengal",
+    "emoji": "🐅",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "State in eastern India along the Bay of Bengal.",
+    "src": "https://en.wikipedia.org/wiki/West_Bengal"
+  },
+  {
+    "id": "tamil_nadu",
+    "name": "Tamil Nadu",
+    "emoji": "🛕",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Southernmost state of India, home of the Tamils.",
+    "src": "https://en.wikipedia.org/wiki/Tamil_Nadu"
+  },
+  {
+    "id": "goa",
+    "name": "Goa",
+    "emoji": "🏖️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "State on the southwestern coast of India within the Konkan region.",
+    "src": "https://en.wikipedia.org/wiki/Goa"
+  },
+  {
+    "id": "assam",
+    "name": "Assam",
+    "emoji": "🍵",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "State in Northeast India along the Brahmaputra Valley.",
+    "src": "https://en.wikipedia.org/wiki/Assam"
+  },
+  {
+    "id": "karnataka",
+    "name": "Karnataka",
+    "emoji": "🏞️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "State on the southwestern coast of India, formed in 1956 as Mysore State.",
+    "src": "https://en.wikipedia.org/wiki/Karnataka"
+  },
+  {
+    "id": "uttar_pradesh",
+    "name": "Uttar Pradesh",
+    "emoji": "🕌",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "State in northern India and its most populated.",
+    "src": "https://en.wikipedia.org/wiki/Uttar_Pradesh"
+  },
+  {
+    "id": "kashmir",
+    "name": "Kashmir",
+    "emoji": "🏔️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Northernmost geographical region of the Indian subcontinent.",
+    "src": "https://en.wikipedia.org/wiki/Kashmir"
+  },
+  {
+    "id": "sindh",
+    "name": "Sindh",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Province of Pakistan in the southeast of the country.",
+    "src": "https://en.wikipedia.org/wiki/Sindh"
+  },
+  {
+    "id": "balochistan",
+    "name": "Balochistan",
+    "emoji": "🏜️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Historical arid region of desert and mountains in West and South Asia.",
+    "src": "https://en.wikipedia.org/wiki/Balochistan"
+  },
+  {
+    "id": "khyber_pakhtunkhwa",
+    "name": "Khyber Pakhtunkhwa",
+    "emoji": "⛰️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Province of Pakistan in the northwest of the country.",
+    "src": "https://en.wikipedia.org/wiki/Khyber_Pakhtunkhwa"
+  },
+  {
+    "id": "aceh",
+    "name": "Aceh",
+    "emoji": "🕌",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Westernmost province of Indonesia, on the northern end of Sumatra.",
+    "src": "https://en.wikipedia.org/wiki/Aceh"
+  },
+  {
+    "id": "penang",
+    "name": "Penang",
+    "emoji": "🏝️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Malaysian state on the northwest coast of Peninsular Malaysia.",
+    "src": "https://en.wikipedia.org/wiki/Penang"
+  },
+  {
+    "id": "french_guiana",
+    "name": "French Guiana",
+    "emoji": "🚀",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Overseas department and region of France on the northern coast of South America.",
+    "src": "https://en.wikipedia.org/wiki/French_Guiana"
+  },
+  {
+    "id": "minas_gerais",
+    "name": "Minas Gerais",
+    "emoji": "⛏️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "One of the 27 federative units of Brazil, the fourth largest state by area.",
+    "src": "https://en.wikipedia.org/wiki/Minas_Gerais"
+  },
+  {
+    "id": "kurdistan",
+    "name": "Kurdistan",
+    "emoji": "⛰️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Roughly defined geo-cultural region in West Asia where the Kurds form the majority.",
+    "src": "https://en.wikipedia.org/wiki/Kurdistan"
+  },
+  {
+    "id": "gaza_strip",
+    "name": "Gaza Strip",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Smaller of the two Palestinian territories, on the Mediterranean coast.",
+    "src": "https://en.wikipedia.org/wiki/Gaza_Strip"
+  },
+  {
+    "id": "hejaz",
+    "name": "Hejaz",
+    "emoji": "🕋",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Historical region of western Saudi Arabia that includes Mecca and Medina.",
+    "src": "https://en.wikipedia.org/wiki/Hejaz"
+  },
+  {
+    "id": "najd",
+    "name": "Najd",
+    "emoji": "🐪",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Historical region covering most of central Saudi Arabia.",
+    "src": "https://en.wikipedia.org/wiki/Najd"
+  },
+  {
+    "id": "khorasan",
+    "name": "Khorasan",
+    "emoji": "🐪",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Historical eastern region of the Iranian Plateau in West and Central Asia.",
+    "src": "https://en.wikipedia.org/wiki/Greater_Khorasan"
+  },
+  {
+    "id": "caucasus",
+    "name": "Caucasus",
+    "emoji": "⛰️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Region spanning Eastern Europe and Western Asia between the Black and Caspian seas.",
+    "src": "https://en.wikipedia.org/wiki/Caucasus"
+  },
+  {
+    "id": "west_asia",
+    "name": "West Asia",
+    "emoji": "🗺️",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Westernmost region of Asia, also called Western Asia or Southwest Asia.",
+    "src": "https://en.wikipedia.org/wiki/Western_Asia"
+  },
+  {
+    "id": "southern_cone",
+    "name": "Southern Cone",
+    "emoji": "🌎",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Southernmost areas of South America, covering Argentina, Chile and Uruguay.",
+    "src": "https://en.wikipedia.org/wiki/Southern_Cone"
+  },
+  {
+    "id": "central_africa",
+    "name": "Central Africa",
+    "emoji": "🌍",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Subregion of the African continent, also called Middle Africa by the United Nations.",
+    "src": "https://en.wikipedia.org/wiki/Central_Africa"
+  },
+  {
+    "id": "north_africa",
+    "name": "North Africa",
+    "emoji": "🌍",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Region encompassing the northern portion of the African continent.",
+    "src": "https://en.wikipedia.org/wiki/North_Africa"
+  },
+  {
+    "id": "southern_africa",
+    "name": "Southern Africa",
+    "emoji": "🌍",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Southernmost region of Africa.",
+    "src": "https://en.wikipedia.org/wiki/Southern_Africa"
+  },
+  {
+    "id": "arab_world",
+    "name": "Arab World",
+    "emoji": "🕌",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Large group of countries mainly in West Asia and North Africa.",
+    "src": "https://en.wikipedia.org/wiki/Arab_world"
+  },
+  {
+    "id": "western_world",
+    "name": "Western World",
+    "emoji": "🌐",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Nations of Europe, the Americas and Australasia, also called the Occident.",
+    "src": "https://en.wikipedia.org/wiki/Western_world"
+  },
+  {
+    "id": "tropics",
+    "name": "Tropics",
+    "emoji": "🌴",
+    "shelf": "workshop",
+    "tags": [
+      "earth",
+      "society"
+    ],
+    "fact": "Region of Earth surrounding the equator, where the Sun may shine directly overhead.",
+    "src": "https://en.wikipedia.org/wiki/Tropics"
   }
 ]
