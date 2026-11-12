@@ -124262,5 +124262,1035 @@
     "why": "Brasília is the capital city of Brazil and the Federal District. Located in the Brazilian Highlands in the country's Central-West region, it was founded by President Juscelino Kubitschek on 21 April 1960, to replace Rio de Janeiro as the national capital.",
     "src": "https://en.wikipedia.org/wiki/Brasília",
     "verified": true
+  },
+  {
+    "in": [
+      "number",
+      "integer"
+    ],
+    "out": "natural_number",
+    "why": "In mathematics, the natural numbers are the numbers 0, 1, 2, 3, and so on, possibly excluding 0. The terms positive integers, non-negative integers, whole numbers, and counting numbers are also used.",
+    "src": "https://en.wikipedia.org/wiki/Natural_number",
+    "verified": true
+  },
+  {
+    "in": [
+      "real_number",
+      "rational_number"
+    ],
+    "out": "irrational_number",
+    "why": "In mathematics, the irrational numbers are all the real numbers that are not rational numbers; that is, irrational numbers are those that cannot be expressed as the ratio of two integers.",
+    "src": "https://en.wikipedia.org/wiki/Irrational_number",
+    "verified": true
+  },
+  {
+    "in": [
+      "complex_number",
+      "square_root"
+    ],
+    "out": "imaginary_number",
+    "why": "An imaginary number is the product of a real number and the imaginary unit i.",
+    "src": "https://en.wikipedia.org/wiki/Imaginary_number",
+    "verified": true
+  },
+  {
+    "in": [
+      "complex_number",
+      "equation"
+    ],
+    "out": "imaginary_unit",
+    "why": "The imaginary unit, usually denoted by i, is a mathematical constant. Any real-number multiple of the imaginary unit is called an imaginary number.",
+    "src": "https://en.wikipedia.org/wiki/Imaginary_unit",
+    "verified": true
+  },
+  {
+    "in": [
+      "number",
+      "code"
+    ],
+    "out": "numeral_system",
+    "why": "A numeral system is a writing system for expressing numbers without words; that is, a mathematical notation for representing numbers of a given set, using digits (in positional notation) or other symbols (in sign-value notation) in a consistent manner. The same sequence of symbols may represent different numbers in different numeral systems.",
+    "src": "https://en.wikipedia.org/wiki/Numeral_system",
+    "verified": true
+  },
+  {
+    "in": [
+      "number",
+      "hexadecimal"
+    ],
+    "out": "decimal",
+    "why": "A decimal system (also called base-ten, denary or decenary) is a numeral system that uses ten as its radix (base). Decimal systems are the global standard for denoting integer and non-integer numbers.",
+    "src": "https://en.wikipedia.org/wiki/Decimal",
+    "verified": true
+  },
+  {
+    "in": [
+      "number",
+      "abacus"
+    ],
+    "out": "positional_notation",
+    "why": "Positional notation, also known as place-value notation, is the property of a numeral system that the value represented by each symbol in a written numeral depends not only on its appearance but also on its position. Each symbol fits in a specific place or position, representing a power of a fixed base.",
+    "src": "https://en.wikipedia.org/wiki/Positional_notation",
+    "verified": true
+  },
+  {
+    "in": [
+      "zero",
+      "india"
+    ],
+    "out": "arabic_numerals",
+    "why": "The Arabic numerals are ten digits (0, 1, 2, 3, 4, 5, 6, 7, 8, and 9) used for writing numbers. The term often also implies a positional notation number with a decimal base, in particular when contrasted with Roman numerals.",
+    "src": "https://en.wikipedia.org/wiki/Arabic_numerals",
+    "verified": true
+  },
+  {
+    "in": [
+      "number",
+      "roman_empire"
+    ],
+    "out": "roman_numerals",
+    "why": "Roman numerals are a numeral system that originated in ancient Rome and remained the usual way of writing numbers throughout Europe well into the Late Middle Ages.",
+    "src": "https://en.wikipedia.org/wiki/Roman_numerals",
+    "verified": true
+  },
+  {
+    "in": [
+      "number",
+      "finger"
+    ],
+    "out": "numerical_digit",
+    "why": "A numerical digit (often shortened to just digit) is a single symbol used to represent numbers in positional notation, such as 0, 1, ..., 9 in the common base 10. The name \"digit\" originates from the Latin digiti, meaning fingers.",
+    "src": "https://en.wikipedia.org/wiki/Numerical_digit",
+    "verified": true
+  },
+  {
+    "in": [
+      "exponentiation",
+      "number"
+    ],
+    "out": "scientific_notation",
+    "why": "Scientific notation is a way of expressing numbers that are too large or too small to be conveniently written in decimal form, since to do so would require writing out an inconveniently long string of digits. It may be referred to as scientific form or standard index form, or standard form in the United Kingdom.",
+    "src": "https://en.wikipedia.org/wiki/Scientific_notation",
+    "verified": true
+  },
+  {
+    "in": [
+      "division",
+      "addition"
+    ],
+    "out": "order_of_operations",
+    "why": "In mathematics and computer programming, the order of operations is a collection of conventions about which arithmetic operations to perform first in order to evaluate a given mathematical expression. These conventions are formalized with a ranking of the operations.",
+    "src": "https://en.wikipedia.org/wiki/Order_of_operations",
+    "verified": true
+  },
+  {
+    "in": [
+      "exponentiation",
+      "calculus"
+    ],
+    "out": "exponential_function",
+    "why": "In mathematics, the exponential function is the unique real function which maps zero to one and has a derivative everywhere equal to its value.",
+    "src": "https://en.wikipedia.org/wiki/Exponential_function",
+    "verified": true
+  },
+  {
+    "in": [
+      "algebra",
+      "function"
+    ],
+    "out": "polynomial",
+    "why": "In mathematics, a polynomial is a mathematical expression consisting of indeterminates (also called variables) and coefficients, that involves only the operations of addition, subtraction, multiplication and exponentiation to nonnegative integer powers, and has a finite number of terms.",
+    "src": "https://en.wikipedia.org/wiki/Polynomial",
+    "verified": true
+  },
+  {
+    "in": [
+      "function",
+      "division"
+    ],
+    "out": "inverse_function",
+    "why": "In mathematics, the inverse function of a function f (also called the inverse of f) is a function that undoes the operation of f. The inverse of f exists if and only if f is injective.",
+    "src": "https://en.wikipedia.org/wiki/Inverse_function",
+    "verified": true
+  },
+  {
+    "in": [
+      "function",
+      "operator"
+    ],
+    "out": "function_composition",
+    "why": "In mathematics, the composition operator takes two functions, f and g, and returns a new function. When the composite function is evaluated at an input x, the result is f of g of x.",
+    "src": "https://en.wikipedia.org/wiki/Function_composition",
+    "verified": true
+  },
+  {
+    "in": [
+      "function",
+      "map"
+    ],
+    "out": "graph_of_a_function",
+    "why": "In mathematics, the graph of a function f is the set of ordered pairs (x,y), where f(x)=y. In the common case where x and f(x) are real numbers, these pairs are Cartesian coordinates of points in a plane and often form a curve.",
+    "src": "https://en.wikipedia.org/wiki/Graph_of_a_function",
+    "verified": true
+  },
+  {
+    "in": [
+      "equation",
+      "line"
+    ],
+    "out": "parametric_equation",
+    "why": "In mathematics, a parametric equation expresses several quantities, such as the coordinates of a point, as functions of one or more variables called parameters. In the case of a single parameter, parametric equations are commonly used to express the trajectory of a moving point.",
+    "src": "https://en.wikipedia.org/wiki/Parametric_equation",
+    "verified": true
+  },
+  {
+    "in": [
+      "equation",
+      "algorithm"
+    ],
+    "out": "equation_solving",
+    "why": "In mathematics, to solve an equation is to find the solutions of an equation, which are the values (numbers, functions, sets, etc.) that fulfill the condition stated by the equation, consisting generally of two expressions related by an equals sign. When seeking a solution, one or more variables are designated as unknowns.",
+    "src": "https://en.wikipedia.org/wiki/Equation_solving",
+    "verified": true
+  },
+  {
+    "in": [
+      "number",
+      "pi"
+    ],
+    "out": "mathematical_constant",
+    "why": "A mathematical constant is a number whose value is fixed by an unambiguous definition, often referred to by a special symbol (e.g., an alphabet letter), or by mathematicians' names to facilitate using it across multiple mathematical problems.",
+    "src": "https://en.wikipedia.org/wiki/Mathematical_constant",
+    "verified": true
+  },
+  {
+    "in": [
+      "logarithm",
+      "pi"
+    ],
+    "out": "e_constant",
+    "why": "The number e is a mathematical constant that is the base of the natural logarithm and exponential function. It plays important and recurring roles across mathematics.",
+    "src": "https://en.wikipedia.org/wiki/E_(mathematical_constant)",
+    "verified": true
+  },
+  {
+    "in": [
+      "pi",
+      "division"
+    ],
+    "out": "golden_ratio",
+    "why": "In mathematics, two quantities are in the golden ratio if their ratio is the same as the ratio of their sum to the larger of the two quantities.",
+    "src": "https://en.wikipedia.org/wiki/Golden_ratio",
+    "verified": true
+  },
+  {
+    "in": [
+      "equation",
+      "subtraction"
+    ],
+    "out": "inequality",
+    "why": "In mathematics, an inequality is a relation which makes a non-equal comparison between two numbers or other mathematical expressions. It is used most often to compare two numbers on the number line by their size.",
+    "src": "https://en.wikipedia.org/wiki/Inequality_(mathematics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "equation",
+      "symbol"
+    ],
+    "out": "formula",
+    "why": "In science, a formula is a concise way of expressing information symbolically, as in a mathematical formula or a chemical formula. The informal use of the term formula in science refers to the general construct of a relationship between given quantities.",
+    "src": "https://en.wikipedia.org/wiki/Formula",
+    "verified": true
+  },
+  {
+    "in": [
+      "multiplication",
+      "sequence"
+    ],
+    "out": "factorial",
+    "why": "In mathematics, the factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n.",
+    "src": "https://en.wikipedia.org/wiki/Factorial",
+    "verified": true
+  },
+  {
+    "in": [
+      "function",
+      "integral"
+    ],
+    "out": "gamma_function",
+    "why": "In mathematics, the gamma function is the most common extension of the factorial function to complex numbers. First studied by Daniel Bernoulli, the gamma function is defined for all complex numbers except non-positive integers.",
+    "src": "https://en.wikipedia.org/wiki/Gamma_function",
+    "verified": true
+  },
+  {
+    "in": [
+      "conjecture",
+      "theorem"
+    ],
+    "out": "hilberts_problems",
+    "why": "Hilbert's problems are 23 problems in mathematics published by German mathematician David Hilbert in 1900. He intended to rival the master of French mathematics, Henri Poincaré, and to prove that he was cut from the same cloth.",
+    "src": "https://en.wikipedia.org/wiki/Hilbert's_problems",
+    "verified": true
+  },
+  {
+    "in": [
+      "map",
+      "number"
+    ],
+    "out": "coordinate_system",
+    "why": "In geometry, a coordinate system is a system that uses one or more numbers, or coordinates, to uniquely determine and standardize the position of the points or other geometric elements on a manifold such as Euclidean space.",
+    "src": "https://en.wikipedia.org/wiki/Coordinate_system",
+    "verified": true
+  },
+  {
+    "in": [
+      "descartes",
+      "geometry"
+    ],
+    "out": "cartesian_coordinate_system",
+    "why": "In geometry, a Cartesian coordinate system in a plane is a coordinate system that specifies each point uniquely by a pair of real numbers called coordinates, which are the signed distances to the point from two fixed perpendicular oriented lines, called coordinate lines, coordinate axes or just axes (plural of axis) of the system.",
+    "src": "https://en.wikipedia.org/wiki/Cartesian_coordinate_system",
+    "verified": true
+  },
+  {
+    "in": [
+      "angle",
+      "circle"
+    ],
+    "out": "polar_coordinate_system",
+    "why": "In mathematics, the polar coordinate system specifies a given point in a plane by using a distance and an angle as its two coordinates. These are the point's distance from a reference point called the pole, and the point's direction from the pole relative to the direction of the polar axis, a ray drawn from the pole.",
+    "src": "https://en.wikipedia.org/wiki/Polar_coordinate_system",
+    "verified": true
+  },
+  {
+    "in": [
+      "space",
+      "number"
+    ],
+    "out": "dimension",
+    "why": "In physics and mathematics, the dimension of a mathematical space (or object) is informally defined as the minimum number of coordinates needed to specify any point within it. Thus, a line has a dimension of one (1D) because only one coordinate is needed to specify a point on it – for example, the point at 5 on a number line.",
+    "src": "https://en.wikipedia.org/wiki/Dimension",
+    "verified": true
+  },
+  {
+    "in": [
+      "line",
+      "function"
+    ],
+    "out": "curve",
+    "why": "In mathematics, a curve (also called a curved line in older texts) is an object similar to a line, but that does not have to be straight. Intuitively, a curve may be thought of as the trace left by a moving point.",
+    "src": "https://en.wikipedia.org/wiki/Curve",
+    "verified": true
+  },
+  {
+    "in": [
+      "geometry",
+      "line"
+    ],
+    "out": "euclidean_plane",
+    "why": "In mathematics, a Euclidean plane is a Euclidean space of dimension two. It is a geometric space in which two real numbers are required to determine the position of each point.",
+    "src": "https://en.wikipedia.org/wiki/Euclidean_plane",
+    "verified": true
+  },
+  {
+    "in": [
+      "surface",
+      "line"
+    ],
+    "out": "plane_mathematics",
+    "why": "In mathematics, a plane is a two-dimensional space or flat surface that extends indefinitely. A plane is the two-dimensional analogue of a point (zero dimensions), a line (one dimension) and three-dimensional space.",
+    "src": "https://en.wikipedia.org/wiki/Plane_(mathematics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "angle",
+      "triangle"
+    ],
+    "out": "right_angle",
+    "why": "In geometry and trigonometry, a right angle is an angle of exactly 90 degrees corresponding to a quarter turn. If a ray is placed so that its endpoint is on a line and the adjacent angles are equal, then they are right angles.",
+    "src": "https://en.wikipedia.org/wiki/Right_angle",
+    "verified": true
+  },
+  {
+    "in": [
+      "polygon",
+      "circle"
+    ],
+    "out": "shape",
+    "why": "A shape is a graphical representation of an object's form or its external boundary, outline, or external surface. It is distinct from other object properties, such as color, texture, or material type.",
+    "src": "https://en.wikipedia.org/wiki/Shape",
+    "verified": true
+  },
+  {
+    "in": [
+      "polygon",
+      "line"
+    ],
+    "out": "quadrilateral",
+    "why": "In geometry, a quadrilateral is a four-sided polygon, having four edges (sides) and four corners (vertices). The word is derived from the Latin words quadri, a variant of four, and latus, meaning \"side\".",
+    "src": "https://en.wikipedia.org/wiki/Quadrilateral",
+    "verified": true
+  },
+  {
+    "in": [
+      "polygon",
+      "angle"
+    ],
+    "out": "square_shape",
+    "why": "In geometry, a square is a regular quadrilateral. It has four straight sides of equal length and four equal angles. Squares are special cases of rectangles, which have four equal angles, and of rhombuses, which have four equal sides.",
+    "src": "https://en.wikipedia.org/wiki/Square",
+    "verified": true
+  },
+  {
+    "in": [
+      "cone",
+      "surface"
+    ],
+    "out": "conic_section",
+    "why": "A conic section, conic or a quadratic curve is a curve obtained from a cone's surface intersecting a plane. The three types of conic section are the hyperbola, the parabola, and the ellipse; the circle is a special case of the ellipse, though it was sometimes considered a fourth type.",
+    "src": "https://en.wikipedia.org/wiki/Conic_section",
+    "verified": true
+  },
+  {
+    "in": [
+      "circle",
+      "equation"
+    ],
+    "out": "ellipse",
+    "why": "In mathematics, an ellipse is a plane curve surrounding two focal points, such that for all points on the curve, the sum of both distances to the two focal points is a constant. It generalizes a circle, which is the special type of ellipse in which the two focal points are the same.",
+    "src": "https://en.wikipedia.org/wiki/Ellipse",
+    "verified": true
+  },
+  {
+    "in": [
+      "equation",
+      "cone"
+    ],
+    "out": "parabola",
+    "why": "In mathematics, a parabola is a plane curve which is mirror-symmetrical and is approximately U-shaped. It fits several superficially different mathematical descriptions, which can all be proved to define exactly the same curves.",
+    "src": "https://en.wikipedia.org/wiki/Parabola",
+    "verified": true
+  },
+  {
+    "in": [
+      "equation",
+      "infinity"
+    ],
+    "out": "hyperbola",
+    "why": "In mathematics, a hyperbola is a type of smooth curve lying in a plane, defined by its geometric properties or by equations for which it is the solution set. A hyperbola has two pieces, called connected components or branches, that are mirror images of each other and resemble two infinite bows.",
+    "src": "https://en.wikipedia.org/wiki/Hyperbola",
+    "verified": true
+  },
+  {
+    "in": [
+      "space",
+      "volume"
+    ],
+    "out": "three_dimensional_space",
+    "why": "In geometry, a three-dimensional space (3D space) is a mathematical space in which three values (termed coordinates) are required to determine the position of a point. Alternatively, it can be referred to as 3-space.",
+    "src": "https://en.wikipedia.org/wiki/Three-dimensional_space",
+    "verified": true
+  },
+  {
+    "in": [
+      "polygon",
+      "volume"
+    ],
+    "out": "polyhedron",
+    "why": "In geometry, a polyhedron is a three-dimensional figure with flat polygonal faces, straight edges and sharp corners or vertices. The term \"polyhedron\" may refer either to a solid figure or to its boundary surface.",
+    "src": "https://en.wikipedia.org/wiki/Polyhedron",
+    "verified": true
+  },
+  {
+    "in": [
+      "pyramid",
+      "volume"
+    ],
+    "out": "cube",
+    "why": "A cube is a three-dimensional solid object in geometry. It has eight vertices and twelve straight edges of the same length, so that these edges form six square faces of the same size. It is an example of a polyhedron.",
+    "src": "https://en.wikipedia.org/wiki/Cube",
+    "verified": true
+  },
+  {
+    "in": [
+      "angle",
+      "sphere"
+    ],
+    "out": "solid_angle",
+    "why": "In geometry, a solid angle is a measure of the amount of the field of view from some particular point that a given object covers. That is, it is a measure of how large the object appears to an observer looking from that point.",
+    "src": "https://en.wikipedia.org/wiki/Solid_angle",
+    "verified": true
+  },
+  {
+    "in": [
+      "trigonometry",
+      "function"
+    ],
+    "out": "trigonometric_functions",
+    "why": "In mathematics, the trigonometric functions (also called circular functions, angle functions or goniometric functions) are real functions which relate an angle of a right-angled triangle to ratios of two side lengths. They are widely used in all sciences that are related to geometry, such as navigation, solid mechanics, celestial mechanics, geodesy, and many others.",
+    "src": "https://en.wikipedia.org/wiki/Trigonometric_functions",
+    "verified": true
+  },
+  {
+    "in": [
+      "function",
+      "logarithm"
+    ],
+    "out": "hyperbolic_functions",
+    "why": "In mathematics, hyperbolic functions are analogues of the ordinary trigonometric functions, but defined using the hyperbola rather than the circle.",
+    "src": "https://en.wikipedia.org/wiki/Hyperbolic_functions",
+    "verified": true
+  },
+  {
+    "in": [
+      "topology",
+      "set"
+    ],
+    "out": "general_topology",
+    "why": "In mathematics, general topology (or point set topology) is the branch of topology that deals with the basic set-theoretic definitions and constructions used in topology. It is the foundation of most other branches of topology, including differential topology, geometric topology, and algebraic topology.",
+    "src": "https://en.wikipedia.org/wiki/General_topology",
+    "verified": true
+  },
+  {
+    "in": [
+      "set",
+      "space"
+    ],
+    "out": "topological_space",
+    "why": "In mathematics, a topological space is, roughly speaking, a space in which closeness is defined but cannot necessarily be measured by a numeric distance.",
+    "src": "https://en.wikipedia.org/wiki/Topological_space",
+    "verified": true
+  },
+  {
+    "in": [
+      "space",
+      "limit"
+    ],
+    "out": "compact_space",
+    "why": "In mathematics, especially general topology and mathematical analysis, compactness is a property of a space that makes it behave in many ways like a finite set. For instance, on a finite set every infinite sequence must take some value infinitely often, by the pigeonhole principle.",
+    "src": "https://en.wikipedia.org/wiki/Compact_space",
+    "verified": true
+  },
+  {
+    "in": [
+      "surface",
+      "space"
+    ],
+    "out": "manifold",
+    "why": "In mathematics, a manifold is a topological space that locally resembles Euclidean space near each point. More precisely, an n-dimensional manifold, or n-manifold for short, is a topological space with the property that each point has a neighborhood that is homeomorphic to an open subset of n-dimensional Euclidean space.",
+    "src": "https://en.wikipedia.org/wiki/Manifold",
+    "verified": true
+  },
+  {
+    "in": [
+      "set",
+      "limit"
+    ],
+    "out": "open_set",
+    "why": "In general topology and mathematical analysis, an open set is a generalization of an open interval in the real line. In a metric space (a set with a distance defined between every two points), an open set is a set that, with every point P in it, contains all points of the metric space that are sufficiently near to P (that is, all points whose distance to P is less than some value depending on P).",
+    "src": "https://en.wikipedia.org/wiki/Open_set",
+    "verified": true
+  },
+  {
+    "in": [
+      "topology",
+      "line"
+    ],
+    "out": "homotopy",
+    "why": "In topology, two continuous functions from one topological space to another are called homotopic if one can be \"continuously deformed\" into the other, such a deformation being called a homotopy between the two functions. A notable use of homotopy is the definition of homotopy groups and cohomotopy groups, important invariants in algebraic topology.",
+    "src": "https://en.wikipedia.org/wiki/Homotopy",
+    "verified": true
+  },
+  {
+    "in": [
+      "topology",
+      "polygon"
+    ],
+    "out": "euler_characteristic",
+    "why": "In mathematics, and more specifically in algebraic topology and polyhedral combinatorics, the Euler characteristic is a topological invariant, a number that describes a topological space's shape or structure regardless of the way it is bent.",
+    "src": "https://en.wikipedia.org/wiki/Euler_characteristic",
+    "verified": true
+  },
+  {
+    "in": [
+      "knot",
+      "topology"
+    ],
+    "out": "knot_theory",
+    "why": "In topology, knot theory is the study of mathematical knots. While inspired by knots which appear in daily life, such as those in shoelaces and rope, a mathematical knot differs in that the ends are joined so it cannot be undone, the simplest knot being a ring (or \"unknot\").",
+    "src": "https://en.wikipedia.org/wiki/Knot_theory",
+    "verified": true
+  },
+  {
+    "in": [
+      "conjecture",
+      "topology"
+    ],
+    "out": "poincare_conjecture",
+    "why": "In the mathematical field of geometric topology, the Poincaré conjecture is a theorem about the characterization of the 3-sphere (the hypersphere that bounds the 4-ball in four-dimensional space). Originally conjectured by Henri Poincaré in 1904, the theorem concerns spaces that locally look like ordinary three-dimensional Euclidean space but which are finite in extent.",
+    "src": "https://en.wikipedia.org/wiki/Poincaré_conjecture",
+    "verified": true
+  },
+  {
+    "in": [
+      "line",
+      "number"
+    ],
+    "out": "length",
+    "why": "Length is a measure of distance. In the International System of Quantities, length is a quantity with dimension distance. In most systems of measurement a base unit for length is chosen, from which all other units are derived.",
+    "src": "https://en.wikipedia.org/wiki/Length",
+    "verified": true
+  },
+  {
+    "in": [
+      "space",
+      "function"
+    ],
+    "out": "metric_space",
+    "why": "In mathematics, a metric space is a set together with a notion of distance between its points. The distance is measured by a function called a metric or distance function.",
+    "src": "https://en.wikipedia.org/wiki/Metric_space",
+    "verified": true
+  },
+  {
+    "in": [
+      "symmetry",
+      "group"
+    ],
+    "out": "symmetry_in_mathematics",
+    "why": "Symmetry occurs not only in geometry, but also in other branches of mathematics. Symmetry is a type of invariance: the property that a mathematical object remains unchanged under a set of operations or transformations.",
+    "src": "https://en.wikipedia.org/wiki/Symmetry_in_mathematics",
+    "verified": true
+  },
+  {
+    "in": [
+      "geometry",
+      "algebra"
+    ],
+    "out": "analytic_geometry",
+    "why": "In mathematics, analytic geometry, also known as coordinate geometry or Cartesian geometry, is the study of geometry using a coordinate system. This contrasts with synthetic geometry.",
+    "src": "https://en.wikipedia.org/wiki/Analytic_geometry",
+    "verified": true
+  },
+  {
+    "in": [
+      "geometry",
+      "calculus"
+    ],
+    "out": "differential_geometry",
+    "why": "Differential geometry is a mathematical discipline that studies the geometry of smooth shapes and smooth spaces, otherwise known as smooth manifolds. It uses the techniques of vector calculus, linear algebra and multilinear algebra.",
+    "src": "https://en.wikipedia.org/wiki/Differential_geometry",
+    "verified": true
+  },
+  {
+    "in": [
+      "geometry",
+      "limit"
+    ],
+    "out": "riemannian_geometry",
+    "why": "Riemannian geometry is the branch of differential geometry that studies Riemannian manifolds. An example of a Riemannian manifold is a surface, on which distances are measured by the length of curves on the surface.",
+    "src": "https://en.wikipedia.org/wiki/Riemannian_geometry",
+    "verified": true
+  },
+  {
+    "in": [
+      "geometry",
+      "axiom"
+    ],
+    "out": "euclidean_geometry",
+    "why": "Euclidean geometry is a mathematical system attributed to Euclid, an ancient Greek mathematician, which he described in his textbook on geometry, Elements. Euclid's approach consists in assuming a small set of intuitively appealing axioms (postulates) and deducing many other propositions (theorems) from these.",
+    "src": "https://en.wikipedia.org/wiki/Euclidean_geometry",
+    "verified": true
+  },
+  {
+    "in": [
+      "set",
+      "polygon"
+    ],
+    "out": "convex_set",
+    "why": "In geometry, a set of points is convex if it contains every line segment between two points in the set. For example, a solid cube is a convex set, but anything that is hollow or has an indent, such as a crescent shape, is not convex.",
+    "src": "https://en.wikipedia.org/wiki/Convex_set",
+    "verified": true
+  },
+  {
+    "in": [
+      "pythagoras",
+      "triangle"
+    ],
+    "out": "pythagorean_theorem",
+    "why": "In mathematics, the Pythagorean theorem or Pythagoras's theorem is a fundamental relation in Euclidean geometry between the three sides of a right triangle. It states that the area of the square whose side is the hypotenuse (the side opposite the right angle) is equal to the sum of the areas of the squares on the other two sides.",
+    "src": "https://en.wikipedia.org/wiki/Pythagorean_theorem",
+    "verified": true
+  },
+  {
+    "in": [
+      "geometry",
+      "paradox"
+    ],
+    "out": "non_euclidean_geometry",
+    "why": "In mathematics, non-Euclidean geometry consists of two geometries based on axioms closely related to those that specify Euclidean geometry.",
+    "src": "https://en.wikipedia.org/wiki/Non-Euclidean_geometry",
+    "verified": true
+  },
+  {
+    "in": [
+      "geometry",
+      "symmetry"
+    ],
+    "out": "fractal",
+    "why": "In mathematics, a fractal is a geometric shape containing detailed structure at arbitrarily small scales, usually having a fractal dimension strictly exceeding the topological dimension. Many fractals appear similar at various scales, as illustrated in successive magnifications of the Mandelbrot set.",
+    "src": "https://en.wikipedia.org/wiki/Fractal",
+    "verified": true
+  },
+  {
+    "in": [
+      "matrix",
+      "operator"
+    ],
+    "out": "tensor",
+    "why": "In mathematics, a tensor is an algebraic object that describes a multilinear relationship between sets of algebraic objects associated with a vector space. Tensors may map between different objects such as vectors, scalars, and even other tensors.",
+    "src": "https://en.wikipedia.org/wiki/Tensor",
+    "verified": true
+  },
+  {
+    "in": [
+      "polygon",
+      "surface"
+    ],
+    "out": "tessellation",
+    "why": "A tessellation or tiling is the covering of a surface, often a plane, using one or more geometric shapes, called tiles, with no overlaps and no gaps. In mathematics, tessellation can be generalized to higher dimensions and a variety of geometries.",
+    "src": "https://en.wikipedia.org/wiki/Tessellation",
+    "verified": true
+  },
+  {
+    "in": [
+      "algebra",
+      "equation"
+    ],
+    "out": "elementary_algebra",
+    "why": "Elementary algebra, also known as high school algebra or college algebra, encompasses the basic concepts of algebra. It is often contrasted with arithmetic: arithmetic deals with specified numbers, whilst algebra introduces numerical variables (quantities without fixed values).",
+    "src": "https://en.wikipedia.org/wiki/Elementary_algebra",
+    "verified": true
+  },
+  {
+    "in": [
+      "algebra",
+      "matrix"
+    ],
+    "out": "linear_algebra",
+    "why": "Linear algebra is the branch of mathematics concerning linear equations, linear maps, and their representations in vector spaces and through matrices. Linear algebra is central to almost all areas of mathematics.",
+    "src": "https://en.wikipedia.org/wiki/Linear_algebra",
+    "verified": true
+  },
+  {
+    "in": [
+      "equation",
+      "matrix"
+    ],
+    "out": "linear_equation",
+    "why": "In mathematics, a linear equation is an equation that may be put in the form a1x1+…+anxn+b=0, where x1,…,xn are the variables (or unknowns), and b,a1,…,an are the coefficients, which are often real numbers.",
+    "src": "https://en.wikipedia.org/wiki/Linear_equation",
+    "verified": true
+  },
+  {
+    "in": [
+      "matrix",
+      "algorithm"
+    ],
+    "out": "gaussian_elimination",
+    "why": "In mathematics, Gaussian elimination, also known as row reduction, is an algorithm for solving systems of linear equations. It consists of a sequence of row-wise operations performed on the corresponding matrix of coefficients.",
+    "src": "https://en.wikipedia.org/wiki/Gaussian_elimination",
+    "verified": true
+  },
+  {
+    "in": [
+      "matrix",
+      "area"
+    ],
+    "out": "determinant",
+    "why": "In mathematics, the determinant is a scalar-valued function of the entries of a square matrix that has many properties which make it fundamental for the study of square matrices and linear transformations represented by them. The determinant of a matrix A is commonly denoted det(A), det A, or |A|.",
+    "src": "https://en.wikipedia.org/wiki/Determinant",
+    "verified": true
+  },
+  {
+    "in": [
+      "vector",
+      "operator"
+    ],
+    "out": "eigenvalues_and_eigenvectors",
+    "why": "In linear algebra, an eigenvector or characteristic vector is a (nonzero) vector that has its direction unchanged (or reversed) by a given linear transformation.",
+    "src": "https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors",
+    "verified": true
+  },
+  {
+    "in": [
+      "space",
+      "euclidean_vector"
+    ],
+    "out": "vector_space",
+    "why": "In mathematics, a vector space (also called a linear space) is a set whose elements, often called vectors, can be added together and multiplied (\"scaled\") by numbers called scalars. The operations of vector addition and scalar multiplication must satisfy certain requirements, called vector axioms.",
+    "src": "https://en.wikipedia.org/wiki/Vector_space",
+    "verified": true
+  },
+  {
+    "in": [
+      "geometry",
+      "angle"
+    ],
+    "out": "euclidean_vector",
+    "why": "In mathematics, physics, and engineering, a Euclidean vector or simply a vector (sometimes called a geometric vector or spatial vector) is a geometric object that has magnitude (or length) and direction. Euclidean vectors can be added and scaled to form a vector space.",
+    "src": "https://en.wikipedia.org/wiki/Euclidean_vector",
+    "verified": true
+  },
+  {
+    "in": [
+      "euclidean_vector",
+      "multiplication"
+    ],
+    "out": "cross_product",
+    "why": "In mathematics, the cross product or vector product (occasionally directed area product, to emphasize its geometric significance) is a binary operation on two vectors in a three-dimensional oriented Euclidean vector space (named here E), and is denoted by the symbol ×.",
+    "src": "https://en.wikipedia.org/wiki/Cross_product",
+    "verified": true
+  },
+  {
+    "in": [
+      "vector",
+      "angle"
+    ],
+    "out": "dot_product",
+    "why": "In mathematics, the dot product is an algebraic operation that takes two equal-length sequences of numbers (usually coordinate vectors), and returns a single number. In Euclidean geometry, the scalar product of two vectors is the dot product of their Cartesian coordinates, and is independent from the choice of a particular Cartesian coordinate system.",
+    "src": "https://en.wikipedia.org/wiki/Dot_product",
+    "verified": true
+  },
+  {
+    "in": [
+      "geometry",
+      "equation"
+    ],
+    "out": "algebraic_geometry",
+    "why": "Algebraic geometry is a branch of mathematics which uses abstract algebraic techniques, mainly from commutative algebra, to solve geometrical problems. Classically, it studies zeros of multivariate polynomials; the modern approach generalizes this in a few different aspects.",
+    "src": "https://en.wikipedia.org/wiki/Algebraic_geometry",
+    "verified": true
+  },
+  {
+    "in": [
+      "equation",
+      "square_root"
+    ],
+    "out": "quadratic_equation",
+    "why": "In mathematics, a quadratic equation is an equation in a single unknown in which the highest power of the variable is two.",
+    "src": "https://en.wikipedia.org/wiki/Quadratic_equation",
+    "verified": true
+  },
+  {
+    "in": [
+      "algebra",
+      "group"
+    ],
+    "out": "abstract_algebra",
+    "why": "In mathematics, more specifically algebra, abstract algebra or modern algebra is the study of algebraic structures, which are sets with specific operations acting on their elements. Algebraic structures include groups, rings, fields, modules, vector spaces, lattices, and algebras over a field.",
+    "src": "https://en.wikipedia.org/wiki/Abstract_algebra",
+    "verified": true
+  },
+  {
+    "in": [
+      "group",
+      "ring"
+    ],
+    "out": "algebraic_structure",
+    "why": "In mathematics, an algebraic structure or algebraic system consists of a nonempty set (called the underlying set, carrier set or domain), a collection of operations on the set (typically binary operations such as addition and multiplication), and a finite set of identities (known as axioms) that these operations must satisfy.",
+    "src": "https://en.wikipedia.org/wiki/Algebraic_structure",
+    "verified": true
+  },
+  {
+    "in": [
+      "multiplication",
+      "group"
+    ],
+    "out": "associative_property",
+    "why": "In mathematics, the associative property is a property of some binary operations that rearranging the parentheses in an expression will not change the result. In propositional logic, associativity is a valid rule of replacement for expressions in logical proofs.",
+    "src": "https://en.wikipedia.org/wiki/Associative_property",
+    "verified": true
+  },
+  {
+    "in": [
+      "multiplication",
+      "symmetry"
+    ],
+    "out": "commutative_property",
+    "why": "In mathematics, a binary operation is commutative if changing the order of the operands does not change the result. It is a fundamental property of many binary operations, and many mathematical proofs depend on it.",
+    "src": "https://en.wikipedia.org/wiki/Commutative_property",
+    "verified": true
+  },
+  {
+    "in": [
+      "multiplication",
+      "subtraction"
+    ],
+    "out": "distributive_property",
+    "why": "In mathematics, the distributive property of binary operations is a generalization of the distributive law, which asserts that multiplication distributes over addition in elementary algebra.",
+    "src": "https://en.wikipedia.org/wiki/Distributive_property",
+    "verified": true
+  },
+  {
+    "in": [
+      "theorem",
+      "complex_number"
+    ],
+    "out": "fundamental_theorem_of_algebra",
+    "why": "The fundamental theorem of algebra, also called d'Alembert's theorem or the d'Alembert–Gauss theorem, states that every non-constant single-variable polynomial with complex coefficients has at least one complex root. This includes polynomials with real coefficients, since every real number is a complex number with its imaginary part equal to zero.",
+    "src": "https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra",
+    "verified": true
+  },
+  {
+    "in": [
+      "field",
+      "equation"
+    ],
+    "out": "galois_theory",
+    "why": "In mathematics, Galois theory, originally introduced by Évariste Galois, provides a connection between field theory and group theory. This connection, the fundamental theorem of Galois theory, allows reducing certain problems in field theory to group theory, which makes them simpler and easier to understand.",
+    "src": "https://en.wikipedia.org/wiki/Galois_theory",
+    "verified": true
+  },
+  {
+    "in": [
+      "group",
+      "addition"
+    ],
+    "out": "abelian_group",
+    "why": "In mathematics, an abelian group, also called a commutative group, is a group in which the result of applying the group operation to two group elements does not depend on the order in which they are written. That is, the group operation is commutative.",
+    "src": "https://en.wikipedia.org/wiki/Abelian_group",
+    "verified": true
+  },
+  {
+    "in": [
+      "group",
+      "theorem"
+    ],
+    "out": "group_theory",
+    "why": "In abstract algebra, group theory studies the algebraic structures known as groups. The concept of a group is central to abstract algebra: other well-known algebraic structures, such as rings, fields, and vector spaces, can all be seen as groups endowed with additional operations and axioms.",
+    "src": "https://en.wikipedia.org/wiki/Group_theory",
+    "verified": true
+  },
+  {
+    "in": [
+      "group",
+      "function"
+    ],
+    "out": "isomorphism",
+    "why": "In mathematics, an isomorphism is a structure-preserving mapping or morphism between two structures of the same type that can be reversed by an inverse mapping. Two mathematical structures are isomorphic if an isomorphism exists between them.",
+    "src": "https://en.wikipedia.org/wiki/Isomorphism",
+    "verified": true
+  },
+  {
+    "in": [
+      "group",
+      "matrix"
+    ],
+    "out": "group_representation",
+    "why": "In the mathematical field of representation theory, group representations describe abstract groups in terms of bijective linear transformations of a vector space to itself (i.e. vector space automorphisms); in particular, they can be used to represent group elements as invertible matrices so that the group operation can be represented by matrix multiplication.",
+    "src": "https://en.wikipedia.org/wiki/Group_representation",
+    "verified": true
+  },
+  {
+    "in": [
+      "ring",
+      "theorem"
+    ],
+    "out": "ring_theory",
+    "why": "In algebra, ring theory is the study of rings, algebraic structures in which addition and multiplication are defined and have similar properties to those operations defined for the integers.",
+    "src": "https://en.wikipedia.org/wiki/Ring_theory",
+    "verified": true
+  },
+  {
+    "in": [
+      "ring",
+      "addition"
+    ],
+    "out": "commutative_ring",
+    "why": "In mathematics, a commutative ring is a ring in which the multiplication operation is commutative. The study of commutative rings is called commutative algebra.",
+    "src": "https://en.wikipedia.org/wiki/Commutative_ring",
+    "verified": true
+  },
+  {
+    "in": [
+      "ring",
+      "euclidean_vector"
+    ],
+    "out": "module_mathematics",
+    "why": "In mathematics, a module is a generalization of the notion of vector space in which the field of scalars is replaced by a (not necessarily commutative) ring. The concept of a module also generalizes the notion of an abelian group, since the abelian groups are exactly the modules over the ring of integers.",
+    "src": "https://en.wikipedia.org/wiki/Module_(mathematics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "group",
+      "euclidean_vector"
+    ],
+    "out": "representation_theory",
+    "why": "Representation theory is a branch of mathematics that studies abstract algebraic structures by representing their elements as linear transformations of vector spaces.",
+    "src": "https://en.wikipedia.org/wiki/Representation_theory",
+    "verified": true
+  },
+  {
+    "in": [
+      "group",
+      "topology"
+    ],
+    "out": "fundamental_group",
+    "why": "In the mathematical field of algebraic topology, the fundamental group of a topological space is the group of the equivalence classes under homotopy of the loops contained in the space. It records information about the basic shape, or holes, of the topological space.",
+    "src": "https://en.wikipedia.org/wiki/Fundamental_group",
+    "verified": true
+  },
+  {
+    "in": [
+      "algebra",
+      "topology"
+    ],
+    "out": "homological_algebra",
+    "why": "Homological algebra is the branch of mathematics that studies homology in a general algebraic setting. It is a relatively young discipline, whose origins can be traced to investigations in combinatorial topology (a precursor to algebraic topology) and abstract algebra (theory of modules and syzygies) at the end of the 19th century, chiefly by Henri Poincaré and David Hilbert.",
+    "src": "https://en.wikipedia.org/wiki/Homological_algebra",
+    "verified": true
+  },
+  {
+    "in": [
+      "topology",
+      "ring"
+    ],
+    "out": "algebraic_topology",
+    "why": "Algebraic topology is a branch of mathematics that uses tools from abstract algebra to study topological spaces. The basic goal is to find algebraic invariants that classify topological spaces up to homeomorphism, though usually most classify up to homotopy equivalence.",
+    "src": "https://en.wikipedia.org/wiki/Algebraic_topology",
+    "verified": true
+  },
+  {
+    "in": [
+      "equation",
+      "surface"
+    ],
+    "out": "algebraic_variety",
+    "why": "Algebraic varieties are the central objects of study in algebraic geometry, a sub-field of mathematics. Classically, an algebraic variety is defined as the set of solutions of a system of polynomial equations over the real or complex numbers.",
+    "src": "https://en.wikipedia.org/wiki/Algebraic_variety",
+    "verified": true
+  },
+  {
+    "in": [
+      "topology",
+      "function"
+    ],
+    "out": "sheaf_mathematics",
+    "why": "In mathematics, a sheaf (pl.: sheaves) is a tool for systematically tracking data (such as sets, abelian groups, rings) attached to the open sets of a topological space and defined locally with regard to them. For example, for each open set, the data could be the ring of continuous functions defined on that open set.",
+    "src": "https://en.wikipedia.org/wiki/Sheaf_(mathematics)",
+    "verified": true
+  },
+  {
+    "in": [
+      "algebra",
+      "ring"
+    ],
+    "out": "commutative_algebra",
+    "why": "Commutative algebra, first known as ideal theory, is the branch of algebra that studies commutative rings, their ideals, and modules over such rings. Both algebraic geometry and algebraic number theory build on commutative algebra.",
+    "src": "https://en.wikipedia.org/wiki/Commutative_algebra",
+    "verified": true
   }
 ]

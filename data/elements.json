@@ -31117,8 +31117,7 @@
     "tags": [
       "person"
     ],
-    "fact": "French philosopher and mathematician who united algebra and geometry into the coordinate system.",
-    "terminal": true
+    "fact": "French philosopher and mathematician who united algebra and geometry into the coordinate system."
   },
   {
     "id": "locke",
@@ -41740,8 +41739,7 @@
     "tags": [
       "person"
     ],
-    "fact": "Greek thinker, c.570–495 BCE, who taught that number and mathematical ratio underlie the structure of the whole cosmos.",
-    "terminal": true
+    "fact": "Greek thinker, c.570–495 BCE, who taught that number and mathematical ratio underlie the structure of the whole cosmos."
   },
   {
     "id": "heraclitus",
@@ -118437,5 +118435,1138 @@
     ],
     "fact": "Capital city of Brazil, founded in 1960.",
     "src": "https://en.wikipedia.org/wiki/Brasília"
+  },
+  {
+    "id": "natural_number",
+    "name": "Natural Number",
+    "emoji": "🔢",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Numbers 0, 1, 2, 3, and so on, possibly excluding 0.",
+    "src": "https://en.wikipedia.org/wiki/Natural_number"
+  },
+  {
+    "id": "irrational_number",
+    "name": "Irrational Number",
+    "emoji": "🔢",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Real numbers that cannot be expressed as the ratio of two integers.",
+    "src": "https://en.wikipedia.org/wiki/Irrational_number"
+  },
+  {
+    "id": "imaginary_number",
+    "name": "Imaginary Number",
+    "emoji": "🔢",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Product of a real number and the imaginary unit i.",
+    "src": "https://en.wikipedia.org/wiki/Imaginary_number"
+  },
+  {
+    "id": "imaginary_unit",
+    "name": "Imaginary Unit",
+    "emoji": "🔢",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Mathematical constant, denoted i, whose real multiples are the imaginary numbers.",
+    "src": "https://en.wikipedia.org/wiki/Imaginary_unit"
+  },
+  {
+    "id": "numeral_system",
+    "name": "Numeral System",
+    "emoji": "🔢",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Writing system for expressing numbers without words; that is, a mathematical notation for representing numbers of a given set.",
+    "src": "https://en.wikipedia.org/wiki/Numeral_system"
+  },
+  {
+    "id": "decimal",
+    "name": "Decimal",
+    "emoji": "🔢",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Numeral system that uses ten as its radix (base).",
+    "src": "https://en.wikipedia.org/wiki/Decimal"
+  },
+  {
+    "id": "positional_notation",
+    "name": "Positional Notation",
+    "emoji": "🔢",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Property of a numeral system in which a symbol's value depends on its position.",
+    "src": "https://en.wikipedia.org/wiki/Positional_notation"
+  },
+  {
+    "id": "arabic_numerals",
+    "name": "Arabic Numerals",
+    "emoji": "🔢",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Ten digits (0, 1, 2, 3, 4, 5, 6, 7, 8, and 9) used for writing numbers.",
+    "src": "https://en.wikipedia.org/wiki/Arabic_numerals"
+  },
+  {
+    "id": "roman_numerals",
+    "name": "Roman Numerals",
+    "emoji": "🔢",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Numeral system from ancient Rome that stayed in use in Europe into the Late Middle Ages.",
+    "src": "https://en.wikipedia.org/wiki/Roman_numerals"
+  },
+  {
+    "id": "numerical_digit",
+    "name": "Numerical Digit",
+    "emoji": "🔢",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Single symbol used to represent numbers in positional notation, such as 0, 1, ..., 9 in the common base 10.",
+    "src": "https://en.wikipedia.org/wiki/Numerical_digit"
+  },
+  {
+    "id": "scientific_notation",
+    "name": "Scientific Notation",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Way of expressing numbers that are too large or too small to be conveniently written in decimal form.",
+    "src": "https://en.wikipedia.org/wiki/Scientific_notation"
+  },
+  {
+    "id": "order_of_operations",
+    "name": "Order of Operations",
+    "emoji": "➕",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Collection of conventions about which arithmetic operations to perform first in order to evaluate a given mathematical expression.",
+    "src": "https://en.wikipedia.org/wiki/Order_of_operations"
+  },
+  {
+    "id": "exponential_function",
+    "name": "Exponential Function",
+    "emoji": "📈",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Unique real function which maps zero to one and has a derivative everywhere equal to its value.",
+    "src": "https://en.wikipedia.org/wiki/Exponential_function"
+  },
+  {
+    "id": "polynomial",
+    "name": "Polynomial",
+    "emoji": "📐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Expression of variables and coefficients using only addition, subtraction, multiplication and non-negative integer powers.",
+    "src": "https://en.wikipedia.org/wiki/Polynomial"
+  },
+  {
+    "id": "inverse_function",
+    "name": "Inverse Function",
+    "emoji": "↩️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Function that undoes the operation of another function.",
+    "src": "https://en.wikipedia.org/wiki/Inverse_function"
+  },
+  {
+    "id": "function_composition",
+    "name": "Function Composition",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Operation that takes two functions and returns a new composite function.",
+    "src": "https://en.wikipedia.org/wiki/Function_composition"
+  },
+  {
+    "id": "graph_of_a_function",
+    "name": "Graph of a Function",
+    "emoji": "📈",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Set of ordered pairs (x,y), where f(x)=y.",
+    "src": "https://en.wikipedia.org/wiki/Graph_of_a_function"
+  },
+  {
+    "id": "parametric_equation",
+    "name": "Parametric Equation",
+    "emoji": "📐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Equation that expresses several quantities, such as a point's coordinates, as functions of parameters.",
+    "src": "https://en.wikipedia.org/wiki/Parametric_equation"
+  },
+  {
+    "id": "equation_solving",
+    "name": "Equation Solving",
+    "emoji": "🧮",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Finding the values that fulfil the condition stated by an equation.",
+    "src": "https://en.wikipedia.org/wiki/Equation_solving"
+  },
+  {
+    "id": "mathematical_constant",
+    "name": "Mathematical Constant",
+    "emoji": "π",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Number whose value is fixed by an unambiguous definition, often given a special symbol.",
+    "src": "https://en.wikipedia.org/wiki/Mathematical_constant"
+  },
+  {
+    "id": "e_constant",
+    "name": "e (Euler's Number)",
+    "emoji": "🔢",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Mathematical constant that is the base of the natural logarithm and exponential function.",
+    "src": "https://en.wikipedia.org/wiki/E_(mathematical_constant)"
+  },
+  {
+    "id": "golden_ratio",
+    "name": "Golden Ratio",
+    "emoji": "🐚",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Two quantities are in the golden ratio if their ratio equals that of their sum to the larger one.",
+    "src": "https://en.wikipedia.org/wiki/Golden_ratio"
+  },
+  {
+    "id": "inequality",
+    "name": "Inequality",
+    "emoji": "⚖️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Relation which makes a non-equal comparison between two numbers or other mathematical expressions.",
+    "src": "https://en.wikipedia.org/wiki/Inequality_(mathematics)"
+  },
+  {
+    "id": "formula",
+    "name": "Formula",
+    "emoji": "🧮",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Concise way of expressing information symbolically, as in a mathematical formula or a chemical formula.",
+    "src": "https://en.wikipedia.org/wiki/Formula"
+  },
+  {
+    "id": "factorial",
+    "name": "Factorial",
+    "emoji": "❗",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Product of all positive integers less than or equal to n.",
+    "src": "https://en.wikipedia.org/wiki/Factorial"
+  },
+  {
+    "id": "gamma_function",
+    "name": "Gamma Function",
+    "emoji": "Γ",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Most common extension of the factorial function to complex numbers.",
+    "src": "https://en.wikipedia.org/wiki/Gamma_function"
+  },
+  {
+    "id": "hilberts_problems",
+    "name": "Hilbert's Problems",
+    "emoji": "📜",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "23 problems in mathematics published by German mathematician David Hilbert in 1900.",
+    "src": "https://en.wikipedia.org/wiki/Hilbert's_problems"
+  },
+  {
+    "id": "coordinate_system",
+    "name": "Coordinate System",
+    "emoji": "📍",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "System that uses numbers, or coordinates, to determine the position of points.",
+    "src": "https://en.wikipedia.org/wiki/Coordinate_system"
+  },
+  {
+    "id": "cartesian_coordinate_system",
+    "name": "Cartesian Coordinate System",
+    "emoji": "📍",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Coordinate system that specifies each point by a pair of real numbers.",
+    "src": "https://en.wikipedia.org/wiki/Cartesian_coordinate_system"
+  },
+  {
+    "id": "polar_coordinate_system",
+    "name": "Polar Coordinate System",
+    "emoji": "🎯",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Coordinate system that specifies a point in a plane by a distance and an angle.",
+    "src": "https://en.wikipedia.org/wiki/Polar_coordinate_system"
+  },
+  {
+    "id": "dimension",
+    "name": "Dimension",
+    "emoji": "📏",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Informally defined as the minimum number of coordinates needed to specify any point within it.",
+    "src": "https://en.wikipedia.org/wiki/Dimension"
+  },
+  {
+    "id": "curve",
+    "name": "Curve",
+    "emoji": "〰️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Object similar to a line, but that does not have to be straight.",
+    "src": "https://en.wikipedia.org/wiki/Curve"
+  },
+  {
+    "id": "euclidean_plane",
+    "name": "Euclidean Plane",
+    "emoji": "▭",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Euclidean space of dimension two.",
+    "src": "https://en.wikipedia.org/wiki/Euclidean_plane"
+  },
+  {
+    "id": "plane_mathematics",
+    "name": "Plane",
+    "emoji": "▭",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Two-dimensional space or flat surface that extends indefinitely.",
+    "src": "https://en.wikipedia.org/wiki/Plane_(mathematics)"
+  },
+  {
+    "id": "right_angle",
+    "name": "Right Angle",
+    "emoji": "📐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Angle of exactly 90 degrees, a quarter turn.",
+    "src": "https://en.wikipedia.org/wiki/Right_angle"
+  },
+  {
+    "id": "shape",
+    "name": "Shape",
+    "emoji": "🔷",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Graphical representation of an object's form or its external boundary, outline, or external surface.",
+    "src": "https://en.wikipedia.org/wiki/Shape"
+  },
+  {
+    "id": "quadrilateral",
+    "name": "Quadrilateral",
+    "emoji": "▱",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Four-sided polygon, having four edges (sides) and four corners (vertices).",
+    "src": "https://en.wikipedia.org/wiki/Quadrilateral"
+  },
+  {
+    "id": "square_shape",
+    "name": "Square",
+    "emoji": "⬛",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Regular quadrilateral.",
+    "src": "https://en.wikipedia.org/wiki/Square"
+  },
+  {
+    "id": "conic_section",
+    "name": "Conic Section",
+    "emoji": "🔺",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Curve obtained from a cone's surface intersecting a plane.",
+    "src": "https://en.wikipedia.org/wiki/Conic_section"
+  },
+  {
+    "id": "ellipse",
+    "name": "Ellipse",
+    "emoji": "⭕",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Plane curve surrounding two focal points, such that for all points on the curve.",
+    "src": "https://en.wikipedia.org/wiki/Ellipse"
+  },
+  {
+    "id": "parabola",
+    "name": "Parabola",
+    "emoji": "🏹",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Plane curve which is mirror-symmetrical and is approximately U-shaped.",
+    "src": "https://en.wikipedia.org/wiki/Parabola"
+  },
+  {
+    "id": "hyperbola",
+    "name": "Hyperbola",
+    "emoji": "📉",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Type of smooth curve lying in a plane, defined by its geometric properties or by equations for which it is the solution set.",
+    "src": "https://en.wikipedia.org/wiki/Hyperbola"
+  },
+  {
+    "id": "three_dimensional_space",
+    "name": "Three-Dimensional Space",
+    "emoji": "🧊",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Mathematical space in which three values (termed coordinates) are required to determine the position of a point.",
+    "src": "https://en.wikipedia.org/wiki/Three-dimensional_space"
+  },
+  {
+    "id": "polyhedron",
+    "name": "Polyhedron",
+    "emoji": "🔷",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Three-dimensional figure with flat polygonal faces, straight edges and sharp corners.",
+    "src": "https://en.wikipedia.org/wiki/Polyhedron"
+  },
+  {
+    "id": "cube",
+    "name": "Cube",
+    "emoji": "🧊",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Three-dimensional solid object in geometry.",
+    "src": "https://en.wikipedia.org/wiki/Cube"
+  },
+  {
+    "id": "solid_angle",
+    "name": "Solid Angle",
+    "emoji": "📐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Measure of the amount of the field of view from some particular point that a given object covers.",
+    "src": "https://en.wikipedia.org/wiki/Solid_angle"
+  },
+  {
+    "id": "trigonometric_functions",
+    "name": "Trigonometric Functions",
+    "emoji": "📐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Real functions which relate an angle of a right-angled triangle to ratios of two side lengths.",
+    "src": "https://en.wikipedia.org/wiki/Trigonometric_functions"
+  },
+  {
+    "id": "hyperbolic_functions",
+    "name": "Hyperbolic Functions",
+    "emoji": "📈",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Analogues of the trigonometric functions defined using the hyperbola rather than the circle.",
+    "src": "https://en.wikipedia.org/wiki/Hyperbolic_functions"
+  },
+  {
+    "id": "general_topology",
+    "name": "General Topology",
+    "emoji": "🍩",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Branch of topology that deals with the basic set-theoretic definitions and constructions used in topology.",
+    "src": "https://en.wikipedia.org/wiki/General_topology"
+  },
+  {
+    "id": "topological_space",
+    "name": "Topological Space",
+    "emoji": "🍩",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Space in which closeness is defined but cannot necessarily be measured by a numeric distance.",
+    "src": "https://en.wikipedia.org/wiki/Topological_space"
+  },
+  {
+    "id": "compact_space",
+    "name": "Compact Space",
+    "emoji": "🍩",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Property of a space that makes it behave in many ways like a finite set.",
+    "src": "https://en.wikipedia.org/wiki/Compact_space"
+  },
+  {
+    "id": "manifold",
+    "name": "Manifold",
+    "emoji": "🌐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Topological space that locally resembles Euclidean space near each point.",
+    "src": "https://en.wikipedia.org/wiki/Manifold"
+  },
+  {
+    "id": "open_set",
+    "name": "Open Set",
+    "emoji": "⭕",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Generalization of an open interval in the real line.",
+    "src": "https://en.wikipedia.org/wiki/Open_set"
+  },
+  {
+    "id": "homotopy",
+    "name": "Homotopy",
+    "emoji": "🍩",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Continuous deformation of one continuous function into another.",
+    "src": "https://en.wikipedia.org/wiki/Homotopy"
+  },
+  {
+    "id": "euler_characteristic",
+    "name": "Euler Characteristic",
+    "emoji": "🍩",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Topological invariant describing a space's shape regardless of how it is bent.",
+    "src": "https://en.wikipedia.org/wiki/Euler_characteristic"
+  },
+  {
+    "id": "knot_theory",
+    "name": "Knot Theory",
+    "emoji": "🪢",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Study of mathematical knots.",
+    "src": "https://en.wikipedia.org/wiki/Knot_theory"
+  },
+  {
+    "id": "poincare_conjecture",
+    "name": "Poincaré Conjecture",
+    "emoji": "🌐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Theorem characterizing the 3-sphere, originally conjectured by Henri Poincaré in 1904.",
+    "src": "https://en.wikipedia.org/wiki/Poincaré_conjecture"
+  },
+  {
+    "id": "length",
+    "name": "Length",
+    "emoji": "📏",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Measure of distance.",
+    "src": "https://en.wikipedia.org/wiki/Length"
+  },
+  {
+    "id": "metric_space",
+    "name": "Metric Space",
+    "emoji": "📏",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Set together with a notion of distance between its points.",
+    "src": "https://en.wikipedia.org/wiki/Metric_space"
+  },
+  {
+    "id": "symmetry_in_mathematics",
+    "name": "Symmetry in Mathematics",
+    "emoji": "🦋",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Property that a mathematical object remains unchanged under a set of transformations.",
+    "src": "https://en.wikipedia.org/wiki/Symmetry_in_mathematics"
+  },
+  {
+    "id": "analytic_geometry",
+    "name": "Analytic Geometry",
+    "emoji": "📐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Study of geometry using a coordinate system.",
+    "src": "https://en.wikipedia.org/wiki/Analytic_geometry"
+  },
+  {
+    "id": "differential_geometry",
+    "name": "Differential Geometry",
+    "emoji": "📐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Mathematical discipline that studies the geometry of smooth shapes and smooth spaces, otherwise known as smooth manifolds.",
+    "src": "https://en.wikipedia.org/wiki/Differential_geometry"
+  },
+  {
+    "id": "riemannian_geometry",
+    "name": "Riemannian Geometry",
+    "emoji": "🌐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Branch of differential geometry that studies Riemannian manifolds.",
+    "src": "https://en.wikipedia.org/wiki/Riemannian_geometry"
+  },
+  {
+    "id": "euclidean_geometry",
+    "name": "Euclidean Geometry",
+    "emoji": "📐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Mathematical system attributed to Euclid, an ancient Greek mathematician, which he described in his textbook on geometry, Elements.",
+    "src": "https://en.wikipedia.org/wiki/Euclidean_geometry"
+  },
+  {
+    "id": "convex_set",
+    "name": "Convex Set",
+    "emoji": "🔷",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Convex if it contains every line segment between two points in the set.",
+    "src": "https://en.wikipedia.org/wiki/Convex_set"
+  },
+  {
+    "id": "pythagorean_theorem",
+    "name": "Pythagorean Theorem",
+    "emoji": "📐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Fundamental relation in Euclidean geometry between the three sides of a right triangle.",
+    "src": "https://en.wikipedia.org/wiki/Pythagorean_theorem"
+  },
+  {
+    "id": "non_euclidean_geometry",
+    "name": "Non-Euclidean Geometry",
+    "emoji": "🌐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Two geometries that replace the parallel postulate of Euclidean geometry.",
+    "src": "https://en.wikipedia.org/wiki/Non-Euclidean_geometry"
+  },
+  {
+    "id": "fractal",
+    "name": "Fractal",
+    "emoji": "❄️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Geometric shape containing detailed structure at arbitrarily small scales.",
+    "src": "https://en.wikipedia.org/wiki/Fractal"
+  },
+  {
+    "id": "tensor",
+    "name": "Tensor",
+    "emoji": "🧮",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Algebraic object that describes a multilinear relationship between sets of algebraic objects associated with a vector space.",
+    "src": "https://en.wikipedia.org/wiki/Tensor"
+  },
+  {
+    "id": "tessellation",
+    "name": "Tessellation",
+    "emoji": "🔷",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Covering of a surface, often a plane, using one or more geometric shapes, called tiles, with no overlaps and no gaps.",
+    "src": "https://en.wikipedia.org/wiki/Tessellation"
+  },
+  {
+    "id": "elementary_algebra",
+    "name": "Elementary Algebra",
+    "emoji": "🧮",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Basic concepts of algebra, also known as high school algebra.",
+    "src": "https://en.wikipedia.org/wiki/Elementary_algebra"
+  },
+  {
+    "id": "linear_algebra",
+    "name": "Linear Algebra",
+    "emoji": "🧮",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Branch of mathematics concerning linear equations, linear maps and matrices.",
+    "src": "https://en.wikipedia.org/wiki/Linear_algebra"
+  },
+  {
+    "id": "linear_equation",
+    "name": "Linear Equation",
+    "emoji": "📈",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Equation that may be put in the form a1x1+…+anxn+b=0 with real-number coefficients.",
+    "src": "https://en.wikipedia.org/wiki/Linear_equation"
+  },
+  {
+    "id": "gaussian_elimination",
+    "name": "Gaussian Elimination",
+    "emoji": "🧮",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Algorithm for solving systems of linear equations.",
+    "src": "https://en.wikipedia.org/wiki/Gaussian_elimination"
+  },
+  {
+    "id": "determinant",
+    "name": "Determinant",
+    "emoji": "🧮",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Scalar-valued function of the entries of a square matrix that has many properties.",
+    "src": "https://en.wikipedia.org/wiki/Determinant"
+  },
+  {
+    "id": "eigenvalues_and_eigenvectors",
+    "name": "Eigenvalues and Eigenvectors",
+    "emoji": "🧮",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Nonzero vector whose direction is unchanged or reversed by a linear transformation.",
+    "src": "https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors"
+  },
+  {
+    "id": "vector_space",
+    "name": "Vector Space",
+    "emoji": "➡️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Set whose elements, often called vectors, can be added together and multiplied (\"scaled\") by numbers called scalars.",
+    "src": "https://en.wikipedia.org/wiki/Vector_space"
+  },
+  {
+    "id": "euclidean_vector",
+    "name": "Euclidean Vector",
+    "emoji": "➡️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Geometric object that has magnitude (or length) and direction.",
+    "src": "https://en.wikipedia.org/wiki/Euclidean_vector"
+  },
+  {
+    "id": "cross_product",
+    "name": "Cross Product",
+    "emoji": "✖️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Binary operation on two vectors in a three-dimensional oriented Euclidean vector space (named here E),.",
+    "src": "https://en.wikipedia.org/wiki/Cross_product"
+  },
+  {
+    "id": "dot_product",
+    "name": "Dot Product",
+    "emoji": "✖️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Algebraic operation that takes two equal-length sequences of numbers (usually coordinate vectors), and returns a single number.",
+    "src": "https://en.wikipedia.org/wiki/Dot_product"
+  },
+  {
+    "id": "algebraic_geometry",
+    "name": "Algebraic Geometry",
+    "emoji": "📐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Branch of mathematics which uses abstract algebraic techniques, mainly from commutative algebra, to solve geometrical problems.",
+    "src": "https://en.wikipedia.org/wiki/Algebraic_geometry"
+  },
+  {
+    "id": "quadratic_equation",
+    "name": "Quadratic Equation",
+    "emoji": "📐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Equation whose highest power of the unknown is two.",
+    "src": "https://en.wikipedia.org/wiki/Quadratic_equation"
+  },
+  {
+    "id": "abstract_algebra",
+    "name": "Abstract Algebra",
+    "emoji": "🧮",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Study of algebraic structures, which are sets with specific operations acting on their elements.",
+    "src": "https://en.wikipedia.org/wiki/Abstract_algebra"
+  },
+  {
+    "id": "algebraic_structure",
+    "name": "Algebraic Structure",
+    "emoji": "🧮",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Nonempty set with operations satisfying a finite set of axioms.",
+    "src": "https://en.wikipedia.org/wiki/Algebraic_structure"
+  },
+  {
+    "id": "associative_property",
+    "name": "Associative Property",
+    "emoji": "🔗",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Property of some binary operations that rearranging the parentheses in an expression will not change the result.",
+    "src": "https://en.wikipedia.org/wiki/Associative_property"
+  },
+  {
+    "id": "commutative_property",
+    "name": "Commutative Property",
+    "emoji": "🔁",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Commutative if changing the order of the operands does not change the result.",
+    "src": "https://en.wikipedia.org/wiki/Commutative_property"
+  },
+  {
+    "id": "distributive_property",
+    "name": "Distributive Property",
+    "emoji": "🧮",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Generalization of the distributive law of elementary algebra.",
+    "src": "https://en.wikipedia.org/wiki/Distributive_property"
+  },
+  {
+    "id": "fundamental_theorem_of_algebra",
+    "name": "Fundamental Theorem of Algebra",
+    "emoji": "📜",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Every non-constant single-variable complex polynomial has at least one complex root.",
+    "src": "https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra"
+  },
+  {
+    "id": "galois_theory",
+    "name": "Galois Theory",
+    "emoji": "🧮",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Theory linking field theory and group theory, introduced by Évariste Galois.",
+    "src": "https://en.wikipedia.org/wiki/Galois_theory"
+  },
+  {
+    "id": "abelian_group",
+    "name": "Abelian Group",
+    "emoji": "🧮",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Group whose operation does not depend on the order of its elements.",
+    "src": "https://en.wikipedia.org/wiki/Abelian_group"
+  },
+  {
+    "id": "group_theory",
+    "name": "Group Theory",
+    "emoji": "🧮",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "In abstract algebra, group theory studies the algebraic structures known as groups.",
+    "src": "https://en.wikipedia.org/wiki/Group_theory"
+  },
+  {
+    "id": "isomorphism",
+    "name": "Isomorphism",
+    "emoji": "🔄",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Structure-preserving mapping between two structures that can be reversed by an inverse mapping.",
+    "src": "https://en.wikipedia.org/wiki/Isomorphism"
+  },
+  {
+    "id": "group_representation",
+    "name": "Group Representation",
+    "emoji": "🧮",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Description of abstract groups by invertible linear transformations of a vector space.",
+    "src": "https://en.wikipedia.org/wiki/Group_representation"
+  },
+  {
+    "id": "ring_theory",
+    "name": "Ring Theory",
+    "emoji": "💍",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Study of rings, algebraic structures in which addition and multiplication are defined.",
+    "src": "https://en.wikipedia.org/wiki/Ring_theory"
+  },
+  {
+    "id": "commutative_ring",
+    "name": "Commutative Ring",
+    "emoji": "💍",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Ring in which the multiplication operation is commutative.",
+    "src": "https://en.wikipedia.org/wiki/Commutative_ring"
+  },
+  {
+    "id": "module_mathematics",
+    "name": "Module",
+    "emoji": "🧮",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Generalization of the notion of vector space in which the field of scalars is replaced by a (not necessarily commutative) ring.",
+    "src": "https://en.wikipedia.org/wiki/Module_(mathematics)"
+  },
+  {
+    "id": "representation_theory",
+    "name": "Representation Theory",
+    "emoji": "🧮",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Branch of mathematics that studies algebraic structures by representing their elements as linear transformations.",
+    "src": "https://en.wikipedia.org/wiki/Representation_theory"
+  },
+  {
+    "id": "fundamental_group",
+    "name": "Fundamental Group",
+    "emoji": "🍩",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Group of the equivalence classes under homotopy of the loops contained in the space.",
+    "src": "https://en.wikipedia.org/wiki/Fundamental_group"
+  },
+  {
+    "id": "homological_algebra",
+    "name": "Homological Algebra",
+    "emoji": "🧮",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Branch of mathematics that studies homology in a general algebraic setting.",
+    "src": "https://en.wikipedia.org/wiki/Homological_algebra"
+  },
+  {
+    "id": "algebraic_topology",
+    "name": "Algebraic Topology",
+    "emoji": "🍩",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Branch of mathematics that uses tools from abstract algebra to study topological spaces.",
+    "src": "https://en.wikipedia.org/wiki/Algebraic_topology"
+  },
+  {
+    "id": "algebraic_variety",
+    "name": "Algebraic Variety",
+    "emoji": "📐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Central objects of study in algebraic geometry, a sub-field of mathematics.",
+    "src": "https://en.wikipedia.org/wiki/Algebraic_variety"
+  },
+  {
+    "id": "sheaf_mathematics",
+    "name": "Sheaf",
+    "emoji": "🧮",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Tool for systematically tracking data (such as sets, abelian groups, rings) attached to the open sets of a topological space.",
+    "src": "https://en.wikipedia.org/wiki/Sheaf_(mathematics)"
+  },
+  {
+    "id": "commutative_algebra",
+    "name": "Commutative Algebra",
+    "emoji": "🧮",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Branch of algebra that studies commutative rings, their ideals, and modules over such rings.",
+    "src": "https://en.wikipedia.org/wiki/Commutative_algebra"
   }
 ]
