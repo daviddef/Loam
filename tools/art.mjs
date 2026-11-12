@@ -47729,6 +47729,60 @@ const ldRg = {
 for (const [id, [k, ...emb]] of Object.entries(ldRg)) def(id, () => ldReg(k, ...emb));
 def('tropics', () => gAll(...gFrame(), box(3, 20, 54, 20, 'lo'), S('M3 20 L57 20 M3 40 L57 40', 'ik', 1.6), S('M3 30 L57 30', 'hi', 1.6), gSun(30, 10, 5), gWave(50, 'ik', 1.4)));
 
+/* ── cities, 12 Nov ── */
+const cT = x => [P(`M${x - 8} 46 L${x} 8 L${x + 8} 46 L${x + 4} 46 L${x} 26 L${x - 4} 46 Z`, 'ik'), box(x - 5, 30, 10, 2, 'ik')];
+const cT2 = (x, d = 0) => [S(`M${x} 46 L${x} 20`, 'ik', 3), C(x, 16, 6, 'ik'), ring('hi', x, 16, 3, 1.2), S(`M${x} 10 L${x} 3`, 'ik', 1.6), ...(d ? [E(x, 24, 12, 2.6, 'ik')] : [])];
+const cClock = x => [box(x - 5, 16, 10, 30, 'ik'), P(`M${x - 6} 16 L${x} 6 L${x + 6} 16 Z`, 'ik'), C(x, 24, 3.4, 'hi'), S(`M${x} 24 L${x} 22 M${x} 24 L${x + 2} 24`, 'ik', 0.8)];
+const cColo = x => [box(x - 18, 26, 36, 20, 'bs'), ...[0, 1, 2, 3, 4].map(i => P(`M${x - 15 + i * 7} 46 L${x - 15 + i * 7} 38 Q${x - 12 + i * 7} 32 ${x - 9 + i * 7} 38 L${x - 9 + i * 7} 46 Z`, 'lo')), S(`M${x - 18} 26 L${x + 18} 26 M${x - 18} 33 L${x + 18} 33`, 'ik', 1.2)];
+const cDome = x => [box(x - 10, 30, 20, 16, 'bs'), P(`M${x - 9} 30 Q${x - 9} 14 ${x} 14 Q${x + 9} 14 ${x + 9} 30 Z`, 'ik'), S(`M${x} 14 L${x} 7`, 'ik', 1.6), box(x - 12, 44, 24, 2, 'ik')];
+const cMosque = x => [...cDome(x), box(x - 19, 18, 3, 28, 'ik'), box(x + 16, 18, 3, 28, 'ik'), P(`M${x - 20} 18 L${x - 17.5} 12 L${x - 15} 18 Z`, 'ik'), P(`M${x + 15} 18 L${x + 17.5} 12 L${x + 20} 18 Z`, 'ik')];
+const cOnion = x => [box(x - 12, 32, 24, 14, 'bs'), E(x - 7, 26, 4, 6, 'ik'), E(x + 7, 26, 4, 6, 'ik'), E(x, 20, 5, 8, 'ik'), S(`M${x} 12 L${x} 7 M${x - 7} 20 L${x - 7} 16 M${x + 7} 20 L${x + 7} 16`, 'ik', 1.2)];
+const cPagoda = x => [P(`M${x - 12} 20 L${x} 12 L${x + 12} 20 Z`, 'ik'), box(x - 8, 20, 16, 6, 'bs'), P(`M${x - 14} 32 L${x} 24 L${x + 14} 32 Z`, 'ik'), box(x - 10, 32, 20, 6, 'bs'), P(`M${x - 16} 44 L${x} 36 L${x + 16} 44 Z`, 'ik'), box(x - 12, 44, 24, 2, 'ik'), S(`M${x} 12 L${x} 6`, 'ik', 1.4)];
+const cCastle = x => [box(x - 14, 26, 28, 20, 'bs'), box(x - 14, 20, 6, 6, 'bs'), box(x - 3, 20, 6, 6, 'bs'), box(x + 8, 20, 6, 6, 'bs'), box(x - 4, 36, 8, 10, 'lo'), S(`M${x} 20 L${x} 12`, 'ik', 1.4), P(`M${x} 12 L${x + 6} 14 L${x} 16 Z`, 'ik')];
+const cTorii = x => [box(x - 12, 16, 24, 3, 'ik'), box(x - 9, 22, 18, 2, 'ik'), box(x - 8, 19, 3, 27, 'ik'), box(x + 5, 19, 3, 27, 'ik')];
+const cSky = x => [box(x - 14, 22, 8, 24, 'ik'), box(x - 5, 12, 9, 34, 'ik'), box(x + 5, 26, 8, 20, 'ik'), S(`M${x - 12} 28 L${x - 8} 28 M${x - 3} 20 L${x + 2} 20 M${x - 3} 30 L${x + 2} 30 M${x + 7} 32 L${x + 11} 32`, 'hi', 1)];
+const cBridge = x => [box(x - 16, 14, 3, 32, 'ik'), box(x + 13, 14, 3, 32, 'ik'), S('M3 40 L57 40', 'ik', 2.4), S(`M${x - 15} 16 Q${x} 36 ${x + 15} 16`, 'ik', 1.4), S(`M${x - 8} 28 L${x - 8} 40 M${x} 31 L${x} 40 M${x + 8} 28 L${x + 8} 40`, 'ik', 1)];
+const cHarb = () => gAll(gSail(18, 44, 0.9), S('M42 46 L42 14 L52 14 M42 14 L36 22', 'ik', 2), S('M3 48 L57 48', 'hi', 1.4));
+const cLight = x => [P(`M${x - 5} 46 L${x - 3} 18 L${x + 3} 18 L${x + 5} 46 Z`, 'ik'), box(x - 4, 12, 8, 6, 'hi'), P(`M${x - 5} 12 L${x} 6 L${x + 5} 12 Z`, 'ik'), S(`M${x + 6} 14 L${x + 14} 12 M${x - 6} 14 L${x - 14} 12`, 'ik', 1.2)];
+const cObel = x => [P(`M${x - 3} 46 L${x - 2} 14 L${x} 8 L${x + 2} 14 L${x + 3} 46 Z`, 'ik'), box(x - 7, 44, 14, 2, 'ik')];
+const cSpire = x => [P(`M${x - 12} 46 L${x - 12} 24 L${x - 9} 12 L${x - 6} 24 L${x - 6} 46 Z`, 'ik'), P(`M${x - 4} 46 L${x - 4} 18 L${x} 4 L${x + 4} 18 L${x + 4} 46 Z`, 'ik'), P(`M${x + 6} 46 L${x + 6} 24 L${x + 9} 12 L${x + 12} 24 L${x + 12} 46 Z`, 'ik')];
+const cPyr = x => [P(`M${x - 20} 46 L${x - 4} 18 L${x + 12} 46 Z`, 'bs'), P(`M${x - 4} 46 L${x + 10} 24 L${x + 24} 46 Z`, 'bs'), S(`M${x - 20} 46 L${x - 4} 18 L${x + 12} 46 M${x - 4} 46 L${x + 10} 24 L${x + 24} 46`, 'ik', 1.2)];
+const cOpera = x => [P(`M${x - 18} 46 Q${x - 18} 24 ${x - 4} 20 L${x - 4} 46 Z`, 'ik'), P(`M${x - 2} 46 Q${x - 2} 18 ${x + 10} 14 L${x + 10} 46 Z`, 'ik'), P(`M${x + 12} 46 Q${x + 12} 28 ${x + 22} 26 L${x + 22} 46 Z`, 'ik')];
+const cAtom = x => [S(`M${x} 18 L${x - 12} 32 L${x} 42 L${x + 12} 32 Z M${x} 18 L${x} 42`, 'ik', 1.4), C(x, 18, 4.5, 'ik'), C(x - 12, 32, 4.5, 'ik'), C(x + 12, 32, 4.5, 'ik'), C(x, 42, 4.5, 'ik')];
+const cHouses = x => [0, 1, 2, 3].flatMap(i => [box(x - 16 + i * 8, 24 + (i % 2) * 4, 7, 22 - (i % 2) * 4, i % 2 ? 'bs' : 'ik'), P(`M${x - 17 + i * 8} ${24 + (i % 2) * 4} L${x - 12.5 + i * 8} ${16 + (i % 2) * 4} L${x - 8 + i * 8} ${24 + (i % 2) * 4} Z`, 'ik')]);
+const cRocket = x => [P(`M${x - 5} 46 L${x - 5} 22 Q${x} 6 ${x + 5} 22 L${x + 5} 46 Z`, 'ik'), P(`M${x - 5} 40 L${x - 11} 48 L${x - 5} 46 Z`, 'ik'), P(`M${x + 5} 40 L${x + 11} 48 L${x + 5} 46 Z`, 'ik'), C(x, 24, 2.4, 'hi')];
+const cStatue = x => [S(`M${x} 46 L${x} 24`, 'ik', 4), C(x, 20, 3.6, 'ik'), S(`M${x + 2} 22 L${x + 8} 8`, 'ik', 2), P(`M${x + 6} 8 L${x + 8} 3 L${x + 10} 8 Z`, 'ik'), box(x - 6, 44, 12, 3, 'ik')];
+const cFount = x => [S(`M${x} 46 L${x} 12`, 'ik', 2.4), S(`M${x} 12 Q${x - 10} 12 ${x - 12} 30 M${x} 12 Q${x + 10} 12 ${x + 12} 30`, 'ik', 1.6)];
+const cTable = () => [P('M4 46 L12 20 L50 20 L58 46 Z', 'bs'), S('M12 20 L50 20', 'ik', 1.6)];
+const cBack = (a = 0) => [box(5, 32 - a, 8, 14 + a, 'bs'), box(15, 36, 7, 10, 'bs'), box(40, 34, 7, 12, 'bs'), box(49, 30 - a, 7, 16 + a, 'bs')];
+const cCity = lm => gAll(...gFrame(), box(3, 46, 54, 11, 'lo'), ...lm);
+const CY = {
+  paris: [cBack(), cT(30)], london: [cBack(), cClock(30), S('M3 52 Q15 50 30 52 T57 52', 'hi', 1.6)], rome: [cColo(30)], berlin: [cBack(), ldTemple().slice(0, 0), cTorii(30).slice(0, 0), [box(12, 28, 36, 4, 'ik'), box(14, 32, 4, 14, 'ik'), box(24, 32, 4, 14, 'ik'), box(32, 32, 4, 14, 'ik'), box(42, 32, 4, 14, 'ik'), P('M26 28 L30 20 L34 28 Z', 'ik')]],
+  madrid: [cBack(), cDome(30)], vienna: [cBack(), cDome(30)], athens: [ldTemple(), gSun(50, 10, 4)], istanbul: [cMosque(30), S('M3 52 Q15 50 30 52 T57 52', 'hi', 1.6)], moscow: [cBack(), cOnion(30)],
+  beijing: [cPagoda(30)], shanghai: [cBack(6), cT2(30), S('M3 52 Q15 50 30 52 T57 52', 'hi', 1.6)], tokyo: [cBack(), cT(30), gSun(10, 10, 4)], kyoto: [cTorii(30), gTree(10, 40, 0.9), gTree(50, 40, 0.9)], osaka: [cCastle(30)],
+  seoul: [cBack(6), cT2(30, 1)], delhi: [[box(14, 22, 5, 24, 'ik'), box(41, 22, 5, 24, 'ik'), box(14, 20, 32, 4, 'ik'), P('M22 46 L22 34 Q30 26 38 34 L38 46 Z', 'lo')], gSun(50, 10, 4)], mumbai: [[box(14, 22, 5, 24, 'ik'), box(41, 22, 5, 24, 'ik'), box(14, 20, 32, 4, 'ik'), P('M22 46 L22 34 Q30 26 38 34 L38 46 Z', 'lo')], S('M3 52 Q15 50 30 52 T57 52', 'hi', 1.6)],
+  kolkata: [cBridge(30)], bangkok: [cSpire(30), gSun(50, 10, 4)], jakarta: [cObel(30), cBack()], manila: [cHarb()], hanoi: [cPagoda(30), gSun(50, 10, 4)], cairo: [cPyr(26), gSun(50, 10, 4)], alexandria: [cLight(30), S('M3 52 Q15 50 30 52 T57 52', 'hi', 1.6)],
+  damascus: [cMosque(30)], tehran: [cBack(6), cT2(30), gPeak(10, 10, 16, 16)], dubai: [cSpire(30), cBack(), gSun(50, 10, 4)], riyadh: [cBack(6), cSky(30)], lagos: [cHarb(), cBack()], nairobi: [cBack(), cSky(30), gTree(50, 40, 1)],
+  johannesburg: [cSky(30), S('M8 52 L52 52', 'hi', 1.6)], cape_town: [cTable(), cBack(), S('M3 52 Q15 50 30 52 T57 52', 'hi', 1.6)], new_york_city: [cSky(20), cStatue(46)], los_angeles: [cBack(), cSky(24), gTree(48, 40, 1)], chicago: [cSky(30), cT2(48)],
+  san_francisco: [cBridge(30), S('M3 52 Q15 50 30 52 T57 52', 'hi', 1.6)], washington_dc: [cObel(30), cBack()], boston: [cHarb(), cBack()], philadelphia: [cBack(), cDome(30)], toronto: [cBack(6), cT2(30, 1)], vancouver: [gPeak(14, 12, 24, 24), cSky(40)],
+  mexico_city: [cBack(), cDome(30)], buenos_aires: [cObel(30), cBack()], rio_de_janeiro: [gPeak(30, 8, 30, 38), S('M30 8 L30 2 M27 4 L33 4', 'ik', 1.4), S('M3 52 Q15 50 30 52 T57 52', 'hi', 1.6)], sao_paulo: [cSky(30), cBack()], lima: [cBack(), cDome(30)],
+  bogota: [gPeak(14, 14, 22, 22), cSky(42)], havana: [cBack(), cDome(30)], sydney: [cOpera(30), S('M3 52 Q15 50 30 52 T57 52', 'hi', 1.6)], melbourne: [cBack(6), cSky(30)], amsterdam: [cHouses(30), S('M3 52 Q15 50 30 52 T57 52', 'hi', 1.6)],
+  brussels: [cAtom(30)], geneva: [cFount(30), S('M3 52 Q15 50 30 52 T57 52', 'hi', 1.6)], zurich: [cBack(), [box(16, 22, 8, 24, 'ik'), box(36, 22, 8, 24, 'ik'), P('M16 22 L20 12 L24 22 Z', 'ik'), P('M36 22 L40 12 L44 22 Z', 'ik'), box(24, 34, 12, 12, 'bs')]], munich: [cBack(), cDome(30)],
+  hamburg: [cHarb(), cBack()], florence: [cBack(), cDome(30)], milan: [cSpire(30), cBack()], naples: [gVolc(30, 10, 36, 36), cBack()], barcelona: [cSpire(30), gSun(10, 10, 4)], lisbon: [cBridge(30), S('M3 52 Q15 50 30 52 T57 52', 'hi', 1.6)],
+  dublin: [cBack(), cDome(30)], edinburgh: [gPeak(30, 20, 40, 26), cCastle(30)], oxford: [cBack(), cSpire(30)], cambridge: [cBack(), cSpire(30)], manchester: [cBack(), [box(16, 14, 4, 32, 'ik'), box(26, 20, 4, 26, 'ik'), box(36, 12, 4, 34, 'ik'), S('M18 14 L18 8 M38 12 L38 6', 'ik', 1.4)]], liverpool: [cHarb()],
+  stockholm: [cBack(), cDome(30), S('M3 52 Q15 50 30 52 T57 52', 'hi', 1.6)], copenhagen: [cBack(), cSpire(30), S('M3 52 Q15 50 30 52 T57 52', 'hi', 1.6)], oslo: [cOpera(30), gPeak(10, 12, 16, 18)], helsinki: [cBack(), cDome(30), S('M3 52 Q15 50 30 52 T57 52', 'hi', 1.6)],
+  warsaw: [cBack(), cDome(30)], budapest: [cBack(), cDome(30), S('M3 52 Q15 50 30 52 T57 52', 'hi', 1.6)], kyiv: [cOnion(30), cBack()], bucharest: [cBack(), cDome(30)], belgrade: [cCastle(30), S('M3 52 Q15 50 30 52 T57 52', 'hi', 1.6)],
+  tashkent: [cBack(), cMosque(30)], samarkand: [cMosque(30), gSun(50, 10, 4)], kabul: [gPeak(12, 12, 22, 24), gPeak(44, 16, 20, 20), cBack()], kathmandu: [[P('M16 46 Q16 28 30 28 Q44 28 44 46 Z', 'bs'), box(26, 16, 8, 12, 'ik'), P('M26 16 L30 6 L34 16 Z', 'ik')], gPeak(10, 12, 16, 18)],
+  colombo: [cHarb(), cBack()], taipei: [cBack(6), cT(30)], guangzhou: [cBack(6), cT2(30, 1), S('M3 52 Q15 50 30 52 T57 52', 'hi', 1.6)], chengdu: [cSky(30), S('M8 50 L8 36 M14 50 L14 32 M50 50 L50 36', 'ik', 2.4)],
+  xian: [[box(5, 28, 50, 18, 'bs'), ...[0, 1, 2, 3, 4, 5, 6, 7].map(i => box(6 + i * 6.5, 24, 3.5, 4, 'bs')), P('M22 46 L22 36 Q30 28 38 36 L38 46 Z', 'lo')]], nanjing: [cPagoda(30), S('M3 52 Q15 50 30 52 T57 52', 'hi', 1.6)], lhasa: [gPeak(14, 14, 28, 24), cCastle(36)], ulaanbaatar: [gYurt(30, 38), gPeak(10, 12, 16, 18)],
+  marrakesh: [cMosque(30), gSun(50, 10, 4)], casablanca: [cMosque(30), S('M3 52 Q15 50 30 52 T57 52', 'hi', 1.6)], tunis: [cMosque(30)], algiers: [cMosque(30), S('M3 52 Q15 50 30 52 T57 52', 'hi', 1.6)], accra: [cBack(), cSky(30)], dakar: [cObel(30), S('M3 52 Q15 50 30 52 T57 52', 'hi', 1.6)],
+  addis_ababa: [cBack(), cSky(30), gPeak(10, 14, 16, 18)], kinshasa: [cBack(), cSky(30), S('M3 52 Q15 50 30 52 T57 52', 'hi', 1.6)], las_vegas: [cSky(24), gStar(46, 20, 6)], new_orleans: [cBridge(30), cHouses(30).slice(0, 0)], houston: [cBack(), cRocket(30)],
+  seattle: [cBack(), cT2(30, 1), gPeak(10, 12, 16, 18)], miami: [cSky(26), gTree(48, 40, 1), gSun(50, 10, 4)], atlanta: [cBack(6), cSky(30)], honolulu: [gPeak(14, 14, 28, 32), gTree(46, 38, 1), S('M3 52 Q15 50 30 52 T57 52', 'hi', 1.6)],
+  quito: [gPeak(12, 12, 22, 24), cDome(40)], caracas: [gPeak(12, 14, 22, 24), cSky(42)], montevideo: [cBack(), cDome(30), S('M3 52 Q15 50 30 52 T57 52', 'hi', 1.6)], santiago: [gPeak(14, 10, 28, 30), cSky(42)],
+  brasilia: [[box(8, 40, 44, 6, 'ik'), P('M16 40 Q16 28 24 28 Q32 28 32 40 Z', 'ik'), P('M36 36 Q44 36 44 28 Q44 36 52 36 Z', 'ik'), box(34, 14, 3, 26, 'ik'), box(40, 14, 3, 26, 'ik')]],
+};
+for (const [id, lm] of Object.entries(CY)) def(id, () => cCity(lm));
+
 /* ── build ────────────────────────────────────────────────────────────────*/
 
 const out = {};
