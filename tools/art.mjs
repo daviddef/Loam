@@ -48437,6 +48437,129 @@ const MZ = {
 };
 for (const [id, fn] of Object.entries(MZ)) def(id, () => gAll(fn().filter(s => s && s.length)));
 
+/* ── earth science 1: geology, landforms, deep time, biomes, 12 Nov ── */
+const aLayers = (x = 6, y = 14, w = 48, h = 8, k = 5, wob = 2) => Array.from({ length: k }, (_, i) => P(`M${x} ${mtR(y + i * h)} Q${x + w / 2} ${mtR(y + i * h + (i % 2 ? wob : -wob))} ${x + w} ${mtR(y + i * h)} L${x + w} ${mtR(y + (i + 1) * h)} Q${x + w / 2} ${mtR(y + (i + 1) * h + (i % 2 ? wob : -wob))} ${x} ${mtR(y + (i + 1) * h)} Z`, ['bs', 'lo', 'hi', 'bs', 'lo', 'hi'][i % 6]));
+const aGlobeCut = (cx = 30, cy = 30, r = 22) => [C(cx, cy, r, 'bs'), C(cx, cy, r * 0.72, 'lo'), C(cx, cy, r * 0.45, 'hi'), C(cx, cy, r * 0.2, 'ik'), ring('ik', cx, cy, r, 1.8), ring('ik', cx, cy, r * 0.72, 1.2), ring('ik', cx, cy, r * 0.45, 1.2)];
+const aMtn = (x, y, w, h, role = 'bs') => gPeak(x, y, w, h, role);
+const aFish = (x, y, s = 1) => [E(x, y, 7 * s, 3.4 * s, 'hi'), P(`M${x + 6 * s} ${y} L${x + 11 * s} ${y - 4 * s} L${x + 11 * s} ${y + 4 * s} Z`, 'hi'), C(x - 3 * s, y - 1 * s, 0.9 * s, 'ik')];
+const aShell = (x, y, r = 6) => [P(`M${x - r} ${y + r * 0.6} Q${x - r} ${y - r} ${x} ${y - r} Q${x + r} ${y - r} ${x + r} ${y + r * 0.6} Z`, 'hi'), S(`M${x} ${y + r * 0.6} L${x} ${y - r} M${x - r * 0.5} ${y + r * 0.6} L${x - r * 0.6} ${y - r * 0.7} M${x + r * 0.5} ${y + r * 0.6} L${x + r * 0.6} ${y - r * 0.7}`, 'ik', 1.2), S(`M${x - r} ${y + r * 0.6} Q${x - r} ${y - r} ${x} ${y - r} Q${x + r} ${y - r} ${x + r} ${y + r * 0.6} Z`, 'ik', 1.4)];
+const aDino = (x = 30, y = 40, s = 1) => [E(x, y, 12 * s, 6 * s, 'bs'), P(`M${x + 10 * s} ${y - 2 * s} Q${x + 16 * s} ${y - 14 * s} ${x + 20 * s} ${y - 12 * s} L${x + 18 * s} ${y - 8 * s} Q${x + 14 * s} ${y - 2 * s} ${x + 12 * s} ${y + 3 * s} Z`, 'bs'), P(`M${x - 11 * s} ${y} L${x - 22 * s} ${y + 6 * s} L${x - 10 * s} ${y + 3 * s} Z`, 'bs'), S(`M${x - 5 * s} ${y + 5 * s} L${x - 5 * s} ${y + 14 * s} M${x + 5 * s} ${y + 5 * s} L${x + 5 * s} ${y + 14 * s}`, 'ik', 2.6 * s), C(x + 18 * s, y - 11 * s, 0.9 * s, 'ik')];
+const aEra = (fn, tag) => () => [aLayers(6, 38, 48, 5, 4, 1.2).flat(), ...fn()].flat();
+const aTree = (x, y, s = 1, role = 'bs') => [box(x - 1.2 * s, y, 2.4 * s, 8 * s, 'lo'), C(x, y - 2 * s, 6 * s, role), C(x - 4 * s, y + 1 * s, 4.4 * s, role), C(x + 4 * s, y + 1 * s, 4.4 * s, role)];
+const MA = {
+  earth_science: () => [...globeP(30, 28, 18, 'lo'), P('M20 20 Q26 16 30 22 Q26 28 22 28 Z M34 30 Q42 28 44 36 Q38 42 34 38 Z', 'hi'), ring('ik', 30, 28, 18, 1.8), P('M6 54 Q30 46 54 54 L54 58 L6 58 Z', 'bs')],
+  natural_environment: () => [...gGround(44, 'lo'), ...aTree(18, 28, 1.1), ...aTree(40, 30, 0.9, 'hi'), S('M4 48 Q30 40 56 50', 'bs', 3), ...gSun(48, 10, 4)],
+  natural_resource: () => [P('M10 52 L10 30 L22 20 L34 28 L50 14 L50 52 Z', 'bs'), S('M10 30 L22 20 L34 28 L50 14', 'ik', 2), ...[[18, 40], [30, 42], [40, 34]].map(([x, y]) => P(`M${x} ${y - 4} L${x + 4} ${y} L${x} ${y + 4} L${x - 4} ${y} Z`, 'hi'))],
+  natural_disaster: () => [P('M30 4 L40 24 L30 24 L38 54 L18 30 L28 30 Z', 'hi'), S('M30 4 L40 24 L30 24 L38 54 L18 30 L28 30 Z', 'ik', 1.8), S('M4 52 L12 48 L18 52 L26 48', 'ik', 2).slice(0, 0)],
+  wildfire: () => [...aTree(12, 36, 1, 'plant' === 'x' ? 'bs' : 'bs'), ...aTree(46, 36, 1), P('M30 8 Q42 24 38 38 Q36 50 30 52 Q22 50 20 40 Q20 30 26 26 Q24 36 30 36 Q34 24 30 8 Z', 'hi'), S('M30 8 Q42 24 38 38 Q36 50 30 52 Q22 50 20 40 Q20 30 26 26 Q24 36 30 36 Q34 24 30 8 Z', 'ik', 1.8)],
+  internal_structure_of_earth: () => [...aGlobeCut(30, 30, 24), P('M30 30 L54 30 A24 24 0 0 0 30 6 Z', 'bs').slice(0, 0)],
+  geology: () => [...aLayers(8, 12, 44, 9, 4, 2), S('M8 12 L52 12 L52 48 L8 48 Z', 'ik', 1.8), ...aShell(34, 36, 3.6).slice(0, 0), C(20, 30, 2.6, 'ik')],
+  lithosphere: () => [box(6, 14, 48, 10, 'bs'), box(6, 24, 48, 16, 'lo'), box(6, 40, 48, 14, 'hi'), S('M6 14 L54 14 L54 54 L6 54 Z M6 24 L54 24 M6 40 L54 40', 'ik', 1.6), ...mtArrow(14, 18, 24, 18, 'ik', 1.6), ...mtArrow(46, 18, 36, 18, 'ik', 1.6)],
+  stratigraphy: () => [...aLayers(10, 10, 40, 9, 5, 0.1), S('M10 10 L50 10 L50 55 L10 55 Z', 'ik', 1.8), ...aShell(30, 33, 3.4).slice(0, 0), C(22, 28, 2.4, 'ik')],
+  thrust_fault: () => [P('M6 20 L30 20 L54 20 L54 52 L6 52 Z', 'bs'), P('M24 20 L54 20 L54 36 L38 36 Z', 'hi'), S('M6 20 L54 20 L54 52 L6 52 Z M14 52 L40 24', 'ik', 2), S('M6 36 L26 36 M36 28 L54 28', 'ik', 1.4), ...mtArrow(46, 40, 34, 28, 'ik', 1.8).slice(0, 0)],
+  mineralogy: () => [P('M30 6 L44 18 L44 40 L30 54 L16 40 L16 18 Z', 'hi'), P('M30 6 L44 18 L30 26 L16 18 Z', 'lo'), S('M30 6 L44 18 L44 40 L30 54 L16 40 L16 18 Z M30 26 L30 54 M16 18 L30 26 L44 18', 'ik', 1.8)],
+  pyroxene: () => [P('M10 40 L16 18 L36 12 L52 30 L44 48 L22 50 Z', 'bs'), S('M10 40 L16 18 L36 12 L52 30 L44 48 L22 50 Z M16 18 L28 34 L52 30 M28 34 L22 50', 'ik', 1.6)],
+  talc: () => [P('M12 40 Q8 30 18 22 Q26 14 36 18 Q50 22 48 34 Q46 46 28 48 Q16 48 12 40 Z', 'hi'), S('M12 40 Q8 30 18 22 Q26 14 36 18 Q50 22 48 34 Q46 46 28 48 Q16 48 12 40 Z', 'ik', 1.8), S('M20 34 Q28 30 36 36', 'ik', 1.4)],
+  jade: () => [P('M30 8 Q50 14 50 30 Q50 48 30 54 Q10 48 10 30 Q10 14 30 8 Z', 'hi'), ring('ik', 30, 31, 7, 3), S('M30 8 Q50 14 50 30 Q50 48 30 54 Q10 48 10 30 Q10 14 30 8 Z', 'ik', 1.8), S('M18 20 Q22 14 28 12', 'bs', 2)],
+  petrology: () => [P('M8 44 L14 24 L30 16 L48 22 L52 40 L36 50 Z', 'bs'), ...[[20, 30], [34, 26], [40, 38], [24, 42]].map(([x, y], i) => C(x, y, 3.2, i % 2 ? 'hi' : 'lo')), S('M8 44 L14 24 L30 16 L48 22 L52 40 L36 50 Z', 'ik', 1.8)],
+  geodesy: () => [...globeP(26, 32, 18, 'lo'), S('M44 12 L56 8 L58 18 Z', 'bs'), S('M44 12 L56 8 L58 18 Z', 'ik', 1.4), S('M46 16 L36 26', 'gh', 1.4), ring('ik', 26, 32, 18, 1.8)],
+  geophysics: () => [...aGlobeCut(30, 32, 18), ...zField(30, 32, 26, 10, 2).slice(0, 2), S('M12 54 L48 54', 'gh', 1.2)],
+  earths_inner_core: () => [C(30, 30, 24, 'bs'), C(30, 30, 17, 'lo'), C(30, 30, 9, 'hi'), ring('ik', 30, 30, 24, 1.8), ring('ik', 30, 30, 17, 1.2), ring('ik', 30, 30, 9, 1.8)],
+  earths_magnetic_field: () => [C(30, 30, 10, 'lo'), ring('ik', 30, 30, 10, 1.6), ...[14, 22].map((rr, i) => S(`M30 ${30 - rr - 4} Q${30 + rr + 8} 30 30 ${30 + rr + 4} M30 ${30 - rr - 4} Q${30 - rr - 8} 30 30 ${30 + rr + 4}`, 'hi', 1.8)), S('M30 12 L30 4 M30 48 L30 56', 'ik', 2)],
+  seismology: () => [S('M4 30 L14 30 L18 14 L22 46 L26 20 L30 38 L34 28 L38 32 L56 30', 'ik', 2.6), S('M4 52 L56 52', 'gh', 1.2), S('M4 8 L56 8', 'gh', 1.2)],
+  geomorphology: () => [P('M4 46 Q14 24 24 36 Q32 14 42 30 Q50 26 56 40 L56 54 L4 54 Z', 'bs'), S('M4 46 Q14 24 24 36 Q32 14 42 30 Q50 26 56 40', 'ik', 2), S('M24 36 Q26 44 22 52 M42 30 Q44 40 40 52', 'lo', 2)],
+  landform: () => [...aMtn(18, 12, 28, 30), P('M32 42 Q40 30 48 42 Z', 'hi'), ...gGround(42, 'lo'), S('M4 46 Q30 40 56 46', 'ik', 1.4)],
+  land: () => [P('M4 24 Q14 10 32 14 Q48 12 56 24 L56 38 Q48 44 32 40 Q16 46 4 38 Z', 'bs'), S('M4 24 Q14 10 32 14 Q48 12 56 24 L56 38 Q48 44 32 40 Q16 46 4 38 Z', 'ik', 1.8), ...gWave(52, 'hi', 1.8).slice(0, 0), S('M4 50 Q15 46 30 50 T56 50', 'hi', 1.8)],
+  mountain_pass: () => [...aMtn(14, 12, 30, 38), ...aMtn(44, 18, 26, 32, 'lo'), S('M30 54 Q34 44 30 36 Q26 30 30 26', 'hi', 3)],
+  mountain_range: () => [...aMtn(12, 24, 26, 26, 'lo'), ...aMtn(30, 8, 34, 42), ...aMtn(48, 22, 24, 28, 'lo'), box(4, 50, 52, 4, 'bs')],
+  hill: () => [P('M2 50 Q16 18 30 22 Q46 18 58 50 Z', 'bs'), S('M2 50 Q16 18 30 22 Q46 18 58 50', 'ik', 2), S('M18 36 Q26 32 32 36', 'hi', 1.6), ...aTree(46, 30, 0.6)],
+  sedimentary_basin: () => [P('M4 20 Q30 58 56 20 L56 10 L4 10 Z', 'lo'), P('M8 24 Q30 52 52 24', 'ik').slice(0, 0), S('M4 20 Q30 58 56 20', 'ik', 2), S('M10 26 Q30 50 50 26 M14 30 Q30 46 46 30', 'hi', 1.6)],
+  alluvial_fan: () => [P('M26 8 L30 8 L56 52 L4 52 Z', 'bs'), S('M28 8 L28 52 M28 12 L14 50 M28 12 L44 50 M28 12 L24 50 M28 12 L34 50', 'hi', 1.6), S('M4 52 L56 52', 'ik', 2)],
+  rapids: () => [...gWave(14, 'bs', 2.4), ...gWave(26, 'hi', 2.4), ...gWave(38, 'bs', 2.4), C(16, 22, 3, 'ik'), C(40, 34, 3.4, 'ik'), C(28, 46, 3, 'ik'), S('M6 46 Q12 42 18 46 Q24 50 30 46', 'hi', 1.8).slice(0, 0)],
+  glacial_landform: () => [P('M4 54 L4 22 Q16 10 30 22 Q44 34 56 24 L56 54 Z', 'hi'), S('M4 22 Q16 10 30 22 Q44 34 56 24', 'ik', 2), P('M20 54 Q30 38 40 54 Z', 'bs'), S('M12 40 L24 36 M34 42 L48 36', 'ik', 1.4)],
+  bay: () => [P('M4 4 L56 4 L56 56 L4 56 Z', 'lo'), P('M4 4 L22 4 Q26 24 36 30 Q46 36 56 28 L56 4 Z', 'bs').slice(0, 0), P('M4 28 Q18 28 24 38 Q28 46 18 56 L4 56 Z', 'bs'), P('M56 24 Q42 26 38 36 Q36 46 44 56 L56 56 Z', 'bs'), S('M4 28 Q18 28 24 38 Q28 46 18 56', 'ik', 1.8), S('M56 24 Q42 26 38 36 Q36 46 44 56', 'ik', 1.8), ...gWave(34, 'hi', 1.6).slice(0, 0)],
+  hotspot_geology: () => [P('M4 54 L56 54 L56 40 L4 40 Z', 'lo'), P('M22 40 L28 18 L32 18 L38 40 Z', 'bs'), P('M28 18 Q30 8 34 4 Q32 14 32 18 Z', 'hi'), C(30, 48, 5, 'hi'), S('M4 40 L56 40', 'ik', 1.8), S('M30 44 L30 18', 'hi', 2)],
+  artificial_island: () => [...gSea(30), P('M16 34 Q30 26 44 34 Q36 40 24 40 Z', 'bs'), box(22, 24, 6, 10, 'ik'), box(32, 20, 6, 14, 'ik').slice(0, 0), S('M16 34 Q30 26 44 34 Q36 40 24 40 Z', 'ik', 1.6)],
+  land_reclamation: () => [box(0, 4, 60, 22, 'lo'), P('M0 26 L38 26 Q44 32 38 40 L0 40 Z', 'bs'), ...gWave(46, 'hi', 2), ...gWave(52, 'bs', 2), S('M4 30 L34 30 M4 36 L34 36', 'ik', 1.4)],
+  polder: () => [box(4, 18, 52, 30, 'bs'), S('M4 18 L56 18 L56 48 L4 48 Z', 'ik', 1.8), ...gWave(14, 'hi', 2.2), ...gWave(52, 'hi', 2.2), S('M14 18 L14 48 M30 18 L30 48 M44 18 L44 48', 'hi', 1.4), P('M48 30 L52 24 L52 36 Z', 'hi').slice(0, 0)],
+  history_of_earth: () => [C(30, 30, 20, 'lo'), P('M18 22 Q24 14 34 18 Q38 28 28 32 Z', 'hi'), ring('ik', 30, 30, 20, 1.8), S('M6 54 L54 54', 'ik', 1.6), ...[0, 1, 2, 3, 4].map(i => S(`M${10 + i * 10} 51 L${10 + i * 10} 57`, 'ik', 1.4))],
+  geological_history_of_earth: () => [...aLayers(8, 8, 44, 9, 5, 1.5), S('M8 8 L52 8 L52 53 L8 53 Z', 'ik', 1.8), ...mtArrow(56, 10, 56, 50, 'ik', 1.4), ...aFish(30, 14, 0.6).slice(0, 0)],
+  geochronology: () => [...aLayers(8, 14, 36, 8, 4, 1.2), S('M8 14 L44 14 L44 46 L8 46 Z', 'ik', 1.6), ...wDial(48, 18, 8, -1.57, 0.4).slice(0, 0), ring('ik', 48, 18, 8, 1.6), S('M48 18 L48 12 M48 18 L52 20', 'ik', 1.6)],
+  late_ordovician_mass_extinction: () => [...aFish(22, 20, 1.2), P('M14 44 L26 34 L38 44 Z', 'hi'), S('M14 44 L26 34 L38 44', 'ik', 1.6), S('M4 52 L56 52', 'ik', 1.6), P('M40 6 L52 6 L50 14 L42 14 Z', 'hi').slice(0, 0), S('M40 8 L52 20 M52 8 L40 20', 'ik', 2.6)],
+  late_devonian_mass_extinction: () => [...aFish(24, 20, 1.2), ...gWave(34, 'hi', 2), S('M40 8 L52 20 M52 8 L40 20', 'ik', 2.6), P('M10 52 Q16 40 22 52 Z', 'bs'), P('M24 52 Q32 36 40 52 Z', 'lo')],
+  triassic_jurassic_extinction: () => [...aDino(24, 36, 0.9), P('M34 56 L40 38 L46 56 Z', 'bs'), P('M40 38 Q42 26 46 18 Q44 30 44 38 Z', 'hi'), S('M44 8 L56 20 M56 8 L44 20', 'ik', 2.6).slice(0, 0)],
+  precambrian: () => [P('M4 56 L56 56 L56 26 Q40 30 30 26 Q16 22 4 28 Z', 'bs'), S('M4 28 Q16 22 30 26 Q40 30 56 26', 'ik', 2), C(16, 40, 2.4, 'hi'), C(30, 44, 2, 'hi'), C(44, 38, 2.6, 'hi')],
+  phanerozoic: () => [...aShell(20, 36, 8), ...aFish(42, 26, 1), ...aLayers(4, 48, 52, 4, 2, 0.8)],
+  paleozoic: () => [P('M10 40 Q30 22 50 40 Q40 50 20 50 Z', 'bs'), S('M10 40 Q30 22 50 40', 'ik', 1.8), ...[0, 1, 2, 3].map(i => S(`M${18 + i * 8} 40 L${18 + i * 8} 49`, 'ik', 1.4)), ...aLayers(4, 52, 52, 3, 1, 0.5)],
+  cambrian: () => [E(30, 30, 16, 9, 'bs'), ...[0, 1, 2, 3, 4].map(i => S(`M${18 + i * 6} 22 Q${20 + i * 6} 30 ${18 + i * 6} 38`, 'ik', 1.6)), C(14, 30, 2, 'ik'), S('M14 30 L8 26 M14 30 L8 34', 'ik', 1.6), ...aLayers(4, 50, 52, 3, 1, 0.5)],
+  permian: () => [...aDino(28, 34, 0.9).slice(0, 4), S('M22 46 L22 52 M34 46 L34 52', 'ik', 2.2), S('M10 20 L16 8 M46 16 L52 6', 'ik', 1.6).slice(0, 0), ...aLayers(4, 52, 52, 3, 1, 0.5)],
+  mesozoic: () => [...aDino(28, 36, 1), ...aLayers(4, 52, 52, 3, 1, 0.5)],
+  triassic: () => [...aDino(26, 36, 0.8), P('M42 52 L46 30 L50 52 Z', 'hi').slice(0, 0), ...aTree(48, 26, 0.7), ...aLayers(4, 52, 52, 3, 1, 0.5)],
+  jurassic: () => [E(24, 38, 12, 6, 'bs'), P('M32 34 Q36 16 42 8 L46 10 Q42 18 40 36 Z', 'bs'), S('M16 44 L16 54 M30 44 L30 54', 'ik', 2.6), C(44, 9, 1.4, 'ik'), P('M12 36 L2 46 L14 42 Z', 'bs')],
+  cretaceous: () => [...aDino(24, 38, 0.9), ...gSun(46, 12, 5), S('M40 6 L52 22', 'hi', 2).slice(0, 0), ...aLayers(4, 52, 52, 3, 1, 0.5)],
+  cenozoic: () => [E(26, 36, 12, 8, 'bs'), P('M14 36 Q8 36 8 46 Q10 40 14 42 Z', 'bs'), S('M18 44 L18 54 M32 44 L32 54', 'ik', 2.6), P('M36 32 Q48 30 50 40 Q50 48 46 52 Q44 44 42 40 Z', 'bs'), S('M46 40 Q56 40 58 48', 'ik', 1.8)].slice(0, 6),
+  paleogene: () => [E(26, 36, 12, 8, 'bs'), S('M18 44 L18 54 M32 44 L32 54', 'ik', 2.6), C(40, 30, 5, 'bs'), ...aTree(50, 20, 0.7)],
+  neogene: () => [E(24, 38, 10, 7, 'bs'), S('M18 44 L18 54 M30 44 L30 54', 'ik', 2.4), C(36, 28, 5, 'bs'), S('M34 34 L40 42', 'ik', 2), ...gSun(48, 12, 5)],
+  quaternary: () => [P('M4 54 L4 28 Q16 12 30 24 Q44 36 56 22 L56 54 Z', 'hi'), S('M4 28 Q16 12 30 24 Q44 36 56 22', 'ik', 2), ...[[18, 38], [38, 44]].map(([x, y]) => P(`M${x} ${y - 5} L${x + 4} ${y} L${x} ${y + 5} L${x - 4} ${y} Z`, 'bs'))],
+  holocene: () => [...gSun(46, 12, 6), ...aTree(18, 30, 1), S('M4 48 Q30 42 56 48', 'ik', 2), ...gGround(48, 'lo'), P('M30 48 L30 38 L34 34 L34 48 Z', 'hi').slice(0, 0)],
+  shrubland: () => [...gGround(46, 'lo'), ...[[10, 40], [22, 36], [36, 40], [48, 36]].map(([x, y], i) => [C(x, y, 5, i % 2 ? 'hi' : 'bs'), C(x + 4, y + 2, 4, 'bs'), S(`M${x} ${y + 4} L${x} ${y + 8}`, 'ik', 1.4)]).flat(), ...gSun(48, 10, 4)],
+  jungle: () => [box(0, 44, 60, 12, 'lo'), ...[8, 22, 36, 50].map((x, i) => [box(x - 1.4, 22 + (i % 2) * 6, 2.8, 26, 'lo'), C(x, 20 + (i % 2) * 6, 8, i % 2 ? 'hi' : 'bs'), C(x - 6, 24 + (i % 2) * 6, 5, 'bs'), C(x + 6, 24 + (i % 2) * 6, 5, 'bs')]).flat(), S('M4 52 Q30 46 56 52', 'ik', 1.4).slice(0, 0)],
+  temperate_broadleaf_and_mixed_forests: () => [...aTree(14, 26, 1.2, 'hi'), ...aTree(30, 22, 1.4, 'bs'), ...aTree(46, 26, 1.2, 'lo'), ...gGround(46, 'lo').slice(0, 1)],
+  marsh: () => [box(0, 36, 60, 22, 'lo'), ...gWave(44, 'hi', 1.8), ...[8, 16, 26, 38, 46, 52].map((x, i) => S(`M${x} 46 L${x - 1 + (i % 2) * 2} ${22 + (i % 3) * 4}`, 'ik', 1.6)), ...[16, 38].map(x => P(`M${x - 2} 22 L${x + 2} 22 L${x + 1} 32 L${x - 1} 32 Z`, 'bs'))],
+  pedosphere: () => [...aLayers(6, 22, 48, 8, 4, 0.1), ...aTree(16, 8, 0.8), S('M24 30 L24 38 M30 30 L30 36 M36 30 L36 40', 'ik', 1.4)],
+  soil_fertility: () => [box(4, 34, 52, 20, 'lo'), S('M4 34 L56 34', 'ik', 2), P('M30 34 Q22 22 14 24 Q18 34 30 34 Z', 'bs'), P('M30 34 Q40 18 48 20 Q42 32 30 34 Z', 'hi'), S('M30 34 L30 54', 'ik', 1.6), ...[[12, 44], [46, 46], [22, 48]].map(([x, y]) => C(x, y, 2, 'hi'))],
+  soil_science: () => [box(10, 30, 40, 22, 'lo'), S('M10 30 L50 30', 'ik', 1.8), ...[[18, 38], [30, 44], [42, 38]].map(([x, y]) => C(x, y, 2.6, 'hi')), C(38, 18, 9, 'bs'), ring('ik', 38, 18, 9, 2), S('M44 24 L52 32', 'ik', 3)],
+};
+for (const [id, fn] of Object.entries(MA)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── earth science 2: atmosphere, climate, seasons, water, 12 Nov ── */
+const bCyc = (cx = 30, cy = 30, r = 20, k = 'bs', w = 3) => [mtPlot(u => [cx + Math.cos(u * 12 + 0.4) * r * (0.15 + u * 0.85), cy + Math.sin(u * 12 + 0.4) * r * (0.15 + u * 0.85)], 0, 1, 70, k, w), mtPlot(u => [cx + Math.cos(u * 12 + 3.5) * r * (0.15 + u * 0.85), cy + Math.sin(u * 12 + 3.5) * r * (0.15 + u * 0.85)], 0, 1, 70, 'hi', w * 0.8), C(cx, cy, 2.6, 'ik')];
+const bRain = (x, y, n = 4) => Array.from({ length: n }, (_, i) => S(`M${x + i * 6} ${y + (i % 2) * 4} L${x + i * 6 - 2} ${y + 8 + (i % 2) * 4}`, 'hi', 1.8));
+const bTree = (x, y, s = 1, role = 'bs') => [box(x - 1.2 * s, y, 2.4 * s, 8 * s, 'lo'), C(x, y - 2 * s, 6 * s, role), C(x - 4 * s, y + 1 * s, 4.4 * s, role), C(x + 4 * s, y + 1 * s, 4.4 * s, role)];
+const bLeaf = (x, y, s = 1, role = 'hi') => [P(`M${x} ${y - 8 * s} Q${x + 8 * s} ${y - 2 * s} ${x} ${y + 8 * s} Q${x - 8 * s} ${y - 2 * s} ${x} ${y - 8 * s} Z`, role), S(`M${x} ${y - 6 * s} L${x} ${y + 10 * s}`, 'ik', 1.4)];
+const bFlake = (x, y, r = 8) => Array.from({ length: 3 }, (_, i) => S(`M${mtR(x + Math.cos(i * 1.047) * r)} ${mtR(y + Math.sin(i * 1.047) * r)} L${mtR(x - Math.cos(i * 1.047) * r)} ${mtR(y - Math.sin(i * 1.047) * r)}`, 'ik', 2));
+const bHL = (hi = true) => [C(30, 30, 14, hi ? 'hi' : 'lo'), ring('ik', 30, 30, 14, 2), S(hi ? 'M24 30 L36 30 M30 24 L30 36' : 'M24 30 L36 30', 'ik', 3)];
+const MB = {
+  air_mass: () => [...gCloud(30), P('M8 30 Q30 22 52 30 L52 50 Q30 58 8 50 Z', 'lo'), S('M8 30 Q30 22 52 30 L52 50 Q30 58 8 50 Z', 'ik', 1.8), ...mtArrow(14, 40, 44, 40, 'hi', 2)],
+  atmospheric_pressure: () => [...wTherm(20, 0.4).slice(0, 0), C(30, 30, 20, 'lo'), ring('ik', 30, 30, 20, 2.4), ...Array.from({ length: 10 }, (_, i) => S(`M${mtR(30 + Math.cos(i * 0.628 + 3.4) * 17)} ${mtR(30 + Math.sin(i * 0.628 + 3.4) * 17)} L${mtR(30 + Math.cos(i * 0.628 + 3.4) * 20)} ${mtR(30 + Math.sin(i * 0.628 + 3.4) * 20)}`, 'ik', 1.4)), S('M30 30 L40 20', 'hi', 2.6), C(30, 30, 2.4, 'ik')],
+  atmospheric_science: () => [...gCloud(26), ...gSun(46, 14, 5), ...bRain(14, 28, 3), P('M4 52 L56 52 L56 56 L4 56 Z', 'lo'), ...mtArrow(34, 36, 52, 36, 'ik', 1.8)],
+  ozone_depletion: () => [P('M4 20 Q30 4 56 20 L56 26 Q30 12 4 26 Z', 'lo'), P('M24 14 Q30 20 36 14 L38 22 Q30 28 22 22 Z', 'gh'), C(30, 50, 8, 'bs'), ring('ik', 30, 50, 8, 1.6), S('M16 30 L22 38 M44 30 L38 38 M30 32 L30 38', 'hi', 2)],
+  mirage: () => [P('M4 36 L56 36 L56 56 L4 56 Z', 'bs'), S('M4 36 L56 36', 'ik', 1.6), ...gSun(48, 12, 5), P('M20 14 L24 14 L24 30 L20 30 Z M30 18 L34 18 L34 30 L30 30 Z', 'hi'), P('M20 44 L24 44 L24 36 L20 36 Z M30 40 L34 40 L34 36 L30 36 Z', 'hi'), S('M6 38 Q16 40 26 38 T46 38', 'ik', 1.2)],
+  climatology: () => [...mtAx(), mtPlot(u => [10 + u * 40, 38 - Math.sin(u * 6.28) * 10 - u * 8], 0, 1, 40, 'bs', 2.6), ...gSun(46, 14, 4).slice(0, 2)],
+  climate_change: () => [...wTherm(20, 0.8), mtPlot(u => [32 + u * 22, 48 - u * 6 - Math.pow(u, 2) * 28 - Math.sin(u * 14) * 3], 0, 1, 30, 'hi', 2.6), S('M32 52 L56 52 M32 52 L32 12', 'ik', 1.6)],
+  climate_variability_and_change: () => [S('M6 52 L54 52 M6 52 L6 10', 'ik', 1.6), mtPlot(u => [8 + u * 44, 30 + Math.sin(u * 20) * 6 + Math.sin(u * 6) * 10], 0, 1, 70, 'bs', 2.4), S('M8 30 L52 30', 'gh', 1.2)],
+  el_nino_southern_oscillation: () => [...gSea(30), box(0, 4, 60, 22, 'lo').slice(0, 0), S('M6 36 Q18 30 30 36 T54 36', 'hi', 2.4), ...mtArrow(10, 44, 50, 44, 'ik', 2), ...gSun(46, 14, 5), C(14, 14, 3, 'hi').slice(0, 0)],
+  koppen_climate_classification: () => [box(4, 8, 52, 14, 'bs'), box(4, 22, 52, 12, 'hi'), box(4, 34, 52, 10, 'lo'), box(4, 44, 52, 10, 'gh'), S('M4 8 L56 8 L56 54 L4 54 Z M4 22 L56 22 M4 34 L56 34 M4 44 L56 44', 'ik', 1.4)],
+  weather_forecasting: () => [box(6, 10, 48, 34, 'bs'), S('M6 10 L54 10 L54 44 L6 44 Z', 'ik', 1.8), ...gCloud(24).slice(0, 4).map(s => s), ...gSun(42, 22, 5), box(22, 48, 16, 4, 'ik'), box(16, 52, 28, 3, 'ik')],
+  low_pressure_area: () => [...bCyc(30, 30, 22), P('M30 30 L30 30', 'ik').slice(0, 0), S('M4 52 L56 52', 'gh', 1.2).slice(0, 0), ...bRain(8, 46, 2).slice(0, 0)],
+  high_pressure_area: () => [...gSun(30, 22, 10), ...[0, 1, 2, 3, 4, 5, 6, 7].map(i => mtArrow(mtR(30 + Math.cos(i * 0.785) * 14), mtR(22 + Math.sin(i * 0.785) * 14), mtR(30 + Math.cos(i * 0.785) * 24), mtR(22 + Math.sin(i * 0.785) * 24), 'ik', 1.4)).flat(), S('M6 52 L54 52', 'ik', 2)],
+  precipitation: () => [...gCloud(30), ...bRain(14, 26, 6), ...bRain(10, 40, 6)],
+  summer: () => [...gSun(30, 16, 9), ...Array.from({ length: 8 }, (_, i) => S(`M${mtR(30 + Math.cos(i * 0.785) * 12)} ${mtR(16 + Math.sin(i * 0.785) * 12)} L${mtR(30 + Math.cos(i * 0.785) * 18)} ${mtR(16 + Math.sin(i * 0.785) * 18)}`, 'hi', 2.2)), ...bTree(18, 38, 1, 'hi'), ...bTree(44, 38, 1, 'bs')],
+  autumn: () => [...bLeaf(20, 22, 1.4, 'hi'), ...bLeaf(40, 30, 1.1, 'bs'), ...bLeaf(26, 44, 0.9, 'lo'), P('M4 54 L56 54 L56 58 L4 58 Z', 'lo').slice(0, 0)],
+  winter: () => [...bFlake(30, 22, 12), P('M4 54 Q30 44 56 54 L56 58 L4 58 Z', 'hi'), C(14, 48, 2, 'hi'), C(46, 46, 2, 'hi')].slice(0, 5),
+  dry_season: () => [...gSun(30, 14, 9), P('M4 54 L56 54 L56 42 L4 42 Z', 'bs'), S('M8 46 L14 50 L20 44 M30 48 L36 52 L42 46 M44 44 L50 48', 'ik', 1.6), S('M4 42 L56 42', 'ik', 1.8)],
+  wet_season: () => [...gCloud(30), ...bRain(10, 28, 7), box(4, 50, 52, 6, 'lo'), ...gWave(48, 'hi', 1.8)].slice(0, 10),
+  atmospheric_circulation: () => [C(30, 30, 20, 'lo'), ring('ik', 30, 30, 20, 1.8), S('M10 30 Q30 16 50 30 M10 30 Q30 44 50 30', 'hi', 2), ...mtArrow(14, 24, 20, 20, 'ik', 1.4), ...mtArrow(46, 36, 40, 40, 'ik', 1.4), S('M10 30 L50 30', 'gh', 1.2)],
+  cyclone: () => [...bCyc(30, 30, 24), C(30, 30, 3.4, 'ik')],
+  hadley_cell: () => [S('M6 52 L54 52', 'ik', 1.6), P('M10 48 Q10 14 30 14 Q50 14 50 48', 'ik').slice(0, 0), S('M10 48 Q10 16 30 16 Q50 16 50 48', 'hi', 2.4), ...mtArrow(10, 36, 10, 30, 'hi', 1.6), ...mtArrow(50, 30, 50, 36, 'hi', 1.6), C(30, 46, 4, 'lo').slice(0, 0), ...gSun(30, 40, 5)],
+  polar_vortex: () => [C(30, 30, 22, 'lo'), ring('ik', 30, 30, 22, 1.8), mtPlot(u => [30 + Math.cos(u * 9) * 18 * (1 - u * 0.8), 30 + Math.sin(u * 9) * 18 * (1 - u * 0.8)], 0, 1, 60, 'hi', 2.4), ...bFlake(30, 30, 4)],
+  walker_circulation: () => [...gSea(36), S('M8 32 Q8 8 30 8 Q52 8 52 32', 'hi', 2.4), ...mtArrow(8, 24, 8, 32, 'hi', 1.6), ...mtArrow(52, 32, 52, 24, 'hi', 1.6), ...gCloud(46).slice(0, 4), ...gSun(14, 28, 4).slice(0, 2)],
+  dust_storm: () => [...gGround(42, 'bs'), ...[0, 1, 2, 3].map(i => S(`M${6 + i * 3} ${14 + i * 8} Q${22 + i * 4} ${6 + i * 8} ${38 + i * 4} ${14 + i * 8} T${60} ${14 + i * 8}`, 'hi', 3.2 - i * 0.4)), ...Array.from({ length: 8 }, (_, i) => C(8 + i * 6.4, 36 - (i % 3) * 8, 1.6, 'ik'))],
+  hydrosphere: () => [C(30, 30, 22, 'lo'), P('M14 22 Q22 14 32 18 Q36 28 28 30 Q20 32 14 22 Z M34 36 Q44 34 46 42 Q40 48 34 44 Z', 'bs'), ring('ik', 30, 30, 22, 2), P('M30 8 Q36 16 30 22 Q24 16 30 8 Z', 'hi')],
+  cryosphere: () => [C(30, 30, 22, 'lo'), P('M10 20 Q30 4 50 20 Q30 14 10 20 Z', 'hi'), P('M10 42 Q30 56 50 42 Q30 48 10 42 Z', 'hi'), ring('ik', 30, 30, 22, 2), ...bFlake(30, 30, 6)],
+  ice_shelf: () => [...gSea(34), P('M4 34 L4 18 L40 18 L44 34 Z', 'hi'), S('M4 34 L4 18 L40 18 L44 34', 'ik', 2), S('M10 22 L12 32 M22 22 L24 32 M32 22 L34 32', 'bs', 1.4), P('M46 34 L52 28 L54 34 Z', 'hi')],
+  oceanography: () => [...gSea(24), ...aFish(20, 40, 1), ...aFish(40, 46, 0.8), C(46, 12, 5, 'hi').slice(0, 0), P('M10 12 L18 12 L14 20 Z', 'hi').slice(0, 0), ...gSun(46, 12, 5)],
+  sea_level: () => [...gSea(30), S('M4 30 L56 30', 'ik', 1.8), S('M10 14 L10 52', 'ik', 2), S('M10 30 L16 30 M10 38 L14 38 M10 22 L14 22 M10 46 L14 46', 'ik', 1.6), ...mtArrow(48, 20, 48, 28, 'hi', 1.6).slice(0, 0)],
+  seabed: () => [box(0, 4, 60, 42, 'lo'), P('M0 46 Q10 40 20 46 T40 44 T60 46 L60 56 L0 56 Z', 'bs'), S('M0 46 Q10 40 20 46 T40 44 T60 46', 'ik', 2), ...[[14, 40], [34, 38], [46, 42]].map(([x, y]) => aShell(x, y, 3)).flat(), ...gWave(10, 'hi', 1.6)],
+  hydrology: () => [...gCloud(18), ...bRain(8, 20, 4), P('M4 54 L22 36 L34 44 L56 28 L56 56 L4 56 Z', 'bs'), S('M30 56 Q36 44 28 40 Q20 38 22 36', 'hi', 3)],
+  body_of_water: () => [P('M10 24 Q14 12 28 14 Q44 10 50 22 Q54 36 40 44 Q26 52 14 44 Q6 36 10 24 Z', 'lo'), S('M10 24 Q14 12 28 14 Q44 10 50 22 Q54 36 40 44 Q26 52 14 44 Q6 36 10 24 Z', 'ik', 2), S('M18 28 Q24 24 30 28 M26 38 Q32 34 38 38', 'hi', 1.6)],
+  hydrography: () => [box(6, 8, 48, 44, 'bs'), S('M6 8 L54 8 L54 52 L6 52 Z', 'ik', 1.6), S('M10 14 Q24 20 20 34 Q18 44 34 46 Q48 46 50 34', 'hi', 3), S('M6 30 L54 30 M30 8 L30 52', 'gh', 1.2), C(34, 46, 2.6, 'ik')],
+  limnology: () => [P('M8 28 Q14 18 30 20 Q48 18 52 30 Q50 42 32 44 Q14 44 8 28 Z', 'lo'), S('M8 28 Q14 18 30 20 Q48 18 52 30 Q50 42 32 44 Q14 44 8 28 Z', 'ik', 1.8), ...aFish(26, 32, 0.8), S('M6 52 L54 52', 'bs', 3)],
+  dry_lake: () => [P('M8 28 Q14 18 30 20 Q48 18 52 30 Q50 42 32 44 Q14 44 8 28 Z', 'bs'), S('M8 28 Q14 18 30 20 Q48 18 52 30 Q50 42 32 44 Q14 44 8 28 Z', 'ik', 1.8), S('M16 30 L24 36 L30 28 L38 36 L44 30 M22 24 L26 30', 'ik', 1.4), ...gSun(48, 10, 4)],
+  drainage_basin: () => [P('M4 54 L14 20 L30 10 L46 20 L56 54 Z', 'bs'), S('M4 54 L14 20 L30 10 L46 20 L56 54', 'ik', 2), S('M16 22 Q22 34 28 40 M30 14 Q30 30 30 46 M44 22 Q38 34 32 42 M30 46 L30 56', 'hi', 2.2)],
+};
+for (const [id, fn] of Object.entries(MB)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
 /* ── build ────────────────────────────────────────────────────────────────*/
 
 const out = {};
