@@ -240,6 +240,7 @@ const SCALE = {
           // cell biology batch 1 — whole-cell scale, the same rack as cell/sperm/stem_cell
           'flagella', 'neuron', 'muscle_cell', 'red_blood_cell', 'white_blood_cell', 'guard_cell', 'palisade_cell', 'goblet_cell', 'ciliated_cell'],
   '-4':  [
+          /* plants, fungi, protists (AH) */ 'alveolate', 'ciliate', 'amoeba', 'amoebozoa', 'excavata', 'euglenozoa', 'haptophyte', 'stramenopile', 'rhizaria',
           /* W2 insects third pass, 6 Sep */
           'sclerite', 'clypeus', 'labrum', 'maxilla', 'labium', 'hypopharynx', 'tentorium', 'ocellus', 'apodeme',
           /* W4 physiology second pass, 6 Sep */
@@ -587,6 +588,7 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* plants, fungi, protists (AH) */ 'bryophyte', 'lycophyte',
           /* mammals, breeds, hominins (AG) */ 'stoat', 'galago', 'tarsier', 'dormouse', 'guinea_pig', 'hamster', 'muridae', 'shrew',
           /* R3 AF invertebrates and animal behaviour */ 'scallop', 'decapod', 'malacostraca', 'chelicerata', 'xiphosura', 'polychaete',
           /* R3 AE birds and bats */ 'common_quail', 'bulbul', 'finch', 'lark', 'new_world_warbler', 'european_robin', 'house_sparrow', 'sunbird', 'tit_bird', 'wren',
@@ -908,6 +910,7 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* plants, fungi, protists (AH) — abstract concepts, filed at the 10⁰ idea bucket */ 'plant_reproductive_morphology', 'green_algae', 'pteridophyte', 'equisetum', 'magnoliids', 'araceae', 'anthurium', 'philodendron', 'aloe', 'amaryllis', 'gladiolus', 'iridaceae', 'yucca', 'water_hyacinth', 'alstroemeria', 'colchicum', 'liliaceae', 'lilium', 'tulip', 'pandanus', 'canna_plant', 'heliconia', 'bromeliaceae', 'puya', 'cyperaceae', 'juncus', 'poaceae', 'oryza_sativa', 'common_wheat', 'apiaceae', 'hedera', 'asteraceae', 'bellis_perennis', 'chicory', 'chrysanthemum', 'cirsium', 'dahlia', 'solidago', 'helianthus', 'sonchus', 'tagetes', 'campanulaceae', 'brassicaceae', 'arabidopsis_thaliana', 'eruca_sativa', 'tropaeolum', 'beetroot', 'cucurbitaceae', 'cucumis_melo', 'cucurbita', 'diospyros', 'ericaceae', 'azalea', 'theaceae', 'camellia', 'impatiens', 'primulaceae', 'fabaceae', 'mimosa', 'phaseolus_vulgaris', 'lamiaceae', 'mentha', 'salvia', 'oleaceae', 'verbena', 'poinsettia', 'hypericum', 'viola_plant', 'henna', 'myrtaceae', 'moraceae', 'rosaceae', 'rose', 'citrus', 'mandarin_orange', 'solanaceae', 'bell_pepper', 'cornus', 'apocynaceae', 'rubiaceae', 'gardenia', 'malvaceae', 'proteaceae', 'nelumbo', 'agaricus', 'pleurotus_ostreatus', 'amanita_phalloides', 'brown_algae',
           /* mammals, breeds, hominins (AG) — abstract concepts, filed at the 10⁰ idea bucket */ 'carnivora', 'canidae', 'felidae', 'lynx', 'european_badger', 'honey_badger', 'marten', 'wolverine', 'artiodactyla', 'alpaca', 'african_buffalo', 'antelope', 'capra_genus', 'gazelle', 'gaur', 'impala', 'muskox', 'wildebeest', 'european_bison', 'yak', 'bactrian_camel', 'elk', 'moose', 'red_deer', 'reindeer', 'llama', 'guanaco', 'peccary', 'vicuna', 'hare', 'diprotodontia', 'tasmanian_devil', 'equidae', 'anteater', 'eared_seal', 'bonobo', 'gibbon', 'homo', 'human_evolution', 'australopithecus', 'cro_magnon', 'paranthropus', 'new_world_monkey', 'capuchin_monkey', 'spider_monkey', 'old_world_monkey', 'macaque', 'rhesus_macaque', 'strepsirrhini', 'slow_loris', 'capybara', 'nutria', 'marmot', 'muskrat', 'porcupine', 'hereford_cattle', 'holstein_friesian', 'american_brahman', 'gun_dog', 'herding_dog', 'hound', 'mastiff', 'spitz', 'terrier', 'arabian_horse', 'andalusian_horse', 'friesian_horse', 'thoroughbred', 'pony', 'mule', 'merino',
           /* R3 AF invertebrates and animal behaviour — abstract concepts, filed at the 10⁰ idea bucket */ 'eurypterid', 'bilateria', 'animal_coloration', 'animal_locomotion', 'animal_migration', 'instinct', 'sociality', 'herd', 'ornithischia', 'ostracoderm', 'acanthodii', 'sirenia', 'passerine', 'galliformes', 'ara_bird',
           /* R3 AE birds and bats — abstract concepts, filed at the 10⁰ idea bucket */ 'seabird', 'palaeognathae', 'accipiter', 'falcon', 'old_world_vulture', 'osprey', 'secretarybird', 'nightjar', 'auk', 'gull', 'sandpiper', 'tern', 'dodo', 'passenger_pigeon', 'rock_dove', 'hornbill', 'hoopoe', 'kingfisher', 'cuckoo', 'grouse', 'guinea_fowl', 'peafowl', 'common_pheasant', 'domestic_turkey', 'loon', 'bustard', 'songbird', 'bird_of_paradise', 'corvus', 'eurasian_magpie', 'honeyeater', 'lyrebird', 'shrike', 'red_winged_blackbird', 'mockingbird', 'common_nightingale', 'common_starling', 'common_myna', 'swallow', 'thrush_bird', 'american_robin', 'darter', 'frigatebird', 'shoebill', 'stork', 'honeyguide', 'budgerigar', 'cockatoo', 'moa', 'eurasian_eagle_owl', 'tyto', 'tinamou', 'trogon', 'resplendent_quetzal', 'megabat', 'microbat', 'pteropus',
@@ -1284,6 +1287,7 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+          /* plants, fungi, protists (AH) */ 'cupressus', 'douglas_fir', 'podocarpus', 'sequoioideae', 'arecaceae', 'hickory', 'ficus_sycomorus', 'platanus',
           /* mammals, breeds, hominins (AG) */ 'cetacean', 'humpback_whale', 'sperm_whale',
           /* R3 AD fish amphibians reptiles */ 'plesiosaur',
           /* education, universities and festivals batch, 12 Nov */ 'house_of_wisdom',

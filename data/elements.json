@@ -11826,7 +11826,6 @@
       "crop"
     ],
     "fact": "Ripens after its own tree has already dropped its leaves for the year.",
-    "terminal": true,
     "taxon": "tx_ebenaceae"
   },
   {
@@ -26726,7 +26725,6 @@
     ],
     "fact": "Some species load their nectar with grayanotoxin -- Xenophon's soldiers recorded being poisoned by wild honey made from it in 401 BC.",
     "taxon": "tx_rhododendron",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -129535,5 +129533,1182 @@
     ],
     "fact": "A sheep breed with very fine soft wool, once a Spanish monopoly.",
     "src": "https://en.wikipedia.org/wiki/Merino"
+  },
+  {
+    "id": "plant_reproductive_morphology",
+    "name": "Plant Reproductive Morphology",
+    "emoji": "🌸",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The study of the parts of plants concerned with sexual reproduction.",
+    "src": "https://en.wikipedia.org/wiki/Plant_reproductive_morphology"
+  },
+  {
+    "id": "green_algae",
+    "name": "Green Algae",
+    "emoji": "🟢",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The group of chlorophyll-containing algae from which land plants arose.",
+    "src": "https://en.wikipedia.org/wiki/Green_algae"
+  },
+  {
+    "id": "bryophyte",
+    "name": "Bryophyte",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The non-vascular land plants: liverworts, hornworts and mosses.",
+    "src": "https://en.wikipedia.org/wiki/Bryophyte"
+  },
+  {
+    "id": "pteridophyte",
+    "name": "Pteridophyte",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A vascular plant that reproduces by spores, such as a fern.",
+    "src": "https://en.wikipedia.org/wiki/Pteridophyte"
+  },
+  {
+    "id": "equisetum",
+    "name": "Horsetail",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The horsetails, the only living genus of a family of spore-bearing plants.",
+    "src": "https://en.wikipedia.org/wiki/Equisetum"
+  },
+  {
+    "id": "lycophyte",
+    "name": "Lycophyte",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A clade of spore-bearing vascular plants that includes the clubmosses.",
+    "src": "https://en.wikipedia.org/wiki/Lycophyte"
+  },
+  {
+    "id": "cupressus",
+    "name": "Cypress",
+    "emoji": "🌲",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The genus of the cypresses.",
+    "src": "https://en.wikipedia.org/wiki/Cupressus"
+  },
+  {
+    "id": "douglas_fir",
+    "name": "Douglas Fir",
+    "emoji": "🌲",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A conifer, the tallest tree in the pine family.",
+    "src": "https://en.wikipedia.org/wiki/Douglas_fir"
+  },
+  {
+    "id": "podocarpus",
+    "name": "Podocarpus",
+    "emoji": "🌲",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A large genus of conifers, the most widespread of its family.",
+    "src": "https://en.wikipedia.org/wiki/Podocarpus"
+  },
+  {
+    "id": "sequoioideae",
+    "name": "Redwoods and Sequoias",
+    "emoji": "🌲",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The redwoods, which include the largest and tallest trees in the world.",
+    "src": "https://en.wikipedia.org/wiki/Sequoioideae"
+  },
+  {
+    "id": "magnoliids",
+    "name": "Magnoliids",
+    "emoji": "🌸",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A clade of flowering plants including magnolias, nutmeg, cinnamon and avocado.",
+    "src": "https://en.wikipedia.org/wiki/Magnoliids"
+  },
+  {
+    "id": "araceae",
+    "name": "Arum Family",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The arum family, whose flowers are borne on a spadix.",
+    "src": "https://en.wikipedia.org/wiki/Araceae"
+  },
+  {
+    "id": "anthurium",
+    "name": "Anthurium",
+    "emoji": "🌺",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The largest genus of the arum family, called tailflower or flamingo flower.",
+    "src": "https://en.wikipedia.org/wiki/Anthurium"
+  },
+  {
+    "id": "philodendron",
+    "name": "Philodendron",
+    "emoji": "🪴",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A large genus of flowering plants in the arum family.",
+    "src": "https://en.wikipedia.org/wiki/Philodendron"
+  },
+  {
+    "id": "arecaceae",
+    "name": "Palm Family",
+    "emoji": "🌴",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The palm family.",
+    "src": "https://en.wikipedia.org/wiki/Arecaceae"
+  },
+  {
+    "id": "aloe",
+    "name": "Aloe",
+    "emoji": "🪴",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A genus of flowering succulents, best known for Aloe vera.",
+    "src": "https://en.wikipedia.org/wiki/Aloe"
+  },
+  {
+    "id": "amaryllis",
+    "name": "Amaryllis",
+    "emoji": "🌺",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A small genus of flowering bulbs.",
+    "src": "https://en.wikipedia.org/wiki/Amaryllis"
+  },
+  {
+    "id": "gladiolus",
+    "name": "Gladiolus",
+    "emoji": "🌸",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A flowering genus of the iris family, sometimes called the sword lily.",
+    "src": "https://en.wikipedia.org/wiki/Gladiolus"
+  },
+  {
+    "id": "iridaceae",
+    "name": "Iris Family",
+    "emoji": "🌸",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The iris family, found almost worldwide.",
+    "src": "https://en.wikipedia.org/wiki/Iridaceae"
+  },
+  {
+    "id": "yucca",
+    "name": "Yucca",
+    "emoji": "🌵",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A genus of plants native to North America.",
+    "src": "https://en.wikipedia.org/wiki/Yucca"
+  },
+  {
+    "id": "water_hyacinth",
+    "name": "Water Hyacinth",
+    "emoji": "🪷",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An aquatic plant native to South America and invasive elsewhere.",
+    "src": "https://en.wikipedia.org/wiki/Pontederia_crassipes"
+  },
+  {
+    "id": "alstroemeria",
+    "name": "Alstroemeria",
+    "emoji": "🌸",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The Peruvian lily, a flowering plant native to South America.",
+    "src": "https://en.wikipedia.org/wiki/Alstroemeria"
+  },
+  {
+    "id": "colchicum",
+    "name": "Autumn Crocus",
+    "emoji": "🌸",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A genus of flowering plants that grow from bulb-like corms.",
+    "src": "https://en.wikipedia.org/wiki/Colchicum"
+  },
+  {
+    "id": "liliaceae",
+    "name": "Lily Family",
+    "emoji": "🌸",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The lily family, perennial plants often growing from bulbs.",
+    "src": "https://en.wikipedia.org/wiki/Liliaceae"
+  },
+  {
+    "id": "lilium",
+    "name": "Lily",
+    "emoji": "🌸",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The true lilies, bulb plants with large flowers.",
+    "src": "https://en.wikipedia.org/wiki/Lilium"
+  },
+  {
+    "id": "tulip",
+    "name": "Tulip",
+    "emoji": "🌷",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A spring-blooming bulb plant with large, brightly coloured flowers.",
+    "src": "https://en.wikipedia.org/wiki/Tulip"
+  },
+  {
+    "id": "pandanus",
+    "name": "Pandanus",
+    "emoji": "🌴",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A genus of palm-like trees and shrubs of the Old World tropics.",
+    "src": "https://en.wikipedia.org/wiki/Pandanus"
+  },
+  {
+    "id": "canna_plant",
+    "name": "Canna",
+    "emoji": "🌺",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The canna lilies, the only genus in their family.",
+    "src": "https://en.wikipedia.org/wiki/Canna_(plant)"
+  },
+  {
+    "id": "heliconia",
+    "name": "Heliconia",
+    "emoji": "🌺",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A genus of flowering plants mostly of the tropical Americas.",
+    "src": "https://en.wikipedia.org/wiki/Heliconia"
+  },
+  {
+    "id": "bromeliaceae",
+    "name": "Bromeliad",
+    "emoji": "🍍",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The bromeliad family, mainly of the tropical Americas.",
+    "src": "https://en.wikipedia.org/wiki/Bromeliaceae"
+  },
+  {
+    "id": "puya",
+    "name": "Puya",
+    "emoji": "🌵",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A genus of bromeliads native to the Andes.",
+    "src": "https://en.wikipedia.org/wiki/Puya_(plant)"
+  },
+  {
+    "id": "cyperaceae",
+    "name": "Sedge Family",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The sedges, a family of grass-like flowering plants.",
+    "src": "https://en.wikipedia.org/wiki/Cyperaceae"
+  },
+  {
+    "id": "juncus",
+    "name": "Rush",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The rushes, the largest genus of their family.",
+    "src": "https://en.wikipedia.org/wiki/Juncus"
+  },
+  {
+    "id": "poaceae",
+    "name": "Grass Family",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The true grasses, including cereals and bamboos.",
+    "src": "https://en.wikipedia.org/wiki/Poaceae"
+  },
+  {
+    "id": "oryza_sativa",
+    "name": "Asian Rice",
+    "emoji": "🍚",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Asian cultivated rice, the more common of the two cultivated rice species.",
+    "src": "https://en.wikipedia.org/wiki/Oryza_sativa"
+  },
+  {
+    "id": "common_wheat",
+    "name": "Common Wheat",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Bread wheat, a cultivated species born of a hybrid with wild goatgrass.",
+    "src": "https://en.wikipedia.org/wiki/Common_wheat"
+  },
+  {
+    "id": "apiaceae",
+    "name": "Carrot Family",
+    "emoji": "🥕",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The celery, carrot or parsley family, also called the umbellifers.",
+    "src": "https://en.wikipedia.org/wiki/Apiaceae"
+  },
+  {
+    "id": "hedera",
+    "name": "Ivy (Hedera)",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The ivies, evergreen climbing or ground-creeping woody plants.",
+    "src": "https://en.wikipedia.org/wiki/Hedera"
+  },
+  {
+    "id": "asteraceae",
+    "name": "Daisy Family",
+    "emoji": "🌼",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The daisy family, rivalled in size only by the orchids.",
+    "src": "https://en.wikipedia.org/wiki/Asteraceae"
+  },
+  {
+    "id": "bellis_perennis",
+    "name": "Common Daisy",
+    "emoji": "🌼",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The common, lawn or English daisy.",
+    "src": "https://en.wikipedia.org/wiki/Bellis_perennis"
+  },
+  {
+    "id": "chicory",
+    "name": "Chicory",
+    "emoji": "💙",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A woody perennial of the daisy family with bright blue flowers.",
+    "src": "https://en.wikipedia.org/wiki/Chicory"
+  },
+  {
+    "id": "chrysanthemum",
+    "name": "Chrysanthemum",
+    "emoji": "🌼",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Autumn-blooming perennials of East Asia and northeastern Europe, called mums.",
+    "src": "https://en.wikipedia.org/wiki/Chrysanthemum"
+  },
+  {
+    "id": "cirsium",
+    "name": "Thistle (Cirsium)",
+    "emoji": "🌾",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The plume thistles, a genus of the daisy family.",
+    "src": "https://en.wikipedia.org/wiki/Cirsium"
+  },
+  {
+    "id": "dahlia",
+    "name": "Dahlia",
+    "emoji": "🌺",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A bushy, tuberous perennial native to Mexico and Central America.",
+    "src": "https://en.wikipedia.org/wiki/Dahlia"
+  },
+  {
+    "id": "solidago",
+    "name": "Goldenrod",
+    "emoji": "🌼",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The goldenrods, perennials of meadows and prairies.",
+    "src": "https://en.wikipedia.org/wiki/Solidago"
+  },
+  {
+    "id": "helianthus",
+    "name": "Helianthus",
+    "emoji": "🌻",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The sunflowers, native to North America.",
+    "src": "https://en.wikipedia.org/wiki/Helianthus"
+  },
+  {
+    "id": "sonchus",
+    "name": "Sow Thistle",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The sow thistles, herbs of the daisy family.",
+    "src": "https://en.wikipedia.org/wiki/Sonchus"
+  },
+  {
+    "id": "tagetes",
+    "name": "Marigold (Tagetes)",
+    "emoji": "🏵️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A genus of plants of the daisy family, known as marigolds.",
+    "src": "https://en.wikipedia.org/wiki/Tagetes"
+  },
+  {
+    "id": "campanulaceae",
+    "name": "Bellflower Family",
+    "emoji": "🔔",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The bellflower family, with milky sap and many garden plants.",
+    "src": "https://en.wikipedia.org/wiki/Campanulaceae"
+  },
+  {
+    "id": "brassicaceae",
+    "name": "Cabbage Family",
+    "emoji": "🥬",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The mustards or cabbage family.",
+    "src": "https://en.wikipedia.org/wiki/Brassicaceae"
+  },
+  {
+    "id": "arabidopsis_thaliana",
+    "name": "Thale Cress",
+    "emoji": "🧬",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A small mustard-family plant, generally considered a weed.",
+    "src": "https://en.wikipedia.org/wiki/Arabidopsis_thaliana"
+  },
+  {
+    "id": "eruca_sativa",
+    "name": "Arugula",
+    "emoji": "🥬",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An edible annual of the mustard family, called arugula or rocket.",
+    "src": "https://en.wikipedia.org/wiki/Eruca_sativa"
+  },
+  {
+    "id": "tropaeolum",
+    "name": "Nasturtium",
+    "emoji": "🧡",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The nasturtiums, the only genus in their family.",
+    "src": "https://en.wikipedia.org/wiki/Tropaeolum"
+  },
+  {
+    "id": "beetroot",
+    "name": "Beetroot",
+    "emoji": "🟣",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The taproot of the beet plant, a root vegetable.",
+    "src": "https://en.wikipedia.org/wiki/Beetroot"
+  },
+  {
+    "id": "cucurbitaceae",
+    "name": "Gourd Family",
+    "emoji": "🎃",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The gourd family, which includes squash and pumpkin.",
+    "src": "https://en.wikipedia.org/wiki/Cucurbitaceae"
+  },
+  {
+    "id": "cucumis_melo",
+    "name": "Melon (Cucumis melo)",
+    "emoji": "🍈",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The true melon, developed into many cultivated varieties.",
+    "src": "https://en.wikipedia.org/wiki/Cucumis_melo"
+  },
+  {
+    "id": "cucurbita",
+    "name": "Squash (Cucurbita)",
+    "emoji": "🎃",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The squash genus, grown for its flesh and seeds.",
+    "src": "https://en.wikipedia.org/wiki/Cucurbita"
+  },
+  {
+    "id": "diospyros",
+    "name": "Diospyros",
+    "emoji": "🍊",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A genus of mostly tropical trees and shrubs.",
+    "src": "https://en.wikipedia.org/wiki/Diospyros"
+  },
+  {
+    "id": "ericaceae",
+    "name": "Heath Family",
+    "emoji": "🫐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The heath or heather family, of acidic and infertile soils.",
+    "src": "https://en.wikipedia.org/wiki/Ericaceae"
+  },
+  {
+    "id": "azalea",
+    "name": "Azalea",
+    "emoji": "🌸",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Spring-blooming flowering shrubs of the genus Rhododendron.",
+    "src": "https://en.wikipedia.org/wiki/Azalea"
+  },
+  {
+    "id": "theaceae",
+    "name": "Tea Family",
+    "emoji": "🍵",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The tea family, which includes the tea plant and camellias.",
+    "src": "https://en.wikipedia.org/wiki/Theaceae"
+  },
+  {
+    "id": "camellia",
+    "name": "Camellia",
+    "emoji": "🌸",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A genus of the tea family from eastern and southern Asia.",
+    "src": "https://en.wikipedia.org/wiki/Camellia"
+  },
+  {
+    "id": "impatiens",
+    "name": "Impatiens",
+    "emoji": "🌸",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A widespread genus of flowering plants that makes up a family with one other.",
+    "src": "https://en.wikipedia.org/wiki/Impatiens"
+  },
+  {
+    "id": "primulaceae",
+    "name": "Primrose Family",
+    "emoji": "🌼",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The primrose family of garden plants and wildflowers.",
+    "src": "https://en.wikipedia.org/wiki/Primulaceae"
+  },
+  {
+    "id": "fabaceae",
+    "name": "Legume Family",
+    "emoji": "🫘",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The legume, pea or bean family.",
+    "src": "https://en.wikipedia.org/wiki/Fabaceae"
+  },
+  {
+    "id": "mimosa",
+    "name": "Mimosa",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A genus of herbs and shrubs of the legume family.",
+    "src": "https://en.wikipedia.org/wiki/Mimosa"
+  },
+  {
+    "id": "phaseolus_vulgaris",
+    "name": "Common Bean",
+    "emoji": "🫘",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The common bean, a herbaceous annual of the legume family.",
+    "src": "https://en.wikipedia.org/wiki/Phaseolus_vulgaris"
+  },
+  {
+    "id": "hickory",
+    "name": "Hickory",
+    "emoji": "🌳",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The trees of the genus Carya, native to North America and Asia.",
+    "src": "https://en.wikipedia.org/wiki/Hickory"
+  },
+  {
+    "id": "lamiaceae",
+    "name": "Mint Family",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The mint family, rich in aromatic culinary herbs.",
+    "src": "https://en.wikipedia.org/wiki/Lamiaceae"
+  },
+  {
+    "id": "mentha",
+    "name": "Mentha",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The mints, a genus of the mint family.",
+    "src": "https://en.wikipedia.org/wiki/Mentha"
+  },
+  {
+    "id": "salvia",
+    "name": "Sage (Salvia)",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The sages, the largest genus of the mint family.",
+    "src": "https://en.wikipedia.org/wiki/Salvia"
+  },
+  {
+    "id": "oleaceae",
+    "name": "Olive Family",
+    "emoji": "🫒",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The olive or lilac family of shrubs and trees.",
+    "src": "https://en.wikipedia.org/wiki/Oleaceae"
+  },
+  {
+    "id": "verbena",
+    "name": "Verbena",
+    "emoji": "🌸",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The vervains, annual and perennial flowering plants.",
+    "src": "https://en.wikipedia.org/wiki/Verbena"
+  },
+  {
+    "id": "poinsettia",
+    "name": "Poinsettia",
+    "emoji": "🎄",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A flowering plant of the spurge family, native to Mexico and Central America.",
+    "src": "https://en.wikipedia.org/wiki/Poinsettia"
+  },
+  {
+    "id": "hypericum",
+    "name": "St John's Wort",
+    "emoji": "🌼",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A flowering genus found almost worldwide, known as St John's wort.",
+    "src": "https://en.wikipedia.org/wiki/Hypericum"
+  },
+  {
+    "id": "viola_plant",
+    "name": "Violet (Viola)",
+    "emoji": "💜",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The violets, the largest genus of their family.",
+    "src": "https://en.wikipedia.org/wiki/Viola_(plant)"
+  },
+  {
+    "id": "henna",
+    "name": "Henna",
+    "emoji": "🟤",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A dye made from the dried, powdered leaves of a plant, used in body art.",
+    "src": "https://en.wikipedia.org/wiki/Henna"
+  },
+  {
+    "id": "myrtaceae",
+    "name": "Myrtle Family",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The myrtle family, including clove, guava and eucalyptus.",
+    "src": "https://en.wikipedia.org/wiki/Myrtaceae"
+  },
+  {
+    "id": "moraceae",
+    "name": "Mulberry Family",
+    "emoji": "🍇",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The mulberry or fig family.",
+    "src": "https://en.wikipedia.org/wiki/Moraceae"
+  },
+  {
+    "id": "ficus_sycomorus",
+    "name": "Sycamore Fig",
+    "emoji": "🌳",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A fig species cultivated since ancient times.",
+    "src": "https://en.wikipedia.org/wiki/Ficus_sycomorus"
+  },
+  {
+    "id": "rosaceae",
+    "name": "Rose Family",
+    "emoji": "🌹",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The rose family.",
+    "src": "https://en.wikipedia.org/wiki/Rosaceae"
+  },
+  {
+    "id": "rose",
+    "name": "Rose",
+    "emoji": "🌹",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A woody perennial flowering plant, or the flower it bears.",
+    "src": "https://en.wikipedia.org/wiki/Rose"
+  },
+  {
+    "id": "citrus",
+    "name": "Citrus",
+    "emoji": "🍊",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A genus of trees and shrubs that bear citrus fruit.",
+    "src": "https://en.wikipedia.org/wiki/Citrus"
+  },
+  {
+    "id": "mandarin_orange",
+    "name": "Mandarin Orange",
+    "emoji": "🍊",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A small, rounded citrus fruit usually eaten plain.",
+    "src": "https://en.wikipedia.org/wiki/Mandarin_orange"
+  },
+  {
+    "id": "solanaceae",
+    "name": "Nightshade Family",
+    "emoji": "🍅",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The nightshade family of crops, medicinal and ornamental plants.",
+    "src": "https://en.wikipedia.org/wiki/Solanaceae"
+  },
+  {
+    "id": "bell_pepper",
+    "name": "Bell Pepper",
+    "emoji": "🫑",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The fruit of a capsicum plant, in many colours.",
+    "src": "https://en.wikipedia.org/wiki/Bell_pepper"
+  },
+  {
+    "id": "cornus",
+    "name": "Dogwood",
+    "emoji": "🌳",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The dogwoods, woody plants with distinctive blossoms, berries and bark.",
+    "src": "https://en.wikipedia.org/wiki/Cornus"
+  },
+  {
+    "id": "apocynaceae",
+    "name": "Dogbane Family",
+    "emoji": "🌿",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The dogbane family, with oleander, milkweeds and periwinkles.",
+    "src": "https://en.wikipedia.org/wiki/Apocynaceae"
+  },
+  {
+    "id": "rubiaceae",
+    "name": "Coffee Family",
+    "emoji": "☕",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The coffee, madder or bedstraw family.",
+    "src": "https://en.wikipedia.org/wiki/Rubiaceae"
+  },
+  {
+    "id": "gardenia",
+    "name": "Gardenia",
+    "emoji": "🤍",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A genus of the coffee family from the tropics and subtropics.",
+    "src": "https://en.wikipedia.org/wiki/Gardenia"
+  },
+  {
+    "id": "malvaceae",
+    "name": "Mallow Family",
+    "emoji": "🌺",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The mallow family, including cacao, cotton and okra.",
+    "src": "https://en.wikipedia.org/wiki/Malvaceae"
+  },
+  {
+    "id": "proteaceae",
+    "name": "Protea Family",
+    "emoji": "🌺",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A flowering family mostly of the Southern Hemisphere.",
+    "src": "https://en.wikipedia.org/wiki/Proteaceae"
+  },
+  {
+    "id": "nelumbo",
+    "name": "Lotus (Nelumbo)",
+    "emoji": "🪷",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The lotus, an aquatic plant with large, showy flowers.",
+    "src": "https://en.wikipedia.org/wiki/Nelumbo"
+  },
+  {
+    "id": "platanus",
+    "name": "Plane Tree",
+    "emoji": "🌳",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The plane trees, the only living members of their family.",
+    "src": "https://en.wikipedia.org/wiki/Platanus"
+  },
+  {
+    "id": "agaricus",
+    "name": "Agaricus",
+    "emoji": "🍄",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A mushroom genus that includes the button mushroom.",
+    "src": "https://en.wikipedia.org/wiki/Agaricus"
+  },
+  {
+    "id": "pleurotus_ostreatus",
+    "name": "Oyster Mushroom",
+    "emoji": "🍄",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The oyster mushroom, a popular edible fungus.",
+    "src": "https://en.wikipedia.org/wiki/Pleurotus_ostreatus"
+  },
+  {
+    "id": "amanita_phalloides",
+    "name": "Death Cap",
+    "emoji": "☠️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The death cap, a deadly poisonous mushroom.",
+    "src": "https://en.wikipedia.org/wiki/Amanita_phalloides"
+  },
+  {
+    "id": "alveolate",
+    "name": "Alveolates",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A major clade of protists.",
+    "src": "https://en.wikipedia.org/wiki/Alveolate"
+  },
+  {
+    "id": "ciliate",
+    "name": "Ciliate",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Protists covered in hair-like cilia.",
+    "src": "https://en.wikipedia.org/wiki/Ciliate"
+  },
+  {
+    "id": "amoeba",
+    "name": "Amoeba",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A cell that changes shape by extending and retracting pseudopods.",
+    "src": "https://en.wikipedia.org/wiki/Amoeba"
+  },
+  {
+    "id": "amoebozoa",
+    "name": "Amoebozoa",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A major group of amoeboid protists with fingerlike pseudopods.",
+    "src": "https://en.wikipedia.org/wiki/Amoebozoa"
+  },
+  {
+    "id": "excavata",
+    "name": "Excavata",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An obsolete, diverse group of single-celled eukaryotes.",
+    "src": "https://en.wikipedia.org/wiki/Excavata"
+  },
+  {
+    "id": "euglenozoa",
+    "name": "Euglenozoa",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A large group of flagellates, some of them parasites.",
+    "src": "https://en.wikipedia.org/wiki/Euglenozoa"
+  },
+  {
+    "id": "haptophyte",
+    "name": "Haptophyte",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A clade of algae that can produce minerals.",
+    "src": "https://en.wikipedia.org/wiki/Haptophyte"
+  },
+  {
+    "id": "stramenopile",
+    "name": "Stramenopile",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Protists with stiff three-part hairs, also called heterokonts.",
+    "src": "https://en.wikipedia.org/wiki/Stramenopile"
+  },
+  {
+    "id": "brown_algae",
+    "name": "Brown Algae",
+    "emoji": "🌊",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A large group of multicellular seaweeds of colder waters.",
+    "src": "https://en.wikipedia.org/wiki/Brown_algae"
+  },
+  {
+    "id": "rhizaria",
+    "name": "Rhizaria",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A diverse clade of mostly single-celled eukaryotes.",
+    "src": "https://en.wikipedia.org/wiki/Rhizaria"
   }
 ]
