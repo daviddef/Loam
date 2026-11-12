@@ -126352,5 +126352,235 @@
     "why": "In the context of the philosophy of mathematics, pure mathematics is an informal term to describe the study of mathematical concepts independently of any application outside mathematics. These concepts may originate in real-world concerns, and the results obtained may later turn out to be useful for practical applications, but research is not primarily motivated by such applications.",
     "src": "https://en.wikipedia.org/wiki/Pure_mathematics",
     "verified": true
+  },
+  {
+    "in": [
+      "regression_analysis",
+      "variance"
+    ],
+    "out": "ordinary_least_squares",
+    "why": "In statistics, ordinary least squares (OLS) is a type of linear least squares method for choosing the unknown parameters in a linear regression model by the principle of least squares: minimizing the sum of the squares of the differences between the observed dependent variable (values of the variable being observed) in the input dataset and the output of the (linear) function of the independent variable.",
+    "src": "https://en.wikipedia.org/wiki/Ordinary_least_squares",
+    "verified": true
+  },
+  {
+    "in": [
+      "statistical_hypothesis_test",
+      "probability"
+    ],
+    "out": "p_value",
+    "why": "In null-hypothesis significance testing, the p-value is the probability of obtaining test results at least as extreme as the result actually observed, under the assumption that the null hypothesis is correct. A very small p-value means that such an extreme observed outcome would be very unlikely under the null hypothesis.",
+    "src": "https://en.wikipedia.org/wiki/P-value",
+    "verified": true
+  },
+  {
+    "in": [
+      "statistical_hypothesis_test",
+      "probability_distribution"
+    ],
+    "out": "chi_squared_test",
+    "why": "A chi-squared test is a statistical hypothesis test used in the analysis of contingency tables when the sample sizes are large. In simpler terms, this test is primarily used to examine whether two categorical variables (two dimensions of the contingency table) are independent in influencing the test statistic (values within the table).",
+    "src": "https://en.wikipedia.org/wiki/Chi-squared_test",
+    "verified": true
+  },
+  {
+    "in": [
+      "statistical_hypothesis_test",
+      "standard_deviation"
+    ],
+    "out": "students_t_test",
+    "why": "Student's t-test is a statistical test used to test whether the difference between the response of two groups is statistically significant or not. It is any statistical hypothesis test in which the test statistic follows a Student's t-distribution under the null hypothesis.",
+    "src": "https://en.wikipedia.org/wiki/Student's_t-test",
+    "verified": true
+  },
+  {
+    "in": [
+      "bayesian_inference",
+      "probability"
+    ],
+    "out": "bayes_theorem",
+    "why": "In probability theory, Bayes' theorem (alternatively Bayes' law or Bayes' rule), named after Thomas Bayes, gives a mathematical rule for inverting conditional probabilities, allowing the probability of a cause to be found given its effect.",
+    "src": "https://en.wikipedia.org/wiki/Bayes'_theorem",
+    "verified": true
+  },
+  {
+    "in": [
+      "probability_distribution",
+      "counting"
+    ],
+    "out": "binomial_distribution",
+    "why": "In probability theory and statistics, the binomial distribution with parameters n and p is the discrete probability distribution of the number of successes in a sequence of n independent experiments, each asking a yes–no question, and each with its own Boolean-valued outcome: success (with probability p) or failure.",
+    "src": "https://en.wikipedia.org/wiki/Binomial_distribution",
+    "verified": true
+  },
+  {
+    "in": [
+      "probability_distribution",
+      "exponential_function"
+    ],
+    "out": "exponential_distribution",
+    "why": "In probability theory and statistics, the exponential distribution or negative exponential distribution is the probability distribution of the distance between events in a Poisson point process, i.e., a process in which events occur continuously and independently at a constant average rate; the distance parameter could be any meaningful mono-dimensional measure of the process, such as time between production errors, or length along a roll of fabric in the weaving manufacturing process.",
+    "src": "https://en.wikipedia.org/wiki/Exponential_distribution",
+    "verified": true
+  },
+  {
+    "in": [
+      "probability_distribution",
+      "central_limit_theorem"
+    ],
+    "out": "normal_distribution",
+    "why": "In probability theory and statistics, a normal distribution or Gaussian distribution is a type of continuous probability distribution for a real-valued random variable.",
+    "src": "https://en.wikipedia.org/wiki/Normal_distribution",
+    "verified": true
+  },
+  {
+    "in": [
+      "probability_distribution",
+      "stochastic_process"
+    ],
+    "out": "poisson_distribution",
+    "why": "In probability theory and statistics, the Poisson distribution is a discrete probability distribution that expresses the probability of a given number of events occurring in a fixed interval of time if these events occur with a known constant mean rate and independently of the time since the last event.",
+    "src": "https://en.wikipedia.org/wiki/Poisson_distribution",
+    "verified": true
+  },
+  {
+    "in": [
+      "probability_distribution",
+      "integer"
+    ],
+    "out": "discrete_uniform_distribution",
+    "why": "In probability theory and statistics, the discrete uniform distribution is a symmetric probability distribution wherein each of some finite whole number n of outcome values are equally likely to be observed.",
+    "src": "https://en.wikipedia.org/wiki/Discrete_uniform_distribution",
+    "verified": true
+  },
+  {
+    "in": [
+      "number_theory",
+      "algebra"
+    ],
+    "out": "algebraic_number_theory",
+    "why": "Algebraic number theory is a branch of number theory that uses the techniques of abstract algebra to study the integers, rational numbers, and their generalizations. Number-theoretic questions are expressed in terms of properties of algebraic objects such as algebraic number fields and their rings of integers, finite fields, and function fields.",
+    "src": "https://en.wikipedia.org/wiki/Algebraic_number_theory",
+    "verified": true
+  },
+  {
+    "in": [
+      "number_theory",
+      "complex_analysis"
+    ],
+    "out": "analytic_number_theory",
+    "why": "In mathematics, analytic number theory is a branch of number theory that uses methods from mathematical analysis to solve problems about the integers.",
+    "src": "https://en.wikipedia.org/wiki/Analytic_number_theory",
+    "verified": true
+  },
+  {
+    "in": [
+      "combinatorics",
+      "subset"
+    ],
+    "out": "combination",
+    "why": "In mathematics, a combination is a selection of items from a set that has distinct members, such that the order of selection does not matter (unlike permutations). For example, given three fruits, say an apple, an orange and a pear, there are three combinations of two that can be drawn from this set: an apple and a pear; an apple and an orange; or a pear and an orange.",
+    "src": "https://en.wikipedia.org/wiki/Combination",
+    "verified": true
+  },
+  {
+    "in": [
+      "combinatorics",
+      "sequence"
+    ],
+    "out": "permutation",
+    "why": "In mathematics, a permutation is a bijective function of a finite set onto itself. When the set is represented as an ordered sequence of its members, a permutation amounts to change the place of the members of the set.",
+    "src": "https://en.wikipedia.org/wiki/Permutation",
+    "verified": true
+  },
+  {
+    "in": [
+      "differential_equation",
+      "derivative"
+    ],
+    "out": "ordinary_differential_equation",
+    "why": "In mathematics, an ordinary differential equation (ODE) is a differential equation (DE) dependent on only a single independent variable. As with any other DE, its unknown(s) consists of one (or more) function(s) and involves the derivatives of those functions.",
+    "src": "https://en.wikipedia.org/wiki/Ordinary_differential_equation",
+    "verified": true
+  },
+  {
+    "in": [
+      "differential_equation",
+      "partial_derivative"
+    ],
+    "out": "partial_differential_equation",
+    "why": "In mathematics, a partial differential equation (PDE) is an equation which involves a multivariable function and one or more of its partial derivatives. The function is often thought of as an \"unknown\" that solves the equation.",
+    "src": "https://en.wikipedia.org/wiki/Partial_differential_equation",
+    "verified": true
+  },
+  {
+    "in": [
+      "pure_mathematics",
+      "economics"
+    ],
+    "out": "applied_mathematics",
+    "why": "Applied mathematics is the application of mathematical methods by different fields such as physics, engineering, medicine, biology, finance, business, computer science, social science, and industry. Thus, applied mathematics is a combination of mathematical science and specialized knowledge.",
+    "src": "https://en.wikipedia.org/wiki/Applied_mathematics",
+    "verified": true
+  },
+  {
+    "in": [
+      "mathematical_analysis",
+      "function"
+    ],
+    "out": "mathematical_optimization",
+    "why": "Mathematical optimization (alternatively spelled optimisation) or mathematical programming is the selection of a best element, with regard to some criteria, from some set of available alternatives. It is generally divided into two subfields: discrete optimization and continuous optimization.",
+    "src": "https://en.wikipedia.org/wiki/Mathematical_optimization",
+    "verified": true
+  },
+  {
+    "in": [
+      "dynamical_system",
+      "weather"
+    ],
+    "out": "chaos_theory",
+    "why": "Chaos theory is a branch of mathematics and an interdisciplinary area of scientific study. It focuses on underlying patterns and deterministic laws of dynamical systems that are highly sensitive to initial conditions.",
+    "src": "https://en.wikipedia.org/wiki/Chaos_theory",
+    "verified": true
+  },
+  {
+    "in": [
+      "algebraic_number_theory",
+      "algebraic_number_field"
+    ],
+    "out": "class_field_theory",
+    "why": "In mathematics, class field theory (CFT) is the fundamental branch of algebraic number theory whose goal is to describe all the abelian Galois extensions of local and global fields using objects associated to the ground field. Hilbert is credited as one of pioneers of the notion of a class field.",
+    "src": "https://en.wikipedia.org/wiki/Class_field_theory",
+    "verified": true
+  },
+  {
+    "in": [
+      "mathematical_optimization",
+      "linear_algebra"
+    ],
+    "out": "linear_programming",
+    "why": "Linear programming (LP), also called linear optimization, is a method to achieve the best outcome (such as maximum profit or lowest cost) in a mathematical model whose requirements and objective are represented by linear relationships. Linear programming is a special case of mathematical programming (also known as mathematical optimization).",
+    "src": "https://en.wikipedia.org/wiki/Linear_programming",
+    "verified": true
+  },
+  {
+    "in": [
+      "mathematical_optimization",
+      "function"
+    ],
+    "out": "nonlinear_programming",
+    "why": "In mathematics, nonlinear programming (NLP), also known as nonlinear optimization, is the process of solving an optimization problem where some of the constraints are not linear equalities or the objective function is not a linear function.",
+    "src": "https://en.wikipedia.org/wiki/Nonlinear_programming",
+    "verified": true
+  },
+  {
+    "in": [
+      "mathematical_optimization",
+      "management"
+    ],
+    "out": "operations_research",
+    "why": "Operations research (British English: operational research), often shortened to the initialism OR, is a branch of applied mathematics that deals with the development and application of analytical methods to improve management and decision-making. The term management science is occasionally used as a synonym.",
+    "src": "https://en.wikipedia.org/wiki/Operations_research",
+    "verified": true
   }
 ]

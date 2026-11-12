@@ -47949,7 +47949,6 @@ const MU = {
   prime_number_theorem: () => [S('M6 40 L54 40', 'ik', 1.6), ...[8, 12, 16, 22, 28, 38, 50].map((x, i) => C(x, 40, 3, 'hi')), mtPlot(u => [8 + u * 46, 12 + u * 20], 0, 1, 10, 'bs', 2), S('M8 12 L8 40', 'ik', 1.2)],
   euclids_theorem: () => [...[0, 1, 2, 3, 4].map(i => C(10 + i * 9, 30, 3 + i * 0.5, 'hi')), ...[0, 1, 2].map(i => C(52 + (i - 1) * 3, 30, 1, 'gh')), S('M6 44 L54 44', 'ik', 1.4)],
   fundamental_theorem_of_arithmetic: () => [C(30, 12, 5, 'hi'), S('M30 17 L18 30 M30 17 L42 30', 'ik', 1.6), C(18, 32, 4.4, 'bs'), C(42, 32, 4.4, 'hi'), S('M42 36 L36 48 M42 36 L48 48', 'ik', 1.6), C(36, 50, 3.6, 'hi'), C(48, 50, 3.6, 'hi')],
-  algebraic_number_theory: () => [S('M8 36 L14 32 L22 52 L32 12 L52 12', 'ik', 2.6), ring('bs', 42, 38, 10, 4), S('M38 38 L46 38 M42 34 L42 42', 'ik', 1.6)],
   algebraic_number_field: () => [E(30, 40, 24, 12, 'bs'), E(30, 32, 16, 8, 'hi'), C(30, 26, 4, 'lo'), S('M30 12 L30 20', 'ik', 1.6)],
   riemann_hypothesis: () => [S('M6 30 L54 30 M30 6 L30 54', 'ik', 1.4), S('M36 6 L36 54', 'hi', 1.6), ...[12, 20, 28, 36, 44].map(y => C(36, y + 4, 2.6, 'bs')), ...[12, 20, 28, 36, 44].map(y => C(36, y + 4, 1.2, 'ik'))],
   diophantine_equation: () => [...mtGrid(8, 8, 52, 52, 5).slice(0, 0), ...[0, 1, 2, 3, 4, 5].flatMap(r => [0, 1, 2, 3, 4, 5].map(c => C(10 + c * 8, 10 + r * 8, 1.6, 'gh'))), mtPlot(u => [10 + u * 40, 50 - Math.pow(u, 2) * 40], 0, 1, 20, 'bs', 2), ...[[10, 50], [26, 42], [42, 18], [50, 10]].map(([x, y]) => C(x, y, 3, 'hi'))],
@@ -47962,8 +47961,6 @@ const MU = {
   mathematical_induction: () => [...[0, 1, 2, 3, 4].map(i => P(`M${8 + i * 9 + i * 2} 48 L${14 + i * 9 + i * 2 + i * 1.5} ${14 + i * 3 + 0} L${18 + i * 9 + i * 2 + i * 1.5} ${14 + i * 3 + 2} L${12 + i * 9 + i * 2} 48 Z`, i === 0 ? 'hi' : 'bs')), S('M4 50 L56 50', 'ik', 1.6)],
   propositional_logic: () => [P('M10 12 L30 12 Q50 12 50 30 Q50 48 30 48 L10 48 Z', 'bs'), S('M10 12 L30 12 Q50 12 50 30 Q50 48 30 48 L10 48 Z', 'ik', 2), S('M2 22 L10 22 M2 38 L10 38 M50 30 L58 30', 'ik', 2)],
   combinatorics: () => [C(30, 12, 3.4, 'hi'), ...[0, 1].map(i => C(24 + i * 12, 22, 3.4, 'bs')), ...[0, 1, 2].map(i => C(18 + i * 12, 32, 3.4, 'bs')), ...[0, 1, 2, 3].map(i => C(12 + i * 12, 42, 3.4, 'bs')), S('M6 52 L54 52', 'gh', 1.2)],
-  combination: () => [...[0, 1, 2, 3].map(i => C(12 + i * 12, 20, 5, i === 1 || i === 3 ? 'hi' : 'bs')), S('M6 34 L54 34', 'gh', 1.2), ...[1, 3].map(i => C(12 + i * 12 - 6, 46, 5, 'hi')), ...mtArrow(30, 36, 30, 40, 'ik', 1.4)].slice(0, 12),
-  permutation: () => [...[0, 1, 2].map(i => C(12 + i * 18, 14, 5, ['bs', 'lo', 'hi'][i])), ...[0, 1, 2].map(i => C(12 + i * 18, 46, 5, ['hi', 'bs', 'lo'][i])), S('M12 19 L30 41 M30 19 L48 41 M48 19 L12 41', 'ik', 1.6)],
   theoretical_computer_science: () => [...mtCells(5, 40, 2, 6, 10), P('M32 38 L28 30 L36 30 Z', 'ik'), C(30, 18, 8, 'bs'), S('M30 10 L30 14 M30 22 L30 26 M22 18 L26 18 M34 18 L38 18', 'ik', 2)],
   abstract_machine: () => [C(14, 30, 8, 'bs'), C(46, 30, 8, 'hi'), ring('ik', 46, 30, 8, 1.6), ring('ik', 46, 30, 5, 1.2), ...mtArrow(22, 30, 38, 30, 'ik', 2), S('M10 22 Q14 14 18 22', 'ik', 1.6)],
   numerical_integration: () => [...mtAx(), ...[0, 1, 2, 3, 4].map(i => P(`M${12 + i * 8} 52 L${12 + i * 8} ${46 - i * 6 - 0} L${20 + i * 8} ${46 - (i + 1) * 6} L${20 + i * 8} 52 Z`, 'bs')), mtPlot(u => [12 + u * 40, 46 - u * 30], 0, 1, 10, 'ik', 2)],
@@ -47999,7 +47996,6 @@ const MU = {
   multiple_integral: () => [P('M10 46 L10 28 Q24 14 38 22 Q48 26 52 22 L52 46 L38 52 Z', 'bs'), S('M10 46 L10 28 Q24 14 38 22 Q48 26 52 22 L52 46 L38 52 L10 46 Z M38 22 L38 52', 'ik', 1.6)],
   partial_derivative: () => [...mtSurf(5), S('M14 40 L48 24', 'ik', 2), ...mtDot(30, 32, 2.4)],
   laplaces_equation: () => [...[22, 16, 10].map((r, i) => ring(['bs', 'lo', 'hi'][i], 30, 30, r, 3)), C(30, 30, 4, 'ik')],
-  partial_differential_equation: () => [...mtSurf(7, 'lo'), mtPlot(u => [8 + u * 40, 50 - Math.sin(u * 6.28) * 8], 0, 1, 20, 'hi', 2)],
   vector_calculus: () => [...mtVecField()],
   del: () => [P('M8 10 L52 10 L30 52 Z', 'bs'), S('M8 10 L52 10 L30 52 Z', 'ik', 3)],
   taylor_series: () => [...mtAx(30, 30).slice(0, 0), S('M6 30 L54 30 M30 6 L30 54', 'ik', 1.4), mtPlot(u => [6 + u * 48, 30 - Math.sin((u - 0.5) * 9) * 14], 0, 1, 40, 'bs', 2.6), mtPlot(u => [6 + u * 48, 30 - ((u - 0.5) * 9 - Math.pow((u - 0.5) * 9, 3) / 6) * 14], 0.15, 0.85, 20, 'lo', 2), ...mtDot(30, 30, 2.2)],
@@ -48028,6 +48024,34 @@ const MU = {
   pure_mathematics: () => [...[0, 1, 2, 3].map(i => box(8 + i * 2, 12 + i * 10, 44 - i * 4, 9, ['hi', 'bs', 'lo', 'bs'][i])), S('M6 52 L54 52', 'ik', 1.6)],
 };
 for (const [id, fn] of Object.entries(MU)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── mathematics 3: named distributions, tests, optimisation, 12 Nov ── */
+const MV = {
+  ordinary_least_squares: () => [...mtAx(), ...mtScat(41, 10, 0.7, 6), S('M10 46 L52 16', 'ik', 2.4), ...[16, 26, 36, 46].map(x => S(`M${x} ${48 - (x - 10) * 0.7 - 3} L${x} ${48 - (x - 10) * 0.7 + 0}`, 'hi', 1.6))],
+  p_value: () => [...mtBell('bs', 0.15, [0.8, 1]), S('M44 50 L44 22', 'ik', 1.6)],
+  chi_squared_test: () => [S('M6 50 L54 50 M6 50 L6 8', 'ik', 1.6), mtPlot(u => [6 + u * 48, 50 - Math.pow(u * 4, 1.2) * Math.exp(-u * 4) * 17], 0, 1, 40, 'bs', 2.6), P('M36 50 L36 44 L40 46 L46 48 L50 49 L50 50 Z', 'hi')],
+  students_t_test: () => [...mtBell('bs', 0.12), mtPlot(mtBellP(6, 54, 50, 30, 0.2), 0, 1, 40, 'lo', 2), S('M6 50 L54 50', 'ik', 1.6)],
+  bayes_theorem: () => [box(8, 10, 44, 40, 'bs'), box(8, 10, 24, 40, 'hi'), box(8, 10, 24, 18, 'lo'), S('M8 10 L52 10 L52 50 L8 50 Z M32 10 L32 50 M8 28 L32 28', 'ik', 1.6)],
+  binomial_distribution: () => [...mtBars([4, 10, 20, 30, 24, 14, 6], 3, 6, 6)],
+  exponential_distribution: () => [S('M6 50 L54 50 M6 50 L6 8', 'ik', 1.6), mtPlot(u => [6 + u * 48, 12 + (1 - Math.exp(-0 - u * 0)) * 0 + (50 - 12) * (1 - Math.exp(-u * 3.2))], 0, 1, 30, 'bs', 2.8).slice(0, 0), mtPlot(u => [6 + u * 48, 12 + 38 * (1 - Math.exp(-u * 3.2))], 0, 1, 30, 'bs', 2.8), P('M6 12 L6 50 L24 50 L24 36 L18 28 L12 20 Z', 'hi').slice(0, 0)],
+  normal_distribution: () => [...mtBell('bs', 0.15), S('M30 50 L30 14', 'gh', 1.2), S('M12 50 L12 46 M48 50 L48 46', 'ik', 1.4)],
+  poisson_distribution: () => [...mtBars([8, 24, 30, 24, 14, 6, 2], 2, 6, 6), ...[0, 1, 2].map(i => C(14 + i * 14, 14, 2, 'hi'))],
+  discrete_uniform_distribution: () => [...mtBars([22, 22, 22, 22, 22, 22], -1, 7, 6.5), S('M6 28 L54 28', 'gh', 1.2)],
+  algebraic_number_theory: () => [...[0, 1, 2].flatMap(i => [C(14 + i * 16, 16, 4, ['hi', 'bs', 'lo'][i])]), S('M14 22 L30 40 M30 22 L30 40 M46 22 L30 40', 'ik', 1.6), box(20, 40, 20, 10, 'bs'), S('M24 45 L36 45 M30 41 L30 49', 'ik', 1.6)],
+  analytic_number_theory: () => [...[0, 1, 2, 3, 4].map(i => C(10 + i * 9, 40 - (i % 2) * 0, [4, 3, 3, 4, 3][i], i % 2 ? 'bs' : 'hi')), mtPlot(u => [8 + u * 44, 40 - Math.sin(u * 8) * 12], 0, 1, 40, 'ik', 2), S('M6 52 L54 52', 'gh', 1.2)],
+  combination: () => [...[0, 1, 2, 3, 4].map(i => C(10 + i * 10, 20, 4, [0, 3].includes(i) ? 'hi' : 'bs')), P('M16 32 L24 32 L24 44 L16 44 Z', 'hi').slice(0, 0), S('M10 30 L10 44 M40 30 L40 44 M10 44 L40 44', 'ik', 1.6), ...[0, 3].map(i => C(10 + i * 10, 52, 4, 'hi'))],
+  permutation: () => [...[0, 1, 2, 3].map(i => C(10 + i * 13, 14, 4.4, ['bs', 'lo', 'hi', 'gh'][i])), ...[0, 1, 2, 3].map(i => C(10 + i * 13, 46, 4.4, ['hi', 'gh', 'bs', 'lo'][i])), S('M10 18 L49 42 M23 18 L10 42 M36 18 L36 42 M49 18 L23 42', 'ik', 1.2)],
+  ordinary_differential_equation: () => [...mtAx(), ...[0, 1, 2, 3].map(i => mtPlot(u => [8 + u * 44, 46 - i * 6 - Math.pow(u, 2) * 20 - u * 4], 0, 1, 20, i === 1 ? 'ik' : 'bs', i === 1 ? 2.6 : 1.8))],
+  partial_differential_equation: () => [P('M6 44 Q18 30 30 38 Q42 46 54 32 L54 52 L6 52 Z', 'bs'), S('M6 44 Q18 30 30 38 Q42 46 54 32', 'ik', 2), S('M6 52 L6 24 M54 52 L54 22', 'gh', 1.2), ...[0, 1, 2].map(i => S(`M${14 + i * 16} 20 Q${18 + i * 16} 12 ${22 + i * 16} 20`, 'hi', 1.6))],
+  applied_mathematics: () => [box(6, 28, 20, 20, 'bs'), S('M12 34 L20 34 M12 40 L20 40', 'ik', 1.6), ...mtArrow(28, 38, 36, 38, 'ik', 2), C(46, 36, 10, 'lo'), S('M40 36 L52 36 M46 30 L46 42', 'ik', 1.8), S('M12 18 L20 12 L24 20', 'hi', 2).slice(0, 0), ring('hi', 46, 36, 10, 2)],
+  mathematical_optimization: () => [...mtAx(), mtPlot(u => [8 + u * 44, 14 + Math.sin(u * 5 + 0.5) * 10 + u * 12 + 12], 0, 1, 40, 'bs', 2.6), ...mtDot(30, 20 + Math.sin(0.5 * 5 + 0.5) * 6, 2.6).slice(0, 0), ...mtDot(26, 38 - 0, 2.6).slice(0, 0), S('M26 6 L26 52', 'gh', 1.2), ...mtDot(26, 34, 2.8)],
+  chaos_theory: () => [mtPlot(u => [30 + Math.sin(u * 20) * (6 + u * 18) * Math.cos(u * 3), 30 + Math.sin(u * 15 + 1) * (6 + u * 16)], 0, 1, 80, 'bs', 1.8), mtPlot(u => [30 + Math.sin(u * 20 + 0.4) * (6 + u * 18) * Math.cos(u * 3.2), 30 + Math.sin(u * 15 + 1.4) * (6 + u * 16)], 0, 1, 80, 'hi', 1.8)],
+  class_field_theory: () => [C(30, 12, 4, 'hi'), S('M30 16 L16 28 M30 16 L44 28', 'ik', 1.6), C(16, 30, 4, 'bs'), C(44, 30, 4, 'bs'), S('M16 34 L16 44 M44 34 L44 44', 'ik', 1.6), ring('lo', 30, 48, 6, 2.4), S('M16 44 L30 48 L44 44', 'gh', 1.2)],
+  linear_programming: () => [...mtAx(), P('M12 48 L12 28 L26 16 L44 24 L48 48 Z', 'bs'), S('M12 48 L12 28 L26 16 L44 24 L48 48 Z', 'ik', 2), S('M10 12 L52 34', 'hi', 1.6), ...mtDot(44, 24, 2.6)],
+  nonlinear_programming: () => [...mtAx(), P('M10 44 Q16 18 32 22 Q46 26 50 44 Z', 'bs'), S('M10 44 Q16 18 32 22 Q46 26 50 44', 'ik', 2), ...[0, 1, 2].map(i => ring('hi', 30, 34, 4 + i * 4, 1.4)), ...mtDot(30, 34, 2.4)],
+  operations_research: () => [box(8, 36, 12, 12, 'bs'), box(40, 36, 12, 12, 'bs'), box(24, 8, 12, 12, 'hi'), S('M20 38 L26 20 M40 38 L34 20 M20 44 L40 44', 'ik', 2), ...mtDot(30, 44, 2.2).slice(0, 0), C(30, 44, 2.4, 'lo')],
+};
+for (const [id, fn] of Object.entries(MV)) def(id, () => gAll(fn().filter(s => s && s.length)));
 
 /* ── build ────────────────────────────────────────────────────────────────*/
 
