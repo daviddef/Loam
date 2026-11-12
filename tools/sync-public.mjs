@@ -113,7 +113,9 @@ const PUBLIC = [
 ];
 
 /** Anything matching these must never reach the public repo. */
-const NEVER = [/^RESEARCH.*\.md$/, /^research\//, /^LEADS.*\.md$/, /^ROADMAP\.md$/, /^BACKLOG.*\.md$/, /^DESIGN.*\.md$/, /^SOURCES\.md$/,
+// Loam Attack's rule data and its checkers stay private; what the game needs ships inside the built battle.html.
+const BATTLE_PRIVATE = [/^data\/(afterlife|habitat|matchups)\.json$/, /^tools\/(afterlife|habitat|matchups|battle-smoke)\.mjs$/, /^tools\/lib\/fates\.mjs$/];
+const NEVER = [...BATTLE_PRIVATE, /^RESEARCH.*\.md$/, /^research\//, /^LEADS.*\.md$/, /^ROADMAP\.md$/, /^BACKLOG.*\.md$/, /^DESIGN.*\.md$/, /^SOURCES\.md$/,
                /^roadmap\.page\.html$/, /^icons\.html$/, /notes/i, /private/i,
                // QUEUE.md is the outstanding-work list: it names unopened
                // sources, unfixed faults and commercial roadmap items.

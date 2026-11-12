@@ -2558,8 +2558,11 @@ let savedRagdoll = null, ragdoll = [];   // the Ragdoll's exposures: {id, kind}
 try {
   const s = JSON.parse(localStorage.getItem(KEY));
   if (s) {
-    found = new Set(s.found); seen = new Set(s.seen); savedBench = s.bench || null;
-    favourites = new Set(s.favourites || []);
+    // Ids the game no longer has (an element renamed or retired, or a save from another build) are dropped, not trusted:
+    // the rest of the code looks every id up and would otherwise throw on the first one it cannot find.
+    const known = a => Array.isArray(a) ? a.filter(id => typeof id === 'string' && byId[id]) : [];
+    found = new Set(known(s.found)); seen = new Set(known(s.seen)); savedBench = s.bench || null;
+    favourites = new Set(known(s.favourites));
     savedRagdoll = s.ragdoll || null;
   }
 } catch {}
@@ -7970,7 +7973,7 @@ function setInfo(id) {
  * asking you to aim at it — the route is a fact about the substance, not a
  * test of your pointer.
  */
-ragdoll = Array.isArray(savedRagdoll) ? savedRagdoll.filter(x => x && x.id) : [];
+ragdoll = Array.isArray(savedRagdoll) ? savedRagdoll.filter(x => x && x.id && byId[x.id]) : [];
 /* Which of the body it lights, by route. Keys into RD.ix, the named joints
  * of the ragdoll below. `skin` lights the whole outline, `halo` a ring around
  * the figure — the two routes that are not a place. */
@@ -9209,6 +9212,7 @@ function showEntry(id, mode) {
     ? `<button class="addroute decay" data-decay="${id}" title="Decay this — see what it breaks">🥀</button>` : '';
   const favOn = favourites.has(id);
   const favBtn = `<button class="addroute fav${favOn ? ' on' : ''}" data-fav="${id}" title="${favOn ? 'Remove from' : 'Add to'} Favourites">${favOn ? '★' : '☆'}</button>`;
+  const arenaBtn = `<button class="addroute" data-arena="${id}" title="Put it in the arena (Loam Attack)">⚔</button>`;
   // Only worth offering where there is a chain to share.
   const shareBtn = orderedSteps(id).length
     ? `<button class="addroute" data-share="${id}" title="Share this chain, with its sources">↗</button>` : '';
@@ -9227,6 +9231,7 @@ function showEntry(id, mode) {
        ${chainBtn}
        ${favBtn}
        ${shareBtn}
+       ${arenaBtn}
        ${decayBtn}
      </div>` : '';
   document.getElementById('sheetBody').innerHTML =
@@ -9787,6 +9792,8 @@ document.getElementById('sheet').addEventListener('click', ev => {
   // composition tree node that also has children) — checked before
   // data-fold below so a tap on the button adds it instead of just
   // toggling the fold it happens to be nested in.
+  const ar = ev.target.closest('[data-arena]');
+  if (ar) { try { save(); } catch {} const u = 'battle.html#e=' + encodeURIComponent(ar.dataset.arena); const w = window.open(u, 'loamBattle'); if (!w) location.href = u; return; }
   const sh = ev.target.closest('[data-share]');
   if (sh) { shareProvenance(sh.dataset.share); return; }
   const pm = ev.target.closest('[data-put-makes]');
@@ -11400,6 +11407,45 @@ document.getElementById('battleBtn').addEventListener('click', () => {
   const w = window.open('battle.html?found', 'loamBattle');
   if (!w) location.href = 'battle.html?found';
 });
+/**
+ * One save with Loam Attack. Battle never writes this save (two pages writing one blob would overwrite each
+ * other); what a fight discovers it puts in its own small key, and Loam adopts it here, on load, when the tab
+ * comes back to the front, and the moment the key changes. A fusion in Battle only counts when both parts were
+ * already found, so adopting it can never hand over something whose ingredients you do not hold.
+ */
+const BATTLE_KEY = 'loam.battle.v1';
+function adoptBattle() {
+  let b = null;
+  try { b = JSON.parse(localStorage.getItem(BATTLE_KEY) || 'null'); } catch {}
+  if (!b || !Array.isArray(b.discovered)) return;
+  let snap = null;
+  if (prefs.freePlay) { try { snap = JSON.parse(localStorage.getItem(REAL_KEY) || 'null'); } catch {} }
+  const have = prefs.freePlay ? new Set((snap && snap.found) || []) : found;
+  const fresh = b.discovered.filter(id => typeof id === 'string' && byId[id] && !have.has(id));
+  if (!fresh.length) return;
+  if (prefs.freePlay) {
+    // Free play already shows everything; put the finds in the progress that is set aside, so leaving free play keeps them.
+    if (!snap) snap = { found: [], seen: [] };
+    fresh.forEach(id => { snap.found.push(id); snap.seen.push(id); });
+    try { localStorage.setItem(REAL_KEY, JSON.stringify(snap)); } catch {}
+  } else {
+    fresh.forEach(id => { found.add(id); seen.add(id); });
+    save(); renderShelf();
+  }
+  toast('Discovered in Battle: ' + fresh.map(id => byId[id].name).join(', '), 4200);
+}
+adoptBattle();
+addEventListener('storage', ev => { if (ev.key === BATTLE_KEY) adoptBattle(); });
+document.addEventListener('visibilitychange', () => { if (!document.hidden) adoptBattle(); });
+// Battle's "Open in Loam" (battle.html: press L or right-click an item) arrives as index.html#e=<id>
+function openFromHash() {
+  const m = /[#&]e=([^&]+)/.exec(location.hash);
+  if (!m) return;
+  let id = ''; try { id = decodeURIComponent(m[1]); } catch {}
+  if (byId[id]) showEntry(id);
+}
+addEventListener('hashchange', openFromHash);
+setTimeout(openFromHash, 400);
 document.getElementById('scanTools').addEventListener('click', ev => {
   const b = ev.target.closest('[data-scan]');
   if (b) showBarcodeScan(showLabelReader, b.dataset.scan);
@@ -11457,7 +11503,7 @@ function startCanvas(key) {
   found.clear(); seen.clear(); links.length = 0; cooking.clear();
   world.querySelectorAll('.chip.board').forEach(el => el.remove());
   try {
-    localStorage.removeItem(REAL_KEY);
+    localStorage.removeItem(REAL_KEY); localStorage.removeItem(BATTLE_KEY);
     // The cards have to be written out, not just the found list. restoreBench()
     // returns true for an empty `cards: []` — that is deliberate, so Clear
     // Canvas does not respawn the starters — which meant the fallback never
@@ -11492,7 +11538,7 @@ function wipeProgress(clear) {
   cooking.clear();
   world.querySelectorAll('.chip.board').forEach(c => c.remove());
   try {
-    localStorage.removeItem(REAL_KEY);
+    localStorage.removeItem(REAL_KEY); localStorage.removeItem(BATTLE_KEY);
     if (clear) {
       // An explicitly empty bench, not merely a missing key — restoreBench()
       // tells the two apart, so this is what keeps the starters from being
