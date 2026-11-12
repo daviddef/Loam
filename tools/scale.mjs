@@ -587,6 +587,7 @@ const SCALE = {
           'frogspawn', 'tadpole', 'gill', 'lung', 'metamorphosis', 'amphibian_skin',
           'cutaneous_respiration', 'indicator_species', 'lateral_line'],
   '-1':  [
+          /* mammals, breeds, hominins (AG) */ 'stoat', 'galago', 'tarsier', 'dormouse', 'guinea_pig', 'hamster', 'muridae', 'shrew',
           /* R3 AF invertebrates and animal behaviour */ 'scallop', 'decapod', 'malacostraca', 'chelicerata', 'xiphosura', 'polychaete',
           /* R3 AE birds and bats */ 'common_quail', 'bulbul', 'finch', 'lark', 'new_world_warbler', 'european_robin', 'house_sparrow', 'sunbird', 'tit_bird', 'wren',
           /* R3 AD fish amphibians reptiles */ 'stickleback', 'guppy', 'anchovy', 'sardine', 'sprat', 'smelt_fish', 'salamander', 'newt', 'gecko', 'skink',
@@ -907,6 +908,7 @@ const SCALE = {
           // amphibian batch 1 — hand-sized amphibian species, the same rack as axolotl/fire_salamander above
           'caecilian', 'surinam_toad', 'olm', 'siren'],
   '0':   [
+          /* mammals, breeds, hominins (AG) — abstract concepts, filed at the 10⁰ idea bucket */ 'carnivora', 'canidae', 'felidae', 'lynx', 'european_badger', 'honey_badger', 'marten', 'wolverine', 'artiodactyla', 'alpaca', 'african_buffalo', 'antelope', 'capra_genus', 'gazelle', 'gaur', 'impala', 'muskox', 'wildebeest', 'european_bison', 'yak', 'bactrian_camel', 'elk', 'moose', 'red_deer', 'reindeer', 'llama', 'guanaco', 'peccary', 'vicuna', 'hare', 'diprotodontia', 'tasmanian_devil', 'equidae', 'anteater', 'eared_seal', 'bonobo', 'gibbon', 'homo', 'human_evolution', 'australopithecus', 'cro_magnon', 'paranthropus', 'new_world_monkey', 'capuchin_monkey', 'spider_monkey', 'old_world_monkey', 'macaque', 'rhesus_macaque', 'strepsirrhini', 'slow_loris', 'capybara', 'nutria', 'marmot', 'muskrat', 'porcupine', 'hereford_cattle', 'holstein_friesian', 'american_brahman', 'gun_dog', 'herding_dog', 'hound', 'mastiff', 'spitz', 'terrier', 'arabian_horse', 'andalusian_horse', 'friesian_horse', 'thoroughbred', 'pony', 'mule', 'merino',
           /* R3 AF invertebrates and animal behaviour — abstract concepts, filed at the 10⁰ idea bucket */ 'eurypterid', 'bilateria', 'animal_coloration', 'animal_locomotion', 'animal_migration', 'instinct', 'sociality', 'herd', 'ornithischia', 'ostracoderm', 'acanthodii', 'sirenia', 'passerine', 'galliformes', 'ara_bird',
           /* R3 AE birds and bats — abstract concepts, filed at the 10⁰ idea bucket */ 'seabird', 'palaeognathae', 'accipiter', 'falcon', 'old_world_vulture', 'osprey', 'secretarybird', 'nightjar', 'auk', 'gull', 'sandpiper', 'tern', 'dodo', 'passenger_pigeon', 'rock_dove', 'hornbill', 'hoopoe', 'kingfisher', 'cuckoo', 'grouse', 'guinea_fowl', 'peafowl', 'common_pheasant', 'domestic_turkey', 'loon', 'bustard', 'songbird', 'bird_of_paradise', 'corvus', 'eurasian_magpie', 'honeyeater', 'lyrebird', 'shrike', 'red_winged_blackbird', 'mockingbird', 'common_nightingale', 'common_starling', 'common_myna', 'swallow', 'thrush_bird', 'american_robin', 'darter', 'frigatebird', 'shoebill', 'stork', 'honeyguide', 'budgerigar', 'cockatoo', 'moa', 'eurasian_eagle_owl', 'tyto', 'tinamou', 'trogon', 'resplendent_quetzal', 'megabat', 'microbat', 'pteropus',
           /* R3 AD fish amphibians reptiles — abstract concepts, filed at the 10⁰ idea bucket */ 'eel', 'flying_fish', 'milkfish', 'oarfish', 'mullet_fish', 'stingray', 'skate_fish', 'sawfish', 'electric_ray', 'barracuda', 'cichlid', 'tilapia', 'plaice', 'turbot', 'alaska_pollock', 'cod', 'haddock', 'mahi_mahi', 'grouper', 'european_seabass', 'siamese_fighting_fish', 'perch', 'remora', 'ocean_sunfish', 'wrasse', 'lungfish', 'arapaima', 'chimaera', 'sturgeon', 'herring', 'carp', 'trout', 'catfish', 'bichir', 'coral_reef_fish', 'deep_sea_fish', 'chondrichthyes', 'osteichthyes', 'actinopterygii', 'agnatha', 'true_toad', 'crocodylia', 'alligator', 'caiman', 'chameleon', 'green_iguana', 'horned_lizard', 'eastern_copperhead', 'cottonmouth', 'boidae', 'coral_snake', 'garter_snake', 'sea_snake', 'mamba', 'naja', 'common_snapping_turtle', 'alligator_snapping_turtle', 'painted_turtle', 'red_eared_slider', 'sea_turtle', 'tortoise', 'galapagos_tortoise', 'synapsida', 'dimetrodon',
@@ -1282,6 +1284,7 @@ const SCALE = {
           // amphibian batch 1 — up to 1.5 m long, the same rack as snake/human above
           'japanese_giant_salamander'],
   '1':   [
+          /* mammals, breeds, hominins (AG) */ 'cetacean', 'humpback_whale', 'sperm_whale',
           /* R3 AD fish amphibians reptiles */ 'plesiosaur',
           /* education, universities and festivals batch, 12 Nov */ 'house_of_wisdom',
           /* economy, industry and business batch, 12 Nov */ 'new_york_stock_exchange', 'london_stock_exchange',

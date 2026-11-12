@@ -133542,5 +133542,825 @@
     "why": "Ara is a Neotropical genus of macaws.",
     "src": "https://en.wikipedia.org/wiki/Ara_(bird)",
     "verified": true
+  },
+  {
+    "in": [
+      "wolf",
+      "lion"
+    ],
+    "out": "carnivora",
+    "why": "Carnivora is an order of placental mammals specialised primarily in eating flesh, whose members are formally referred to as carnivorans.",
+    "src": "https://en.wikipedia.org/wiki/Carnivora",
+    "verified": true
+  },
+  {
+    "in": [
+      "dog",
+      "wolf"
+    ],
+    "out": "canidae",
+    "why": "Canidae is a biological family of caniform carnivorans, constituting a clade. A member of this family is a canid, colloquially referred to as dogs.",
+    "src": "https://en.wikipedia.org/wiki/Canidae",
+    "verified": true
+  },
+  {
+    "in": [
+      "cat",
+      "lion"
+    ],
+    "out": "felidae",
+    "why": "Felidae is the family of mammals in the order Carnivora commonly referred to as cats. A member of this family is also called a felid.",
+    "src": "https://en.wikipedia.org/wiki/Felidae",
+    "verified": true
+  },
+  {
+    "in": [
+      "cat",
+      "ear"
+    ],
+    "out": "lynx",
+    "why": "A lynx is any of the extant species, the Canada lynx, Iberian lynx, Eurasian lynx and the bobcat, within the medium-sized wild cat genus Lynx.",
+    "src": "https://en.wikipedia.org/wiki/Lynx",
+    "verified": true
+  },
+  {
+    "in": [
+      "badger",
+      "europe"
+    ],
+    "out": "european_badger",
+    "why": "The European badger, also known as the Eurasian badger, is a species of badger in the family Mustelidae native to Europe and West Asia and parts of Central Asia.",
+    "src": "https://en.wikipedia.org/wiki/European_badger",
+    "verified": true
+  },
+  {
+    "in": [
+      "badger",
+      "honey"
+    ],
+    "out": "honey_badger",
+    "why": "The honey badger, also known as the ratel, is a mammal widely distributed across Africa, Southwest Asia, and the Indian subcontinent. It is the sole living representative of the Mellivorinae subfamily of the Mustelidae.",
+    "src": "https://en.wikipedia.org/wiki/Honey_badger",
+    "verified": true
+  },
+  {
+    "in": [
+      "weasel",
+      "tree"
+    ],
+    "out": "marten",
+    "why": "A marten is a weasel-like mammal in the genus Martes within the subfamily Guloninae, in the family Mustelidae. They have bushy tails and large paws with partially retractile claws.",
+    "src": "https://en.wikipedia.org/wiki/Marten",
+    "verified": true
+  },
+  {
+    "in": [
+      "weasel",
+      "winter"
+    ],
+    "out": "stoat",
+    "why": "The stoat, also known as the Eurasian ermine or ermine, is a species of mustelid native to Eurasia and the northern regions of North America.",
+    "src": "https://en.wikipedia.org/wiki/Stoat",
+    "verified": true
+  },
+  {
+    "in": [
+      "weasel",
+      "bear"
+    ],
+    "out": "wolverine",
+    "why": "The wolverine, also called the carcajou or quickhatch, is the largest land-dwelling member of the family Mustelidae. It is a muscular carnivore and a solitary animal.",
+    "src": "https://en.wikipedia.org/wiki/Wolverine",
+    "verified": true
+  },
+  {
+    "in": [
+      "whale",
+      "dolphin"
+    ],
+    "out": "cetacean",
+    "why": "Cetaceans are marine mammals belonging to the infraorder Cetacea, a secondarily aquatic clade under the order Artiodactyla that include whales, dolphins, porpoises and extinct groups such as Basilosaurus.",
+    "src": "https://en.wikipedia.org/wiki/Cetacean",
+    "verified": true
+  },
+  {
+    "in": [
+      "whale",
+      "song"
+    ],
+    "out": "humpback_whale",
+    "why": "The humpback whale is a species of baleen whale. It is a rorqual, a member of the family Balaenopteridae, and is the only species in the genus Megaptera.",
+    "src": "https://en.wikipedia.org/wiki/Humpback_whale",
+    "verified": true
+  },
+  {
+    "in": [
+      "whale",
+      "oil"
+    ],
+    "out": "sperm_whale",
+    "why": "The sperm whale or cachalot is the largest of the toothed whales and the largest toothed predator.",
+    "src": "https://en.wikipedia.org/wiki/Sperm_whale",
+    "verified": true
+  },
+  {
+    "in": [
+      "cow",
+      "pig"
+    ],
+    "out": "artiodactyla",
+    "why": "Artiodactyla is an order of placental mammals. Typically, they are ungulates which bear weight equally on two of their five toes, the third and fourth, often in the form of a hoof.",
+    "src": "https://en.wikipedia.org/wiki/Artiodactyla",
+    "verified": true
+  },
+  {
+    "in": [
+      "sheep",
+      "andes"
+    ],
+    "out": "alpaca",
+    "why": "The alpaca is a domesticated species of South American camelid. Traditionally, alpacas were kept in herds that grazed on the level heights of the Andes.",
+    "src": "https://en.wikipedia.org/wiki/Alpaca",
+    "verified": true
+  },
+  {
+    "in": [
+      "buffalo",
+      "africa"
+    ],
+    "out": "african_buffalo",
+    "why": "The African buffalo is a large bovine native to sub-Saharan Africa. It is the only extant species of the genus Syncerus.",
+    "src": "https://en.wikipedia.org/wiki/African_buffalo",
+    "verified": true
+  },
+  {
+    "in": [
+      "deer",
+      "africa"
+    ],
+    "out": "antelope",
+    "why": "An antelope is any of the extant or recently extinct species of the ruminant artiodactyl family Bovidae, which are indigenous to most of Africa, India, the Middle East, Central Asia, and a small area of Russia.",
+    "src": "https://en.wikipedia.org/wiki/Antelope",
+    "verified": true
+  },
+  {
+    "in": [
+      "goat",
+      "mountain"
+    ],
+    "out": "capra_genus",
+    "why": "Capra is a genus of mammals, the goats, including the markhor and several species known as ibexes. The domestic goat is a domesticated species derived from the bezoar ibex, a subspecies of the wild goat.",
+    "src": "https://en.wikipedia.org/wiki/Capra_(genus)",
+    "verified": true
+  },
+  {
+    "in": [
+      "antelope",
+      "desert"
+    ],
+    "out": "gazelle",
+    "why": "A gazelle is one of many antelope species in the genus Gazella. There are also species included in two further genera, Eudorcas and Nanger, which were formerly considered subgenera of Gazella.",
+    "src": "https://en.wikipedia.org/wiki/Gazelle",
+    "verified": true
+  },
+  {
+    "in": [
+      "bison",
+      "india"
+    ],
+    "out": "gaur",
+    "why": "The gaur, also known as the Indian bison, is a large bovine native to the Indian subcontinent and Southeast Asia.",
+    "src": "https://en.wikipedia.org/wiki/Gaur",
+    "verified": true
+  },
+  {
+    "in": [
+      "antelope",
+      "africa"
+    ],
+    "out": "impala",
+    "why": "The impala or rooibok is a medium-sized antelope found in eastern and southern Africa. The only extant member of the genus Aepyceros, and tribe Aepycerotini.",
+    "src": "https://en.wikipedia.org/wiki/Impala",
+    "verified": true
+  },
+  {
+    "in": [
+      "bison",
+      "arctic"
+    ],
+    "out": "muskox",
+    "why": "The muskox is a hoofed mammal of the family Bovidae. Native to the Arctic, it is noted for its thick coat and for the strong odor emitted by males during the seasonal rut, from which its name derives.",
+    "src": "https://en.wikipedia.org/wiki/Muskox",
+    "verified": true
+  },
+  {
+    "in": [
+      "antelope",
+      "migration"
+    ],
+    "out": "wildebeest",
+    "why": "Wildebeest, also called gnu, are antelopes of the genus Connochaetes and native to Eastern and Southern Africa. They belong to the family Bovidae, which includes true antelopes, cattle, goats, sheep, and other even-toed horned ungulates.",
+    "src": "https://en.wikipedia.org/wiki/Wildebeest",
+    "verified": true
+  },
+  {
+    "in": [
+      "bison",
+      "europe"
+    ],
+    "out": "european_bison",
+    "why": "The European bison or the European wood bison, also known as the wisent, the zubr, or sometimes colloquially as the European buffalo, is a European species of bison. It is one of two extant species of bison, alongside the American bison.",
+    "src": "https://en.wikipedia.org/wiki/European_bison",
+    "verified": true
+  },
+  {
+    "in": [
+      "cow",
+      "tibet"
+    ],
+    "out": "yak",
+    "why": "The yak is a species of long-haired domesticated Asian cattle found throughout the Himalayan region, the Tibetan Plateau, Tajikistan, the Pamir Mountains, and as far north as Mongolia and Siberia. It is descended from the wild yak.",
+    "src": "https://en.wikipedia.org/wiki/Yak",
+    "verified": true
+  },
+  {
+    "in": [
+      "camel",
+      "mongolia"
+    ],
+    "out": "bactrian_camel",
+    "why": "The Bactrian camel, also known as the Mongolian camel, domestic Bactrian camel, two-humped camel or double-humped camel, is a camel native to the steppes of Central Asia. It has two humps on its back, in contrast to the single-humped dromedary.",
+    "src": "https://en.wikipedia.org/wiki/Bactrian_camel",
+    "verified": true
+  },
+  {
+    "in": [
+      "deer",
+      "antler"
+    ],
+    "out": "elk",
+    "why": "The elk or wapiti is the second largest species within the deer family, Cervidae, and one of the largest terrestrial mammals in its native range of North America and Central and East Asia.",
+    "src": "https://en.wikipedia.org/wiki/Elk",
+    "verified": true
+  },
+  {
+    "in": [
+      "deer",
+      "swamp"
+    ],
+    "out": "moose",
+    "why": "The moose or elk is the world's tallest, largest and heaviest extant species of deer and the only extant species in the genus Alces.",
+    "src": "https://en.wikipedia.org/wiki/Moose",
+    "verified": true
+  },
+  {
+    "in": [
+      "deer",
+      "europe"
+    ],
+    "out": "red_deer",
+    "why": "The red deer is a species of deer in the genus Cervus. It is one of the largest deer species.",
+    "src": "https://en.wikipedia.org/wiki/Red_deer",
+    "verified": true
+  },
+  {
+    "in": [
+      "deer",
+      "christmas"
+    ],
+    "out": "reindeer",
+    "why": "The reindeer or caribou is a species of deer with circumpolar distribution, native to the Arctic, subarctic, tundra, boreal, and mountainous regions of Northern Europe, Siberia, and North America. It is the only representative of the genus Rangifer.",
+    "src": "https://en.wikipedia.org/wiki/Reindeer",
+    "verified": true
+  },
+  {
+    "in": [
+      "camel",
+      "andes"
+    ],
+    "out": "llama",
+    "why": "The llama is a domesticated South American camelid, widely used as a meat and pack animal by Andean cultures since the pre-Columbian era. Llamas are social animals and live with others as a herd.",
+    "src": "https://en.wikipedia.org/wiki/Llama",
+    "verified": true
+  },
+  {
+    "in": [
+      "llama",
+      "patagonia"
+    ],
+    "out": "guanaco",
+    "why": "The guanaco is a camelid native to South America, closely related to the domesticated llama. Guanacos are one of two wild South American camelids; the other species is the vicuña, which lives at higher elevations.",
+    "src": "https://en.wikipedia.org/wiki/Guanaco",
+    "verified": true
+  },
+  {
+    "in": [
+      "pig",
+      "jungle"
+    ],
+    "out": "peccary",
+    "why": "Peccaries, also javelinas or skunk pigs, are pig-like ungulates of the family Tayassuidae, the New World pigs. They are found throughout Central and South America, Trinidad in the Caribbean, and in the southwestern area of North America.",
+    "src": "https://en.wikipedia.org/wiki/Peccary",
+    "verified": true
+  },
+  {
+    "in": [
+      "llama",
+      "wool"
+    ],
+    "out": "vicuna",
+    "why": "The vicuña is a wild South American camelid which lives in high alpine areas of the Andes. It is a relative of the llama, the domesticated descendant of the guanaco, the only other still wild South American camelid.",
+    "src": "https://en.wikipedia.org/wiki/Vicuña",
+    "verified": true
+  },
+  {
+    "in": [
+      "rabbit",
+      "race"
+    ],
+    "out": "hare",
+    "why": "Hares are mammals belonging to the genus Lepus. They are herbivores and live solitarily or in pairs. They nest in depressions in the ground called forms, and their young are able to fend for themselves shortly after birth.",
+    "src": "https://en.wikipedia.org/wiki/Hare",
+    "verified": true
+  },
+  {
+    "in": [
+      "kangaroo",
+      "koala"
+    ],
+    "out": "diprotodontia",
+    "why": "Diprotodontia is the largest extant order of marsupials, including the kangaroos, wallabies, possums, koala, wombats, and many others.",
+    "src": "https://en.wikipedia.org/wiki/Diprotodontia",
+    "verified": true
+  },
+  {
+    "in": [
+      "kangaroo",
+      "tasmania"
+    ],
+    "out": "tasmanian_devil",
+    "why": "The Tasmanian devil is a carnivorous marsupial of the family Dasyuridae. It was formerly present across mainland Australia, but became extinct there; it is now confined to the island of Tasmania.",
+    "src": "https://en.wikipedia.org/wiki/Tasmanian_devil",
+    "verified": true
+  },
+  {
+    "in": [
+      "horse",
+      "zebra"
+    ],
+    "out": "equidae",
+    "why": "Equidae, commonly known as the horse family, is the taxonomic family of horses and related animals, including asses, zebras, and many extinct species known only from fossils.",
+    "src": "https://en.wikipedia.org/wiki/Equidae",
+    "verified": true
+  },
+  {
+    "in": [
+      "ant",
+      "sloth"
+    ],
+    "out": "anteater",
+    "why": "Anteaters are the extant mammal species in the suborder Vermilingua, meaning worm tongue, commonly known for eating ants and termites.",
+    "src": "https://en.wikipedia.org/wiki/Anteater",
+    "verified": true
+  },
+  {
+    "in": [
+      "seal",
+      "ear"
+    ],
+    "out": "eared_seal",
+    "why": "An eared seal, otariid, or otary, is any member of the marine mammal family Otariidae, one of three groupings of pinnipeds. They are commonly known either as sea lions or fur seals, distinct from true seals and the walrus.",
+    "src": "https://en.wikipedia.org/wiki/Eared_seal",
+    "verified": true
+  },
+  {
+    "in": [
+      "chimpanzee",
+      "peace"
+    ],
+    "out": "bonobo",
+    "why": "The bonobo, also historically called the pygmy chimpanzee, is the smallest species of great ape and one of the two making up the genus Pan. While bonobos are today recognized as a distinct species, they were initially thought to be a subspecies of the chimpanzee, because of the physical similarities between the two species.",
+    "src": "https://en.wikipedia.org/wiki/Bonobo",
+    "verified": true
+  },
+  {
+    "in": [
+      "ape",
+      "swing"
+    ],
+    "out": "gibbon",
+    "why": "Gibbons are apes in the family Hylobatidae. Gibbons live in subtropical and tropical forests from eastern Bangladesh and Northeast India to Southeast Asia and Indonesia.",
+    "src": "https://en.wikipedia.org/wiki/Gibbon",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "genus"
+    ],
+    "out": "homo",
+    "why": "Homo is a genus of great ape that emerged from the genus Australopithecus, encompassing a single extant species, Homo sapiens, along with a number of extinct species classified as either ancestral or closely related to modern humans, collectively called archaic humans.",
+    "src": "https://en.wikipedia.org/wiki/Homo",
+    "verified": true
+  },
+  {
+    "in": [
+      "ape",
+      "evolution"
+    ],
+    "out": "human_evolution",
+    "why": "Homo sapiens is a distinct species of the hominid family of primates, which includes all the great apes. Over their evolutionary history, humans gradually developed traits such as bipedalism, dexterity, and complex language.",
+    "src": "https://en.wikipedia.org/wiki/Human_evolution",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "africa"
+    ],
+    "out": "australopithecus",
+    "why": "Australopithecus is an extinct genus of early hominins that existed in Africa. The genera Homo, Paranthropus, and Kenyanthropus evolved from some Australopithecus species.",
+    "src": "https://en.wikipedia.org/wiki/Australopithecus",
+    "verified": true
+  },
+  {
+    "in": [
+      "human",
+      "cave"
+    ],
+    "out": "cro_magnon",
+    "why": "Cro-Magnons or European early modern humans were the first surviving expansion of early modern humans found in Europe and Siberia. They interacted and interbred with the indigenous Neanderthals of Europe and Western Asia.",
+    "src": "https://en.wikipedia.org/wiki/Cro-Magnon",
+    "verified": true
+  },
+  {
+    "in": [
+      "ape",
+      "jaw"
+    ],
+    "out": "paranthropus",
+    "why": "Paranthropus is a genus of extinct hominin which contains three widely accepted species. However, the validity of Paranthropus is contested, and it is sometimes considered to be synonymous with Australopithecus.",
+    "src": "https://en.wikipedia.org/wiki/Paranthropus",
+    "verified": true
+  },
+  {
+    "in": [
+      "monkey",
+      "jungle"
+    ],
+    "out": "new_world_monkey",
+    "why": "New World monkeys are the five families of primates that are found in the tropical regions of Mexico, Central and South America.",
+    "src": "https://en.wikipedia.org/wiki/New_World_monkey",
+    "verified": true
+  },
+  {
+    "in": [
+      "monkey",
+      "organ"
+    ],
+    "out": "capuchin_monkey",
+    "why": "The capuchin monkeys are New World monkeys of the subfamily Cebinae. They are famous for their complex foraging skills, such as tool use to crack open nuts.",
+    "src": "https://en.wikipedia.org/wiki/Capuchin_monkey",
+    "verified": true
+  },
+  {
+    "in": [
+      "monkey",
+      "spider"
+    ],
+    "out": "spider_monkey",
+    "why": "Spider monkeys are New World monkeys belonging to the genus Ateles, part of the subfamily Atelinae, family Atelidae. Like other atelines, they are found in tropical forests of Central and South America.",
+    "src": "https://en.wikipedia.org/wiki/Spider_monkey",
+    "verified": true
+  },
+  {
+    "in": [
+      "monkey",
+      "asia"
+    ],
+    "out": "old_world_monkey",
+    "why": "Old World monkeys are primates in the family Cercopithecidae, making it the largest primate family.",
+    "src": "https://en.wikipedia.org/wiki/Old_World_monkey",
+    "verified": true
+  },
+  {
+    "in": [
+      "monkey",
+      "hot_spring"
+    ],
+    "out": "macaque",
+    "why": "The macaques constitute a genus of gregarious Old World monkeys of the subfamily Cercopithecinae. The species of macaques inhabit ranges throughout Asia, North Africa, and Europe, in Gibraltar.",
+    "src": "https://en.wikipedia.org/wiki/Macaque",
+    "verified": true
+  },
+  {
+    "in": [
+      "macaque",
+      "laboratory"
+    ],
+    "out": "rhesus_macaque",
+    "why": "The rhesus macaque, colloquially rhesus monkey, is a species of Old World monkey in the Macaca genus. There are recognised subspecies split between two groups, the Chinese-derived and the Indian-derived.",
+    "src": "https://en.wikipedia.org/wiki/Rhesus_macaque",
+    "verified": true
+  },
+  {
+    "in": [
+      "lemur",
+      "nose"
+    ],
+    "out": "strepsirrhini",
+    "why": "Strepsirrhini is a suborder of primates that includes the lemuriform primates, which consist of the lemurs of Madagascar, galagos and pottos from Africa, and the lorises from India and Southeast Asia.",
+    "src": "https://en.wikipedia.org/wiki/Strepsirrhini",
+    "verified": true
+  },
+  {
+    "in": [
+      "lemur",
+      "venom"
+    ],
+    "out": "slow_loris",
+    "why": "Slow lorises are a group of several species of nocturnal strepsirrhine primates that make up the genus Nycticebus. Found in Southeast Asia and nearby areas.",
+    "src": "https://en.wikipedia.org/wiki/Slow_loris",
+    "verified": true
+  },
+  {
+    "in": [
+      "lemur",
+      "bush"
+    ],
+    "out": "galago",
+    "why": "Galagos, also known as bush babies or nagapies, are small nocturnal primates native to continental, sub-Sahara Africa, and make up the family Galagidae.",
+    "src": "https://en.wikipedia.org/wiki/Galago",
+    "verified": true
+  },
+  {
+    "in": [
+      "lemur",
+      "eye"
+    ],
+    "out": "tarsier",
+    "why": "Tarsiers are haplorhine primates of the family Tarsiidae, which is the lone extant family within the infraorder Tarsiiformes.",
+    "src": "https://en.wikipedia.org/wiki/Tarsier",
+    "verified": true
+  },
+  {
+    "in": [
+      "mouse",
+      "giant"
+    ],
+    "out": "capybara",
+    "why": "The capybara or greater capybara is the largest living rodent, native to all countries in South America except Chile. It is a semiaquatic herbivore that inhabits savannas and dense forests, living near and in bodies of freshwater and feeding mainly on grasses and aquatic plants.",
+    "src": "https://en.wikipedia.org/wiki/Capybara",
+    "verified": true
+  },
+  {
+    "in": [
+      "beaver",
+      "river"
+    ],
+    "out": "nutria",
+    "why": "The nutria or coypu is an herbivorous, semiaquatic rodent native to South America. Classified for a long time as the only member of the family Myocastoridae, Myocastor has since been included within Echimyidae, the family of the spiny rats.",
+    "src": "https://en.wikipedia.org/wiki/Nutria",
+    "verified": true
+  },
+  {
+    "in": [
+      "mouse",
+      "sleep"
+    ],
+    "out": "dormouse",
+    "why": "A dormouse is a rodent of the family Gliridae. Dormice are nocturnal animals found in Africa, Asia, and Europe.",
+    "src": "https://en.wikipedia.org/wiki/Dormouse",
+    "verified": true
+  },
+  {
+    "in": [
+      "pig",
+      "pet"
+    ],
+    "out": "guinea_pig",
+    "why": "The guinea pig, also known as the domestic guinea pig, cavy or domestic cavy, is a species of rodent. It belongs to the genus Cavia, family Caviidae, and its closest wild relatives include the montane guinea pig.",
+    "src": "https://en.wikipedia.org/wiki/Guinea_pig",
+    "verified": true
+  },
+  {
+    "in": [
+      "mouse",
+      "wheel"
+    ],
+    "out": "hamster",
+    "why": "Hamsters are rodents belonging to the subfamily Cricetinae. They have become established as popular small pets.",
+    "src": "https://en.wikipedia.org/wiki/Hamster",
+    "verified": true
+  },
+  {
+    "in": [
+      "squirrel",
+      "mountain"
+    ],
+    "out": "marmot",
+    "why": "Marmots are large ground squirrels in the genus Marmota. These herbivores are active during the summer, when they can often be found in groups, but are not seen during the winter, when they hibernate underground.",
+    "src": "https://en.wikipedia.org/wiki/Marmot",
+    "verified": true
+  },
+  {
+    "in": [
+      "mouse",
+      "rat"
+    ],
+    "out": "muridae",
+    "why": "The Muridae, or murids, are either the largest or second-largest family of rodents and of mammals, including many species of mice, rats, and gerbils found naturally throughout Eurasia, Africa, and Australia.",
+    "src": "https://en.wikipedia.org/wiki/Muridae",
+    "verified": true
+  },
+  {
+    "in": [
+      "rat",
+      "marsh"
+    ],
+    "out": "muskrat",
+    "why": "The muskrat or common muskrat is a medium-sized semiaquatic rodent.",
+    "src": "https://en.wikipedia.org/wiki/Muskrat",
+    "verified": true
+  },
+  {
+    "in": [
+      "mouse",
+      "spine"
+    ],
+    "out": "porcupine",
+    "why": "Porcupines are large rodents with coats of sharp spines, or quills, that protect them against predators. The term covers two families of animals, the Old World porcupines in the family Hystricidae, and the New World porcupines in the family Erethizontidae.",
+    "src": "https://en.wikipedia.org/wiki/Porcupine",
+    "verified": true
+  },
+  {
+    "in": [
+      "mouse",
+      "insect"
+    ],
+    "out": "shrew",
+    "why": "Shrews are small mole-like mammals classified in the order Eulipotyphla. True shrews are not to be confused with treeshrews, otter shrews, elephant shrews, West Indies shrews, or marsupial shrews and shrew opossums.",
+    "src": "https://en.wikipedia.org/wiki/Shrew",
+    "verified": true
+  },
+  {
+    "in": [
+      "cow",
+      "england"
+    ],
+    "out": "hereford_cattle",
+    "why": "The Hereford is a British breed of beef cattle originally from Herefordshire in the West Midlands of England.",
+    "src": "https://en.wikipedia.org/wiki/Hereford_cattle",
+    "verified": true
+  },
+  {
+    "in": [
+      "cow",
+      "dairy"
+    ],
+    "out": "holstein_friesian",
+    "why": "The Holstein Friesian is an international breed or group of breeds of dairy cattle.",
+    "src": "https://en.wikipedia.org/wiki/Holstein_Friesian",
+    "verified": true
+  },
+  {
+    "in": [
+      "cow",
+      "india"
+    ],
+    "out": "american_brahman",
+    "why": "The Brahman or American Brahman is an American breed of zebuine-taurine hybrid beef cattle. It was bred in the United States using cattle originating in India, imported at various times from the United Kingdom, India, and Brazil.",
+    "src": "https://en.wikipedia.org/wiki/American_Brahman",
+    "verified": true
+  },
+  {
+    "in": [
+      "dog",
+      "bird"
+    ],
+    "out": "gun_dog",
+    "why": "Gun dogs or bird dogs are types of hunting dogs developed to assist hunters in finding and retrieving game, typically various fowls that are shot down on the wing.",
+    "src": "https://en.wikipedia.org/wiki/Gun_dog",
+    "verified": true
+  },
+  {
+    "in": [
+      "dog",
+      "herd"
+    ],
+    "out": "herding_dog",
+    "why": "A herding dog, also known as a stock dog or working dog, is a type of dog that either has been trained in herding livestock or belongs to one of the breeds that were developed for herding.",
+    "src": "https://en.wikipedia.org/wiki/Herding_dog",
+    "verified": true
+  },
+  {
+    "in": [
+      "dog",
+      "nose"
+    ],
+    "out": "hound",
+    "why": "A hound is a type of hunting dog used by hunters to track or chase prey. Hounds are a diverse group of dogs, but all of them have been bred specifically for hunting.",
+    "src": "https://en.wikipedia.org/wiki/Hound",
+    "verified": true
+  },
+  {
+    "in": [
+      "dog",
+      "giant"
+    ],
+    "out": "mastiff",
+    "why": "A mastiff is a large and powerful type of dog. Mastiffs are among the largest dogs, and typically have a short coat, a long low-set tail and large feet.",
+    "src": "https://en.wikipedia.org/wiki/Mastiff",
+    "verified": true
+  },
+  {
+    "in": [
+      "dog",
+      "sled"
+    ],
+    "out": "spitz",
+    "why": "The spitz is a type of domestic dog. There is no precise definition of the type, but most spitz breeds have pricked ears, almond-shaped eyes, a pointed muzzle, a double coat, and a tail that curves over the back.",
+    "src": "https://en.wikipedia.org/wiki/Spitz",
+    "verified": true
+  },
+  {
+    "in": [
+      "dog",
+      "rat"
+    ],
+    "out": "terrier",
+    "why": "Terrier is a type of dog originally bred to hunt vermin. A terrier is a dog of any one of many breeds or landraces of the terrier type, which are typically small, wiry, game, and fearless.",
+    "src": "https://en.wikipedia.org/wiki/Terrier",
+    "verified": true
+  },
+  {
+    "in": [
+      "horse",
+      "oasis"
+    ],
+    "out": "arabian_horse",
+    "why": "The Arabian or Arab horse is a breed of horse with historic roots in West Asia. With a distinctive head shape and high tail carriage, the Arabian is one of the most easily recognizable horse breeds in the world.",
+    "src": "https://en.wikipedia.org/wiki/Arabian_horse",
+    "verified": true
+  },
+  {
+    "in": [
+      "horse",
+      "spain"
+    ],
+    "out": "andalusian_horse",
+    "why": "The Andalusian, also known as the Pure Spanish Horse, is a Spanish breed of riding horse from the Iberian Peninsula, where its ancestors have lived for thousands of years.",
+    "src": "https://en.wikipedia.org/wiki/Andalusian_horse",
+    "verified": true
+  },
+  {
+    "in": [
+      "horse",
+      "netherlands"
+    ],
+    "out": "friesian_horse",
+    "why": "The Friesian is a horse breed originating in the province of Friesland in the northern Netherlands. The breed nearly became extinct on more than one occasion.",
+    "src": "https://en.wikipedia.org/wiki/Friesian_horse",
+    "verified": true
+  },
+  {
+    "in": [
+      "horse",
+      "england"
+    ],
+    "out": "thoroughbred",
+    "why": "The Thoroughbred is a horse breed developed for horse racing. Although the word thoroughbred is sometimes used to refer to any breed of purebred horse, it technically refers only to the Thoroughbred breed.",
+    "src": "https://en.wikipedia.org/wiki/Thoroughbred",
+    "verified": true
+  },
+  {
+    "in": [
+      "horse",
+      "child"
+    ],
+    "out": "pony",
+    "why": "A pony is a type of small horse, usually under a specific height at full maturity. Ponies often have thicker coats, manes and tails, compared to larger horses, and proportionally shorter legs, wider barrels, heavier bone, thicker necks and shorter heads.",
+    "src": "https://en.wikipedia.org/wiki/Pony",
+    "verified": true
+  },
+  {
+    "in": [
+      "donkey",
+      "work"
+    ],
+    "out": "mule",
+    "why": "The mule is a domestic equine hybrid between a donkey and a horse. It is the offspring of a male donkey and a female horse.",
+    "src": "https://en.wikipedia.org/wiki/Mule",
+    "verified": true
+  },
+  {
+    "in": [
+      "sheep",
+      "spain"
+    ],
+    "out": "merino",
+    "why": "The Merino is a breed or group of breeds of domestic sheep, characterised by very fine soft wool. It originated in the Iberian Peninsula during the High Middle Ages, and was for several centuries kept as a strict Spanish monopoly.",
+    "src": "https://en.wikipedia.org/wiki/Merino",
+    "verified": true
   }
 ]

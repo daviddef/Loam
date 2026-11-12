@@ -3070,8 +3070,7 @@
       "wild"
     ],
     "fact": "Eats almost nothing but eucalyptus — and out of 600-plus species on offer, sticks to about 30.",
-    "taxon": "tx_phascolarctidae",
-    "terminal": true
+    "taxon": "tx_phascolarctidae"
   },
   {
     "id": "dingo",
@@ -23864,8 +23863,7 @@
       "wild"
     ],
     "fact": "Leaves can take more than a month to digest — no other mammal's gut works that slowly.",
-    "taxon": "tx_folivora",
-    "terminal": true
+    "taxon": "tx_folivora"
   },
   {
     "id": "armadillo",
@@ -36664,7 +36662,6 @@
       "tool"
     ],
     "fact": "The simplest playground swing needs nothing but a rope over a branch and a seat tied to the ends.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -128636,5 +128633,907 @@
     ],
     "fact": "The Neotropical genus of macaws.",
     "src": "https://en.wikipedia.org/wiki/Ara_(bird)"
+  },
+  {
+    "id": "carnivora",
+    "name": "Carnivora",
+    "emoji": "🐺",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The order of placental mammals specialised in eating flesh.",
+    "src": "https://en.wikipedia.org/wiki/Carnivora"
+  },
+  {
+    "id": "canidae",
+    "name": "Canidae",
+    "emoji": "🐕",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The dog family of carnivorans.",
+    "src": "https://en.wikipedia.org/wiki/Canidae"
+  },
+  {
+    "id": "felidae",
+    "name": "Felidae",
+    "emoji": "🐈",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The cat family of carnivorans.",
+    "src": "https://en.wikipedia.org/wiki/Felidae"
+  },
+  {
+    "id": "lynx",
+    "name": "Lynx",
+    "emoji": "🐱",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Any of the medium-sized wild cats of the genus Lynx.",
+    "src": "https://en.wikipedia.org/wiki/Lynx"
+  },
+  {
+    "id": "european_badger",
+    "name": "European Badger",
+    "emoji": "🦡",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A badger of Europe and western and central Asia.",
+    "src": "https://en.wikipedia.org/wiki/European_badger"
+  },
+  {
+    "id": "honey_badger",
+    "name": "Honey Badger",
+    "emoji": "🦡",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A mustelid of Africa and southern Asia, also called the ratel.",
+    "src": "https://en.wikipedia.org/wiki/Honey_badger"
+  },
+  {
+    "id": "marten",
+    "name": "Marten",
+    "emoji": "🦦",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A weasel-like mammal with a bushy tail and partly retractile claws.",
+    "src": "https://en.wikipedia.org/wiki/Marten"
+  },
+  {
+    "id": "stoat",
+    "name": "Stoat",
+    "emoji": "🐾",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A mustelid also known as the ermine.",
+    "src": "https://en.wikipedia.org/wiki/Stoat"
+  },
+  {
+    "id": "wolverine",
+    "name": "Wolverine",
+    "emoji": "🐻",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The largest land-dwelling mustelid, a muscular and solitary carnivore.",
+    "src": "https://en.wikipedia.org/wiki/Wolverine"
+  },
+  {
+    "id": "cetacean",
+    "name": "Cetacean",
+    "emoji": "🐋",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Whales, dolphins and porpoises.",
+    "src": "https://en.wikipedia.org/wiki/Cetacean"
+  },
+  {
+    "id": "humpback_whale",
+    "name": "Humpback Whale",
+    "emoji": "🐋",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A baleen whale, the only species in its genus.",
+    "src": "https://en.wikipedia.org/wiki/Humpback_whale"
+  },
+  {
+    "id": "sperm_whale",
+    "name": "Sperm Whale",
+    "emoji": "🐳",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The largest of the toothed whales.",
+    "src": "https://en.wikipedia.org/wiki/Sperm_whale"
+  },
+  {
+    "id": "artiodactyla",
+    "name": "Even-toed Ungulates",
+    "emoji": "🦌",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The even-toed ungulates, which bear weight on two toes.",
+    "src": "https://en.wikipedia.org/wiki/Artiodactyla"
+  },
+  {
+    "id": "alpaca",
+    "name": "Alpaca",
+    "emoji": "🦙",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A domesticated South American camelid kept in herds in the Andes.",
+    "src": "https://en.wikipedia.org/wiki/Alpaca"
+  },
+  {
+    "id": "african_buffalo",
+    "name": "African Buffalo",
+    "emoji": "🐃",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A large bovine of sub-Saharan Africa.",
+    "src": "https://en.wikipedia.org/wiki/African_buffalo"
+  },
+  {
+    "id": "antelope",
+    "name": "Antelope",
+    "emoji": "🦌",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A bovid of Africa, India and Asia that is not a cow, goat or sheep.",
+    "src": "https://en.wikipedia.org/wiki/Antelope"
+  },
+  {
+    "id": "capra_genus",
+    "name": "Wild Goat",
+    "emoji": "🐐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The genus of goats and ibexes.",
+    "src": "https://en.wikipedia.org/wiki/Capra_(genus)"
+  },
+  {
+    "id": "gazelle",
+    "name": "Gazelle",
+    "emoji": "🦌",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Any of the antelopes of the genus Gazella and its former subgenera.",
+    "src": "https://en.wikipedia.org/wiki/Gazelle"
+  },
+  {
+    "id": "gaur",
+    "name": "Gaur",
+    "emoji": "🐃",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A large bovine of India and Southeast Asia, also called the Indian bison.",
+    "src": "https://en.wikipedia.org/wiki/Gaur"
+  },
+  {
+    "id": "impala",
+    "name": "Impala",
+    "emoji": "🦌",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A medium-sized antelope of eastern and southern Africa.",
+    "src": "https://en.wikipedia.org/wiki/Impala"
+  },
+  {
+    "id": "muskox",
+    "name": "Muskox",
+    "emoji": "🐂",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An Arctic bovid with a thick coat and a strong smell.",
+    "src": "https://en.wikipedia.org/wiki/Muskox"
+  },
+  {
+    "id": "wildebeest",
+    "name": "Wildebeest",
+    "emoji": "🐃",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The gnu, an antelope of eastern and southern Africa.",
+    "src": "https://en.wikipedia.org/wiki/Wildebeest"
+  },
+  {
+    "id": "european_bison",
+    "name": "European Bison",
+    "emoji": "🦬",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The wisent, one of the two living species of bison.",
+    "src": "https://en.wikipedia.org/wiki/European_bison"
+  },
+  {
+    "id": "yak",
+    "name": "Yak",
+    "emoji": "🐂",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Long-haired domesticated cattle of the Himalayas and Tibetan Plateau.",
+    "src": "https://en.wikipedia.org/wiki/Yak"
+  },
+  {
+    "id": "bactrian_camel",
+    "name": "Bactrian Camel",
+    "emoji": "🐫",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The two-humped camel of the steppes of Central Asia.",
+    "src": "https://en.wikipedia.org/wiki/Bactrian_camel"
+  },
+  {
+    "id": "elk",
+    "name": "Elk",
+    "emoji": "🦌",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The wapiti, second largest of the deer.",
+    "src": "https://en.wikipedia.org/wiki/Elk"
+  },
+  {
+    "id": "moose",
+    "name": "Moose",
+    "emoji": "🫎",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The world's tallest and heaviest deer.",
+    "src": "https://en.wikipedia.org/wiki/Moose"
+  },
+  {
+    "id": "red_deer",
+    "name": "Red Deer",
+    "emoji": "🦌",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "One of the largest deer species.",
+    "src": "https://en.wikipedia.org/wiki/Red_deer"
+  },
+  {
+    "id": "reindeer",
+    "name": "Reindeer",
+    "emoji": "🦌",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The circumpolar deer, also called the caribou.",
+    "src": "https://en.wikipedia.org/wiki/Reindeer"
+  },
+  {
+    "id": "llama",
+    "name": "Llama",
+    "emoji": "🦙",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A domesticated South American camelid used as a pack animal.",
+    "src": "https://en.wikipedia.org/wiki/Llama"
+  },
+  {
+    "id": "guanaco",
+    "name": "Guanaco",
+    "emoji": "🦙",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The wild South American camelid from which the llama descends.",
+    "src": "https://en.wikipedia.org/wiki/Guanaco"
+  },
+  {
+    "id": "peccary",
+    "name": "Peccary",
+    "emoji": "🐗",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Pig-like New World ungulates, also called javelinas.",
+    "src": "https://en.wikipedia.org/wiki/Peccary"
+  },
+  {
+    "id": "vicuna",
+    "name": "Vicuña",
+    "emoji": "🦙",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A wild camelid of the high Andes.",
+    "src": "https://en.wikipedia.org/wiki/Vicuña"
+  },
+  {
+    "id": "hare",
+    "name": "Hare",
+    "emoji": "🐇",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Herbivorous mammals of the genus Lepus, born ready to fend for themselves.",
+    "src": "https://en.wikipedia.org/wiki/Hare"
+  },
+  {
+    "id": "diprotodontia",
+    "name": "Diprotodontia",
+    "emoji": "🦘",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The largest order of marsupials: kangaroos, wallabies, possums, koala and wombats.",
+    "src": "https://en.wikipedia.org/wiki/Diprotodontia"
+  },
+  {
+    "id": "tasmanian_devil",
+    "name": "Tasmanian Devil",
+    "emoji": "😈",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A carnivorous marsupial now confined to the island of Tasmania.",
+    "src": "https://en.wikipedia.org/wiki/Tasmanian_devil"
+  },
+  {
+    "id": "equidae",
+    "name": "Equidae",
+    "emoji": "🐴",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The horse family: horses, asses and zebras.",
+    "src": "https://en.wikipedia.org/wiki/Equidae"
+  },
+  {
+    "id": "anteater",
+    "name": "Anteater",
+    "emoji": "🐜",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Mammals of the suborder Vermilingua that eat ants and termites.",
+    "src": "https://en.wikipedia.org/wiki/Anteater"
+  },
+  {
+    "id": "eared_seal",
+    "name": "Eared Seal",
+    "emoji": "🦭",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The sea lions and fur seals of the family Otariidae.",
+    "src": "https://en.wikipedia.org/wiki/Eared_seal"
+  },
+  {
+    "id": "bonobo",
+    "name": "Bonobo",
+    "emoji": "🐒",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The smallest great ape, once thought a kind of chimpanzee.",
+    "src": "https://en.wikipedia.org/wiki/Bonobo"
+  },
+  {
+    "id": "gibbon",
+    "name": "Gibbon",
+    "emoji": "🐒",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The small apes of Asian forests.",
+    "src": "https://en.wikipedia.org/wiki/Gibbon"
+  },
+  {
+    "id": "homo",
+    "name": "Homo",
+    "emoji": "🧍",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The genus of great apes that includes modern humans and their extinct relatives.",
+    "src": "https://en.wikipedia.org/wiki/Homo"
+  },
+  {
+    "id": "human_evolution",
+    "name": "Human Evolution",
+    "emoji": "🚶",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "How humans gradually developed bipedalism, dexterity and language.",
+    "src": "https://en.wikipedia.org/wiki/Human_evolution"
+  },
+  {
+    "id": "australopithecus",
+    "name": "Australopithecus",
+    "emoji": "🦴",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An extinct genus of early African hominins.",
+    "src": "https://en.wikipedia.org/wiki/Australopithecus"
+  },
+  {
+    "id": "cro_magnon",
+    "name": "Cro-Magnon",
+    "emoji": "🗿",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The first early modern humans in Europe and Siberia.",
+    "src": "https://en.wikipedia.org/wiki/Cro-Magnon"
+  },
+  {
+    "id": "paranthropus",
+    "name": "Paranthropus",
+    "emoji": "🦴",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An extinct genus of hominins, sometimes folded into Australopithecus.",
+    "src": "https://en.wikipedia.org/wiki/Paranthropus"
+  },
+  {
+    "id": "new_world_monkey",
+    "name": "New World Monkey",
+    "emoji": "🐒",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The monkeys of tropical Central and South America.",
+    "src": "https://en.wikipedia.org/wiki/New_World_monkey"
+  },
+  {
+    "id": "capuchin_monkey",
+    "name": "Capuchin Monkey",
+    "emoji": "🐒",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "New World monkeys famous for using tools to crack nuts.",
+    "src": "https://en.wikipedia.org/wiki/Capuchin_monkey"
+  },
+  {
+    "id": "spider_monkey",
+    "name": "Spider Monkey",
+    "emoji": "🐒",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "New World monkeys of tropical Central and South American forests.",
+    "src": "https://en.wikipedia.org/wiki/Spider_monkey"
+  },
+  {
+    "id": "old_world_monkey",
+    "name": "Old World Monkey",
+    "emoji": "🐒",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The largest primate family, the Cercopithecidae.",
+    "src": "https://en.wikipedia.org/wiki/Old_World_monkey"
+  },
+  {
+    "id": "macaque",
+    "name": "Macaque",
+    "emoji": "🐒",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Gregarious Old World monkeys of Asia, North Africa and Gibraltar.",
+    "src": "https://en.wikipedia.org/wiki/Macaque"
+  },
+  {
+    "id": "rhesus_macaque",
+    "name": "Rhesus Macaque",
+    "emoji": "🐒",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The rhesus monkey, an Old World monkey of the genus Macaca.",
+    "src": "https://en.wikipedia.org/wiki/Rhesus_macaque"
+  },
+  {
+    "id": "strepsirrhini",
+    "name": "Strepsirrhines",
+    "emoji": "🐒",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The suborder of lemurs, galagos, pottos and lorises.",
+    "src": "https://en.wikipedia.org/wiki/Strepsirrhini"
+  },
+  {
+    "id": "slow_loris",
+    "name": "Slow Loris",
+    "emoji": "🐒",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Nocturnal strepsirrhine primates of Southeast Asia.",
+    "src": "https://en.wikipedia.org/wiki/Slow_loris"
+  },
+  {
+    "id": "galago",
+    "name": "Bush Baby",
+    "emoji": "🐒",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Small nocturnal African primates, also called bush babies.",
+    "src": "https://en.wikipedia.org/wiki/Galago"
+  },
+  {
+    "id": "tarsier",
+    "name": "Tarsier",
+    "emoji": "👀",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Haplorhine primates of the family Tarsiidae.",
+    "src": "https://en.wikipedia.org/wiki/Tarsier"
+  },
+  {
+    "id": "capybara",
+    "name": "Capybara",
+    "emoji": "🐀",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The largest living rodent, a semiaquatic South American herbivore.",
+    "src": "https://en.wikipedia.org/wiki/Capybara"
+  },
+  {
+    "id": "nutria",
+    "name": "Nutria",
+    "emoji": "🐀",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A semiaquatic South American rodent, also called the coypu.",
+    "src": "https://en.wikipedia.org/wiki/Nutria"
+  },
+  {
+    "id": "dormouse",
+    "name": "Dormouse",
+    "emoji": "🐭",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A nocturnal rodent of Africa, Asia and Europe.",
+    "src": "https://en.wikipedia.org/wiki/Dormouse"
+  },
+  {
+    "id": "guinea_pig",
+    "name": "Guinea Pig",
+    "emoji": "🐹",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The domestic cavy, a rodent kept as a pet.",
+    "src": "https://en.wikipedia.org/wiki/Guinea_pig"
+  },
+  {
+    "id": "hamster",
+    "name": "Hamster",
+    "emoji": "🐹",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Rodents of the subfamily Cricetinae, popular small pets.",
+    "src": "https://en.wikipedia.org/wiki/Hamster"
+  },
+  {
+    "id": "marmot",
+    "name": "Marmot",
+    "emoji": "🐿️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Large ground squirrels that hibernate underground in winter.",
+    "src": "https://en.wikipedia.org/wiki/Marmot"
+  },
+  {
+    "id": "muridae",
+    "name": "Muridae",
+    "emoji": "🐀",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The family of rodents that includes mice, rats and gerbils.",
+    "src": "https://en.wikipedia.org/wiki/Muridae"
+  },
+  {
+    "id": "muskrat",
+    "name": "Muskrat",
+    "emoji": "🐀",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A medium-sized semiaquatic rodent.",
+    "src": "https://en.wikipedia.org/wiki/Muskrat"
+  },
+  {
+    "id": "porcupine",
+    "name": "Porcupine",
+    "emoji": "🦔",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Large rodents with coats of protective quills.",
+    "src": "https://en.wikipedia.org/wiki/Porcupine"
+  },
+  {
+    "id": "shrew",
+    "name": "Shrew",
+    "emoji": "🐭",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Small mole-like mammals of the order Eulipotyphla.",
+    "src": "https://en.wikipedia.org/wiki/Shrew"
+  },
+  {
+    "id": "hereford_cattle",
+    "name": "Hereford Cattle",
+    "emoji": "🐄",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A British beef breed from Herefordshire.",
+    "src": "https://en.wikipedia.org/wiki/Hereford_cattle"
+  },
+  {
+    "id": "holstein_friesian",
+    "name": "Holstein Friesian",
+    "emoji": "🐄",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An international dairy cattle breed.",
+    "src": "https://en.wikipedia.org/wiki/Holstein_Friesian"
+  },
+  {
+    "id": "american_brahman",
+    "name": "American Brahman",
+    "emoji": "🐂",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An American beef breed bred from cattle of India.",
+    "src": "https://en.wikipedia.org/wiki/American_Brahman"
+  },
+  {
+    "id": "gun_dog",
+    "name": "Gun Dog",
+    "emoji": "🐕",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Hunting dogs that find and retrieve shot game.",
+    "src": "https://en.wikipedia.org/wiki/Gun_dog"
+  },
+  {
+    "id": "herding_dog",
+    "name": "Herding Dog",
+    "emoji": "🐕‍🦺",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A dog trained or bred to herd livestock.",
+    "src": "https://en.wikipedia.org/wiki/Herding_dog"
+  },
+  {
+    "id": "hound",
+    "name": "Hound",
+    "emoji": "🐕",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A hunting dog used to track or chase prey.",
+    "src": "https://en.wikipedia.org/wiki/Hound"
+  },
+  {
+    "id": "mastiff",
+    "name": "Mastiff",
+    "emoji": "🐕",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A large, powerful type of dog with a short coat.",
+    "src": "https://en.wikipedia.org/wiki/Mastiff"
+  },
+  {
+    "id": "spitz",
+    "name": "Spitz",
+    "emoji": "🐕",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A type of dog with pricked ears, a double coat and a tail curled over the back.",
+    "src": "https://en.wikipedia.org/wiki/Spitz"
+  },
+  {
+    "id": "terrier",
+    "name": "Terrier",
+    "emoji": "🐕",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A small, wiry, fearless dog bred to hunt vermin.",
+    "src": "https://en.wikipedia.org/wiki/Terrier"
+  },
+  {
+    "id": "arabian_horse",
+    "name": "Arabian Horse",
+    "emoji": "🐎",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A horse breed from West Asia with a distinctive head and high tail.",
+    "src": "https://en.wikipedia.org/wiki/Arabian_horse"
+  },
+  {
+    "id": "andalusian_horse",
+    "name": "Andalusian Horse",
+    "emoji": "🐎",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A Spanish riding horse from the Iberian Peninsula.",
+    "src": "https://en.wikipedia.org/wiki/Andalusian_horse"
+  },
+  {
+    "id": "friesian_horse",
+    "name": "Friesian Horse",
+    "emoji": "🐎",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A horse breed from Friesland in the northern Netherlands.",
+    "src": "https://en.wikipedia.org/wiki/Friesian_horse"
+  },
+  {
+    "id": "thoroughbred",
+    "name": "Thoroughbred",
+    "emoji": "🏇",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The horse breed developed for racing.",
+    "src": "https://en.wikipedia.org/wiki/Thoroughbred"
+  },
+  {
+    "id": "pony",
+    "name": "Pony",
+    "emoji": "🐴",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A small type of horse with a thick coat and short legs.",
+    "src": "https://en.wikipedia.org/wiki/Pony"
+  },
+  {
+    "id": "mule",
+    "name": "Mule",
+    "emoji": "🫏",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The hybrid offspring of a male donkey and a female horse.",
+    "src": "https://en.wikipedia.org/wiki/Mule"
+  },
+  {
+    "id": "merino",
+    "name": "Merino",
+    "emoji": "🐑",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A sheep breed with very fine soft wool, once a Spanish monopoly.",
+    "src": "https://en.wikipedia.org/wiki/Merino"
   }
 ]
