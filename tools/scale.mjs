@@ -1527,6 +1527,7 @@ const SCALE = {
           // aviation batch 1 — whole airframes and airfield buildings, tens of metres
           'bird_wing', 'wing', 'fuselage', 'glider', 'hot_air_balloon', 'rotor', 'helicopter', 'parachute', 'jet_airliner', 'control_tower'],
   '2':   [
+          /* geography 4 */ 'city_block',
           /* technology 3 */ 'train_station', 'aircraft', 'fixed_wing_aircraft', 'jet_aircraft', 'cargo_ship', 'merchant_ship', 'passenger_ship', 'sailing_ship', 'steamship', 'tanker_ship',
           /* technology 2 */ 'alma', 'maunakea_observatories',
           /* technology 1 */ 'power_station', 'cooling_tower', 'pumping_station', 'chemical_plant', 'quarry',
@@ -1739,6 +1740,7 @@ const SCALE = {
           // seashore batch 1 — the shore band between the tide marks, hundreds of metres of coastline, same rack as sea_cliff/sea_arch
           'intertidal_zone'],
   '3':   [
+          /* geography 4 */ 'vatican_city', 'holy_see', 'human_settlement', 'neighbourhood', 'slum', 'suburb', 'urban_planning', 'urban_design', 'zoning', 'central_business_district',
           /* technology 3 */ 'aswan_high_dam', 'itaipu_dam', 'three_gorges_dam', 'flood_management', 'channel_tunnel', 'land_transport', 'road_transport', 'highway', 'controlled_access_highway', 'trail', 'railway_track', 'rapid_transit', 'monorail', 'cable_transport', 'pipeline',
           /* technology 1 */ 'electric_power_transmission', 'sanitary_sewer', 'qanat', 'infrastructure',
           /* R3 AA earth science and geological time */ 'mountain_pass', 'hill', 'artificial_island',
@@ -1842,6 +1844,7 @@ const SCALE = {
           // seashore batch 1 — the tide's rise and fall along a whole stretch of coastline, km scale like estuary/lagoon/fjord
           'tide'],
   '4':   [
+          /* geography 4 */ 'metropolitan_area', 'rural_area', 'urban_area', 'benghazi', 'constantine_algeria', 'fez_morocco', 'khartoum', 'omdurman', 'oran', 'rabat', 'tripoli_libya', 'aswan', 'giza', 'damietta', 'luxor', 'bangui', 'brazzaville', 'luanda', 'lubumbashi', 'mbuji_mayi', 'antananarivo', 'asmara', 'dar_es_salaam', 'dire_dawa', 'gondar', 'harare', 'kampala', 'kigali', 'lilongwe', 'lusaka', 'maputo', 'mogadishu', 'mombasa', 'gaborone', 'windhoek', 'durban', 'gqeberha', 'pretoria', 'abidjan', 'bamako', 'conakry', 'cotonou', 'douala', 'freetown', 'kumasi', 'monrovia', 'ndjamena', 'niamey', 'nouakchott', 'ouagadougou', 'yaounde', 'abuja', 'benin_city', 'enugu', 'ibadan', 'kaduna', 'kano', 'maiduguri', 'port_harcourt',
           /* technology 3 */ 'london_underground', 'new_york_city_subway', 'high_speed_rail', 'shinkansen',
           /* technology 1 */ 'hydropower',
           /* R3 AB weather, climate, hydrosphere */ 'mirage', 'dry_lake',
@@ -1916,6 +1919,7 @@ const SCALE = {
           // aviation batch 1 — a whole airport site, several kilometres across, the same bucket as the LHC ring
           'airport'],
   '6':   [
+          /* geography 4 */ 'technical_geography', 'great_victoria_desert', 'ivory_coast', 'republic_of_ireland', 'czech_republic', 'federated_states_of_micronesia', 'puntland', 'somaliland', 'western_sahara', 'cook_islands', 'hebei', 'fujian', 'jiangsu', 'henan', 'hubei', 'hunan', 'manchuria', 'andhra_pradesh', 'bihar', 'northeast_india', 'western_new_guinea', 'eastern_arabia', 'balochistan_pakistan', 'punjab_pakistan', 'western_europe', 'eastern_europe', 'bashkortostan', 'sakha_republic',
           /* technology 3 */ 'trans_siberian_railway',
           /* R3 AB weather, climate, hydrosphere */ 'air_mass', 'cyclone', 'ice_shelf', 'oceanography', 'seabed',
           /* R3 AA earth science and geological time */ 'earths_inner_core', 'mountain_range', 'sedimentary_basin', 'hotspot_geology', 'shrubland', 'jungle', 'temperate_broadleaf_and_mixed_forests',
@@ -2010,6 +2014,7 @@ const SCALE = {
           // claim, filed at the real moons' own tier
           'kuiper_belt', 'oort_cloud', 'solar_wind'],
   '5':   [
+          /* geography 4 */ 'abkhazia', 'northern_cyprus', 'palestine', 'south_ossetia', 'kosovo', 'transnistria', 'niue', 'nagorno_karabakh', 'vojvodina', 'moldavia', 'wallachia', 'chechnya', 'dagestan', 'kaliningrad_oblast', 'tatarstan', 'basque_country', 'megalopolis',
           /* R3 AB weather, climate, hydrosphere */ 'low_pressure_area', 'high_pressure_area', 'dust_storm', 'body_of_water', 'drainage_basin',
           /* R3 AA earth science and geological time */ 'thrust_fault',
           /* regions, provinces and states batch, 12 Nov */ 'england', 'scotland', 'wales', 'northern_ireland', 'andalusia', 'catalonia', 'galicia', 'brittany', 'provence', 'bavaria', 'tuscany', 'flanders', 'wallonia', 'transylvania', 'new_england', 'new_york_state', 'pennsylvania', 'florida', 'yunnan', 'sichuan', 'guangdong', 'hainan', 'shandong', 'zhejiang', 'heilongjiang', 'kerala', 'rajasthan', 'gujarat', 'maharashtra', 'west_bengal', 'tamil_nadu', 'assam', 'karnataka', 'uttar_pradesh', 'kashmir', 'sindh', 'khyber_pakhtunkhwa', 'aceh', 'french_guiana', 'minas_gerais',
@@ -2054,6 +2059,7 @@ const SCALE = {
           'atlantis', 'chicxulub_crater', 'sri_lanka', 'maldives', 'taiwan', 'brunei', 'fiji', 'samoa', 'portugal', 'netherlands', 'switzerland', 'ireland', 'austria', 'israel', 'lebanon',
           ],
   '7':   [
+          /* geography 4 */ 'geodetic_datum', 'global_north_and_global_south', 'eastern_world',
           /* technology 2 */ 'satellite_navigation',
           /* fish, bird families, colours, units, astronomy (AJ) */ 'geosynchronous_orbit',
           /* R3 AC biology 1 */ 'biosphere',
