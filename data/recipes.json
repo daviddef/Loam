@@ -120282,5 +120282,925 @@
     "why": "The Grand Slam in tennis is the achievement of winning all four major championships in one discipline in a calendar year. In doubles, a Grand Slam may be achieved as a team or as an individual with different partners.",
     "src": "https://en.wikipedia.org/wiki/Grand_Slam_(tennis)",
     "verified": true
+  },
+  {
+    "in": [
+      "atlantic_ocean",
+      "france"
+    ],
+    "out": "bay_of_biscay",
+    "why": "The Bay of Biscay, also known as the Gulf of Biscay or the Gulf of Gascony, is a gulf of the northeast Atlantic Ocean located south of the Celtic Sea. It lies along the northern coast of Spain, extending westward from the French border to Cape Ortegal, and along the western coast of France from Point Penmarc'h southward to the Spanish border.",
+    "src": "https://en.wikipedia.org/wiki/Bay_of_Biscay",
+    "verified": true
+  },
+  {
+    "in": [
+      "atlantic_ocean",
+      "ghana"
+    ],
+    "out": "gulf_of_guinea",
+    "why": "The Gulf of Guinea is the northeasternmost part of the tropical Atlantic Ocean from Cape Lopez in Gabon, north and west to Cape Palmas in Liberia. Null Island, defined as the intersection of the Equator and Prime Meridian (zero degrees latitude and longitude), is in the gulf.",
+    "src": "https://en.wikipedia.org/wiki/Gulf_of_Guinea",
+    "verified": true
+  },
+  {
+    "in": [
+      "st_lawrence_river",
+      "atlantic_ocean"
+    ],
+    "out": "gulf_of_st_lawrence",
+    "why": "The Gulf of St. Lawrence connects the Great Lakes to the Atlantic Ocean via the St. Lawrence River. The gulf fringes the shores of the provinces of Quebec, New Brunswick, Nova Scotia, Prince Edward Island, Newfoundland and Labrador, in Canada, plus the islands Saint-Pierre and Miquelon, possessions of France, in North America.",
+    "src": "https://en.wikipedia.org/wiki/Gulf_of_St._Lawrence",
+    "verified": true
+  },
+  {
+    "in": [
+      "atlantic_ocean",
+      "greenland"
+    ],
+    "out": "labrador_sea",
+    "why": "The Labrador Sea is an arm of the North Atlantic Ocean between the Labrador Peninsula and Greenland. The sea is flanked by continental shelves to the southwest, northwest, and northeast.",
+    "src": "https://en.wikipedia.org/wiki/Labrador_Sea",
+    "verified": true
+  },
+  {
+    "in": [
+      "norway",
+      "atlantic_ocean"
+    ],
+    "out": "norwegian_sea",
+    "why": "The Norwegian Sea is a marginal sea, grouped with either the Atlantic Ocean or the Arctic Ocean, northwest of Norway between the North Sea and the Greenland Sea, adjoining the Barents Sea to the northeast. In the southwest, it is separated from the Atlantic Ocean by a submarine ridge running between Iceland and the Faroe Islands.",
+    "src": "https://en.wikipedia.org/wiki/Norwegian_Sea",
+    "verified": true
+  },
+  {
+    "in": [
+      "black_sea",
+      "ukraine"
+    ],
+    "out": "sea_of_azov",
+    "why": "The Sea of Azov is an inland shelf sea in Eastern Europe connected to the Black Sea by the narrow (about 4 km (2.5 mi)) Strait of Kerch, and sometimes regarded as a northern extension of the Black Sea. The sea is bounded by Russia on the east, and by Ukraine on the northwest and southwest (the parts of Ukraine bordering the sea have been under Russian occupation since 2022).",
+    "src": "https://en.wikipedia.org/wiki/Sea_of_Azov",
+    "verified": true
+  },
+  {
+    "in": [
+      "turkey",
+      "mediterranean_sea"
+    ],
+    "out": "sea_of_marmara",
+    "why": "The Sea of Marmara, also known as the Sea of Marmora, the Marmara Sea, or Propontis, is a small inland sea entirely within the borders of Turkey. It links the Black Sea and the Aegean Sea via the Bosporus and Dardanelles straits, separating Turkey's European and Asian sides.",
+    "src": "https://en.wikipedia.org/wiki/Sea_of_Marmara",
+    "verified": true
+  },
+  {
+    "in": [
+      "pacific_ocean",
+      "glacier"
+    ],
+    "out": "gulf_of_alaska",
+    "why": "The Gulf of Alaska is an arm of the Pacific Ocean defined by the curve of the southern coast of Alaska, stretching from Kabuch Point in the Alaska Peninsula and Kodiak Island in the west to the Cape Spencer in the east, where Glacier Bay is found and start the Inside Passage (Coastal Waters of Southeast Alaska and British Columbia). The Gulf shoreline is a combination of forest, mountain and a number of tidewater glaciers.",
+    "src": "https://en.wikipedia.org/wiki/Gulf_of_Alaska",
+    "verified": true
+  },
+  {
+    "in": [
+      "australia",
+      "coral_sea"
+    ],
+    "out": "gulf_of_carpentaria",
+    "why": "The Gulf of Carpentaria is a sea off the northern coast of Australia. It is enclosed on three sides by northern Australia and bounded on the north by the eastern Arafura Sea, which separates Australia and New Guinea.",
+    "src": "https://en.wikipedia.org/wiki/Gulf_of_Carpentaria",
+    "verified": true
+  },
+  {
+    "in": [
+      "china",
+      "pacific_ocean"
+    ],
+    "out": "east_china_sea",
+    "why": "The East China Sea is a marginal sea of the Western Pacific Ocean, located directly offshore from East China. China names the body of water along its eastern coast as the \"East Sea\" due to direction, the name of \"East China Sea\" is otherwise designated as a formal name by International Hydrographic Organization (IHO) and used internationally.",
+    "src": "https://en.wikipedia.org/wiki/East_China_Sea",
+    "verified": true
+  },
+  {
+    "in": [
+      "russia",
+      "pacific_ocean"
+    ],
+    "out": "sea_of_okhotsk",
+    "why": "The Sea of Okhotsk is a marginal sea of the northwestern Pacific Ocean. It is located between Russia's Kamchatka Peninsula on the east, the Kuril Islands on the southeast, Japan's island of Hokkaido on the south, the island of Sakhalin along the west, and a stretch of eastern Siberian coast along the west and north.",
+    "src": "https://en.wikipedia.org/wiki/Sea_of_Okhotsk",
+    "verified": true
+  },
+  {
+    "in": [
+      "japan",
+      "strait"
+    ],
+    "out": "seto_inland_sea",
+    "why": "The Seto Inland Sea, sometimes shortened to the Inland Sea, is the body of water separating Honshu, Shikoku, and Kyushu, three of the four main islands of Japan. It serves as a waterway connecting the Pacific Ocean to the Sea of Japan.",
+    "src": "https://en.wikipedia.org/wiki/Seto_Inland_Sea",
+    "verified": true
+  },
+  {
+    "in": [
+      "thailand",
+      "south_china_sea"
+    ],
+    "out": "gulf_of_thailand",
+    "why": "The Gulf of Thailand, historically known as the Gulf of Siam, is a shallow inlet adjacent to the southwestern South China Sea, bounded between the southwestern shores of Mainland Southeast Asia and the northern half of the Malay Peninsula. It is around 800 km (500 mi) in length and up to 560 km (350 mi) in width, and has a surface area of 320,000 km2 (120,000 sq mi).",
+    "src": "https://en.wikipedia.org/wiki/Gulf_of_Thailand",
+    "verified": true
+  },
+  {
+    "in": [
+      "myanmar",
+      "indian_ocean"
+    ],
+    "out": "andaman_sea",
+    "why": "The Andaman Sea (historically also known as the Burma Sea) is a marginal sea of the northeastern Indian Ocean bounded by the coastlines of Myanmar and Thailand along the Gulf of Martaban and the west side of the Malay Peninsula, and separated from the Bay of Bengal to its west by the Andaman Islands and the Nicobar Islands.",
+    "src": "https://en.wikipedia.org/wiki/Andaman_Sea",
+    "verified": true
+  },
+  {
+    "in": [
+      "indonesia",
+      "indian_ocean"
+    ],
+    "out": "timor_sea",
+    "why": "The Timor Sea (Indonesian: Laut Timor; Portuguese: Mar de Timor; Tetun: Tasi Mane or Tasi Timór) is a relatively shallow sea in the Indian Ocean bounded to the north by the island of Timor with Timor-Leste to the north, Indonesia to the northwest, Arafura Sea to the east, and to the south by Australia.",
+    "src": "https://en.wikipedia.org/wiki/Timor_Sea",
+    "verified": true
+  },
+  {
+    "in": [
+      "canada",
+      "greenland"
+    ],
+    "out": "baffin_bay",
+    "why": "Baffin Bay, located between Baffin Island and the west coast of Greenland, is defined by the International Hydrographic Organization as a marginal sea of the Arctic Ocean. It is sometimes considered a sea of the North Atlantic Ocean.",
+    "src": "https://en.wikipedia.org/wiki/Baffin_Bay",
+    "verified": true
+  },
+  {
+    "in": [
+      "arctic_ocean",
+      "canada"
+    ],
+    "out": "beaufort_sea",
+    "why": "The Beaufort Sea is a marginal sea of the Arctic Ocean, located north of the Northwest Territories, Yukon, and Alaska, and west of the Canadian Arctic Archipelago. The sea is named after Sir Francis Beaufort, a hydrographer.",
+    "src": "https://en.wikipedia.org/wiki/Beaufort_Sea",
+    "verified": true
+  },
+  {
+    "in": [
+      "arctic_ocean",
+      "greenland"
+    ],
+    "out": "greenland_sea",
+    "why": "The Greenland Sea (Danish: Grønlandshavet) is a body of water that borders Greenland to the west, the Svalbard archipelago to the east, Fram Strait and the Arctic Ocean to the north, and the Norwegian Sea and Iceland to the south. The Greenland Sea is often defined as part of the Arctic Ocean, sometimes as part of the Atlantic Ocean.",
+    "src": "https://en.wikipedia.org/wiki/Greenland_Sea",
+    "verified": true
+  },
+  {
+    "in": [
+      "arctic_ocean",
+      "siberia"
+    ],
+    "out": "kara_sea",
+    "why": "The Kara Sea is a marginal sea, separated from the Barents Sea to the west by the Kara Strait and Novaya Zemlya, and from the Laptev Sea to the east by the Severnaya Zemlya archipelago. Ultimately the Kara, Barents and Laptev Seas are all extensions of the Arctic Ocean north of Siberia.",
+    "src": "https://en.wikipedia.org/wiki/Kara_Sea",
+    "verified": true
+  },
+  {
+    "in": [
+      "arctic_ocean",
+      "russia"
+    ],
+    "out": "white_sea",
+    "why": "The White Sea is a southern inlet of the Barents Sea located on the northwest coast of Russia. It is surrounded by Karelia to the west, the Kola Peninsula to the north, and the Kanin Peninsula to the northeast.",
+    "src": "https://en.wikipedia.org/wiki/White_Sea",
+    "verified": true
+  },
+  {
+    "in": [
+      "australia",
+      "southern_ocean"
+    ],
+    "out": "great_australian_bight",
+    "why": "The Great Australian Bight is a large oceanic bight (open gulf) off the central and western portions of the southern coastline of mainland Australia. There are two definitions for its extent—one by the International Hydrographic Organization (IHO) and another by the Australian Hydrographic Service (AHS).",
+    "src": "https://en.wikipedia.org/wiki/Great_Australian_Bight",
+    "verified": true
+  },
+  {
+    "in": [
+      "antarctica",
+      "ice"
+    ],
+    "out": "weddell_sea",
+    "why": "The Weddell Sea is part of the Southern Ocean and contains the Weddell Gyre. Its land boundaries are defined by the bay formed from the coasts of Coats Land and the Antarctic Peninsula.",
+    "src": "https://en.wikipedia.org/wiki/Weddell_Sea",
+    "verified": true
+  },
+  {
+    "in": [
+      "red_sea",
+      "arabian_sea"
+    ],
+    "out": "gulf_of_aden",
+    "why": "The Gulf of Aden is a deepwater gulf of the Indian Ocean between Yemen to the north, the Arabian Sea to the east, Djibouti to the west, and the Guardafui Channel, the Socotra Archipelago, Puntland in Somalia and Somaliland to the south. In the northwest, it connects with the Red Sea through the Bab-el-Mandeb strait, and it connects with the Arabian Sea to the east.",
+    "src": "https://en.wikipedia.org/wiki/Gulf_of_Aden",
+    "verified": true
+  },
+  {
+    "in": [
+      "australia",
+      "tasman_sea"
+    ],
+    "out": "bass_strait",
+    "why": "Bass Strait is a strait separating the island state of Tasmania from the Australian mainland (more specifically the coast of Victoria, with the exception of the land border across Boundary Islet). The strait provides the most direct waterway between the Great Australian Bight and the Tasman Sea, and is also the only maritime route into the economically prominent Port Phillip Bay.",
+    "src": "https://en.wikipedia.org/wiki/Bass_Strait",
+    "verified": true
+  },
+  {
+    "in": [
+      "new_zealand",
+      "tasman_sea"
+    ],
+    "out": "cook_strait",
+    "why": "Cook Strait is a strait that separates the North and South Islands of New Zealand. The strait connects the Tasman Sea on the northwest with the South Pacific Ocean on the southeast.",
+    "src": "https://en.wikipedia.org/wiki/Cook_Strait",
+    "verified": true
+  },
+  {
+    "in": [
+      "denmark",
+      "baltic_sea"
+    ],
+    "out": "kattegat",
+    "why": "The Kattegat is a sea of roughly 24,000 km2 (9,300 sq mi) bounded by the Skagerrak in the north, Jutland in the west, the Danish Straits and Zealand in the south and the Swedish provinces of Bohuslän, Västergötland, Halland and Scania in the east. The Baltic Sea drains into the Kattegat through the Danish Straits.",
+    "src": "https://en.wikipedia.org/wiki/Kattegat",
+    "verified": true
+  },
+  {
+    "in": [
+      "south_korea",
+      "japan"
+    ],
+    "out": "korea_strait",
+    "why": "The Korea Strait is a sea passage in East Asia between the Korean Peninsula and Japan. It connects the East China Sea, the Yellow Sea and the Sea of Japan in the northwest Pacific Ocean.",
+    "src": "https://en.wikipedia.org/wiki/Korea_Strait",
+    "verified": true
+  },
+  {
+    "in": [
+      "chile",
+      "pacific_ocean"
+    ],
+    "out": "strait_of_magellan",
+    "why": "The Strait of Magellan, also called the Straits of Magellan, is a navigable sea route in southern Chile separating mainland South America to the north and the Tierra del Fuego archipelago to the south. Considered the most important natural passage between the Atlantic and Pacific oceans, the strait is approximately 570 km (310 nmi; 350 mi) long and 2 km (1.1 nmi; 1.2 mi) wide at its narrowest point.",
+    "src": "https://en.wikipedia.org/wiki/Strait_of_Magellan",
+    "verified": true
+  },
+  {
+    "in": [
+      "mozambique",
+      "indian_ocean"
+    ],
+    "out": "mozambique_channel",
+    "why": "The Mozambique Channel is an arm of the Indian Ocean located between the Southeast African countries of Madagascar and Mozambique. The channel is about 1,700 km (900 nmi; 1,100 mi) long and 419 km (226 nmi; 260 mi) across at its narrowest point, and reaches a depth of 3,292 m (10,801 ft) about 230 km (124 nmi; 143 mi) off the coast of Mozambique.",
+    "src": "https://en.wikipedia.org/wiki/Mozambique_Channel",
+    "verified": true
+  },
+  {
+    "in": [
+      "india",
+      "sri_lanka"
+    ],
+    "out": "palk_strait",
+    "why": "Palk Strait is a strait between the Pamban Island in the Indian state of Tamil Nadu and the Mannar Island in the Northern Province of Sri Lanka. It links the Bay of Bengal to the Laccadive Sea.",
+    "src": "https://en.wikipedia.org/wiki/Palk_Strait",
+    "verified": true
+  },
+  {
+    "in": [
+      "norway",
+      "denmark"
+    ],
+    "out": "skagerrak",
+    "why": "The Skagerrak is a strait running between the North Jutlandic Island of Denmark, the east coast of Norway and the west coast of Sweden, connecting the North Sea and the Kattegat sea. The Skagerrak contains some of the busiest shipping routes in the world, with vessels from every corner of the globe.",
+    "src": "https://en.wikipedia.org/wiki/Skagerrak",
+    "verified": true
+  },
+  {
+    "in": [
+      "africa",
+      "lake_tanganyika"
+    ],
+    "out": "african_great_lakes",
+    "why": "The African Great Lakes (Swahili: Maziwa Makuu; Kinyarwanda: Ibiyaga bigari) are a series of lakes constituting the part of the Rift Valley lakes in and around the East African Rift.",
+    "src": "https://en.wikipedia.org/wiki/African_Great_Lakes",
+    "verified": true
+  },
+  {
+    "in": [
+      "uganda",
+      "lake_victoria"
+    ],
+    "out": "lake_albert_africa",
+    "why": "Lake Albert, originally known as Lake Mwitanzige by the Banyoro, Nam Ovoyo Bonyo by the Alur, and temporarily as Lake Mobutu Sese Seko, is a lake located in Uganda and the Democratic Republic of the Congo. It is Africa's sixth-largest lake and the second biggest of Uganda's Great Lakes.",
+    "src": "https://en.wikipedia.org/wiki/Lake_Albert_(Africa)",
+    "verified": true
+  },
+  {
+    "in": [
+      "malawi",
+      "lake"
+    ],
+    "out": "lake_malawi",
+    "why": "Lake Malawi, also known as Lake Nyasa in Tanzania and Lago Niassa in Mozambique, (Swahili: Ziwa Nyasa) is an African Great Lake and the southernmost lake in the East African Rift system, located between Malawi, Mozambique and Tanzania. It is the fourth largest freshwater lake in the world by volume, the ninth largest lake in the world by area and the third largest and second deepest lake in Africa.",
+    "src": "https://en.wikipedia.org/wiki/Lake_Malawi",
+    "verified": true
+  },
+  {
+    "in": [
+      "zambia",
+      "dam"
+    ],
+    "out": "lake_kariba",
+    "why": "Lake Kariba is the world's largest artificial lake and reservoir by volume. It lies 1,300 kilometres (810 mi) upstream from the mouth of the Zambezi river on the Indian Ocean, bordering Zambia and Zimbabwe.",
+    "src": "https://en.wikipedia.org/wiki/Lake_Kariba",
+    "verified": true
+  },
+  {
+    "in": [
+      "zambia",
+      "lake"
+    ],
+    "out": "lake_mweru",
+    "why": "Lake Mweru (also spelled Mwelu, Mwero) is a freshwater lake on the longest arm of Africa's second-longest river, the Congo. Located on the border between Zambia and Democratic Republic of the Congo, it makes up 110 kilometres (68 mi) of the total length of the Congo, lying between its Luapula River (upstream) and Luvua River (downstream) segments.",
+    "src": "https://en.wikipedia.org/wiki/Lake_Mweru",
+    "verified": true
+  },
+  {
+    "in": [
+      "ghana",
+      "dam"
+    ],
+    "out": "lake_volta",
+    "why": "Lake Volta, the largest artificial reservoir in the world by surface area, is contained behind the Akosombo Dam which generates a substantial amount of Ghana's electricity. It is completely within the country of Ghana and has a surface area of 8,502 square kilometres (3,283 sq mi).",
+    "src": "https://en.wikipedia.org/wiki/Lake_Volta",
+    "verified": true
+  },
+  {
+    "in": [
+      "russia",
+      "lake_ladoga"
+    ],
+    "out": "lake_onega",
+    "why": "Lake Onega is a lake in northwestern Russia, on the territory of the Republic of Karelia, Leningrad Oblast and Vologda Oblast. It belongs to the basin of the Baltic Sea, and is the second-largest lake in Europe after Lake Ladoga, slightly smaller than Lebanon.",
+    "src": "https://en.wikipedia.org/wiki/Lake_Onega",
+    "verified": true
+  },
+  {
+    "in": [
+      "sweden",
+      "lake"
+    ],
+    "out": "vanern",
+    "why": "Vänern is the largest lake in Sweden, the largest lake in the European Union and the third-largest lake in Europe after Ladoga and Onega in Russia. It is located in the provinces of Västergötland, Dalsland, and Värmland in the southwest of the country.",
+    "src": "https://en.wikipedia.org/wiki/Vänern",
+    "verified": true
+  },
+  {
+    "in": [
+      "great_lakes",
+      "united_states"
+    ],
+    "out": "lake_erie",
+    "why": "Lake Erie is the fourth-largest lake by surface area of the five Great Lakes in North America and the eleventh-largest globally. It is the southernmost, shallowest, and smallest by volume of the Great Lakes and also has the shortest average water residence time.",
+    "src": "https://en.wikipedia.org/wiki/Lake_Erie",
+    "verified": true
+  },
+  {
+    "in": [
+      "great_lakes",
+      "canada"
+    ],
+    "out": "lake_huron",
+    "why": "Lake Huron is one of the five Great Lakes of North America. It is shared on the north and east by the Canadian province of Ontario and on the south and west by the U.S. state of Michigan. The name of the lake is derived from early French explorers who named it for the indigenous people they knew as Huron (Wyandot) inhabiting the region.",
+    "src": "https://en.wikipedia.org/wiki/Lake_Huron",
+    "verified": true
+  },
+  {
+    "in": [
+      "great_lakes",
+      "lake"
+    ],
+    "out": "lake_michigan",
+    "why": "Lake Michigan is one of the five Great Lakes of North America. It is the second-largest of the Great Lakes by volume (1,180 cu mi; 4,900 km3) and depth (923 ft; 281 m) after Lake Superior and the third-largest by surface area (22,300 square miles; 57,757 km2), after Lake Superior and Lake Huron.",
+    "src": "https://en.wikipedia.org/wiki/Lake_Michigan",
+    "verified": true
+  },
+  {
+    "in": [
+      "great_lakes",
+      "st_lawrence_river"
+    ],
+    "out": "lake_ontario",
+    "why": "Lake Ontario is one of the five Great Lakes of North America. It is bounded on the north, west, and southwest by the Canadian province of Ontario, and on the south and east by the U.S. state of New York.",
+    "src": "https://en.wikipedia.org/wiki/Lake_Ontario",
+    "verified": true
+  },
+  {
+    "in": [
+      "arctic_ocean",
+      "lake"
+    ],
+    "out": "great_bear_lake",
+    "why": "Great Bear Lake in the boreal forest of Canada is the largest lake entirely in Canada, the fourth-largest in North America, and the eighth-largest in the world. The lake is in the Northwest Territories, on the Arctic Circle between 65 and 67 degrees of northern latitude and between 118 and 123 degrees western longitude, 156 m (512 ft) above sea level.",
+    "src": "https://en.wikipedia.org/wiki/Great_Bear_Lake",
+    "verified": true
+  },
+  {
+    "in": [
+      "canada",
+      "fishing"
+    ],
+    "out": "great_slave_lake",
+    "why": "Great Slave Lake is the second-largest lake in the Northwest Territories, Canada (after Great Bear Lake), the deepest lake in North America at 614 m (2,014 ft), and the tenth-largest lake in the world by area. It is 469 km (291 mi) long and 20 to 203 km (12 to 126 mi) wide.",
+    "src": "https://en.wikipedia.org/wiki/Great_Slave_Lake",
+    "verified": true
+  },
+  {
+    "in": [
+      "nicaragua",
+      "lake"
+    ],
+    "out": "lake_nicaragua",
+    "why": "Lake Nicaragua or Cocibolca or Granada is a freshwater lake in Nicaragua. Of tectonic origin and with an area of 8,264 km2 (3,191 sq mi), it is the largest fresh water lake in Central America, the 19th largest lake in the world (by area) and the tenth largest in the Americas, slightly smaller than Lake Titicaca.",
+    "src": "https://en.wikipedia.org/wiki/Lake_Nicaragua",
+    "verified": true
+  },
+  {
+    "in": [
+      "canada",
+      "prairie"
+    ],
+    "out": "lake_winnipeg",
+    "why": "Lake Winnipeg is a 24,514-square-kilometre (9,465-square-mile) lake in North America, in the Canadian province of Manitoba. Its southern end is about 55 kilometres (34 miles) north of the namesake city, Winnipeg.",
+    "src": "https://en.wikipedia.org/wiki/Lake_Winnipeg",
+    "verified": true
+  },
+  {
+    "in": [
+      "kazakhstan",
+      "delta"
+    ],
+    "out": "lake_balkhash",
+    "why": "Lake Balkhash, also known as Lake Balqash, is a lake in southeastern Kazakhstan. It is one of the largest lakes in Asia and the 15th largest in the world.",
+    "src": "https://en.wikipedia.org/wiki/Lake_Balkhash",
+    "verified": true
+  },
+  {
+    "in": [
+      "kyrgyzstan",
+      "lake"
+    ],
+    "out": "issyk_kul",
+    "why": "Issyk-Kul or Ysyk-Köl is an endorheic saline lake in the western Tian Shan mountains in eastern Kyrgyzstan—just south of a dividing range separating Kyrgyzstan from Kazakhstan. It is the eighth-deepest lake in the world, the eleventh-largest lake in the world by volume, and the second-largest saline lake.",
+    "src": "https://en.wikipedia.org/wiki/Issyk-Kul",
+    "verified": true
+  },
+  {
+    "in": [
+      "china",
+      "lake"
+    ],
+    "out": "poyang_lake",
+    "why": "Poyang Lake is the largest freshwater lake in China. Located within Jiujiang Prefecture in Jiangxi Province, it is fed by the Gan, Xin, and Xiu rivers and flows northward into the Yangtze River through a channel. The area of Poyang Lake fluctuates dramatically between the wet and dry seasons, but in recent years the size of the lake has been decreasing overall.",
+    "src": "https://en.wikipedia.org/wiki/Poyang_Lake",
+    "verified": true
+  },
+  {
+    "in": [
+      "china",
+      "plateau"
+    ],
+    "out": "qinghai_lake",
+    "why": "Qinghai Lake is the largest lake in China. Located in the Qinghai Province, to which it gave its name, Qinghai Lake is classified as an alkaline endorheic salt lake. The lake has fluctuated in size, shrinking over much of the 20th century but increasing since 2004.",
+    "src": "https://en.wikipedia.org/wiki/Qinghai_Lake",
+    "verified": true
+  },
+  {
+    "in": [
+      "iran",
+      "lake"
+    ],
+    "out": "lake_urmia",
+    "why": "Lake Urmia is an endorheic salt lake in Iran. The lake is located in the Iranian region of Azerbaijan, near the Armenian border and south of the Caspian Sea. At its greatest extent, it was the largest lake in West Asia.",
+    "src": "https://en.wikipedia.org/wiki/Lake_Urmia",
+    "verified": true
+  },
+  {
+    "in": [
+      "china",
+      "pagoda"
+    ],
+    "out": "west_lake",
+    "why": "West Lake, also known as Xihu and by other names, is a freshwater lake in Hangzhou, China. Situated to the west of Hangzhou's former walled city, the lake has a surface area of 6.39 km2 (2.47 sq mi), stretching 3.2 km (2.0 mi) from north to south and 2.8 km (1.7 mi) from east to west.",
+    "src": "https://en.wikipedia.org/wiki/West_Lake",
+    "verified": true
+  },
+  {
+    "in": [
+      "antarctica",
+      "lake"
+    ],
+    "out": "lake_vostok",
+    "why": "Lake Vostok is the largest of Antarctica's 675 known subglacial lakes and the 16th largest lake in the world by area. Lake Vostok is located at the southern Pole of Cold, beneath Russia's Vostok Station, under the surface of the central East Antarctic Ice Sheet, which is at 3,488 m (11,444 ft) above mean sea level.",
+    "src": "https://en.wikipedia.org/wiki/Lake_Vostok",
+    "verified": true
+  },
+  {
+    "in": [
+      "ganges",
+      "india"
+    ],
+    "out": "yamuna",
+    "why": "The Yamuna is the second-largest tributary river of the Ganges by discharge and the longest tributary in India. Originating from the Yamunotri Glacier at a height of about 4,500 m (14,800 ft) on the southwestern slopes of Bandarpunch peaks of the Lower Himalaya in Uttarakhand.",
+    "src": "https://en.wikipedia.org/wiki/Yamuna",
+    "verified": true
+  },
+  {
+    "in": [
+      "siberia",
+      "river"
+    ],
+    "out": "lena_river",
+    "why": "The Lena is a river in the Russian Far East and is the easternmost river of the three great rivers of Siberia which flow into the Arctic Ocean, the others being Ob and Yenisey. The Lena River is 4,294 km (2,668 mi) long and has a capacious drainage basin of 2,490,000 km2 (960,000 mi2); thus the Lena is the eleventh-longest river in the world and the longest river entirely within Russia.",
+    "src": "https://en.wikipedia.org/wiki/Lena_River",
+    "verified": true
+  },
+  {
+    "in": [
+      "siberia",
+      "ice"
+    ],
+    "out": "yenisei",
+    "why": "The Yenisei or Yenisey is the fifth-longest river system in the world, and the largest to drain into the Arctic Ocean. Beginning in Mungaragiyn-gol in Mongolia, it follows a northerly course through the Krasnoyarsk Dam before draining into the Yenisei Gulf in the Kara Sea.",
+    "src": "https://en.wikipedia.org/wiki/Yenisei",
+    "verified": true
+  },
+  {
+    "in": [
+      "siberia",
+      "kazakhstan"
+    ],
+    "out": "ob_river",
+    "why": "The Ob is a major river in Russia. It is in western Siberia, and with its tributary the Irtysh forms the world's seventh-longest river system, at 5,410 kilometres (3,360 mi). The Ob forms at the confluence of the Biya and Katun which have their origins in the Altai Mountains.",
+    "src": "https://en.wikipedia.org/wiki/Ob",
+    "verified": true
+  },
+  {
+    "in": [
+      "russia",
+      "china"
+    ],
+    "out": "amur",
+    "why": "The Amur River or Heilong River is a perennial river in Northeast Asia, forming the natural border between the Russian Far East and Northeast China (historically the Outer and Inner Manchuria). The Amur proper is 2,824 km (1,755 mi) long, and has a drainage basin of 1,855,000 km2 (716,000 mi2).",
+    "src": "https://en.wikipedia.org/wiki/Amur",
+    "verified": true
+  },
+  {
+    "in": [
+      "uzbekistan",
+      "turkmenistan"
+    ],
+    "out": "amu_darya",
+    "why": "The Amu Darya, historically known as the Oxus, is a major river in Central Asia which flows through Afghanistan, Tajikistan, Turkmenistan, and Uzbekistan.",
+    "src": "https://en.wikipedia.org/wiki/Amu_Darya",
+    "verified": true
+  },
+  {
+    "in": [
+      "myanmar",
+      "china"
+    ],
+    "out": "salween_river",
+    "why": "The Salween is a Southeast Asian river, about 3,289 km (2,044 mi) long, flowing from the Tibetan Plateau south into the Andaman Sea. The Salween flows primarily within southwest China and eastern Myanmar, with a short section forming the border of Myanmar and Thailand.",
+    "src": "https://en.wikipedia.org/wiki/Salween_River",
+    "verified": true
+  },
+  {
+    "in": [
+      "russia",
+      "kazakhstan"
+    ],
+    "out": "ural_river",
+    "why": "The Ural, also known as the Yaik, is a river flowing through Russia and Kazakhstan in the continental border between Europe and Asia. It originates in the southern Ural Mountains and discharges into the Caspian Sea.",
+    "src": "https://en.wikipedia.org/wiki/Ural_(river)",
+    "verified": true
+  },
+  {
+    "in": [
+      "kazakhstan",
+      "uzbekistan"
+    ],
+    "out": "syr_darya",
+    "why": "The Syr Darya, historically known as the Jaxartes, is a river in Central Asia. It originates in the Tian Shan mountains in Kyrgyzstan and eastern Uzbekistan, and flows west and north-west through Uzbekistan, Sughd province of Tajikistan, and southern Kazakhstan to the northern remnants of the Aral Sea.",
+    "src": "https://en.wikipedia.org/wiki/Syr_Darya",
+    "verified": true
+  },
+  {
+    "in": [
+      "myanmar",
+      "river"
+    ],
+    "out": "irrawaddy_river",
+    "why": "The Irrawaddy River is the principal river of Myanmar, running through the centre of the country. Myanmar's most important commercial waterway, it is about 1,350 mi (2,170 km) long.",
+    "src": "https://en.wikipedia.org/wiki/Irrawaddy_River",
+    "verified": true
+  },
+  {
+    "in": [
+      "china",
+      "delta"
+    ],
+    "out": "pearl_river",
+    "why": "The Pearl River is an extensive river system in southern China. \"Pearl River\" is often also used as a catch-all for the watersheds of the Pearl tributaries within Guangdong, specifically the Xi ('west'), Bei ('north'), and Dong ('east').",
+    "src": "https://en.wikipedia.org/wiki/Pearl_River",
+    "verified": true
+  },
+  {
+    "in": [
+      "india",
+      "delta"
+    ],
+    "out": "godavari_river",
+    "why": "The Godavari is India's second longest river after the Ganges River, and drains the third largest basin in India, covering about 10% of the total geographical area. Its source is in Trimbakeshwar, Nashik, Maharashtra.",
+    "src": "https://en.wikipedia.org/wiki/Godavari_River",
+    "verified": true
+  },
+  {
+    "in": [
+      "india",
+      "plateau"
+    ],
+    "out": "krishna_river",
+    "why": "The Krishnā River, in full Krishnaveni, in the Deccan Plateau is the third-longest in India, after the Ganga and Godavari. It is also the fourth-largest in terms of water inflows and river basin area in India, after the Ganga, Indus and Godavari.",
+    "src": "https://en.wikipedia.org/wiki/Krishna_River",
+    "verified": true
+  },
+  {
+    "in": [
+      "mississippi_river",
+      "united_states"
+    ],
+    "out": "ohio_river",
+    "why": "The Ohio River is a 981-mile-long (1,579 km) river in the United States. It begins in the Northeast and serves as the boundary between the Midwestern and Southern United States, flowing in a southwesterly direction from Pittsburgh, Pennsylvania, to its mouth on the Mississippi River at Cairo, Illinois.",
+    "src": "https://en.wikipedia.org/wiki/Ohio_River",
+    "verified": true
+  },
+  {
+    "in": [
+      "canada",
+      "glacier"
+    ],
+    "out": "yukon_river",
+    "why": "The Yukon River is a major watercourse of northwestern North America. From its source in British Columbia, it flows through Canada's territory of Yukon (itself named after the river).",
+    "src": "https://en.wikipedia.org/wiki/Yukon_River",
+    "verified": true
+  },
+  {
+    "in": [
+      "canada",
+      "tundra"
+    ],
+    "out": "mackenzie_river",
+    "why": "The Mackenzie River is a river in the Canadian boreal forest and tundra. It forms, along with the Slave, Peace, and Finlay, the longest river system in Canada, the second largest drainage basin of any North American river after the Mississippi.",
+    "src": "https://en.wikipedia.org/wiki/Mackenzie_River",
+    "verified": true
+  },
+  {
+    "in": [
+      "amazon_river",
+      "bolivia"
+    ],
+    "out": "madeira_river",
+    "why": "The Madeira River is a major waterway in South America. It is estimated to be 1,450 km (900 mi) in length, while the Madeira-Mamoré is estimated near 3,250 km (2,020 mi) or 3,380 km (2,100 mi) in length depending on the measuring party and their methods. The Madeira is the biggest tributary of the Amazon, accounting for about 15% of the water in the basin.",
+    "src": "https://en.wikipedia.org/wiki/Madeira_River",
+    "verified": true
+  },
+  {
+    "in": [
+      "amazon_river",
+      "colombia"
+    ],
+    "out": "rio_negro_amazon",
+    "why": "The Rio Negro, or Guainía as it is known in its upper part, is the largest left tributary of the Amazon River (accounting for about 14% of the water in the Amazon basin), the largest blackwater river in the world, and one of the world's ten largest rivers by average discharge. It originates in the tepuis of the department of Guainía, Colombia, and then flows southeastward before finally entering Brazil.",
+    "src": "https://en.wikipedia.org/wiki/Rio_Negro_(Amazon)",
+    "verified": true
+  },
+  {
+    "in": [
+      "colombia",
+      "valley"
+    ],
+    "out": "magdalena_river",
+    "why": "The Magdalena River is the main river of Colombia, flowing northward about 1,528 kilometres (949 mi) through the western half of the country. It takes its name from the biblical figure Mary Magdalene.",
+    "src": "https://en.wikipedia.org/wiki/Magdalena_River",
+    "verified": true
+  },
+  {
+    "in": [
+      "brazil",
+      "river"
+    ],
+    "out": "sao_francisco_river",
+    "why": "The São Francisco River, known in English as the San Francisco River, is a large river in Brazil. With a length of 2,914 kilometres (1,811 mi), it is the longest river that runs entirely in Brazilian territory, and the fourth longest in South America and overall in Brazil (after the Amazon, the Paraná and the Madeira).",
+    "src": "https://en.wikipedia.org/wiki/São_Francisco_River",
+    "verified": true
+  },
+  {
+    "in": [
+      "uruguay",
+      "river"
+    ],
+    "out": "uruguay_river",
+    "why": "The Uruguay River is a major river in South America. It flows from north to south and forms parts of the boundaries of Brazil, Argentina and Uruguay, separating some of the Argentine provinces of the Mesopotamia from the other two countries.",
+    "src": "https://en.wikipedia.org/wiki/Uruguay_River",
+    "verified": true
+  },
+  {
+    "in": [
+      "congo_river",
+      "democratic_republic_of_the_congo"
+    ],
+    "out": "ubangi_river",
+    "why": "The Ubangi River, also spelled Oubangui, is a river in Central Africa, and the largest right-bank tributary of the Congo River. It begins at the confluence of the Mbomou and Uele Rivers and flows west, forming the border between Central African Republic (CAR) and the Democratic Republic of the Congo (DRC).",
+    "src": "https://en.wikipedia.org/wiki/Ubangi_River",
+    "verified": true
+  },
+  {
+    "in": [
+      "mozambique",
+      "river"
+    ],
+    "out": "limpopo_river",
+    "why": "The Limpopo River rises in South Africa and flows generally eastward through Mozambique to the Indian Ocean. The river is approximately 1,750 km (1,090 mi) long, with a drainage basin of 415,000 km2 (160,000 mi2) in size.",
+    "src": "https://en.wikipedia.org/wiki/Limpopo_River",
+    "verified": true
+  },
+  {
+    "in": [
+      "south_africa",
+      "river"
+    ],
+    "out": "orange_river",
+    "why": "The Orange River is a river in Southern Africa. It is the longest river in South Africa. With a total length of 2,432 km (1,511 mi), the Orange River Basin extends from Lesotho into South Africa and Namibia to the north.",
+    "src": "https://en.wikipedia.org/wiki/Orange_River",
+    "verified": true
+  },
+  {
+    "in": [
+      "senegal",
+      "river"
+    ],
+    "out": "senegal_river",
+    "why": "The Senegal River is a 1086-kilometre-long (675 mi) river in West Africa; much of its length marks part of the border between Senegal and Mauritania.",
+    "src": "https://en.wikipedia.org/wiki/Senegal_River",
+    "verified": true
+  },
+  {
+    "in": [
+      "ukraine",
+      "river"
+    ],
+    "out": "dnieper",
+    "why": "The Dnieper or Dnepr, also known as the Dnipro, is one of the major transboundary rivers of Europe, rising in the Valdai Hills near Smolensk, Russia, before flowing through Belarus and Ukraine to the Black Sea.",
+    "src": "https://en.wikipedia.org/wiki/Dnieper",
+    "verified": true
+  },
+  {
+    "in": [
+      "russia",
+      "steppe"
+    ],
+    "out": "don_river",
+    "why": "The Don is the fifth-longest river in Europe. Flowing from Central Russia to the Sea of Azov in Southern Russia, it is one of Russia's largest rivers and played an important role for traders from the Byzantine Empire. Its basin is between the Dnieper basin to the west, the lower Volga basin immediately to the east, and the Oka basin (tributary of the Volga) to the north.",
+    "src": "https://en.wikipedia.org/wiki/Don_(river)",
+    "verified": true
+  },
+  {
+    "in": [
+      "france",
+      "valley"
+    ],
+    "out": "loire",
+    "why": "The Loire is the longest river in France and the 171st-longest in the world. With a length of 1,006 kilometres (625 mi), it drains 117,054 km2 (45,195 sq mi), more than a fifth of France's land, while its average discharge is only half that of the Rhône.",
+    "src": "https://en.wikipedia.org/wiki/Loire",
+    "verified": true
+  },
+  {
+    "in": [
+      "russia",
+      "baltic_sea"
+    ],
+    "out": "neva",
+    "why": "The Neva is a river in northwestern Russia flowing from Lake Ladoga through the western part of Leningrad Oblast (historical region of Ingria) to the Neva Bay of the Gulf of Finland. Despite its modest length of 74 kilometres (46 mi), it is the fourth-largest river in Europe in terms of average discharge (after the Volga, the Danube and the Rhine).",
+    "src": "https://en.wikipedia.org/wiki/Neva",
+    "verified": true
+  },
+  {
+    "in": [
+      "poland",
+      "baltic_sea"
+    ],
+    "out": "vistula",
+    "why": "The Vistula is the longest river in Poland and the longest river draining into the Baltic Sea, at 1,047 kilometres (651 miles) in length. Its drainage basin, extending into three other countries apart from Poland, covers 193,960 km2 (74,890 sq mi), of which 168,868 km2 is in Poland.",
+    "src": "https://en.wikipedia.org/wiki/Vistula",
+    "verified": true
+  },
+  {
+    "in": [
+      "australia",
+      "river"
+    ],
+    "out": "murray_river",
+    "why": "The Murray River (in South Australia: River Murray; Ngarrindjeri: Millewa, Yorta Yorta: Dhungala or Tongala) is a river in Southeastern Australia. It is Australia's longest river, spanning 2,508 km (1,558 mi).",
+    "src": "https://en.wikipedia.org/wiki/Murray_River",
+    "verified": true
+  },
+  {
+    "in": [
+      "canal",
+      "united_states"
+    ],
+    "out": "erie_canal",
+    "why": "The Erie Canal is a historic canal in upstate New York that runs east–west between the Hudson River and Lake Erie. Completed in 1825, the canal was the first navigable waterway connecting the Atlantic Ocean to the upper Great Lakes above Niagara Falls, vastly reducing the costs of transporting people and goods across the Appalachians.",
+    "src": "https://en.wikipedia.org/wiki/Erie_Canal",
+    "verified": true
+  },
+  {
+    "in": [
+      "canal",
+      "germany"
+    ],
+    "out": "kiel_canal",
+    "why": "The Kiel Canal is a 98-kilometer-long (61 mi) freshwater canal that links the North Sea to the Baltic Sea. It runs through the German state of Schleswig-Holstein, from Brunsbüttel, at the mouth of the Elbe, to Holtenau, on the Kiel Fjord.",
+    "src": "https://en.wikipedia.org/wiki/Kiel_Canal",
+    "verified": true
+  },
+  {
+    "in": [
+      "great_lakes",
+      "canal"
+    ],
+    "out": "st_lawrence_seaway",
+    "why": "The St. Lawrence Seaway is a system of rivers, locks, canals, and channels in Eastern Canada and the Northern United States that permits oceangoing vessels to travel from the Atlantic Ocean to the Great Lakes of North America, as far inland as Duluth, Minnesota, at the western end of Lake Superior. The seaway is named for the St. Lawrence River, which flows straight from Lake Ontario to the Atlantic Gulf of St. Lawrence.",
+    "src": "https://en.wikipedia.org/wiki/St._Lawrence_Seaway",
+    "verified": true
+  },
+  {
+    "in": [
+      "canal",
+      "russia"
+    ],
+    "out": "white_sea_baltic_canal",
+    "why": "The White Sea–Baltic Canal, often abbreviated to White Sea Canal (Belomorkanal), is a man-made ship canal in Russia. Opening on 2 August 1933, it connects the White Sea, in the Arctic Ocean, with Lake Onega, which is further connected to the Baltic Sea.",
+    "src": "https://en.wikipedia.org/wiki/White_Sea–Baltic_Canal",
+    "verified": true
+  },
+  {
+    "in": [
+      "ice_sheet",
+      "antarctica"
+    ],
+    "out": "antarctic_ice_sheet",
+    "why": "The Antarctic ice sheet is a continental glacier covering 98% of the Antarctic continent, with an area of 14 million square kilometres (5.4 million square miles) and an average thickness of over 2 kilometres (1.2 mi). It is the largest of Earth's two current ice sheets, containing 26.5 million cubic kilometres (6,400,000 cubic miles) of ice, which is equivalent to 61% of all fresh water on Earth.",
+    "src": "https://en.wikipedia.org/wiki/Antarctic_ice_sheet",
+    "verified": true
+  },
+  {
+    "in": [
+      "ice_sheet",
+      "greenland"
+    ],
+    "out": "greenland_ice_sheet",
+    "why": "The Greenland ice sheet is an ice sheet which forms the second-largest body of ice in the world. It is an average of 1,673 m (5,489 ft) thick and over 3,488 m (11,444 ft) thick at its maximum.",
+    "src": "https://en.wikipedia.org/wiki/Greenland_ice_sheet",
+    "verified": true
+  },
+  {
+    "in": [
+      "aquifer",
+      "australia"
+    ],
+    "out": "great_artesian_basin",
+    "why": "The Great Artesian Basin (GAB) of Australia is the largest and deepest artesian basin in the world, extending over 1,700,000 square kilometres (660,000 sq mi). Measured water temperatures range from 30 to 100 °C (86 to 212 °F).",
+    "src": "https://en.wikipedia.org/wiki/Great_Artesian_Basin",
+    "verified": true
   }
 ]

@@ -47545,6 +47545,52 @@ def('road_bicycle_racing', () => gAll(ring('ik', 14, 38, 11, 2.6), ring('ik', 46
 def('artistic_gymnastics', () => gAll(S('M6 6 L54 6', 'ik', 3), S('M20 6 L20 24 M40 6 L40 24', 'ik', 1.8), ring('ik', 20, 30, 7, 2.6), ring('ik', 40, 30, 7, 2.6), ...spPerson(30, 46, 0.9).slice(0, 0), S('M4 56 L56 56', 'ik', 1.6), S('M20 37 L20 50 M40 37 L40 50', 'lo', 1.6).slice(0, 0)));
 def('grand_slam_tennis', () => gAll(ring('ik', 22, 22, 13, 2.6), S('M12 13 L32 31 M10 20 L28 38 M16 9 L36 27', 'ik', 1).slice(0, 0), S('M12 12 L32 32 M32 12 L12 32 M22 9 L22 35 M9 22 L35 22', 'hi', 1), S('M32 31 L44 46', 'ik', 3.4), C(44, 14, 4.4, 'lo'), ...[[34, 52], [42, 52], [50, 52], [38, 46]].map(([x, y]) => P(star5(x, y, 3.4, 1.4), 'ik')).slice(0, 0), ...[0, 1, 2, 3].map(i => P(star5(n(30 + i * 8), 54, 3.4, 1.4), 'ik'))));
 
+/* ── seas, straits, lakes, rivers and canals, second batch, 12 Nov ── */
+const wDam = (x = 44) => [box(x - 3, 30, 8, 14, 'ik'), S(`M${x - 3} 30 L${x + 5} 30`, 'hi', 1.4)];
+const wSeas = {
+  bay_of_biscay: [gSail(22, 24), gCloud(46)], gulf_of_guinea: [gPalm(14), gSun(46, 10, 5)], gulf_of_st_lawrence: [gSail(30, 24, 0.9), gTree(10, 14), gTree(50, 14)],
+  labrador_sea: [gIce(6, 24, 14), gIce(34, 24, 18), gBear(46)], norwegian_sea: [gRig(18), gCloud(44)], sea_of_azov: [gSail(30, 24), gSun(10, 10, 4)],
+  sea_of_marmara: [gBridge(30), gDhow(48)], gulf_of_alaska: [gPeak(14, 6, 22, 20), gIce(40, 24, 14), gTree(32, 16)], gulf_of_carpentaria: [gPalm(46), gSun(14, 10, 5)],
+  east_china_sea: [gSail(24, 24), gSun(46, 10, 5)], sea_of_okhotsk: [gIce(10, 24, 14), gVolc(44, 6, 20, 20)],
+  seto_inland_sea: [gSail(14, 24, 0.7), gSail(44, 24, 0.7), P('M24 26 Q28 14 34 18 Q38 22 34 26 Z', 'bs')], gulf_of_thailand: [gPalm(12), gDhow(40)], andaman_sea: [gPalm(44), gSail(18, 24)],
+  timor_sea: [gRig(14), gSun(46, 10, 5)], baffin_bay: [gIce(10, 24, 16), gBear(44), gIce(30, 24, 10)], beaufort_sea: [gIce(6, 24, 20), gRig(46)], greenland_sea: [gIce(10, 24, 14), gIce(36, 24, 16)],
+  kara_sea: [gIce(8, 24, 12), gRig(40), gIce(46, 24, 10)], white_sea: [gIce(20, 24, 12), gSail(46, 24, 0.8), gTree(8, 14)], great_australian_bight: [P('M0 6 L18 6 L18 26 L0 26 Z', 'bs'), gSun(40, 10, 5), gSail(36, 24, 0.8)],
+  weddell_sea: [gPeng(14, 18), gPeng(22, 19), gIce(34, 24, 18)], gulf_of_aden: [gDhow(18), gSun(46, 10, 5)],
+};
+for (const [id, emb] of Object.entries(wSeas)) def(id, () => seaWith(...emb));
+const wStr = {
+  bass_strait: [gFish(30, 32, 0.7, 'hi')], cook_strait: [gSail(30, 34, 0.6)], kattegat: [gSail(30, 32, 0.6), gIce(28, 50, 6)], korea_strait: [gFish(30, 30, 0.7, 'hi'), gSun(46, 8, 3)],
+  strait_of_magellan: [gPeng(30, 30), gIce(24, 50, 12)], mozambique_channel: [gDhow(26)], palk_strait: [gBridge(30)], skagerrak: [gRig(30)],
+};
+for (const [id, emb] of Object.entries(wStr)) def(id, () => gStrait(...emb));
+const wLake = {
+  african_great_lakes: [gPalm(12), gPeak(46, 6, 20, 20)], lake_albert_africa: [gPalm(48), gFish(30, 36, 0.7, 'hi')], lake_malawi: [gFish(24, 36, 0.7, 'hi'), gFish(38, 40, 0.7, 'hi'), gPalm(48)],
+  lake_kariba: [wDam(46), gPalm(10)], lake_mweru: [gTree(12, 16), gFish(30, 36, 0.7, 'hi')], lake_volta: [wDam(46), gTurbine(48)], lake_onega: [gTree(10, 16, 1.2), gTree(48, 18)],
+  vanern: [gTree(12, 16), gSail(30, 36, 0.6)], lake_erie: [gSail(30, 36, 0.7), gSun(48, 10, 4)], lake_huron: [gTree(10, 16, 1.2), gTree(48, 18)], lake_michigan: [gBridge(30)],
+  lake_ontario: [gCloud(30), gSail(20, 36, 0.6)], great_bear_lake: [gBear(46), gTree(10, 16)], great_slave_lake: [gIce(40, 24, 14), gTree(10, 16)], lake_nicaragua: [gVolc(46, 8, 16, 18)],
+  lake_winnipeg: [gSun(46, 10, 5), gWeed(10)], lake_balkhash: [gPeak(46, 6, 20, 20)], issyk_kul: [gPeak(10, 4, 22, 24), gPeak(44, 6, 18, 20)], poyang_lake: [gSail(30, 36, 0.6), gTree(10, 16)],
+  qinghai_lake: [gPeak(46, 6, 22, 22), gStar(14, 12, 4)], lake_urmia: [gSun(46, 10, 5), C(22, 36, 1.4, 'hi'), C(32, 40, 1.4, 'hi'), C(40, 34, 1.4, 'hi')], west_lake: [gBridge(30), gTree(12, 16)],
+};
+for (const [id, emb] of Object.entries(wLake)) def(id, () => gLake(...emb));
+def('lake_vostok', () => gAll(...gFrame(), box(3, 3, 54, 22, 'hi'), P('M3 25 Q30 20 57 25 L57 30 Q30 26 3 30 Z', 'ik').slice(0, 0), E(30, 40, 16, 7, 'ik'), E(30, 40, 14, 5.4, 'lo'), gWave(40, 'hi', 1.4), S('M3 25 L57 25', 'ik', 1.6), S('M12 12 L18 8 M36 14 L44 9 M22 18 L26 15', 'ik', 1.2), box(3, 48, 54, 9, 'bs'), S('M3 48 L57 48', 'ik', 1.4)));
+const wRiv = {
+  yamuna: [3, [gSun(46, 12, 5)]], lena_river: [0, [gIce(40, 14, 14)]], yenisei: [4, [gIce(40, 14, 12)]], ob_river: [1, [gTree(46, 14)]], amur: [2, [gTree(10, 14), gBridge(44)]],
+  amu_darya: [5, [gSun(46, 10, 4)]], salween_river: [0, [gPeak(46, 10, 18, 18)]], ural_river: [4, [gPeak(12, 8, 16, 18)]], syr_darya: [5, [gPeak(46, 8, 18, 18)]], irrawaddy_river: [3, [gSail(46, 18, 0.7)]],
+  pearl_river: [1, [gSail(14, 18, 0.7), gSun(46, 10, 4)]], godavari_river: [2, [gSun(46, 10, 5)]], krishna_river: [4, [gPeak(46, 12, 14, 12)]], ohio_river: [3, [gBridge(46)]],
+  yukon_river: [0, [gIce(44, 14, 12), gTree(10, 14)]], mackenzie_river: [1, [gBear(14), gTree(46, 14)]], madeira_river: [2, [gTree(10, 14), gTree(50, 14)]], rio_negro_amazon: [4, [gTree(12, 14), gFish(46, 30, 0.7, 'hi')]],
+  magdalena_river: [3, [gPeak(46, 8, 18, 18)]], sao_francisco_river: [5, [gSun(46, 10, 5)]], uruguay_river: [0, [gBridge(46)]], ubangi_river: [1, [gPalm(46)]], limpopo_river: [2, [gSun(46, 10, 5)]],
+  orange_river: [4, [gPeak(46, 10, 16, 14)]], senegal_river: [3, [gPalm(46)]], dnieper: [0, [gBridge(46)]], don_river: [1, [gSail(14, 18, 0.7)]], loire: [2, [gTree(46, 14), gTree(12, 40)]],
+  neva: [4, [gBridge(46)]], vistula: [3, [gSail(46, 18, 0.7)]], murray_river: [5, [gSun(46, 10, 5)]],
+};
+for (const [id, [k, emb]] of Object.entries(wRiv)) def(id, () => gRiver(k, ...emb));
+def('erie_canal', () => gFrame(box(3, 3, 54, 18, 'bs'), box(3, 39, 54, 18, 'bs'), box(3, 21, 54, 18, 'lo'), S('M3 21 L57 21 M3 39 L57 39', 'ik', 1.8), ...gSail(22, 33, 0.6), box(40, 18, 4, 24, 'ik'), S('M8 8 L20 8 M36 52 L50 52', 'hi', 1.6)));
+def('kiel_canal', () => gFrame(box(3, 3, 54, 18, 'bs'), box(3, 39, 54, 18, 'bs'), box(3, 21, 54, 18, 'lo'), S('M3 21 L57 21 M3 39 L57 39', 'ik', 1.8), P('M20 30 L40 30 L36 36 L24 36 Z', 'ik'), box(29, 24, 3, 6, 'ik'), gWave(26, 'hi', 1.4)));
+def('st_lawrence_seaway', () => gFrame(box(3, 3, 54, 54, 'bs'), box(3, 24, 54, 12, 'lo'), P('M3 24 L20 24 L22 36 L3 36 Z', 'hi'), box(20, 20, 4, 20, 'ik'), box(36, 20, 4, 20, 'ik'), S('M3 24 L57 24 M3 36 L57 36', 'ik', 1.6), P('M24 30 L36 30 L34 34 L26 34 Z', 'ik'), gWave(30, 'hi', 1.2).slice(0, 0)));
+def('white_sea_baltic_canal', () => gFrame(box(3, 3, 54, 54, 'bs'), P('M3 26 Q18 20 30 28 T57 30 L57 38 Q44 36 30 38 T3 34 Z', 'lo'), S('M3 26 Q18 20 30 28 T57 30 M3 34 Q18 40 30 38 T57 38', 'ik', 1.6), ...gSail(24, 33, 0.5), gIce(6, 12, 12), gTree(44, 14, 1.2)));
+def('antarctic_ice_sheet', () => gFrame(box(3, 40, 54, 17, 'bs'), P('M3 40 Q14 14 30 12 Q46 14 57 40 Z', 'hi'), S('M3 40 Q14 14 30 12 Q46 14 57 40', 'ik', 2), S('M3 40 L57 40', 'ik', 1.8), ...gPeng(16, 36), ...gPeng(44, 36), S('M22 24 L26 20 M32 22 L38 26', 'ik', 1.2)));
+def('greenland_ice_sheet', () => gFrame(box(3, 42, 54, 15, 'lo'), P('M4 42 Q10 18 30 16 Q50 18 56 42 Z', 'hi'), S('M4 42 Q10 18 30 16 Q50 18 56 42', 'ik', 2), P('M3 42 L10 38 L14 42 Z M46 42 L52 38 L57 42 Z', 'bs'), S('M3 42 L57 42', 'ik', 1.8), ...gBear(32).slice(0, 0), ...gIce(8, 50, 10), ...gIce(40, 52, 12), S('M20 28 L28 24 M34 26 L42 30', 'ik', 1.2)));
+def('great_artesian_basin', () => gFrame(box(3, 3, 54, 14, 'hi'), box(3, 17, 54, 8, 'bs'), box(3, 25, 54, 10, 'lo'), box(3, 35, 54, 8, 'bs'), box(3, 43, 54, 14, 'ik'), S('M3 17 L57 17 M3 25 L57 25 M3 35 L57 35 M3 43 L57 43', 'ik', 1.4), S('M30 17 L30 28 M22 17 L22 28', 'hi', 2.4), S('M30 8 L30 17 M22 8 L22 17', 'ik', 1.8), P('M30 8 Q34 4 38 8', 'ik').slice(0, 0), S('M30 8 L34 4 M22 8 L26 4', 'ik', 1.8), C(30, 30, 1.6, 'hi'), C(22, 31, 1.6, 'hi'), C(44, 30, 1.6, 'hi'), C(14, 29, 1.6, 'hi')));
+
 /* ── build ────────────────────────────────────────────────────────────────*/
 
 const out = {};
