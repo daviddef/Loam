@@ -27341,7 +27341,6 @@
       "trade"
     ],
     "fact": "Earns a B.D.S., D.M.D., or D.D.S. degree before treating patients.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -31010,7 +31009,6 @@
       "tool"
     ],
     "fact": "Faceted panels fling radar's echo away from the receiver instead of straight back at it.",
-    "terminal": true,
     "soleRoute": true
   },
   {
@@ -134905,5 +134903,1336 @@
     ],
     "fact": "Systems that regulate temperature, humidity and air quality in buildings.",
     "src": "https://en.wikipedia.org/wiki/Heating,_ventilation,_and_air_conditioning"
+  },
+  {
+    "id": "instrumentation",
+    "name": "Instrumentation",
+    "emoji": "🎚️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Measuring instruments used to indicate, measure and record physical quantities.",
+    "src": "https://en.wikipedia.org/wiki/Instrumentation"
+  },
+  {
+    "id": "photometer",
+    "name": "Photometer",
+    "emoji": "🔦",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An instrument for measuring quantities of light.",
+    "src": "https://en.wikipedia.org/wiki/Photometer"
+  },
+  {
+    "id": "modelling_clay",
+    "name": "Modelling Clay",
+    "emoji": "🏺",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Malleable substances used for building and sculpting.",
+    "src": "https://en.wikipedia.org/wiki/Modelling_clay"
+  },
+  {
+    "id": "drilling",
+    "name": "Drilling",
+    "emoji": "🕳️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A cutting process where a spinning drill bit cuts a round hole.",
+    "src": "https://en.wikipedia.org/wiki/Drilling"
+  },
+  {
+    "id": "machete",
+    "name": "Machete",
+    "emoji": "🔪",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A broad blade used as an agricultural implement.",
+    "src": "https://en.wikipedia.org/wiki/Machete"
+  },
+  {
+    "id": "wheelbarrow",
+    "name": "Wheelbarrow",
+    "emoji": "🛒",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A small hand-propelled vehicle, usually with one wheel.",
+    "src": "https://en.wikipedia.org/wiki/Wheelbarrow"
+  },
+  {
+    "id": "chainsaw",
+    "name": "Chainsaw",
+    "emoji": "🪚",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A portable power saw that cuts with teeth on a rotating chain.",
+    "src": "https://en.wikipedia.org/wiki/Chainsaw"
+  },
+  {
+    "id": "combine_harvester",
+    "name": "Combine Harvester",
+    "emoji": "🚜",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A machine that harvests cultivated seeds.",
+    "src": "https://en.wikipedia.org/wiki/Combine_harvester"
+  },
+  {
+    "id": "cultivator",
+    "name": "Cultivator",
+    "emoji": "🚜",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Farm equipment with teeth that pierce the soil for secondary tillage.",
+    "src": "https://en.wikipedia.org/wiki/Cultivator"
+  },
+  {
+    "id": "irrigation_sprinkler",
+    "name": "Irrigation Sprinkler",
+    "emoji": "💦",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A device that waters crops, lawns and landscapes.",
+    "src": "https://en.wikipedia.org/wiki/Irrigation_sprinkler"
+  },
+  {
+    "id": "lawn_mower",
+    "name": "Lawn Mower",
+    "emoji": "🌱",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A device with revolving blades that cuts grass to an even height.",
+    "src": "https://en.wikipedia.org/wiki/Lawn_mower"
+  },
+  {
+    "id": "home_appliance",
+    "name": "Home Appliance",
+    "emoji": "🏠",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A machine that assists in household functions like cooking and cleaning.",
+    "src": "https://en.wikipedia.org/wiki/Home_appliance"
+  },
+  {
+    "id": "air_conditioning",
+    "name": "Air Conditioning",
+    "emoji": "❄️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Removing heat from an enclosed space for a more comfortable temperature.",
+    "src": "https://en.wikipedia.org/wiki/Air_conditioning"
+  },
+  {
+    "id": "clothes_dryer",
+    "name": "Clothes Dryer",
+    "emoji": "👕",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An appliance that removes moisture from washed clothing and textiles.",
+    "src": "https://en.wikipedia.org/wiki/Clothes_dryer"
+  },
+  {
+    "id": "dishwasher",
+    "name": "Dishwasher",
+    "emoji": "🍽️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A machine that cleans dishware, cookware and cutlery automatically.",
+    "src": "https://en.wikipedia.org/wiki/Dishwasher"
+  },
+  {
+    "id": "ironing",
+    "name": "Ironing",
+    "emoji": "👔",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Using a heated iron to remove wrinkles from fabric.",
+    "src": "https://en.wikipedia.org/wiki/Ironing"
+  },
+  {
+    "id": "centrifuge",
+    "name": "Centrifuge",
+    "emoji": "🌀",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A device that spins a specimen to separate its components.",
+    "src": "https://en.wikipedia.org/wiki/Centrifuge"
+  },
+  {
+    "id": "potters_wheel",
+    "name": "Potter's Wheel",
+    "emoji": "🏺",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A machine used to shape clay into round ceramic ware.",
+    "src": "https://en.wikipedia.org/wiki/Potter's_wheel"
+  },
+  {
+    "id": "broadcasting",
+    "name": "Broadcasting",
+    "emoji": "📡",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Distributing audio and video content to dispersed audiences.",
+    "src": "https://en.wikipedia.org/wiki/Broadcasting"
+  },
+  {
+    "id": "cathode_ray_tube",
+    "name": "Cathode-Ray Tube",
+    "emoji": "📺",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A vacuum tube whose electron beams display images on a phosphorescent screen.",
+    "src": "https://en.wikipedia.org/wiki/Cathode-ray_tube"
+  },
+  {
+    "id": "flat_panel_display",
+    "name": "Flat-Panel Display",
+    "emoji": "🖥️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An electronic display for visual content such as text or images.",
+    "src": "https://en.wikipedia.org/wiki/Flat-panel_display"
+  },
+  {
+    "id": "podcast",
+    "name": "Podcast",
+    "emoji": "🎙️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An audio program made available for download over the Internet.",
+    "src": "https://en.wikipedia.org/wiki/Podcast"
+  },
+  {
+    "id": "printing",
+    "name": "Printing",
+    "emoji": "🖨️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A process for mass reproducing text and images from a master form.",
+    "src": "https://en.wikipedia.org/wiki/Printing"
+  },
+  {
+    "id": "photocopier",
+    "name": "Photocopier",
+    "emoji": "🖨️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A machine that quickly and cheaply copies documents onto paper.",
+    "src": "https://en.wikipedia.org/wiki/Photocopier"
+  },
+  {
+    "id": "amateur_radio",
+    "name": "Amateur Radio",
+    "emoji": "📻",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Non-commercial use of the radio spectrum for communication and experiment.",
+    "src": "https://en.wikipedia.org/wiki/Amateur_radio"
+  },
+  {
+    "id": "radio_broadcasting",
+    "name": "Radio Broadcasting",
+    "emoji": "📻",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Transmitting audio by radio waves to receivers over a wide area.",
+    "src": "https://en.wikipedia.org/wiki/Radio_broadcasting"
+  },
+  {
+    "id": "sound_recording_and_reproduction",
+    "name": "Sound Recording",
+    "emoji": "🎚️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Inscribing and re-creating sound waves such as voice and music.",
+    "src": "https://en.wikipedia.org/wiki/Sound_recording_and_reproduction"
+  },
+  {
+    "id": "speech_synthesis",
+    "name": "Speech Synthesis",
+    "emoji": "🗣️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The artificial production of human speech.",
+    "src": "https://en.wikipedia.org/wiki/Speech_synthesis"
+  },
+  {
+    "id": "telecommunications",
+    "name": "Telecommunications",
+    "emoji": "📞",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Transmitting information over a distance by electrical or electronic means.",
+    "src": "https://en.wikipedia.org/wiki/Telecommunications"
+  },
+  {
+    "id": "telegraphy",
+    "name": "Telegraphy",
+    "emoji": "📟",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Sending messages over a distance using symbolic codes.",
+    "src": "https://en.wikipedia.org/wiki/Telegraphy"
+  },
+  {
+    "id": "cable_television",
+    "name": "Cable Television",
+    "emoji": "📺",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Delivering broadcast programming to viewers through cables.",
+    "src": "https://en.wikipedia.org/wiki/Cable_television"
+  },
+  {
+    "id": "satellite_television",
+    "name": "Satellite Television",
+    "emoji": "📡",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Television relayed from a communications satellite to a dish.",
+    "src": "https://en.wikipedia.org/wiki/Satellite_television"
+  },
+  {
+    "id": "text_messaging",
+    "name": "Text Messaging",
+    "emoji": "💬",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Composing and sending electronic messages between users of devices.",
+    "src": "https://en.wikipedia.org/wiki/Text_messaging"
+  },
+  {
+    "id": "video",
+    "name": "Video",
+    "emoji": "🎞️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An electronic medium for recording, playing and displaying moving images.",
+    "src": "https://en.wikipedia.org/wiki/Video"
+  },
+  {
+    "id": "video_camera",
+    "name": "Video Camera",
+    "emoji": "🎥",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An optical instrument that captures video.",
+    "src": "https://en.wikipedia.org/wiki/Video_camera"
+  },
+  {
+    "id": "dentures",
+    "name": "Dentures",
+    "emoji": "🦷",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Prosthetic devices that replace missing teeth.",
+    "src": "https://en.wikipedia.org/wiki/Dentures"
+  },
+  {
+    "id": "electrocardiography",
+    "name": "Electrocardiography",
+    "emoji": "🫀",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Recording the heart's electrical activity as a line graph.",
+    "src": "https://en.wikipedia.org/wiki/Electrocardiography"
+  },
+  {
+    "id": "endoscopy",
+    "name": "Endoscopy",
+    "emoji": "🩺",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A procedure that looks inside the body with an endoscope.",
+    "src": "https://en.wikipedia.org/wiki/Endoscopy"
+  },
+  {
+    "id": "medical_imaging",
+    "name": "Medical Imaging",
+    "emoji": "🩻",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Imaging the interior of the body for clinical analysis.",
+    "src": "https://en.wikipedia.org/wiki/Medical_imaging"
+  },
+  {
+    "id": "medical_ultrasound",
+    "name": "Medical Ultrasound",
+    "emoji": "🩻",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Using ultrasound to image internal body structures.",
+    "src": "https://en.wikipedia.org/wiki/Medical_ultrasound"
+  },
+  {
+    "id": "radiography",
+    "name": "Radiography",
+    "emoji": "🩻",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An imaging technique that uses X-rays to view the inside of an object.",
+    "src": "https://en.wikipedia.org/wiki/Radiography"
+  },
+  {
+    "id": "weapon",
+    "name": "Weapon",
+    "emoji": "⚔️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Any implement or tool used to deter, threaten or harm.",
+    "src": "https://en.wikipedia.org/wiki/Weapon"
+  },
+  {
+    "id": "military_technology",
+    "name": "Military Technology",
+    "emoji": "🪖",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The application of technology for use in warfare.",
+    "src": "https://en.wikipedia.org/wiki/Military_technology"
+  },
+  {
+    "id": "horses_in_warfare",
+    "name": "Horses in Warfare",
+    "emoji": "🐎",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The use of horses in warfare, from early Eurasia.",
+    "src": "https://en.wikipedia.org/wiki/Horses_in_warfare"
+  },
+  {
+    "id": "stealth_technology",
+    "name": "Stealth Technology",
+    "emoji": "🛩️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Methods that make aircraft and ships less visible to radar and sonar.",
+    "src": "https://en.wikipedia.org/wiki/Stealth_technology"
+  },
+  {
+    "id": "ammunition",
+    "name": "Ammunition",
+    "emoji": "🔫",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The material fired, scattered, dropped or detonated from a weapon.",
+    "src": "https://en.wikipedia.org/wiki/Ammunition"
+  },
+  {
+    "id": "bomb",
+    "name": "Bomb",
+    "emoji": "💣",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An explosive weapon that releases energy suddenly and violently.",
+    "src": "https://en.wikipedia.org/wiki/Bomb"
+  },
+  {
+    "id": "cluster_munition",
+    "name": "Cluster Munition",
+    "emoji": "💣",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An explosive weapon that releases smaller submunitions.",
+    "src": "https://en.wikipedia.org/wiki/Cluster_munition"
+  },
+  {
+    "id": "grenade",
+    "name": "Grenade",
+    "emoji": "💣",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A small explosive projectile thrown or launched.",
+    "src": "https://en.wikipedia.org/wiki/Grenade"
+  },
+  {
+    "id": "land_mine",
+    "name": "Land Mine",
+    "emoji": "💣",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An explosive weapon concealed on the ground.",
+    "src": "https://en.wikipedia.org/wiki/Land_mine"
+  },
+  {
+    "id": "napalm",
+    "name": "Napalm",
+    "emoji": "🔥",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An incendiary mixture of a gelling agent and a petrochemical.",
+    "src": "https://en.wikipedia.org/wiki/Napalm"
+  },
+  {
+    "id": "battle_axe",
+    "name": "Battle Axe",
+    "emoji": "🪓",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An axe specifically designed for combat.",
+    "src": "https://en.wikipedia.org/wiki/Battle_axe"
+  },
+  {
+    "id": "bayonet",
+    "name": "Bayonet",
+    "emoji": "🗡️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A blade mounted on the end of a rifle barrel.",
+    "src": "https://en.wikipedia.org/wiki/Bayonet"
+  },
+  {
+    "id": "military_aircraft",
+    "name": "Military Aircraft",
+    "emoji": "✈️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An aircraft operated by a military of any type.",
+    "src": "https://en.wikipedia.org/wiki/Military_aircraft"
+  },
+  {
+    "id": "attack_aircraft",
+    "name": "Attack Aircraft",
+    "emoji": "✈️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A tactical military aircraft built to carry out precise airstrikes.",
+    "src": "https://en.wikipedia.org/wiki/Attack_aircraft"
+  },
+  {
+    "id": "bomber",
+    "name": "Bomber",
+    "emoji": "✈️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A military aircraft that drops bombs on ground targets.",
+    "src": "https://en.wikipedia.org/wiki/Bomber"
+  },
+  {
+    "id": "fighter_aircraft",
+    "name": "Fighter Aircraft",
+    "emoji": "✈️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A military aircraft designed primarily for air-to-air combat.",
+    "src": "https://en.wikipedia.org/wiki/Fighter_aircraft"
+  },
+  {
+    "id": "battleship",
+    "name": "Battleship",
+    "emoji": "🚢",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A heavily armored warship with a main battery of large guns.",
+    "src": "https://en.wikipedia.org/wiki/Battleship"
+  },
+  {
+    "id": "galley",
+    "name": "Galley",
+    "emoji": "⛵",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A ship optimised for propulsion by oars.",
+    "src": "https://en.wikipedia.org/wiki/Galley"
+  },
+  {
+    "id": "naval_mine",
+    "name": "Naval Mine",
+    "emoji": "💣",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A self-contained explosive weapon placed in water to damage ships.",
+    "src": "https://en.wikipedia.org/wiki/Naval_mine"
+  },
+  {
+    "id": "ship_of_the_line",
+    "name": "Ship of the Line",
+    "emoji": "⛵",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A type of warship built during the Age of Sail.",
+    "src": "https://en.wikipedia.org/wiki/Ship_of_the_line"
+  },
+  {
+    "id": "warship",
+    "name": "Warship",
+    "emoji": "🚢",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A naval ship used for naval warfare.",
+    "src": "https://en.wikipedia.org/wiki/Warship"
+  },
+  {
+    "id": "boomerang",
+    "name": "Boomerang",
+    "emoji": "🪃",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A thrown tool designed to return to the thrower.",
+    "src": "https://en.wikipedia.org/wiki/Boomerang"
+  },
+  {
+    "id": "firearm",
+    "name": "Firearm",
+    "emoji": "🔫",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A gun that shoots projectiles using pressure from a burning propellant.",
+    "src": "https://en.wikipedia.org/wiki/Firearm"
+  },
+  {
+    "id": "rifle",
+    "name": "Rifle",
+    "emoji": "🔫",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A long-barreled firearm with a grooved barrel for accurate shooting.",
+    "src": "https://en.wikipedia.org/wiki/Rifle"
+  },
+  {
+    "id": "handgun",
+    "name": "Handgun",
+    "emoji": "🔫",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A firearm designed to be used with one hand.",
+    "src": "https://en.wikipedia.org/wiki/Handgun"
+  },
+  {
+    "id": "shotgun",
+    "name": "Shotgun",
+    "emoji": "🔫",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A long-barreled firearm that shoots shotshells of small shot or a slug.",
+    "src": "https://en.wikipedia.org/wiki/Shotgun"
+  },
+  {
+    "id": "gun",
+    "name": "Gun",
+    "emoji": "🔫",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A device that propels a projectile using pressure or explosive force.",
+    "src": "https://en.wikipedia.org/wiki/Gun"
+  },
+  {
+    "id": "ballista",
+    "name": "Ballista",
+    "emoji": "🏹",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An ancient bolt-thrower worked by two levers with torsion springs.",
+    "src": "https://en.wikipedia.org/wiki/Ballista"
+  },
+  {
+    "id": "catapult",
+    "name": "Catapult",
+    "emoji": "🏰",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A device that launches a projectile by suddenly releasing stored energy.",
+    "src": "https://en.wikipedia.org/wiki/Catapult"
+  },
+  {
+    "id": "weapon_of_mass_destruction",
+    "name": "Weapon of Mass Destruction",
+    "emoji": "☠️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A weapon that can kill or harm many people or cause great damage.",
+    "src": "https://en.wikipedia.org/wiki/Weapon_of_mass_destruction"
+  },
+  {
+    "id": "biological_warfare",
+    "name": "Biological Warfare",
+    "emoji": "🦠",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The use of toxins or infectious agents as an act of war.",
+    "src": "https://en.wikipedia.org/wiki/Biological_warfare"
+  },
+  {
+    "id": "chemical_weapon",
+    "name": "Chemical Weapon",
+    "emoji": "☠️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A munition that uses chemicals formulated to harm humans.",
+    "src": "https://en.wikipedia.org/wiki/Chemical_weapon"
+  },
+  {
+    "id": "nuclear_weapon",
+    "name": "Nuclear Weapon",
+    "emoji": "☢️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An explosive device that draws its force from nuclear reactions.",
+    "src": "https://en.wikipedia.org/wiki/Nuclear_weapon"
+  },
+  {
+    "id": "chinese_calendar",
+    "name": "Chinese Calendar",
+    "emoji": "🏮",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A lunisolar calendar used by the Chinese people.",
+    "src": "https://en.wikipedia.org/wiki/Chinese_calendar"
+  },
+  {
+    "id": "gregorian_calendar",
+    "name": "Gregorian Calendar",
+    "emoji": "📅",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The calendar currently used in most parts of the world.",
+    "src": "https://en.wikipedia.org/wiki/Gregorian_calendar"
+  },
+  {
+    "id": "islamic_calendar",
+    "name": "Islamic Calendar",
+    "emoji": "🌙",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A lunar calendar used to date Islamic holidays and rituals.",
+    "src": "https://en.wikipedia.org/wiki/Islamic_calendar"
+  },
+  {
+    "id": "julian_calendar",
+    "name": "Julian Calendar",
+    "emoji": "📜",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A solar calendar with a leap day every fourth year.",
+    "src": "https://en.wikipedia.org/wiki/Julian_calendar"
+  },
+  {
+    "id": "leap_year",
+    "name": "Leap Year",
+    "emoji": "🐸",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A calendar year with an additional day.",
+    "src": "https://en.wikipedia.org/wiki/Leap_year"
+  },
+  {
+    "id": "coordinated_universal_time",
+    "name": "Coordinated Universal Time",
+    "emoji": "🕰️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The primary time standard used globally to regulate clocks.",
+    "src": "https://en.wikipedia.org/wiki/Coordinated_Universal_Time"
+  },
+  {
+    "id": "daylight_saving_time",
+    "name": "Daylight Saving Time",
+    "emoji": "🌅",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Advancing clocks to make better use of summer daylight.",
+    "src": "https://en.wikipedia.org/wiki/Daylight_saving_time"
+  },
+  {
+    "id": "celestial_navigation",
+    "name": "Celestial Navigation",
+    "emoji": "🧭",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Fixing position using stars and other celestial bodies.",
+    "src": "https://en.wikipedia.org/wiki/Celestial_navigation"
+  },
+  {
+    "id": "satellite_navigation",
+    "name": "Satellite Navigation",
+    "emoji": "🛰️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Using satellites for navigation and positioning.",
+    "src": "https://en.wikipedia.org/wiki/Satellite_navigation"
+  },
+  {
+    "id": "optical_fiber",
+    "name": "Optical Fiber",
+    "emoji": "💡",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A flexible glass or plastic fiber that transmits light end to end.",
+    "src": "https://en.wikipedia.org/wiki/Optical_fiber"
+  },
+  {
+    "id": "anti_reflective_coating",
+    "name": "Anti-Reflective Coating",
+    "emoji": "👓",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An optical coating that reduces reflection from lenses.",
+    "src": "https://en.wikipedia.org/wiki/Anti-reflective_coating"
+  },
+  {
+    "id": "diffraction_grating",
+    "name": "Diffraction Grating",
+    "emoji": "🌈",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A periodic structure that diffracts light into several beams.",
+    "src": "https://en.wikipedia.org/wiki/Diffraction_grating"
+  },
+  {
+    "id": "electron_microscope",
+    "name": "Electron Microscope",
+    "emoji": "🔬",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A microscope that uses a beam of electrons for illumination.",
+    "src": "https://en.wikipedia.org/wiki/Electron_microscope"
+  },
+  {
+    "id": "optical_telescope",
+    "name": "Optical Telescope",
+    "emoji": "🔭",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A telescope that gathers and focuses visible light into a magnified image.",
+    "src": "https://en.wikipedia.org/wiki/Optical_telescope"
+  },
+  {
+    "id": "theodolite",
+    "name": "Theodolite",
+    "emoji": "📐",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A precision instrument for measuring angles, used in land surveying.",
+    "src": "https://en.wikipedia.org/wiki/Theodolite"
+  },
+  {
+    "id": "photography",
+    "name": "Photography",
+    "emoji": "📷",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Creating images by recording light.",
+    "src": "https://en.wikipedia.org/wiki/Photography"
+  },
+  {
+    "id": "digital_photography",
+    "name": "Digital Photography",
+    "emoji": "📸",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Photography that records images with electronic photodetectors.",
+    "src": "https://en.wikipedia.org/wiki/Digital_photography"
+  },
+  {
+    "id": "fine_art_photography",
+    "name": "Fine-Art Photography",
+    "emoji": "🖼️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Photography as a medium for creative expression.",
+    "src": "https://en.wikipedia.org/wiki/Fine-art_photography"
+  },
+  {
+    "id": "binoculars",
+    "name": "Binoculars",
+    "emoji": "🔭",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A pair of telescopes mounted side by side for both eyes.",
+    "src": "https://en.wikipedia.org/wiki/Binoculars"
+  },
+  {
+    "id": "interferometry",
+    "name": "Interferometry",
+    "emoji": "〰️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A technique that uses interfering waves to extract information.",
+    "src": "https://en.wikipedia.org/wiki/Interferometry"
+  },
+  {
+    "id": "space_exploration",
+    "name": "Space Exploration",
+    "emoji": "🚀",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The physical investigation of outer space by probes and human spaceflight.",
+    "src": "https://en.wikipedia.org/wiki/Space_exploration"
+  },
+  {
+    "id": "exploration_of_mars",
+    "name": "Exploration of Mars",
+    "emoji": "🔴",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Exploring the planet Mars remotely by spacecraft.",
+    "src": "https://en.wikipedia.org/wiki/Exploration_of_Mars"
+  },
+  {
+    "id": "spaceflight",
+    "name": "Spaceflight",
+    "emoji": "🚀",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Flying objects into or through outer space.",
+    "src": "https://en.wikipedia.org/wiki/Spaceflight"
+  },
+  {
+    "id": "spacecraft",
+    "name": "Spacecraft",
+    "emoji": "🛸",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A vehicle designed to fly and operate in outer space.",
+    "src": "https://en.wikipedia.org/wiki/Spacecraft"
+  },
+  {
+    "id": "launch_vehicle",
+    "name": "Launch Vehicle",
+    "emoji": "🚀",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A rocket-powered vehicle that carries a payload to outer space.",
+    "src": "https://en.wikipedia.org/wiki/Launch_vehicle"
+  },
+  {
+    "id": "rocket_engine",
+    "name": "Rocket Engine",
+    "emoji": "🔥",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A reaction engine that produces thrust by ejecting a high-speed jet.",
+    "src": "https://en.wikipedia.org/wiki/Rocket_engine"
+  },
+  {
+    "id": "space_station",
+    "name": "Space Station",
+    "emoji": "🛰️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A spacecraft that stays in orbit and hosts humans for extended periods.",
+    "src": "https://en.wikipedia.org/wiki/Space_station"
+  },
+  {
+    "id": "nasa",
+    "name": "NASA",
+    "emoji": "🚀",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The U.S. agency responsible for the civil space program.",
+    "src": "https://en.wikipedia.org/wiki/NASA"
+  },
+  {
+    "id": "apollo_program",
+    "name": "Apollo Program",
+    "emoji": "🌙",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The program that landed the first humans on the Moon.",
+    "src": "https://en.wikipedia.org/wiki/Apollo_program"
+  },
+  {
+    "id": "soviet_space_program",
+    "name": "Soviet Space Program",
+    "emoji": "☭",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The state space program of the Soviet Union.",
+    "src": "https://en.wikipedia.org/wiki/Soviet_space_program"
+  },
+  {
+    "id": "vostok_programme",
+    "name": "Vostok Programme",
+    "emoji": "🛰️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The Soviet project that put the first human into space.",
+    "src": "https://en.wikipedia.org/wiki/Vostok_programme"
+  },
+  {
+    "id": "roscosmos",
+    "name": "Roscosmos",
+    "emoji": "🚀",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The Russian state corporation responsible for space flights.",
+    "src": "https://en.wikipedia.org/wiki/Roscosmos"
+  },
+  {
+    "id": "european_space_agency",
+    "name": "European Space Agency",
+    "emoji": "🇪🇺",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An international organisation devoted to space exploration.",
+    "src": "https://en.wikipedia.org/wiki/European_Space_Agency"
+  },
+  {
+    "id": "cnsa",
+    "name": "China National Space Administration",
+    "emoji": "🇨🇳",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The national space agency of China.",
+    "src": "https://en.wikipedia.org/wiki/China_National_Space_Administration"
+  },
+  {
+    "id": "mir",
+    "name": "Mir",
+    "emoji": "🛰️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The first modular space station, assembled in orbit.",
+    "src": "https://en.wikipedia.org/wiki/Mir"
+  },
+  {
+    "id": "space_shuttle",
+    "name": "Space Shuttle",
+    "emoji": "🚀",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A retired, partially reusable orbital spacecraft system.",
+    "src": "https://en.wikipedia.org/wiki/Space_Shuttle"
+  },
+  {
+    "id": "soyuz",
+    "name": "Soyuz",
+    "emoji": "🚀",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A long-serving series of Soviet-designed spacecraft.",
+    "src": "https://en.wikipedia.org/wiki/Soyuz_(spacecraft)"
+  },
+  {
+    "id": "vostok_1",
+    "name": "Vostok 1",
+    "emoji": "👨‍🚀",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "The first human orbital spaceflight in history.",
+    "src": "https://en.wikipedia.org/wiki/Vostok_1"
+  },
+  {
+    "id": "alma",
+    "name": "ALMA",
+    "emoji": "📡",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "An array of radio telescopes in the Atacama Desert of Chile.",
+    "src": "https://en.wikipedia.org/wiki/Atacama_Large_Millimeter_Array"
+  },
+  {
+    "id": "maunakea_observatories",
+    "name": "Maunakea Observatories",
+    "emoji": "🔭",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Astronomical facilities at the summit of Mauna Kea.",
+    "src": "https://en.wikipedia.org/wiki/Maunakea_Observatories"
+  },
+  {
+    "id": "fiber",
+    "name": "Fiber",
+    "emoji": "🧵",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A substance far longer than it is wide.",
+    "src": "https://en.wikipedia.org/wiki/Fiber"
+  },
+  {
+    "id": "linen",
+    "name": "Linen",
+    "emoji": "👔",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A textile made from the bast fibers of the flax plant.",
+    "src": "https://en.wikipedia.org/wiki/Linen"
+  },
+  {
+    "id": "crochet",
+    "name": "Crochet",
+    "emoji": "🧶",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Making textiles by interlocking loops of yarn with a hook.",
+    "src": "https://en.wikipedia.org/wiki/Crochet"
+  },
+  {
+    "id": "embroidery",
+    "name": "Embroidery",
+    "emoji": "🪡",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Decorating fabric by stitching thread with a needle.",
+    "src": "https://en.wikipedia.org/wiki/Embroidery"
+  },
+  {
+    "id": "hand_spinning",
+    "name": "Hand Spinning",
+    "emoji": "🧶",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Drawing out and twisting fibres together into yarn.",
+    "src": "https://en.wikipedia.org/wiki/Hand_spinning"
+  },
+  {
+    "id": "sewing",
+    "name": "Sewing",
+    "emoji": "🧵",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "Fastening textiles together with a needle and thread.",
+    "src": "https://en.wikipedia.org/wiki/Sewing"
+  },
+  {
+    "id": "tapestry",
+    "name": "Tapestry",
+    "emoji": "🖼️",
+    "shelf": "workshop",
+    "tags": [
+      "idea"
+    ],
+    "fact": "A textile art woven by hand on a loom to create images.",
+    "src": "https://en.wikipedia.org/wiki/Tapestry"
   }
 ]
