@@ -27,17 +27,17 @@ validated and playtested first — before a line of Swift.
 | | |
 |---|---|
 | Domain | Dirt to Dinner, extending into chemistry, metallurgy, biology, medicine and the built world |
-| Elements | **10,219** (9,863 workshop · 356 folklore) |
-| Recipes | **12,194** (11,198 merges · 996 verb processes) |
+| Elements | **10,282** (9,926 workshop · 356 folklore) |
+| Recipes | **12,257** (11,261 merges · 996 verb processes) |
 | Starters | Stone · Water · Sun · Seed |
-| Reachable | **10,219 / 10,219** from the four starters |
-| Sourced | **12,194 / 12,194** recipes, every URL machine-verified |
-| Independently verified | **10,076 / 12,194** (83%) carry `verified: true` |
-| Routes per element | **1.19** · 8,639 still have exactly one |
+| Reachable | **10,282 / 10,282** from the four starters |
+| Sourced | **12,257 / 12,257** recipes, every URL machine-verified |
+| Independently verified | **10,139 / 12,257** (83%) carry `verified: true` |
+| Routes per element | **1.19** · 8,702 still have exactly one |
 | Hazards | **351**, covering 623 elements |
 | Scale span | **20 orders of magnitude**, 10^-10 m to 10^9 m |
-| Drawings | **9,514** hand-drawn; 705 on a family fallback — a tracked backlog, not a blocker |
-| Roles | **8,577 / 10,219** — what each noun is to a making |
+| Drawings | **9,577** hand-drawn; 705 on a family fallback — a tracked backlog, not a blocker |
+| Roles | **8,577 / 10,282** — what each noun is to a making |
 | Sense-checked | **1,848** single-word names read; 181 on the watchlist |
 | Places | **442 / 442** of a checklist that is part external, so it can disagree with us |
 | Parts lists | **1,114** written |
@@ -46,7 +46,7 @@ validated and playtested first — before a line of Swift.
 
 *Counted by `node tools/readme.mjs`. Every figure here is read from the corpus at
 build time, because this file previously spent a fortnight claiming 6,874 elements
-while the corpus held 7,423 — and then did it again, claiming 7,576 against 10,219.*
+while the corpus held 7,423 — and then did it again, claiming 7,576 against 10,282.*
 <!-- STATUS:END -->
 
 Run `node tools/graph.mjs path penicillin` for the headline chain: 22 steps from

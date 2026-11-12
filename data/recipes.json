@@ -121852,5 +121852,635 @@
     "why": "The Antarctic Peninsula, known as O'Higgins Land in Chile and Tierra de San Martin in Argentina, and originally as Graham Land in the United Kingdom and the Palmer Peninsula in the United States, is the northernmost part of mainland Antarctica.",
     "src": "https://en.wikipedia.org/wiki/Antarctic_Peninsula",
     "verified": true
+  },
+  {
+    "in": [
+      "plateau",
+      "canada"
+    ],
+    "out": "canadian_shield",
+    "why": "The Canadian Shield, also called the Laurentian Shield or the Laurentian Plateau, is a geologic shield, a large area of exposed Precambrian igneous and high-grade metamorphic rocks. It forms the North American Craton (or Laurentia), the ancient geologic core of the North American continent.",
+    "src": "https://en.wikipedia.org/wiki/Canadian_Shield",
+    "verified": true
+  },
+  {
+    "in": [
+      "mountain",
+      "pacific_ocean"
+    ],
+    "out": "pacific_coast_ranges",
+    "why": "The Pacific Coast Ranges are the series of mountain ranges that stretch along the West Coast of North America from Alaska south to northern and central Mexico. Although they are commonly thought to be the westernmost mountain range of the continental United States and Canada, the geologically distinct Insular Mountains of Vancouver Island lie farther west.",
+    "src": "https://en.wikipedia.org/wiki/Pacific_Coast_Ranges",
+    "verified": true
+  },
+  {
+    "in": [
+      "rocky_mountains",
+      "snow"
+    ],
+    "out": "sierra_nevada_us",
+    "why": "The Sierra Nevada is a mountain range in the Western United States, between the Central Valley of California and the Great Basin. The vast majority of the range lies in the state of California, although the Carson Range spur lies primarily in Nevada.",
+    "src": "https://en.wikipedia.org/wiki/Sierra_Nevada",
+    "verified": true
+  },
+  {
+    "in": [
+      "plateau",
+      "bolivia"
+    ],
+    "out": "altiplano",
+    "why": "The Altiplano, also called the Andean Plateau, is a plateau in west-central South America. Located at the latitude of the widest part of the north–south-trending Andes, it is the most extensive high plateau on Earth outside Tibet.",
+    "src": "https://en.wikipedia.org/wiki/Altiplano",
+    "verified": true
+  },
+  {
+    "in": [
+      "plateau",
+      "brazil"
+    ],
+    "out": "brazilian_highlands",
+    "why": "The Brazilian Highlands or Brazilian Plateau is an extensive geographical region covering most of the eastern, southern and central portions of Brazil, or approximately half of the country's land area. The vast majority of Brazil's population lives in the highlands or on the narrow coastal region immediately adjacent to it.",
+    "src": "https://en.wikipedia.org/wiki/Brazilian_Highlands",
+    "verified": true
+  },
+  {
+    "in": [
+      "savanna",
+      "brazil"
+    ],
+    "out": "cerrado",
+    "why": "The Cerrado is a vast ecoregion of tropical savanna in central Brazil, being present in the states of Goiás, Mato Grosso do Sul, Mato Grosso, Tocantins, Maranhão, Piauí, Bahia, Minas Gerais, São Paulo, Paraná and the Federal District. The core areas of the Cerrado biome are the Brazilian Highlands.",
+    "src": "https://en.wikipedia.org/wiki/Cerrado",
+    "verified": true
+  },
+  {
+    "in": [
+      "plain",
+      "paraguay"
+    ],
+    "out": "gran_chaco",
+    "why": "The Gran Chaco (also called Chaco or Chaco Plain) is a vast semiarid lowland region in central South America, spanning eastern Bolivia, western Paraguay, northern Argentina, and parts of Brazil. It forms part of the Río de la Plata basin.",
+    "src": "https://en.wikipedia.org/wiki/Gran_Chaco",
+    "verified": true
+  },
+  {
+    "in": [
+      "plateau",
+      "guyana"
+    ],
+    "out": "guiana_shield",
+    "why": "The Guiana Shield is one of the three cratons of the South American plate. It is a 1.7 billion-year-old Precambrian geological formation in northeast South America that forms a portion of the northern coast.",
+    "src": "https://en.wikipedia.org/wiki/Guiana_Shield",
+    "verified": true
+  },
+  {
+    "in": [
+      "grassland",
+      "argentina"
+    ],
+    "out": "pampas",
+    "why": "The Pampas, also known as the Pampas Plains, are fertile low grasslands in southern South America and include the Argentine provinces of Buenos Aires, La Pampa, Santa Fe, Entre Ríos, and Córdoba; all of Uruguay; and Brazil's southernmost state, Rio Grande do Sul.",
+    "src": "https://en.wikipedia.org/wiki/Pampas",
+    "verified": true
+  },
+  {
+    "in": [
+      "mountain",
+      "antarctica"
+    ],
+    "out": "transantarctic_mountains",
+    "why": "The Transantarctic Mountains comprise a mountain range of uplifted rock (primarily sedimentary) in Antarctica which extends, with some interruptions, across the continent from Cape Adare in northern Victoria Land to Coats Land. These mountains divide East and West Antarctica.",
+    "src": "https://en.wikipedia.org/wiki/Transantarctic_Mountains",
+    "verified": true
+  },
+  {
+    "in": [
+      "plateau",
+      "basalt"
+    ],
+    "out": "deccan_plateau",
+    "why": "The Deccan Plateau, Deccan, or Peninsular Plateau, is a plateau in the western, central, and southern regions of India. The plateau forms the bulk of the Deccan Peninsula, and stretches from the Satpura and Vindhya ranges in the north to the northern fringes of the Nilgiri Hills in the south.",
+    "src": "https://en.wikipedia.org/wiki/Deccan_Plateau",
+    "verified": true
+  },
+  {
+    "in": [
+      "plain",
+      "ganges"
+    ],
+    "out": "indo_gangetic_plain",
+    "why": "The Indo-Gangetic Plain, also known as the North Indian Plain or the Indus-Gangetic Plain, is a fertile plain across the northern, north-western and north-eastern part of South Asia. It encompasses northern, western and eastern India, eastern Pakistan, southern Nepal and Bhutan, and almost all of Bangladesh.",
+    "src": "https://en.wikipedia.org/wiki/Indo-Gangetic_Plain",
+    "verified": true
+  },
+  {
+    "in": [
+      "mountain",
+      "k2"
+    ],
+    "out": "karakoram",
+    "why": "The Karakoram is a mountain range in Asia which spans the borders of Pakistan, China and India, with the north-western extremities extending into Afghanistan and Tajikistan. The Karakoram contains four of the fourteen eight-thousanders, the highest of which is K2, the second highest mountain on Earth.",
+    "src": "https://en.wikipedia.org/wiki/Karakoram",
+    "verified": true
+  },
+  {
+    "in": [
+      "mountain",
+      "monsoon"
+    ],
+    "out": "western_ghats",
+    "why": "The Western Ghats, also known as the Sahyadri, is a mountain range along the west coast of India. It traverses the Indian states of Gujarat, Maharashtra, Goa, Karnataka, Kerala, and Tamil Nadu.",
+    "src": "https://en.wikipedia.org/wiki/Western_Ghats",
+    "verified": true
+  },
+  {
+    "in": [
+      "plateau",
+      "iran"
+    ],
+    "out": "iranian_plateau",
+    "why": "The Iranian plateau or Persian plateau is a geological feature spanning parts of Central Asia, South Asia, West Asia, and the South Caucasus. It makes up part of the Eurasian plate, and is wedged between the Arabian plate and the Indian plate.",
+    "src": "https://en.wikipedia.org/wiki/Iranian_plateau",
+    "verified": true
+  },
+  {
+    "in": [
+      "mountain",
+      "afghanistan"
+    ],
+    "out": "hindu_kush",
+    "why": "The Hindu Kush is a mountain range in Central and South Asia to the west of the Himalayas. It stretches from central and eastern Afghanistan into northwestern Pakistan and far southeastern Tajikistan.",
+    "src": "https://en.wikipedia.org/wiki/Hindu_Kush",
+    "verified": true
+  },
+  {
+    "in": [
+      "mountain",
+      "iraq"
+    ],
+    "out": "zagros_mountains",
+    "why": "The Zagros Mountains are a mountain range in West Asia spanning Iran, northern Iraq, and southeastern Turkey.",
+    "src": "https://en.wikipedia.org/wiki/Zagros_Mountains",
+    "verified": true
+  },
+  {
+    "in": [
+      "plain",
+      "yellow_river"
+    ],
+    "out": "north_china_plain",
+    "why": "The North China Plain is a large-scale downfaulted rift basin formed in the late Paleogene and Neogene and then modified by the deposits of the Yellow River. It is the largest alluvial plain of China.",
+    "src": "https://en.wikipedia.org/wiki/North_China_Plain",
+    "verified": true
+  },
+  {
+    "in": [
+      "mountain",
+      "tibetan_plateau"
+    ],
+    "out": "kunlun_mountains",
+    "why": "The Kunlun Mountains constitute one of the longest mountain chains in Asia. In the broadest sense, the chain forms the northern edge of the Tibetan Plateau south of the Tarim Basin.",
+    "src": "https://en.wikipedia.org/wiki/Kunlun_Mountains",
+    "verified": true
+  },
+  {
+    "in": [
+      "plateau",
+      "karst"
+    ],
+    "out": "yunnan_guizhou_plateau",
+    "why": "The Yunnan–Guizhou Plateau or Yungui Plateau is a highland region located in southwest China. The region is primarily spread over the provinces of Yunnan and Guizhou.",
+    "src": "https://en.wikipedia.org/wiki/Yunnan–Guizhou_Plateau",
+    "verified": true
+  },
+  {
+    "in": [
+      "mountain",
+      "kyrgyzstan"
+    ],
+    "out": "tian_shan",
+    "why": "The Tian Shan, also known as the Tengri Tagh or Tengir-Too, is a large system of mountain ranges in Central Asia. The highest peak is Jengish Chokusu, located in Kyrgyzstan.",
+    "src": "https://en.wikipedia.org/wiki/Tian_Shan",
+    "verified": true
+  },
+  {
+    "in": [
+      "plain",
+      "siberia"
+    ],
+    "out": "west_siberian_plain",
+    "why": "The West Siberian Plain is a large plain that occupies the western portion of Siberia, between the Ural Mountains in the west and the Yenisei River in the east, and the Altai Mountains on the southeast. Much of the plain is poorly drained and consists of some of the world's largest swamps and floodplains.",
+    "src": "https://en.wikipedia.org/wiki/West_Siberian_Plain",
+    "verified": true
+  },
+  {
+    "in": [
+      "mountain",
+      "italy"
+    ],
+    "out": "apennine_mountains",
+    "why": "The Apennines or Apennine Mountains are a mountain range consisting of parallel smaller chains extending the length of peninsular Italy. In the northwest they join the Ligurian Alps at Altare.",
+    "src": "https://en.wikipedia.org/wiki/Apennine_Mountains",
+    "verified": true
+  },
+  {
+    "in": [
+      "mountain",
+      "bulgaria"
+    ],
+    "out": "balkan_mountains",
+    "why": "The Balkan mountain range is located in the eastern part of the Balkan Peninsula in Southeastern Europe. It is conventionally taken to begin at the peak of Vrashka Chuka on the border between Bulgaria and Serbia.",
+    "src": "https://en.wikipedia.org/wiki/Balkan_Mountains",
+    "verified": true
+  },
+  {
+    "in": [
+      "plain",
+      "ukraine"
+    ],
+    "out": "east_european_plain",
+    "why": "The East European Plain (also called the Russian Plain, or historically the Sarmatic Plain) is a vast interior plain extending east of the North European Plain, and comprising several plateaus. It includes the Volhynian-Podolian Upland on its westernmost fringe, the Central Russian Upland, and, on the eastern border, encompasses the Volga Upland.",
+    "src": "https://en.wikipedia.org/wiki/East_European_Plain",
+    "verified": true
+  },
+  {
+    "in": [
+      "mountain",
+      "norway"
+    ],
+    "out": "scandinavian_mountains",
+    "why": "The Scandinavian Mountains or the Scandes is a mountain range that runs through the Scandinavian Peninsula. The western sides of the mountains drop precipitously into the North Sea and Norwegian Sea, forming the fjords of Norway, whereas to the northeast they gradually curve towards Finland.",
+    "src": "https://en.wikipedia.org/wiki/Scandinavian_Mountains",
+    "verified": true
+  },
+  {
+    "in": [
+      "mountain",
+      "niger"
+    ],
+    "out": "air_mountains",
+    "why": "The Aïr Mountains or Aïr Massif is a triangular massif, located in northern Niger, within the Sahara. Part of the West Saharan montane xeric woodlands ecoregion.",
+    "src": "https://en.wikipedia.org/wiki/Aïr_Mountains",
+    "verified": true
+  },
+  {
+    "in": [
+      "plateau",
+      "ethiopia"
+    ],
+    "out": "ethiopian_highlands",
+    "why": "The Ethiopian Highlands, also known as the Abyssinian Highlands, is a rugged mass of mountains extending from Ethiopia to Eritrea in Northeast Africa. It forms the largest continuous area of its elevation in the continent.",
+    "src": "https://en.wikipedia.org/wiki/Ethiopian_Highlands",
+    "verified": true
+  },
+  {
+    "in": [
+      "rift_valley",
+      "africa"
+    ],
+    "out": "great_rift_valley",
+    "why": "The Great Rift Valley is a series of contiguous geographic depressions which, in its original definition, runs from \"the plains of northern Syria\" in the north, through the Red Sea, to Mozambique in the south.",
+    "src": "https://en.wikipedia.org/wiki/Great_Rift_Valley",
+    "verified": true
+  },
+  {
+    "in": [
+      "savanna",
+      "sahara"
+    ],
+    "out": "sahel",
+    "why": "The Sahel region, or Sahelian acacia savanna, is a biogeographical region in Africa. It is the transition zone between the more humid Sudanian savannas to its south and the drier Sahara to the north.",
+    "src": "https://en.wikipedia.org/wiki/Sahel",
+    "verified": true
+  },
+  {
+    "in": [
+      "mountain",
+      "australia"
+    ],
+    "out": "great_dividing_range",
+    "why": "The Great Dividing Range, also known as the East Australian Cordillera or the Eastern Highlands, is a cordillera system in eastern Australia consisting of an expansive collection of mountain ranges, plateaus and rolling hills. It runs roughly parallel to the east coast of Australia and forms the fifth-longest land-based mountain chain in the world, and the longest entirely within a single country.",
+    "src": "https://en.wikipedia.org/wiki/Great_Dividing_Range",
+    "verified": true
+  },
+  {
+    "in": [
+      "alps",
+      "new_zealand"
+    ],
+    "out": "southern_alps",
+    "why": "The Southern Alps is a mountain range extending along much of the length of New Zealand's South Island, reaching its greatest elevations near the range's western side. The name \"Southern Alps\" generally refers to the entire range, although separate names are given to many of the smaller ranges that form part of it.",
+    "src": "https://en.wikipedia.org/wiki/Southern_Alps",
+    "verified": true
+  },
+  {
+    "in": [
+      "mountain",
+      "kenya"
+    ],
+    "out": "mount_kenya",
+    "why": "Mount Kenya is the second highest mountain in Africa and the namesake of the country Kenya. Located north-northeast of the capital of Nairobi and just south of the equator, the mountain's highest peaks are Batian, Nelion, and Point Lenana.",
+    "src": "https://en.wikipedia.org/wiki/Mount_Kenya",
+    "verified": true
+  },
+  {
+    "in": [
+      "mountain",
+      "hinduism"
+    ],
+    "out": "mount_kailash",
+    "why": "Mount Kailash is a mountain in Ngari Prefecture, Tibet Autonomous Region of China. It lies in the Gangdise Shan mountain range of the Transhimalaya, in the western part of the Tibetan Plateau.",
+    "src": "https://en.wikipedia.org/wiki/Mount_Kailash",
+    "verified": true
+  },
+  {
+    "in": [
+      "volcano",
+      "philippines"
+    ],
+    "out": "mount_pinatubo",
+    "why": "Mount Pinatubo is an active stratovolcano in the Zambales Mountains in Luzon in the Philippines. Located on the tripoint of Zambales, Tarlac and Pampanga provinces, most people were unaware of its eruptive history before the pre-eruption volcanic activity in early 1991.",
+    "src": "https://en.wikipedia.org/wiki/Mount_Pinatubo",
+    "verified": true
+  },
+  {
+    "in": [
+      "mountain",
+      "china"
+    ],
+    "out": "mount_tai",
+    "why": "Mount Tai or Taishan is a mountain of historical and cultural significance located north of the city of Tai'an. It is the highest point in Shandong province, China.",
+    "src": "https://en.wikipedia.org/wiki/Mount_Tai",
+    "verified": true
+  },
+  {
+    "in": [
+      "volcano",
+      "martinique"
+    ],
+    "out": "mount_pelee",
+    "why": "Mount Pelée or Mont Pelée is an active stratovolcano at the northern end of Martinique, an island and French overseas department in the Lesser Antilles Volcanic Arc of the Caribbean. Its volcanic cone is composed of stratified layers of hardened ash and solidified lava.",
+    "src": "https://en.wikipedia.org/wiki/Mount_Pelée",
+    "verified": true
+  },
+  {
+    "in": [
+      "volcano",
+      "united_states"
+    ],
+    "out": "mount_st_helens",
+    "why": "Mount St. Helens is an active stratovolcano located in Skamania County, Washington, in the Pacific Northwest region of the United States.",
+    "src": "https://en.wikipedia.org/wiki/Mount_St._Helens",
+    "verified": true
+  },
+  {
+    "in": [
+      "volcano",
+      "hawaii"
+    ],
+    "out": "mauna_loa",
+    "why": "Mauna Loa is one of five volcanoes that form the Island of Hawaii in the U.S. state of Hawaii in the Pacific Ocean. Mauna Loa is Earth's largest active volcano by both mass and volume.",
+    "src": "https://en.wikipedia.org/wiki/Mauna_Loa",
+    "verified": true
+  },
+  {
+    "in": [
+      "australia",
+      "snow"
+    ],
+    "out": "mount_kosciuszko",
+    "why": "Mount Kosciuszko is the highest mountain of mainland Australia. It is located on the Main Range of the Snowy Mountains in Kosciuszko National Park, a part of the Australian Alps National Parks and Reserves, in New South Wales, west of Crackenback and close to Jindabyne, near the border with Victoria.",
+    "src": "https://en.wikipedia.org/wiki/Mount_Kosciuszko",
+    "verified": true
+  },
+  {
+    "in": [
+      "mountain",
+      "new_guinea"
+    ],
+    "out": "puncak_jaya",
+    "why": "Puncak Jaya or Carstensz Pyramid on the island of New Guinea is the highest mountain peak of an island on Earth, and the highest peak in Indonesia and within Oceania. The mountain is located in the Sudirman Range of the highlands of Mimika Regency, Central Papua, Indonesia.",
+    "src": "https://en.wikipedia.org/wiki/Puncak_Jaya",
+    "verified": true
+  },
+  {
+    "in": [
+      "caucasus_mountains",
+      "russia"
+    ],
+    "out": "mount_elbrus",
+    "why": "Mount Elbrus is the highest mountain in Russia and Europe. It is a dormant stratovolcano and the highest volcano in Eurasia, as well as the tenth-most prominent peak in the world. It is situated in the southern Russian republic of Kabardino-Balkaria in the western extension of Ciscaucasia, and is the highest peak of the Caucasus Mountains.",
+    "src": "https://en.wikipedia.org/wiki/Mount_Elbrus",
+    "verified": true
+  },
+  {
+    "in": [
+      "mountain",
+      "ice_sheet"
+    ],
+    "out": "vinson_massif",
+    "why": "Vinson Massif is a large mountain massif in Antarctica that lies within the Sentinel Range of the Ellsworth Mountains. It overlooks the Ronne Ice Shelf near the base of the Antarctic Peninsula.",
+    "src": "https://en.wikipedia.org/wiki/Vinson_Massif",
+    "verified": true
+  },
+  {
+    "in": [
+      "desert",
+      "mexico"
+    ],
+    "out": "chihuahuan_desert",
+    "why": "The Chihuahuan Desert is a desert ecoregion designation covering parts of northern Mexico and the southwestern United States. It occupies much of Far West Texas, the middle to lower Rio Grande Valley and the lower Pecos Valley in New Mexico, and a portion of southeastern Arizona, as well as the central and northern portions of the Mexican Plateau.",
+    "src": "https://en.wikipedia.org/wiki/Chihuahuan_Desert",
+    "verified": true
+  },
+  {
+    "in": [
+      "desert",
+      "turkmenistan"
+    ],
+    "out": "karakum_desert",
+    "why": "The Karakum Desert, also spelt Qaraqum and Garagum, is the 12th largest desert in the world, located in Central Asia.",
+    "src": "https://en.wikipedia.org/wiki/Karakum_Desert",
+    "verified": true
+  },
+  {
+    "in": [
+      "desert",
+      "china"
+    ],
+    "out": "taklamakan_desert",
+    "why": "The Taklamakan Desert is a desert in northwestern China. Located inside the Tarim Basin in Southern Xinjiang, it is bounded by the Kunlun Mountains to the south, the Pamir Mountains to the west, the Tian Shan range to the north, and the Gobi Desert to the east.",
+    "src": "https://en.wikipedia.org/wiki/Taklamakan_Desert",
+    "verified": true
+  },
+  {
+    "in": [
+      "rainforest",
+      "democratic_republic_of_the_congo"
+    ],
+    "out": "congolian_rainforests",
+    "why": "The Congolian rainforests are a broad belt of lowland tropical moist broadleaf forests which extend across the basin of the Congo River and its tributaries in Central Africa.",
+    "src": "https://en.wikipedia.org/wiki/Congolian_rainforests",
+    "verified": true
+  },
+  {
+    "in": [
+      "garden",
+      "city"
+    ],
+    "out": "park",
+    "why": "A park is an area of natural, semi-natural or planted space set aside for human enjoyment and recreation or for the protection of wildlife or natural habitats. Urban parks are green spaces set aside for recreation inside towns and cities.",
+    "src": "https://en.wikipedia.org/wiki/Park",
+    "verified": true
+  },
+  {
+    "in": [
+      "park",
+      "forest"
+    ],
+    "out": "national_park",
+    "why": "A national park is a nature park designated for conservation purposes because of unparalleled national natural, historic, or cultural significance. It is an area of natural, semi-natural, or developed land that is protected and owned by a government.",
+    "src": "https://en.wikipedia.org/wiki/National_park",
+    "verified": true
+  },
+  {
+    "in": [
+      "unesco",
+      "tourism"
+    ],
+    "out": "world_heritage_site",
+    "why": "World Heritage Sites are landmarks and areas with legal protection under an international treaty administered by UNESCO for having cultural, historical, or scientific significance. The sites are judged to contain \"cultural and natural heritage around the world considered to be of outstanding value to humanity\".",
+    "src": "https://en.wikipedia.org/wiki/World_Heritage_Site",
+    "verified": true
+  },
+  {
+    "in": [
+      "national_park",
+      "mauritania"
+    ],
+    "out": "banc_d_arguin_national_park",
+    "why": "The Banc d'Arguin National Park of Bay of Arguin lies in Western Africa on the west coast of Mauritania between Nouakchott and Nouadhibou and is the former mouth of the Tamanrasset River. The World Heritage Site is a major site for migratory birds and breeding birds, including flamingos, pelicans and terns.",
+    "src": "https://en.wikipedia.org/wiki/Banc_d'Arguin_National_Park",
+    "verified": true
+  },
+  {
+    "in": [
+      "national_park",
+      "zambezi"
+    ],
+    "out": "kavango_zambezi_tfca",
+    "why": "Kavango–Zambezi Transfrontier Conservation Area (KAZA TFCA) is the second-largest nature and landscape conservation area in the world, spanning the international borders of five countries in Southern Africa.",
+    "src": "https://en.wikipedia.org/wiki/Kavango–Zambezi_Transfrontier_Conservation_Area",
+    "verified": true
+  },
+  {
+    "in": [
+      "national_park",
+      "tanzania"
+    ],
+    "out": "serengeti_national_park",
+    "why": "The Serengeti National Park is a large national park in northern Tanzania. It is located in eastern Mara Region and northeastern Simiyu Region and contains savanna.",
+    "src": "https://en.wikipedia.org/wiki/Serengeti_National_Park",
+    "verified": true
+  },
+  {
+    "in": [
+      "national_park",
+      "india"
+    ],
+    "out": "kaziranga_national_park",
+    "why": "Kaziranga National Park is a national park and World Heritage Site in the Golaghat, Sonitpur, Biswanath and Nagaon districts of the Indian state of Assam. Located on the edge of the Brahmaputra River, it encompasses dense tropical moist broadleaf forests interspersed with tall elephant grass and marshland surrounding numerous beels.",
+    "src": "https://en.wikipedia.org/wiki/Kaziranga_National_Park",
+    "verified": true
+  },
+  {
+    "in": [
+      "national_park",
+      "canada"
+    ],
+    "out": "banff_national_park",
+    "why": "Banff National Park is Canada's first national park, established in 1885 as Rocky Mountains Park. Located in Alberta's Rocky Mountains, west of Calgary, Banff encompasses mountainous terrain, with many glaciers and ice fields, dense coniferous forest, and alpine landscapes.",
+    "src": "https://en.wikipedia.org/wiki/Banff_National_Park",
+    "verified": true
+  },
+  {
+    "in": [
+      "park",
+      "united_states"
+    ],
+    "out": "central_park",
+    "why": "Central Park is an urban park between the Upper West Side and Upper East Side neighborhoods of Manhattan in New York City, and the first landscaped park in the United States. It is the sixth-largest park in the city, and the most visited urban park in the United States.",
+    "src": "https://en.wikipedia.org/wiki/Central_Park",
+    "verified": true
+  },
+  {
+    "in": [
+      "national_park",
+      "appalachian_mountains"
+    ],
+    "out": "great_smoky_mountains_national_park",
+    "why": "Great Smoky Mountains National Park is a national park of the United States in the southeast, with parts in North Carolina and Tennessee. The park straddles the ridgeline of the Great Smoky Mountains, part of the Blue Ridge Mountains and part of the Appalachian temperate rainforest, which are a division of the larger Appalachian Mountain chain.",
+    "src": "https://en.wikipedia.org/wiki/Great_Smoky_Mountains_National_Park",
+    "verified": true
+  },
+  {
+    "in": [
+      "national_park",
+      "greenland"
+    ],
+    "out": "northeast_greenland_national_park",
+    "why": "Northeast Greenland National Park is the world's largest national park and the 10th largest protected area (the only larger protected areas consist mostly of sea). Established in 1974, the Northeast Greenland national park expanded to its present size in 1988.",
+    "src": "https://en.wikipedia.org/wiki/Northeast_Greenland_National_Park",
+    "verified": true
+  },
+  {
+    "in": [
+      "national_park",
+      "united_states"
+    ],
+    "out": "yosemite_national_park",
+    "why": "Yosemite National Park is a national park of the United States in California. It is bordered on the southeast by the Sierra National Forest and on the northwest by Stanislaus National Forest.",
+    "src": "https://en.wikipedia.org/wiki/Yosemite_National_Park",
+    "verified": true
+  },
+  {
+    "in": [
+      "national_park",
+      "brazil"
+    ],
+    "out": "tumucumaque_mountains_national_park",
+    "why": "The Tumucumaque Mountains National Park is situated in the Amazon rainforest in the Brazilian states of Amapá and Pará. It is bordered to the north by French Guiana and Suriname.",
+    "src": "https://en.wikipedia.org/wiki/Tumucumaque_Mountains_National_Park",
+    "verified": true
+  },
+  {
+    "in": [
+      "lake",
+      "united_kingdom"
+    ],
+    "out": "lake_district",
+    "why": "The Lake District, also known as the Lakes or Lakeland, is a mountainous region and national park in Cumbria, North West England. It is famous for its landscape, including its lakes, coast, and mountains, and for its literary associations with Beatrix Potter, John Ruskin, Arthur Ransome, and the Lake Poets.",
+    "src": "https://en.wikipedia.org/wiki/Lake_District",
+    "verified": true
+  },
+  {
+    "in": [
+      "national_park",
+      "pacific_ocean"
+    ],
+    "out": "phoenix_islands_protected_area",
+    "why": "The Phoenix Islands Protected Area is located in the Republic of Kiribati, an ocean nation in the central Pacific approximately midway between Australia and Hawaii. PIPA constitutes 11.34% of Kiribati's exclusive economic zone (EEZ), and it is one of the largest marine protected areas (MPA) and one of the largest protected areas of any type (land or sea) on Earth.",
+    "src": "https://en.wikipedia.org/wiki/Phoenix_Islands_Protected_Area",
+    "verified": true
+  },
+  {
+    "in": [
+      "national_park",
+      "australia"
+    ],
+    "out": "royal_national_park",
+    "why": "The Royal National Park is a protected national park in the Sutherland Shire local government area in Southern Sydney and in the City of Wollongong local government area in the Illawarra region of New South Wales, Australia. The national park is near the localities of Loftus, Otford and Waterfall.",
+    "src": "https://en.wikipedia.org/wiki/Royal_National_Park",
+    "verified": true
   }
 ]

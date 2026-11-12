@@ -47621,6 +47621,68 @@ const pPe = {
 };
 for (const [id, [k, ...emb]] of Object.entries(pPe)) def(id, () => pPen(k, ...emb));
 
+/* ── landforms and protected areas, 12 Nov ── */
+const ldCac = x => [S(`M${x} 46 L${x} 30`, 'ik', 2.6), S(`M${x} 40 L${x - 5} 40 L${x - 5} 34`, 'ik', 2), S(`M${x} 37 L${x + 5} 37 L${x + 5} 31`, 'ik', 2)];
+const ldGr = (...xs) => xs.flatMap(x => [S(`M${x} 52 L${x - 1.5} 47`, 'ik', 1.2), S(`M${x} 52 L${x} 46`, 'ik', 1.2), S(`M${x} 52 L${x + 1.5} 47`, 'ik', 1.2)]);
+const ldRiv = y => S(`M3 ${y} Q15 ${y - 6} 30 ${y} T57 ${y}`, 'hi', 3);
+const ldMesa = (x1, x2, top, bot = 48) => [P(`M${x1} ${bot} L${x1 + 6} ${top} L${x2 - 6} ${top} L${x2} ${bot} Z`, 'bs'), S(`M${x1 + 6} ${top} L${x2 - 6} ${top}`, 'ik', 1.6)];
+const ldDune = () => [P('M3 44 Q16 32 30 42 Q44 32 57 44 L57 57 L3 57 Z', 'bs'), S('M3 44 Q16 32 30 42 Q44 32 57 44', 'ik', 1.6)];
+const ldTemple = () => [P('M10 26 L30 10 L50 26 Z', 'bs'), box(10, 26, 40, 4, 'bs'), box(14, 30, 4, 16, 'lo'), box(24, 30, 4, 16, 'lo'), box(32, 30, 4, 16, 'lo'), box(42, 30, 4, 16, 'lo'), box(8, 46, 44, 5, 'bs')];
+const ldSkyline = () => [box(6, 24, 8, 22, 'bs'), box(16, 14, 8, 32, 'bs'), box(42, 20, 8, 26, 'bs'), box(50, 28, 6, 18, 'bs')];
+const ldRange = (peaks, ...emb) => gAll(...gFrame(), ...gGround(48), ...peaks.flatMap(([x, y, w, h]) => gPeak(x, y, w, h)), ...emb);
+const ldPlain = (...emb) => gAll(...gFrame(), ...gGround(40), S('M3 40 L57 40', 'ik', 1.4), ...emb);
+const ldPlat = (x1, x2, top, ...emb) => gAll(...gFrame(), ...gGround(48), ldMesa(x1, x2, top), ...emb);
+const ldDes = (...emb) => gAll(...gFrame(), gSun(44, 14, 6), ldDune(), ...emb);
+const ldVol = (x, y, w, h, ...emb) => gAll(...gFrame(), ...gGround(48), gVolc(x, y, w, h), ...emb);
+const ldPark = (...emb) => gAll(...gFrame(), ...gGround(46), ...emb);
+const RG3 = [[14, 26, 22, 22], [30, 12, 28, 36], [46, 24, 22, 24]];
+const RG2 = [[20, 18, 30, 30], [42, 26, 26, 22]];
+const RG1 = [[30, 10, 36, 38]];
+const ldR = {
+  pacific_coast_ranges: [RG3, gWave(54, 'hi', 1.6)], sierra_nevada_us: [RG3, gTree(10, 36, 0.9), gTree(50, 38, 0.9)], karakoram: [[[20, 22, 26, 26], [36, 6, 30, 42], [50, 24, 20, 24]], gCloud(12)],
+  transantarctic_mountains: [RG3, gPeng(10, 30), gCloud(12)], western_ghats: [RG2, gPalm(10)], hindu_kush: [RG3, gCloud(44)], zagros_mountains: [RG3, gSun(48, 10, 4)], kunlun_mountains: [RG3, gCloud(12)],
+  tian_shan: [RG3, gCloud(12), gCloud(46)], apennine_mountains: [RG2, gTree(8, 36, 0.9), gTree(52, 38, 0.9)], balkan_mountains: [RG3, gSun(48, 8, 4)], scandinavian_mountains: [RG2, gWave(54, 'hi', 1.6)],
+  air_mountains: [RG2, gSun(48, 10, 5), ldCac(8)], great_dividing_range: [[[10, 30, 20, 18], [28, 22, 24, 26], [46, 30, 20, 18]], gSun(48, 10, 4)], southern_alps: [RG3, E(30, 53, 12, 3, 'ik'), gCloud(12)],
+  great_smoky_mountains_national_park: [RG3, gCloud(12), gTree(52, 38, 0.9)], hindu_kush_x: [RG1],
+  mount_kenya: [RG1, S('M3 26 L57 26', 'ik', 1), gSun(48, 12, 4)], mount_kailash: [RG1, ring('ik', 30, 6, 4, 1.4), gCloud(48)], mount_kosciuszko: [RG1, gTree(10, 36, 0.9), gTree(50, 38, 0.9)],
+  puncak_jaya: [RG1, gCloud(12), gPalm(12)], mount_elbrus: [[[22, 10, 28, 38], [44, 20, 26, 28]], gCloud(12)], vinson_massif: [[[24, 12, 34, 36], [46, 28, 22, 20]], gPeng(8, 32), gCloud(12)],
+  banff_national_park: [RG2, E(30, 53, 12, 3, 'ik'), gTree(8, 38, 0.9)], mount_tai: [RG1, S('M30 20 L24 30 L36 34 L26 42 L34 46', 'ik', 1.4)],
+};
+for (const [id, [pk, ...emb]] of Object.entries(ldR)) if (id !== 'hindu_kush_x') def(id, () => ldRange(pk, ...emb));
+const ldP = {
+  cerrado: [gTree(14, 26), gTree(42, 28), gSun(48, 10, 4)], pampas: [ldGr(10, 20, 30, 40, 50), gSun(46, 12, 5)], indo_gangetic_plain: [ldRiv(48), gSun(46, 12, 5)], north_china_plain: [ldRiv(48), gSun(46, 12, 5)],
+  west_siberian_plain: [gTree(10, 28), gTree(24, 30), gTree(38, 28), gTree(50, 30)], east_european_plain: [gTree(14, 30), gSun(44, 12, 5), ldGr(30, 40, 50)], gran_chaco: [ldCac(14), ldCac(44), gSun(30, 12, 4)],
+  sahel: [gTree(16, 28, 1.2), ldGr(34, 44, 52), gSun(46, 12, 5)], serengeti_national_park: [gTree(14, 28, 1.2), gTree(44, 30, 1.2), gSun(30, 12, 4)], kaziranga_national_park: [ldGr(10, 18, 26, 34), ldRiv(52), gTree(46, 30)],
+};
+for (const [id, emb] of Object.entries(ldP)) def(id, () => ldPlain(...emb));
+const ldT = {
+  canadian_shield: [3, 57, 30, E(20, 52, 8, 2.4, 'hi'), E(42, 52, 8, 2.4, 'hi'), gTree(30, 18)], altiplano: [6, 54, 28, gSun(30, 12, 5), gPeak(8, 18, 12, 10), gPeak(52, 18, 12, 10)],
+  brazilian_highlands: [8, 52, 30, gTree(30, 18), gSun(48, 10, 4)], guiana_shield: [18, 42, 14, S('M30 14 L30 48', 'hi', 3), gTree(8, 36, 0.9), gTree(52, 38, 0.9)], deccan_plateau: [8, 52, 30, gSun(30, 14, 5)],
+  iranian_plateau: [6, 54, 28, gSun(30, 12, 5)], ethiopian_highlands: [8, 52, 26, gSun(30, 12, 5), gTree(30, 38, 0.8)], yunnan_guizhou_plateau: [6, 54, 30, gPeak(14, 14, 10, 14), gPeak(30, 12, 10, 16), gPeak(46, 14, 10, 14)],
+};
+for (const [id, [x1, x2, top, ...emb]] of Object.entries(ldT)) def(id, () => ldPlat(x1, x2, top, ...emb));
+def('great_rift_valley', () => gAll(...gFrame(), P('M3 20 L20 20 L28 44 L32 44 L40 20 L57 20 L57 57 L3 57 Z', 'lo'), S('M3 20 L20 20 L28 44 L32 44 L40 20 L57 20', 'ik', 1.8), gSun(46, 10, 4)));
+def('chihuahuan_desert', () => ldDes(ldCac(14), ldCac(46)));
+def('karakum_desert', () => ldDes(gPeak(12, 24, 10, 10)));
+def('taklamakan_desert', () => ldDes(gPeak(10, 22, 12, 12), gPeak(24, 26, 8, 8)));
+def('congolian_rainforests', () => ldPark(gTree(10, 26, 1.4), gTree(24, 28, 1.4), gTree(38, 26, 1.4), gTree(52, 28, 1.4), ldRiv(54)));
+def('park', () => ldPark(gTree(14, 26, 1.3), gTree(44, 26, 1.3), S('M10 56 Q30 42 52 56', 'hi', 3)));
+def('national_park', () => ldPark(gPeak(14, 14, 20, 22), gTree(36, 28, 1.2), gTree(46, 30, 1.2), box(26, 36, 8, 6, 'ik'), S('M30 42 L30 50', 'ik', 1.6)));
+def('world_heritage_site', () => gAll(...gFrame(), ldTemple(), gStar(48, 10, 4)));
+def('banc_d_arguin_national_park', () => gAll(...gFrame(), gSun(46, 12, 5), box(3, 40, 54, 17, 'lo'), gWave(44, 'hi', 1.6), gWave(51, 'hi', 1.6), S('M10 22 L14 26 L18 22 M22 16 L26 20 L30 16', 'ik', 1.6), P('M6 40 Q16 34 30 38 Q44 34 54 40 Z', 'bs')));
+def('kavango_zambezi_tfca', () => ldPark(gTree(14, 28, 1.2), gTree(34, 30, 1.2), gSun(48, 12, 5), S('M30 4 L30 14 M30 20 L30 30 M30 36 L30 46', 'ik', 1.4)));
+def('central_park', () => gAll(...gFrame(), ldSkyline(), box(3, 46, 54, 11, 'lo'), E(30, 52, 12, 3, 'hi'), gTree(10, 38, 0.9), gTree(50, 38, 0.9)));
+def('northeast_greenland_national_park', () => gAll(...gFrame(), P('M3 44 L14 24 L26 44 Z', 'bs'), P('M30 44 L44 20 L57 44 Z', 'bs'), box(3, 44, 54, 13, 'lo'), E(30, 38, 10, 5, 'hi'), E(18, 35, 5, 4, 'hi'), C(14, 33, 1.4, 'ik'), S('M24 42 L24 47 M36 42 L36 47', 'hi', 2.4)));
+def('yosemite_national_park', () => gAll(...gFrame(), box(3, 46, 54, 11, 'lo'), P('M6 46 L10 8 L26 8 L28 46 Z', 'bs'), S('M10 8 L10 46', 'ik', 1.4), S('M36 8 L36 46', 'hi', 3), P('M44 46 L48 16 L57 14 L57 46 Z', 'bs'), gTree(32, 38, 0.9)));
+def('tumucumaque_mountains_national_park', () => ldPark(gPeak(14, 20, 20, 20), gPeak(44, 24, 20, 16), gTree(10, 34, 1.1), gTree(26, 36, 1.1), gTree(38, 36, 1.1), gTree(52, 34, 1.1)));
+def('lake_district', () => gAll(...gFrame(), ...gGround(48), gPeak(14, 22, 24, 26), gPeak(46, 20, 24, 28), E(30, 52, 12, 3, 'ik'), gTree(30, 34, 0.9)));
+def('phoenix_islands_protected_area', () => gAll(...gFrame(), box(3, 3, 54, 54, 'lo'), gWave(14, 'hi', 1.6), gWave(48, 'hi', 1.6), ring('ik', 30, 30, 14, 4), ring('hi', 30, 30, 8, 2), gPalm(30)));
+def('royal_national_park', () => gAll(...gFrame(), box(3, 40, 54, 17, 'lo'), gWave(46, 'hi', 1.6), gWave(52, 'hi', 1.6), P('M3 40 L3 28 L26 28 L30 40 Z', 'bs'), gTree(14, 22, 1.2), gSun(46, 12, 5)));
+def('mount_pinatubo', () => ldVol(30, 14, 34, 34, gCloud(30)));
+def('mount_pelee', () => gAll(...gFrame(), ...gGround(40), gWave(46, 'hi', 1.6), gWave(52, 'hi', 1.6), gVolc(30, 14, 34, 28), gCloud(30)));
+def('mount_st_helens', () => ldVol(30, 18, 40, 30, gCloud(30), S('M24 18 L36 18', 'hi', 3)));
+def('mauna_loa', () => gAll(...gFrame(), ...gGround(48), P('M3 48 Q30 12 57 48 Z', 'ik'), S('M20 28 L40 28', 'hi', 2), gWave(54, 'hi', 1.6)));
+
 /* ── build ────────────────────────────────────────────────────────────────*/
 
 const out = {};
