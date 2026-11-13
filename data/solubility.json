@@ -1,0 +1,1736 @@
+{
+ "$comment": "How much of a thing dissolves in water, in grams per 100 mL at or near room temperature, with a source on every row. Dissolving is a change of STATE, not of substance: salt in water is still salt, and it comes back when the water goes. A zero is a fact worth having, not a gap — it is how the tube can say \"sand does not dissolve\" and show you where that comes from. Where Loam has a recipe for the pair (salt + water -> brine) Loam's recipe wins and this is not used.",
+ "$basis": "sourced",
+ "$fields": {
+  "water": "grams per 100 mL of water at ~20 C, or the string \"miscible\"",
+  "reacts": "it reacts with water rather than dissolving, so the tube leaves it to Loam's own recipe",
+  "note": "one plain sentence",
+  "src": "where the number came from"
+ },
+ "points": {
+  "acetaldehyde": {
+   "water": "miscible",
+   "src": "https://en.wikipedia.org/wiki/Acetaldehyde"
+  },
+  "acetamide": {
+   "water": 200,
+   "note": "2000 g per litre.",
+   "src": "https://en.wikipedia.org/wiki/Acetamide"
+  },
+  "acetic_acid": {
+   "water": "miscible",
+   "src": "https://en.wikipedia.org/wiki/Acetic_acid"
+  },
+  "acetone": {
+   "water": "miscible",
+   "src": "https://en.wikipedia.org/wiki/Acetone"
+  },
+  "acetonitrile": {
+   "water": "miscible",
+   "src": "https://en.wikipedia.org/wiki/Acetonitrile"
+  },
+  "acrylonitrile": {
+   "water": 7,
+   "note": "70 g per litre.",
+   "src": "https://en.wikipedia.org/wiki/Acrylonitrile"
+  },
+  "alanine": {
+   "water": 16.7,
+   "note": "167.2 g per litre at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Alanine"
+  },
+  "alum": {
+   "water": 6.01,
+   "note": "6.01 g per 100 g of water at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Potassium_alum"
+  },
+  "alumina": {
+   "water": 0,
+   "note": "Wikipedia's chembox gives aluminium oxide as insoluble.",
+   "src": "https://en.wikipedia.org/wiki/Aluminium_oxide"
+  },
+  "aluminium_sulfate": {
+   "water": 36.4,
+   "note": "36.4 g per 100 mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Aluminium_sulfate"
+  },
+  "aluminum": {
+   "water": 0,
+   "note": "A thin oxide layer passivates aluminium and shields it from water.",
+   "src": "https://en.wikipedia.org/wiki/Aluminium"
+  },
+  "aluminum_fluoride": {
+   "water": 0.67,
+   "note": "0.67 g per 100 mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Solubility_table"
+  },
+  "aluminum_hydroxide": {
+   "water": 0.0001,
+   "note": "0.0001 g per 100 mL.",
+   "src": "https://en.wikipedia.org/wiki/Aluminium_hydroxide"
+  },
+  "ammonia": {
+   "water": 53,
+   "note": "530 g per litre at 20 degrees, one of the most water-soluble gases there is.",
+   "src": "https://en.wikipedia.org/wiki/Ammonia"
+  },
+  "ammonium_acetate": {
+   "water": 143,
+   "note": "143 g per 100 mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Ammonium_acetate"
+  },
+  "ammonium_bicarbonate": {
+   "water": 21.6,
+   "note": "21.6 g per 100 mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Ammonium_bicarbonate"
+  },
+  "ammonium_bromide": {
+   "water": 78.3,
+   "note": "78.3 g per 100 mL at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Ammonium_bromide"
+  },
+  "ammonium_chloride": {
+   "water": 38.3,
+   "note": "383 g per litre at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Ammonium_chloride"
+  },
+  "ammonium_hydroxide": {
+   "water": "miscible",
+   "note": "Ammonium hydroxide is ammonia already dissolved in water and mixes with more water in any proportion.",
+   "src": "https://en.wikipedia.org/wiki/Ammonia_solution"
+  },
+  "ammonium_iodide": {
+   "water": 172,
+   "note": "172 g per 100 mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Ammonium_iodide"
+  },
+  "ammonium_nitrate": {
+   "water": 192,
+   "note": "192 g per 100 mL at 20 degrees, and dissolving it makes the water cold.",
+   "src": "https://en.wikipedia.org/wiki/Ammonium_nitrate"
+  },
+  "ammonium_phosphate": {
+   "water": 58,
+   "note": "58 g per 100 mL at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Ammonium_phosphate"
+  },
+  "ammonium_sulfate": {
+   "water": 75.4,
+   "note": "75.4 g per 100 mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Solubility_table"
+  },
+  "anhydrite": {
+   "water": 0.264,
+   "note": "Anhydrite is anhydrous calcium sulfate, 0.264 g per 100 mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Solubility_table"
+  },
+  "aniline": {
+   "water": 3.6,
+   "note": "3.6 g per 100 mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Aniline"
+  },
+  "anthracene": {
+   "water": 0,
+   "note": "Wikipedia's chembox gives it as insoluble.",
+   "src": "https://en.wikipedia.org/wiki/Anthracene"
+  },
+  "aragonite": {
+   "water": 0.0013,
+   "note": "Aragonite is a crystal form of calcium carbonate, 0.013 g per litre at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_carbonate"
+  },
+  "arginine": {
+   "water": 14.87,
+   "note": "14.87 g per 100 mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Arginine"
+  },
+  "arsenic_trioxide": {
+   "water": 2,
+   "note": "20 g per litre at 25 degrees, which is what made white arsenic such an effective poison.",
+   "src": "https://en.wikipedia.org/wiki/Arsenic_trioxide"
+  },
+  "ascorbate": {
+   "water": 33,
+   "note": "330 g per litre; the chembox gives no temperature.",
+   "src": "https://en.wikipedia.org/wiki/Ascorbic_acid"
+  },
+  "asparagine": {
+   "water": 2.94,
+   "note": "2.94 g per 100 mL.",
+   "src": "https://en.wikipedia.org/wiki/Asparagine"
+  },
+  "aspartic_acid": {
+   "water": 0.45,
+   "note": "4.5 g per litre.",
+   "src": "https://en.wikipedia.org/wiki/Aspartic_acid"
+  },
+  "aspirin": {
+   "water": 0.3,
+   "note": "3 mg per mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Aspirin"
+  },
+  "baking_soda": {
+   "water": 9.6,
+   "note": "96 g per litre at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_bicarbonate"
+  },
+  "barium_carbonate": {
+   "water": 0.0024,
+   "note": "24 mg per litre at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Barium_carbonate"
+  },
+  "barium_chloride": {
+   "water": 38.1,
+   "note": "38.1 g per 100 mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Solubility_table"
+  },
+  "barium_fluoride": {
+   "water": 0.161,
+   "note": "1.61 g per litre at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Barium_fluoride"
+  },
+  "barium_hydroxide": {
+   "water": 5.59,
+   "note": "5.59 g per 100 mL at 20 degrees for the octahydrate.",
+   "src": "https://en.wikipedia.org/wiki/Solubility_table"
+  },
+  "barium_nitrate": {
+   "water": 10.5,
+   "note": "10.5 g per 100 mL at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Barium_nitrate"
+  },
+  "barium_oxide": {
+   "water": 0,
+   "reacts": true,
+   "note": "Barium oxide reacts with water to form barium hydroxide rather than simply dissolving.",
+   "src": "https://en.wikipedia.org/wiki/Barium_oxide"
+  },
+  "barium_peroxide": {
+   "water": 0.091,
+   "note": "0.091 g per 100 mL at 20 degrees for the anhydrous solid.",
+   "src": "https://en.wikipedia.org/wiki/Barium_peroxide"
+  },
+  "barium_sulfide": {
+   "water": 8.94,
+   "note": "8.94 g per 100 mL at 25 degrees; in hot water it reacts instead.",
+   "src": "https://en.wikipedia.org/wiki/Barium_sulfide"
+  },
+  "baryte": {
+   "water": 0.00024,
+   "note": "Only 2.4 mg dissolves in a litre at 20 degrees, which is why barium sulfate is safe to swallow for X-rays.",
+   "src": "https://en.wikipedia.org/wiki/Barium_sulfate"
+  },
+  "benzaldehyde": {
+   "water": 0.695,
+   "note": "6.95 g per litre at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Benzaldehyde"
+  },
+  "benzene": {
+   "water": 0.18,
+   "note": "About 1.8 g per litre near room temperature.",
+   "src": "https://en.wikipedia.org/wiki/Benzene"
+  },
+  "benzoic_acid": {
+   "water": 0.344,
+   "note": "3.44 g per litre at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Benzoic_acid"
+  },
+  "beryllium_chloride": {
+   "water": 15.1,
+   "note": "15.1 g per 100 mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Beryllium_chloride"
+  },
+  "beta_carotene": {
+   "water": 0,
+   "note": "Wikipedia's chembox gives it as insoluble in water.",
+   "src": "https://en.wikipedia.org/wiki/Beta-Carotene"
+  },
+  "bisphenol_a": {
+   "water": 0.03,
+   "note": "0.3 g per litre at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Bisphenol_A"
+  },
+  "bleach": {
+   "water": 29.3,
+   "note": "29.3 g per 100 mL at 0 degrees, the only figure the chembox gives.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_hypochlorite"
+  },
+  "borax": {
+   "water": 3.17,
+   "note": "31.7 g per litre; the chembox gives no temperature.",
+   "src": "https://en.wikipedia.org/wiki/Borax"
+  },
+  "boric_acid": {
+   "water": 4.72,
+   "note": "4.72 g per 100 mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Boric_acid"
+  },
+  "bromine": {
+   "water": 3.55,
+   "note": "35.5 g per litre at 20 degrees, and some of it hydrolyses to hydrobromic and hypobromous acid.",
+   "src": "https://en.wikipedia.org/wiki/Bromine_water"
+  },
+  "butadiene": {
+   "water": 0.0735,
+   "note": "735 mg per litre at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Butadiene"
+  },
+  "butane": {
+   "water": 0.0061,
+   "note": "61 mg per litre at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Butane"
+  },
+  "butanoic_acid": {
+   "water": "miscible",
+   "src": "https://en.wikipedia.org/wiki/Butyric_acid"
+  },
+  "caesium_chloride": {
+   "water": 191,
+   "note": "1910 g per litre at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Caesium_chloride"
+  },
+  "caffeine": {
+   "water": 2,
+   "note": "Caffeine is moderately soluble at room temperature, 2 g per 100 mL, and far more so in boiling water.",
+   "src": "https://en.wikipedia.org/wiki/Caffeine"
+  },
+  "calcite": {
+   "water": 0.0013,
+   "note": "Calcite is calcium carbonate, 0.013 g per litre at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_carbonate"
+  },
+  "calcium": {
+   "water": 0,
+   "reacts": true,
+   "note": "Calcium reacts exothermically with water to give calcium hydroxide and hydrogen.",
+   "src": "https://en.wikipedia.org/wiki/Calcium"
+  },
+  "calcium_acetate": {
+   "water": 34.7,
+   "note": "34.7 g per 100 mL at 20 degrees, and it dissolves less in hot water.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_acetate"
+  },
+  "calcium_bromide": {
+   "water": 143,
+   "note": "143 g per 100 mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_bromide"
+  },
+  "calcium_carbide": {
+   "water": 0,
+   "reacts": true,
+   "note": "Calcium carbide does not dissolve: it reacts with water to produce acetylene.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_carbide"
+  },
+  "calcium_chloride": {
+   "water": 74.5,
+   "note": "74.5 g per 100 mL at 20 degrees for the anhydrous salt, and dissolving it heats the water.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_chloride"
+  },
+  "calcium_hydride": {
+   "water": 0,
+   "reacts": true,
+   "note": "Calcium hydride reacts violently with water.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_hydride"
+  },
+  "calcium_hydroxide": {
+   "water": 0.173,
+   "note": "1.73 g per litre at 20 degrees, and unusually it dissolves less as the water gets hotter.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_hydroxide"
+  },
+  "calcium_iodide": {
+   "water": 66,
+   "note": "66 g per 100 mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_iodide"
+  },
+  "calcium_nitrate": {
+   "water": 121.2,
+   "note": "1212 g per litre at 20 degrees for the anhydrous salt.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_nitrate"
+  },
+  "calcium_nitride": {
+   "water": 0,
+   "reacts": true,
+   "note": "Calcium nitride decomposes in water rather than dissolving.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_nitride"
+  },
+  "calcium_phosphate": {
+   "water": 0,
+   "note": "Wikipedia gives it as practically insoluble in water.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_phosphate"
+  },
+  "camphor": {
+   "water": 0.12,
+   "note": "1.2 g per litre.",
+   "src": "https://en.wikipedia.org/wiki/Camphor"
+  },
+  "caprolactam": {
+   "water": 86.7,
+   "note": "866.89 g per litre at 22 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Caprolactam"
+  },
+  "capsaicin": {
+   "water": 0.0013,
+   "note": "0.0013 g per 100 mL, which is why water does not put out chilli heat.",
+   "src": "https://en.wikipedia.org/wiki/Capsaicin"
+  },
+  "carbon_dioxide": {
+   "water": 0.145,
+   "note": "1.45 g per litre at 25 degrees and ordinary pressure.",
+   "src": "https://en.wikipedia.org/wiki/Carbon_dioxide"
+  },
+  "carbon_disulfide": {
+   "water": 0.217,
+   "note": "2.17 g per litre at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Carbon_disulfide"
+  },
+  "carbon_tetrachloride": {
+   "water": 0.081,
+   "note": "0.081 g per 100 mL at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Carbon_tetrachloride"
+  },
+  "casein": {
+   "water": 0,
+   "note": "The purified milk protein is water-insoluble, though it disperses in dilute alkali.",
+   "src": "https://en.wikipedia.org/wiki/Casein"
+  },
+  "cassiterite": {
+   "water": 0,
+   "note": "Cassiterite, the tin ore, is insoluble in water.",
+   "src": "https://en.wikipedia.org/wiki/Cassiterite"
+  },
+  "cellulose": {
+   "water": 0,
+   "note": "Wikipedia's chembox gives its water solubility as none.",
+   "src": "https://en.wikipedia.org/wiki/Cellulose"
+  },
+  "cerium_oxide": {
+   "water": 0,
+   "note": "Wikipedia's chembox gives it as insoluble.",
+   "src": "https://en.wikipedia.org/wiki/Cerium(IV)_oxide"
+  },
+  "charcoal": {
+   "water": 0,
+   "note": "Carbon does not dissolve in water.",
+   "src": "https://en.wikipedia.org/wiki/Charcoal"
+  },
+  "chloric_acid": {
+   "water": 40,
+   "note": "Wikipedia gives more than 40 g per 100 mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Chloric_acid"
+  },
+  "chlorine_dioxide": {
+   "water": 0.8,
+   "note": "8 g per litre at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Chlorine_dioxide"
+  },
+  "chlorine_trifluoride": {
+   "water": 0,
+   "reacts": true,
+   "note": "Chlorine trifluoride reacts with water instead of dissolving.",
+   "src": "https://en.wikipedia.org/wiki/Chlorine_trifluoride"
+  },
+  "chloroform": {
+   "water": 0.809,
+   "note": "8.09 g per litre at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Chloroform"
+  },
+  "chloromethane": {
+   "water": 0.5325,
+   "note": "5.325 g per litre.",
+   "src": "https://en.wikipedia.org/wiki/Chloromethane"
+  },
+  "cholesterol": {
+   "water": 0,
+   "note": "Practically insoluble, about 0.095 mg per litre at 30 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Cholesterol"
+  },
+  "chromic_acid": {
+   "water": 169,
+   "note": "169 g per 100 mL; the chembox gives no temperature.",
+   "src": "https://en.wikipedia.org/wiki/Chromic_acid"
+  },
+  "chromium_chloride": {
+   "water": 58.5,
+   "note": "585 g per litre for the hexahydrate; the anhydrous salt is only slightly soluble.",
+   "src": "https://en.wikipedia.org/wiki/Chromium(III)_chloride"
+  },
+  "chromium_oxide": {
+   "water": 0,
+   "note": "Wikipedia's chembox gives it as insoluble.",
+   "src": "https://en.wikipedia.org/wiki/Chromium(III)_oxide"
+  },
+  "cinnabar": {
+   "water": 0,
+   "note": "Cinnabar is mercury sulfide, insoluble in water.",
+   "src": "https://en.wikipedia.org/wiki/Mercury_sulfide"
+  },
+  "citric_acid": {
+   "water": 59.2,
+   "note": "Wikipedia's chembox gives 59.2 per cent by weight at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Citric_acid"
+  },
+  "cobalt_chloride": {
+   "water": 52.9,
+   "note": "52.9 g per 100 mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Cobalt(II)_chloride"
+  },
+  "copper": {
+   "water": 0,
+   "note": "Copper does not react with water, and the metal does not dissolve in it.",
+   "src": "https://en.wikipedia.org/wiki/Copper"
+  },
+  "copper_chloride": {
+   "water": 75.7,
+   "note": "75.7 g per 100 mL at 25 degrees for the anhydrous salt.",
+   "src": "https://en.wikipedia.org/wiki/Copper(II)_chloride"
+  },
+  "copper_oxide": {
+   "water": 0,
+   "note": "Wikipedia's chembox gives it as insoluble.",
+   "src": "https://en.wikipedia.org/wiki/Copper(II)_oxide"
+  },
+  "copper_sulfate": {
+   "water": 20.1,
+   "note": "201 g per litre at 20 degrees for the anhydrous salt.",
+   "src": "https://en.wikipedia.org/wiki/Copper(II)_sulfate"
+  },
+  "copper_sulfide": {
+   "water": 0,
+   "note": "Copper(II) sulfide is insoluble in water, which is why it sits in the ground as ore.",
+   "src": "https://en.wikipedia.org/wiki/Copper(II)_sulfide"
+  },
+  "corundum": {
+   "water": 0,
+   "note": "Corundum is crystalline aluminium oxide and is insoluble in water.",
+   "src": "https://en.wikipedia.org/wiki/Corundum"
+  },
+  "coumarin": {
+   "water": 0.17,
+   "note": "0.17 g per 100 mL.",
+   "src": "https://en.wikipedia.org/wiki/Coumarin"
+  },
+  "creatine": {
+   "water": 1.33,
+   "note": "13.3 g per litre at 18 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Creatine"
+  },
+  "cyclohexanone": {
+   "water": 8.6,
+   "note": "8.6 g per 100 mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Cyclohexanone"
+  },
+  "cysteine": {
+   "water": 27.7,
+   "note": "277 g per litre at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Cysteine"
+  },
+  "diacetyl": {
+   "water": 20,
+   "note": "200 g per litre at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Diacetyl"
+  },
+  "diamond": {
+   "water": 0,
+   "note": "Diamond is insoluble in water.",
+   "src": "https://en.wikipedia.org/wiki/Diamond"
+  },
+  "dimethyl_sulfide": {
+   "water": 0.2,
+   "note": "2 g per litre at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Dimethyl_sulfide"
+  },
+  "dimethyl_sulfoxide": {
+   "water": "miscible",
+   "src": "https://en.wikipedia.org/wiki/Dimethyl_sulfoxide"
+  },
+  "dinitrogen_monoxide": {
+   "water": 0.15,
+   "note": "1.5 g per litre at 15 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Nitrous_oxide"
+  },
+  "dinitrogen_pentoxide": {
+   "water": 0,
+   "reacts": true,
+   "note": "It reacts with water to form nitric acid rather than dissolving.",
+   "src": "https://en.wikipedia.org/wiki/Dinitrogen_pentoxide"
+  },
+  "ethanol": {
+   "water": "miscible",
+   "note": "It mixes with water in any proportion.",
+   "src": "https://en.wikipedia.org/wiki/Ethanol"
+  },
+  "ether": {
+   "water": 6.05,
+   "note": "6.05 g per 100 mL.",
+   "src": "https://en.wikipedia.org/wiki/Diethyl_ether"
+  },
+  "ethylene": {
+   "water": 0.0131,
+   "note": "131 mg per litre at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Ethylene"
+  },
+  "ethylene_oxide": {
+   "water": "miscible",
+   "src": "https://en.wikipedia.org/wiki/Ethylene_oxide"
+  },
+  "ferric_hydroxide": {
+   "water": 0,
+   "note": "Insoluble at neutral pH.",
+   "src": "https://en.wikipedia.org/wiki/Iron(III)_oxide-hydroxide"
+  },
+  "ferrous_hydroxide": {
+   "water": 0.000052,
+   "note": "0.000052 g per 100 g of water at 20 degrees and neutral pH.",
+   "src": "https://en.wikipedia.org/wiki/Iron(II)_hydroxide"
+  },
+  "flint": {
+   "water": 0,
+   "note": "Flint is a cryptocrystalline form of quartz, which is insoluble at ordinary temperature and pressure.",
+   "src": "https://en.wikipedia.org/wiki/Quartz"
+  },
+  "flour": {
+   "water": 0,
+   "note": "Flour does not dissolve: it suspends, and settles if left.",
+   "src": "https://en.wikipedia.org/wiki/Flour"
+  },
+  "fluorine": {
+   "water": 0,
+   "reacts": true,
+   "note": "Fluorine does not dissolve: water spontaneously combusts under a jet of fluorine gas.",
+   "src": "https://en.wikipedia.org/wiki/Fluorine"
+  },
+  "fluorite": {
+   "water": 0.0016,
+   "note": "Fluorite is calcium fluoride, 0.016 g per litre at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_fluoride"
+  },
+  "formaldehyde": {
+   "water": 40,
+   "note": "400 g per litre.",
+   "src": "https://en.wikipedia.org/wiki/Formaldehyde"
+  },
+  "formic_acid": {
+   "water": "miscible",
+   "src": "https://en.wikipedia.org/wiki/Formic_acid"
+  },
+  "fructose": {
+   "water": 400,
+   "note": "About 4000 g per litre at 25 degrees, the most soluble of the common sugars.",
+   "src": "https://en.wikipedia.org/wiki/Fructose"
+  },
+  "galactose": {
+   "water": 65,
+   "note": "650 g per litre at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Galactose"
+  },
+  "geraniol": {
+   "water": 0.0686,
+   "note": "686 mg per litre at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Geraniol"
+  },
+  "germanium_dioxide": {
+   "water": 0.447,
+   "note": "4.47 g per litre at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Germanium_dioxide"
+  },
+  "glass": {
+   "water": 0,
+   "note": "Glass is typically inert and can mostly withstand the action of water.",
+   "src": "https://en.wikipedia.org/wiki/Glass"
+  },
+  "glucose": {
+   "water": 90.9,
+   "note": "909 g per litre at 25 degrees; the chembox also gives a lower 479 g per litre at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Glucose"
+  },
+  "glutamic_acid": {
+   "water": 0.857,
+   "note": "8.57 g per litre at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Glutamic_acid"
+  },
+  "glycerol": {
+   "water": "miscible",
+   "src": "https://en.wikipedia.org/wiki/Glycerol"
+  },
+  "glycine": {
+   "water": 25,
+   "note": "249.9 g per litre at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Glycine"
+  },
+  "gold": {
+   "water": 0,
+   "note": "Gold is unaffected by water and most acids, and dissolves only in aqua regia or alkaline cyanide.",
+   "src": "https://en.wikipedia.org/wiki/Gold"
+  },
+  "gypsum": {
+   "water": 0.263,
+   "note": "Gypsum is calcium sulfate dihydrate, 2.63 g per litre at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_sulfate"
+  },
+  "hematite": {
+   "water": 0,
+   "note": "Wikipedia's chembox gives iron(III) oxide as insoluble.",
+   "src": "https://en.wikipedia.org/wiki/Iron(III)_oxide"
+  },
+  "hexane": {
+   "water": 0.00095,
+   "note": "9.5 mg per litre.",
+   "src": "https://en.wikipedia.org/wiki/Hexane"
+  },
+  "histidine": {
+   "water": 4.56,
+   "note": "45.6 mg per mL.",
+   "src": "https://en.wikipedia.org/wiki/Histidine"
+  },
+  "hydrazine": {
+   "water": "miscible",
+   "src": "https://en.wikipedia.org/wiki/Hydrazine"
+  },
+  "hydrobromic_acid": {
+   "water": 20.4,
+   "note": "204 g per 100 mL at 15 degrees, the nearest figure given to room temperature.",
+   "src": "https://en.wikipedia.org/wiki/Hydrobromic_acid"
+  },
+  "hydrochloric_acid": {
+   "water": "miscible",
+   "note": "Hydrochloric acid is hydrogen chloride already dissolved in water and mixes with more water in any proportion.",
+   "src": "https://en.wikipedia.org/wiki/Hydrochloric_acid"
+  },
+  "hydrocyanic_acid": {
+   "water": "miscible",
+   "src": "https://en.wikipedia.org/wiki/Hydrogen_cyanide"
+  },
+  "hydrogen_cyanide": {
+   "water": "miscible",
+   "src": "https://en.wikipedia.org/wiki/Hydrogen_cyanide"
+  },
+  "hydrogen_peroxide": {
+   "water": "miscible",
+   "src": "https://en.wikipedia.org/wiki/Hydrogen_peroxide"
+  },
+  "iodic_acid": {
+   "water": 269,
+   "note": "269 g per 100 mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Iodic_acid"
+  },
+  "iodine": {
+   "water": 0.029,
+   "note": "Only slightly soluble: one gram needs 3450 mL of water at 20 degrees, which is why tincture of iodine uses alcohol.",
+   "src": "https://en.wikipedia.org/wiki/Iodine"
+  },
+  "iron": {
+   "water": 0,
+   "note": "Metallic iron does not dissolve in water; with oxygen and water it turns to rust instead.",
+   "src": "https://en.wikipedia.org/wiki/Iron"
+  },
+  "iron_chloride": {
+   "water": 91.2,
+   "note": "912 g per litre at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Iron(III)_chloride"
+  },
+  "iron_ii_sulfate": {
+   "water": 29.5,
+   "note": "29.5 g per 100 g of water; the chembox gives no temperature.",
+   "src": "https://en.wikipedia.org/wiki/Iron(II)_sulfate"
+  },
+  "isoamyl_acetate": {
+   "water": 0.3,
+   "note": "0.3 per cent at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Isoamyl_acetate"
+  },
+  "lactose": {
+   "water": 19.5,
+   "note": "195 g per litre, much the least soluble of the common sugars.",
+   "src": "https://en.wikipedia.org/wiki/Lactose"
+  },
+  "lanthanum_oxide": {
+   "water": 0,
+   "note": "Wikipedia's chembox gives it as insoluble.",
+   "src": "https://en.wikipedia.org/wiki/Lanthanum_oxide"
+  },
+  "lard": {
+   "water": 0,
+   "note": "Lard is insoluble in water, which is why it can be skimmed off during rendering.",
+   "src": "https://en.wikipedia.org/wiki/Lard"
+  },
+  "lead": {
+   "water": 0,
+   "note": "A carbonate film renders bulk lead effectively inert, and the metal does not dissolve in water.",
+   "src": "https://en.wikipedia.org/wiki/Lead"
+  },
+  "lead_acetate": {
+   "water": 44.31,
+   "note": "44.31 g per 100 mL at 20 degrees for the anhydrous salt.",
+   "src": "https://en.wikipedia.org/wiki/Lead(II)_acetate"
+  },
+  "lead_chloride": {
+   "water": 0.99,
+   "note": "0.99 g per 100 mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Lead(II)_chloride"
+  },
+  "lead_iodide": {
+   "water": 0.076,
+   "note": "0.76 g per litre at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Lead(II)_iodide"
+  },
+  "lime": {
+   "water": 0.173,
+   "note": "Slaked lime dissolves to 1.73 g per litre at 20 degrees, and unusually it dissolves less as the water gets hotter.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_hydroxide"
+  },
+  "limestone": {
+   "water": 0.0013,
+   "note": "Only 0.013 g dissolves in a litre at 25 degrees, though rain carrying carbon dioxide eats it away far faster.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_carbonate"
+  },
+  "limonene": {
+   "water": 0,
+   "note": "Wikipedia's chembox gives it as insoluble.",
+   "src": "https://en.wikipedia.org/wiki/Limonene"
+  },
+  "linalool": {
+   "water": 0.159,
+   "note": "1.589 g per litre.",
+   "src": "https://en.wikipedia.org/wiki/Linalool"
+  },
+  "linoleic_acid": {
+   "water": 0,
+   "note": "Practically insoluble, about 0.139 mg per litre.",
+   "src": "https://en.wikipedia.org/wiki/Linoleic_acid"
+  },
+  "litharge": {
+   "water": 0.00504,
+   "note": "0.0504 g per litre at 25 degrees for the red alpha form.",
+   "src": "https://en.wikipedia.org/wiki/Lead(II)_oxide"
+  },
+  "lithium": {
+   "water": 0,
+   "reacts": true,
+   "note": "Lithium reacts with water easily, if less vigorously than the other alkali metals, giving lithium hydroxide and hydrogen.",
+   "src": "https://en.wikipedia.org/wiki/Lithium"
+  },
+  "lithium_bromide": {
+   "water": 166.7,
+   "note": "166.7 g per 100 mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Lithium_bromide"
+  },
+  "lithium_carbonate": {
+   "water": 1.29,
+   "note": "1.29 g per 100 mL at 25 degrees, and it dissolves less as the water gets hotter.",
+   "src": "https://en.wikipedia.org/wiki/Lithium_carbonate"
+  },
+  "lithium_chloride": {
+   "water": 84.25,
+   "note": "84.25 g per 100 mL at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Lithium_chloride"
+  },
+  "lithium_fluoride": {
+   "water": 0.134,
+   "note": "0.134 g per 100 mL at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Lithium_fluoride"
+  },
+  "lithium_hydride": {
+   "water": 0,
+   "reacts": true,
+   "note": "Lithium hydride reacts with water instead of dissolving.",
+   "src": "https://en.wikipedia.org/wiki/Lithium_hydride"
+  },
+  "lithium_hydroxide": {
+   "water": 12.8,
+   "note": "12.8 g per 100 mL at 20 degrees for the anhydrous solid.",
+   "src": "https://en.wikipedia.org/wiki/Lithium_hydroxide"
+  },
+  "lithium_iodide": {
+   "water": 167,
+   "note": "1670 g per litre at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Lithium_iodide"
+  },
+  "lithium_nitride": {
+   "water": 0,
+   "reacts": true,
+   "note": "Lithium nitride reacts with water rather than dissolving.",
+   "src": "https://en.wikipedia.org/wiki/Lithium_nitride"
+  },
+  "lithium_oxide": {
+   "water": 0,
+   "reacts": true,
+   "note": "Lithium oxide reacts with water to form lithium hydroxide rather than dissolving.",
+   "src": "https://en.wikipedia.org/wiki/Lithium_oxide"
+  },
+  "lycopene": {
+   "water": 0,
+   "note": "Wikipedia's chembox gives it as insoluble in water.",
+   "src": "https://en.wikipedia.org/wiki/Lycopene"
+  },
+  "lye": {
+   "water": 100,
+   "note": "1000 g per litre at 25 degrees, and dissolving it heats the water sharply.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_hydroxide"
+  },
+  "lysine": {
+   "water": 150,
+   "note": "1.5 kg per litre.",
+   "src": "https://en.wikipedia.org/wiki/Lysine"
+  },
+  "magnesium": {
+   "water": 0,
+   "reacts": true,
+   "note": "Magnesium does not dissolve; it reacts slowly with water at room temperature, hydrogen bubbling off the surface.",
+   "src": "https://en.wikipedia.org/wiki/Magnesium"
+  },
+  "magnesium_bromide": {
+   "water": 102,
+   "note": "102 g per 100 mL for the anhydrous salt.",
+   "src": "https://en.wikipedia.org/wiki/Magnesium_bromide"
+  },
+  "magnesium_carbonate": {
+   "water": 0.0139,
+   "note": "0.0139 g per 100 mL at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Magnesium_carbonate"
+  },
+  "magnesium_chloride": {
+   "water": 54.3,
+   "note": "54.3 g per 100 mL at 20 degrees for the anhydrous salt.",
+   "src": "https://en.wikipedia.org/wiki/Magnesium_chloride"
+  },
+  "magnesium_fluoride": {
+   "water": 0.013,
+   "note": "0.013 g per 100 mL.",
+   "src": "https://en.wikipedia.org/wiki/Magnesium_fluoride"
+  },
+  "magnesium_hydroxide": {
+   "water": 0.00064,
+   "note": "0.00064 g per 100 mL at 25 degrees, which is why milk of magnesia is a suspension.",
+   "src": "https://en.wikipedia.org/wiki/Magnesium_hydroxide"
+  },
+  "magnesium_nitrate": {
+   "water": 71,
+   "note": "71 g per 100 mL at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Magnesium_nitrate"
+  },
+  "magnesium_sulfate": {
+   "water": 35.1,
+   "note": "35.1 g per 100 mL at 20 degrees for the anhydrous salt.",
+   "src": "https://en.wikipedia.org/wiki/Magnesium_sulfate"
+  },
+  "magnesium_sulfide": {
+   "water": 0,
+   "reacts": true,
+   "note": "Magnesium sulfide decomposes in water rather than dissolving.",
+   "src": "https://en.wikipedia.org/wiki/Magnesium_sulfide"
+  },
+  "malic_acid": {
+   "water": 55.8,
+   "note": "558 g per litre at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Malic_acid"
+  },
+  "maltose": {
+   "water": 108,
+   "note": "1.080 g per mL of water at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Maltose"
+  },
+  "manganese_dioxide": {
+   "water": 0,
+   "note": "Wikipedia's chembox gives it as insoluble.",
+   "src": "https://en.wikipedia.org/wiki/Manganese_dioxide"
+  },
+  "marble": {
+   "water": 0.0013,
+   "note": "Marble is recrystallised calcium carbonate, 0.013 g per litre at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_carbonate"
+  },
+  "mercuric_oxide": {
+   "water": 0.0053,
+   "note": "0.0053 g per 100 mL at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Mercury(II)_oxide"
+  },
+  "methane": {
+   "water": 0.00227,
+   "note": "22.7 mg per litre.",
+   "src": "https://en.wikipedia.org/wiki/Methane"
+  },
+  "methanol": {
+   "water": "miscible",
+   "src": "https://en.wikipedia.org/wiki/Methanol"
+  },
+  "methyl_acetate": {
+   "water": 25,
+   "note": "About 25 per cent at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Methyl_acetate"
+  },
+  "methyl_ethyl_ketone": {
+   "water": 27.5,
+   "note": "27.5 g per 100 mL.",
+   "src": "https://en.wikipedia.org/wiki/Butanone"
+  },
+  "methyl_formate": {
+   "water": 30,
+   "note": "30 per cent at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Methyl_formate"
+  },
+  "methylamine": {
+   "water": 100.8,
+   "note": "1008 g per litre at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Methylamine"
+  },
+  "morphine": {
+   "water": 0.0149,
+   "note": "149 mg per litre at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Morphine"
+  },
+  "msg": {
+   "water": 74,
+   "note": "740 g per litre.",
+   "src": "https://en.wikipedia.org/wiki/Monosodium_glutamate"
+  },
+  "naphthalene": {
+   "water": 0.00316,
+   "note": "31.6 mg per kg of water at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Naphthalene"
+  },
+  "nickel_nitrate": {
+   "water": 243,
+   "note": "243 g per 100 mL at 0 degrees for the hexahydrate, the only figure the chembox gives.",
+   "src": "https://en.wikipedia.org/wiki/Nickel(II)_nitrate"
+  },
+  "nickel_oxide": {
+   "water": 0,
+   "note": "Wikipedia's chembox gives its solubility as negligible.",
+   "src": "https://en.wikipedia.org/wiki/Nickel(II)_oxide"
+  },
+  "nickel_sulfate": {
+   "water": 65,
+   "note": "65 g per 100 mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Nickel(II)_sulfate"
+  },
+  "nitric_acid": {
+   "water": "miscible",
+   "src": "https://en.wikipedia.org/wiki/Nitric_acid"
+  },
+  "nitric_oxide": {
+   "water": 0.0056,
+   "note": "0.0056 g per 100 mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Nitric_oxide"
+  },
+  "nitrobenzene": {
+   "water": 0.19,
+   "note": "0.19 g per 100 mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Nitrobenzene"
+  },
+  "nitrogen_dioxide": {
+   "water": 0,
+   "reacts": true,
+   "note": "Nitrogen dioxide does not simply dissolve: it hydrolyses in water, giving nitric and nitrous acid.",
+   "src": "https://en.wikipedia.org/wiki/Nitrogen_dioxide"
+  },
+  "oil": {
+   "water": 0,
+   "note": "Wikipedia describes oil as a viscous water-insoluble liquid.",
+   "src": "https://en.wikipedia.org/wiki/Oil"
+  },
+  "oleic_acid": {
+   "water": 0,
+   "note": "Wikipedia's chembox gives it as insoluble.",
+   "src": "https://en.wikipedia.org/wiki/Oleic_acid"
+  },
+  "olive_oil": {
+   "water": 0,
+   "note": "Olive oil is a fat, and oils are hydrophobic and water-insoluble.",
+   "src": "https://en.wikipedia.org/wiki/Oil"
+  },
+  "oxalic_acid": {
+   "water": 9.55,
+   "note": "95.5 g per litre at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Oxalic_acid"
+  },
+  "oxygen_gas": {
+   "water": 0.00076,
+   "note": "7.6 mg per litre at 20 degrees, about half what cold water at 0 degrees holds.",
+   "src": "https://en.wikipedia.org/wiki/Oxygen"
+  },
+  "ozone": {
+   "water": 0.105,
+   "note": "1.05 g per litre at 0 degrees, the only figure the chembox gives.",
+   "src": "https://en.wikipedia.org/wiki/Ozone"
+  },
+  "paracetamol": {
+   "water": 1.278,
+   "note": "12.78 g per kg of water at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Paracetamol"
+  },
+  "paraffin_wax": {
+   "water": 0,
+   "note": "Practically insoluble, about 1 mg per litre.",
+   "src": "https://en.wikipedia.org/wiki/Paraffin_wax"
+  },
+  "perchloric_acid": {
+   "water": "miscible",
+   "src": "https://en.wikipedia.org/wiki/Perchloric_acid"
+  },
+  "phenol": {
+   "water": 8.3,
+   "note": "8.3 g per 100 mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Phenol"
+  },
+  "phenolphthalein": {
+   "water": 0.04,
+   "note": "400 mg per litre, which is why the indicator is dissolved in alcohol.",
+   "src": "https://en.wikipedia.org/wiki/Phenolphthalein"
+  },
+  "phosgene": {
+   "water": 0,
+   "reacts": true,
+   "note": "Phosgene does not dissolve: it hydrolyses to hydrogen chloride and carbon dioxide.",
+   "src": "https://en.wikipedia.org/wiki/Phosgene"
+  },
+  "phosphoric_acid": {
+   "water": 548,
+   "note": "548 g per 100 mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Phosphoric_acid"
+  },
+  "phosphorous_acid": {
+   "water": 310,
+   "note": "310 g per 100 mL; the chembox gives no temperature.",
+   "src": "https://en.wikipedia.org/wiki/Phosphorous_acid"
+  },
+  "phosphorus": {
+   "water": 0,
+   "note": "White phosphorus is a soft waxy solid that is insoluble in water.",
+   "src": "https://en.wikipedia.org/wiki/Phosphorus"
+  },
+  "phosphorus_pentachloride": {
+   "water": 0,
+   "reacts": true,
+   "note": "Phosphorus pentachloride reacts with water rather than dissolving.",
+   "src": "https://en.wikipedia.org/wiki/Phosphorus_pentachloride"
+  },
+  "phosphorus_trichloride": {
+   "water": 0,
+   "reacts": true,
+   "note": "Phosphorus trichloride hydrolyses on contact with water rather than dissolving.",
+   "src": "https://en.wikipedia.org/wiki/Phosphorus_trichloride"
+  },
+  "piperine": {
+   "water": 0.004,
+   "note": "40 mg per litre.",
+   "src": "https://en.wikipedia.org/wiki/Piperine"
+  },
+  "platinum": {
+   "water": 0,
+   "note": "Platinum does not corrode even at high temperatures, which is why it counts as a noble metal.",
+   "src": "https://en.wikipedia.org/wiki/Platinum"
+  },
+  "polystyrene": {
+   "water": 0,
+   "note": "Wikipedia's chembox gives it as insoluble.",
+   "src": "https://en.wikipedia.org/wiki/Polystyrene"
+  },
+  "potassium": {
+   "water": 0,
+   "reacts": true,
+   "note": "Potassium reacts vigorously with water, generating enough heat to ignite the hydrogen it releases.",
+   "src": "https://en.wikipedia.org/wiki/Potassium"
+  },
+  "potassium_acetate": {
+   "water": 268.6,
+   "note": "268.6 g per 100 mL at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Potassium_acetate"
+  },
+  "potassium_bicarbonate": {
+   "water": 22.4,
+   "note": "22.4 g per 100 mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Potassium_bicarbonate"
+  },
+  "potassium_bitartrate": {
+   "water": 0.57,
+   "note": "0.57 g per 100 mL at 20 degrees, which is why cream of tartar settles out of cooling wine.",
+   "src": "https://en.wikipedia.org/wiki/Potassium_bitartrate"
+  },
+  "potassium_bromide": {
+   "water": 67.8,
+   "note": "678 g per litre at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Potassium_bromide"
+  },
+  "potassium_carbonate": {
+   "water": 110.3,
+   "note": "110.3 g per 100 mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Potassium_carbonate"
+  },
+  "potassium_chlorate": {
+   "water": 8.17,
+   "note": "8.17 g per 100 g of water at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Potassium_chlorate"
+  },
+  "potassium_chromate": {
+   "water": 65,
+   "note": "65 g per 100 mL; the chembox gives no temperature.",
+   "src": "https://en.wikipedia.org/wiki/Potassium_chromate"
+  },
+  "potassium_cyanide": {
+   "water": 71.6,
+   "note": "71.6 g per 100 mL at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Potassium_cyanide"
+  },
+  "potassium_dichromate": {
+   "water": 15.1,
+   "note": "15.1 g per 100 g of water; the chembox gives no temperature.",
+   "src": "https://en.wikipedia.org/wiki/Potassium_dichromate"
+  },
+  "potassium_ferrocyanide": {
+   "water": 28.9,
+   "note": "28.9 g per 100 mL at 20 degrees for the trihydrate.",
+   "src": "https://en.wikipedia.org/wiki/Potassium_ferrocyanide"
+  },
+  "potassium_fluoride": {
+   "water": 102,
+   "note": "102 g per 100 mL at 25 degrees for the anhydrous salt.",
+   "src": "https://en.wikipedia.org/wiki/Potassium_fluoride"
+  },
+  "potassium_hydroxide": {
+   "water": 121,
+   "note": "121 g per 100 mL at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Potassium_hydroxide"
+  },
+  "potassium_iodate": {
+   "water": 9.16,
+   "note": "9.16 g per 100 mL; the chembox gives no temperature.",
+   "src": "https://en.wikipedia.org/wiki/Potassium_iodate"
+  },
+  "potassium_iodide": {
+   "water": 128,
+   "note": "About 128 g per 100 mL.",
+   "src": "https://en.wikipedia.org/wiki/Potassium_iodide"
+  },
+  "potassium_nitrate": {
+   "water": 31.6,
+   "note": "316 g per litre at 20 degrees, and nearly 2.4 kg per litre in boiling water.",
+   "src": "https://en.wikipedia.org/wiki/Potassium_nitrate"
+  },
+  "potassium_nitrite": {
+   "water": 312,
+   "note": "312 g per 100 mL at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Potassium_nitrite"
+  },
+  "potassium_oxide": {
+   "water": 0,
+   "reacts": true,
+   "note": "Potassium oxide reacts with water to form potassium hydroxide rather than dissolving.",
+   "src": "https://en.wikipedia.org/wiki/Potassium_oxide"
+  },
+  "potassium_sulfide": {
+   "water": 0,
+   "reacts": true,
+   "note": "It does not simply dissolve: in water it converts to potassium hydrosulfide and potassium hydroxide.",
+   "src": "https://en.wikipedia.org/wiki/Potassium_sulfide"
+  },
+  "potassium_thiocyanate": {
+   "water": 217,
+   "note": "217 g per 100 mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Potassium_thiocyanate"
+  },
+  "pyridine": {
+   "water": "miscible",
+   "src": "https://en.wikipedia.org/wiki/Pyridine"
+  },
+  "pyrite": {
+   "water": 0,
+   "note": "Pyrite is insoluble in water.",
+   "src": "https://en.wikipedia.org/wiki/Pyrite"
+  },
+  "quartz": {
+   "water": 0,
+   "note": "Quartz is insoluble in water at ordinary temperature and pressure.",
+   "src": "https://en.wikipedia.org/wiki/Quartz"
+  },
+  "quicklime": {
+   "water": 0,
+   "reacts": true,
+   "note": "Quicklime does not dissolve: it reacts with water to form calcium hydroxide, giving out a great deal of heat.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_oxide"
+  },
+  "ribose": {
+   "water": 10,
+   "note": "100 g per litre at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Ribose"
+  },
+  "rock_salt": {
+   "water": 36,
+   "note": "Rock salt is the mineral halite, sodium chloride, at about 360 g per litre at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_chloride"
+  },
+  "rubidium_chloride": {
+   "water": 91,
+   "note": "91 g per 100 mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Rubidium_chloride"
+  },
+  "ruby": {
+   "water": 0,
+   "note": "Ruby is corundum, crystalline aluminium oxide, which is insoluble in water.",
+   "src": "https://en.wikipedia.org/wiki/Corundum"
+  },
+  "rust": {
+   "water": 0,
+   "note": "Rust is iron(III) oxide, which is insoluble in water.",
+   "src": "https://en.wikipedia.org/wiki/Iron(III)_oxide"
+  },
+  "rutile": {
+   "water": 0,
+   "note": "Rutile is titanium dioxide, insoluble in water.",
+   "src": "https://en.wikipedia.org/wiki/Titanium_dioxide"
+  },
+  "salicylic_acid": {
+   "water": 0.248,
+   "note": "2.48 g per litre at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Salicylic_acid"
+  },
+  "salt": {
+   "water": 36,
+   "note": "Wikipedia gives 360 g per litre at 25 degrees, and it barely changes with temperature.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_chloride"
+  },
+  "sand": {
+   "water": 0,
+   "note": "The solubility of silica in water is essentially zero until high temperatures.",
+   "src": "https://en.wikipedia.org/wiki/Silicon_dioxide"
+  },
+  "sapphire": {
+   "water": 0,
+   "note": "Sapphire is corundum, aluminium oxide, and is insoluble in water.",
+   "src": "https://en.wikipedia.org/wiki/Sapphire"
+  },
+  "silica": {
+   "water": 0,
+   "note": "The solubility of silica in water is essentially zero until high temperatures.",
+   "src": "https://en.wikipedia.org/wiki/Silicon_dioxide"
+  },
+  "silica_sand": {
+   "water": 0,
+   "note": "The solubility of silica in water is essentially zero until high temperatures.",
+   "src": "https://en.wikipedia.org/wiki/Silicon_dioxide"
+  },
+  "silicon_dioxide": {
+   "water": 0,
+   "note": "The solubility of silica in water is essentially zero until high temperatures.",
+   "src": "https://en.wikipedia.org/wiki/Silicon_dioxide"
+  },
+  "silver": {
+   "water": 0,
+   "note": "Silver is not attacked by water; it tarnishes where sulfur is present and dissolves only in solutions such as cyanide.",
+   "src": "https://en.wikipedia.org/wiki/Silver"
+  },
+  "silver_acetate": {
+   "water": 1.02,
+   "note": "1.02 g per 100 mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Silver_acetate"
+  },
+  "silver_bromide": {
+   "water": 0,
+   "note": "Essentially insoluble, about 0.14 mg per litre at 20 degrees, which is what makes it useful in photography.",
+   "src": "https://en.wikipedia.org/wiki/Silver_bromide"
+  },
+  "silver_carbonate": {
+   "water": 0.0032,
+   "note": "0.032 g per litre at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Silver_carbonate"
+  },
+  "silver_chloride": {
+   "water": 0,
+   "note": "Essentially insoluble: only 520 micrograms dissolve in 100 g of water even at 50 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Silver_chloride"
+  },
+  "silver_nitrate": {
+   "water": 256,
+   "note": "256 g per 100 mL at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Silver_nitrate"
+  },
+  "silver_oxide": {
+   "water": 0.0025,
+   "note": "0.025 g per litre at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Silver_oxide"
+  },
+  "sodium": {
+   "water": 0,
+   "reacts": true,
+   "note": "Sodium does not dissolve: it reacts with water to give sodium hydroxide and hydrogen, violently enough to explode.",
+   "src": "https://en.wikipedia.org/wiki/Sodium"
+  },
+  "sodium_acetate": {
+   "water": 123.3,
+   "note": "123.3 g per 100 mL at 20 degrees for the anhydrous salt.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_acetate"
+  },
+  "sodium_bromide": {
+   "water": 94.32,
+   "note": "94.32 g per 100 mL at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_bromide"
+  },
+  "sodium_carbonate": {
+   "water": 16.4,
+   "note": "16.4 g per 100 mL at 15 degrees, the nearest figure the chembox gives to room temperature, rising steeply above it.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_carbonate"
+  },
+  "sodium_chlorate": {
+   "water": 105.7,
+   "note": "105.7 g per 100 mL at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_chlorate"
+  },
+  "sodium_chromate": {
+   "water": 84.5,
+   "note": "84.5 g per 100 mL at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_chromate"
+  },
+  "sodium_cyanide": {
+   "water": 63.7,
+   "note": "63.7 g per 100 mL at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_cyanide"
+  },
+  "sodium_dichromate": {
+   "water": 73,
+   "note": "73 g per 100 mL at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_dichromate"
+  },
+  "sodium_fluoride": {
+   "water": 4.04,
+   "note": "40.4 g per litre at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_fluoride"
+  },
+  "sodium_hydride": {
+   "water": 0,
+   "reacts": true,
+   "note": "Sodium hydride reacts with water instead of dissolving, releasing hydrogen.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_hydride"
+  },
+  "sodium_hydroxide": {
+   "water": 100,
+   "note": "1000 g per litre at 25 degrees, and dissolving it heats the water sharply.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_hydroxide"
+  },
+  "sodium_iodide": {
+   "water": 184.2,
+   "note": "1842 g per litre at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_iodide"
+  },
+  "sodium_nitrate": {
+   "water": 91.2,
+   "note": "91.2 g per 100 g of water at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_nitrate"
+  },
+  "sodium_nitrite": {
+   "water": 84.8,
+   "note": "84.8 g per 100 mL at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_nitrite"
+  },
+  "sodium_oxide": {
+   "water": 0,
+   "reacts": true,
+   "note": "Sodium oxide reacts with water to form sodium hydroxide rather than dissolving.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_oxide"
+  },
+  "sodium_percarbonate": {
+   "water": 15,
+   "note": "150 g per litre at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_percarbonate"
+  },
+  "sodium_perchlorate": {
+   "water": 209.6,
+   "note": "209.6 g per 100 mL at 25 degrees for the anhydrous salt.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_perchlorate"
+  },
+  "sodium_peroxide": {
+   "water": 0,
+   "reacts": true,
+   "note": "Sodium peroxide reacts with water rather than dissolving.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_peroxide"
+  },
+  "sodium_phosphate": {
+   "water": 12,
+   "note": "12 g per 100 mL at 20 degrees for the anhydrous salt.",
+   "src": "https://en.wikipedia.org/wiki/Trisodium_phosphate"
+  },
+  "sodium_potassium_tartrate": {
+   "water": 66,
+   "note": "66 g per 100 mL at 26 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Potassium_sodium_tartrate"
+  },
+  "sodium_sulfate": {
+   "water": 28.1,
+   "note": "28.1 g per 100 mL at 25 degrees for the anhydrous salt.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_sulfate"
+  },
+  "sodium_sulfide": {
+   "water": 18.6,
+   "note": "18.6 g per 100 mL at 20 degrees, and it hydrolyses as it goes.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_sulfide"
+  },
+  "sodium_sulfite": {
+   "water": 27,
+   "note": "27 g per 100 mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_sulfite"
+  },
+  "sodium_thiosulfate": {
+   "water": 70.1,
+   "note": "70.1 g per 100 mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_thiosulfate"
+  },
+  "sorbitol": {
+   "water": 235,
+   "note": "2350 g per litre at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Sorbitol"
+  },
+  "spodumene": {
+   "water": 0,
+   "note": "Spodumene, the lithium ore, is insoluble in water.",
+   "src": "https://en.wikipedia.org/wiki/Spodumene"
+  },
+  "starch": {
+   "water": 0,
+   "note": "Starch is insoluble in cold water; heated in water it swells and gelatinises instead.",
+   "src": "https://en.wikipedia.org/wiki/Starch"
+  },
+  "stearic_acid": {
+   "water": 0.0029,
+   "note": "0.0029 g per 100 g of water at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Stearic_acid"
+  },
+  "stone": {
+   "water": 0,
+   "note": "Ordinary rock does not dissolve in water.",
+   "src": "https://en.wikipedia.org/wiki/Rock_(geology)"
+  },
+  "strontium_chloride": {
+   "water": 53.8,
+   "note": "53.8 g per 100 mL at 20 degrees for the anhydrous salt.",
+   "src": "https://en.wikipedia.org/wiki/Strontium_chloride"
+  },
+  "strontium_nitrate": {
+   "water": 66,
+   "note": "660 g per litre at 20 degrees for the anhydrous salt.",
+   "src": "https://en.wikipedia.org/wiki/Strontium_nitrate"
+  },
+  "strontium_oxide": {
+   "water": 0,
+   "reacts": true,
+   "note": "Strontium oxide reacts with water to form strontium hydroxide rather than dissolving.",
+   "src": "https://en.wikipedia.org/wiki/Strontium_oxide"
+  },
+  "styrene": {
+   "water": 0.03,
+   "note": "0.03 per cent at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Styrene"
+  },
+  "sucralose": {
+   "water": 28.3,
+   "note": "283 g per litre at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Sucralose"
+  },
+  "sucrose": {
+   "water": 201,
+   "note": "Wikipedia gives 2.01 g per mL of water at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Sucrose"
+  },
+  "sugar": {
+   "water": 201,
+   "note": "Wikipedia gives 2.01 g per mL of water at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Sucrose"
+  },
+  "sulfur": {
+   "water": 0,
+   "note": "Sulfur is insoluble in water, though it dissolves in carbon disulfide.",
+   "src": "https://en.wikipedia.org/wiki/Sulfur"
+  },
+  "sulfur_hexafluoride": {
+   "water": 0.003,
+   "note": "0.003 per cent at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Sulfur_hexafluoride"
+  },
+  "sulfur_trioxide": {
+   "water": 0,
+   "reacts": true,
+   "note": "It reacts with water to give sulfuric acid, fiercely.",
+   "src": "https://en.wikipedia.org/wiki/Sulfur_trioxide"
+  },
+  "sulfuric_acid": {
+   "water": "miscible",
+   "reacts": true,
+   "note": "It mixes with water in any proportion, but the hydration is strongly exothermic, so the acid goes into the water and never the other way round.",
+   "src": "https://en.wikipedia.org/wiki/Sulfuric_acid"
+  },
+  "tartaric_acid": {
+   "water": 133,
+   "note": "1.33 kg per litre for the natural L form; the chembox gives no temperature.",
+   "src": "https://en.wikipedia.org/wiki/Tartaric_acid"
+  },
+  "tetrachloroethylene": {
+   "water": 0.015,
+   "note": "0.15 g per litre.",
+   "src": "https://en.wikipedia.org/wiki/Tetrachloroethylene"
+  },
+  "theobromine": {
+   "water": 0.033,
+   "note": "330 mg per litre.",
+   "src": "https://en.wikipedia.org/wiki/Theobromine"
+  },
+  "threonine": {
+   "water": 10.6,
+   "note": "10.6 g per 100 mL at 30 degrees, the nearest figure given to room temperature.",
+   "src": "https://en.wikipedia.org/wiki/Threonine"
+  },
+  "thymol": {
+   "water": 0.09,
+   "note": "0.9 g per litre at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Thymol"
+  },
+  "tin_chloride": {
+   "water": 83.9,
+   "note": "83.9 g per 100 mL at 0 degrees, the only figure given, and it hydrolyses in hot water.",
+   "src": "https://en.wikipedia.org/wiki/Tin(II)_chloride"
+  },
+  "tin_dioxide": {
+   "water": 0,
+   "note": "Wikipedia's chembox gives it as insoluble.",
+   "src": "https://en.wikipedia.org/wiki/Tin(IV)_oxide"
+  },
+  "titanium": {
+   "water": 0,
+   "note": "Titanium resists corrosion even in sea water.",
+   "src": "https://en.wikipedia.org/wiki/Titanium"
+  },
+  "titanium_chloride": {
+   "water": 0,
+   "reacts": true,
+   "note": "Titanium tetrachloride does not dissolve: it hydrolyses on contact with water, fuming as it goes.",
+   "src": "https://en.wikipedia.org/wiki/Titanium_tetrachloride"
+  },
+  "titanium_dioxide": {
+   "water": 0,
+   "note": "Wikipedia's chembox gives it as insoluble.",
+   "src": "https://en.wikipedia.org/wiki/Titanium_dioxide"
+  },
+  "titanium_nitride": {
+   "water": 0,
+   "note": "Wikipedia's chembox gives it as insoluble.",
+   "src": "https://en.wikipedia.org/wiki/Titanium_nitride"
+  },
+  "tnt": {
+   "water": 0.013,
+   "note": "0.13 g per litre at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/TNT"
+  },
+  "toluene": {
+   "water": 0.0519,
+   "note": "0.519 g per litre at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Toluene"
+  },
+  "trichloroacetic_acid": {
+   "water": 1000,
+   "note": "1000 g per 100 mL; the chembox gives no temperature.",
+   "src": "https://en.wikipedia.org/wiki/Trichloroacetic_acid"
+  },
+  "tungsten_carbide": {
+   "water": 0,
+   "note": "Wikipedia's chembox gives it as insoluble.",
+   "src": "https://en.wikipedia.org/wiki/Tungsten_carbide"
+  },
+  "tyrosine": {
+   "water": 0.0453,
+   "note": "45.3 mg per 100 mL, much the least soluble of the common amino acids.",
+   "src": "https://en.wikipedia.org/wiki/Tyrosine"
+  },
+  "urea": {
+   "water": 120,
+   "note": "1200 g per litre at 25 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Urea"
+  },
+  "valine": {
+   "water": 8.5,
+   "note": "85 g per litre.",
+   "src": "https://en.wikipedia.org/wiki/Valine"
+  },
+  "vanillin": {
+   "water": 1,
+   "note": "10 g per litre.",
+   "src": "https://en.wikipedia.org/wiki/Vanillin"
+  },
+  "vinegar": {
+   "water": "miscible",
+   "note": "Vinegar is already a dilute solution of acetic acid in water, so it mixes with water in any proportion.",
+   "src": "https://en.wikipedia.org/wiki/Vinegar"
+  },
+  "vinyl_chloride": {
+   "water": 0.27,
+   "note": "2.7 g per litre.",
+   "src": "https://en.wikipedia.org/wiki/Vinyl_chloride"
+  },
+  "vitamin_c": {
+   "water": 33,
+   "note": "330 g per litre; the chembox gives no temperature.",
+   "src": "https://en.wikipedia.org/wiki/Ascorbic_acid"
+  },
+  "xenon_tetrafluoride": {
+   "water": 0,
+   "reacts": true,
+   "note": "Xenon tetrafluoride reacts with water rather than dissolving.",
+   "src": "https://en.wikipedia.org/wiki/Xenon_tetrafluoride"
+  },
+  "xylene": {
+   "water": 0,
+   "note": "Wikipedia gives it as practically insoluble.",
+   "src": "https://en.wikipedia.org/wiki/Xylene"
+  },
+  "xylitol": {
+   "water": 168,
+   "note": "168 g per 100 g of water.",
+   "src": "https://en.wikipedia.org/wiki/Xylitol"
+  },
+  "zinc": {
+   "water": 0,
+   "note": "Zinc does not dissolve in water; it tarnishes to a protective basic carbonate and reacts readily only with acids and alkalis.",
+   "src": "https://en.wikipedia.org/wiki/Zinc"
+  },
+  "zinc_acetate": {
+   "water": 43,
+   "note": "43 g per 100 mL at 20 degrees for the dihydrate.",
+   "src": "https://en.wikipedia.org/wiki/Zinc_acetate"
+  },
+  "zinc_chloride": {
+   "water": 432,
+   "note": "432 g per 100 g of water at 25 degrees, one of the most soluble salts known.",
+   "src": "https://en.wikipedia.org/wiki/Zinc_chloride"
+  },
+  "zinc_iodide": {
+   "water": 450,
+   "note": "450 g per 100 mL at 20 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Zinc_iodide"
+  },
+  "zinc_nitrate": {
+   "water": 184.3,
+   "note": "184.3 g per 100 mL at 20 degrees for the hexahydrate.",
+   "src": "https://en.wikipedia.org/wiki/Zinc_nitrate"
+  },
+  "zinc_oxide": {
+   "water": 0.0004,
+   "note": "0.0004 per cent at about 18 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Zinc_oxide"
+  },
+  "zinc_phosphate": {
+   "water": 0,
+   "note": "Wikipedia's chembox gives it as insoluble.",
+   "src": "https://en.wikipedia.org/wiki/Zinc_phosphate"
+  },
+  "zinc_sulfate": {
+   "water": 57.7,
+   "note": "57.7 g per 100 mL at 20 degrees for the anhydrous salt.",
+   "src": "https://en.wikipedia.org/wiki/Zinc_sulfate"
+  },
+  "zinc_sulfide": {
+   "water": 0,
+   "note": "Wikipedia's chembox gives its solubility as negligible.",
+   "src": "https://en.wikipedia.org/wiki/Zinc_sulfide"
+  },
+  "zircon": {
+   "water": 0,
+   "note": "Zircon is insoluble in water.",
+   "src": "https://en.wikipedia.org/wiki/Zircon"
+  }
+ }
+}
