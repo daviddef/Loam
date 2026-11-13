@@ -12,15 +12,80 @@
  },
  "points": {
   "acetic_acid": {
-   "melt": 17,
+   "melt": 16,
    "boil": 118,
    "src": "https://en.wikipedia.org/wiki/Acetic_acid"
+  },
+  "acetone": {
+   "melt": -95,
+   "boil": 56,
+   "src": "https://en.wikipedia.org/wiki/Acetone"
+  },
+  "acrylic_fibre": {
+   "melt": 300,
+   "decomposes": true,
+   "note": "It degrades near 300 degrees instead of melting, which is why it is spun from solution.",
+   "src": "https://en.wikipedia.org/wiki/Polyacrylonitrile"
   },
   "actinium": {
    "melt": 1227,
    "boil": 3200,
    "note": "The melting point is estimated and the boiling point extrapolated, as actinium is too scarce and radioactive to measure easily.",
    "src": "https://en.wikipedia.org/wiki/Actinium"
+  },
+  "adenine": {
+   "melt": 360,
+   "decomposes": true,
+   "note": "It decomposes between about 360 and 365 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Adenine"
+  },
+  "adobe": {
+   "melt": 550,
+   "decomposes": true,
+   "note": "Sun-dried mud brick, whose clay loses its water from about 550 degrees rather than melting.",
+   "src": "https://en.wikipedia.org/wiki/Kaolinite"
+  },
+  "agar": {
+   "melt": 85,
+   "note": "An agar gel sets below about 40 degrees but only melts again above 85 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Agar"
+  },
+  "agate": {
+   "melt": 1670,
+   "range": [
+    1670,
+    1713
+   ],
+   "note": "Banded chalcedony, which is quartz, so it melts where quartz does.",
+   "src": "https://en.wikipedia.org/wiki/Quartz"
+  },
+  "alanine": {
+   "melt": 258,
+   "note": "It sublimes rather than melting cleanly.",
+   "src": "https://en.wikipedia.org/wiki/Alanine"
+  },
+  "albendazole": {
+   "melt": 209,
+   "src": "https://en.wikipedia.org/wiki/Albendazole"
+  },
+  "albite": {
+   "melt": 1100,
+   "range": [
+    1100,
+    1120
+   ],
+   "note": "The sodium end of the plagioclase feldspars, which melts lower than the calcium end.",
+   "src": "https://en.wikipedia.org/wiki/Albite"
+  },
+  "alizarin": {
+   "melt": 290,
+   "boil": 430,
+   "src": "https://en.wikipedia.org/wiki/Alizarin"
+  },
+  "allyl_isothiocyanate": {
+   "melt": -102,
+   "boil": 151,
+   "src": "https://en.wikipedia.org/wiki/Allyl_isothiocyanate"
   },
   "alnico": {
    "melt": 1325,
@@ -30,6 +95,25 @@
    ],
    "note": "Wikipedia gives this range for Alnico 3, and the other alnico grades differ with their mix.",
    "src": "https://en.wikipedia.org/wiki/Alnico"
+  },
+  "alpha_linolenic_acid": {
+   "melt": -11,
+   "src": "https://en.wikipedia.org/wiki/Alpha-Linolenic_acid"
+  },
+  "alum": {
+   "melt": 92,
+   "range": [
+    92,
+    95
+   ],
+   "decomposes": true,
+   "note": "It melts at 92 to 95 degrees in its own water of crystallisation and then breaks down near 200.",
+   "src": "https://en.wikipedia.org/wiki/Potassium_alum"
+  },
+  "alumina": {
+   "melt": 2072,
+   "note": "Pure aluminium oxide, the workhorse of furnace linings and crucibles.",
+   "src": "https://en.wikipedia.org/wiki/Aluminium_oxide"
   },
   "aluminum": {
    "melt": 660,
@@ -42,19 +126,216 @@
    "note": "Wikipedia marks the boiling point as calculated rather than measured.",
    "src": "https://en.wikipedia.org/wiki/Americium"
   },
+  "amethyst": {
+   "melt": 1575,
+   "range": [
+    1575,
+    1725
+   ],
+   "note": "A purple variety of quartz, quoted as melting at about 1650 degrees give or take 75.",
+   "src": "https://en.wikipedia.org/wiki/Amethyst"
+  },
+  "ammonia": {
+   "melt": -78,
+   "boil": -33,
+   "src": "https://en.wikipedia.org/wiki/Ammonia"
+  },
+  "ammonium_bicarbonate": {
+   "melt": 42,
+   "decomposes": true,
+   "note": "It breaks down to ammonia and carbon dioxide at about 42 degrees, which is why baker's ammonia smells.",
+   "src": "https://en.wikipedia.org/wiki/Ammonium_bicarbonate"
+  },
+  "ammonium_chloride": {
+   "melt": 338,
+   "sublimes": true,
+   "note": "Sal ammoniac turns to vapour at about 338 degrees rather than melting quietly.",
+   "src": "https://en.wikipedia.org/wiki/Ammonium_chloride"
+  },
+  "ammonium_nitrate": {
+   "melt": 170,
+   "note": "It melts at about 170 degrees and breaks down above 210.",
+   "src": "https://en.wikipedia.org/wiki/Ammonium_nitrate"
+  },
+  "andesite": {
+   "melt": 850,
+   "range": [
+    850,
+    1100
+   ],
+   "note": "Magma of this middling silica content is molten between about 850 and 1100 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Magma"
+  },
+  "anethole": {
+   "melt": 20,
+   "boil": 234,
+   "src": "https://en.wikipedia.org/wiki/Anethole"
+  },
+  "anglesite": {
+   "melt": 1087,
+   "decomposes": true,
+   "note": "Lead sulfate melts at 1087 degrees while breaking down.",
+   "src": "https://en.wikipedia.org/wiki/Lead(II)_sulfate"
+  },
+  "anhydrite": {
+   "melt": 1460,
+   "note": "Calcium sulfate without its water melts at 1460 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_sulfate"
+  },
+  "anorthosite": {
+   "melt": 1100,
+   "range": [
+    1100,
+    1550
+   ],
+   "note": "Nearly all plagioclase feldspar, and the calcium-rich kind melts at about 1550 degrees while the sodium-rich kind melts far lower.",
+   "src": "https://en.wikipedia.org/wiki/Anorthite"
+  },
+  "antimony": {
+   "melt": 631,
+   "note": "Antimony melts at about 631 degrees.",
+   "src": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+  },
+  "arachidonic_acid": {
+   "melt": -49,
+   "src": "https://en.wikipedia.org/wiki/Arachidonic_acid"
+  },
+  "aragonite": {
+   "melt": 825,
+   "decomposes": true,
+   "note": "The same calcium carbonate as calcite in another crystal form, and it too breaks down rather than melting.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_oxide"
+  },
+  "arginine": {
+   "melt": 260,
+   "src": "https://en.wikipedia.org/wiki/Arginine"
+  },
+  "arsenic": {
+   "melt": 614,
+   "sublimes": true,
+   "note": "At ordinary pressure arsenic passes straight to vapour at about 614 degrees; melting it needs pressure.",
+   "src": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+  },
+  "asbestos": {
+   "melt": 400,
+   "range": [
+    400,
+    1040
+   ],
+   "decomposes": true,
+   "note": "The fibres break down over a wide range rather than melting at one point.",
+   "src": "https://en.wikipedia.org/wiki/Asbestos"
+  },
+  "ascorbate": {
+   "melt": 191,
+   "src": "https://en.wikipedia.org/wiki/Vitamin_C"
+  },
+  "asparagine": {
+   "melt": 234,
+   "src": "https://en.wikipedia.org/wiki/Asparagine"
+  },
+  "aspartame": {
+   "melt": 247,
+   "note": "It decomposes instead of boiling.",
+   "src": "https://en.wikipedia.org/wiki/Aspartame"
+  },
+  "aspartic_acid": {
+   "melt": 270,
+   "src": "https://en.wikipedia.org/wiki/Aspartic_acid"
+  },
+  "aspirin": {
+   "melt": 135,
+   "src": "https://en.wikipedia.org/wiki/Aspirin"
+  },
+  "atp": {
+   "melt": 187,
+   "decomposes": true,
+   "note": "The disodium salt decomposes near 187 degrees instead of melting.",
+   "src": "https://en.wikipedia.org/wiki/Adenosine_triphosphate"
+  },
+  "aventurine_quartz": {
+   "melt": 1670,
+   "range": [
+    1670,
+    1713
+   ],
+   "note": "Quartz flecked with glittering mica, so it melts where quartz does.",
+   "src": "https://en.wikipedia.org/wiki/Quartz"
+  },
+  "azurite": {
+   "melt": 200,
+   "decomposes": true,
+   "note": "The blue copper carbonate breaks down to black copper oxide near 200 degrees instead of melting.",
+   "src": "https://en.wikipedia.org/wiki/Basic_copper_carbonate"
+  },
+  "baking_soda": {
+   "melt": 50,
+   "decomposes": true,
+   "note": "From about 50 degrees it breaks down into sodium carbonate, water and carbon dioxide instead of melting.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_bicarbonate"
+  },
+  "ballast": {
+   "melt": 700,
+   "range": [
+    700,
+    1400
+   ],
+   "note": "Rock of any ordinary kind is molten somewhere between about 700 and 1400 degrees, and this is a jumble of whatever rock was to hand.",
+   "src": "https://en.wikipedia.org/wiki/Magma"
+  },
   "barium": {
    "melt": 727,
    "boil": 1845,
    "src": "https://en.wikipedia.org/wiki/Barium"
   },
+  "barium_carbonate": {
+   "melt": 811,
+   "decomposes": true,
+   "note": "It changes crystal form at 811 degrees and begins breaking down from about 1360.",
+   "src": "https://en.wikipedia.org/wiki/Barium_carbonate"
+  },
+  "baryte": {
+   "melt": 1580,
+   "note": "Barium sulfate melts at 1580 degrees and starts breaking down just above.",
+   "src": "https://en.wikipedia.org/wiki/Barium_sulfate"
+  },
   "basalt": {
-   "melt": 1200,
+   "melt": 1100,
    "range": [
-    984,
-    1260
+    1100,
+    1200
    ],
-   "note": "A mixture of minerals, so it melts over a range.",
-   "src": "https://en.wikipedia.org/wiki/Basalt"
+   "note": "Magma of this composition erupts at 1100 to 1200 degrees, and being a mixture of minerals it melts over a range.",
+   "src": "https://en.wikipedia.org/wiki/Magma"
+  },
+  "bauxite": {
+   "melt": 300,
+   "decomposes": true,
+   "note": "Bauxite is mostly aluminium hydroxide, which gives up its water near 300 degrees and leaves alumina behind.",
+   "src": "https://en.wikipedia.org/wiki/Aluminium_hydroxide"
+  },
+  "beeswax": {
+   "melt": 63,
+   "range": [
+    62,
+    64
+   ],
+   "note": "It darkens if heated much above 85 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Beeswax"
+  },
+  "benzaldehyde": {
+   "melt": -57,
+   "boil": 178,
+   "src": "https://en.wikipedia.org/wiki/Benzaldehyde"
+  },
+  "benzoate": {
+   "melt": 410,
+   "src": "https://en.wikipedia.org/wiki/Sodium_benzoate"
+  },
+  "benzoic_acid": {
+   "melt": 122,
+   "boil": 250,
+   "src": "https://en.wikipedia.org/wiki/Benzoic_acid"
   },
   "berkelium": {
    "melt": 986,
@@ -76,6 +357,46 @@
    "note": "The alloy is pasty between its solidus at 866 C and its liquidus at 982 C.",
    "src": "https://en.wikipedia.org/wiki/Beryllium_copper"
   },
+  "beryllium_oxide": {
+   "melt": 2578,
+   "note": "A refractory ceramic that melts above 2500 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Beryllium_oxide"
+  },
+  "beta_carotene": {
+   "melt": 183,
+   "decomposes": true,
+   "note": "It decomposes at its melting point.",
+   "src": "https://en.wikipedia.org/wiki/Beta-Carotene"
+  },
+  "beta_ionone": {
+   "melt": -49,
+   "note": "The beta form, the one that smells of violets.",
+   "src": "https://en.wikipedia.org/wiki/Ionone"
+  },
+  "beta_propiolactone": {
+   "melt": -33,
+   "boil": 162,
+   "note": "It decomposes as it boils.",
+   "src": "https://en.wikipedia.org/wiki/Beta-Propiolactone"
+  },
+  "bha": {
+   "melt": 52,
+   "range": [
+    48,
+    55
+   ],
+   "note": "A mixture of two closely related isomers, so it melts over a range.",
+   "src": "https://en.wikipedia.org/wiki/Butylated_hydroxyanisole"
+  },
+  "bht": {
+   "melt": 70,
+   "boil": 265,
+   "src": "https://en.wikipedia.org/wiki/Butylated_hydroxytoluene"
+  },
+  "biotin": {
+   "melt": 233,
+   "src": "https://en.wikipedia.org/wiki/Biotin"
+  },
   "bismuth": {
    "melt": 272,
    "boil": 1564,
@@ -86,11 +407,40 @@
    "note": "No boiling point is listed for this compound.",
    "src": "https://en.wikipedia.org/wiki/Bismuth_telluride"
   },
+  "bleach": {
+   "melt": 18,
+   "note": "Household bleach is a watery solution; the pure pentahydrate crystals melt at 18 degrees and break down near 101.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_hypochlorite"
+  },
   "blister_copper": {
    "melt": 1085,
    "boil": 2562,
    "note": "Blister copper is about 98 percent copper, so it melts very close to copper's own point.",
    "src": "https://en.wikipedia.org/wiki/Copper"
+  },
+  "bloodstone": {
+   "melt": 1670,
+   "range": [
+    1670,
+    1713
+   ],
+   "note": "Green chalcedony spotted with red iron oxide, so it melts near where quartz does.",
+   "src": "https://en.wikipedia.org/wiki/Quartz"
+  },
+  "borax": {
+   "melt": 743,
+   "note": "Dry borax melts at 743 degrees, while the common crystals first lose their water and break down near 75.",
+   "src": "https://en.wikipedia.org/wiki/Borax"
+  },
+  "boron": {
+   "melt": 2076,
+   "note": "Crystalline boron melts above 2000 degrees.",
+   "src": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+  },
+  "borosilicate_glass": {
+   "melt": 820,
+   "note": "This is the softening point of Pyrex-type glass, which has no sharp melting point.",
+   "src": "https://en.wikipedia.org/wiki/Borosilicate_glass"
   },
   "brass": {
    "melt": 920,
@@ -100,6 +450,24 @@
    ],
    "note": "Brass melts across a range that shifts with the proportion of copper to zinc.",
    "src": "https://en.wikipedia.org/wiki/Brass"
+  },
+  "breccia": {
+   "melt": 700,
+   "range": [
+    700,
+    1400
+   ],
+   "note": "Angular broken fragments cemented together, so it melts wherever the rock the pieces came from does.",
+   "src": "https://en.wikipedia.org/wiki/Magma"
+  },
+  "brick": {
+   "melt": 1000,
+   "range": [
+    1000,
+    1300
+   ],
+   "note": "Fired clay has no true melting point: brick is fired at 900 to 1000 degrees and goes grey as it over-fires near 1300.",
+   "src": "https://en.wikipedia.org/wiki/Brick"
   },
   "bromine": {
    "melt": -7,
@@ -111,13 +479,18 @@
    "note": "Wikipedia gives about 950 C, varying with the ratio of copper to tin, without stating the bounds of that variation.",
    "src": "https://en.wikipedia.org/wiki/Bronze"
   },
+  "butanoic_acid": {
+   "melt": -5,
+   "boil": 164,
+   "src": "https://en.wikipedia.org/wiki/Butyric_acid"
+  },
   "butter": {
    "melt": 33,
    "range": [
     32,
     35
    ],
-   "note": "A mixture of fats, so it softens over a range.",
+   "note": "A mixture of fats, so it softens well before it melts.",
    "src": "https://en.wikipedia.org/wiki/Butter"
   },
   "cadmium": {
@@ -130,10 +503,47 @@
    "boil": 671,
    "src": "https://en.wikipedia.org/wiki/Caesium"
   },
+  "caffeine": {
+   "melt": 235,
+   "note": "Dry caffeine sublimes below its melting point.",
+   "src": "https://en.wikipedia.org/wiki/Caffeine"
+  },
+  "calcite": {
+   "melt": 825,
+   "decomposes": true,
+   "note": "Calcium carbonate breaks down into quicklime and carbon dioxide above about 825 degrees instead of melting.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_oxide"
+  },
   "calcium": {
    "melt": 842,
    "boil": 1484,
    "src": "https://en.wikipedia.org/wiki/Calcium"
+  },
+  "calcium_acetate": {
+   "melt": 160,
+   "decomposes": true,
+   "note": "At 160 degrees it breaks down into chalk and acetone instead of melting.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_acetate"
+  },
+  "calcium_carbide": {
+   "melt": 2160,
+   "note": "The carbide used to make acetylene melts above 2100 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_carbide"
+  },
+  "calcium_chloride": {
+   "melt": 772,
+   "range": [
+    772,
+    775
+   ],
+   "note": "The dry salt melts at 772 to 775 degrees, while its hydrates break down far lower.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_chloride"
+  },
+  "calcium_hydroxide": {
+   "melt": 580,
+   "decomposes": true,
+   "note": "Slaked lime loses its water and breaks back down to quicklime near 580 degrees instead of melting.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_hydroxide"
   },
   "californium": {
    "melt": 900,
@@ -141,31 +551,213 @@
    "note": "Wikipedia marks the boiling point as an estimation.",
    "src": "https://en.wikipedia.org/wiki/Californium"
   },
+  "camphor": {
+   "melt": 176,
+   "boil": 209,
+   "src": "https://en.wikipedia.org/wiki/Camphor"
+  },
+  "capsaicin": {
+   "melt": 63,
+   "note": "Reported between about 62 and 65 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Capsaicin"
+  },
+  "carbon": {
+   "melt": 3627,
+   "sublimes": true,
+   "note": "At ordinary pressure carbon sublimes at about 3900 kelvin rather than melting.",
+   "src": "https://en.wikipedia.org/wiki/Carbon"
+  },
+  "carbon_dioxide": {
+   "melt": -78,
+   "note": "At ordinary pressure it never melts: the solid sublimes straight to gas at minus 78 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Carbon_dioxide"
+  },
+  "carnelian": {
+   "melt": 1670,
+   "range": [
+    1670,
+    1713
+   ],
+   "note": "Chalcedony stained orange by iron, so it melts where quartz does.",
+   "src": "https://en.wikipedia.org/wiki/Quartz"
+  },
+  "cassiterite": {
+   "melt": 1630,
+   "note": "The tin ore is tin dioxide, which melts at 1630 degrees, far above tin metal.",
+   "src": "https://en.wikipedia.org/wiki/Tin(IV)_oxide"
+  },
   "cast_iron": {
    "melt": 1130,
    "note": "Carbon near 4.3 percent drops iron's melting point to about 1130 C, far below pure iron's 1538 C.",
    "src": "https://en.wikipedia.org/wiki/Ferrous_metallurgy"
+  },
+  "celestine": {
+   "melt": 1606,
+   "note": "Strontium sulfate melts just above 1600 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Strontium_sulfate"
+  },
+  "cellulose": {
+   "melt": 265,
+   "decomposes": true,
+   "note": "Cellulose chars and decomposes around 260 to 270 degrees instead of melting.",
+   "src": "https://en.wikipedia.org/wiki/Cellulose"
+  },
+  "cement_meal": {
+   "melt": 1450,
+   "decomposes": true,
+   "note": "In the kiln the raw meal loses its carbon dioxide and sinters into clinker at about 1450 degrees instead of melting.",
+   "src": "https://en.wikipedia.org/wiki/Cement_clinker"
   },
   "cerium": {
    "melt": 795,
    "boil": 3443,
    "src": "https://en.wikipedia.org/wiki/Cerium"
   },
+  "cerussite": {
+   "melt": 315,
+   "decomposes": true,
+   "note": "Lead carbonate breaks down near 315 degrees instead of melting.",
+   "src": "https://en.wikipedia.org/wiki/Lead(II)_carbonate"
+  },
+  "chalcedony": {
+   "melt": 1670,
+   "range": [
+    1670,
+    1713
+   ],
+   "note": "Quartz in microscopic fibres, so it melts where quartz does.",
+   "src": "https://en.wikipedia.org/wiki/Quartz"
+  },
+  "chalk": {
+   "melt": 840,
+   "decomposes": true,
+   "note": "Heated limestone does not melt: above 840 degrees it gives off carbon dioxide and turns into quicklime.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_carbonate"
+  },
+  "chert": {
+   "melt": 1670,
+   "range": [
+    1670,
+    1713
+   ],
+   "note": "Microscopically fine quartz, so it melts about where ordinary quartz does.",
+   "src": "https://en.wikipedia.org/wiki/Quartz"
+  },
+  "chlorine": {
+   "melt": -102,
+   "boil": -34,
+   "src": "https://en.wikipedia.org/wiki/Chlorine"
+  },
+  "chocolate": {
+   "melt": 36,
+   "range": [
+    34,
+    38
+   ],
+   "note": "Chocolate melts just below body temperature because its cocoa butter does.",
+   "src": "https://en.wikipedia.org/wiki/Cocoa_butter"
+  },
+  "cholesterol": {
+   "melt": 149,
+   "note": "It decomposes near 360 degrees instead of boiling.",
+   "src": "https://en.wikipedia.org/wiki/Cholesterol"
+  },
   "chromium": {
    "melt": 1907,
    "boil": 2671,
    "src": "https://en.wikipedia.org/wiki/Chromium"
   },
+  "chromium_oxide": {
+   "melt": 2435,
+   "note": "The green chromium oxide melts above 2400 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Chromium(III)_oxide"
+  },
+  "chrysoprase": {
+   "melt": 1670,
+   "range": [
+    1670,
+    1713
+   ],
+   "note": "Chalcedony coloured green by nickel, so it melts where quartz does.",
+   "src": "https://en.wikipedia.org/wiki/Quartz"
+  },
+  "cineole": {
+   "melt": 3,
+   "boil": 177,
+   "src": "https://en.wikipedia.org/wiki/Eucalyptol"
+  },
+  "cinnabar": {
+   "melt": 820,
+   "note": "The red form changes to black mercury sulfide at 344 degrees, and roasting in air drives off mercury vapour rather than melting it.",
+   "src": "https://en.wikipedia.org/wiki/Mercury_sulfide"
+  },
   "citric_acid": {
    "melt": 156,
-   "decomposes": true,
-   "note": "It melts and then breaks down above about 175 degrees.",
+   "note": "It starts to break down from about 175 degrees, so it has no clean boiling point.",
    "src": "https://en.wikipedia.org/wiki/Citric_acid"
+  },
+  "citrine": {
+   "melt": 1670,
+   "range": [
+    1670,
+    1713
+   ],
+   "note": "A yellow variety of quartz, so it melts where quartz does.",
+   "src": "https://en.wikipedia.org/wiki/Quartz"
+  },
+  "clay": {
+   "melt": 550,
+   "decomposes": true,
+   "note": "Clay does not melt: from about 550 degrees it gives up its water for good and turns into ceramic.",
+   "src": "https://en.wikipedia.org/wiki/Kaolinite"
+  },
+  "clinker": {
+   "melt": 1450,
+   "note": "It is made by sintering, part-melting the kiln charge at about 1450 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Cement_clinker"
+  },
+  "cobalamin": {
+   "melt": 300,
+   "decomposes": true,
+   "note": "It decomposes above 300 degrees instead of melting.",
+   "src": "https://en.wikipedia.org/wiki/Cyanocobalamin"
   },
   "cobalt": {
    "melt": 1495,
    "boil": 2927,
    "src": "https://en.wikipedia.org/wiki/Cobalt"
+  },
+  "cobble": {
+   "melt": 700,
+   "range": [
+    700,
+    1400
+   ],
+   "note": "A cobble is whatever rock it happens to be, and ordinary rock is molten somewhere between about 700 and 1400 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Magma"
+  },
+  "cocaine": {
+   "melt": 98,
+   "boil": 187,
+   "src": "https://en.wikipedia.org/wiki/Cocaine"
+  },
+  "columnar_basalt": {
+   "melt": 1100,
+   "range": [
+    1100,
+    1200
+   ],
+   "note": "It is ordinary basalt that cracked into columns as it cooled, so it melts over the same range.",
+   "src": "https://en.wikipedia.org/wiki/Magma"
+  },
+  "conglomerate": {
+   "melt": 700,
+   "range": [
+    700,
+    1400
+   ],
+   "note": "Rounded pebbles cemented together, so it melts wherever the rock the pebbles came from does.",
+   "src": "https://en.wikipedia.org/wiki/Magma"
   },
   "copernicium": {
    "melt": 10,
@@ -184,16 +776,121 @@
    "note": "Electrorefined cathode copper is refined copper, so it melts at copper's own point.",
    "src": "https://en.wikipedia.org/wiki/Copper"
   },
+  "copper_oxide": {
+   "melt": 1326,
+   "note": "The black copper oxide melts at 1326 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Copper(II)_oxide"
+  },
+  "copper_sulfate": {
+   "melt": 110,
+   "decomposes": true,
+   "note": "The blue crystals lose their water from about 110 degrees and the dry salt breaks down before it can melt.",
+   "src": "https://en.wikipedia.org/wiki/Copper(II)_sulfate"
+  },
+  "copper_sulfide": {
+   "melt": 1130,
+   "note": "The copper ore mineral melts at about 1130 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Copper(I)_sulfide"
+  },
   "copper_wire": {
    "melt": 1085,
    "boil": 2562,
    "src": "https://en.wikipedia.org/wiki/Copper"
+  },
+  "corundum": {
+   "melt": 2044,
+   "note": "Crystalline aluminium oxide, one of the most heat-resistant common minerals.",
+   "src": "https://en.wikipedia.org/wiki/Corundum"
+  },
+  "coumarin": {
+   "melt": 71,
+   "boil": 302,
+   "src": "https://en.wikipedia.org/wiki/Coumarin"
+  },
+  "creatine": {
+   "melt": 255,
+   "src": "https://en.wikipedia.org/wiki/Creatine"
+  },
+  "cullet": {
+   "melt": 700,
+   "note": "Ordinary glass has no sharp melting point: it begins to soften from about 700 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Soda-lime_glass"
+  },
+  "curcumin": {
+   "melt": 183,
+   "src": "https://en.wikipedia.org/wiki/Curcumin"
   },
   "curium": {
    "melt": 1340,
    "boil": 3110,
    "note": "Wikipedia's infobox and body text disagree, the body giving 1344 C and 3556 C instead.",
    "src": "https://en.wikipedia.org/wiki/Curium"
+  },
+  "cysteine": {
+   "melt": 240,
+   "decomposes": true,
+   "note": "It decomposes at its melting point.",
+   "src": "https://en.wikipedia.org/wiki/Cysteine"
+  },
+  "cytosine": {
+   "melt": 320,
+   "decomposes": true,
+   "note": "It decomposes between about 320 and 325 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Cytosine"
+  },
+  "dacite": {
+   "melt": 800,
+   "range": [
+    800,
+    1050
+   ],
+   "note": "Magma of this composition was measured at about 1050 degrees at Kilauea, and silica-rich magmas can be as cool as 800 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Magma"
+  },
+  "deoxyribose": {
+   "melt": 91,
+   "src": "https://en.wikipedia.org/wiki/Deoxyribose"
+  },
+  "diacetyl": {
+   "melt": -3,
+   "boil": 88,
+   "src": "https://en.wikipedia.org/wiki/Diacetyl"
+  },
+  "diamond": {
+   "melt": 690,
+   "range": [
+    690,
+    840
+   ],
+   "decomposes": true,
+   "note": "At ordinary pressure a diamond never melts: in air it catches light and burns away between about 690 and 840 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Diamond"
+  },
+  "diethylcarbamazine": {
+   "melt": 48,
+   "src": "https://en.wikipedia.org/wiki/Diethylcarbamazine"
+  },
+  "digoxin": {
+   "melt": 249,
+   "src": "https://en.wikipedia.org/wiki/Digoxin"
+  },
+  "diorite": {
+   "melt": 850,
+   "range": [
+    850,
+    1100
+   ],
+   "note": "The coarse-grained twin of andesite, so it melts over the same middling range.",
+   "src": "https://en.wikipedia.org/wiki/Magma"
+  },
+  "dunite": {
+   "melt": 1200,
+   "range": [
+    1200,
+    1900
+   ],
+   "note": "Almost pure olivine, which melts between 1200 and 1900 degrees depending on its iron content.",
+   "src": "https://en.wikipedia.org/wiki/Peridot"
   },
   "dysprosium": {
    "melt": 1407,
@@ -217,15 +914,49 @@
    "boil": 2868,
    "src": "https://en.wikipedia.org/wiki/Erbium"
   },
+  "ergosterol": {
+   "melt": 160,
+   "boil": 250,
+   "src": "https://en.wikipedia.org/wiki/Ergosterol"
+  },
   "ethanol": {
    "melt": -114,
    "boil": 78,
    "src": "https://en.wikipedia.org/wiki/Ethanol"
   },
+  "ethyl_hexanoate": {
+   "melt": -67,
+   "boil": 168,
+   "src": "https://en.wikipedia.org/wiki/Ethyl_hexanoate"
+  },
+  "ethylene_glycol": {
+   "melt": -13,
+   "boil": 197,
+   "src": "https://en.wikipedia.org/wiki/Ethylene_glycol"
+  },
+  "ethylene_oxide": {
+   "melt": -112,
+   "boil": 10,
+   "src": "https://en.wikipedia.org/wiki/Ethylene_oxide"
+  },
   "europium": {
    "melt": 826,
    "boil": 1529,
    "src": "https://en.wikipedia.org/wiki/Europium"
+  },
+  "feldspar": {
+   "melt": 1100,
+   "range": [
+    1100,
+    1550
+   ],
+   "note": "A family rather than one mineral: the sodium feldspar albite melts at 1100 to 1120 degrees and the calcium-rich feldspars higher still.",
+   "src": "https://en.wikipedia.org/wiki/Albite"
+  },
+  "fenchone": {
+   "melt": 6,
+   "boil": 194,
+   "src": "https://en.wikipedia.org/wiki/Fenchone"
   },
   "fermium": {
    "melt": 1500,
@@ -242,16 +973,67 @@
    "note": "The melting point is a prediction with about fifty degrees of uncertainty, and no boiling point is given.",
    "src": "https://en.wikipedia.org/wiki/Flerovium"
   },
+  "fluorine": {
+   "melt": -220,
+   "boil": -188,
+   "src": "https://en.wikipedia.org/wiki/Fluorine"
+  },
+  "fluorite": {
+   "melt": 1418,
+   "note": "Calcium fluoride melts at 1418 degrees, and molten fluorite is what gave fluxing its name.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_fluoride"
+  },
+  "folate": {
+   "melt": 250,
+   "decomposes": true,
+   "note": "It decomposes at about 250 degrees rather than melting.",
+   "src": "https://en.wikipedia.org/wiki/Folate"
+  },
   "francium": {
    "melt": 27,
    "boil": 620,
    "note": "Too little francium has ever existed at once to measure, so both figures are estimates.",
    "src": "https://en.wikipedia.org/wiki/Francium"
   },
+  "fructose": {
+   "melt": 103,
+   "src": "https://en.wikipedia.org/wiki/Fructose"
+  },
+  "fulgurite": {
+   "melt": 1670,
+   "range": [
+    1670,
+    1713
+   ],
+   "note": "It is sand already fused into glass by lightning, so it softens again near silica's melting point.",
+   "src": "https://en.wikipedia.org/wiki/Quartz"
+  },
+  "gaba": {
+   "melt": 204,
+   "boil": 248,
+   "src": "https://en.wikipedia.org/wiki/GABA"
+  },
+  "gabbro": {
+   "melt": 1100,
+   "range": [
+    1100,
+    1200
+   ],
+   "note": "The coarse-grained twin of basalt, with a liquidus near 1200 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Magma"
+  },
   "gadolinium": {
    "melt": 1312,
    "boil": 3273,
    "src": "https://en.wikipedia.org/wiki/Gadolinium"
+  },
+  "galactose": {
+   "melt": 169,
+   "src": "https://en.wikipedia.org/wiki/Galactose"
+  },
+  "gallic_acid": {
+   "melt": 260,
+   "src": "https://en.wikipedia.org/wiki/Gallic_acid"
   },
   "gallium": {
    "melt": 30,
@@ -267,14 +1049,57 @@
    "note": "Galvanised iron is steel under a zinc coat, so the coating runs at about 420 C while the steel beneath holds past 1500 C.",
    "src": "https://en.wikipedia.org/wiki/Hot-dip_galvanization"
   },
+  "geraniol": {
+   "melt": -15,
+   "boil": 230,
+   "src": "https://en.wikipedia.org/wiki/Geraniol"
+  },
+  "germanium": {
+   "melt": 938,
+   "note": "Germanium melts at about 938 degrees.",
+   "src": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+  },
+  "germanium_dioxide": {
+   "melt": 1115,
+   "note": "Germanium dioxide melts at 1115 degrees, far below its silicon counterpart.",
+   "src": "https://en.wikipedia.org/wiki/Germanium_dioxide"
+  },
   "glass": {
-   "melt": 1000,
+   "melt": 700,
+   "note": "Ordinary glass has no sharp melting point: it begins to soften from about 700 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Soda-lime_glass"
+  },
+  "glucose": {
+   "melt": 146,
+   "note": "This is the common alpha form; the beta form melts at about 150 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Glucose"
+  },
+  "glutamic_acid": {
+   "melt": 199,
+   "decomposes": true,
+   "note": "It decomposes at its melting point.",
+   "src": "https://en.wikipedia.org/wiki/Glutamic_acid"
+  },
+  "glutamine": {
+   "melt": 185,
+   "decomposes": true,
+   "note": "It decomposes around 185 degrees rather than melting.",
+   "src": "https://en.wikipedia.org/wiki/Glutamine"
+  },
+  "glycine": {
+   "melt": 233,
+   "decomposes": true,
+   "note": "It decomposes at its melting point.",
+   "src": "https://en.wikipedia.org/wiki/Glycine"
+  },
+  "gneiss": {
+   "melt": 1215,
    "range": [
-    600,
-    1400
+    1215,
+    1260
    ],
-   "note": "Glass has no melting point: it softens gradually, which is why it can be blown.",
-   "src": "https://en.wikipedia.org/wiki/Glass"
+   "note": "Much the same minerals as granite, so it melts over granite's range, and water in the rock can bring that down to 650 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Granite"
   },
   "gold": {
    "melt": 1064,
@@ -287,23 +1112,86 @@
     1215,
     1260
    ],
-   "note": "A mixture of minerals, so it melts over a range.",
+   "note": "A mixture of minerals, so it melts over a range rather than at one point, and water in the rock lowers it as far as 650 degrees.",
    "src": "https://en.wikipedia.org/wiki/Granite"
+  },
+  "graphite": {
+   "melt": 3627,
+   "sublimes": true,
+   "note": "Carbon has no melting point at ordinary pressure: it passes straight to vapour at about 3900 kelvin.",
+   "src": "https://en.wikipedia.org/wiki/Carbon"
+  },
+  "gravel": {
+   "melt": 700,
+   "range": [
+    700,
+    1400
+   ],
+   "note": "Rock of any ordinary kind is molten somewhere between about 700 and 1400 degrees, and this is a jumble of whatever rock was to hand.",
+   "src": "https://en.wikipedia.org/wiki/Magma"
+  },
+  "guanine": {
+   "melt": 360,
+   "decomposes": true,
+   "note": "It decomposes rather than melting and sublimes instead of boiling.",
+   "src": "https://en.wikipedia.org/wiki/Guanine"
+  },
+  "gypsum": {
+   "melt": 1460,
+   "decomposes": true,
+   "note": "Gypsum gives up its water as plaster long before this: it is the dry calcium sulfate that melts at 1460 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_sulfate"
   },
   "hafnium": {
    "melt": 2233,
    "boil": 4603,
    "src": "https://en.wikipedia.org/wiki/Hafnium"
   },
+  "hematite": {
+   "melt": 1539,
+   "note": "Iron oxide melts at this temperature, close to iron metal itself.",
+   "src": "https://en.wikipedia.org/wiki/Iron(III)_oxide"
+  },
+  "histamine": {
+   "melt": 84,
+   "boil": 210,
+   "src": "https://en.wikipedia.org/wiki/Histamine"
+  },
   "holmium": {
    "melt": 1461,
    "boil": 2600,
    "src": "https://en.wikipedia.org/wiki/Holmium"
   },
+  "hydrochloric_acid": {
+   "melt": -114,
+   "boil": -85,
+   "note": "These are the values for pure hydrogen chloride, not for the watery acid in a bottle.",
+   "src": "https://en.wikipedia.org/wiki/Hydrogen_chloride"
+  },
+  "hydrogen_gas": {
+   "melt": -259,
+   "boil": -253,
+   "src": "https://en.wikipedia.org/wiki/Hydrogen"
+  },
+  "hydroxymethylfurfural": {
+   "melt": 32,
+   "note": "It forms when sugars break down, and it is a soft solid just above room temperature.",
+   "src": "https://en.wikipedia.org/wiki/Hydroxymethylfurfural"
+  },
   "ice": {
    "melt": 0,
    "boil": 100,
-   "src": "https://en.wikipedia.org/wiki/Ice"
+   "note": "Ice is simply solid water, so it melts at 0 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Water"
+  },
+  "igneous_rock": {
+   "melt": 700,
+   "range": [
+    700,
+    1400
+   ],
+   "note": "Igneous rocks are frozen magma, and magma is molten anywhere from about 700 to 1400 degrees depending on its make-up.",
+   "src": "https://en.wikipedia.org/wiki/Magma"
   },
   "inconel_625": {
    "melt": 1320,
@@ -321,8 +1209,8 @@
   },
   "iodine": {
    "melt": 114,
-   "boil": 184,
-   "src": "https://en.wikipedia.org/wiki/Iodine"
+   "note": "Iodine melts at about 114 degrees, though in an open tube it mostly sublimes into violet vapour.",
+   "src": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
   },
   "iridium": {
    "melt": 2446,
@@ -334,15 +1222,79 @@
    "boil": 2861,
    "src": "https://en.wikipedia.org/wiki/Iron"
   },
+  "isoamyl_acetate": {
+   "melt": -78,
+   "boil": 142,
+   "src": "https://en.wikipedia.org/wiki/Isoamyl_acetate"
+  },
+  "jasper": {
+   "melt": 1670,
+   "range": [
+    1670,
+    1713
+   ],
+   "note": "Opaque quartz full of fine impurities, so it melts near where quartz does.",
+   "src": "https://en.wikipedia.org/wiki/Quartz"
+  },
+  "juglone": {
+   "melt": 163,
+   "src": "https://en.wikipedia.org/wiki/Juglone"
+  },
+  "kaolin": {
+   "melt": 550,
+   "decomposes": true,
+   "note": "The white china clay loses its water from about 550 degrees and will never again soften in water.",
+   "src": "https://en.wikipedia.org/wiki/Kaolinite"
+  },
+  "komatiite": {
+   "melt": 1500,
+   "range": [
+    1500,
+    1600
+   ],
+   "note": "An ultramafic lava so hot that it erupted at about 1600 degrees, far above ordinary basalt.",
+   "src": "https://en.wikipedia.org/wiki/Komatiite"
+  },
+  "labradorite": {
+   "melt": 1100,
+   "range": [
+    1100,
+    1550
+   ],
+   "note": "A plagioclase feldspar part way between sodium albite, which melts near 1100 degrees, and calcium anorthite, which needs about 1550.",
+   "src": "https://en.wikipedia.org/wiki/Anorthite"
+  },
+  "lactic_acid": {
+   "melt": 18,
+   "src": "https://en.wikipedia.org/wiki/Lactic_acid"
+  },
+  "lactose": {
+   "melt": 252,
+   "note": "This is dry lactose; the usual monohydrate loses its water first.",
+   "src": "https://en.wikipedia.org/wiki/Lactose"
+  },
   "laminations": {
    "melt": 1500,
    "note": "Laminations are stacked strips of silicon electrical steel, which melts at about 1500 C.",
    "src": "https://en.wikipedia.org/wiki/Electrical_steel"
   },
+  "lanolin": {
+   "melt": 38,
+   "src": "https://en.wikipedia.org/wiki/Lanolin"
+  },
   "lanthanum": {
    "melt": 920,
    "boil": 3464,
    "src": "https://en.wikipedia.org/wiki/Lanthanum"
+  },
+  "lard": {
+   "melt": 40,
+   "range": [
+    36,
+    45
+   ],
+   "note": "A mixture of fats, so it softens over a range that depends on the cut.",
+   "src": "https://en.wikipedia.org/wiki/Lard"
   },
   "lawrencium": {
    "melt": 1600,
@@ -360,16 +1312,58 @@
    "note": "Came for stained glass is usually plain lead strip, so it melts at lead's own point.",
    "src": "https://en.wikipedia.org/wiki/Lead"
   },
+  "lead_sulfide": {
+   "melt": 1113,
+   "note": "Galena, the lead ore, melts at 1113 degrees, far above lead metal.",
+   "src": "https://en.wikipedia.org/wiki/Lead(II)_sulfide"
+  },
+  "lignin": {
+   "melt": 350,
+   "decomposes": true,
+   "note": "Wood, paper and other plant material char from about 350 degrees rather than melting.",
+   "src": "https://en.wikipedia.org/wiki/Pyrolysis"
+  },
+  "lime": {
+   "melt": 580,
+   "decomposes": true,
+   "note": "Slaked lime loses its water and breaks down rather than melting.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_hydroxide"
+  },
   "limestone": {
    "melt": 825,
    "decomposes": true,
-   "note": "It does not melt at ordinary pressure: it breaks down into quicklime and carbon dioxide first.",
-   "src": "https://en.wikipedia.org/wiki/Calcium_carbonate"
+   "note": "It does not melt at ordinary pressure: above about 825 degrees it breaks down into quicklime and carbon dioxide.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_oxide"
+  },
+  "limonene": {
+   "melt": -74,
+   "boil": 176,
+   "src": "https://en.wikipedia.org/wiki/Limonene"
+  },
+  "linalool": {
+   "melt": -20,
+   "boil": 199,
+   "src": "https://en.wikipedia.org/wiki/Linalool"
+  },
+  "linoleic_acid": {
+   "melt": -7,
+   "note": "Reported values range from about minus 12 to minus 7 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Linoleic_acid"
+  },
+  "litharge": {
+   "melt": 888,
+   "note": "The yellow lead oxide melts at 888 degrees, which is why it fluxes glass and glazes so readily.",
+   "src": "https://en.wikipedia.org/wiki/Lead(II)_oxide"
   },
   "lithium": {
    "melt": 181,
    "boil": 1344,
    "src": "https://en.wikipedia.org/wiki/Lithium"
+  },
+  "lithium_carbonate": {
+   "melt": 723,
+   "note": "It melts at 723 degrees and begins to break down from about 1300.",
+   "src": "https://en.wikipedia.org/wiki/Lithium_carbonate"
   },
   "livermorium": {
    "melt": 435,
@@ -381,20 +1375,90 @@
    "note": "Wikipedia gives extrapolated bands rather than points, 364 to 507 C for melting and 762 to 862 C for boiling.",
    "src": "https://en.wikipedia.org/wiki/Livermorium"
   },
+  "lodestone": {
+   "melt": 1597,
+   "note": "Lodestone is magnetite that was magnetised in the ground, so it melts where magnetite does.",
+   "src": "https://en.wikipedia.org/wiki/Iron(II,III)_oxide"
+  },
   "lutetium": {
    "melt": 1652,
    "boil": 3402,
    "src": "https://en.wikipedia.org/wiki/Lutetium"
+  },
+  "lycopene": {
+   "melt": 177,
+   "src": "https://en.wikipedia.org/wiki/Lycopene"
+  },
+  "lye": {
+   "melt": 323,
+   "boil": 1388,
+   "src": "https://en.wikipedia.org/wiki/Sodium_hydroxide"
   },
   "magnesium": {
    "melt": 650,
    "boil": 1091,
    "src": "https://en.wikipedia.org/wiki/Magnesium"
   },
+  "magnesium_chloride": {
+   "melt": 714,
+   "note": "The dry salt melts at 714 degrees, while the hydrated crystals break down on heating.",
+   "src": "https://en.wikipedia.org/wiki/Magnesium_chloride"
+  },
+  "magnesium_oxide": {
+   "melt": 2852,
+   "note": "One of the highest melting common oxides, which is why it lines furnaces.",
+   "src": "https://en.wikipedia.org/wiki/Magnesium_oxide"
+  },
+  "magnesium_sulfate": {
+   "melt": 1124,
+   "decomposes": true,
+   "note": "Dry magnesium sulfate melts at 1124 degrees while breaking down, and Epsom salt crystals go at about 150.",
+   "src": "https://en.wikipedia.org/wiki/Magnesium_sulfate"
+  },
+  "magnetite": {
+   "melt": 1597,
+   "note": "The magnetic iron oxide melts near 1600 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Iron(II,III)_oxide"
+  },
+  "malachite": {
+   "melt": 200,
+   "decomposes": true,
+   "note": "The green copper carbonate breaks down to black copper oxide near 200 degrees instead of melting.",
+   "src": "https://en.wikipedia.org/wiki/Basic_copper_carbonate"
+  },
+  "malic_acid": {
+   "melt": 130,
+   "src": "https://en.wikipedia.org/wiki/Malic_acid"
+  },
+  "maltose": {
+   "melt": 162,
+   "note": "This is the dry sugar; the monohydrate melts near 102 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Maltose"
+  },
   "manganese": {
    "melt": 1246,
    "boil": 2061,
    "src": "https://en.wikipedia.org/wiki/Manganese"
+  },
+  "manganese_dioxide": {
+   "melt": 535,
+   "decomposes": true,
+   "note": "It breaks down near 535 degrees, losing oxygen instead of melting.",
+   "src": "https://en.wikipedia.org/wiki/Manganese_dioxide"
+  },
+  "marble": {
+   "melt": 825,
+   "decomposes": true,
+   "note": "Metamorphosed limestone, so it burns to quicklime and carbon dioxide instead of melting.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_oxide"
+  },
+  "mebendazole": {
+   "melt": 289,
+   "src": "https://en.wikipedia.org/wiki/Mebendazole"
+  },
+  "melatonin": {
+   "melt": 117,
+   "src": "https://en.wikipedia.org/wiki/Melatonin"
   },
   "mendelevium": {
    "melt": 800,
@@ -406,16 +1470,97 @@
    "boil": 357,
    "src": "https://en.wikipedia.org/wiki/Mercury_(element)"
   },
+  "mescaline": {
+   "melt": 35,
+   "src": "https://en.wikipedia.org/wiki/Mescaline"
+  },
+  "metamorphic_rock": {
+   "melt": 700,
+   "range": [
+    700,
+    1400
+   ],
+   "note": "A class of rock rather than one material, and it melts only when it reaches the range magma occupies.",
+   "src": "https://en.wikipedia.org/wiki/Magma"
+  },
+  "methane": {
+   "melt": -182,
+   "boil": -161,
+   "src": "https://en.wikipedia.org/wiki/Methane"
+  },
+  "methional": {
+   "melt": -75,
+   "boil": 166,
+   "src": "https://en.wikipedia.org/wiki/Methional"
+  },
+  "methionine": {
+   "melt": 281,
+   "decomposes": true,
+   "note": "It decomposes at its melting point.",
+   "src": "https://en.wikipedia.org/wiki/Methionine"
+  },
+  "metronidazole": {
+   "melt": 161,
+   "src": "https://en.wikipedia.org/wiki/Metronidazole"
+  },
+  "molybdenite": {
+   "melt": 1185,
+   "decomposes": true,
+   "note": "It breaks down at about 1185 degrees instead of melting.",
+   "src": "https://en.wikipedia.org/wiki/Molybdenite"
+  },
   "molybdenum": {
    "melt": 2623,
    "boil": 4639,
    "src": "https://en.wikipedia.org/wiki/Molybdenum"
+  },
+  "monazite": {
+   "melt": 1900,
+   "range": [
+    1900,
+    2100
+   ],
+   "note": "The rare-earth phosphate melts somewhere between 1900 and 2100 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Monazite"
+  },
+  "moraine": {
+   "melt": 700,
+   "range": [
+    700,
+    1400
+   ],
+   "note": "Rock of any ordinary kind is molten somewhere between about 700 and 1400 degrees, and this is a jumble of whatever rock was to hand.",
+   "src": "https://en.wikipedia.org/wiki/Magma"
   },
   "moscovium": {
    "melt": 400,
    "boil": 1100,
    "note": "Both figures are predictions, as moscovium has only ever existed as a few atoms.",
    "src": "https://en.wikipedia.org/wiki/Moscovium"
+  },
+  "moss_agate": {
+   "melt": 1670,
+   "range": [
+    1670,
+    1713
+   ],
+   "note": "Agate with mossy mineral inclusions, so it melts near where quartz does.",
+   "src": "https://en.wikipedia.org/wiki/Quartz"
+  },
+  "msg": {
+   "melt": 232,
+   "src": "https://en.wikipedia.org/wiki/Monosodium_glutamate"
+  },
+  "mudstone": {
+   "melt": 550,
+   "decomposes": true,
+   "note": "A hardened mud made of clay, which loses its water from about 550 degrees long before anything melts.",
+   "src": "https://en.wikipedia.org/wiki/Kaolinite"
+  },
+  "n_type": {
+   "melt": 1414,
+   "note": "Silicon with a trace of phosphorus in it, which melts like ordinary silicon.",
+   "src": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
   },
   "nak_alloy": {
    "melt": -13,
@@ -434,6 +1579,10 @@
    "note": "The boiling point is extrapolated from vapour pressure rather than measured.",
    "src": "https://en.wikipedia.org/wiki/Neptunium"
   },
+  "niacin": {
+   "melt": 237,
+   "src": "https://en.wikipedia.org/wiki/Niacin"
+  },
   "nichrome": {
    "melt": 1400,
    "note": "Wikipedia gives about 1400 C for C-grade nichrome, without stating bounds for other grades.",
@@ -450,6 +1599,15 @@
    "note": "The anhydrous salt breaks down above about 640 C instead of boiling, while the green hexahydrate melts at only 53 C.",
    "src": "https://en.wikipedia.org/wiki/Nickel(II)_sulfate"
   },
+  "niclosamide": {
+   "melt": 228,
+   "src": "https://en.wikipedia.org/wiki/Niclosamide"
+  },
+  "nicotine": {
+   "melt": -79,
+   "boil": 247,
+   "src": "https://en.wikipedia.org/wiki/Nicotine"
+  },
   "nihonium": {
    "melt": 430,
    "boil": 1130,
@@ -461,10 +1619,67 @@
    "boil": 4744,
    "src": "https://en.wikipedia.org/wiki/Niobium"
   },
+  "nitric_acid": {
+   "melt": -42,
+   "boil": 83,
+   "src": "https://en.wikipedia.org/wiki/Nitric_acid"
+  },
+  "nitric_oxide": {
+   "melt": -164,
+   "boil": -152,
+   "src": "https://en.wikipedia.org/wiki/Nitric_oxide"
+  },
+  "nitrogen": {
+   "melt": -210,
+   "boil": -196,
+   "src": "https://en.wikipedia.org/wiki/Nitrogen"
+  },
+  "nitrogen_dioxide": {
+   "melt": -9,
+   "boil": 21,
+   "src": "https://en.wikipedia.org/wiki/Nitrogen_dioxide"
+  },
+  "nitrogen_gas": {
+   "melt": -210,
+   "boil": -196,
+   "src": "https://en.wikipedia.org/wiki/Nitrogen"
+  },
   "nobelium": {
    "melt": 800,
    "note": "The melting point is predicted, not measured, and no boiling point is known.",
    "src": "https://en.wikipedia.org/wiki/Nobelium"
+  },
+  "nootkatone": {
+   "melt": 36,
+   "boil": 170,
+   "src": "https://en.wikipedia.org/wiki/Nootkatone"
+  },
+  "nylon": {
+   "melt": 265,
+   "range": [
+    220,
+    265
+   ],
+   "note": "Nylon 6 melts near 220 degrees and nylon 6,6 near 265.",
+   "src": "https://en.wikipedia.org/wiki/Nylon"
+  },
+  "nylon_6": {
+   "melt": 218,
+   "src": "https://en.wikipedia.org/wiki/Nylon_6"
+  },
+  "obsidian": {
+   "melt": 700,
+   "range": [
+    700,
+    1050
+   ],
+   "note": "A natural glass, so it softens over a range instead of melting at one point.",
+   "src": "https://en.wikipedia.org/wiki/Obsidian"
+  },
+  "ochre": {
+   "melt": 1539,
+   "note": "An earth pigment of clay stained with iron oxide, and the oxide itself melts at this temperature.",
+   "src": "https://en.wikipedia.org/wiki/Iron(III)_oxide"
   },
   "oganesson": {
    "melt": 52,
@@ -472,20 +1687,160 @@
    "note": "Both figures are predictions, as oganesson has only ever existed as a few atoms.",
    "src": "https://en.wikipedia.org/wiki/Oganesson"
   },
+  "oleic_acid": {
+   "melt": 14,
+   "boil": 360,
+   "src": "https://en.wikipedia.org/wiki/Oleic_acid"
+  },
+  "olivine": {
+   "melt": 1200,
+   "range": [
+    1200,
+    1900
+   ],
+   "note": "Olivine melts somewhere between 1200 and 1900 degrees depending on how much iron it holds instead of magnesium.",
+   "src": "https://en.wikipedia.org/wiki/Peridot"
+  },
   "osmium": {
    "melt": 3033,
    "boil": 5008,
    "src": "https://en.wikipedia.org/wiki/Osmium"
+  },
+  "overburden": {
+   "melt": 700,
+   "range": [
+    700,
+    1400
+   ],
+   "note": "Rock of any ordinary kind is molten somewhere between about 700 and 1400 degrees, and this is a jumble of whatever rock was to hand.",
+   "src": "https://en.wikipedia.org/wiki/Magma"
+  },
+  "oxalate": {
+   "melt": 190,
+   "note": "The figure is for dry oxalic acid; the common dihydrate melts near 101 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Oxalic_acid"
+  },
+  "oxygen_gas": {
+   "melt": -219,
+   "boil": -183,
+   "src": "https://en.wikipedia.org/wiki/Oxygen"
+  },
+  "p_type": {
+   "melt": 1414,
+   "note": "Silicon with a trace of boron in it, which melts like ordinary silicon.",
+   "src": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+  },
+  "padparadscha": {
+   "melt": 2030,
+   "range": [
+    2030,
+    2050
+   ],
+   "note": "A pink-orange sapphire, so it melts where sapphire does.",
+   "src": "https://en.wikipedia.org/wiki/Sapphire"
   },
   "palladium": {
    "melt": 1555,
    "boil": 2963,
    "src": "https://en.wikipedia.org/wiki/Palladium"
   },
+  "pantothenic_acid": {
+   "melt": 184,
+   "src": "https://en.wikipedia.org/wiki/Pantothenic_acid"
+  },
+  "paper": {
+   "melt": 350,
+   "decomposes": true,
+   "note": "Wood, paper and other plant material char from about 350 degrees rather than melting.",
+   "src": "https://en.wikipedia.org/wiki/Pyrolysis"
+  },
+  "peek": {
+   "melt": 343,
+   "src": "https://en.wikipedia.org/wiki/Polyether_ether_ketone"
+  },
+  "pegmatite": {
+   "melt": 650,
+   "range": [
+    650,
+    1260
+   ],
+   "note": "A very coarse granite grown from a watery melt, which can stay liquid as low as 650 degrees where dry granite needs over 1200.",
+   "src": "https://en.wikipedia.org/wiki/Granite"
+  },
+  "peridot": {
+   "melt": 1200,
+   "range": [
+    1200,
+    1900
+   ],
+   "note": "Gem olivine, quoted as melting between 1200 and 1900 degrees depending on its iron content.",
+   "src": "https://en.wikipedia.org/wiki/Peridot"
+  },
+  "peridotite": {
+   "melt": 1200,
+   "range": [
+    1200,
+    1900
+   ],
+   "note": "It is made mostly of olivine, which melts somewhere between 1200 and 1900 degrees depending on how much iron it holds.",
+   "src": "https://en.wikipedia.org/wiki/Peridot"
+  },
+  "perlite": {
+   "melt": 850,
+   "range": [
+    850,
+    900
+   ],
+   "note": "It softens at 850 to 900 degrees, and the water trapped inside flashes to steam and puffs it up.",
+   "src": "https://en.wikipedia.org/wiki/Perlite"
+  },
+  "pet": {
+   "melt": 255,
+   "range": [
+    250,
+    260
+   ],
+   "note": "Polyester fabric and drink bottles are both this plastic.",
+   "src": "https://en.wikipedia.org/wiki/Polyethylene_terephthalate"
+  },
+  "petalite": {
+   "melt": 1350,
+   "note": "The lithium feldspar-like mineral melts at about 1350 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Petalite"
+  },
+  "petrified_wood": {
+   "melt": 1670,
+   "range": [
+    1670,
+    1713
+   ],
+   "note": "Wood whose cells have been replaced by quartz, so it melts near where quartz does.",
+   "src": "https://en.wikipedia.org/wiki/Quartz"
+  },
+  "pfa": {
+   "melt": 315,
+   "src": "https://en.wikipedia.org/wiki/Perfluoroalkoxy_alkane"
+  },
+  "phosphorus": {
+   "melt": 44,
+   "note": "White phosphorus, the common form, melts at about 44 degrees.",
+   "src": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+  },
+  "phyllite": {
+   "melt": 550,
+   "decomposes": true,
+   "note": "A slate taken a step further, so its sheet minerals break down from about 550 degrees before melting.",
+   "src": "https://en.wikipedia.org/wiki/Kaolinite"
+  },
   "pig_iron": {
    "melt": 1130,
    "note": "Pig iron's roughly 4 percent carbon drops its melting point to about 1130 C, which is why a blast furnace can tap it as a liquid.",
    "src": "https://en.wikipedia.org/wiki/Ferrous_metallurgy"
+  },
+  "piperine": {
+   "melt": 130,
+   "note": "It decomposes instead of boiling.",
+   "src": "https://en.wikipedia.org/wiki/Piperine"
   },
   "platinum": {
    "melt": 1768,
@@ -502,15 +1857,132 @@
    "boil": 962,
    "src": "https://en.wikipedia.org/wiki/Polonium"
   },
+  "polyacrylonitrile": {
+   "melt": 300,
+   "decomposes": true,
+   "note": "It degrades near 300 degrees instead of melting, which is why it is spun from solution.",
+   "src": "https://en.wikipedia.org/wiki/Polyacrylonitrile"
+  },
+  "polycarbonate": {
+   "melt": 147,
+   "note": "It is glassy rather than crystalline, so it softens at this glass transition instead of melting sharply.",
+   "src": "https://en.wikipedia.org/wiki/Polycarbonate"
+  },
+  "polyester": {
+   "melt": 255,
+   "range": [
+    250,
+    260
+   ],
+   "note": "Polyester fabric and drink bottles are both this plastic.",
+   "src": "https://en.wikipedia.org/wiki/Polyethylene_terephthalate"
+  },
+  "polyethylene": {
+   "melt": 125,
+   "range": [
+    115,
+    135
+   ],
+   "note": "A mixture of chain lengths, so it softens over a range.",
+   "src": "https://en.wikipedia.org/wiki/Polyethylene"
+  },
+  "pom_acetal": {
+   "melt": 175,
+   "src": "https://en.wikipedia.org/wiki/Polyoxymethylene"
+  },
+  "porcelain": {
+   "melt": 1200,
+   "range": [
+    1200,
+    1400
+   ],
+   "note": "Porcelain is fired until it turns glassy at 1200 to 1400 degrees rather than melting at a set point.",
+   "src": "https://en.wikipedia.org/wiki/Porcelain"
+  },
+  "porphyry": {
+   "melt": 700,
+   "range": [
+    700,
+    1400
+   ],
+   "note": "A texture rather than a single rock, so it melts wherever the magma it came from does.",
+   "src": "https://en.wikipedia.org/wiki/Magma"
+  },
   "potassium": {
    "melt": 64,
    "boil": 758,
    "src": "https://en.wikipedia.org/wiki/Potassium"
   },
+  "potassium_acetate": {
+   "melt": 305,
+   "note": "It decomposes on further heating rather than boiling.",
+   "src": "https://en.wikipedia.org/wiki/Potassium_acetate"
+  },
+  "potassium_bicarbonate": {
+   "melt": 292,
+   "decomposes": true,
+   "note": "It decomposes as it melts.",
+   "src": "https://en.wikipedia.org/wiki/Potassium_bicarbonate"
+  },
+  "potassium_carbonate": {
+   "melt": 891,
+   "note": "Potash melts at 891 degrees and breaks down above that.",
+   "src": "https://en.wikipedia.org/wiki/Potassium_carbonate"
+  },
+  "potassium_hydroxide": {
+   "melt": 410,
+   "note": "Caustic potash melts at 410 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Potassium_hydroxide"
+  },
+  "potassium_iodate": {
+   "melt": 560,
+   "decomposes": true,
+   "note": "It decomposes as it melts.",
+   "src": "https://en.wikipedia.org/wiki/Potassium_iodate"
+  },
+  "potassium_iodide": {
+   "melt": 681,
+   "boil": 1330,
+   "src": "https://en.wikipedia.org/wiki/Potassium_iodide"
+  },
+  "potassium_nitrate": {
+   "melt": 334,
+   "note": "Saltpetre melts at 334 degrees and gives off oxygen as it breaks down above 400.",
+   "src": "https://en.wikipedia.org/wiki/Potassium_nitrate"
+  },
+  "potassium_nitrite": {
+   "melt": 440,
+   "decomposes": true,
+   "note": "It decomposes as it melts and explodes near 537 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Potassium_nitrite"
+  },
+  "pp": {
+   "melt": 160,
+   "range": [
+    130,
+    171
+   ],
+   "note": "The melting point depends on how regular the chains are.",
+   "src": "https://en.wikipedia.org/wiki/Polypropylene"
+  },
   "praseodymium": {
    "melt": 931,
    "boil": 3130,
    "src": "https://en.wikipedia.org/wiki/Praseodymium"
+  },
+  "praziquantel": {
+   "melt": 137,
+   "src": "https://en.wikipedia.org/wiki/Praziquantel"
+  },
+  "progesterone": {
+   "melt": 126,
+   "src": "https://en.wikipedia.org/wiki/Progesterone"
+  },
+  "proline": {
+   "melt": 205,
+   "decomposes": true,
+   "note": "It decomposes over a range from about 205 to 228 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Proline"
   },
   "promethium": {
    "melt": 1042,
@@ -524,9 +1996,80 @@
    "note": "Wikipedia flags the boiling point as uncertain.",
    "src": "https://en.wikipedia.org/wiki/Protactinium"
   },
+  "psilocybin": {
+   "melt": 224,
+   "note": "Reported between about 220 and 228 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Psilocybin"
+  },
+  "ptfe": {
+   "melt": 327,
+   "src": "https://en.wikipedia.org/wiki/Polytetrafluoroethylene"
+  },
+  "pumice": {
+   "melt": 800,
+   "range": [
+    800,
+    1200
+   ],
+   "note": "Frothy volcanic glass of the silica-rich kind, so it softens over the range such lava is molten.",
+   "src": "https://en.wikipedia.org/wiki/Magma"
+  },
+  "pvc": {
+   "melt": 160,
+   "range": [
+    100,
+    260
+   ],
+   "note": "It softens over a wide range and starts to break down near 250 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Polyvinyl_chloride"
+  },
+  "pvdf": {
+   "melt": 177,
+   "note": "Above about 316 degrees it decomposes and gives off hydrogen fluoride.",
+   "src": "https://en.wikipedia.org/wiki/Polyvinylidene_fluoride"
+  },
+  "pyrite": {
+   "melt": 540,
+   "decomposes": true,
+   "note": "Fool's gold breaks down into iron sulfide and sulfur from about 540 degrees rather than melting.",
+   "src": "https://en.wikipedia.org/wiki/Pyrite"
+  },
+  "pyrolusite": {
+   "melt": 535,
+   "decomposes": true,
+   "note": "Manganese dioxide gives up oxygen and breaks down near 535 degrees rather than melting.",
+   "src": "https://en.wikipedia.org/wiki/Manganese_dioxide"
+  },
   "quartz": {
-   "melt": 1713,
+   "melt": 1670,
+   "range": [
+    1670,
+    1713
+   ],
+   "note": "On the way up it turns into tridymite and then cristobalite, so two melting figures are quoted.",
    "src": "https://en.wikipedia.org/wiki/Quartz"
+  },
+  "quartzite": {
+   "melt": 1670,
+   "range": [
+    1670,
+    1713
+   ],
+   "note": "Almost pure quartz welded together, so it melts about where silica does.",
+   "src": "https://en.wikipedia.org/wiki/Quartz"
+  },
+  "quercetin": {
+   "melt": 316,
+   "src": "https://en.wikipedia.org/wiki/Quercetin"
+  },
+  "quicklime": {
+   "melt": 2613,
+   "note": "Burnt lime is one of the most refractory oxides, melting above 2600 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_oxide"
+  },
+  "quinine": {
+   "melt": 177,
+   "src": "https://en.wikipedia.org/wiki/Quinine"
   },
   "radium": {
    "melt": 700,
@@ -543,6 +2086,14 @@
    "note": "A rail is rolled carbon steel, which softens over a range rather than melting at one point.",
    "src": "https://en.wikipedia.org/wiki/Carbon_steel"
   },
+  "resveratrol": {
+   "melt": 262,
+   "src": "https://en.wikipedia.org/wiki/Resveratrol"
+  },
+  "retinal": {
+   "melt": 63,
+   "src": "https://en.wikipedia.org/wiki/Retinal"
+  },
   "rhenium": {
    "melt": 3186,
    "boil": 5630,
@@ -553,10 +2104,76 @@
    "boil": 3695,
    "src": "https://en.wikipedia.org/wiki/Rhodium"
   },
+  "rhodochrosite": {
+   "melt": 200,
+   "range": [
+    200,
+    300
+   ],
+   "decomposes": true,
+   "note": "Manganese carbonate breaks down somewhere between 200 and 300 degrees rather than melting.",
+   "src": "https://en.wikipedia.org/wiki/Manganese(II)_carbonate"
+  },
+  "rhyolite": {
+   "melt": 800,
+   "range": [
+    800,
+    1200
+   ],
+   "note": "Lava of this silica-rich kind is molten anywhere from about 800 degrees upward, because it is a mixture and not one mineral.",
+   "src": "https://en.wikipedia.org/wiki/Magma"
+  },
+  "ribose": {
+   "melt": 95,
+   "src": "https://en.wikipedia.org/wiki/Ribose"
+  },
+  "rock": {
+   "melt": 700,
+   "range": [
+    700,
+    1400
+   ],
+   "note": "Rock is a mixture, so all that can honestly be given is the range in which ordinary rock is molten.",
+   "src": "https://en.wikipedia.org/wiki/Magma"
+  },
+  "rock_candy": {
+   "melt": 189,
+   "decomposes": true,
+   "note": "It does not melt cleanly: it starts breaking down below its melting point and turns into caramel.",
+   "src": "https://en.wikipedia.org/wiki/Sucrose"
+  },
+  "rock_salt": {
+   "melt": 801,
+   "note": "Halite, common salt, melts at about 801 degrees into a clear liquid.",
+   "src": "https://en.wikipedia.org/wiki/Halite"
+  },
+  "rose_quartz": {
+   "melt": 1670,
+   "range": [
+    1670,
+    1713
+   ],
+   "note": "A pink variety of quartz, so it melts where quartz does.",
+   "src": "https://en.wikipedia.org/wiki/Quartz"
+  },
+  "rosmarinic_acid": {
+   "melt": 173,
+   "src": "https://en.wikipedia.org/wiki/Rosmarinic_acid"
+  },
   "rubidium": {
    "melt": 39,
    "boil": 688,
    "src": "https://en.wikipedia.org/wiki/Rubidium"
+  },
+  "ruby": {
+   "melt": 2044,
+   "note": "Ruby is corundum coloured red by chromium, so it melts where corundum does.",
+   "src": "https://en.wikipedia.org/wiki/Corundum"
+  },
+  "rust": {
+   "melt": 1539,
+   "note": "Rust is a wet iron oxide: it dries out first, and the dry oxide melts at this temperature.",
+   "src": "https://en.wikipedia.org/wiki/Iron(III)_oxide"
   },
   "ruthenium": {
    "melt": 2334,
@@ -569,9 +2186,37 @@
    "note": "Both figures are predictions, as rutherfordium has only ever existed as a few atoms.",
    "src": "https://en.wikipedia.org/wiki/Rutherfordium"
   },
+  "rutilated_quartz": {
+   "melt": 1670,
+   "range": [
+    1670,
+    1713
+   ],
+   "note": "Quartz threaded with rutile needles, so it melts where quartz does.",
+   "src": "https://en.wikipedia.org/wiki/Quartz"
+  },
+  "rutile": {
+   "melt": 1843,
+   "note": "Natural titanium dioxide, which melts well above 1800 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Titanium_dioxide"
+  },
+  "safrole": {
+   "melt": 11,
+   "boil": 233,
+   "src": "https://en.wikipedia.org/wiki/Safrole"
+  },
+  "salicin": {
+   "melt": 207,
+   "note": "It decomposes near 240 degrees instead of boiling.",
+   "src": "https://en.wikipedia.org/wiki/Salicin"
+  },
+  "salicylic_acid": {
+   "melt": 159,
+   "src": "https://en.wikipedia.org/wiki/Salicylic_acid"
+  },
   "salt": {
    "melt": 801,
-   "boil": 1465,
+   "boil": 1413,
    "src": "https://en.wikipedia.org/wiki/Sodium_chloride"
   },
   "samarium": {
@@ -581,18 +2226,137 @@
    "src": "https://en.wikipedia.org/wiki/Samarium"
   },
   "sand": {
-   "melt": 1700,
+   "melt": 1670,
    "range": [
-    1600,
-    1730
+    1670,
+    1713
    ],
-   "note": "Sand is mostly quartz, and melts near where pure silica does.",
-   "src": "https://en.wikipedia.org/wiki/Silicon_dioxide"
+   "note": "Ordinary sand is mostly quartz grains, so it fuses near the melting point of silica.",
+   "src": "https://en.wikipedia.org/wiki/Quartz"
+  },
+  "sandstone": {
+   "melt": 1670,
+   "range": [
+    1670,
+    1713
+   ],
+   "note": "Mostly quartz grains, so it fuses near silica's melting point, though the cement between the grains gives way first.",
+   "src": "https://en.wikipedia.org/wiki/Quartz"
+  },
+  "sapphire": {
+   "melt": 2030,
+   "range": [
+    2030,
+    2050
+   ],
+   "note": "Sapphire is corundum coloured by iron and titanium, and melts just above 2000 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Sapphire"
   },
   "scandium": {
    "melt": 1541,
    "boil": 2836,
    "src": "https://en.wikipedia.org/wiki/Scandium"
+  },
+  "schist": {
+   "melt": 1215,
+   "range": [
+    1215,
+    1260
+   ],
+   "note": "A crustal rock that begins to melt in patches once it is hot and wet, and needs over 1200 degrees to melt dry.",
+   "src": "https://en.wikipedia.org/wiki/Granite"
+  },
+  "scree": {
+   "melt": 700,
+   "range": [
+    700,
+    1400
+   ],
+   "note": "Rock of any ordinary kind is molten somewhere between about 700 and 1400 degrees, and this is a jumble of whatever rock was to hand.",
+   "src": "https://en.wikipedia.org/wiki/Magma"
+  },
+  "sediment": {
+   "melt": 700,
+   "range": [
+    700,
+    1400
+   ],
+   "note": "Rock of any ordinary kind is molten somewhere between about 700 and 1400 degrees, and this is a jumble of whatever rock was to hand.",
+   "src": "https://en.wikipedia.org/wiki/Magma"
+  },
+  "sedimentary_rock": {
+   "melt": 700,
+   "range": [
+    700,
+    1400
+   ],
+   "note": "A class of rock rather than one material, so only the broad range in which rock melts can be given.",
+   "src": "https://en.wikipedia.org/wiki/Magma"
+  },
+  "selenium": {
+   "melt": 221,
+   "note": "Grey selenium melts at about 221 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Selenium"
+  },
+  "serine": {
+   "melt": 246,
+   "decomposes": true,
+   "note": "It decomposes at its melting point.",
+   "src": "https://en.wikipedia.org/wiki/Serine"
+  },
+  "serotonin": {
+   "melt": 168,
+   "src": "https://en.wikipedia.org/wiki/Serotonin"
+  },
+  "shale": {
+   "melt": 550,
+   "decomposes": true,
+   "note": "A layered clay rock, so it first loses the water locked in its clay from about 550 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Kaolinite"
+  },
+  "shikimic_acid": {
+   "melt": 186,
+   "src": "https://en.wikipedia.org/wiki/Shikimic_acid"
+  },
+  "silica": {
+   "melt": 1713,
+   "note": "Pure silicon dioxide melts at this temperature, which is why it is the backbone of glass and refractories.",
+   "src": "https://en.wikipedia.org/wiki/Silicon_dioxide"
+  },
+  "silica_sand": {
+   "melt": 1670,
+   "range": [
+    1670,
+    1713
+   ],
+   "note": "Sand sorted for its quartz content, so it fuses close to silica's own melting point.",
+   "src": "https://en.wikipedia.org/wiki/Quartz"
+  },
+  "silicon": {
+   "melt": 1414,
+   "note": "Silicon melts at 1414 degrees because its covalent network has to be broken apart.",
+   "src": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+  },
+  "silicon_carbide": {
+   "melt": 2830,
+   "decomposes": true,
+   "note": "It decomposes at that temperature instead of melting cleanly.",
+   "src": "https://en.wikipedia.org/wiki/Silicon_carbide"
+  },
+  "silicon_dioxide": {
+   "melt": 1713,
+   "boil": 2950,
+   "note": "Sand is mostly silica, which melts only at white heat.",
+   "src": "https://en.wikipedia.org/wiki/Silicon_dioxide"
+  },
+  "silt": {
+   "melt": 700,
+   "range": [
+    700,
+    1400
+   ],
+   "note": "Rock of any ordinary kind is molten somewhere between about 700 and 1400 degrees, and this is a jumble of whatever rock was to hand.",
+   "src": "https://en.wikipedia.org/wiki/Magma"
   },
   "silver": {
    "melt": 962,
@@ -605,10 +2369,81 @@
    "note": "It begins breaking down at about 120 C, before its 218 C melting point is reached.",
    "src": "https://en.wikipedia.org/wiki/Silver_carbonate"
   },
+  "silver_iodide": {
+   "melt": 558,
+   "boil": 1506,
+   "src": "https://en.wikipedia.org/wiki/Silver_iodide"
+  },
+  "skatole": {
+   "melt": 94,
+   "boil": 265,
+   "src": "https://en.wikipedia.org/wiki/Skatole"
+  },
+  "slate": {
+   "melt": 550,
+   "decomposes": true,
+   "note": "Metamorphosed mudstone, so the clay minerals in it break down from about 550 degrees before melting.",
+   "src": "https://en.wikipedia.org/wiki/Kaolinite"
+  },
+  "smithsonite": {
+   "melt": 140,
+   "decomposes": true,
+   "note": "Zinc carbonate breaks down near 140 degrees, leaving zinc oxide behind.",
+   "src": "https://en.wikipedia.org/wiki/Zinc_carbonate"
+  },
+  "smoky_quartz": {
+   "melt": 1670,
+   "range": [
+    1670,
+    1713
+   ],
+   "note": "A brown variety of quartz, so it melts where quartz does.",
+   "src": "https://en.wikipedia.org/wiki/Smoky_quartz"
+  },
+  "soap": {
+   "melt": 250,
+   "range": [
+    245,
+    255
+   ],
+   "note": "Hard soap is largely sodium stearate, which melts over this range.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_stearate"
+  },
   "sodium": {
    "melt": 98,
    "boil": 883,
    "src": "https://en.wikipedia.org/wiki/Sodium"
+  },
+  "sodium_acetate": {
+   "melt": 324,
+   "boil": 881,
+   "note": "The anhydrous salt; the trihydrate melts at about 58 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_acetate"
+  },
+  "sodium_carbonate": {
+   "melt": 851,
+   "note": "Dry soda ash melts at 851 degrees, which is why it is added to glass batches as a flux.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_carbonate"
+  },
+  "sodium_hydroxide": {
+   "melt": 323,
+   "note": "Caustic soda melts at 323 degrees into a liquid that attacks glass.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_hydroxide"
+  },
+  "sodium_nitrate": {
+   "melt": 308,
+   "note": "Chile saltpetre melts at 308 degrees and breaks down above 380.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_nitrate"
+  },
+  "sodium_nitrite": {
+   "melt": 271,
+   "note": "It decomposes at about 320 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_nitrite"
+  },
+  "sodium_sulfate": {
+   "melt": 884,
+   "note": "The dry salt melts at 884 degrees, while the crystals melt in their own water at about 32.",
+   "src": "https://en.wikipedia.org/wiki/Sodium_sulfate"
   },
   "solder": {
    "melt": 188,
@@ -619,6 +2454,21 @@
    "note": "Soft solders are a whole family melting anywhere from 90 to 450 C, and the single figure here is common 60/40 tin-lead.",
    "src": "https://en.wikipedia.org/wiki/Solder"
   },
+  "sorbate": {
+   "melt": 270,
+   "decomposes": true,
+   "note": "Potassium sorbate decomposes as it melts.",
+   "src": "https://en.wikipedia.org/wiki/Potassium_sorbate"
+  },
+  "sorbitol": {
+   "melt": 95,
+   "src": "https://en.wikipedia.org/wiki/Sorbitol"
+  },
+  "sotolon": {
+   "melt": 28,
+   "boil": 184,
+   "src": "https://en.wikipedia.org/wiki/Sotolon"
+  },
   "stainless_steel": {
    "melt": 1428,
    "range": [
@@ -627,6 +2477,20 @@
    ],
    "note": "Stainless steel melts over a range that depends on which alloy it is.",
    "src": "https://en.wikipedia.org/wiki/Stainless_steel"
+  },
+  "stearic_acid": {
+   "melt": 69,
+   "boil": 361,
+   "src": "https://en.wikipedia.org/wiki/Stearic_acid"
+  },
+  "stearin": {
+   "melt": 63,
+   "range": [
+    54,
+    72
+   ],
+   "note": "A mixture of hard fats, so it melts over a range.",
+   "src": "https://en.wikipedia.org/wiki/Stearin"
   },
   "steel": {
    "melt": 1482,
@@ -637,21 +2501,59 @@
    "note": "Carbon steel softens over a range rather than at one point, and this range is the one Wikipedia gives for A36 structural steel.",
    "src": "https://en.wikipedia.org/wiki/Carbon_steel"
   },
+  "stone": {
+   "melt": 700,
+   "range": [
+    700,
+    1400
+   ],
+   "note": "Stone is whatever rock it was cut from, and ordinary rock is molten somewhere between about 700 and 1400 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Magma"
+  },
   "strontium": {
    "melt": 777,
    "boil": 1377,
    "src": "https://en.wikipedia.org/wiki/Strontium"
   },
+  "sucralose": {
+   "melt": 125,
+   "src": "https://en.wikipedia.org/wiki/Sucralose"
+  },
   "sugar": {
-   "melt": 186,
+   "melt": 189,
    "decomposes": true,
-   "note": "It does not melt cleanly: it caramelises as it goes.",
+   "note": "It does not melt cleanly: it starts breaking down below its melting point and turns into caramel.",
    "src": "https://en.wikipedia.org/wiki/Sucrose"
   },
   "sulfur": {
    "melt": 115,
-   "boil": 445,
-   "src": "https://en.wikipedia.org/wiki/Sulfur"
+   "note": "Brimstone melts at about 115 degrees to a blood-red liquid and boils at 445.",
+   "src": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+  },
+  "sulfuric_acid": {
+   "melt": 10,
+   "boil": 337,
+   "src": "https://en.wikipedia.org/wiki/Sulfuric_acid"
+  },
+  "sunstone": {
+   "melt": 1100,
+   "range": [
+    1100,
+    1550
+   ],
+   "note": "A plagioclase feldspar flecked with copper or iron, melting somewhere between albite's 1100 degrees and anorthite's 1550.",
+   "src": "https://en.wikipedia.org/wiki/Anorthite"
+  },
+  "synephrine": {
+   "melt": 163,
+   "note": "This is the natural form; the mixed form melts near 184 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Synephrine"
+  },
+  "tannin": {
+   "melt": 200,
+   "decomposes": true,
+   "note": "Tannins char rather than melt: tannic acid breaks down above 200 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Tannic_acid"
   },
   "tantalum": {
    "melt": 3017,
@@ -663,10 +2565,26 @@
    "note": "The black tarnish on silver is silver sulfide, which melts at 836 C.",
    "src": "https://en.wikipedia.org/wiki/Silver_sulfide"
   },
+  "tartaric_acid": {
+   "melt": 171,
+   "note": "This is the natural form; the mixed form melts near 206 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Tartaric_acid"
+  },
   "technetium": {
    "melt": 2157,
    "boil": 4265,
    "src": "https://en.wikipedia.org/wiki/Technetium"
+  },
+  "tellurium": {
+   "melt": 450,
+   "note": "Tellurium melts at about 450 degrees.",
+   "src": "https://en.wikipedia.org/wiki/List_of_chemical_elements"
+  },
+  "tempered_clay": {
+   "melt": 550,
+   "decomposes": true,
+   "note": "A clay body mixed ready for the kiln; from about 550 degrees its clay loses its water for good.",
+   "src": "https://en.wikipedia.org/wiki/Kaolinite"
   },
   "tennessine": {
    "melt": 450,
@@ -683,10 +2601,22 @@
    "boil": 3123,
    "src": "https://en.wikipedia.org/wiki/Terbium"
   },
+  "testosterone": {
+   "melt": 151,
+   "src": "https://en.wikipedia.org/wiki/Testosterone"
+  },
+  "thalidomide": {
+   "melt": 270,
+   "src": "https://en.wikipedia.org/wiki/Thalidomide"
+  },
   "thallium": {
    "melt": 304,
    "boil": 1473,
    "src": "https://en.wikipedia.org/wiki/Thallium"
+  },
+  "theanine": {
+   "melt": 174,
+   "src": "https://en.wikipedia.org/wiki/Theanine"
   },
   "thorium": {
    "melt": 1750,
@@ -698,10 +2628,38 @@
    "boil": 1950,
    "src": "https://en.wikipedia.org/wiki/Thulium"
   },
+  "thymine": {
+   "melt": 316,
+   "note": "It decomposes near 335 degrees instead of boiling.",
+   "src": "https://en.wikipedia.org/wiki/Thymine"
+  },
+  "thymol": {
+   "melt": 50,
+   "boil": 232,
+   "src": "https://en.wikipedia.org/wiki/Thymol"
+  },
+  "thyroxine": {
+   "melt": 232,
+   "src": "https://en.wikipedia.org/wiki/Levothyroxine"
+  },
+  "tigers_eye": {
+   "melt": 1670,
+   "range": [
+    1670,
+    1713
+   ],
+   "note": "Quartz that has replaced fibrous asbestos, so it melts where quartz does.",
+   "src": "https://en.wikipedia.org/wiki/Quartz"
+  },
   "tin": {
    "melt": 232,
    "boil": 2602,
    "src": "https://en.wikipedia.org/wiki/Tin"
+  },
+  "tin_dioxide": {
+   "melt": 1630,
+   "note": "Tin dioxide melts at 1630 degrees, hundreds of degrees above tin metal.",
+   "src": "https://en.wikipedia.org/wiki/Tin(IV)_oxide"
   },
   "tin_silver_solder": {
    "melt": 221,
@@ -713,10 +2671,40 @@
    "boil": 3287,
    "src": "https://en.wikipedia.org/wiki/Titanium"
   },
+  "titanium_dioxide": {
+   "melt": 1843,
+   "note": "A very refractory white oxide, used as pigment long before it ever melts.",
+   "src": "https://en.wikipedia.org/wiki/Titanium_dioxide"
+  },
   "titanium_nitride": {
    "melt": 2947,
    "note": "No boiling point is listed for this ceramic.",
    "src": "https://en.wikipedia.org/wiki/Titanium_nitride"
+  },
+  "trans_fat": {
+   "melt": 45,
+   "note": "Elaidic acid, the commonest trans fat, melts at 45 degrees, well above its natural twin oleic acid.",
+   "src": "https://en.wikipedia.org/wiki/Trans_fat"
+  },
+  "travertine": {
+   "melt": 825,
+   "decomposes": true,
+   "note": "A banded freshwater limestone, so it calcines to quicklime rather than melting.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_oxide"
+  },
+  "triclosan": {
+   "melt": 56,
+   "boil": 120,
+   "src": "https://en.wikipedia.org/wiki/Triclosan"
+  },
+  "tuff": {
+   "melt": 700,
+   "range": [
+    700,
+    1400
+   ],
+   "note": "Packed volcanic ash of whatever magma erupted, so only the broad range of lava temperatures can be given.",
+   "src": "https://en.wikipedia.org/wiki/Magma"
   },
   "tungsten": {
    "melt": 3422,
@@ -733,29 +2721,91 @@
    "note": "Wikipedia gives the melting point as a band from 2785 to 2830 C.",
    "src": "https://en.wikipedia.org/wiki/Tungsten_carbide"
   },
+  "uracil": {
+   "melt": 335,
+   "decomposes": true,
+   "note": "It decomposes rather than boiling.",
+   "src": "https://en.wikipedia.org/wiki/Uracil"
+  },
   "uranium": {
    "melt": 1132,
    "boil": 4131,
    "src": "https://en.wikipedia.org/wiki/Uranium"
+  },
+  "urea": {
+   "melt": 133,
+   "note": "It decomposes on further heating instead of boiling.",
+   "src": "https://en.wikipedia.org/wiki/Urea"
+  },
+  "valine": {
+   "melt": 298,
+   "decomposes": true,
+   "note": "It decomposes at its melting point.",
+   "src": "https://en.wikipedia.org/wiki/Valine"
   },
   "vanadium": {
    "melt": 1910,
    "boil": 3407,
    "src": "https://en.wikipedia.org/wiki/Vanadium"
   },
+  "vitamin_a": {
+   "melt": 63,
+   "src": "https://en.wikipedia.org/wiki/Retinol"
+  },
+  "vitamin_b6": {
+   "melt": 161,
+   "src": "https://en.wikipedia.org/wiki/Pyridoxine"
+  },
+  "vitamin_c": {
+   "melt": 191,
+   "src": "https://en.wikipedia.org/wiki/Vitamin_C"
+  },
+  "vitamin_d": {
+   "melt": 85,
+   "src": "https://en.wikipedia.org/wiki/Cholecalciferol"
+  },
+  "vitamin_e": {
+   "melt": 3,
+   "note": "Vitamin E is an oil that only sets just above freezing point.",
+   "src": "https://en.wikipedia.org/wiki/Alpha-Tocopherol"
+  },
+  "waste_rock": {
+   "melt": 700,
+   "range": [
+    700,
+    1400
+   ],
+   "note": "Rock of any ordinary kind is molten somewhere between about 700 and 1400 degrees, and this is a jumble of whatever rock was to hand.",
+   "src": "https://en.wikipedia.org/wiki/Magma"
+  },
+  "water": {
+   "melt": 0,
+   "boil": 100,
+   "src": "https://en.wikipedia.org/wiki/Water"
+  },
   "wax": {
-   "melt": 60,
+   "melt": 57,
    "range": [
     46,
     68
    ],
-   "note": "A mixture of hydrocarbons, so it softens over a range.",
+   "note": "Paraffin wax is a mixture of hydrocarbons, so it softens and melts over a range.",
    "src": "https://en.wikipedia.org/wiki/Paraffin_wax"
+  },
+  "wood": {
+   "melt": 350,
+   "decomposes": true,
+   "note": "Wood, paper and other plant material char from about 350 degrees rather than melting.",
+   "src": "https://en.wikipedia.org/wiki/Pyrolysis"
   },
   "wrought_iron": {
    "melt": 1540,
    "note": "Wrought iron was always worked hot rather than melted, since with almost no carbon it melts as high as pure iron.",
    "src": "https://en.wikipedia.org/wiki/Wrought_iron"
+  },
+  "xylitol": {
+   "melt": 94,
+   "src": "https://en.wikipedia.org/wiki/Xylitol"
   },
   "ytterbium": {
    "melt": 824,
@@ -767,10 +2817,42 @@
    "boil": 2930,
    "src": "https://en.wikipedia.org/wiki/Yttrium"
   },
+  "zeaxanthin": {
+   "melt": 216,
+   "src": "https://en.wikipedia.org/wiki/Zeaxanthin"
+  },
   "zinc": {
    "melt": 420,
    "boil": 907,
    "src": "https://en.wikipedia.org/wiki/Zinc"
+  },
+  "zinc_chloride": {
+   "melt": 290,
+   "note": "It melts at 290 degrees and boils by 732.",
+   "src": "https://en.wikipedia.org/wiki/Zinc_chloride"
+  },
+  "zinc_oxide": {
+   "melt": 1974,
+   "decomposes": true,
+   "note": "It melts near 1974 degrees while also breaking down.",
+   "src": "https://en.wikipedia.org/wiki/Zinc_oxide"
+  },
+  "zinc_sulfide": {
+   "melt": 1850,
+   "sublimes": true,
+   "note": "It passes straight from solid to vapour near 1850 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Zinc_sulfide"
+  },
+  "zircon": {
+   "melt": 1540,
+   "decomposes": true,
+   "note": "It breaks down into zirconia and silica at about 1540 degrees rather than melting cleanly.",
+   "src": "https://en.wikipedia.org/wiki/Zirconium_silicate"
+  },
+  "zirconia": {
+   "melt": 2715,
+   "boil": 4300,
+   "src": "https://en.wikipedia.org/wiki/Zirconium_dioxide"
   },
   "zirconium": {
    "melt": 1852,
