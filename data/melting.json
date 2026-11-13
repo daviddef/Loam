@@ -1,0 +1,781 @@
+{
+ "$comment": "What a thing does at a temperature: where it melts, and where it boils, breaks down or turns straight to gas. Loam's own facts carry a melting point for only seven things, so the tube could not melt copper. Each row here is sourced on its own line. Melting is a change of STATE, not of substance: molten copper is still copper, and the engine keeps the thing's id and makes it a liquid. Where Loam has a recipe for the change (gold -> molten gold) Loam's recipe wins and these are not used.",
+ "$basis": "sourced",
+ "$fields": {
+  "melt": "degrees Celsius at ordinary pressure",
+  "boil": "degrees Celsius at ordinary pressure",
+  "range": "low and high, for a mixture or alloy that has no single point",
+  "decomposes": "it breaks down before it melts",
+  "sublimes": "it goes straight from solid to gas",
+  "note": "one plain sentence on why it is not a single clean number",
+  "src": "where the number came from"
+ },
+ "points": {
+  "acetic_acid": {
+   "melt": 17,
+   "boil": 118,
+   "src": "https://en.wikipedia.org/wiki/Acetic_acid"
+  },
+  "actinium": {
+   "melt": 1227,
+   "boil": 3200,
+   "note": "The melting point is estimated and the boiling point extrapolated, as actinium is too scarce and radioactive to measure easily.",
+   "src": "https://en.wikipedia.org/wiki/Actinium"
+  },
+  "alnico": {
+   "melt": 1325,
+   "range": [
+    1200,
+    1450
+   ],
+   "note": "Wikipedia gives this range for Alnico 3, and the other alnico grades differ with their mix.",
+   "src": "https://en.wikipedia.org/wiki/Alnico"
+  },
+  "aluminum": {
+   "melt": 660,
+   "boil": 2470,
+   "src": "https://en.wikipedia.org/wiki/Aluminium"
+  },
+  "americium": {
+   "melt": 1176,
+   "boil": 2607,
+   "note": "Wikipedia marks the boiling point as calculated rather than measured.",
+   "src": "https://en.wikipedia.org/wiki/Americium"
+  },
+  "barium": {
+   "melt": 727,
+   "boil": 1845,
+   "src": "https://en.wikipedia.org/wiki/Barium"
+  },
+  "basalt": {
+   "melt": 1200,
+   "range": [
+    984,
+    1260
+   ],
+   "note": "A mixture of minerals, so it melts over a range.",
+   "src": "https://en.wikipedia.org/wiki/Basalt"
+  },
+  "berkelium": {
+   "melt": 986,
+   "boil": 2627,
+   "note": "Both figures are for the beta form of the metal.",
+   "src": "https://en.wikipedia.org/wiki/Berkelium"
+  },
+  "beryllium": {
+   "melt": 1287,
+   "boil": 2469,
+   "src": "https://en.wikipedia.org/wiki/Beryllium"
+  },
+  "beryllium_copper": {
+   "melt": 924,
+   "range": [
+    866,
+    982
+   ],
+   "note": "The alloy is pasty between its solidus at 866 C and its liquidus at 982 C.",
+   "src": "https://en.wikipedia.org/wiki/Beryllium_copper"
+  },
+  "bismuth": {
+   "melt": 272,
+   "boil": 1564,
+   "src": "https://en.wikipedia.org/wiki/Bismuth"
+  },
+  "bismuth_telluride": {
+   "melt": 580,
+   "note": "No boiling point is listed for this compound.",
+   "src": "https://en.wikipedia.org/wiki/Bismuth_telluride"
+  },
+  "blister_copper": {
+   "melt": 1085,
+   "boil": 2562,
+   "note": "Blister copper is about 98 percent copper, so it melts very close to copper's own point.",
+   "src": "https://en.wikipedia.org/wiki/Copper"
+  },
+  "brass": {
+   "melt": 920,
+   "range": [
+    900,
+    940
+   ],
+   "note": "Brass melts across a range that shifts with the proportion of copper to zinc.",
+   "src": "https://en.wikipedia.org/wiki/Brass"
+  },
+  "bromine": {
+   "melt": -7,
+   "boil": 59,
+   "src": "https://en.wikipedia.org/wiki/Bromine"
+  },
+  "bronze": {
+   "melt": 950,
+   "note": "Wikipedia gives about 950 C, varying with the ratio of copper to tin, without stating the bounds of that variation.",
+   "src": "https://en.wikipedia.org/wiki/Bronze"
+  },
+  "butter": {
+   "melt": 33,
+   "range": [
+    32,
+    35
+   ],
+   "note": "A mixture of fats, so it softens over a range.",
+   "src": "https://en.wikipedia.org/wiki/Butter"
+  },
+  "cadmium": {
+   "melt": 321,
+   "boil": 767,
+   "src": "https://en.wikipedia.org/wiki/Cadmium"
+  },
+  "caesium": {
+   "melt": 29,
+   "boil": 671,
+   "src": "https://en.wikipedia.org/wiki/Caesium"
+  },
+  "calcium": {
+   "melt": 842,
+   "boil": 1484,
+   "src": "https://en.wikipedia.org/wiki/Calcium"
+  },
+  "californium": {
+   "melt": 900,
+   "boil": 1470,
+   "note": "Wikipedia marks the boiling point as an estimation.",
+   "src": "https://en.wikipedia.org/wiki/Californium"
+  },
+  "cast_iron": {
+   "melt": 1130,
+   "note": "Carbon near 4.3 percent drops iron's melting point to about 1130 C, far below pure iron's 1538 C.",
+   "src": "https://en.wikipedia.org/wiki/Ferrous_metallurgy"
+  },
+  "cerium": {
+   "melt": 795,
+   "boil": 3443,
+   "src": "https://en.wikipedia.org/wiki/Cerium"
+  },
+  "chromium": {
+   "melt": 1907,
+   "boil": 2671,
+   "src": "https://en.wikipedia.org/wiki/Chromium"
+  },
+  "citric_acid": {
+   "melt": 156,
+   "decomposes": true,
+   "note": "It melts and then breaks down above about 175 degrees.",
+   "src": "https://en.wikipedia.org/wiki/Citric_acid"
+  },
+  "cobalt": {
+   "melt": 1495,
+   "boil": 2927,
+   "src": "https://en.wikipedia.org/wiki/Cobalt"
+  },
+  "copernicium": {
+   "melt": 10,
+   "boil": 67,
+   "note": "Both figures are predictions carrying about ten degrees of uncertainty.",
+   "src": "https://en.wikipedia.org/wiki/Copernicium"
+  },
+  "copper": {
+   "melt": 1085,
+   "boil": 2562,
+   "src": "https://en.wikipedia.org/wiki/Copper"
+  },
+  "copper_cathode": {
+   "melt": 1085,
+   "boil": 2562,
+   "note": "Electrorefined cathode copper is refined copper, so it melts at copper's own point.",
+   "src": "https://en.wikipedia.org/wiki/Copper"
+  },
+  "copper_wire": {
+   "melt": 1085,
+   "boil": 2562,
+   "src": "https://en.wikipedia.org/wiki/Copper"
+  },
+  "curium": {
+   "melt": 1340,
+   "boil": 3110,
+   "note": "Wikipedia's infobox and body text disagree, the body giving 1344 C and 3556 C instead.",
+   "src": "https://en.wikipedia.org/wiki/Curium"
+  },
+  "dysprosium": {
+   "melt": 1407,
+   "boil": 2562,
+   "src": "https://en.wikipedia.org/wiki/Dysprosium"
+  },
+  "einsteinium": {
+   "melt": 860,
+   "boil": 996,
+   "note": "Wikipedia marks the boiling point as estimated.",
+   "src": "https://en.wikipedia.org/wiki/Einsteinium"
+  },
+  "enriched_uranium": {
+   "melt": 1132,
+   "boil": 4131,
+   "note": "Enrichment changes only the isotope mix, so enriched uranium metal melts and boils like ordinary uranium.",
+   "src": "https://en.wikipedia.org/wiki/Uranium"
+  },
+  "erbium": {
+   "melt": 1529,
+   "boil": 2868,
+   "src": "https://en.wikipedia.org/wiki/Erbium"
+  },
+  "ethanol": {
+   "melt": -114,
+   "boil": 78,
+   "src": "https://en.wikipedia.org/wiki/Ethanol"
+  },
+  "europium": {
+   "melt": 826,
+   "boil": 1529,
+   "src": "https://en.wikipedia.org/wiki/Europium"
+  },
+  "fermium": {
+   "melt": 1500,
+   "note": "The melting point is predicted, not measured, and no boiling point is known.",
+   "src": "https://en.wikipedia.org/wiki/Fermium"
+  },
+  "ferrovanadium": {
+   "melt": 1480,
+   "note": "Wikipedia gives one figure although the vanadium content ranges from 35 to 85 percent.",
+   "src": "https://en.wikipedia.org/wiki/Ferrovanadium"
+  },
+  "flerovium": {
+   "melt": 11,
+   "note": "The melting point is a prediction with about fifty degrees of uncertainty, and no boiling point is given.",
+   "src": "https://en.wikipedia.org/wiki/Flerovium"
+  },
+  "francium": {
+   "melt": 27,
+   "boil": 620,
+   "note": "Too little francium has ever existed at once to measure, so both figures are estimates.",
+   "src": "https://en.wikipedia.org/wiki/Francium"
+  },
+  "gadolinium": {
+   "melt": 1312,
+   "boil": 3273,
+   "src": "https://en.wikipedia.org/wiki/Gadolinium"
+  },
+  "gallium": {
+   "melt": 30,
+   "boil": 2403,
+   "src": "https://en.wikipedia.org/wiki/Gallium"
+  },
+  "galvanized_iron": {
+   "melt": 420,
+   "range": [
+    420,
+    1538
+   ],
+   "note": "Galvanised iron is steel under a zinc coat, so the coating runs at about 420 C while the steel beneath holds past 1500 C.",
+   "src": "https://en.wikipedia.org/wiki/Hot-dip_galvanization"
+  },
+  "glass": {
+   "melt": 1000,
+   "range": [
+    600,
+    1400
+   ],
+   "note": "Glass has no melting point: it softens gradually, which is why it can be blown.",
+   "src": "https://en.wikipedia.org/wiki/Glass"
+  },
+  "gold": {
+   "melt": 1064,
+   "boil": 2970,
+   "src": "https://en.wikipedia.org/wiki/Gold"
+  },
+  "granite": {
+   "melt": 1215,
+   "range": [
+    1215,
+    1260
+   ],
+   "note": "A mixture of minerals, so it melts over a range.",
+   "src": "https://en.wikipedia.org/wiki/Granite"
+  },
+  "hafnium": {
+   "melt": 2233,
+   "boil": 4603,
+   "src": "https://en.wikipedia.org/wiki/Hafnium"
+  },
+  "holmium": {
+   "melt": 1461,
+   "boil": 2600,
+   "src": "https://en.wikipedia.org/wiki/Holmium"
+  },
+  "ice": {
+   "melt": 0,
+   "boil": 100,
+   "src": "https://en.wikipedia.org/wiki/Ice"
+  },
+  "inconel_625": {
+   "melt": 1320,
+   "range": [
+    1290,
+    1350
+   ],
+   "note": "This nickel superalloy melts between a solidus of 1290 C and a liquidus of 1350 C.",
+   "src": "https://en.wikipedia.org/wiki/Inconel"
+  },
+  "indium": {
+   "melt": 157,
+   "boil": 2072,
+   "src": "https://en.wikipedia.org/wiki/Indium"
+  },
+  "iodine": {
+   "melt": 114,
+   "boil": 184,
+   "src": "https://en.wikipedia.org/wiki/Iodine"
+  },
+  "iridium": {
+   "melt": 2446,
+   "boil": 4130,
+   "src": "https://en.wikipedia.org/wiki/Iridium"
+  },
+  "iron": {
+   "melt": 1538,
+   "boil": 2861,
+   "src": "https://en.wikipedia.org/wiki/Iron"
+  },
+  "laminations": {
+   "melt": 1500,
+   "note": "Laminations are stacked strips of silicon electrical steel, which melts at about 1500 C.",
+   "src": "https://en.wikipedia.org/wiki/Electrical_steel"
+  },
+  "lanthanum": {
+   "melt": 920,
+   "boil": 3464,
+   "src": "https://en.wikipedia.org/wiki/Lanthanum"
+  },
+  "lawrencium": {
+   "melt": 1600,
+   "note": "The melting point is predicted, not measured, and no boiling point is known.",
+   "src": "https://en.wikipedia.org/wiki/Lawrencium"
+  },
+  "lead": {
+   "melt": 327,
+   "boil": 1749,
+   "src": "https://en.wikipedia.org/wiki/Lead"
+  },
+  "lead_came": {
+   "melt": 327,
+   "boil": 1749,
+   "note": "Came for stained glass is usually plain lead strip, so it melts at lead's own point.",
+   "src": "https://en.wikipedia.org/wiki/Lead"
+  },
+  "limestone": {
+   "melt": 825,
+   "decomposes": true,
+   "note": "It does not melt at ordinary pressure: it breaks down into quicklime and carbon dioxide first.",
+   "src": "https://en.wikipedia.org/wiki/Calcium_carbonate"
+  },
+  "lithium": {
+   "melt": 181,
+   "boil": 1344,
+   "src": "https://en.wikipedia.org/wiki/Lithium"
+  },
+  "livermorium": {
+   "melt": 435,
+   "boil": 812,
+   "range": [
+    364,
+    507
+   ],
+   "note": "Wikipedia gives extrapolated bands rather than points, 364 to 507 C for melting and 762 to 862 C for boiling.",
+   "src": "https://en.wikipedia.org/wiki/Livermorium"
+  },
+  "lutetium": {
+   "melt": 1652,
+   "boil": 3402,
+   "src": "https://en.wikipedia.org/wiki/Lutetium"
+  },
+  "magnesium": {
+   "melt": 650,
+   "boil": 1091,
+   "src": "https://en.wikipedia.org/wiki/Magnesium"
+  },
+  "manganese": {
+   "melt": 1246,
+   "boil": 2061,
+   "src": "https://en.wikipedia.org/wiki/Manganese"
+  },
+  "mendelevium": {
+   "melt": 800,
+   "note": "The melting point is predicted, not measured, and no boiling point is known.",
+   "src": "https://en.wikipedia.org/wiki/Mendelevium"
+  },
+  "mercury": {
+   "melt": -39,
+   "boil": 357,
+   "src": "https://en.wikipedia.org/wiki/Mercury_(element)"
+  },
+  "molybdenum": {
+   "melt": 2623,
+   "boil": 4639,
+   "src": "https://en.wikipedia.org/wiki/Molybdenum"
+  },
+  "moscovium": {
+   "melt": 400,
+   "boil": 1100,
+   "note": "Both figures are predictions, as moscovium has only ever existed as a few atoms.",
+   "src": "https://en.wikipedia.org/wiki/Moscovium"
+  },
+  "nak_alloy": {
+   "melt": -13,
+   "boil": 785,
+   "note": "The eutectic of 77 percent potassium and 23 percent sodium is liquid from -12.6 C up to 785 C.",
+   "src": "https://en.wikipedia.org/wiki/NaK"
+  },
+  "neodymium": {
+   "melt": 1022,
+   "boil": 3074,
+   "src": "https://en.wikipedia.org/wiki/Neodymium"
+  },
+  "neptunium": {
+   "melt": 639,
+   "boil": 4174,
+   "note": "The boiling point is extrapolated from vapour pressure rather than measured.",
+   "src": "https://en.wikipedia.org/wiki/Neptunium"
+  },
+  "nichrome": {
+   "melt": 1400,
+   "note": "Wikipedia gives about 1400 C for C-grade nichrome, without stating bounds for other grades.",
+   "src": "https://en.wikipedia.org/wiki/Nichrome"
+  },
+  "nickel": {
+   "melt": 1455,
+   "boil": 2730,
+   "src": "https://en.wikipedia.org/wiki/Nickel"
+  },
+  "nickel_sulfate": {
+   "melt": 640,
+   "decomposes": true,
+   "note": "The anhydrous salt breaks down above about 640 C instead of boiling, while the green hexahydrate melts at only 53 C.",
+   "src": "https://en.wikipedia.org/wiki/Nickel(II)_sulfate"
+  },
+  "nihonium": {
+   "melt": 430,
+   "boil": 1130,
+   "note": "Both figures are predictions, as nihonium has only ever existed as a few atoms.",
+   "src": "https://en.wikipedia.org/wiki/Nihonium"
+  },
+  "niobium": {
+   "melt": 2477,
+   "boil": 4744,
+   "src": "https://en.wikipedia.org/wiki/Niobium"
+  },
+  "nobelium": {
+   "melt": 800,
+   "note": "The melting point is predicted, not measured, and no boiling point is known.",
+   "src": "https://en.wikipedia.org/wiki/Nobelium"
+  },
+  "oganesson": {
+   "melt": 52,
+   "boil": 177,
+   "note": "Both figures are predictions, as oganesson has only ever existed as a few atoms.",
+   "src": "https://en.wikipedia.org/wiki/Oganesson"
+  },
+  "osmium": {
+   "melt": 3033,
+   "boil": 5008,
+   "src": "https://en.wikipedia.org/wiki/Osmium"
+  },
+  "palladium": {
+   "melt": 1555,
+   "boil": 2963,
+   "src": "https://en.wikipedia.org/wiki/Palladium"
+  },
+  "pig_iron": {
+   "melt": 1130,
+   "note": "Pig iron's roughly 4 percent carbon drops its melting point to about 1130 C, which is why a blast furnace can tap it as a liquid.",
+   "src": "https://en.wikipedia.org/wiki/Ferrous_metallurgy"
+  },
+  "platinum": {
+   "melt": 1768,
+   "boil": 3825,
+   "src": "https://en.wikipedia.org/wiki/Platinum"
+  },
+  "plutonium": {
+   "melt": 639,
+   "boil": 3228,
+   "src": "https://en.wikipedia.org/wiki/Plutonium"
+  },
+  "polonium": {
+   "melt": 254,
+   "boil": 962,
+   "src": "https://en.wikipedia.org/wiki/Polonium"
+  },
+  "potassium": {
+   "melt": 64,
+   "boil": 758,
+   "src": "https://en.wikipedia.org/wiki/Potassium"
+  },
+  "praseodymium": {
+   "melt": 931,
+   "boil": 3130,
+   "src": "https://en.wikipedia.org/wiki/Praseodymium"
+  },
+  "promethium": {
+   "melt": 1042,
+   "boil": 3000,
+   "note": "The boiling point is an estimate, as promethium has no stable isotope and is handled only in tiny amounts.",
+   "src": "https://en.wikipedia.org/wiki/Promethium"
+  },
+  "protactinium": {
+   "melt": 1568,
+   "boil": 4027,
+   "note": "Wikipedia flags the boiling point as uncertain.",
+   "src": "https://en.wikipedia.org/wiki/Protactinium"
+  },
+  "quartz": {
+   "melt": 1713,
+   "src": "https://en.wikipedia.org/wiki/Quartz"
+  },
+  "radium": {
+   "melt": 700,
+   "boil": 1737,
+   "note": "Wikipedia marks radium's melting point as disputed.",
+   "src": "https://en.wikipedia.org/wiki/Radium"
+  },
+  "rail": {
+   "melt": 1482,
+   "range": [
+    1426,
+    1538
+   ],
+   "note": "A rail is rolled carbon steel, which softens over a range rather than melting at one point.",
+   "src": "https://en.wikipedia.org/wiki/Carbon_steel"
+  },
+  "rhenium": {
+   "melt": 3186,
+   "boil": 5630,
+   "src": "https://en.wikipedia.org/wiki/Rhenium"
+  },
+  "rhodium": {
+   "melt": 1964,
+   "boil": 3695,
+   "src": "https://en.wikipedia.org/wiki/Rhodium"
+  },
+  "rubidium": {
+   "melt": 39,
+   "boil": 688,
+   "src": "https://en.wikipedia.org/wiki/Rubidium"
+  },
+  "ruthenium": {
+   "melt": 2334,
+   "boil": 4150,
+   "src": "https://en.wikipedia.org/wiki/Ruthenium"
+  },
+  "rutherfordium": {
+   "melt": 2100,
+   "boil": 5500,
+   "note": "Both figures are predictions, as rutherfordium has only ever existed as a few atoms.",
+   "src": "https://en.wikipedia.org/wiki/Rutherfordium"
+  },
+  "salt": {
+   "melt": 801,
+   "boil": 1465,
+   "src": "https://en.wikipedia.org/wiki/Sodium_chloride"
+  },
+  "samarium": {
+   "melt": 1072,
+   "boil": 1900,
+   "note": "Wikipedia's infobox gives 1900 C for the boiling point while its body text gives 1794 C.",
+   "src": "https://en.wikipedia.org/wiki/Samarium"
+  },
+  "sand": {
+   "melt": 1700,
+   "range": [
+    1600,
+    1730
+   ],
+   "note": "Sand is mostly quartz, and melts near where pure silica does.",
+   "src": "https://en.wikipedia.org/wiki/Silicon_dioxide"
+  },
+  "scandium": {
+   "melt": 1541,
+   "boil": 2836,
+   "src": "https://en.wikipedia.org/wiki/Scandium"
+  },
+  "silver": {
+   "melt": 962,
+   "boil": 2162,
+   "src": "https://en.wikipedia.org/wiki/Silver"
+  },
+  "silver_carbonate": {
+   "melt": 218,
+   "decomposes": true,
+   "note": "It begins breaking down at about 120 C, before its 218 C melting point is reached.",
+   "src": "https://en.wikipedia.org/wiki/Silver_carbonate"
+  },
+  "sodium": {
+   "melt": 98,
+   "boil": 883,
+   "src": "https://en.wikipedia.org/wiki/Sodium"
+  },
+  "solder": {
+   "melt": 188,
+   "range": [
+    90,
+    450
+   ],
+   "note": "Soft solders are a whole family melting anywhere from 90 to 450 C, and the single figure here is common 60/40 tin-lead.",
+   "src": "https://en.wikipedia.org/wiki/Solder"
+  },
+  "stainless_steel": {
+   "melt": 1428,
+   "range": [
+    1325,
+    1530
+   ],
+   "note": "Stainless steel melts over a range that depends on which alloy it is.",
+   "src": "https://en.wikipedia.org/wiki/Stainless_steel"
+  },
+  "steel": {
+   "melt": 1482,
+   "range": [
+    1426,
+    1538
+   ],
+   "note": "Carbon steel softens over a range rather than at one point, and this range is the one Wikipedia gives for A36 structural steel.",
+   "src": "https://en.wikipedia.org/wiki/Carbon_steel"
+  },
+  "strontium": {
+   "melt": 777,
+   "boil": 1377,
+   "src": "https://en.wikipedia.org/wiki/Strontium"
+  },
+  "sugar": {
+   "melt": 186,
+   "decomposes": true,
+   "note": "It does not melt cleanly: it caramelises as it goes.",
+   "src": "https://en.wikipedia.org/wiki/Sucrose"
+  },
+  "sulfur": {
+   "melt": 115,
+   "boil": 445,
+   "src": "https://en.wikipedia.org/wiki/Sulfur"
+  },
+  "tantalum": {
+   "melt": 3017,
+   "boil": 5458,
+   "src": "https://en.wikipedia.org/wiki/Tantalum"
+  },
+  "tarnish": {
+   "melt": 836,
+   "note": "The black tarnish on silver is silver sulfide, which melts at 836 C.",
+   "src": "https://en.wikipedia.org/wiki/Silver_sulfide"
+  },
+  "technetium": {
+   "melt": 2157,
+   "boil": 4265,
+   "src": "https://en.wikipedia.org/wiki/Technetium"
+  },
+  "tennessine": {
+   "melt": 450,
+   "boil": 610,
+   "range": [
+    350,
+    550
+   ],
+   "note": "The melting point is predicted only as a band from 350 to 550 C, and the boiling point is also a prediction.",
+   "src": "https://en.wikipedia.org/wiki/Tennessine"
+  },
+  "terbium": {
+   "melt": 1356,
+   "boil": 3123,
+   "src": "https://en.wikipedia.org/wiki/Terbium"
+  },
+  "thallium": {
+   "melt": 304,
+   "boil": 1473,
+   "src": "https://en.wikipedia.org/wiki/Thallium"
+  },
+  "thorium": {
+   "melt": 1750,
+   "boil": 4788,
+   "src": "https://en.wikipedia.org/wiki/Thorium"
+  },
+  "thulium": {
+   "melt": 1545,
+   "boil": 1950,
+   "src": "https://en.wikipedia.org/wiki/Thulium"
+  },
+  "tin": {
+   "melt": 232,
+   "boil": 2602,
+   "src": "https://en.wikipedia.org/wiki/Tin"
+  },
+  "tin_silver_solder": {
+   "melt": 221,
+   "note": "The tin-silver eutectic melts at a single point rather than over a range.",
+   "src": "https://en.wikipedia.org/wiki/Solder"
+  },
+  "titanium": {
+   "melt": 1668,
+   "boil": 3287,
+   "src": "https://en.wikipedia.org/wiki/Titanium"
+  },
+  "titanium_nitride": {
+   "melt": 2947,
+   "note": "No boiling point is listed for this ceramic.",
+   "src": "https://en.wikipedia.org/wiki/Titanium_nitride"
+  },
+  "tungsten": {
+   "melt": 3422,
+   "boil": 5930,
+   "src": "https://en.wikipedia.org/wiki/Tungsten"
+  },
+  "tungsten_carbide": {
+   "melt": 2808,
+   "boil": 6000,
+   "range": [
+    2785,
+    2830
+   ],
+   "note": "Wikipedia gives the melting point as a band from 2785 to 2830 C.",
+   "src": "https://en.wikipedia.org/wiki/Tungsten_carbide"
+  },
+  "uranium": {
+   "melt": 1132,
+   "boil": 4131,
+   "src": "https://en.wikipedia.org/wiki/Uranium"
+  },
+  "vanadium": {
+   "melt": 1910,
+   "boil": 3407,
+   "src": "https://en.wikipedia.org/wiki/Vanadium"
+  },
+  "wax": {
+   "melt": 60,
+   "range": [
+    46,
+    68
+   ],
+   "note": "A mixture of hydrocarbons, so it softens over a range.",
+   "src": "https://en.wikipedia.org/wiki/Paraffin_wax"
+  },
+  "wrought_iron": {
+   "melt": 1540,
+   "note": "Wrought iron was always worked hot rather than melted, since with almost no carbon it melts as high as pure iron.",
+   "src": "https://en.wikipedia.org/wiki/Wrought_iron"
+  },
+  "ytterbium": {
+   "melt": 824,
+   "boil": 1196,
+   "src": "https://en.wikipedia.org/wiki/Ytterbium"
+  },
+  "yttrium": {
+   "melt": 1526,
+   "boil": 2930,
+   "src": "https://en.wikipedia.org/wiki/Yttrium"
+  },
+  "zinc": {
+   "melt": 420,
+   "boil": 907,
+   "src": "https://en.wikipedia.org/wiki/Zinc"
+  },
+  "zirconium": {
+   "melt": 1852,
+   "boil": 4377,
+   "src": "https://en.wikipedia.org/wiki/Zirconium"
+  }
+ }
+}
