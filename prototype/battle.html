@@ -665,7 +665,8 @@ const KIT=LoamKit,PAL=KIT.PAL,TOAST=KIT.toaster($('#toast'));
 const FORCE={
  lightning:{i:'lightning',n:'Lightning',t:'f',e:3,g:'force',f:'Click or drag on the board to call it down.',force:1},
  meteor:{i:'meteor',n:'Meteor',t:'f',e:3,g:'force',f:'A marked circle, half a second, then the sky falls.',force:1},
- quake:{i:'quake',n:'Earthquake',t:'f',e:3,g:'force',f:'Everything on the board jumps. Click anywhere.',force:1}};
+ quake:{i:'quake',n:'Earthquake',t:'f',e:3,g:'force',f:'Everything on the board jumps. Click anywhere.',force:1},
+ f_rain:{i:'f_rain',n:'Rain',t:'f',e:3,g:'force water',f:'Click or drag to make it rain on a patch of the board for about nine seconds. Flames under it go out, burning things stop burning, and fire cannot spread into it. Rain, storm and monsoon elements do the same around themselves. Trial.',force:1}};
 const ART_F={
  b_brick:['craft',[['p','M6 22 L12 15 H55 L48 22 Z','#E39A74'],['p','M6 22 H48 V51 H6 Z','#B9593B'],['p','M48 22 L55 15 V44 L48 51 Z','#8F3F2A'],['s','M6 31.5 H48 M6 41 H48 M20 22 V31.5 M34 31.5 V41 M20 41 V51 M42 22 V31.5','#EAD9BC',1.8],['s','M12 15 L6 22 M48 22 L55 15','#3a2216',1.6]],[6,15,55,51]],
  b_stone:['mineral',[['p','M6 22 L12 15 H55 L48 22 Z','#D2CEC4'],['p','M6 22 H48 V51 H6 Z','#9A968C'],['p','M48 22 L55 15 V44 L48 51 Z','#6E6A62'],['s','M6 37 H48 M24 22 V37 M36 37 V51 M14 37 V51','#4F4B45',2],['p','M9 25 H21 V34 H9 Z','#AEAAA0']],[6,15,55,51]],
@@ -677,6 +678,7 @@ const ART_F={
  b_clear:['craft',[['s','M14 14 L46 46 M46 14 L14 46','#C2452D',7]],[10,10,50,50]],
  lightning:['fire',[['p','M36 4 L16 34 L28 34 L22 56 L46 24 L33 24 Z','lo'],['p','M34 10 L22 32 L31 32 L27 46 L40 26 L31 26 Z','#FFD84A']],[14,4,48,56]],
  meteor:['mineral',[['p','M42 18 Q52 6 58 2 Q54 12 50 26 Z','#E8923A'],['c',30,34,17,'lo'],['c',26,29,6,'bs'],['c',38,40,4,'bs'],['c',35,26,3,'bs']],[13,2,58,51]],
+ f_rain:['water',[['p','M14 30 Q8 30 8 24 Q8 17 16 18 Q19 9 30 10 Q41 9 44 18 Q53 17 53 25 Q53 31 46 31 Z','#9DB4C6'],['s','M16 38 L12 48 M26 38 L22 50 M36 38 L32 48 M46 38 L42 50','#2E6A99',2.6]],[8,9,53,50]],
  quake:['mineral',[['p','M6 28 L20 24 L24 32 L34 22 L40 32 L54 28 L54 46 L6 46 Z','bs'],['s','M10 36 L20 40 L30 32 L40 42 L50 36','ik',2.2],['s','M30 22 L28 14 M20 24 L16 16 M40 32 L46 24','lo',2.4]],[6,14,54,46]]};
 const BUILD={
  b_brick:{i:'b_brick',n:'Brick wall',t:'b',e:1,g:'build',f:'Drag to lay a wall. Walkers and swimmers cannot cross; flyers and ghosts pass over; ants and moles dig under. Shells, rockets and bombs knock bricks out.',build:1,cell:1,hp:90,br:0},
@@ -1505,12 +1507,21 @@ let strandedShown=0;
 let fireAcc=0;
 const FIRECAP=240;
 let FSC=null;   // when each burnt-out cell may catch again, so a fire front moves on instead of lighting the same ground forever
-function igniteCell(cx,cy){if(cx<0||cy<0||cx>=GC||cy>=GR||cy*CS<64||OB[cy*GC+cx])return false;if(FSC&&FSC[cy*GC+cx]>T)return false;return setCell(cx,cy,4,18)}
-function fireTick(dt){if(!obN&&!U.some(u=>u.fpr&&!u.dead))return;fireAcc+=dt;if(fireAcc<.25)return;const d=fireAcc;fireAcc=0;
+/* rain: patches the player makes (RAINS, about nine seconds each) and the rain-named elements (rain, storm, monsoon...) put out flames and burning bodies and keep fire from spreading into them */
+let RAINS=[],RZ=[];const RAINRX=/^(rain|drizzle|shower|cloudburst|monsoon|storm|hurricane|typhoon|cyclone)$/;
+const rainAt=(x,y)=>{for(const z of RZ)if(Math.hypot(x-z.x,(y-z.y)/.6)<z.r)return true;return false};
+function makeRain(x,y){for(const z of RAINS)if(Math.hypot(z.x-x,z.y-y)<40){z.l=9;return}RAINS.push({x,y,r:120,l:9});if(RAINS.length>12)RAINS.shift()}
+function igniteCell(cx,cy){if(cx<0||cy<0||cx>=GC||cy>=GR||cy*CS<64||OB[cy*GC+cx])return false;if(RZ.length&&rainAt((cx+.5)*CS,(cy+.5)*CS))return false;if(FSC&&FSC[cy*GC+cx]>T)return false;return setCell(cx,cy,4,18)}
+function fireTick(dt){for(const z of RAINS)z.l-=dt;if(RAINS.length)RAINS=RAINS.filter(z=>z.l>0);
+ if(!obN&&!RAINS.length&&!U.some(u=>!u.dead&&(u.fpr||RAINRX.test(u.id))))return;fireAcc+=dt;if(fireAcc<.25)return;const d=fireAcc;fireAcc=0;
+ RZ=RAINS.slice();for(const u of U)if(!u.dead&&RAINRX.test(u.id))RZ.push({x:u.x,y:u.y,r:u.rad*1.3+50});
+ for(const z of RZ){const n=Math.round(9*FXR());for(let k=0;k<n;k++){const a=Math.random()*6.283,rr=Math.sqrt(Math.random())*z.r;pt({k:'dot',x:z.x+Math.cos(a)*rr,y:z.y+Math.sin(a)*rr*.6,z:rnd(70,110),vz:-190,l:.45,m:.45,s:1.7,c:'#8fc4e8'})}
+  for(const u of U)if(!u.dead&&u.burn>0&&Math.hypot(u.x-z.x,(u.y-z.y)/.6)<z.r){u.burn=0;matchFx(u,'steam')}}
  const live=[];let nf=0;for(let i=0;i<OB.length;i++)if(OB[i]===4){live.push(i);nf++}
  // fuel: a cell with a plant (or a burning body) in it catches much more readily
  const fuel=new Set(),carrier=new Set(),trail=new Set();for(const u of U){if(u.dead||!u.landed)continue;const k=cellIdx(u.x,u.y);if(k<0)continue;if(fateOf(u.id)==='plant')fuel.add(k);if(u.burn>0)carrier.add(k);if(u.fpr){const h=hbOf(u);if(h!=='air'&&h!=='phase')trail.add(k)}}
  for(const i of live){OH[i]-=1.5*d;const cx=i%GC,cy=(i/GC)|0,x=(cx+.5)*CS,y=cy*CS+CS*.9;
+  if(RZ.length&&rainAt(x,y-CS*.4)){OH[i]-=45*d;if(Math.random()<.5)pt({k:'smoke',x:x+rnd(-8,8),y,z:rnd(4,16),vz:rnd(30,70),vx:rnd(-10,10),l:rnd(.5,.9),m:.9,s:rnd(5,8),c:'#f1f7fa',a:.5})}
   if(Math.random()<d*3*FXR())fireP(x,y,rnd(4,18),6);
   if(OH[i]<=0){breakCell(i);continue}
   // it spreads to the open cells around it, a few per second at most; flames in the flame-front have less to burn on, so they die sooner
@@ -1520,7 +1531,7 @@ function fireTick(dt){if(!obN&&!U.some(u=>u.fpr&&!u.dead))return;fireAcc+=dt;if(
  if(nf<FIRECAP)for(const k of carrier)if(!OB[k]&&Math.random()<d*.7&&igniteCell(k%GC,(k/GC)|0))nf++;
  // a fire thing on the ground leaves flames where it walks (flyers and ghosts leave none); they burn out like any other
  if(nf<FIRECAP)for(const k of trail)if(!OB[k]&&Math.random()<Math.min(1,d*5)&&igniteCell(k%GC,(k/GC)|0))nf++;
- for(const u of U){if(u.dead||!u.landed||u.fpr)continue;const k=cellIdx(u.x,u.y);if(k<0||OB[k]!==4)continue;
+ for(const u of U){if(u.dead||!u.landed||u.fpr)continue;const k=cellIdx(u.x,u.y);if(k<0||OB[k]!==4)continue;if(RZ.length&&rainAt(u.x,u.y))continue;
   const kd=kindOfId(u.id);
   if(MU.douse.indexOf(kd)>=0){OH[k]-=40*d;matchFx(u,'steam');continue}
   const h=hbOf(u);if(h==='air'||h==='phase')continue;
@@ -1966,7 +1977,7 @@ function tickInput(dt){
  if(BUILD[cur])return;
  pAcc+=dt;const id=cur,iv=pourInterval(id);
  while(pAcc>=iv){pAcc-=iv;const x=ptr.x,y=ptr.y;
-  if(id==='lightning')lightning(x+rnd(-14,14),y+rnd(-10,10));else if(id==='meteor'){meteor(x,y);pAcc=-.5/rateMul}else if(id==='quake'){quake();pAcc=-1/rateMul}
+  if(id==='lightning')lightning(x+rnd(-14,14),y+rnd(-10,10));else if(id==='meteor'){meteor(x,y);pAcc=-.5/rateMul}else if(id==='quake'){quake();pAcc=-1/rateMul}else if(id==='f_rain'){makeRain(x,y);pAcc=-.15/rateMul}
   else{const sid=pourId(),sp=12+statsFor(sid).r0*.75;spawn(sid,clamp(x+rnd(-sp,sp),20,W-20),clamp(y+rnd(-sp,sp)*.6,70,H-10))}}}
 
 function stepFx(pd){
@@ -1976,7 +1987,7 @@ function stepFx(pd){
 function simStep(dt){T+=dt;for(const u of U)updateUnit(u,dt);separate();terrainCollide();habTick(dt);updatePR(dt);fuseStep(dt);terrainTick(dt);stepMatter(dt);U=U.filter(u=>!u.gone)}
 /* seeded play: open the page with #seed=123 (or call __loam.seed(123)) and the simulation draws from its own seeded stream and runs on a fixed 1/60 s step, so
    the same pours give the same fight; drawing keeps real randomness so it cannot disturb the stream. Without a seed nothing changes. */
-function seedGame(n){if(n==null||n===''||isNaN(+n)){SEEDRNG=null;Math.random=RND0;return}let a=(+n)>>>0;SEEDRNG=()=>{a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296};simAcc=0;T=0;FSC=null;fireAcc=0;ts=1;hitstop=0;lastKick=-9;lastBig=-9;lastKill=0;lastSpawn=0;tallyT=0;toastAt=-99;UID=0;SIB=0;fzT=0;GRAVES=[];NK=[];BR=[];PR=[];PT=[];DEC=[];R=newRound();ledReset()}   // a seed also starts the clock and the leftovers from zero
+function seedGame(n){if(n==null||n===''||isNaN(+n)){SEEDRNG=null;Math.random=RND0;return}let a=(+n)>>>0;SEEDRNG=()=>{a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296};simAcc=0;T=0;FSC=null;fireAcc=0;RAINS=[];RZ=[];ts=1;hitstop=0;lastKick=-9;lastBig=-9;lastKill=0;lastSpawn=0;tallyT=0;toastAt=-99;UID=0;SIB=0;fzT=0;GRAVES=[];NK=[];BR=[];PR=[];PT=[];DEC=[];R=newRound();ledReset()}   // a seed also starts the clock and the leftovers from zero
 
 /* quality: QL scales particle cap and effect crowding; it drops when frames run slow and creeps back when they are fast */
 let ftAvg=16,qlT=0,qlUp=0;
@@ -2109,7 +2120,7 @@ $('#bLog').onclick=()=>toggleLog();
 $('#lgClear').onclick=logClear;
 $('#lgCopy').onclick=()=>{const txt=LOG.map(e=>'['+mmss(e.t)+'] '+logParts(e).x).join('\n');try{navigator.clipboard.writeText(txt);$('#lgCopy').textContent='Copied';setTimeout(()=>$('#lgCopy').textContent='Copy',1200)}catch(x){}};
 $('#bSound').onclick=()=>{soundOn=!soundOn;$('#bSound').classList.toggle('off',!soundOn);if(soundOn)ac()};
-function clearBoard(){for(const u of U)if(!u.dead){poof(u)}U=[];PR=[];BR=[];multi=false;winShown=false;R=newRound();ledReset();$('#banner').classList.remove('on');if(teamMode){if(setup)updSetup();else setSetup(true)}}
+function clearBoard(){for(const u of U)if(!u.dead){poof(u)}U=[];PR=[];RAINS=[];RZ=[];BR=[];multi=false;winShown=false;R=newRound();ledReset();$('#banner').classList.remove('on');if(teamMode){if(setup)updSetup();else setSetup(true)}}
 $('#bClear').onclick=clearBoard;
 addEventListener('keydown',e=>{if(e.target.tagName==='INPUT')return;if(e.key==='Enter'&&setup){e.preventDefault();startFight();return}if(e.code==='Space'){e.preventDefault();setPause(!paused)}else if(e.key==='c'||e.key==='C')clearBoard();else if(e.key==='t'||e.key==='T')$('#bTheme').click();else if(e.key==='f'||e.key==='F')toggleFav(cur);else if(e.key==='l'||e.key==='L')openInLoam(HU?HU.id:cur);else if(e.key==='.'){stepOnce()}else if(e.key==='s'||e.key==='S'){const v=[.5,1,2,3];setSpeed(v[(v.indexOf(SPD)+1)%4])}else if(e.key==='['||e.key===']'){setRate(+$('#oRate').value+(e.key===']'?7:-7))}});
 $('#oTeam').onchange=e=>{teamMode=e.target.checked;$('#teams').classList.toggle('on',teamMode);gmap.clear();setSetup(teamMode)};
