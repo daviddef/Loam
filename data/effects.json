@@ -340,6 +340,28 @@
         "src": "https://en.wikipedia.org/wiki/Acetaldehyde"
       }
     ],
+    "acetic_acid": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "chemical_burn",
+        "onset": "conditional",
+        "reversible": false,
+        "mechanism": "What a body meets depends on strength. The dilute acid in vinegar is food; the concentrated acid is a corrosive that burns skin and eyes, and its vapour irritates the airway.",
+        "src": "https://en.wikipedia.org/wiki/Acetic_acid#Safety"
+      }
+    ],
+    "acetone": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "irritant",
+        "onset": "contact",
+        "reversible": true,
+        "mechanism": "It evaporates fast and strips the oils from skin, and the vapour irritates the eyes and airway. At high concentration the vapour also depresses the nervous system. The body makes a little of it itself, in fasting.",
+        "src": "https://en.wikipedia.org/wiki/Acetone#Health_effects"
+      }
+    ],
     "acetonitrile": [
       {
         "valence": "harm",
@@ -348,6 +370,17 @@
         "onset": "acute",
         "mechanism": "It is not itself very toxic; it is metabolised to cyanide, slowly. The delay is the dangerous part, because someone can appear unaffected for hours and then deteriorate as the conversion catches up.",
         "src": "https://en.wikipedia.org/wiki/Acetonitrile"
+      }
+    ],
+    "acetylene": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "asphyxia",
+        "onset": "conditional",
+        "reversible": true,
+        "mechanism": "It is not very toxic, and at high concentration it harms as a simple asphyxiant, pushing out the oxygen. The same gas is unstable and explosive under pressure, so the danger around it is usually fire before breathing.",
+        "src": "https://en.wikipedia.org/wiki/Acetylene#Safety_and_handling"
       }
     ],
     "aconite": [
@@ -420,6 +453,16 @@
         "src": "https://en.wikipedia.org/wiki/Blighia_sapida"
       }
     ],
+    "alanine": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "protein",
+        "onset": "conditional",
+        "mechanism": "Muscle makes it from pyruvate and sends it to the liver, which turns it back into glucose. The body makes it, so it is not essential.",
+        "src": "https://en.wikipedia.org/wiki/Alanine"
+      }
+    ],
     "almond": [
       {
         "valence": "benefit",
@@ -438,6 +481,16 @@
         "onset": "conditional",
         "mechanism": "The clear gel in the middle of the leaf and the yellow latex just under the rind are two different substances. Aloin is in the latex, it is a stimulant laxative, and it is why whole-leaf preparations behave nothing like gel.",
         "src": "https://en.wikipedia.org/wiki/Aloin"
+      }
+    ],
+    "alpha_linolenic_acid": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "alpha_linolenic_acid",
+        "onset": "cumulative",
+        "mechanism": "The omega-3 fatty acid the body cannot make. A little of it is converted into the longer omega-3 fats the brain and the retina are built from, so it has to come from food.",
+        "src": "https://en.wikipedia.org/wiki/Alpha-Linolenic_acid"
       }
     ],
     "aluminum": [
@@ -459,6 +512,17 @@
         "src": "https://en.wikipedia.org/wiki/Ammonia"
       }
     ],
+    "ammonium_hydroxide": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "chemical_burn",
+        "onset": "contact",
+        "reversible": false,
+        "mechanism": "It is ammonia dissolved in water, and an alkali, so it soaks into tissue instead of being held at the surface the way an acid is. The vapour above it irritates the eyes and airway long before the liquid does anything.",
+        "src": "https://en.wikipedia.org/wiki/Ammonia_solution#Safety"
+      }
+    ],
     "ammonium_nitrite": [
       {
         "valence": "harm",
@@ -477,6 +541,27 @@
         "onset": "cumulative",
         "mechanism": "A cancer of the cells lining blood vessels, and rare enough that three cases in one plant were sufficient to identify vinyl chloride as the cause. Rarity is what made it findable: a common tumour in the same workers would have disappeared into the background.",
         "src": "https://en.wikipedia.org/wiki/Angiosarcoma"
+      }
+    ],
+    "aniline": [
+      {
+        "valence": "harm",
+        "route": "absorbed",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "reversible": true,
+        "mechanism": "It is toxic by breathing the vapour, by swallowing it, and by absorption through the skin, so skin contact is an exposure and not merely a stain. The International Agency for Research on Cancer lists it as a probable carcinogen.",
+        "src": "https://en.wikipedia.org/wiki/Aniline"
+      }
+    ],
+    "antimony": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "It acts like its neighbour arsenic, binding to the sulfur groups of enzymes. Swallowed it causes vomiting and diarrhoea, and with repeated exposure it damages the heart and liver.",
+        "src": "https://en.wikipedia.org/wiki/Antimony#Precautions"
       }
     ],
     "apple": [
@@ -520,6 +605,27 @@
         "src": "https://en.wikipedia.org/wiki/Crush_syndrome"
       }
     ],
+    "arginine": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "protein",
+        "onset": "conditional",
+        "mechanism": "The body makes it from other amino acids. It is the source of the nitric oxide that widens blood vessels, and it is an intermediate in the urea cycle.",
+        "src": "https://en.wikipedia.org/wiki/Arginine"
+      }
+    ],
+    "argon": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "asphyxia",
+        "onset": "conditional",
+        "reversible": true,
+        "mechanism": "It is inert and denser than air, so it settles into low places — a pit, a tank, a cellar — and fills them from the bottom. Someone who walks into that pocket gets no smell, no sting and no air hunger before they lose consciousness.",
+        "src": "https://en.wikipedia.org/wiki/Argon#Safety"
+      }
+    ],
     "asbestos": [
       {
         "valence": "harm",
@@ -532,6 +638,48 @@
         "carcinogen": true,
         "iarc": 1,
         "latency": "20 to 50 years"
+      }
+    ],
+    "ascorbate": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_c",
+        "onset": "cumulative",
+        "prevents": "scurvy",
+        "mechanism": "The ion of vitamin C, and the form most food additives and supplements use. The body treats it as the vitamin, which it cannot make, and without it collagen cannot be cross-linked.",
+        "src": "https://en.wikipedia.org/wiki/Vitamin_C"
+      }
+    ],
+    "ash": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "irritant",
+        "onset": "contact",
+        "reversible": true,
+        "mechanism": "Wood ash is alkaline — it is the original source of potash and of lye — so on wet skin or in an eye it behaves as a mild caustic rather than as dust.",
+        "src": "https://en.wikipedia.org/wiki/Wood_ash"
+      }
+    ],
+    "asparagine": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "protein",
+        "onset": "conditional",
+        "mechanism": "The first amino acid to be isolated, from asparagus. The body makes it, so it is not essential.",
+        "src": "https://en.wikipedia.org/wiki/Asparagine"
+      }
+    ],
+    "aspartic_acid": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "protein",
+        "onset": "conditional",
+        "mechanism": "The body makes it. It takes part in the urea cycle that clears nitrogen, and like glutamate it acts as an excitatory transmitter.",
+        "src": "https://en.wikipedia.org/wiki/Aspartic_acid"
       }
     ],
     "aspirin": [
@@ -594,6 +742,17 @@
         "src": "https://en.wikipedia.org/wiki/Pathogenic_bacteria"
       }
     ],
+    "baking_soda": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "conditional",
+        "reversible": true,
+        "mechanism": "In the stomach it meets acid and releases carbon dioxide, which can distend the stomach. Taken in large amounts it loads the body with sodium and pushes the blood too far toward alkaline.",
+        "src": "https://en.wikipedia.org/wiki/Sodium_bicarbonate"
+      }
+    ],
     "bamboo_shoot": [
       {
         "valence": "harm",
@@ -612,6 +771,16 @@
         "onset": "conditional",
         "mechanism": "Potassium is the ion inside the cell as sodium is the ion outside it, and every heartbeat depends on the difference being maintained.",
         "src": "https://en.wikipedia.org/wiki/Potassium_in_biology"
+      }
+    ],
+    "barium": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "Barium that dissolves in water or in stomach acid is poisonous, and the insoluble compounds are not, which is why the same element is a poison in one form and a harmless X-ray meal in another.",
+        "src": "https://en.wikipedia.org/wiki/Barium#Safety"
       }
     ],
     "bark": [
@@ -682,6 +851,17 @@
         "src": "https://en.wikipedia.org/wiki/Benzo(a)pyrene"
       }
     ],
+    "beta_carotene": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_a",
+        "onset": "cumulative",
+        "prevents": "night_blindness",
+        "mechanism": "It is split in the gut wall into two molecules of retinal. The conversion is regulated, which is why a plant source does not overshoot the way stored retinol can.",
+        "src": "https://en.wikipedia.org/wiki/Beta-Carotene"
+      }
+    ],
     "betel_nut": [
       {
         "valence": "harm",
@@ -712,6 +892,16 @@
         "onset": "cumulative",
         "mechanism": "The evidence points both ways and has for decades: one large study found it non-carcinogenic in mice, another found limited evidence the other way. The row exists to record that an honest answer here is an unsettled one.",
         "src": "https://en.wikipedia.org/wiki/Butylated_hydroxytoluene"
+      }
+    ],
+    "biotin": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "biotin",
+        "onset": "cumulative",
+        "mechanism": "Carries carbon dioxide for the carboxylases; the gut makes some, not enough.",
+        "src": "https://en.wikipedia.org/wiki/Biotin"
       }
     ],
     "bird_wing": [
@@ -972,6 +1162,17 @@
         "src": "https://en.wikipedia.org/wiki/Hypercapnia"
       }
     ],
+    "carbon_disulfide": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "neurotoxin",
+        "onset": "cumulative",
+        "reversible": false,
+        "mechanism": "A volatile solvent whose vapour passes easily into the blood. Over years of exposure it damages the nerves and the brain, and it raises the risk of heart disease.",
+        "src": "https://en.wikipedia.org/wiki/Carbon_disulfide#Toxicity"
+      }
+    ],
     "carbon_monoxide": [
       {
         "valence": "harm",
@@ -1072,6 +1273,17 @@
         "src": "https://en.wikipedia.org/wiki/Centipede"
       }
     ],
+    "charcoal": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "hypoxia",
+        "onset": "acute",
+        "reversible": false,
+        "mechanism": "Burned in a closed room it gives off carbon monoxide, which has no smell and binds haemoglobin so the blood circulates and carries nothing. Charcoal is the classic case because it burns with little flame or smoke, so the room does not look dangerous.",
+        "src": "https://en.wikipedia.org/wiki/Carbon_monoxide_poisoning"
+      }
+    ],
     "cheese": [
       {
         "valence": "benefit",
@@ -1141,6 +1353,17 @@
         "src": "https://en.wikipedia.org/wiki/Organochloride"
       }
     ],
+    "chlorine_trifluoride": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "chemical_burn",
+        "onset": "contact",
+        "reversible": false,
+        "mechanism": "It attacks almost anything, tissue included. On the body it burns, and as it reacts it makes hydrofluoric and hydrochloric acids, so the injury is thermal and chemical at once.",
+        "src": "https://en.wikipedia.org/wiki/Chlorine_trifluoride#Hazards"
+      }
+    ],
     "chloroform": [
       {
         "valence": "harm",
@@ -1159,6 +1382,27 @@
         "onset": "acute",
         "mechanism": "At treatment doses it has saved an enormous number of lives and in overdose it is among the more lethal drugs available, because it blocks cardiac sodium channels. The gap between the two is narrow and the onset in overdose is fast.",
         "src": "https://en.wikipedia.org/wiki/Chloroquine"
+      }
+    ],
+    "choline": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "choline",
+        "onset": "cumulative",
+        "mechanism": "Needed for cell membranes and acetylcholine; the body makes some and not enough.",
+        "src": "https://en.wikipedia.org/wiki/Choline"
+      }
+    ],
+    "citric_acid": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "irritant",
+        "onset": "conditional",
+        "reversible": true,
+        "mechanism": "In food it is a flavour, and a form of it is made in every cell of the body as part of releasing energy, so the harm is only concentration: a strong solution or the dry solid irritates the eyes and skin.",
+        "src": "https://en.wikipedia.org/wiki/Citric_acid#Safety"
       }
     ],
     "clam": [
@@ -1210,6 +1454,17 @@
         "onset": "cumulative",
         "mechanism": "Cotton dust causes byssinosis, and its signature is that the chest tightness comes back on the first day of the working week and eases through it. Nineteenth-century mills called it Monday fever long before anyone knew what caused it.",
         "src": "https://en.wikipedia.org/wiki/Byssinosis"
+      }
+    ],
+    "cobalamin": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "cobalamin",
+        "onset": "cumulative",
+        "prevents": "anaemia",
+        "mechanism": "Vitamin B12. Made only by bacteria and archaea — no plant or animal synthesises it.",
+        "src": "https://en.wikipedia.org/wiki/Vitamin_B12"
       }
     ],
     "coccidiosis": [
@@ -1382,6 +1637,16 @@
         "src": "https://en.wikipedia.org/wiki/Cyanobacteria"
       }
     ],
+    "cysteine": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "protein",
+        "onset": "conditional",
+        "mechanism": "It carries the sulfur whose bonds hold proteins in shape, and it is part of glutathione, the cell's main antioxidant. The body makes it from methionine.",
+        "src": "https://en.wikipedia.org/wiki/Cysteine"
+      }
+    ],
     "death_cap": [
       {
         "valence": "harm",
@@ -1528,6 +1793,17 @@
         "src": "https://en.wikipedia.org/wiki/Occupational_asthma"
       }
     ],
+    "ethane": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "asphyxia",
+        "onset": "conditional",
+        "reversible": true,
+        "mechanism": "It is not toxic. In a closed space it is a simple asphyxiant, taking the oxygen's place, and at any concentration it is a fire and explosion hazard before it is a breathing one.",
+        "src": "https://en.wikipedia.org/wiki/Ethane#Safety"
+      }
+    ],
     "ethanol": [
       {
         "valence": "harm",
@@ -1540,6 +1816,28 @@
         "carcinogen": true,
         "iarc": 1,
         "srcIarc": "https://en.wikipedia.org/wiki/International_Agency_for_Research_on_Cancer"
+      }
+    ],
+    "ether": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "poisoning",
+        "onset": "conditional",
+        "reversible": true,
+        "mechanism": "It puts a person under, which is why it was the first anaesthetic shown to work in public, in 1846. It is also extremely flammable, and the intoxication it gives was enjoyed at parties in the nineteenth century, with psychological dependence following in some people.",
+        "src": "https://en.wikipedia.org/wiki/Diethyl_ether"
+      }
+    ],
+    "ethylene": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "asphyxia",
+        "onset": "conditional",
+        "reversible": true,
+        "mechanism": "It is a combustible asphyxiant: it harms by taking the place of air, and it burns. It was once used as an anaesthetic, until its smell and its tendency to explode in an operating theatre made safer drugs the better choice.",
+        "src": "https://en.wikipedia.org/wiki/Ethylene"
       }
     ],
     "ethylene_glycol": [
@@ -1684,6 +1982,16 @@
         "src": "https://en.wikipedia.org/wiki/Amanita_muscaria"
       }
     ],
+    "folate": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "folate",
+        "onset": "cumulative",
+        "mechanism": "Moves single carbon atoms, which is most of what building DNA consists of.",
+        "src": "https://en.wikipedia.org/wiki/Folate"
+      }
+    ],
     "formaldehyde": [
       {
         "valence": "harm",
@@ -1695,6 +2003,17 @@
         "src": "https://en.wikipedia.org/wiki/Formaldehyde",
         "carcinogen": true,
         "iarc": 1
+      }
+    ],
+    "formic_acid": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "chemical_burn",
+        "onset": "conditional",
+        "reversible": false,
+        "mechanism": "It is the acid in ant venom and nettle stings, where it only stings. Concentrated it is a corrosive that burns skin and eyes, and its vapour irritates the airway.",
+        "src": "https://en.wikipedia.org/wiki/Formic_acid#Safety"
       }
     ],
     "fos": [
@@ -1848,6 +2167,36 @@
         "src": "https://en.wikipedia.org/wiki/Glucose"
       }
     ],
+    "glutamic_acid": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "protein",
+        "onset": "conditional",
+        "mechanism": "The most abundant excitatory transmitter in the brain, and the taste of savouriness on the tongue. The body makes it, so it is not essential.",
+        "src": "https://en.wikipedia.org/wiki/Glutamic_acid"
+      }
+    ],
+    "glutamine": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "protein",
+        "onset": "conditional",
+        "mechanism": "The most abundant free amino acid in the blood, and a main fuel for cells of the gut and the immune system. The body makes it.",
+        "src": "https://en.wikipedia.org/wiki/Glutamine"
+      }
+    ],
+    "glycine": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "protein",
+        "onset": "conditional",
+        "mechanism": "The smallest amino acid, and about one residue in three of collagen. The body makes it, and it is also a signalling molecule in the spinal cord and brainstem.",
+        "src": "https://en.wikipedia.org/wiki/Glycine"
+      }
+    ],
     "gold": [
       {
         "valence": "inert",
@@ -1938,6 +2287,17 @@
         "src": "https://en.wikipedia.org/wiki/Helicobacter_pylori"
       }
     ],
+    "helium": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "asphyxia",
+        "onset": "conditional",
+        "reversible": true,
+        "mechanism": "It is chemically inert and not toxic, so it harms only by taking the place of air. A lungful of it holds no oxygen at all, and the high voice it gives (sound travels faster in it) is exactly what makes it look like a joke rather than an asphyxiant.",
+        "src": "https://en.wikipedia.org/wiki/Helium#Precautions"
+      }
+    ],
     "herpes_simplex_virus": [
       {
         "valence": "harm",
@@ -1966,6 +2326,16 @@
         "onset": "conditional",
         "mechanism": "Scombroid poisoning looks exactly like an allergy and is not one: bacteria on badly stored fish convert the histidine already in the flesh into histamine, so the reaction arrives with the first mouthful in someone who has eaten that fish for years. Cooking does not undo it.",
         "src": "https://en.wikipedia.org/wiki/Histamine"
+      }
+    ],
+    "histidine": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "histidine",
+        "onset": "conditional",
+        "mechanism": "Essential in infancy and, on the current view, in adults too.",
+        "src": "https://en.wikipedia.org/wiki/Histidine"
       }
     ],
     "holly": [
@@ -2075,6 +2445,17 @@
         "onset": "acute",
         "mechanism": "Not toxic and not reactive at body temperature. It simply takes the place of air, and because the reflex to breathe answers carbon dioxide rather than oxygen, there is no warning before consciousness goes.",
         "src": "https://en.wikipedia.org/wiki/Asphyxiant_gas"
+      }
+    ],
+    "hydrogen_chloride": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "corrosive",
+        "onset": "contact",
+        "reversible": false,
+        "mechanism": "It dissolves in the wet lining of the nose, throat and lung and becomes hydrochloric acid on the spot, so the gas is a burn of the airway rather than a poison taken up by the blood.",
+        "src": "https://en.wikipedia.org/wiki/Hydrogen_chloride#Safety"
       }
     ],
     "hydrogen_gas": [
@@ -2198,6 +2579,16 @@
         "src": "https://en.wikipedia.org/wiki/Isocyanate"
       }
     ],
+    "isoleucine": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "isoleucine",
+        "onset": "conditional",
+        "mechanism": "One of the three branched-chain amino acids, burned in muscle rather than liver.",
+        "src": "https://en.wikipedia.org/wiki/Isoleucine"
+      }
+    ],
     "kale": [
       {
         "valence": "benefit",
@@ -2268,6 +2659,17 @@
         "src": "https://en.wikipedia.org/wiki/Komodo_dragon"
       }
     ],
+    "krypton": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "asphyxia",
+        "onset": "conditional",
+        "reversible": true,
+        "mechanism": "It is inert and not toxic. Like the other noble gases it harms only by displacing air, so the danger is a closed room rather than the gas.",
+        "src": "https://en.wikipedia.org/wiki/Krypton"
+      }
+    ],
     "larkspur": [
       {
         "valence": "harm",
@@ -2306,6 +2708,17 @@
         "onset": "cumulative",
         "reversible": false,
         "mechanism": "It is taken up wherever the body wants calcium — into bone, and into the nervous system — because the two ions are similar enough to be confused. It accumulates in bone over years and the damage to a developing nervous system does not reverse.",
+        "src": "https://en.wikipedia.org/wiki/Lead_poisoning"
+      }
+    ],
+    "lead_chloride": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "lead_poisoning",
+        "onset": "cumulative",
+        "reversible": false,
+        "mechanism": "The body takes lead up as if it were calcium and stores it in bone. It accumulates there and leaks back into the blood for years, damaging the nervous system, the blood and the kidneys.",
         "src": "https://en.wikipedia.org/wiki/Lead_poisoning"
       }
     ],
@@ -2378,6 +2791,16 @@
         "src": "https://en.wikipedia.org/wiki/Leprosy"
       }
     ],
+    "leucine": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "leucine",
+        "onset": "conditional",
+        "mechanism": "The one that signals as well as builds: it switches on muscle protein synthesis directly.",
+        "src": "https://en.wikipedia.org/wiki/Leucine"
+      }
+    ],
     "lime": [
       {
         "valence": "benefit",
@@ -2399,6 +2822,16 @@
         "src": "https://en.wikipedia.org/wiki/Occupational_dust_exposure"
       }
     ],
+    "linoleic_acid": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "linoleic_acid",
+        "onset": "cumulative",
+        "mechanism": "The omega-6 fatty acid the body cannot make. It is built into the skin's water barrier and is the parent of the body's omega-6 signalling molecules, so it has to come from food.",
+        "src": "https://en.wikipedia.org/wiki/Linoleic_acid"
+      }
+    ],
     "lion": [
       {
         "valence": "harm",
@@ -2418,6 +2851,28 @@
         "onset": "conditional",
         "mechanism": "It grows at refrigerator temperature, which almost nothing else pathogenic does, so time in a fridge selects for it rather than against it. It crosses the placenta, and that is why one organism gets singled out in advice given to pregnant women.",
         "src": "https://en.wikipedia.org/wiki/Listeria_monocytogenes"
+      }
+    ],
+    "lithium": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "chemical_burn",
+        "onset": "contact",
+        "reversible": false,
+        "mechanism": "The metal reacts with the moisture on skin to make lithium hydroxide, a strong alkali, giving off hydrogen and heat as it does. It is the reaction, not the metal, that burns.",
+        "src": "https://en.wikipedia.org/wiki/Lithium#Precautions"
+      }
+    ],
+    "lithium_hydroxide": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "chemical_burn",
+        "onset": "contact",
+        "reversible": false,
+        "mechanism": "A strong alkali, so it soaks into tissue instead of staying at the surface. On skin and eyes it is a corrosive, and the dust of it burns the airway.",
+        "src": "https://en.wikipedia.org/wiki/Lithium_hydroxide#Safety"
       }
     ],
     "liver": [
@@ -2461,6 +2916,16 @@
         "src": "https://en.wikipedia.org/wiki/Sodium_hydroxide"
       }
     ],
+    "lysine": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "lysine",
+        "onset": "conditional",
+        "mechanism": "The limiting amino acid in cereals, and the reason a grain alone is not enough.",
+        "src": "https://en.wikipedia.org/wiki/Lysine"
+      }
+    ],
     "macadamia": [
       {
         "valence": "harm",
@@ -2498,6 +2963,17 @@
         "onset": "acute",
         "mechanism": "Molten rock sits between about 700 and 1,300 °C and carries an enormous amount of heat in very little volume, so contact is not survivable in the way a flame often is. It is also dense enough that a body does not sink into it — the injury is at the surface, and total.",
         "src": "https://en.wikipedia.org/wiki/Magma"
+      }
+    ],
+    "magnesium_hydroxide": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "diarrhoea",
+        "onset": "conditional",
+        "reversible": true,
+        "mechanism": "Milk of magnesia neutralises stomach acid, and the magnesium it leaves is absorbed poorly, so it holds water in the bowel and loosens the stool. In larger amounts it is a laxative.",
+        "src": "https://en.wikipedia.org/wiki/Magnesium_hydroxide"
       }
     ],
     "maize": [
@@ -2552,6 +3028,16 @@
         "src": "https://en.wikipedia.org/wiki/Human_iron_metabolism"
       }
     ],
+    "mercuric_oxide": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "acute",
+        "mechanism": "Mercury(II) compounds that dissolve in the gut are taken up and are poisonous, damaging the kidneys first. It is the mercury ion that does it, not the oxide it came as.",
+        "src": "https://en.wikipedia.org/wiki/Mercury_poisoning"
+      }
+    ],
     "mercury": [
       {
         "valence": "harm",
@@ -2582,6 +3068,16 @@
         "reversible": true,
         "mechanism": "It is not toxic. It displaces oxygen, and the urge to breathe answers carbon dioxide rather than oxygen — so in a methane-rich space the CO2 still leaves normally and there is no warning at all before consciousness goes.",
         "src": "https://en.wikipedia.org/wiki/Methane"
+      }
+    ],
+    "methionine": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "methionine",
+        "onset": "conditional",
+        "mechanism": "Starts every protein and donates methyl groups; the limiting one in legumes.",
+        "src": "https://en.wikipedia.org/wiki/Methionine"
       }
     ],
     "methylmercury": [
@@ -2742,6 +3238,61 @@
         "src": "https://en.wikipedia.org/wiki/Vitamin_K2"
       }
     ],
+    "neon": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "asphyxia",
+        "onset": "conditional",
+        "reversible": true,
+        "mechanism": "It is inert and not toxic. It harms only by displacing air: in a closed space, breathing it is breathing without oxygen, and nothing about it warns the person.",
+        "src": "https://en.wikipedia.org/wiki/Neon#Occurrence"
+      }
+    ],
+    "niacin": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "niacin",
+        "onset": "cumulative",
+        "prevents": "pellagra",
+        "mechanism": "Becomes NAD, which is on one side or the other of most reactions in the body.",
+        "src": "https://en.wikipedia.org/wiki/Niacin"
+      }
+    ],
+    "nickel": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "sensitiser",
+        "onset": "conditional",
+        "reversible": false,
+        "mechanism": "Nickel is the commonest cause of contact allergy. Skin that has been in prolonged contact with it, in jewellery or a belt buckle, learns to react, and from then on any contact brings a rash.",
+        "src": "https://en.wikipedia.org/wiki/Nickel_allergy"
+      }
+    ],
+    "nickel_sulfate": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "sensitiser",
+        "onset": "conditional",
+        "reversible": false,
+        "mechanism": "It releases nickel ions on skin, and nickel is the commonest cause of contact allergy. Once the skin has learned to react, any later contact brings a rash.",
+        "src": "https://en.wikipedia.org/wiki/Nickel_allergy"
+      }
+    ],
+    "nitric_acid": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "chemical_burn",
+        "onset": "contact",
+        "reversible": false,
+        "mechanism": "It burns tissue and, as it reacts with the protein in the skin, stains it yellow. The stain stays until the skin sheds, which is how a nitric acid burn is recognised afterwards.",
+        "src": "https://en.wikipedia.org/wiki/Nitric_acid#Safety"
+      }
+    ],
     "nitrite": [
       {
         "valence": "harm",
@@ -2772,6 +3323,28 @@
         "reversible": true,
         "mechanism": "Under pressure it dissolves into the lipid of nerve membranes and interferes with signalling, much as alcohol does — including the part where judgement goes before the diver notices. It reverses completely on ascent.",
         "src": "https://en.wikipedia.org/wiki/Nitrogen_narcosis"
+      }
+    ],
+    "nitrogen_dioxide": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "poisoning",
+        "onset": "conditional",
+        "reversible": false,
+        "mechanism": "It dissolves slowly in water, so it travels deep into the small airways before it irritates anything. The lung can then fill with fluid hours after the exposure, when the person has stopped noticing it.",
+        "src": "https://en.wikipedia.org/wiki/Nitrogen_dioxide#Toxicity"
+      }
+    ],
+    "nitrogen_gas": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "asphyxia",
+        "onset": "acute",
+        "reversible": false,
+        "mechanism": "Nitrogen is most of the air, so an atmosphere of nitrogen alone feels like air. The urge to breathe answers carbon dioxide rather than a lack of oxygen, so there is no air hunger, and confusion and collapse come before the person knows anything is wrong.",
+        "src": "https://en.wikipedia.org/wiki/Inert_gas_asphyxiation"
       }
     ],
     "nitroglycerin": [
@@ -2918,6 +3491,16 @@
         "src": "https://en.wikipedia.org/wiki/Zinc"
       }
     ],
+    "pantothenic_acid": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "pantothenic_acid",
+        "onset": "cumulative",
+        "mechanism": "It becomes coenzyme A, which every cell needs to burn fat and sugar for energy. The name means 'from everywhere', because it is in almost every food, and a deficiency is correspondingly rare.",
+        "src": "https://en.wikipedia.org/wiki/Pantothenic_acid"
+      }
+    ],
     "paper": [
       {
         "valence": "inert",
@@ -3008,6 +3591,16 @@
         "src": "https://en.wikipedia.org/wiki/Phenolphthalein"
       }
     ],
+    "phenylalanine": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "phenylalanine",
+        "onset": "conditional",
+        "mechanism": "The precursor of tyrosine and so of dopamine, adrenaline and melanin.",
+        "src": "https://en.wikipedia.org/wiki/Phenylalanine"
+      }
+    ],
     "phosgene": [
       {
         "valence": "harm",
@@ -3026,6 +3619,17 @@
         "onset": "cumulative",
         "mechanism": "The form phosphorus is actually eaten and used in: in every ATP, every nucleotide, and most of the mineral in bone. Free phosphorus is another matter entirely and is filed separately.",
         "src": "https://en.wikipedia.org/wiki/Phosphate"
+      }
+    ],
+    "phosphoric_acid": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "irritant",
+        "onset": "conditional",
+        "reversible": true,
+        "mechanism": "It is dilute enough in a soft drink to be a food. Concentrated it is a corrosive that burns skin and eyes, so the question is always the strength.",
+        "src": "https://en.wikipedia.org/wiki/Phosphoric_acid#Safety"
       }
     ],
     "pipe": [
@@ -3189,6 +3793,16 @@
         "src": "https://en.wikipedia.org/wiki/Prion"
       }
     ],
+    "proline": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "protein",
+        "onset": "conditional",
+        "mechanism": "Its ring bends a protein chain where it sits, which is why collagen is so rich in it. The body makes it from glutamate.",
+        "src": "https://en.wikipedia.org/wiki/Proline"
+      }
+    ],
     "protein": [
       {
         "valence": "harm",
@@ -3290,6 +3904,17 @@
         "iarc": 1
       }
     ],
+    "quicklime": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "chemical_burn",
+        "onset": "contact",
+        "reversible": false,
+        "mechanism": "It takes water from whatever it touches and gives off heat as it does, so on damp skin or in an eye it is a caustic and a burn at once. The eye is the worst place for it, because the surface is wet.",
+        "src": "https://en.wikipedia.org/wiki/Calcium_oxide#Safety"
+      }
+    ],
     "quinoa": [
       {
         "valence": "benefit",
@@ -3341,6 +3966,17 @@
         "src": "https://en.wikipedia.org/wiki/Colophony"
       }
     ],
+    "retinal": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_a",
+        "onset": "cumulative",
+        "prevents": "night_blindness",
+        "mechanism": "The light-absorbing half of rhodopsin, the pigment in the eye. It is made from vitamin A, and there is no substitute for it in the retina.",
+        "src": "https://en.wikipedia.org/wiki/Retinal"
+      }
+    ],
     "rhododendron": [
       {
         "valence": "harm",
@@ -3359,6 +3995,16 @@
         "onset": "acute",
         "mechanism": "The stalk is the food and the leaf blade is not. Oxalic acid binds calcium out of the blood and the resulting crystals are deposited in the kidney, which is the organ that has to filter them.",
         "src": "https://en.wikipedia.org/wiki/Oxalic_acid"
+      }
+    ],
+    "riboflavin": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "riboflavin",
+        "onset": "cumulative",
+        "mechanism": "The backbone of FAD and FMN, the carriers half of oxidative metabolism runs on.",
+        "src": "https://en.wikipedia.org/wiki/Riboflavin"
       }
     ],
     "rice": [
@@ -3428,6 +4074,15 @@
         "onset": "conditional",
         "mechanism": "Natural latex carries plant proteins, and repeated skin contact — especially through the powder that used to line gloves — teaches the immune system to answer them. It became an occupational epidemic among health workers, and powdered gloves were withdrawn because of it.",
         "src": "https://en.wikipedia.org/wiki/Latex_allergy"
+      }
+    ],
+    "rust": [
+      {
+        "valence": "inert",
+        "route": "contact",
+        "onset": "conditional",
+        "mechanism": "Rust is iron oxide, which does not dissolve in body fluids and is not absorbed through skin, so it does nothing on contact except stain.",
+        "src": "https://en.wikipedia.org/wiki/Iron(III)_oxide"
       }
     ],
     "safflower": [
@@ -3630,6 +4285,16 @@
         "src": "https://en.wikipedia.org/wiki/Vitamin_E"
       }
     ],
+    "serine": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "protein",
+        "onset": "conditional",
+        "mechanism": "The body makes it from glucose. It is built into the phospholipids of cell membranes, and its hydroxyl group is where many proteins are switched on and off.",
+        "src": "https://en.wikipedia.org/wiki/Serine"
+      }
+    ],
     "sesame": [
       {
         "valence": "benefit",
@@ -3662,6 +4327,28 @@
         "carcinogen": true,
         "iarc": 1,
         "latency": "10 to 30 years"
+      }
+    ],
+    "silica_sand": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "silicosis",
+        "onset": "cumulative",
+        "reversible": false,
+        "mechanism": "Sand is safe in the hand. It is the dust of it, made by cutting, blasting or grinding, that does the harm: crystalline silica reaches the deepest air sacs and scars the lung over years.",
+        "src": "https://en.wikipedia.org/wiki/Silicosis"
+      }
+    ],
+    "silicon_dioxide": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "silicosis",
+        "onset": "cumulative",
+        "reversible": false,
+        "mechanism": "Fine crystalline silica dust that is breathed in reaches the deepest air sacs, where the lung cannot clear it. It scars the tissue slowly, over years, long after the exposure has stopped.",
+        "src": "https://en.wikipedia.org/wiki/Silicosis"
       }
     ],
     "silver": [
@@ -3722,6 +4409,16 @@
         "onset": "contact",
         "mechanism": "A base strong enough to take a proton off almost anything, tissue included. It also reacts violently with the water that tissue is mostly made of, so the damage is not a slow chemical attack but an immediate one.",
         "src": "https://en.wikipedia.org/wiki/Sodium_amide"
+      }
+    ],
+    "sodium_fluoride": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "conditional",
+        "mechanism": "A little in drinking water or toothpaste strengthens teeth, and a lot is a poison: fluoride takes up the calcium the body needs for nerves and muscle. The difference is the amount, not the substance.",
+        "src": "https://en.wikipedia.org/wiki/Fluoride_toxicity"
       }
     ],
     "soil": [
@@ -3824,6 +4521,16 @@
         "src": "https://en.wikipedia.org/wiki/Alpha_Centauri"
       }
     ],
+    "starch": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "energy",
+        "onset": "conditional",
+        "mechanism": "Amylase in the saliva and the gut breaks it into glucose, which is how a plant's stored energy becomes a person's. Raw starch granules resist digestion, and cooking swells and opens them.",
+        "src": "https://en.wikipedia.org/wiki/Starch#Digestion"
+      }
+    ],
     "steam": [
       {
         "valence": "harm",
@@ -3902,6 +4609,17 @@
         "onset": "contact",
         "mechanism": "Burning sulphur makes sulphur dioxide, which dissolves in the wet lining of the airway to make acid there. The gas is a preservative and a bleach for the same reason it is an irritant.",
         "src": "https://en.wikipedia.org/wiki/Sulfur_dioxide"
+      }
+    ],
+    "sulfur_hexafluoride": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "asphyxia",
+        "onset": "conditional",
+        "reversible": true,
+        "mechanism": "It is inert and several times denser than air, so a breath of it sinks and stays in the lungs and in low places instead of leaving them. The deep voice it gives is the sound of a lungful with no oxygen in it, which is why a party trick is also an asphyxiant.",
+        "src": "https://en.wikipedia.org/wiki/Sulfur_hexafluoride"
       }
     ],
     "sulfur_trioxide": [
@@ -4053,6 +4771,37 @@
         "src": "https://en.wikipedia.org/wiki/Thalidomide"
       }
     ],
+    "thallium": [
+      {
+        "valence": "harm",
+        "route": "ingested",
+        "outcome": "poisoning",
+        "onset": "cumulative",
+        "mechanism": "It passes for potassium in the body and is taken into cells. Poisoning begins with the gut and the nerves, and its best-known sign is hair that falls out some weeks later.",
+        "src": "https://en.wikipedia.org/wiki/Thallium#Toxicity"
+      }
+    ],
+    "thiamin": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "thiamin",
+        "onset": "cumulative",
+        "prevents": "beriberi",
+        "mechanism": "The cofactor for pyruvate dehydrogenase — without it a cell cannot get sugar into the citric acid cycle at all.",
+        "src": "https://en.wikipedia.org/wiki/Thiamine"
+      }
+    ],
+    "threonine": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "threonine",
+        "onset": "conditional",
+        "mechanism": "Heavily used in mucin, so the gut lining spends it faster than most tissues.",
+        "src": "https://en.wikipedia.org/wiki/Threonine"
+      }
+    ],
     "tick": [
       {
         "valence": "harm",
@@ -4110,6 +4859,17 @@
         "src": "https://en.wikipedia.org/wiki/Threonine"
       }
     ],
+    "toluene": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "neurotoxin",
+        "onset": "cumulative",
+        "reversible": false,
+        "mechanism": "It dissolves easily in fat, so it reaches the brain quickly, where it depresses the nervous system the way alcohol does. Repeated heavy exposure damages the brain and nerves, and that damage does not heal.",
+        "src": "https://en.wikipedia.org/wiki/Toluene#Health_effects"
+      }
+    ],
     "toxoplasma_gondii": [
       {
         "valence": "harm",
@@ -4151,6 +4911,16 @@
         "src": "https://en.wikipedia.org/wiki/Trichloroacetic_acid"
       }
     ],
+    "tryptophan": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "tryptophan",
+        "onset": "conditional",
+        "mechanism": "The precursor of serotonin and of niacin, and the rarest essential amino acid in food.",
+        "src": "https://en.wikipedia.org/wiki/Tryptophan"
+      }
+    ],
     "turkey": [
       {
         "valence": "benefit",
@@ -4159,6 +4929,16 @@
         "onset": "cumulative",
         "mechanism": "Tryptophan is the precursor of serotonin and of niacin, and the rarest essential amino acid in food. Turkey is famous for it and is not actually unusual — the sleepiness after the meal is the size of the meal, not the bird.",
         "src": "https://en.wikipedia.org/wiki/Tryptophan"
+      }
+    ],
+    "tyrosine": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "protein",
+        "onset": "conditional",
+        "mechanism": "The body makes it from phenylalanine. It is the precursor of dopamine, adrenaline, thyroid hormone and the pigment melanin.",
+        "src": "https://en.wikipedia.org/wiki/Tyrosine"
       }
     ],
     "ultraviolet": [
@@ -4174,6 +4954,16 @@
         "iarc": 1,
         "latency": "decades",
         "srcIarc": "https://en.wikipedia.org/wiki/International_Agency_for_Research_on_Cancer"
+      }
+    ],
+    "valine": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "valine",
+        "onset": "conditional",
+        "mechanism": "The third branched-chain amino acid; the one substitution that causes sickle cell is a valine.",
+        "src": "https://en.wikipedia.org/wiki/Valine"
       }
     ],
     "venom": [
@@ -4217,6 +5007,69 @@
         "onset": "conditional",
         "mechanism": "A virus is not alive in any useful sense: it carries instructions and a coat, and the copying is done entirely by the cell it enters. That is why almost nothing kills a virus without also harming the host.",
         "src": "https://en.wikipedia.org/wiki/Virus"
+      }
+    ],
+    "vitamin_a": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_a",
+        "onset": "cumulative",
+        "prevents": "night_blindness",
+        "mechanism": "Retinal is the light-absorbing half of rhodopsin; there is no substitute for it in the eye.",
+        "src": "https://en.wikipedia.org/wiki/Vitamin_A"
+      }
+    ],
+    "vitamin_b6": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_b6",
+        "onset": "cumulative",
+        "mechanism": "The cofactor for transaminases, so it sits under nearly all amino acid chemistry.",
+        "src": "https://en.wikipedia.org/wiki/Vitamin_B6"
+      }
+    ],
+    "vitamin_c": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_c",
+        "onset": "cumulative",
+        "prevents": "scurvy",
+        "mechanism": "The gene for the last enzyme in its pathway is broken in us, so collagen cannot be cross-linked without eating it.",
+        "src": "https://en.wikipedia.org/wiki/Vitamin_C"
+      }
+    ],
+    "vitamin_d": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_d",
+        "onset": "cumulative",
+        "prevents": "rickets",
+        "mechanism": "Strictly a hormone the skin makes from sunlight, and a nutrient only where the sun will not do it.",
+        "src": "https://en.wikipedia.org/wiki/Vitamin_D"
+      }
+    ],
+    "vitamin_e": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_e",
+        "onset": "cumulative",
+        "mechanism": "The fat-soluble antioxidant that sits in membranes and is oxidised instead of the lipids around it.",
+        "src": "https://en.wikipedia.org/wiki/Vitamin_E"
+      }
+    ],
+    "vitamin_k": [
+      {
+        "valence": "benefit",
+        "route": "ingested",
+        "outcome": "vitamin_k",
+        "onset": "cumulative",
+        "mechanism": "Required to finish the clotting factors; without it they are made and do not work.",
+        "src": "https://en.wikipedia.org/wiki/Vitamin_K"
       }
     ],
     "walnut": [
@@ -4362,6 +5215,17 @@
         "src": "https://en.wikipedia.org/wiki/Wool#Characteristics"
       }
     ],
+    "xenon": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "asphyxia",
+        "onset": "conditional",
+        "reversible": true,
+        "mechanism": "Like helium it does not supply the body's oxygen, so it is a simple asphyxiant. It is also a general anaesthetic, more powerful than nitrous oxide, and it leaves the blood quickly, so the effect wears off quickly too. The danger is a closed space, because it is odourless and colourless.",
+        "src": "https://en.wikipedia.org/wiki/Xenon"
+      }
+    ],
     "yeast": [
       {
         "valence": "benefit",
@@ -4399,6 +5263,28 @@
         "outcome": "fever",
         "onset": "acute",
         "mechanism": "The classic cause of metal fume fever: galvanised steel heated hot enough to vaporise its zinc coating. The reaction is to the freshly condensed oxide particles, which is why welding the same metal cold does nothing.",
+        "src": "https://en.wikipedia.org/wiki/Metal_fume_fever"
+      }
+    ],
+    "zinc_chloride": [
+      {
+        "valence": "harm",
+        "route": "contact",
+        "outcome": "chemical_burn",
+        "onset": "contact",
+        "reversible": false,
+        "mechanism": "It draws water out of what it touches, and its solution is acidic, so on skin and eyes it is a corrosive. Breathing the smoke of it burns the lining of the airway.",
+        "src": "https://en.wikipedia.org/wiki/Zinc_chloride#Safety"
+      }
+    ],
+    "zinc_oxide": [
+      {
+        "valence": "harm",
+        "route": "inhaled",
+        "outcome": "fever",
+        "onset": "acute",
+        "reversible": true,
+        "mechanism": "Breathing in the fume made when zinc is heated gives metal fume fever: a flu-like illness with fever and chills that comes some hours after the exposure and passes within a day or two.",
         "src": "https://en.wikipedia.org/wiki/Metal_fume_fever"
       }
     ],

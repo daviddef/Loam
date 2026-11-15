@@ -574,7 +574,11 @@ __CATEGORY_CSS__
   .upstream>summary{
     cursor:pointer;padding:10px 14px;font-weight:600;list-style:none;
     display:flex;align-items:center;gap:8px;
+    width:100%;box-sizing:border-box;    /* a flex <summary> shrink-to-fits in WebKit */
   }
+  /* The label takes whatever the badges leave, and min-width:0 lets it wrap on
+     its own words instead of standing at min-content and overflowing. */
+  .upstream>summary>span:not(.upmarks){flex:1 1 auto;min-width:0}
   .upstream>summary .upmarks{display:flex;gap:4px;margin-left:auto;flex:none}
   /* Smaller than the row badges: this is a preview of what is inside, not the
      thing itself. */
@@ -589,7 +593,13 @@ __CATEGORY_CSS__
   .uprow b{display:block;font-size:14px}
   .uprow p{margin:4px 0 0;font-size:13px;opacity:.8;line-height:1.45}
   .upfrom{font-size:11.5px;opacity:.6}
-  .hzm{flex:0 0 22px;height:22px;border-radius:5px;display:grid;place-items:center;font-size:13px}
+  /* min-width:0 is load-bearing. The carcinogen badge holds an inline <svg>
+     carrying only a viewBox, so its intrinsic size is the SVG default of
+     300x150; with the flex default of min-width:auto, an engine is entitled to
+     take that 300px as the badge's minimum. WebKit does, and the badge strip
+     then claimed most of the summary row: the label collapsed to one word per
+     line and the badges sat beside it with a wide empty band to their right. */
+  .hzm{flex:0 0 22px;height:22px;min-width:0;border-radius:5px;display:grid;place-items:center;font-size:13px}
   .hzm.radioactive{background:var(--teal);color:var(--on-accent)}
   .hzm.carcinogen{background:var(--plum,#6B4E71);color:var(--on-accent);padding:2px}
   .hzm.carcinogen svg{width:100%;height:100%}

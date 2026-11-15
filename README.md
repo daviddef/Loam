@@ -27,26 +27,26 @@ validated and playtested first — before a line of Swift.
 | | |
 |---|---|
 | Domain | Dirt to Dinner, extending into chemistry, metallurgy, biology, medicine and the built world |
-| Elements | **14,189** (13,833 workshop · 356 folklore) |
-| Recipes | **16,164** (15,168 merges · 996 verb processes) |
+| Elements | **20,358** (20,002 workshop · 356 folklore) |
+| Recipes | **22,333** (21,337 merges · 996 verb processes) |
 | Starters | Stone · Water · Sun · Seed |
-| Reachable | **14,189 / 14,189** from the four starters |
-| Sourced | **16,164 / 16,164** recipes, every URL machine-verified |
-| Independently verified | **14,046 / 16,164** (87%) carry `verified: true` |
-| Routes per element | **1.14** · 12,609 still have exactly one |
+| Reachable | **20,358 / 20,358** from the four starters |
+| Sourced | **22,333 / 22,333** recipes, every URL machine-verified |
+| Independently verified | **20,215 / 22,333** (91%) carry `verified: true` |
+| Routes per element | **1.10** · 18,778 still have exactly one |
 | Hazards | **351**, covering 623 elements |
 | Scale span | **20 orders of magnitude**, 10^-10 m to 10^9 m |
-| Drawings | **13,484** hand-drawn; 705 on a family fallback — a tracked backlog, not a blocker |
-| Roles | **8,577 / 14,189** — what each noun is to a making |
+| Drawings | **19,664** hand-drawn; 694 on a family fallback — a tracked backlog, not a blocker |
+| Roles | **8,577 / 20,358** — what each noun is to a making |
 | Sense-checked | **1,848** single-word names read; 181 on the watchlist |
 | Places | **442 / 442** of a checklist that is part external, so it can disagree with us |
 | Parts lists | **1,114** written |
-| Effects on a body | **622 / 623** cautioned elements answered and **39 / 39** of the nutrients a body cannot make supplied; 79 rows are things the body is better off for, 5 elements are both, 5 carry a dose ladder; **560 / 560** have had the article they cite read and found to carry the claim |
+| Effects on a body | **622 / 623** cautioned elements answered and **39 / 39** of the nutrients a body cannot make supplied; 119 rows are things the body is better off for, 5 elements are both, 5 carry a dose ladder; **644 / 644** have had the article they cite read and found to carry the claim |
 | Colours | **28**, every one a measured Munsell chip |
 
 *Counted by `node tools/readme.mjs`. Every figure here is read from the corpus at
 build time, because this file previously spent a fortnight claiming 6,874 elements
-while the corpus held 7,423 — and then did it again, claiming 7,576 against 14,189.*
+while the corpus held 7,423 — and then did it again, claiming 7,576 against 20,358.*
 <!-- STATUS:END -->
 
 Run `node tools/graph.mjs path penicillin` for the headline chain: 22 steps from
