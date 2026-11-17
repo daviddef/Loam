@@ -122,6 +122,48 @@ const figure = ({ cx = 30, head = 9, hy = 16, w = 11, body = 'bs', leg = 'lo', l
 
 const n = v => Math.round(v * 100) / 100;
 
+/**
+ * A walking ape in side view, facing right: the body every hominin is built on. The legs and arms are strokes, so the limb rig lifts them
+ * and swings them as the creature walks; everything else is filled.
+ *
+ * The rig takes a stroke of width 5.2 or less as a leg if it ends in the lowest third of the drawing and starts below its top 30 per cent, so
+ * a shoulder has to sit about a head and a half under the crown. An arm only swings if it hangs to knee height; a short-armed hominin has a
+ * static arm, which is right for one.
+ *
+ * Eyes: the engine's default animal eye lands under the crown, not in this head, so every walker has an EYE2 entry in battle.template.html
+ * at [head x + .42 r, head y - .12 r]. Give a new walker one the same way, or its eye floats.
+ *
+ * head [x, y, r] where the head is    lean  torso lean forward, degrees    torso  shoulder-to-hip length    bulk  torso half-width
+ * arm  how far the hand hangs below the shoulder    stride  how far the feet are apart    jaw  muzzle length, 0 flat to 1.4 snouted
+ * brow brow ridge, 0 none to 1.6 heavy    crest  a sagittal crest    hair  'cap' or 'mop' or ''    cloak  a fur wrap over the shoulders
+ * foot how long the foot is    chin  the chin only Homo sapiens has
+ */
+const walker = ({ head, lean = 8, torso = 17, bulk = 7.4, arm = 17, stride = 9, jaw = .6, brow = .6, crest = false, hair = '', cloak = false,
+                  body = 'bs', limb = 'lo', face = 'hi', legW = 4.4, armW = 3.6, foot = 4, chin = false, extra = [] } = {}) => {
+  const [hx, hy, r] = head, a = lean * Math.PI / 180;
+  const sx = hx - r * .6 - lean * .06, sy = hy + r * 1.45;
+  const px = sx - torso * Math.sin(a), py = sy + torso * Math.cos(a);
+  const cxm = (sx + px) / 2, cym = (sy + py) / 2;
+  return [
+    S(`M${n(px)} ${n(py)} L${n(px + stride * .4)} ${n(py + (54 - py) * .5)} L${n(px + stride)} 53 L${n(px + stride + foot)} 54`, limb, legW),
+    S(`M${n(px)} ${n(py)} L${n(px - stride * .4)} ${n(py + (54 - py) * .5)} L${n(px - stride)} 53 L${n(px - stride + foot)} 54`, limb, legW),
+    S(`M${n(sx)} ${n(sy)} L${n(sx + 4)} ${n(sy + arm * .5)} L${n(sx + 2)} ${n(sy + arm)}`, limb, armW),
+    S(`M${n(sx)} ${n(sy)} L${n(sx - 4)} ${n(sy + arm * .5)} L${n(sx - 6)} ${n(sy + arm * .95)}`, limb, armW),
+    ['g', lean, n(cxm), n(cym), [E(n(cxm), n(cym), bulk, n(torso / 2 + 2), body)]],
+    ...(cloak ? [P(`M${n(sx - 7)} ${n(sy - 1)} Q${n(cxm - 2)} ${n(sy - 5)} ${n(sx + 8)} ${n(sy + 1)} L${n(px + 9)} ${n(py + 2)} L${n(px + 4)} ${n(py + 5)} L${n(px - 2)} ${n(py + 2)} L${n(px - 8)} ${n(py + 4)} Z`, limb)] : []),
+    C(hx, hy, r, body),
+    ...(crest ? [P(`M${n(hx - r * .7)} ${n(hy - r * .6)} Q${n(hx)} ${n(hy - r * 2.1)} ${n(hx + r * .7)} ${n(hy - r * .7)} Z`, limb)] : []),
+    ...(hair === 'cap' ? [P(`M${n(hx - r)} ${n(hy)} Q${n(hx - r * .2)} ${n(hy - r * 1.5)} ${n(hx + r * .8)} ${n(hy - r * .45)} Q${n(hx)} ${n(hy - r * .7)} ${n(hx - r)} ${n(hy)} Z`, limb)] : []),
+    ...(hair === 'mop' ? [P(`M${n(hx - r * 1.1)} ${n(hy + r * .5)} Q${n(hx - r * 1.3)} ${n(hy - r * 1.4)} ${n(hx + r * .6)} ${n(hy - r * .85)} Q${n(hx - r * .3)} ${n(hy - r * .5)} ${n(hx - r * .6)} ${n(hy + r * .8)} Z`, limb)] : []),
+    E(n(hx + r * .78), n(hy + r * .38), n(r * (.3 + .38 * jaw)), n(r * .44), face),
+    E(n(hx + r * .48), n(hy - r * .36), n(r * (.52 + .24 * brow)), n(r * (.17 + .1 * brow)), limb),
+    C(n(hx - r * .2), n(hy + r * .2), n(r * .26), limb),
+    ...(chin ? [E(n(hx + r * .5), n(hy + r * 1), n(r * .3), n(r * .32), face)] : []),
+    ...extra,
+  ];
+};
+
+
 /* ── kit: the ~40 parts that compose almost everything ────────────────── */
 
 /** A heap of loose material — soil, flour, salt, ash, sand. */
@@ -5461,31 +5503,16 @@ def('liquid_nitrogen', () => [vessel('gh', 20, 48), wave('bs', 40, 3, 12),      
 
 /* early hominins — one skull silhouette, since they are one lineage, but
    each with its own brow, its own jaw, and one accent tied to its own fact */
-def('australopithecus_afarensis', () => [
-  P('M14 34 Q12 22 20 16 Q26 10 32 14 Q38 16 40 22 Q48 24 48 32 Q46 38 40 38 L36 44 Q28 46 20 42 Q14 40 14 34 Z', 'bs'),
-  S('M30 18 L38 20', 'ik', 1.4),                                  // only a faint brow yet
-  C(14, 52, 1.6, 'gh'), C(22, 54, 1.6, 'gh'),                      // the Laetoli footprints — upright already
-]);
-def('homo_habilis', () => [
-  P('M12 32 Q9 18 20 12 Q28 7 35 12 Q41 15 42 21 Q49 24 48 32 Q46 37 40 37 L35 43 Q27 46 18 41 Q12 38 12 32 Z', 'bs'),
-  S('M31 17 L40 19', 'ik', 1.6),
-  P('M44 46 L52 44 L48 52 Z', 'gh'),                               // the flake it knapped
-]);
-def('homo_erectus', () => [
-  P('M10 32 Q8 20 18 15 Q26 11 34 14 Q40 16 42 22 Q50 24 49 32 Q47 37 41 36 L37 42 Q28 45 18 41 Q10 38 10 32 Z', 'bs'),
-  S('M28 20 L44 18', 'ik', 3),                                     // a heavier brow
-  S('M14 52 L26 52 L38 52', 'gh', 1.4),                            // the long stride out of Africa
-]);
-def('homo_heidelbergensis', () => [
-  P('M9 30 Q6 15 20 9 Q30 4 38 10 Q44 14 44 20 Q52 23 50 32 Q48 37 42 36 L38 43 Q28 46 17 41 Q9 37 9 30 Z', 'bs'),
-  S('M26 17 L44 15', 'ik', 3),                                     // the biggest braincase yet
-  S('M46 46 L54 40', 'gh', 2.4),                                   // the hunting spear, organized and thrown
-]);
-def('homo_neanderthalensis', () => [
-  P('M8 32 Q3 27 8 20 Q7 12 20 8 Q30 3 38 9 Q44 13 44 20 Q52 22 50 32 Q48 38 42 37 L38 43 Q27 46 16 42 Q8 38 8 32 Z', 'bs'),
-  S('M24 18 L42 16', 'ik', 3.6),                                   // the heaviest brow, and the bun at the back
-  leaf('gh', 46, 48, .4, 20),                                      // flowers laid with the dead, at Shanidar
-]);
+def('australopithecus_afarensis', () => walker({ head: [33, 23, 5.4], lean: 14, torso: 12.5, bulk: 6, arm: 13, stride: 6, jaw: .9, brow: .35, hair: 'cap',     // Lucy: a metre tall, upright, still at home in a tree
+  extra: [E(5, 53.4, 3.2, 1.2, 'gh'), E(12, 53.4, 3.2, 1.2, 'gh')] }));                                                       // and the Laetoli footprints, behind her
+def('homo_habilis', () => walker({ head: [34, 18, 6], lean: 10, torso: 15, bulk: 6.6, arm: 17, stride: 8, jaw: .65, brow: .6, hair: 'cap',     // the handy man, long-armed still
+  extra: [P('M33 43 L40 41 L38 48 Z', 'ik'), P('M46 52 L53 50 L51 54 L46 54 Z', 'ik'), P('M50 50 L55 48.4 L53.6 52.6 Z', 'ik')] }));   // the flake in his hand, and the pile he knapped
+def('homo_erectus', () => walker({ head: [38, 12, 6.4], lean: 14, torso: 16, bulk: 6.6, arm: 17.5, stride: 12, jaw: .7, brow: 1.1, legW: 3.8,     // tall and long-legged, the first out of Africa
+  extra: [P('M20 54 L30 54 L28.4 49 L21.6 49 Z', 'lo'), P('M25 49 Q20 44 23 38 Q25 42 27 39 Q31 45 25 49 Z', 'fire-bs')] }));   // and the first to keep a fire
+def('homo_heidelbergensis', () => walker({ head: [37, 12, 7.2], lean: 6, torso: 16.5, bulk: 8.6, arm: 15, stride: 10, jaw: .7, brow: 1.4,     // the biggest braincase yet, and a big man
+  extra: [P('M54 9 L55.8 9 L55.8 54 L54 54 Z', 'hi'), P('M52.4 10 L57.4 10 L55 1 Z', 'ik')] }));                          // the hunting spear, organized and thrown
+def('homo_neanderthalensis', () => walker({ head: [36, 13, 7.4], lean: 8, torso: 17, bulk: 9.4, arm: 13, stride: 8, jaw: .8, brow: 1.6, hair: 'mop', cloak: true,     // the heaviest brow, the bun at the back, a pelt for the cold
+  extra: [P('M52.6 50 L53.6 50 L53.6 54 L52.6 54 Z', 'plant-bs'), leaf('gh', 51, 47, .4, 20), leaf('hi', 55, 50, .34, -25)] }));       // flowers laid with the dead, at Shanidar
 
 /* the stone-tool and fire-making kit, and the first art */
 def('oldowan_tool', () => [P('M16 40 L14 26 L26 14 L40 18 L42 32 L30 46 Z', 'lo'),    // a stone core, roughly flaked
@@ -11341,28 +11368,31 @@ def('epicurus', () => [
   leaf('plant-bs', 45.5, 24, 1.3, 0), leaf('plant-hi', 36, 32, .9, -50), leaf('plant-bs', 55, 32, .9, 50),
   C(40, 49, 3, 'hi'), C(51, 49, 3, 'hi'),                              // bread and water, which was the whole of the pleasure
 ]);
-def('searle', () => [
-  P('M22 20 L38 20 L38 48 L22 48 Z', 'bs'),                             // a modern jacket — straight sides, no drape
-  S('M28 20 L30 26 L32 20', 'ik', 1.6),                                  // a tie
-  C(30, 12, 5.4, 'bs'),
-  P('M40 28 L52 28 L52 40 L40 40 Z', 'lo'),                              // the room
-  S('M40 34 L44 34', 'hi', 2),                                            // a symbol, passed through the slot, understood by no one inside
+def('searle', () => [                                              // the Chinese Room: symbols shuffled by rule, understood by no one inside
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M33 24 L59 24 L59 53 L33 53 Z', 'lo'), P('M31 24 L46 14 L61 24 Z', 'bs'),   // a closed room
+  P('M33 36 L59 36 L59 40 L33 40 Z', 'ik'),                            // a slot
+  P('M50 33 L58 33 L58 43 L50 43 Z', 'hi'),                            // a card passed through
+  P('M52 35 L56 35 L56 36.4 L52 36.4 Z', 'ik'), P('M52 38 L56 38 L56 39.4 L52 39.4 Z', 'ik'),   // its marks, meaning nothing to the one who matched them
 ]);
 def('turing', () => [                                                 // a rotor: the machine he broke, and the one he imagined
   ...figure({ head: 8.8, w: 11 }),
   P('M37 28 L44 27 L44 31 L37 32 Z', 'bs'),                            // the arm, reaching for it
   ring('lo', 50, 29, 7, 2.4), C(50, 29, 2.2, 'hi'),
 ]);
-def('foot', () => [
-  P('M23 20 L37 20 L40 47 L20 47 Z', 'bs'),                              // a dress, gently flared
-  C(30, 12, 5.4, 'bs'),
-  S('M40 44 L52 44 M46 44 L52 38', 'ik', 1.8),                            // the track, branching
-  P('M42 36 L50 36 L50 42 L42 42 Z', 'lo'),                              // the tram, bearing down on it
+def('foot', () => [                                                 // the trolley problem: do nothing and five die, or throw a switch and one does
+  ...figure({ cx: 17, head: 8, w: 10, hem: 47 }),
+  P('M40 54 L43 54 L43 40 L40 40 Z', 'ik'),                            // the line in
+  P('M40 42 L34 22 L37 22 L43 42 Z', 'ik'), P('M40 42 L53 22 L56 22 L43 42 Z', 'ik'),   // and where it forks
+  P('M33 46 L50 46 L50 54 L33 54 Z', 'lo'), C(37, 54, 2.2, 'ik'), C(46, 54, 2.2, 'ik'),   // the trolley
+  ...[[31, 18], [35, 18], [39, 18]].map(([x, y]) => C(x, y, 1.6, 'hi')),   // the many, on one branch
+  C(55, 18, 1.6, 'hi'),                                                // the one, on the other
 ]);
-def('rawls', () => [
-  P('M22 20 L38 20 L40 48 L20 48 Z', 'bs'),
-  C(30, 14, 5.4, 'bs'),
-  P('M22 10 Q30 6 38 10 L40 24 Q30 20 20 24 Z', 'gh'),                    // the veil of ignorance, over his own head
+def('rawls', () => [                                            // the veil of ignorance: choose the rules not knowing who you will be
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  ...[38, 46, 54].map(x => C(x, 24, 3.6, 'bs')),                       // heads, alike, above the cloth
+  P('M33 30 L59 30 L59 52 Q54 50 50 52 Q46 50 42 52 Q38 50 33 52 Z', 'lo'),   // hung behind a veil, so no one can tell which they are
+  ...[38, 46, 54].map(x => P(`M${x - 1} 32 L${x + 1} 32 L${x + 1} 49 L${x - 1} 49 Z`, 'gh')),
 ]);
 def('aquinas', () => [
   ...figure({ cx: 17, head: 8, w: 10.5, body: 'hi' }),                 // the Dominican habit
@@ -14795,24 +14825,24 @@ def('angra_mainyu', () => [                                         // the serpe
   C(48, 40, 3, 'bs'),
   S('M46 36 L50 32 M50 40 L54 38', 'ik', 1.4),
 ]);
-def('zoroaster', () => [                                            // revelation by a riverbank; the Gathas, written down
-  P('M20 20 L40 20 L44 48 L16 48 Z', 'bs'),
-  C(30, 12, 6, 'bs'),
-  S('M27 17 L30 22 L33 17', 'lo', 1.6),
-  S('M8 46 Q20 42 30 46 Q40 50 52 46', 'hi', 2),                     // the riverbank
-  P('M42 30 L50 30 L50 40 L42 40 Z', 'gh'),                          // the hymns, set down
+def('zoroaster', () => [                                        // the sacred fire, and the Gathas he wrote
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M11 22 Q17 36 23 22 Z', 'hi'),                                    // a long white beard
+  P('M36 54 L56 54 L54 42 L38 42 Z', 'lo'),                            // the fire altar
+  P('M46 14 Q40 24 42 32 Q44 38 46 41 Q48 38 50 32 Q52 24 46 14 Z', 'fire-bs'),
+  P('M46 24 Q43 30 44 35 Q46 38 48 35 Q49 30 46 24 Z', 'fire-hi'),     // the flame that must not go out
 ]);
 def('zoroastrianism', () => [                                       // light, and its opposing shadow, kept in balance
   C(30, 28, 8, 'fire-bs'),
   S('M14 26 Q6 22 4 28 Q6 34 14 30', 'hi', 2.2), S('M46 26 Q54 22 56 28 Q54 34 46 30', 'hi', 2.2),
   S('M20 44 Q30 50 40 44', 'lo', 2),
 ]);
-def('laozi', () => [                                                // rode an ox out of China, and left his wisdom for a guard
-  P('M20 20 L40 20 L43 48 L17 48 Z', 'bs'),
-  C(30, 12, 6, 'bs'),
-  S('M25 15 L30 24 L35 15', 'lo', 1.8),                              // the long beard of tradition
-  P('M44 42 Q52 38 50 46 Q47 51 42 47 Q40 43 44 42 Z', 'lo'),        // the ox, glimpsed as he rides out
-  S('M44 42 L41 35', 'ik', 1.4),
+def('laozi', () => [                                              // left China through a mountain pass, and wrote the Tao Te Ching for its guard
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M12 22 Q17 42 22 22 Z', 'hi'),                                    // the long beard
+  P('M34 54 L34 26 L38 26 L38 54 Z', 'lo'), P('M54 54 L54 26 L58 26 L58 54 Z', 'lo'),   // the pass's gate,
+  P('M31 26 L61 26 L61 22 L31 22 Z', 'lo'), P('M29 22 Q46 10 63 22 Z', 'ik'),
+  P('M41 44 L51 44 L51 52 L41 52 Z', 'hi'), P('M40 43 L52 43 L52 45 L40 45 Z', 'lo'),   // and the scroll left at it
 ]);
 
 /* fire — bright stars & young stellar objects batch ─────────────────────
@@ -15291,71 +15321,39 @@ def('nurdle', () => [
 
 /* eleven more early hominins — the same skull-profile silhouette, since it
  * is one lineage, but each carries its own brow and its own accent. */
-def('sahelanthropus_tchadensis', () => [
-  P('M13 33 Q10 20 19 14 Q27 9 35 13 Q42 15 43 21 Q51 23 50 32 Q48 38 42 37 L38 43 Q29 46 19 42 Q13 39 13 33 Z', 'bs'),
-  S('M32 17 L41 19', 'gh', 1),                                       // barely a brow yet, this early
-  S('M28 34 L28 37', 'ik', 1.8),                                     // the foramen magnum, forward — the disputed clue to upright walking
-]);
-def('orrorin_tugenensis', () => [
-  P('M12 33 Q9 20 18 14 Q26 9 34 13 Q41 15 42 21 Q50 23 49 32 Q47 38 41 37 L37 43 Q28 46 18 42 Q12 39 12 33 Z', 'bs'),
-  S('M31 18 L40 20', 'gh', 1.2),
-  S('M50 40 Q54 46 50 54', 'lo', 3),                                 // the femur — nearly all that's known of it
-]);
-def('ardipithecus_ramidus', () => [
-  P('M13 34 Q10 21 19 15 Q27 10 35 14 Q41 16 42 22 Q50 24 49 33 Q47 38 41 38 L37 44 Q28 47 19 43 Q13 40 13 34 Z', 'bs'),
-  S('M32 18 L41 20', 'ik', 1.4),
-  P('M46 44 Q52 42 50 48 Q48 52 44 50 Z', 'lo'),                     // an opposable big toe — Ardi still gripped a branch
-]);
-def('australopithecus_africanus', () => [
-  P('M12 33 Q9 20 18 14 Q26 10 34 13 Q41 16 42 22 Q50 24 49 32 Q47 38 41 37 L37 43 Q28 46 18 42 Q12 39 12 33 Z', 'bs'),
-  S('M30 18 L40 20', 'ik', 1.8),
-  P('M8 48 Q6 40 14 38 Q20 40 18 48 Q13 52 8 48 Z', 'gh'),           // the South African cave mouth it was found in
-]);
-def('paranthropus_boisei', () => [
-  P('M11 34 Q8 22 18 16 Q26 10 34 14 Q40 17 41 23 Q49 25 49 34 Q48 42 40 42 L40 48 Q28 52 16 46 Q11 41 11 34 Z', 'bs'), // wide through the jaw
-  S('M28 10 L28 6', 'ik', 2.4), C(28, 6, 1.6, 'hi'),                 // the sagittal crest, anchoring huge chewing muscles
-  E(30, 40, 8, 4, 'lo'),                                             // "Nutcracker Man" — molars broad enough to grind
-]);
-def('homo_rudolfensis', () => [
-  P('M9 31 Q6 17 18 11 Q28 6 37 11 Q44 14 44 21 Q52 24 50 33 Q48 38 42 37 L38 43 Q28 46 17 42 Q9 38 9 31 Z', 'bs'), // a fuller braincase than habilis
-  S('M27 15 L44 13', 'ik', 2),
-  wave('gh', 52, 3, 16),                                             // Lake Turkana, where it was found
-]);
-def('homo_antecessor', () => [
-  P('M10 32 Q7 19 17 13 Q26 8 35 12 Q41 15 42 21 Q50 23 49 32 Q47 37 41 36 L37 42 Q28 45 17 41 Q10 38 10 32 Z', 'bs'),
-  S('M27 17 L43 15', 'ik', 2.6),
-  S('M46 46 L54 40', 'gh', 2.4), S('M47 44 L51 48 M50 42 L52 46', 'lo', 1.2),  // a bone, cut-marked at Atapuerca
-]);
-def('homo_naledi', () => [
-  P('M14 33 Q11 22 20 17 Q27 12 34 15 Q39 17 40 22 Q47 24 47 32 Q45 37 40 36 L36 42 Q28 45 19 41 Q14 38 14 33 Z', 'bs'), // small-brained
-  S('M31 19 L39 21', 'ik', 1.6),
-  P('M6 20 L6 52 L14 52 L14 30 Q14 22 6 20 Z', 'gh'),                // the narrow shaft down into the cave chamber
-]);
-def('homo_floresiensis', () => [
-  P('M20 38 Q18 29 24 25 Q29 21 34 24 Q38 26 38 30 Q44 31 43 37 Q42 41 38 40 L36 45 Q29 47 23 44 Q20 42 20 38 Z', 'bs'), // drawn small — the Hobbit's own scale
-  S('M30 27 L37 28', 'ik', 1.2),
-  wave('lo', 52, 3, 20),                                             // the island sea it shrank behind, on Flores
-]);
-def('denisovan', () => [
-  // known almost entirely from DNA out of a Siberian cave — a helix, not a skull, is what actually survives
-  S('M18 8 Q30 16 18 24 Q6 32 18 40 Q30 48 18 56', 'bs', 2.4),
-  S('M42 8 Q30 16 42 24 Q54 32 42 40 Q30 48 42 56', 'lo', 2.4),
-  ...[12, 24, 36, 48].map(y => S(`M18 ${y} L42 ${y}`, 'hi', 1.4)),
-  C(30, 12, 2, 'ik'),                                                // a single tooth — nearly all the bone there is
-]);
-def('australopithecus_sediba', () => [
-  P('M13 33 Q10 21 19 15 Q27 10 35 14 Q41 16 42 22 Q50 24 49 32 Q47 38 41 37 L37 43 Q28 46 19 42 Q13 39 13 33 Z', 'bs'),
-  S('M30 18 L40 20', 'ik', 1.6),
-  C(50, 48, 3, 'hi'), S('M50 51 L50 56 M47 53 L44 56 M53 53 L56 56', 'gh', 1.4),  // the nine-year-old boy who found it, at Malapa
-]);
+def('sahelanthropus_tchadensis', () => walker({ head: [35, 17, 6.2], lean: 20, torso: 14, bulk: 6.8, arm: 20, stride: 7, jaw: 1, brow: 1.5,     // seven million years old, and bent: a chimp's size, a brow like a shelf
+  extra: [E(8, 50, 5, 4.2, 'gh'), C(6.4, 48.8, 1.2, 'ik'), E(11.6, 53, 2.8, 1.4, 'gh')] }));                                  // Toumai's skull; its foramen magnum sits forward, the disputed clue to walking upright
+def('orrorin_tugenensis', () => walker({ head: [34, 17, 5.8], lean: 12, torso: 15, bulk: 6.6, arm: 16.5, stride: 8, jaw: .7, brow: .5,     // known by little more than a thigh bone, so the rest is a guess drawn small
+  extra: [P('M44 52 L56 43 L57.6 45.2 L45.6 54 Z', 'gh'), C(45, 53, 2.2, 'gh'), C(56.8, 44.2, 2.6, 'gh')] }));                 // the femur, which is nearly all there is
+def('ardipithecus_ramidus', () => walker({ head: [33, 19, 5.8], lean: 16, torso: 14, bulk: 6.8, arm: 22, stride: 6, jaw: .8, brow: .7, foot: 5,     // Ardi: upright on the ground, long-armed in the trees
+  extra: [P('M36 3 Q48 3 58 12 L57 14.4 Q47 7 36 6 Z', 'lo'), leaf('plant-bs', 52, 9, .5, 40), leaf('plant-hi', 45, 5, .4, -20)] }));   // and the branch, which her big toe could still grip
+def('australopithecus_africanus', () => walker({ head: [34, 19, 6.2], lean: 11, torso: 15, bulk: 6.9, arm: 17, stride: 8, jaw: .75, brow: .7,     // the Taung child, first of the australopithecines to be recognised
+  extra: [P('M0 54 L0 44 Q6 34 13 44 L13 54 Z', 'gh'), P('M2.4 54 L2.4 46 Q6.2 40 10.6 46 L10.6 54 Z', 'ik')] }));              // and the South African cave it was found in
+def('paranthropus_boisei', () => walker({ head: [35, 16, 7], lean: 8, torso: 15.5, bulk: 9, arm: 14.5, stride: 8, jaw: 1.1, brow: 1.2, crest: true,     // the sagittal crest anchoring huge chewing muscles, wide through the jaw
+  extra: [P('M47 37 Q47 33 51 33 Q55 33 55 37 L55 42 Q55 47 53.4 53 Q51.6 47.6 51 46 Q50.4 47.6 48.6 53 Q47 47 47 42 Z', 'gh')] }));   // Nutcracker Man: a molar broad enough to grind
+def('homo_rudolfensis', () => walker({ head: [35, 14, 6.8], lean: 8, torso: 15, bulk: 7.4, arm: 16, stride: 9, jaw: .6, brow: .8,     // a fuller braincase than habilis, and a flatter face
+  extra: [P('M44 52 Q49 49 57 51 Q59 54 56 54.4 L44 54.4 Z', 'gh'), P('M46 48 Q50 45.6 55 47.4 Q51 49 46 48 Z', 'gh')] }));       // Lake Turkana, where it was found
+def('homo_antecessor', () => walker({ head: [36, 13, 6.8], lean: 7, torso: 15.5, bulk: 7.6, arm: 15, stride: 9.5, jaw: .45, brow: 1,     // a modern-looking midface on a heavy skull, at Atapuerca
+  extra: [P('M45 47 L56 40 L57.4 42.2 L46.4 49 Z', 'gh'), C(45.6, 48, 2, 'gh'), C(56.8, 41, 2.2, 'gh'),
+          P('M49 43.6 L50.4 44.6 L50 45.6 L48.6 44.8 Z', 'ik'), P('M52 41.8 L53.4 42.8 L53 43.8 L51.6 43 Z', 'ik')] }));        // a bone, cut-marked
+def('homo_naledi', () => walker({ head: [33, 19, 5.2], lean: 6, torso: 14, bulk: 6.2, arm: 17.5, stride: 7, jaw: .5, brow: .7,     // a small brain on a body very like ours, and curved fingers for climbing
+  extra: [P('M0 12 L0 54 L10 54 L10 30 Q10 15 0 12 Z', 'gh'), P('M2 20 L2 54 L8 54 L8 32 Q8 22 2 20 Z', 'ik')] }));                // the narrow shaft down into the Rising Star chamber
+def('homo_floresiensis', () => walker({ head: [34, 27, 5.2], lean: 8, torso: 11, bulk: 5.8, arm: 11.5, stride: 5.5, jaw: .8, brow: .9, foot: 7, legW: 3.8, armW: 3.2,     // the Hobbit: a metre high, long-footed, drawn at its own scale
+  extra: [P('M0 52 Q6 49 14 52 Q8 55 0 54 Z', 'gh'), P('M44 51 Q51 48 60 51 Q52 54.4 44 54.4 Z', 'gh')] }));                      // the island sea behind it, on Flores
+def('denisovan', () => walker({ head: [37, 12.5, 7], lean: 6, torso: 16, bulk: 8, arm: 14.5, stride: 8.5, jaw: .8, brow: 1.2, hair: 'mop',     // known from DNA out of a Siberian cave, so what is drawn is a guess in the shape of a Neanderthal
+  extra: [...[0, 1, 2, 3, 4, 5, 6, 7, 8].flatMap(i => [C(n(52 + 4 * Math.sin(i * .9)), 6 + i * 5.5, 1.5, 'hi'), C(n(52 - 4 * Math.sin(i * .9)), 6 + i * 5.5, 1.5, 'lo')]),
+          ...[1, 3, 5, 7].map(i => P(`M${n(52 - 4 * Math.sin(i * .9))} ${6 + i * 5.5 - .5} L${n(52 + 4 * Math.sin(i * .9))} ${6 + i * 5.5 - .5} L${n(52 + 4 * Math.sin(i * .9))} ${6 + i * 5.5 + .5} L${n(52 - 4 * Math.sin(i * .9))} ${6 + i * 5.5 + .5} Z`, 'gh'))] }));   // the helix, which is what survives
+def('australopithecus_sediba', () => walker({ head: [34, 17, 6], lean: 10, torso: 15, bulk: 6.8, arm: 17, stride: 8, jaw: .65, brow: .6,     // a mix: an australopith's brain over a pelvis nearer ours
+  extra: [C(52, 41, 2.8, 'hi'), E(52, 47, 2.7, 3.6, 'lo'), P('M50 50 L51.8 50 L51.2 54 L49 54 Z', 'lo'), P('M52.4 50 L54 50 L55.6 54 L53.4 54 Z', 'lo'),
+          P('M49.4 44 L47 49 L48.2 49.6 L50.6 45 Z', 'lo')] }));                                                          // the nine-year-old boy who found it, at Malapa
 
 /* thirty more philosophers — the robe-and-head vocabulary, each carrying
  * the one attribute their fact actually hangs on them. */
-def('heidegger', () => [
-  P('M20 20 L38 20 L41 48 L17 48 Z', 'bs'),
-  C(30, 12, 5.6, 'bs'),
-  P('M42 26 L52 26 L47 32 L52 38 L42 38 L47 32 Z', 'gh'),            // an hourglass — Being bound inseparably to time
-  S('M42 26 L52 26 M42 38 L52 38', 'ik', 1.4),
+def('heidegger', () => [                                          // Being and Time; a clearing in the forest where Being shows itself
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M10 7 L24 7 L22 2 L12 2 Z', 'ik'),                                // the skullcap
+  P('M34 54 L41 20 L48 54 Z', 'plant-lo'), P('M45 54 L53 26 L61 54 Z', 'plant-lo'),   // black-forest firs
+  E(45, 40, 3.6, 12, 'hi'),                                            // and the clearing between them, lit
 ]);
 def('sartre', () => [                                                // existence precedes essence: the outline exists first, and nothing fills it in yet
   ...figure({ cx: 17, head: 8, w: 9.5 }),
@@ -15374,162 +15372,172 @@ def('arendt', () => [
   P('M35 22 L56 22 L56 50 L35 50 Z', 'gh'),
   P('M40 34 Q46 28 52 34 L52 50 L40 50 Z', 'bs'),                      // and the banality of the man in it
 ]);
-def('foucault', () => [
-  P('M21 20 L39 20 L42 47 L18 47 Z', 'bs'),
-  C(30, 12, 5.2, 'bs'),                                              // famously shaved
-  P('M42 20 L52 20 L52 44 L42 44 Z', 'lo'),                          // the watchtower
-  C(44, 26, 2, 'hi'),                                                // the one eye that sees every cell
+def('foucault', () => [                                           // Discipline and Punish: the Panopticon, a prison where one watcher sees every cell
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  E(17, 25, 6.4, 2.6, 'ik'),                                           // the polo-neck
+  C(46, 40, 13, 'lo'), C(46, 40, 6.4, 'gh'),                           // cells in a ring around a hollow
+  ...[0, 45, 90, 135].map(a => ['g', a, 46, 40, [P('M45.2 27 L46.8 27 L46.8 34 L45.2 34 Z', 'ik'), P('M45.2 46 L46.8 46 L46.8 53 L45.2 53 Z', 'ik')]]),
+  C(46, 40, 3.2, 'ik'), C(46, 40, 1.4, 'hi'),                          // the tower in the middle, with its one eye
 ]);
-def('derrida', () => [
-  P('M20 19 L40 19 L43 48 L17 48 Z', 'bs'),
-  C(30, 11, 5.8, 'bs'),
-  P('M42 26 L54 26 L54 44 L42 44 Z', 'gh'),                          // the page
-  S('M46 34 L46 38', 'ik', 2.4),                                     // one letter, audible only in the writing
+def('derrida', () => [                                            // deconstruction: a text always says more, and less, than it means to
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M9 12 Q17 0 25 12 Q17 6 9 12 Z', 'hi'),                           // a shock of white hair
+  P('M33 14 L58 14 L58 52 L33 52 Z', 'gh'),                            // the page
+  ...[20, 26, 38, 44].map(y => P(`M36 ${y} L55 ${y} L55 ${y + 2} L36 ${y + 2} Z`, 'ik')),
+  P('M36 31 L55 31 L55 34 L36 34 Z', 'ik'),                            // a word, written and struck through: sous rature
+  ['g', 35, 45.5, 32.5, [P('M31 31.5 L60 31.5 L60 33.5 L31 33.5 Z', 'lo')]],
 ]);
-def('popper', () => [
-  P('M22 20 L38 20 L40 48 L20 48 Z', 'bs'),
-  C(30, 12, 5.4, 'bs'),
-  ring('gh', 46, 32, 8, 1.8),                                        // a theory, held up to test
-  S('M40 26 L52 38 M40 38 L52 26', 'ik', 2),                         // and one clean cross that could refute it
+def('popper', () => [                                              // falsification: no number of white swans proves it, one black swan refutes it
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  E(46, 45, 11, 6.4, 'ik'),                                            // a black swan, the one case that breaks the rule
+  P('M52 42 Q58 34 52 26 L54.4 24 Q63 34 56.6 44 Z', 'ik'),            // its neck
+  C(54, 22, 3, 'ik'), P('M56 21 L61 23 L56 24 Z', 'lo'),
+  P('M36 44 L30 40 L38 48 Z', 'ik'),
 ]);
-def('kuhn', () => [
-  P('M21 20 L39 20 L41 47 L19 47 Z', 'bs'),
-  C(30, 12, 5.4, 'bs'),
-  S('M40 26 L52 26 M40 32 L52 32 M40 38 L52 38', 'gh', 1.4),         // the old grid
-  S('M42 24 L54 30 M42 30 L54 36 M42 36 L54 42', 'ik', 1.4),         // the new one, rotated in on top of it
+def('kuhn', () => [                                                // paradigm shifts: normal science runs inside a frame, until the frame breaks
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  ...[[34, 26], [41.6, 26], [34, 33.6], [41.6, 33.6]].map(([x, y]) => P(`M${x} ${y} L${n(x + 6.4)} ${y} L${n(x + 6.4)} ${n(y + 6.4)} L${x} ${n(y + 6.4)} Z`, 'lo')),   // the old grid
+  ['g', 24, 50, 40, [...[[42, 32], [49.6, 32], [42, 39.6], [49.6, 39.6]].map(([x, y]) => P(`M${x} ${y} L${n(x + 6.4)} ${y} L${n(x + 6.4)} ${n(y + 6.4)} L${x} ${n(y + 6.4)} Z`, 'hi'))]],   // and the new one, turned across it
 ]);
-def('chomsky', () => [
-  P('M22 19 L38 19 L40 48 L20 48 Z', 'bs'),
-  C(30, 12, 5.4, 'bs'),
-  P('M42 30 L48 26 L48 40 L42 36 Z', 'lo'),                          // the loudspeaker cone
-  S('M48 33 Q54 33 54 27 M48 33 Q54 33 54 39', 'hi', 1.6),           // consent, broadcast wide
+def('chomsky', () => [                                             // Manufacturing Consent: the media shape what is thinkable
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M9 12 Q17 1 25 12 Q17 7 9 12 Z', 'hi'),                           // grey hair
+  P('M33 30 L40 30 L50 22 L50 46 L40 38 L33 38 Z', 'lo'),             // a loudspeaker
+  P('M53 27 Q59.5 34 53 41 L55 41 Q62 34 55 27 Z', 'hi'),              // sound, going out in every direction
+  P('M57 23 Q67 34 57 45 L58.6 45 Q68 34 58.6 23 Z', 'gh'),
 ]);
-def('peter_singer', () => [
-  P('M23 20 L37 20 L39 47 L21 47 Z', 'bs'),
-  C(30, 12, 5.4, 'bs'),
-  C(46, 34, 4, 'hi'), C(41, 28, 2, 'hi'), C(51, 28, 2, 'hi'), C(43, 40, 2, 'hi'), C(49, 40, 2, 'hi'),  // a paw print
+def('peter_singer', () => [                                      // Animal Liberation: suffering counts the same whoever suffers
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  C(46, 43, 6.4, 'hi'), C(37.5, 33, 2.8, 'hi'), C(43.5, 28.4, 2.8, 'hi'), C(49.5, 28.4, 2.8, 'hi'), C(55.5, 33, 2.8, 'hi'),   // a paw print
+  P('M40 50 L52 50 L50 53 L42 53 Z', 'lo'),
 ]);
-def('william_of_ockham', () => [
-  P('M20 20 L40 20 L45 50 L15 50 Z', 'bs'),                          // a wide Franciscan habit
-  P('M24 10 Q30 5 36 10 L34 18 Q30 15 26 18 Z', 'lo'),               // the hood
-  C(30, 14, 4.8, 'hi'),
-  S('M40 24 L52 16', 'ik', 3),                                       // the razor's edge
-  S('M44 28 L48 34 M48 24 L52 30', 'gh', 1.4),                       // needless assumptions, shaved away
+def('william_of_ockham', () => [                             // Occam's razor: do not multiply entities beyond need
+  ...figure({ cx: 17, head: 8, w: 10.5, hem: 48 }),                    // a Franciscan, in plain grey
+  P('M8 14 Q9 4 17 3 Q25 4 26 14 Q17 9 8 14 Z', 'lo'),                 // the hood, up
+  E(17, 31, 9.4, 1.8, 'hi'),                                           // the knotted cord
+  P('M34 30 L52 14 L55 17 L39 36 Z', 'ik'),                            // the razor's blade
+  P('M31 38 L38 30 L41 33 L34 41 Z', 'lo'),                            // and its handle
+  P('M52 24 L56 24 L56 27 L52 27 Z', 'gh'), P('M56 30 L59 30 L59 33 L56 33 Z', 'gh'), P('M46 12 L49 12 L49 15 L46 15 Z', 'gh'),   // needless extras, falling away
 ]);
-def('ayn_rand', () => [
-  P('M23 19 L37 19 L41 50 L19 50 Z', 'bs'),
-  C(30, 12, 5.4, 'bs'),
-  S('M46 20 L46 44', 'ik', 2.6),
-  S('M40 26 Q40 22 46 22 Q52 22 52 26 Q52 30 46 30 Q40 30 40 34 Q40 38 46 38 Q52 38 52 34', 'hi', 2.2),  // the dollar sign, from Atlas Shrugged
+def('ayn_rand', () => [                                           // Atlas Shrugged: the individual, and the towers built by one will
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M35 54 L35 28 L40 28 L40 18 L44 18 L44 8 L48 8 L48 18 L52 18 L52 28 L57 28 L57 54 Z', 'ik'),   // a skyscraper
+  ...[[38, 32], [38, 38], [38, 44], [43, 22], [43, 28], [46, 12], [46, 18], [51, 32], [51, 38], [51, 44]].map(([x, y]) => P(`M${x} ${y} L${x + 3} ${y} L${x + 3} ${y + 3} L${x} ${y + 3} Z`, 'hi')),   // its lit windows
 ]);
-def('edward_said', () => [
-  P('M21 20 L39 20 L42 48 L18 48 Z', 'bs'),
-  C(30, 12, 5.4, 'bs'),
-  E(47, 32, 8, 8, 'gh'),                                             // a globe
-  S('M47 24 L47 40', 'ik', 1.2), S('M39 32 L55 32', 'ik', 1.2),      // the line drawn down its middle — East, as the West depicted it
+def('edward_said', () => [                                        // Orientalism: how one half of the world was drawn by the other
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  C(46, 37, 13, 'water-bs'),                                           // a globe
+  P('M38 28 Q43 25 48 29 Q46 34 40 35 Q36 33 38 28 Z', 'plant-bs'), P('M46 40 Q53 38 57 43 Q54 49 48 48 Z', 'plant-bs'),   // continents
+  P('M45.2 24 L48 24 Q51 37 48 50 L45.2 50 Q48 37 45.2 24 Z', 'ik'),   // the line drawn down the middle
 ]);
-def('habermas', () => [
-  P('M23 20 L37 20 L40 48 L20 48 Z', 'bs'),
-  C(30, 12, 5.4, 'bs'),
-  P('M42 32 L52 32 L51 42 Q51 46 47 46 L44 46 Q40 46 40 42 Z', 'lo'), // the coffeehouse cup
-  S('M52 34 Q57 34 57 38 Q57 42 52 40', 'ik', 1.6),
-  S('M44 28 Q44 25 46 25 M48 28 Q48 25 50 25', 'gh', 1.2),           // steam — the debate still going
+def('habermas', () => [                                           // the public sphere: argument over coffee that the state does not run
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M34 32 L55 32 L52 47 Q44 52 37 47 Z', 'lo'),                      // the coffeehouse cup
+  C(57, 38, 3.6, 'lo'), C(57, 38, 1.8, 'gh'),                          // its handle
+  E(45, 50, 12, 2.6, 'hi'),                                            // and saucer
+  E(40, 25, 1.8, 3.6, 'gh'), E(46, 23, 1.8, 4.2, 'gh'), E(52, 25, 1.8, 3.6, 'gh'),   // steam: the debate still going
 ]);
-def('isaiah_berlin', () => [
-  P('M22 20 L38 20 L40 48 L20 48 Z', 'bs'),
-  C(30, 12, 5.4, 'bs'),
-  S('M42 26 L52 26', 'ik', 2.2), P('M52 26 L48 23 L48 29 Z', 'hi'),  // freedom FROM restraint
-  S('M42 38 L52 34', 'ik', 2.2), P('M52 34 L47 33 L49 38 Z', 'hi'),  // freedom TO one's own fate
+def('isaiah_berlin', () => [                                      // Two Concepts of Liberty: freedom from interference, and freedom to act
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M34 20 L49 20 L49 16 L58 24 L49 32 L49 28 L34 28 Z', 'hi'),       // freedom to: an arrow, going forward
+  P('M58 38 L43 38 L43 34 L34 42 L43 50 L43 46 L58 46 Z', 'lo'),       // freedom from: an arrow, pulling back
 ]);
-def('adorno', () => [
-  P('M21 19 L39 19 L41 48 L19 48 Z', 'bs'),
-  C(30, 12, 5.4, 'bs'),
-  P('M40 26 L54 26 L54 40 L40 40 Z', 'gh'),                          // the screen
-  ...[44, 48, 52].map(x => C(x, 33, 1.6, 'ik')),                     // identical output, the culture industry's product
+def('adorno', () => [                                              // the culture industry: mass entertainment, made to one pattern
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M34 26 L58 26 L58 48 L34 48 Z', 'ik'), P('M36 28 L56 28 L56 44 L36 44 Z', 'gh'),   // a screen
+  ...[38, 44, 50].map(x => P(`M${x} 31 L${x + 4} 31 L${x + 4} 35 L${x} 35 Z`, 'lo')),   // the same square, in every row
+  ...[38, 44, 50].map(x => P(`M${x} 37 L${x + 4} 37 L${x + 4} 41 L${x} 41 Z`, 'lo')),
+  P('M44 26 L38 16 L39.6 15 L46 26 Z', 'ik'), P('M48 26 L54 16 L52.4 15 L46 26 Z', 'ik'),   // aerials
 ]);
-def('marcuse', () => [
-  P('M22 20 L38 20 L40 48 L20 48 Z', 'bs'),
-  C(30, 12, 5.4, 'bs'),
-  S('M42 24 L42 44', 'ik', 1.8),
-  P('M38 44 L46 44 L46 52 L38 52 Z', 'lo'), C(42, 48, 1, 'hi'),      // a need, bought rather than felt
+def('marcuse', () => [                                             // One-Dimensional Man: needs made for us, then sold back
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M34 22 L50 22 L58 33 L50 44 L34 44 Z', 'hi'),                     // a price tag
+  C(39, 33, 2.4, 'ik'),
+  P('M44 28 L51 28 L51 30 L44 30 Z', 'ik'), P('M44 34 L53 34 L53 36 L44 36 Z', 'ik'), P('M44 40 L50 40 L50 42 L44 42 Z', 'ik'),
 ]);
-def('levinas', () => [
-  P('M23 19 L37 19 L39 48 L21 48 Z', 'bs'),
-  C(30, 12, 5.4, 'bs'),
-  E(48, 28, 7, 8, 'gh'),                                             // another face, met
-  C(45, 26, 1.4, 'ik'), C(51, 26, 1.4, 'ik'),                        // ethics, starting here, before reasoning
+def('levinas', () => [                                             // ethics begins in meeting another person's face
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  C(38, 30, 3.6, 'hi'), P('M33 52 Q33 36 38 36 Q43 36 43 52 Z', 'hi'),  // someone met,
+  C(55, 30, 3.6, 'lo'), P('M50 52 Q50 36 55 36 Q60 36 60 52 Z', 'lo'),  // and someone meeting them, face to face
+  P('M44.5 40 L48.5 40 L48.5 44 L44.5 44 Z', 'ik'),                    // the gap between, where the obligation lies
 ]);
-def('merleau_ponty', () => [
-  P('M22 20 L38 20 L40 48 L20 48 Z', 'bs'),
-  C(30, 12, 5.4, 'bs'),
-  S('M40 30 L48 24 M40 34 L50 30 M40 38 L48 36', 'ik', 2),           // a hand, reaching — the body doing the knowing
-  C(50, 27, 1.4, 'hi'),
+def('merleau_ponty', () => [                                      // Phenomenology of Perception: the body is how we know the world
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  E(46, 46, 9, 7.4, 'hi'),                                             // the palm
+  E(39, 33, 2.4, 7, 'hi'), E(44, 30, 2.4, 8, 'hi'), E(49, 30, 2.4, 8, 'hi'), E(54, 33, 2.4, 7, 'hi'),   // four fingers, reaching
+  ['g', 55, 55.5, 47, [E(55.5, 47, 2.4, 5.6, 'hi')]],                  // the thumb
+  C(46, 46, 2.6, 'ik'), C(46, 46, 1, 'hi'),                            // and an eye in it: the hand does the seeing
 ]);
-def('quine', () => [
-  P('M21 20 L39 20 L41 48 L19 48 Z', 'bs'),
-  C(30, 12, 5.4, 'bs'),
-  P('M40 24 L50 24 L50 32 L44 32 L41 36 L41 32 L40 32 Z', 'gh'),     // a word, spoken
-  P('M44 34 L54 34 L54 42 L48 42 L45 46 L45 42 L44 42 Z', 'lo'),     // translated — never quite settled
+def('quine', () => [                                                // indeterminacy of translation: no fact of the matter, only fits
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M34 14 L51 14 Q53 14 53 16 L53 27 Q53 29 51 29 L42 29 L38 34 L38 29 L36 29 Q34 29 34 27 Z', 'hi'),   // a word, spoken
+  P('M43 32 L56 32 Q58 32 58 34 L58 45 Q58 47 56 47 L53 47 L53 52 L48 47 L43 47 Q41 47 41 45 L41 34 Q41 32 43 32 Z', 'lo'),   // and its translation, never quite fixed
+  C(40, 21, 1.8, 'ik'), C(46, 21, 1.8, 'ik'), C(48, 39, 1.8, 'hi'), C(53, 39, 1.8, 'hi'),
 ]);
-def('barthes', () => [
-  P('M22 19 L38 19 L40 48 L20 48 Z', 'bs'),
-  C(30, 12, 5.4, 'bs'),
-  P('M40 30 L54 30 L54 42 L40 42 Z', 'gh'), S('M47 30 L47 42', 'ik', 1),  // the book, open
-  S('M40 26 L52 34', 'hi', 1.6),                                     // the pen, set down — the author gone from the text
+def('barthes', () => [                                              // Camera Lucida, Mythologies: a picture says more than its maker meant
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M34 16 L58 16 L58 52 L34 52 Z', 'hi'),                            // a photograph, in its white border
+  P('M36 18 L56 18 L56 42 L36 42 Z', 'lo'),
+  C(46, 27, 3.8, 'gh'), P('M38 42 Q38 31 46 31 Q54 31 54 42 Z', 'gh'), // a figure in it, caught
+  P('M38 45 L52 45 L52 47 L38 47 Z', 'ik'),                            // and one caption line, left half-written
 ]);
-def('fanon', () => [
-  P('M23 20 L37 20 L39 48 L21 48 Z', 'bs'),
-  C(30, 12, 5.4, 'bs'),
-  E(47, 30, 7, 9, 'gh'),                                             // a mask, held up
-  C(44, 28, 1.4, 'ik'), C(50, 28, 1.4, 'ik'), S('M45 34 Q47 36 49 34', 'ik', 1.2),
+def('fanon', () => [                                                // Black Skin, White Masks: the face put on to be accepted
+  ...figure({ cx: 17, head: 8, w: 9.5, body: 'lo' }),
+  E(49, 36, 9, 12, 'lo'), E(46, 34, 9, 12, 'hi'),                      // a mask, held in front of a darker face
+  C(43, 31, 1.8, 'ik'), C(49, 31, 1.8, 'ik'),
+  P('M43 39 Q46 42 49 39 L49 40.6 Q46 44 43 40.6 Z', 'ik'),
+  P('M44 46 L48 46 L48 54 L44 54 Z', 'ik'),                            // the stick it is held on
 ]);
-def('arne_naess', () => [
-  P('M22 20 L38 20 L40 48 L20 48 Z', 'bs'),
-  C(30, 12, 5.4, 'bs'),
-  leaf('plant-bs', 30, 40, .9, 0),                                   // a leaf growing from him, not beside him
-  S('M30 46 L30 52', 'plant-bs', 1.6),
+def('arne_naess', () => [                                        // deep ecology: the living world matters in itself, and we are part of it
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M44 52 L44.6 32 L47.4 32 L48 52 Z', 'lo'),                        // a tree
+  C(40, 26, 5.6, 'plant-bs'), C(52, 26, 5.6, 'plant-bs'), C(46, 20, 6, 'plant-bs'), C(46, 27, 5, 'plant-hi'),
+  P('M8 53 Q28 50 46 52 Q64 50 66 53 Q64 56 46 55 Q28 57 8 55 Z', 'plant-lo'),   // roots, running under both of them
 ]);
-def('giordano_bruno', () => [
-  P('M22 22 L38 22 L40 46 L20 46 Z', 'bs'),
-  C(30, 14, 5.4, 'bs'),
-  P('M24 52 Q22 46 26 42 Q24 48 30 50 Q36 48 34 42 Q38 46 36 52 Z', 'fire-bs'),  // the stake
-  ...[[44, 14], [50, 22], [46, 30]].map(([x, y]) => C(x, y, 1.4, 'hi')),  // countless suns, past this one
+def('giordano_bruno', () => [                                      // burned in Rome in 1600; held that the stars are other suns
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M5 54 Q3 46 9 41 Q9 47 13 47 Q11 39 17 32 Q19 43 23 45 Q31 49 29 54 Z', 'fire-bs'),   // the fire at his feet
+  P('M10 54 Q10 49 14 47 Q15 51 18 50 Q21 52 24 54 Z', 'fire-hi'),
+  P('M52 6 L54 13 L61 15 L54 17 L52 24 L50 17 L43 15 L50 13 Z', 'hi'),   // other suns, past this one
+  P('M38 28 L39.6 32.4 L44 34 L39.6 35.6 L38 40 L36.4 35.6 L32 34 L36.4 32.4 Z', 'hi'),
+  P('M54 36 L55.4 40 L59.4 41.4 L55.4 42.8 L54 46.8 L52.6 42.8 L48.6 41.4 L52.6 40 Z', 'hi'),
 ]);
-def('gilbert_ryle', () => [
-  P('M21 19 L39 19 L41 48 L19 48 Z', 'bs'),
-  C(30, 12, 5.4, 'bs'),
-  P('M40 26 L52 26 L52 40 L40 40 Z', 'lo'),                          // the machine
-  P('M43 28 Q46 24 49 28 L49 36 Q46 39 43 36 Z', 'gh'),              // the "ghost" he said wasn't really inside it
+def('gilbert_ryle', () => [                                       // The Concept of Mind: no ghost inside the machine
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M34 34 L58 34 L58 52 L34 52 Z', 'lo'), C(40, 43, 3.2, 'hi'), C(51, 43, 2.2, 'ik'),   // the machine, with its dial
+  P('M39 30 Q39 16 46 16 Q53 16 53 30 L50 27 L46 30 L42 27 Z', 'gh'),  // the ghost said to live in it
+  C(43, 22, 1.4, 'ik'), C(49, 22, 1.4, 'ik'),
 ]);
-def('j_l_austin', () => [
-  P('M22 20 L38 20 L40 48 L20 48 Z', 'bs'),
-  C(30, 12, 5.4, 'bs'),
-  P('M40 26 L52 26 L52 36 L46 36 L43 40 L43 36 L40 36 Z', 'gh'),     // a sentence, spoken
-  S('M44 30 L47 33 L52 28', 'ik', 1.8),                              // and something done, not just described
+def('j_l_austin', () => [                                          // How to Do Things with Words: to say it is to do it
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  ['g', -32, 46, 24, [P('M37 20 L55 20 L55 29 L37 29 Z', 'lo'), P('M45 29 L47 29 L47 44 L45 44 Z', 'ik')]],   // a gavel: "I now pronounce you"
+  E(46, 51, 11, 3, 'hi'),                                              // struck on the block, and it is so
 ]);
-def('rene_girard', () => [
-  P('M23 19 L37 19 L39 48 L21 48 Z', 'bs'),
-  C(30, 12, 5.4, 'bs'),
-  C(48, 34, 3, 'lo'),                                                // the one, set apart
-  ...[[38, 26], [42, 40], [54, 26], [56, 40]].map(([x, y]) => C(x, y, 1.6, 'gh')),  // the group, turned against him
+def('rene_girard', () => [                                         // mimetic desire, and the scapegoat the group turns on
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  C(46, 38, 4, 'lo'), P('M41 52 Q41 43 46 43 Q51 43 51 52 Z', 'lo'),   // the one, set apart
+  ...[0, 60, 120, 180, 240, 300].map(a => C(n(46 + 14.5 * Math.cos(a * Math.PI / 180)), n(38 + 14.5 * Math.sin(a * Math.PI / 180)), 2.6, 'gh')),   // and the many, turned toward him
 ]);
-def('daniel_dennett', () => [
-  P('M22 20 L38 20 L40 48 L20 48 Z', 'bs'),
-  C(30, 12, 5.4, 'bs'),
-  E(47, 30, 8, 7, 'gh'),                                             // the brain
-  ...[[43, 27], [50, 28], [45, 33], [51, 34]].map(([x, y]) => C(x, y, 1.2, 'ik')),  // scattered activity, nowhere central
+def('daniel_dennett', () => [                                     // multiple drafts: no single finished version of the mind
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M10 23 Q17 35 24 23 Z', 'hi'),                                    // the white beard
+  ['g', -12, 44, 34, [P('M36 18 L52 18 L52 50 L36 50 Z', 'gh')]],
+  ['g', 4, 46, 34, [P('M38 16 L54 16 L54 48 L38 48 Z', 'hi')]],
+  ['g', 14, 48, 34, [P('M40 18 L56 18 L56 50 L40 50 Z', 'lo')]],      // drafts, stacked and crossed, none of them the last
+  P('M43 26 L53 26 L53 28 L43 28 Z', 'ik'), P('M43 33 L53 33 L53 35 L43 35 Z', 'ik'), P('M43 40 L50 40 L50 42 L43 42 Z', 'ik'),
 ]);
-def('martha_nussbaum', () => [
-  P('M23 19 L37 19 L41 50 L19 50 Z', 'bs'),
-  C(30, 12, 5.4, 'bs'),
-  P('M42 40 L52 40 L50 48 L44 48 Z', 'lo'),                          // a small pot
-  leaf('plant-bs', 47, 36, .55, -10), leaf('plant-bs', 47, 34, .5, 15),  // room to flourish, given the chance
+def('martha_nussbaum', () => [                                  // the capabilities approach: what each person is able to do and be
+  ...figure({ cx: 17, head: 8, w: 9.5, hem: 47 }),
+  P('M37 40 L55 40 L52 54 L40 54 Z', 'lo'), P('M36 38 L56 38 L56 41.4 L36 41.4 Z', 'hi'),   // a pot, with room to grow
+  P('M45 40 L47 40 L47 26 L45 26 Z', 'plant-lo'),
+  leaf('plant-bs', 46, 22, 1.2, 0), leaf('plant-hi', 39, 30, .9, -55), leaf('plant-bs', 53, 30, .9, 55),   // and the plant, flourishing
 ]);
-def('hypatia', () => [
-  P('M23 19 L37 19 L40 48 L20 48 Z', 'bs'),
-  C(30, 12, 5.4, 'bs'),
-  ring('lo', 47, 30, 8, 1.8),                                        // the astrolabe she taught others to build
-  S('M47 22 L47 38 M39 30 L55 30', 'hi', 1.2),
+def('hypatia', () => [                                           // the astrolabe she taught others to build
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  C(46, 41, 11.4, 'lo'), C(46, 41, 9, 'hi'), C(46, 41, 2.2, 'ik'),     // a disc, marked round
+  P('M35 40 L57 40 L57 42 L35 42 Z', 'ik'), P('M45 31 L47 31 L47 52 L45 52 Z', 'ik'),
+  ['g', 40, 46, 41, [P('M37 40 L55 40 L55 42 L37 42 Z', 'lo')]],       // and the rule that sights a star
+  P('M44 25 L48 25 L48 29.6 L44 29.6 Z', 'lo'),                        // its ring, to hang it by
 ]);
 
 /* household objects — sixteen ids that would otherwise share the plain
@@ -17337,10 +17345,11 @@ def('daoism', () => [                                                       // w
   P('M10 50 L22 30 L30 42 L40 24 L52 50 Z', 'bs'),                          // the near one
   wave('gh', 40, 3, 24),                                                    // mist banked along the slope
 ]);
-def('mahavira', () => [                                                     // kayotsarga: standing, motionless, arms just clear of the body
-  E(30, 20, 6, 6, 'hi'),                                                    // shaved head
-  P('M24 26 L36 26 L34 54 L26 54 Z', 'bs'),                                 // unclothed, upright
-  S('M24 30 L16 48 M36 30 L44 48', 'ik', 2),                                // arms held apart from the torso
+def('mahavira', () => [                                          // kayotsarga: standing, still, arms just clear of the body
+  ...figure({ cx: 17, head: 7.6, hy: 15, w: 5.6, hem: 46 }),           // upright and unclothed: the plainest possible figure
+  P('M11.6 28 L5 47 L8 48.4 L13.4 34 Z', 'bs'), P('M22.4 28 L29 47 L26 48.4 L20.6 34 Z', 'bs'),   // arms held clear of the torso
+  leaf('plant-hi', 46, 44, 1.1, 0), leaf('plant-hi', 39, 46, .9, -55), leaf('plant-hi', 53, 46, .9, 55),   // a lotus
+  C(46, 48, 2.6, 'fire-hi'),
 ]);
 def('ahimsa', () => [                                                       // straining water so no small life is harmed in the drinking of it
   vessel('bs', 26),
@@ -17490,11 +17499,12 @@ def('bhakti', () => [                                                       // K
   C(20, 35, 1, 'ik'), C(26, 32, 1, 'ik'), C(32, 29, 1, 'ik'),                // finger holes along the flute
   P('M40 8 Q46 16 42 24 Q38 18 40 8 Z', 'hi'), C(41, 15, 1.6, 'lo'),         // the feather's eye
 ]);
-def('adi_shankara', () => [                                                 // the young philosopher: staff in hand, commentary in the other
-  P('M22 50 Q22 30 30 30 Q38 30 38 50 Z', 'bs'),
-  C(30, 22, 6, 'hi'),
-  S('M40 16 L40 50', 'ik', 2),                                              // the ascetic's staff
-  P('M12 36 L22 36 L22 42 L12 42 Z', 'lo'),                                 // the manuscript, tucked at his side
+def('adi_shankara', () => [                                   // the young philosopher: the ascetic's staff, and the commentary
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M48 6 L50 6 L50 54 L48 54 Z', 'ik'),                              // the staff
+  P('M44 10 L54 10 L54 12 L44 12 Z', 'ik'),
+  P('M33 30 L46 30 L46 46 L33 46 Z', 'hi'),                            // a manuscript, on palm leaf
+  P('M35 34 L44 34 L44 35.4 L35 35.4 Z', 'ik'), P('M35 38 L44 38 L44 39.4 L35 39.4 Z', 'ik'), P('M35 42 L41 42 L41 43.4 L35 43.4 Z', 'ik'),
 ]);
 def('advaita_vedanta', () => [                                              // the drop, indistinguishable from the ocean it enters
   wave('lo', 46, 6, 26), wave('bs', 38, 5, 24),
@@ -17531,10 +17541,12 @@ def('muhammad', () => [                                                     // a
   P('M14 36 L20 36 L20 44 L14 44 Z', 'bs'), P('M32 36 L38 36 L38 44 L32 44 Z', 'bs'), // laden saddlebags
   ...[-9, -3, 5, 10].map(dx => S(`M${26 + dx} 45 L${26 + dx} 54`, 'lo', 2.2)),
 ]);
-def('guru_nanak', () => [                                                   // three days in the river, and a return with a single teaching
-  wave('lo', 44, 5, 24), wave('bs', 36, 4, 22),
-  P('M26 34 Q26 24 34 24 L34 36 Z', 'hi'),                                  // the figure, rising from the water
-  C(31, 20, 4, 'hi'),
+def('guru_nanak', () => [                                       // three days in a river, and a return with one teaching
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M2 50 Q17 44 32 50 Q17 56 2 50 Z', 'water-bs'),                   // the river, at his feet
+  C(46, 28, 6, 'fire-hi'),                                             // the sun, rising on the teaching
+  ...[0, 45, 90, 135, 180, 225, 270, 315].map(a => ['g', a, 46, 28, [P('M45 18.4 L47 18.4 L46 14 Z', 'fire-hi')]]),
+  P('M36 54 L56 54 L54 46 L38 46 Z', 'hi'),                            // and the shared meal that followed
 ]);
 def('zarathustra', () => [                                            // the fire kept burning as the emblem of truth
   ...figure({ cx: 18, head: 8, w: 9.5 }),
@@ -20488,10 +20500,11 @@ def('diaspora', () => [                                              // one home
     .map(([x, y]) => C(x, y, 2, 'lo')),
   S('M30 30 L14 14 M30 30 L46 14 M30 30 L10 32 M30 30 L50 32 M30 30 L16 48 M30 30 L44 48 M30 30 L30 10 M30 30 L30 52', 'gh', .8),
 ]);
-def('maimonides', () => [                                            // "God is one" — no parts, no attributes, argued through his own writing
-  C(30, 20, 8, 'bs'),
-  P('M14 34 L46 34 L46 50 L14 50 Z', 'lo'),                          // the Mishneh Torah, his own codification
-  S('M18 40 L42 40 M18 45 L42 45', 'gh', 1),
+def('maimonides', () => [                                      // physician and codifier of the law; "God is one"
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  E(17, 9.2, 8, 3, 'hi'),                                              // a scholar's cap
+  P('M33 20 L58 20 L58 52 L33 52 Z', 'lo'), P('M33 20 L36 20 L36 52 L33 52 Z', 'ik'),   // the Mishneh Torah, his own code
+  P('M46 24 L55 40 L37 40 Z', 'hi'), P('M46 44 L37 28 L55 28 Z', 'hi'),   // and the star on it, one figure from two triangles
 ]);
 def('nicene_creed', () => [                                          // bishops gathered at Nicaea, settling one shared statement of belief
   E(30, 34, 20, 12, 'gh'),                                            // the council table
@@ -21779,8 +21792,8 @@ def('heraclitus', () => [
 ]);
 def('parmenides', () => [
   ...figure({ cx: 17, head: 8, w: 9.5 }),
-  C(46, 33, 12, 'ik'), C(46, 33, 10.4, 'hi'),                          // being as one unbroken, well-rounded sphere
-  P('M38 28 Q40 24 44 23 L45 25 Q41 26 40 30 Z', 'bs'),               // with nothing in it to change
+  C(46, 41, 11, 'ik'), C(46, 41, 9.4, 'hi'),                           // being as one unbroken, well-rounded sphere
+  P('M38 36 Q40 32 44 31 L45 33 Q41 34 40 38 Z', 'bs'),               // with nothing in it to change
 ]);
 def('protagoras', () => [
   ...figure({ cx: 17, head: 8, w: 9.5 }),
@@ -21821,8 +21834,8 @@ def('socratic_method', () => [
 def('augustine_of_hippo', () => [
   ...figure({ cx: 17, head: 8, w: 10 }),
   P('M10 9 L24 9 L17 0 Z', 'hi'),                                      // the bishop's mitre
-  C(46, 34, 12, 'hi'),                                                 // the good, entire
-  P('M46 34 L58 34 A12 12 0 0 1 52.2 44.4 Z', 'gh'),                   // and evil, no substance of its own: a wedge of good gone missing
+  P('M46 52 Q31 40 35 29 Q40 21 46 29 Q52 21 57 29 Q61 40 46 52 Z', 'hi'),   // the restless heart, which rests only in God
+  P('M46 29 L49 36 L44 41 L48 46 L46 52 L42 45 L47 40 L43 35 Z', 'gh'),      // and the crack evil leaves in it: the good, gone missing
 ]);
 def('boethius', () => [
   ...figure({ cx: 17, head: 8, w: 9.5 }),
@@ -21834,7 +21847,7 @@ def('boethius', () => [
 def('anselm', () => [
   ...figure({ cx: 17, head: 8, w: 10 }),
   P('M11 9 L23 9 L17 0 Z', 'hi'),                                      // the archbishop's mitre
-  C(46, 33, 12.4, 'gh'), C(46, 33, 8.6, 'hi'), C(46, 33, 4.6, 'ik'),   // the greatest conceivable being, each thought outgrown by a larger
+  C(46, 40, 12.4, 'gh'), C(46, 40, 8.6, 'hi'), C(46, 40, 4.6, 'ik'),   // the greatest conceivable being, each thought outgrown by a larger
 ]);
 def('averroes', () => [
   ...figure({ cx: 17, head: 8, w: 10 }),
@@ -24247,72 +24260,71 @@ def('netherlands', () => [                                          // more than
    Coat-and-head vocabulary, borrowed from the eighteen philosophers above:
    a tailored jacket, a bald or capped head, and one attribute that is
    actually theirs, drawn from their own fact. */
-def('arnold_pick', () => [
-  P('M21 20 L39 20 L42 48 L18 48 Z', 'bs'),
-  C(30, 12, 5.6, 'bs'),
-  E(25, 9, 3, 3.6, 'lo'),                                            // a bite taken from the temple — the atrophy his 1892 report first named
-  P('M42 28 L52 28 L52 40 L42 40 Z', 'hi'), S('M44 32 L50 32 M44 36 L50 36', 'ik', 1),  // the case report, ruled and waiting
+def('arnold_pick', () => [                                    // Pick's disease: the front of the brain wasting away, first named in his 1892 report
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  E(46, 34, 11, 8.6, 'hi'),                                            // a brain
+  E(38, 31, 5.4, 5.8, 'lo'),                                           // its front lobe, shrunken to a bite
+  P('M44 41 Q43 50 46 52 L49 52 Q50 48 49 41 Z', 'hi'),                // and the stem
+  P('M44 28 Q48 26 52 29 L51.4 30.2 Q48 28 45 29.6 Z', 'gh'),
 ]);
-def('auguste_deter', () => [
-  P('M23 20 L37 20 L41 50 L19 50 Z', 'bs'),                          // a plain dress — she is the patient, not the theorist
-  C(30, 12, 6, 'gh'),                                                 // the head, drawn thin: this is what the autopsy found, not who she was
-  S('M27 10 Q30 13 28 15 Q31 12 33 14', 'ik', 1),                     // a tangle, traced inside
-  C(27, 9, 1, 'lo'), C(33, 12, 1, 'lo'), C(29, 14, 1, 'lo'),          // plaques, scattered
+def('auguste_deter', () => [                                   // Alzheimer's first patient: the case, not the theorist
+  ...figure({ cx: 17, head: 8, w: 9.5, hem: 47 }),
+  E(47, 40, 10.4, 7.4, 'gh'),                                          // a slice of her brain, as the autopsy found it
+  P('M39 38 Q42 33 44 38 Q46 43 50 37 Q52 35 54 39 L53 40.2 Q51 37.6 49 40.6 Q46 47 43 40.4 Q41 36.6 40 39.6 Z', 'ik'),   // a tangle inside it
+  C(41, 44, 1.4, 'lo'), C(52, 44, 1.4, 'lo'), C(45, 34.4, 1.4, 'lo'), C(54, 35, 1.4, 'lo'),   // and plaques
+  P('M40 24 L54 24 L54 26 L40 26 Z', 'gh'),
 ]);
-def('otto_kernberg', () => [
-  P('M22 20 L38 20 L41 48 L19 48 Z', 'bs'),
-  C(30, 12, 5.6, 'bs'),
-  C(45, 36, 5, 'hi'), C(45, 36, 2.2, 'lo'),                          // a self, carrying a smaller internalized other inside it — the model he built
+def('otto_kernberg', () => [                                   // a self that carries an internalised other inside it
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M34 54 Q34 38 46 38 Q58 38 58 54 Z', 'hi'), C(46, 30, 6, 'hi'),   // a figure,
+  P('M41 54 Q41 45 46 45 Q51 45 51 54 Z', 'lo'), C(46, 40.4, 2.8, 'lo'),   // and a smaller one inside it
 ]);
-def('marsha_linehan', () => [
-  P('M20 19 L40 19 L42 48 L18 48 Z', 'bs'),
-  C(30, 12, 5.6, 'bs'),
-  S('M42 24 L54 24', 'ik', 2),                                        // a beam
-  P('M46 24 L50 24 L48 30 Z', 'lo'),                                  // balanced on a fulcrum
-  C(42, 24, 2.2, 'hi'), C(54, 24, 2.2, 'bs'),                         // acceptance and change, held level — dialectics, not compromise
+def('marsha_linehan', () => [                                 // dialectical behaviour therapy: accept and change, held level
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M33 36 L59 36 L59 38.4 L33 38.4 Z', 'ik'),                        // a beam, level
+  P('M42 38.4 L50 38.4 L46 46 Z', 'lo'), P('M38 46 L54 46 L54 48 L38 48 Z', 'lo'),   // on its pivot
+  C(37, 32, 3.6, 'hi'), C(55, 32, 3.6, 'bs'),                          // acceptance and change, neither outweighing the other
 ]);
-def('john_gunderson', () => [
-  P('M23 21 L37 21 L39 49 L21 49 Z', 'bs'),
-  C(30, 12, 5.6, 'bs'),
-  P('M40 26 L52 26 L52 40 L40 40 Z', 'hi'), S('M42 30 L50 30 M42 34 L48 34', 'ik', 1),  // the 1975 paper
-  ring('lo', 48, 36, 3.4, 1.2),                                       // a seal, set on it — a diagnosis, made official
+def('john_gunderson', () => [                                 // his 1975 paper that set out what borderline personality is
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M38 27 L57 27 L57 51 L38 51 Z', 'hi'),                            // the paper
+  P('M40.6 32 L54.4 32 L54.4 33.4 L40.6 33.4 Z', 'ik'), P('M40.6 36.6 L54.4 36.6 L54.4 38 L40.6 38 Z', 'ik'), P('M40.6 41.2 L49 41.2 L49 42.6 L40.6 42.6 Z', 'ik'),
+  C(51, 45.6, 4.2, 'fire-bs'), P('M48 48.4 L46 54 L50 52.4 L52 55 L53 48.4 Z', 'fire-bs'),   // and the seal, a diagnosis made official
 ]);
-def('peter_fonagy', () => [
-  P('M21 20 L39 20 L41 47 L19 47 Z', 'bs'),
-  C(30, 12, 5.6, 'bs'),
-  C(46, 20, 4, 'hi'), C(46, 20, 1.4, 'lo'),                          // a second face
-  S('M42 20 L38 20', 'ik', 1),                                        // mirrored back to him — mentalizing, made visible
+def('peter_fonagy', () => [                                   // mentalizing: understanding what is in another mind, and your own
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  E(45, 28, 12, 9, 'hi'), C(35, 40, 2.6, 'hi'), C(31, 45, 1.6, 'hi'),  // a thought bubble,
+  C(45, 28, 5, 'lo'), C(43.2, 26.8, .9, 'hi'), C(46.8, 26.8, .9, 'hi'),   // with a face in it: a mind thinking about a mind
+  P('M42.6 30.4 Q45 32.6 47.4 30.4 L47.4 31.4 Q45 33.8 42.6 31.4 Z', 'hi'),
 ]);
-def('jeffrey_young', () => [
-  P('M22 19 L38 19 L40 48 L20 48 Z', 'bs'),
-  C(30, 12, 5.6, 'bs'),
-  P('M42 34 L52 34 L47 24 Z', 'hi'),                                  // the CBT triangle — thought, feeling, behavior
-  S('M47 24 L47 34 M42 34 L52 34', 'ik', 1),                          // he trained under Beck before extending it to personality itself
+def('jeffrey_young', () => [                                  // schema therapy, grown from Beck's thought-feeling-behaviour triangle
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M33 52 L59 52 L46 24 Z', 'hi'),                                   // the triangle
+  C(46, 25, 3, 'lo'), C(34, 51, 3, 'lo'), C(58, 51, 3, 'lo'),          // thought, feeling and behaviour at its corners
+  P('M42 44 L50 44 L46 36 Z', 'gh'),
 ]);
-def('theodore_millon', () => [
-  P('M20 20 L40 20 L43 48 L17 48 Z', 'bs'),
-  C(30, 12, 5.6, 'bs'),
-  ring('lo', 44, 26, 4, 1.6), C(44, 26, 1.4, 'ik'),                   // the biological gear
-  C(50, 34, 3, 'hi'), S('M50 37 L50 42', 'hi', 1.6),                   // meshed with the social figure it turns — his biosocial theory
+def('theodore_millon', () => [                                // a biosocial theory: biology and the social world turning each other
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  C(42, 32, 7, 'lo'), C(42, 32, 3, 'gh'),                              // the biological gear
+  ...[0, 45, 90, 135, 180, 225, 270, 315].map(a => ['g', a, 42, 32, [P('M40.8 22.4 L43.2 22.4 L43.2 25.6 L40.8 25.6 Z', 'lo')]]),   // its teeth
+  C(54, 40, 3.2, 'hi'), P('M49 54 Q49 44 54 44 Q59 44 59 54 Z', 'hi'), // meshed with the social figure it turns
 ]);
-def('robert_cloninger', () => [
-  P('M22 21 L38 21 L40 49 L20 49 Z', 'bs'),
-  C(30, 12, 5.6, 'bs'),
-  ...[6, 10, 4, 8].map((h, i) => S(`M${42 + i * 3} 40 L${42 + i * 3} ${40 - h}`, 'hi', 2)),  // four temperament dimensions
-  ...[5, 9, 3].map((h, i) => S(`M${42 + i * 3} 50 L${42 + i * 3} ${50 - h}`, 'lo', 2)),      // three character dimensions, a second row
+def('robert_cloninger', () => [                               // temperament and character, as dimensions
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M33 34 L58 34 L58 35.4 L33 35.4 Z', 'ik'), P('M33 52 L58 52 L58 53.4 L33 53.4 Z', 'ik'),
+  P('M35 24 L39 24 L39 34 L35 34 Z', 'hi'), P('M41 18 L45 18 L45 34 L41 34 Z', 'hi'), P('M47 27 L51 27 L51 34 L47 34 Z', 'hi'), P('M53 21 L57 21 L57 34 L53 34 Z', 'hi'),   // four temperament scales
+  P('M36 44 L41 44 L41 52 L36 52 Z', 'lo'), P('M43 38 L48 38 L48 52 L43 52 Z', 'lo'), P('M50 46 L55 46 L55 52 L50 52 Z', 'lo'),   // three of character
 ]);
-def('mary_zanarini', () => [
-  P('M21 19 L39 19 L41 48 L19 48 Z', 'bs'),
-  C(30, 12, 5.6, 'bs'),
-  P('M6 14 L18 14 L18 44 L6 44 Z', 'gh'), S('M6 14 L18 14 L18 44 L6 44 Z', 'ik', 1.2),  // a clipboard, kept to one side
-  ...granules('lo', 10, 300, [8, 18, 16, 40]),                        // roughly 300 patients, tracked one by one, for decades
+def('mary_zanarini', () => [                                  // following some three hundred patients for decades, one by one
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M34 18 L58 18 L58 52 L34 52 Z', 'hi'), P('M42 15 L50 15 L50 20 L42 20 Z', 'ik'),   // a clipboard
+  ...[0, 1, 2].flatMap(i => [0, 1, 2, 3].map(j => C(41 + i * 8, 26 + j * 7.4, 3.2, 'lo'))),   // a patient at each mark
 ]);
-def('thomas_widiger', () => [
-  P('M23 20 L37 20 L39 47 L21 47 Z', 'bs'),
-  C(30, 12, 5.6, 'bs'),
-  P('M40 44 L49 44 L49 47 L40 47 Z', 'hi'),
-  P('M43 40 L52 40 L52 43 L43 43 Z', 'lo'),
-  P('M46 36 L55 36 L55 39 L46 39 Z', 'bs'),                           // successive DSM editions, stacked — the committees he sat on
+def('thomas_widiger', () => [                                 // the DSM editions he sat on the committees for, stacked
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M32 54 L59 54 L59 46 L32 46 Z', 'hi'), P('M34 46 L57 46 L57 39 L34 39 Z', 'lo'),
+  P('M36 39 L55 39 L55 33 L36 33 Z', 'bs'), P('M39 33 L53 33 L53 27 L39 27 Z', 'ik'),
+  P('M34 47 L35.4 47 L35.4 53 L34 53 Z', 'gh'), P('M36 40 L37.4 40 L37.4 45 L36 45 Z', 'gh'),
 ]);
 
 /* craft — the personality-disorder field's own therapies and instruments ── */
@@ -24948,30 +24960,35 @@ def('rousseau', () => [                                              // The Soci
   ...[18, 23, 28].map(y => P(`M36 ${y} L55 ${y} L55 ${y + 1.4} L36 ${y + 1.4} Z`, 'gh')),
   ...[37, 42, 47, 52].map(x => C(x, 34, 1.2, 'ik')),                   // many small hands, signing as one
 ]);
-def('adam_smith', () => [                                            // The Wealth of Nations, and the hand no one actually sees
-  P('M22 20 L38 20 L41 48 L19 48 Z', 'bs'),
-  C(30, 12, 5.6, 'bs'),
-  ...[40, 46, 52].map((x, i) => E(x, 44 - i, 4, 2, i % 2 ? 'hi' : 'lo')), // a stack of coin
-  S('M46 30 Q46 22 46 18', 'gh', 2),                                 // the trace of what guides it, never itself drawn
+def('adam_smith', () => [                                       // The Wealth of Nations, and the hand no one actually sees
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M10 12 Q17 3 24 12 Q17 8 10 12 Z', 'lo'),                         // a powdered wig
+  E(46, 51, 8, 2.6, 'hi'), E(46, 47.5, 8, 2.6, 'lo'), E(46, 44, 8, 2.6, 'hi'),   // a stack of coin
+  E(46, 27, 6, 4, 'gh'), E(40, 33, 1.6, 3.4, 'gh'), E(44, 35, 1.6, 4, 'gh'), E(48, 35, 1.6, 4, 'gh'), E(52, 33, 1.6, 3.4, 'gh'),   // a hand, ghostly, steering it
 ]);
-def('burke', () => [                                                 // Reflections on the Revolution in France: founded modern conservatism
-  P('M22 21 L38 21 L40 48 L20 48 Z', 'bs'),
-  C(30, 13, 5.4, 'bs'),
-  S('M46 46 L46 30 M46 34 L40 26 M46 34 L52 26 M46 40 L42 34 M46 40 L50 34', 'lo', 2), // an old oak, deep-rooted
-  C(46, 24, 3, 'hi'),
+def('burke', () => [                                                // Reflections on the Revolution in France: founded modern conservatism
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M9 13 Q17 2 25 13 Q17 8 9 13 Z', 'hi'),                           // the wig
+  P('M43 52 L44 34 L48 34 L49 52 Q46 49 43 52 Z', 'lo'),               // an old oak, deep-rooted
+  P('M42 53 L36 54 L42 50 Z', 'lo'), P('M50 53 L56 54 L50 50 Z', 'lo'),
+  C(38, 28, 5.6, 'plant-bs'), C(54, 28, 5.6, 'plant-bs'), C(46, 20, 6, 'plant-bs'), C(46, 30, 6, 'plant-hi'),
 ]);
-def('bentham', () => [                                               // utilitarianism: the greatest happiness of the greatest number
-  P('M21 20 L39 20 L42 48 L18 48 Z', 'bs'),
-  C(30, 12, 5.6, 'bs'),
-  S('M40 34 L52 34 M40 34 L40 30 M52 34 L52 30', 'ik', 1.6),         // a balance beam
-  ...[40, 42, 44, 50, 52, 54].map(x => C(x, 40, 1, 'hi')),           // weight, spread evenly across the whole pan
+def('bentham', () => [                                            // utilitarianism: the greatest happiness of the greatest number
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M9 12 Q17 2 25 12 Q17 7 9 12 Z', 'hi'),                           // long white hair
+  P('M44.4 22 L47.6 22 L47.6 53 L44.4 53 Z', 'ik'), P('M40 52 L52 52 L52 54 L40 54 Z', 'ik'),   // a balance
+  P('M34 28 L58 18 L58.8 20.2 L34.8 30.6 Z', 'ik'),                    // its beam, tipped to the heavier side
+  P('M34 30 L31 41 L37 41 Z', 'ik'), P('M58 20 L55 31 L61 31 Z', 'ik'),
+  P('M29 41 L39 41 Q39 46 34 46 Q29 46 29 41 Z', 'lo'), P('M53 31 L63 31 Q63 36 58 36 Q53 36 53 31 Z', 'lo'),
+  ...[[31, 40], [34, 40], [37, 40], [32.5, 38.4], [35.5, 38.4]].map(([x, y]) => C(x, y, 1.3, 'hi')),   // the many, in one pan
+  C(58, 30, 1.3, 'hi'),                                                // the few, in the other
 ]);
-def('wollstonecraft', () => [                                        // A Vindication of the Rights of Woman: argued for women's education
-  P('M23 19 L37 19 L40 49 L20 49 Z', 'bs'),
-  C(30, 12, 5.6, 'bs'),
-  P('M40 28 L52 28 L52 40 L40 40 Z', 'hi'),                          // an open book
-  S('M46 28 L46 40', 'ik', 1),
-  S('M52 30 L56 27', 'lo', 1.6),                                     // a pen, laid across it
+def('wollstonecraft', () => [                                 // A Vindication of the Rights of Woman: argued for women's education
+  ...figure({ cx: 17, head: 8, w: 10, hem: 47 }),
+  E(17, 8, 10, 3.6, 'hi'),                                             // the mob cap of 1790
+  P('M33 30 L45.4 28 L45.4 46 L33 48 Z', 'hi'), P('M46.6 28 L59 30 L59 48 L46.6 46 Z', 'hi'),   // an open book, pages bowed
+  P('M45.4 28 L46.6 28 L46.6 46 L45.4 46 Z', 'ik'),
+  P('M50 24 L58 12 L57 18 L52 27 Z', 'lo'),                            // a quill laid across it
 ]);
 def('hegel', () => [                                                 // reality unfolds through contradiction resolving into a higher unity
   ...figure({ cx: 17, head: 8, w: 9.5 }),
@@ -24985,11 +25002,12 @@ def('schopenhauer', () => [                                         // a blind, 
   ...[38, 46, 54].map(x => P(`M${x} 8 L${x + 1} 8 L${n(x + (46 - x) / 6 + 1)} 32 L${n(x + (46 - x) / 6)} 32 Z`, 'gh')),   // strings, pulled from somewhere unseen
   P('M42 44 L45 44 L44 51 L41 51 Z', 'lo'), P('M47 44 L50 44 L51 51 L48 51 Z', 'lo'),
 ]);
-def('feuerbach', () => [                                             // The Essence of Christianity: theology is really anthropology
-  P('M21 21 L37 21 L39 48 L19 48 Z', 'bs'),
-  C(28, 13, 5.4, 'bs'),
-  E(46, 26, 6, 8, 'gh'),                                             // a mirror
-  C(46, 22, 3, 'hi'), P('M42 30 L50 30 L48 34 L44 34 Z', 'hi'),      // a haloed figure looking back — man's own reflection, called divine
+def('feuerbach', () => [                                        // The Essence of Christianity: theology is really anthropology
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  E(46, 28, 11, 14, 'ik'), E(46, 28, 9.2, 12.2, 'hi'),                 // a mirror
+  P('M44.5 41 L47.5 41 L48 54 L44 54 Z', 'ik'),                        // its handle
+  C(46, 22, 5.2, 'lo'), C(46, 22, 3.4, 'ik'),                          // a haloed head looking back: man's own reflection, called divine
+  P('M38 38 Q46 27 54 38 Z', 'ik'),                                    // and its shoulders
 ]);
 def('mill', () => [                                                  // On Liberty: freedom may only be limited to prevent harm
   ...figure({ cx: 17, head: 8, w: 9.5 }),
@@ -25003,73 +25021,80 @@ def('kierkegaard', () => [                                           // father o
   P('M37 26 L39 26 L39 27.4 L37 27.4 Z', 'ik'), P('M41 26 L43 26 L43 27.4 L41 27.4 Z', 'ik'),
   P('M48 34 L50 34 L50 35.4 L48 35.4 Z', 'ik'), P('M52 34 L54 34 L54 35.4 L52 35.4 Z', 'ik'),
 ]);
-def('thoreau', () => [                                               // lived alone at Walden Pond, and argued for civil disobedience
-  P('M22 20 L38 20 L40 48 L20 48 Z', 'bs'),
-  C(30, 12, 5.6, 'bs'),
-  P('M40 40 L48 34 L56 40 L56 46 L40 46 Z', 'lo'),                   // a small cabin
-  wave('hi', 50, 3, 14),                                             // the pond beside it
+def('thoreau', () => [                                           // lived alone at Walden Pond, and argued for civil disobedience
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  E(17, 7.6, 11, 2.6, 'lo'),                                           // a plain brimmed hat
+  P('M33 38 L45 28 L57 38 Z', 'lo'),                                   // a small cabin, roof
+  P('M35 38 L55 38 L55 51 L35 51 Z', 'bs'), P('M42 41 L48 41 L48 51 L42 51 Z', 'ik'),
+  P('M28 54 Q44 50 60 54 Q44 58 28 54 Z', 'water-bs'),                 // and the pond in front of it
 ]);
-def('peirce', () => [                                                // founded pragmatism with his pragmatic maxim: meaning lies in practical effect
-  P('M22 20 L38 20 L40 48 L20 48 Z', 'bs'),
-  C(30, 12, 5.6, 'bs'),
-  S('M46 24 L46 44 M46 34 L38 40 M46 34 L54 40', 'ik', 2),           // a signpost, forking toward consequence
+def('peirce', () => [                                             // founded pragmatism: a thing means what it makes happen
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M13 22 L17 30 L21 22 Z', 'ik'),                                   // the pointed beard
+  P('M44 12 L46.4 12 L46.4 53 L44 53 Z', 'ik'),                        // a signpost with three boards: sign, object, interpretant
+  P('M33 16 L47 16 L51 19 L47 22 L33 22 Z', 'hi'),
+  P('M45 26 L58 26 L58 32 L45 32 L42 29 Z', 'lo'),
+  P('M33 36 L47 36 L51 39 L47 42 L33 42 Z', 'hi'),
 ]);
-def('james', () => [                                                 // pragmatism, and the phrase 'stream of consciousness'
-  P('M22 20 L38 20 L40 48 L20 48 Z', 'bs'),
-  C(30, 12, 5.6, 'bs'),
-  S('M18 30 Q10 34 16 40 Q22 46 14 50', 'hi', 2.4),                  // a stream, flowing past him unbroken
+def('james', () => [                                               // pragmatism, and the phrase 'stream of consciousness'
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M33 12 Q46 16 40 26 Q34 36 46 42 Q54 46 50 54 L57 54 Q61 45 52 38 Q44 32 48 26 Q54 18 42 10 Z', 'water-bs'),   // a stream, unbroken
+  C(44, 22, 2, 'hi'), C(40, 33, 2.2, 'hi'), C(51, 44, 2, 'hi'),        // thoughts carried along it, never stopping
 ]);
 def('nietzsche', () => [                                              // proclaimed 'God is dead' and called for humanity to be surpassed
   ...figure({ head: 9, w: 11.5 }),
   P('M22 19 Q30 27 38 19 Q30 22 22 19 Z', 'lo'),                       // his famous moustache
   ring('gh', 30, 3, 3.8, 1.4), S('M27 0 L33 6 M33 0 L27 6', 'gh', 1.2),  // a halo, broken and left behind
 ]);
-def('saussure', () => [                                              // founded semiotics: a word's link to its meaning is arbitrary
-  P('M22 20 L38 20 L40 48 L20 48 Z', 'bs'),
-  C(30, 12, 5.6, 'bs'),
-  C(44, 26, 3, 'lo'), P('M50 32 L54 40 L46 40 Z', 'hi'),             // a random shape, and an unrelated one
-  S('M44 29 L50 34', 'gh', 1.2),                                     // linked only by convention, not by likeness
+def('saussure', () => [                                         // founded semiotics: a word's link to its meaning is arbitrary
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  E(46, 32, 12, 18, 'gh'), E(46, 32, 10.2, 16.2, 'lo'),                // the sign: one oval, two halves
+  P('M42 33 L50 33 L50 35 L42 35 Z', 'hi'),                            // the bar between them
+  P('M45 30 L47 30 L47 24 L45 30 Z', 'plant-lo'), C(46, 21, 3.6, 'plant-bs'),   // the concept above: a tree
+  P('M40 38 L43 38 L43 46 L40 46 Z', 'hi'), P('M44.5 40 L47.5 40 L47.5 46 L44.5 46 Z', 'hi'), P('M49 38 L52 38 L52 46 L49 46 Z', 'hi'),   // and the word below: marks with no likeness to it
 ]);
-def('husserl', () => [                                               // founded phenomenology, seeking certainty by 'bracketing' every assumption
-  P('M22 20 L38 20 L40 48 L20 48 Z', 'bs'),
-  C(30, 12, 5.6, 'bs'),
-  S('M42 24 L40 24 L40 40 L42 40 M50 24 L52 24 L52 40 L50 40', 'ik', 1.8), // brackets
-  C(46, 32, 2, 'hi'),                                                // the thing itself, held inside them
+def('husserl', () => [                                            // founded phenomenology, seeking certainty by bracketing every assumption
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M41 14 L34 14 L34 52 L41 52 L41 49 L37.2 49 L37.2 17 L41 17 Z', 'ik'),   // a bracket,
+  P('M51 14 L58 14 L58 52 L51 52 L51 49 L54.8 49 L54.8 17 L51 17 Z', 'ik'),   // and its closing twin
+  C(46, 41, 5, 'hi'), C(46, 41, 2.4, 'bs'),                            // the thing itself, held inside, assumptions set aside
 ]);
-def('bergson', () => [                                               // an élan vital, a vital impetus, drives creative evolution
-  P('M22 20 L38 20 L40 48 L20 48 Z', 'bs'),
-  C(30, 12, 5.6, 'bs'),
-  S('M46 48 Q40 38 48 30 Q54 22 46 14', 'hi', 2.2),                  // a rising spiral of impetus
-  leaf('bs', 47, 12, .6, 20),                                        // blossoming, at its tip
+def('bergson', () => [                                           // an élan vital drives creative evolution; time felt, not counted
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M44 54 Q35 42 46 33 Q55 25 46 12 L49.4 12 Q60 25 50 35 Q41 43 48 54 Z', 'plant-bs'),   // a spiral of impetus, climbing
+  leaf('plant-hi', 47.5, 10, 1.1, 0), leaf('plant-lo', 40, 40, .7, -50), leaf('plant-lo', 55, 28, .7, 50),
 ]);
-def('dewey', () => [                                                 // we only think when we are confronted with problems
-  P('M22 20 L38 20 L40 48 L20 48 Z', 'bs'),
-  C(30, 12, 5.6, 'bs'),
-  P('M44 26 L52 26 L52 44 L44 44 Z', 'lo'),                          // a wall, blocking the way
-  S('M44 20 L44 14 M40 20 L40 16', 'hi', 1.6),                       // a spark, struck only by running into it
+def('dewey', () => [                                              // we only think when we meet a problem
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M42 28 L58 28 L58 52 L42 52 Z', 'lo'),                            // a wall, across the way
+  ...[34, 40, 46].map(y => P(`M42 ${y} L58 ${y} L58 ${y + 1} L42 ${y + 1} Z`, 'gh')),
+  P('M44 28 L44 52 L45 52 L45 28 Z', 'gh'),
+  C(37, 20, 4.8, 'hi'), P('M35.4 24 L38.6 24 L38.4 27 L35.6 27 Z', 'ik'),   // a bulb that lights only on striking it
 ]);
-def('santayana', () => [                                             // those who cannot remember the past are condemned to repeat it
-  P('M22 20 L38 20 L40 48 L20 48 Z', 'bs'),
-  C(30, 12, 5.6, 'bs'),
-  ring('hi', 46, 34, 9, 2),
-  P('M50 26 L54 30 L48 30 Z', 'hi'),                                 // an arrowhead, chasing its own tail around the loop
+def('santayana', () => [                                        // those who cannot remember the past are condemned to repeat it
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  C(46, 40, 11, 'hi'), C(46, 40, 8.2, 'gh'),                           // a loop
+  P('M44 25 L53 27 L47 33 Z', 'ik'),                                   // an arrowhead, running round to where it began
+  P('M43 38 L49 38 L49 44 L43 44 Z', 'lo'),                            // and the book of what was forgotten
 ]);
-def('unamuno', () => [                                               // Tragic Sense of Life: existence grounded in an awareness of death
-  P('M22 20 L38 20 L40 48 L20 48 Z', 'bs'),
-  C(30, 12, 5.6, 'bs'),
-  P('M42 24 L52 24 L50 34 L44 34 Z', 'gh'), P('M44 34 L50 34 L48 44 L46 44 Z', 'gh'), // an hourglass
-  ...granules('lo', 4, 71, [45, 34, 49, 40]),                        // sand, already fallen through
+def('unamuno', () => [                                          // Tragic Sense of Life: existence grounded in an awareness of death
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M37 16 L55 16 L55 19 L37 19 Z', 'ik'), P('M37 50 L55 50 L55 53 L37 53 Z', 'ik'),   // an hourglass
+  P('M39 19 L53 19 L46 34 Z', 'gh'), P('M46 34 L53 50 L39 50 Z', 'gh'),
+  P('M42 50 Q46 40 50 50 Z', 'lo'),                                    // sand, already fallen through
 ]);
-def('du_bois', () => [                                               // named 'double consciousness' and the color line
-  P('M20 19 L30 19 L33 48 L17 48 Z', 'lo'), P('M30 19 L40 19 L43 48 L30 48 Z', 'hi'), // the robe, split by the line he named
-  S('M30 19 L30 48', 'ik', 1.4),
-  C(26, 12, 5.4, 'lo'), C(34, 12, 5.4, 'hi'),                        // two faces, seen and self-seen
+def('du_bois', () => [                                           // named 'double consciousness' and the colour line
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M33 14 L45.4 14 L45.4 52 L33 52 Z', 'lo'), P('M46.6 14 L59 14 L59 52 L46.6 52 Z', 'hi'),   // one world split by the line he named
+  P('M45.4 12 L46.6 12 L46.6 54 L45.4 54 Z', 'ik'),
+  C(39, 26, 3.6, 'hi'), C(53, 26, 3.6, 'lo'),                          // two selves: how one is seen, and how one sees
+  P('M35 31 Q39 29 43 31 L43 44 L35 44 Z', 'hi'), P('M49 31 Q53 29 57 31 L57 44 L49 44 Z', 'lo'),
 ]);
-def('russell', () => [                                               // co-founder of analytic philosophy, who argued for working less and living fuller
-  P('M22 20 L38 20 L40 48 L20 48 Z', 'bs'),
-  C(30, 12, 5.6, 'bs'),
-  S('M42 40 Q49 34 56 40', 'hi', 3),                                 // a hammock, slung and waiting
-  S('M42 40 L42 34 M56 40 L56 34', 'ik', 1.6),
+def('russell', () => [                                            // co-founder of analytic philosophy, who argued for idleness
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M9 13 Q17 0 25 13 Q17 7 9 13 Z', 'hi'),                           // the white halo of hair
+  P('M34 26 L36.4 26 L36.4 53 L34 53 Z', 'ik'), P('M56 26 L58.4 26 L58.4 53 L56 53 Z', 'ik'),   // two posts
+  P('M35 33 Q46 50 57 33 Q46 54 35 33 Z', 'hi'),                       // and a hammock between them, slung and waiting
 ]);
 
 /* world myth — Slavic, Baltic, Aboriginal Australian, Polynesian/Rapa Nui,
@@ -25938,10 +25963,11 @@ def('chloroquine', () => [                                         // concentrat
   ...granules('bs', 8, 41, [24, 30, 36, 40]),                       // toxic heme, piling up undisposed
   C(18, 14, 3, 'hi'), S('M18 14 L24 20', 'ik', 1.6),                // the drug, lodged right where the waste collects
 ]);
-def('paul_ehrlich', () => [                                         // coined the 'magic bullet' idea — a chemical that kills a pathogen and leaves the patient untouched
-  C(14, 18, 5, 'gh'), C(46, 18, 5, 'gh'), C(14, 46, 5, 'gh'), C(46, 46, 5, 'gh'),  // healthy cells, untouched
-  rod3('bs', 30, 34, 10, 4),                                        // the one pathogen
-  S('M30 6 L30 28', 'ik', 2.2), P('M27 26 L33 26 L30 34 Z', 'ik'),  // the bullet, striking only it
+def('paul_ehrlich', () => [                                   // the magic bullet: a chemical that kills the pathogen and leaves the patient alone
+  ...figure({ cx: 17, head: 8, w: 9.5, body: 'hi' }),
+  P('M44 8 L48 8 L48 26 L46 33 L44 26 Z', 'ik'),                       // the bullet, striking only one thing
+  E(46, 40, 7.4, 3.2, 'bs'),                                           // the rod-shaped germ
+  C(35, 48, 3.6, 'gh'), C(57, 48, 3.6, 'gh'), C(36, 22, 3.6, 'gh'), C(56, 22, 3.6, 'gh'),   // healthy cells, untouched
 ]);
 def('oseltamivir', () => [                                          // blocks neuraminidase, so freshly budded flu virions can't cut themselves free of the cell that made them
   S('M6 46 L54 46', 'ik', 3),                                       // the host cell surface
@@ -29699,12 +29725,12 @@ def('heaven', () => [
   S('M21 52 L21 42 Q30 33 39 42 L39 52', 'ik', 2.2),                // a gate, where it is a reward that lasts
   S('M50 34 Q57 43 47 50', 'gh', 1.8), P('M47 50 L52 46 L53 52 Z', 'gh'),  // and a way back out, where it is only a stop before rebirth
 ]);
-def('prophet', () => [
-  S('M6 4 L20 18', 'hi', 2.4), S('M13 2 L23 13', 'gh', 1.4),        // the word, arriving from elsewhere
-  C(25, 22, 5, 'bs'), P('M20 28 L30 28 L33 46 L17 46 Z', 'bs'),     // one who speaks it for another
-  S('M36 20 Q42 24 36 28 M40 16 Q50 24 40 32', 'lo', 1.6),          // and passes it on
-  ...[38, 45, 52].map(x => S(`M${x} 50 L${x} 57`, 'gh', 2)),        // a long line of them — the Talmud counts 55, Islam far more
-  C(30, 53, 3.6, 'ik'),                                             // and, in Islam, a seal closing the line
+def('prophet', () => [                                     // one who speaks a word that came from elsewhere, and passes it on
+  ...figure({ cx: 17, head: 8, w: 9.5, body: 'bs' }),
+  P('M40 14 L58 4 L57 8 Z', 'hi'), P('M41 20 L60 18 L59 22 Z', 'hi'), P('M40 26 L58 32 L56 35 Z', 'hi'),   // the word, arriving in rays
+  P('M38 36 L56 36 L56 52 L38 52 Z', 'hi'),                            // a scroll, held out
+  P('M36 35 L58 35 L58 38 L36 38 Z', 'lo'), P('M36 50 L58 50 L58 53 L36 53 Z', 'lo'),   // its rolled ends
+  P('M41 41 L53 41 L53 42.4 L41 42.4 Z', 'ik'), P('M41 45 L53 45 L53 46.4 L41 46.4 Z', 'ik'), P('M41 49 L48 49 L48 50.4 L41 50.4 Z', 'ik'),
 ]);
 def('sacrament', () => [
   ...Array.from({ length: 7 }, (_, i) => {
@@ -29715,21 +29741,21 @@ def('sacrament', () => [
   P('M30 30 Q25 38 30 42 Q35 38 30 30 Z', 'hi'),                    // the outward sign — water, actually poured
   S('M24 52 L36 52', 'ik', 1.4),                                    // over an inward grace nobody can see
 ]);
-def('priest', () => [
-  S('M10 6 Q30 14 50 6', 'gh', 1.8),                                // the divine, above
-  ...granules('gh', 10, 77, [8, 50, 52, 57]),                       // the people, below
-  C(30, 20, 5, 'bs'), P('M23 26 L37 26 L40 46 L20 46 Z', 'bs'),     // and one authorised to stand in between
-  S('M27 26 L27 46 M33 26 L33 46', 'hi', 2),                        // the stole of the ordained —
-  S('M21 30 L11 18 M39 30 L49 18', 'ik', 2),                        // hands raised to the one, on behalf of the other
+def('priest', () => [                                             // one authorised to stand between the divine and the people
+  ...figure({ cx: 17, head: 8, w: 9.5, body: 'bs' }),
+  P('M14 26 L20 26 L20 52 L14 52 Z', 'hi'), E(17, 26, 3.8, 2, 'hi'),  // the stole, down the front of the gown
+  P('M44 32 L48 32 L46 36 Z', 'ik'), P('M44.8 32 L47.2 32 L47.2 26 L44.8 26 Z', 'ik'),   // a censer, on its chain
+  C(46, 40, 4, 'ik'),
+  C(41, 24, 1.5, 'gh'), C(46, 19, 1.5, 'gh'), C(51, 24, 1.5, 'gh'),   // the smoke, rising to the divine
 ]);
-def('pope', () => fitEyes(.74, [[27.48, 26.62], [32.52, 26.62]], [
-  S('M23 40 L23 54', 'ik', 4.2), S('M37 40 L37 54', 'ik', 4.2),
-  P('M12 28 Q30 22 48 28 L53 52 L7 52 Z', 'hi'),                                                // the white cassock
-  P('M16 27 Q30 22 44 27 L40 40 Q30 44 20 40 Z', 'fire-bs'),                                    // the red mozzetta
-  S('M30 30 L30 52', 'fire-hi', 1.4), S('M12 49 L48 49', 'fire-hi', 1.6),
-  E(10, 38, 4.6, 8.4, 'hi'), E(50, 38, 4.6, 8.4, 'hi'), C(10, 46.6, 3, 'hi'), C(50, 46.6, 3, 'hi'),
-  S('M53 4 L53 52', 'fire-hi', 2.4), P('M50 8 L56 8 L56 4 L50 4 Z', 'fire-hi'), P('M51.4 2 L54.6 2 L54.6 10 L51.4 10 Z', 'fire-hi'),   // the crozier cross
-  C(30, 17, 8, 'hi'), S('M27.6 21.6 Q30 23 32.4 21.6', 'ik', 1), P('M20 12 L30 -6 L40 12 Q30 16 20 12 Z', 'hi'), S('M21 11 Q30 14 39 11', 'fire-hi', 2), P('M29 0 L31 0 L31 8 L29 8 Z', 'fire-hi')]));
+def('pope', () => [                                              // the papal tiara, and the crozier for the flock
+  ...figure({ cx: 17, head: 8, w: 9.5, body: 'hi' }),
+  P('M21 9 L33 9 L31 3 L23 3 Z', 'lo'),                                // the tiara
+  P('M22 7 L32 7 L32 8.6 L22 8.6 Z', 'fire-hi'),                       // its band
+  P('M9 26 Q17 21 25 26 L27 44 L7 44 Z', 'fire-bs'),                   // the red cape over the shoulders
+  P('M44 4 L46 4 L46 52 L44 52 Z', 'lo'),                              // the crozier's shaft
+  C(45, 6, 3.4, 'lo'), C(45, 6, 2, 'hi'),                              // and its crook
+]);
 def('hajj', () => [
   P('M25 27 L35 27 L35 37 L25 37 Z', 'lo'),                         // the Kaaba, at the middle of it
   ...Array.from({ length: 7 }, (_, i) => ring(i % 2 ? 'bs' : 'hi', 30, 32, n(9 + i * 2.7), 1.2)),  // seven circuits around it
@@ -31239,11 +31265,14 @@ def('mask',         () => [P('M16 10 Q16 4 30 4 Q44 4 44 10 L44 34 Q44 48 30 52 
                            P('M31 18 Q35 14 39 18 Q35 21 31 18 Z', 'ik'),
                            P('M24 34 Q30 30 36 34 Q30 42 24 34 Z', 'ik'),        // and the mouth shaped to carry
                            ...[[18,8],[42,8]].map(([x,y]) => C(x, y, 1.6, 'lo'))]);
-def('actor',        () => [C(30, 14, 8, 'bs'),
-                           P('M18 24 L42 24 L44 44 L16 44 Z', 'bs'),
-                           P('M6 44 L54 44 L54 50 L6 50 Z', 'lo'),               // one step out of the chorus
-                           ...[[12,30],[48,30]].map(([x,y]) => C(x, y, 3, 'gh')),
-                           S('M24 12 Q30 16 36 12', 'ik', 1.4)]);
+def('actor', () => [                                            // one mask for tragedy, one for comedy
+  ...figure({ cx: 17, head: 8, w: 9.5, body: 'lo' }),
+  E(44, 26, 5.6, 7, 'hi'), E(53, 40, 5.6, 7, 'gh'),                    // two masks
+  P('M40 30 L43 30 L43 32 L40 32 Z', 'ik'), P('M46 30 L49 30 L49 32 L46 32 Z', 'ik'),   // tragedy's eyes
+  P('M41 34 Q44 32 47 34 L47 35.4 Q44 33.4 41 35.4 Z', 'ik'),          // and its frown
+  P('M50 38 L53 38 L53 39.4 L50 39.4 Z', 'ik'), P('M55 38 L58 38 L58 39.4 L55 39.4 Z', 'ik'),   // comedy's eyes
+  P('M50 43 Q53.5 46 57 43 L57 44.4 Q53.5 47.4 50 44.4 Z', 'ik'),     // and its smile
+]);
 def('theatre',      () => [...[0, 1, 2, 3].map(i =>
                              S(`M${8 - i * 2} ${44 - i * 8} Q30 ${52 - i * 8} ${52 + i * 2} ${44 - i * 8}`, 'bs', 4)),   // raked, so each row sees over
                            P('M20 46 L40 46 L40 54 L20 54 Z', 'lo'),
@@ -31997,16 +32026,23 @@ def('surgery',      () => [P('M8 34 L52 34 L52 42 L8 42 Z', 'bs'),             /
                            E(30, 12, 13, 6, 'hi'),
                            S('M30 18 L30 26', 'lo', 2),
                            ...[22, 30, 38].map(x => S(`M${x} 24 L${x} 32`, 'gh', 1.2))]);
-def('nurse',        () => [C(30, 16, 8, 'bs'),                                  // the one who watches, with the chart
-                           P('M26 8 L34 8 L34 12 L26 12 Z', 'hi'),
-                           P('M18 26 L42 26 L44 48 L16 48 Z', 'bs'),
-                           P('M40 30 L54 30 L54 48 L40 48 Z', 'hi'),
-                           ...[34, 39, 44].map(y => S(`M43 ${y} L51 ${y}`, 'lo', 1.2))]);
-def('doctor',       () => [C(30, 16, 8, 'bs'),
-                           P('M18 26 L42 26 L44 48 L16 48 Z', 'hi'),
-                           S('M24 28 Q24 40 30 40 Q36 40 36 28', 'lo', 2),       // the stethoscope
-                           C(30, 42, 3.4, 'lo'),
-                           ...[[24,28],[36,28]].map(([x,y]) => C(x, y, 1.8, 'ik'))]);
+def('nurse', () => [                                             // the watcher, with the chart
+  ...figure({ cx: 17, head: 8, w: 9.5, body: 'hi' }),
+  E(17, 9.4, 6, 2.2, 'bs'),                                            // a cap
+  P('M39 30 L57 30 L57 54 L39 54 Z', 'lo'),                            // a clipboard
+  P('M44 27 L52 27 L52 31 L44 31 Z', 'ik'),                            // its clip
+  P('M41.6 36 L54.4 36 L54.4 37.4 L41.6 37.4 Z', 'gh'), P('M41.6 41 L54.4 41 L54.4 42.4 L41.6 42.4 Z', 'gh'),
+  P('M41.6 46 L49 46 L49 47.4 L41.6 47.4 Z', 'gh'),                    // the chart, filled in
+  P('M20 36 L22 36 L22 46 L20 46 Z', 'fire-bs'), P('M17.5 39 L24.5 39 L24.5 41 L17.5 41 Z', 'fire-bs'),   // a red cross on the apron
+]);
+def('doctor', () => [                                            // the white coat, the head mirror, and the bag
+  ...figure({ cx: 17, head: 8, w: 10, body: 'hi' }),
+  C(17, 9, 3.2, 'ik'), C(17, 9, 1.6, 'hi'),                            // the round mirror on his forehead, for the light
+  P('M38 40 L54 40 L54 52 L38 52 Z', 'lo'),                            // the bag
+  P('M43 35 L44.6 35 L44.6 40 L43 40 Z', 'lo'), P('M47.4 35 L49 35 L49 40 L47.4 40 Z', 'lo'),
+  P('M43 33.4 L49 33.4 L49 35 L43 35 Z', 'lo'),                        // its handle
+  P('M44.6 43 L47.4 43 L47.4 49 L44.6 49 Z', 'fire-bs'), P('M42 45.3 L50 45.3 L50 47 L42 47 Z', 'fire-bs'),   // and the cross on it
+]);
 def('diagnosis',    () => [C(24, 26, 13, 'gh'), ring('bs', 24, 26, 13, 2.6),   // reasoning, not lookup
                            S('M34 36 L50 50', 'bs', 4),
                            ...[[20,22],[28,24],[22,32]].map(([x,y]) => C(x, y, 2.2, 'lo')),
@@ -33041,18 +33077,11 @@ def('fermentation', () => [                                          // cataboli
 ]);
 
 /* the two hominins */
-def('homo_sapiens', () => [                                          // a globular braincase, a flat face — and a chin, which no other hominin has
-  P('M11 29 Q9 10 28 6 Q45 5 49 20 Q51 29 45 32 L43 40 Q41 45 36 45 L36 50 Q25 52 18 44 Q11 37 11 29 Z', 'bs'),
-  S('M37 18 L50 20', 'ik', 2.2),                                      // the forehead goes straight up, and the brow ridge is gone
-  C(43, 25, 3, 'ground'),
-  P('M35 43 L44 46 L41 53 L32 51 Z', 'lo'),                           // and a chin, which no other hominin ever had
-]);
-def('ardipithecus', () => [                                          // 4.4 million years old and walking, but the big toe still points sideways and grips
-  P('M21 53 Q15 40 19 26 Q23 13 30 13 Q37 13 41 26 Q45 40 39 53 Z', 'bs'),
-  P('M19 30 Q8 25 3 32 Q3 41 12 41 Q19 39 21 34 Z', 'lo'),
-  ...[25, 31, 37].map(x => C(x, 15, 2.6, 'hi')),
-  S('M8 34 Q14 37 19 35', 'ik', 1.2),
-]);
+def('homo_sapiens', () => walker({ head: [31, 11, 7], lean: 2, torso: 15, bulk: 6.8, arm: 21, stride: 8.5, jaw: 0, brow: 0, hair: 'cap', chin: true, foot: 4.5,     // a globular braincase, a flat face, and a chin, which no other hominin has
+  extra: [E(51, 41, 4.6, 5.2, 'fire-bs'), E(47.8, 33.4, 1.4, 3.6, 'fire-bs'), E(50.2, 31.6, 1.4, 4, 'fire-bs'), E(52.8, 31.8, 1.4, 3.8, 'fire-bs'),
+          E(55, 34, 1.3, 3.2, 'fire-bs'), E(45.6, 40, 1.3, 3.4, 'fire-bs')] }));                                              // and a red-ochre handprint on the wall
+def('ardipithecus', () => walker({ head: [30, 15, 6], lean: 4, torso: 15, bulk: 6.6, arm: 18, stride: 7, jaw: .7, brow: .7, foot: 5,     // 4.4 million years old and walking, but the big toe still points sideways and grips
+  extra: [E(50, 50.4, 5, 3.4, 'lo'), C(46, 46.4, 1.6, 'lo'), C(50, 45.6, 1.6, 'lo'), C(54, 46.6, 1.6, 'lo'), C(56.6, 49.4, 1.4, 'lo'), C(44.4, 52.4, 2, 'lo')] }));   // the foot, with its big toe out to the side
 
 /* the kitchen, drawn as mechanism ─────────────────────────────────────── */
 def('gluten', () => [                                                // glutenin and gliadin are only gluten once water and work cross-link them
@@ -33280,12 +33309,12 @@ def('war', () => [                                                   // Jebel Sa
     P(`M${x - 3} ${y + 3} L${x + 3} ${y - 3} L${x + 4.5} ${y + 1.5} Z`, 'ik')),  // and the points are inside them, not beside them
   S('M4 53 L56 53', 'ik', 1.6),
 ]);
-def('soldier', () => [                                               // through 'one paid a wage' back to the solidus: paid first, and armed second
-  S('M17 55 L17 14', 'lo', 2.4),
-  P('M15 15 L17 2 L19 15 Z', 'hi'),                                   // a narrow socketed head, so it is a spear and not an arrow
-  S('M17 31 L17 38', 'ik', 4),
-  ring('ik', 41, 18, 9, 1.8), C(41, 18, 4, 'ik'),                     // the coin the word is actually made of
-  ...[0, 1, 2].map(i => E(41, n(48 - i * 7), 12, 4, i % 2 ? 'hi' : 'bs')),
+def('soldier', () => [                                           // a spear for the wage, and a shield
+  ...figure({ cx: 17, head: 8, w: 9.5, body: 'lo' }),
+  P('M8.5 13 Q17 0 25.5 13 Z', 'ik'),                                  // a helmet over the head
+  P('M50 4 L53 4 L53 54 L50 54 Z', 'lo'),                              // the spear's shaft
+  P('M48.8 8 L51.5 1 L54.2 8 Z', 'hi'),                                // and its head
+  C(37, 38, 8.6, 'bs'), C(37, 38, 5, 'hi'), C(37, 38, 1.8, 'ik'),      // a round shield, held on the arm
 ]);
 def('army', () => [                                                  // corps, then divisions, then battalions of 500 to 750 — and it is that last row that fights
   C(30, 7, 4, 'bs'),
@@ -34449,14 +34478,13 @@ def('norns', () => [                                                 // three of
   S('M38 21 Q44 23 46 29', 'hi', 2),                                 // water and white clay, going onto the trunk
   C(41, 19, 1.8, 'hi'), C(45, 25, 1.8, 'hi'),
 ]);
-def('rabbi_loew', () => [                                            // what he actually left was books; the golem only turns up in print in 1834
-  P('M42 6 L54 6 L54 30 L42 30 Z', 'gh'),
-  S('M44 11 L52 11', 'gh', 1.4), S('M45 30 L45 38 M51 30 L51 38', 'gh', 1.4),
-  C(18, 13, 7, 'lo'),
-  P('M11 16 Q18 30 25 16 Z', 'ik'),                                  // the Maharal, in the Prague post from 1573
-  P('M6 36 Q17 30 29 36 L29 52 Q17 46 6 52 Z', 'bs'),
-  P('M31 36 Q43 30 54 36 L54 52 Q43 46 31 52 Z', 'bs'),
-  S('M30 36 L30 52', 'ik', 1.6),
+def('rabbi_loew', () => [                                       // what he left was books; the golem is a later story
+  ...figure({ cx: 17, head: 8, w: 9.5 }),
+  P('M11 22 Q17 38 23 22 Z', 'ik'),                                    // the Maharal's beard
+  P('M40 16 L52 16 L52 27 L40 27 Z', 'lo'), P('M36 29 L56 29 L56 46 L36 46 Z', 'lo'),   // a clay figure, blocky and unfinished,
+  P('M39 46 L45 46 L45 54 L39 54 Z', 'ik'), P('M47 46 L53 46 L53 54 L47 54 Z', 'ik'),
+  C(43, 21, 1.5, 'ik'), C(49, 21, 1.5, 'ik'), P('M44 24 L48 24 L48 25.2 L44 25.2 Z', 'ik'),
+  P('M44.4 32 L47.6 32 L47.6 33.4 L44.4 33.4 Z', 'hi'),                // with a word on its brow, said to give it life
 ]);
 def('prague', () => [                                                // the Vltava, the bridge over it, and a great many more spires than a hundred
   ...[[10, 18, 'hi'], [17, 9, 'bs'], [24, 20, 'hi'], [31, 5, 'lo'], [38, 15, 'hi'], [45, 11, 'bs'], [52, 21, 'hi']]
@@ -41241,11 +41269,15 @@ def('legend',       () => [P('M6 10 L54 10 L54 50 L6 50 Z', 'lo'),
                            ...[[14, 20], [20, 30], [12, 38], [22, 42]].map(([x, y]) => C(x, y, 2, 'ik'))]);
 
 /* the newspaper */
-def('journalist',   () => [C(30, 16, 7, 'bs'),
-                           P('M20 26 L40 26 L44 50 L16 50 Z', 'bs'),
-                           P('M34 30 L52 30 L52 46 L34 46 Z', 'hi'),            // the notebook, which is the job
-                           ...[0, 1, 2].map(i => S(`M37 ${34 + i * 4} L49 ${34 + i * 4}`, 'ik', 1.2)),
-                           S('M50 26 L54 22', 'ik', 2)]);
+def('journalist', () => [                                          // the notebook, which is the job, and a press card in the hat
+  ...figure({ cx: 17, head: 8, w: 9.5, body: 'lo' }),
+  E(17, 9, 11, 2.4, 'ik'), P('M10.5 9 Q11 1.6 17 1.6 Q23 1.6 23.5 9 Z', 'ik'),   // a hat, brim turned down
+  P('M14 6 L20 6 L20 8.4 L14 8.4 Z', 'hi'),                            // the press card in its band
+  P('M36 26 L56 26 L56 48 L36 48 Z', 'hi'),                            // the notebook
+  ...[0, 1, 2, 3].map(i => C(36, 29.5 + i * 5.2, 1.5, 'ik')),         // its spiral
+  P('M40 32 L53 32 L53 33.4 L40 33.4 Z', 'gh'), P('M40 37 L53 37 L53 38.4 L40 38.4 Z', 'gh'), P('M40 42 L49 42 L49 43.4 L40 43.4 Z', 'gh'),   // shorthand
+  P('M52 38 L54.6 38 L58 52 L55.4 52 Z', 'fire-bs'),                  // a pencil, in the hand
+]);
 def('editor', () => [                                                 // the one who says no, and says where
   ...figure({ cx: 17, head: 8, w: 9.5 }),
   P('M32 11 L58 11 L58 49 L32 49 Z', 'hi'),                            // the page
@@ -41265,12 +41297,13 @@ def('advertisement',() => [P('M8 8 L52 8 L52 52 L8 52 Z', 'hi'),
                            ...[0, 1, 2].map(i => S(`M12 ${40 + i * 5} L48 ${40 + i * 5}`, 'gh', 1.2))]);
 
 /* the bank */
-def('clerk',        () => [C(24, 14, 6, 'bs'),
-                           P('M15 23 L33 23 L36 42 L12 42 Z', 'bs'),
-                           P('M6 42 L54 42 L54 48 L6 48 Z', 'lo'),
-                           P('M32 34 L52 34 L52 42 L32 42 Z', 'hi'),            // the same thing written down, daily
-                           ...[0, 1].map(i => S(`M35 ${37 + i * 3} L49 ${37 + i * 3}`, 'ik', 1)),
-                           S('M30 32 L36 28', 'ik', 1.6)]);
+def('clerk', () => [                                            // the ledger, and the quill behind the ear
+  ...figure({ cx: 17, head: 8, w: 9.5, body: 'bs' }),
+  P('M24 14 L26 14 L31 3 L29.6 2.4 Z', 'hi'),                          // a quill, behind the ear
+  P('M36 28 L56 28 L56 50 L36 50 Z', 'lo'), P('M37.8 28 L39.4 28 L39.4 50 L37.8 50 Z', 'ik'),   // a ledger, bound at the spine
+  P('M42 33 L53 33 L53 34.4 L42 34.4 Z', 'gh'), P('M42 38 L53 38 L53 39.4 L42 39.4 Z', 'gh'),
+  P('M42 43 L53 43 L53 44.4 L42 44.4 Z', 'gh'), P('M42 48 L50 48 L50 49.4 L42 49.4 Z', 'gh'),   // its columns of sums
+]);
 def('deposit',      () => [P('M12 16 L48 16 L48 52 L12 52 Z', 'bs'),
                            C(30, 36, 11, 'lo'), ring('ik', 30, 36, 11, 2),       // in, and a claim on it back out
                            ...[0, 45, 90, 135].map(a => ['g', a, 30, 36, [S('M30 27 L30 45', 'ik', 1.2)]]),
@@ -41289,12 +41322,13 @@ def('credit',       () => [C(18, 20, 8, 'bs'), ring('ik', 18, 20, 8, 1.6),
                            C(10, 48, 4, 'lo')]);
 
 /* the orchestra, the mine, the air */
-def('conductor',    () => [C(30, 12, 6, 'bs'),
-                           P('M21 21 L39 21 L42 42 L18 42 Z', 'bs'),
-                           P('M14 42 L46 42 L46 50 L14 50 Z', 'lo'),             // the podium, so the beat can be seen
-                           S('M40 24 L54 12', 'ik', 2.4),
-                           C(54, 11, 2, 'hi'),
-                           S('M20 26 L10 32', 'bs', 3)]);
+def('conductor', () => [                                         // the baton, raised, and the score on its stand
+  ...figure({ cx: 17, head: 8, w: 9.5, body: 'bs' }),
+  P('M27 33 L28.4 33.8 L39 14 L37.4 13.2 Z', 'ik'),                    // the baton, raised
+  P('M44 28 L58 28 L58 40 L44 40 Z', 'hi'), P('M50 40 L52 40 L52 54 L50 54 Z', 'ik'),   // a music stand,
+  P('M44 31 L58 31 L58 32.4 L44 32.4 Z', 'gh'), P('M44 35 L58 35 L58 36.4 L44 36.4 Z', 'gh'),   // with the score on it
+  P('M45 28 L47 28 L47 40 L45 40 Z', 'lo'),
+]);
 def('canary',       () => [E(30, 32, 14, 12, 'bs'),
                            C(20, 22, 7, 'bs'),
                            P('M13 22 L7 24 L13 26 Z', 'ik'),
@@ -43732,9 +43766,13 @@ def('jorn_utzon',  () => [P('M22 52 L22 32 Q30 24 38 32 L38 52 Z', 'lo'), C(30, 
    background, because that is the whole technique.                          */
 def('nabataean',   () => [P('M22 52 L22 32 Q30 24 38 32 L38 52 Z', 'lo'), C(30, 22, 7, 'lo'),
                           E(46, 44, 8, 5, 'bs'), S('M46 40 L46 34', 'bs', 1.8)]);   // the water jar
-def('hunter_gatherer',()=>[P('M22 52 L22 32 Q30 24 38 32 L38 52 Z', 'lo'), C(30, 22, 7, 'lo'),
-                          S('M44 12 L48 52', 'hi', 2.2),                       // the spear
-                          ...[[12, 34], [16, 40]].map(([x, y]) => C(x, y, 2.6, 'bs'))]);
+def('hunter_gatherer', () => [                            // a spear, and what the group gathered in a basket
+  ...figure({ cx: 17, head: 8, w: 9.5, body: 'lo' }),
+  P('M44 9 L46 9 L51 54 L49 54 Z', 'hi'),                              // the spear's shaft
+  P('M42.6 9 L47.4 9 L45 1 Z', 'ik'),                                  // its head
+  P('M26 46 L40 46 L38 54 L28 54 Z', 'lo'),                            // a basket
+  C(29, 44, 2.4, 'plant-bs'), C(34, 42, 2.4, 'plant-hi'), C(39, 44, 2.4, 'plant-bs'),   // what it holds
+]);
 def('gobekli_tepe',()=> [...[0, 1, 2].map(i =>
                             P(`M${12 + i * 16} 52 L${12 + i * 16} 22 L${8 + i * 16} 22 L${8 + i * 16} 16 L${22 + i * 16} 16 L${22 + i * 16} 22 L${18 + i * 16} 22 L${18 + i * 16} 52 Z`, i === 1 ? 'hi' : 'lo')),
                           S('M6 54 Q30 50 54 54', 'gh', 1.6)]);              // the T-pillars
@@ -43790,9 +43828,13 @@ def('registan',    () => [...[0, 1, 2].map(i =>
                             P(`M${8 + i * 18} 52 L${8 + i * 18} ${34 + (i === 1 ? -6 : 0)} Q${11 + i * 18} ${28 + (i === 1 ? -6 : 0)} ${14 + i * 18} ${34 + (i === 1 ? -6 : 0)} L${14 + i * 18} 52 Z`, 'bs')),
                           E(29, 18, 8, 6, 'lo')]);
 
-def('mason',       () => [P('M22 52 L22 32 Q30 24 38 32 L38 52 Z', 'lo'), C(30, 22, 7, 'lo'),
-                          P('M42 34 L54 34 L54 40 L42 40 Z', 'hi'),          // the block
-                          S('M8 46 L18 38', 'bs', 2.4), C(7, 47, 2.2, 'bs')]);  // the trowel
+def('mason', () => [                                             // a wall of brick, and the trowel that lays it
+  ...figure({ cx: 17, head: 8, w: 9.5, body: 'lo' }),
+  P('M36 40 L58 40 L58 52 L36 52 Z', 'fire-bs'),                       // a course of brick
+  P('M36 44 L58 44 L58 45.4 L36 45.4 Z', 'fire-hi'), P('M36 48 L58 48 L58 49.4 L36 49.4 Z', 'fire-hi'),   // mortar
+  P('M44 40 L45.4 40 L45.4 44 L44 44 Z', 'fire-hi'), P('M50 44 L51.4 44 L51.4 48 L50 48 Z', 'fire-hi'),   // the joints
+  P('M22 42 L31 37 L32 38.4 L23 43 Z', 'hi'),                          // the trowel's blade
+]);
 def('guild',       () => [...[0, 1, 2].map(i => [P(`M${14 + i * 14} 52 L${14 + i * 14} 38 Q${18 + i * 14} 32 ${22 + i * 14} 38 L${22 + i * 14} 52 Z`, i === 1 ? 'hi' : 'lo'),
                                                  C(18 + i * 14, 28, 4.4, i === 1 ? 'hi' : 'lo')]).flat(),
                           S('M10 20 L50 20', 'bs', 2)]);
@@ -43825,9 +43867,13 @@ def('talud_tablero',()=> [P('M10 52 L50 52 L44 38 L16 38 Z', 'lo'),          // 
                           P('M18 26 L42 26 L42 34 L18 34 Z', 'hi'),
                           S('M14 22 L46 22', 'lo', 2)]);
 
-def('farmer',      () => [P('M22 52 L22 32 Q30 24 38 32 L38 52 Z', 'lo'), C(30, 20, 7, 'lo'),
-                          E(30, 14, 11, 3.4, 'bs'),                          // the hat
-                          S('M46 10 L46 52', 'hi', 2.2), S('M40 14 L52 14', 'hi', 2)]);  // the hoe
+def('farmer', () => [                                           // a hat against the sun, a hoe, and the wheat
+  ...figure({ cx: 17, head: 8, w: 9.5, body: 'lo' }),
+  E(17, 10.4, 11, 2.6, 'bs'),                                          // a broad hat
+  P('M48 16 L50 16 L50 52 L48 52 Z', 'hi'),                            // the hoe's handle
+  P('M44 12 L54 12 L54 17 L44 17 Z', 'ik'),                            // and its blade
+  leaf('plant-bs', 36, 40, .7, 0), leaf('plant-bs', 38, 48, .7, 0),   // wheat, at his feet
+]);
 
 /* Places, batch 8 — Middle Africa off zero, and the Gothic chain that Western
    Europe needed before any of its cathedrals could derive from anything.    */
@@ -43859,23 +43905,26 @@ def('mbanza_kongo',()=> [P('M4 52 L16 30 L44 30 L56 52 Z', 'bs'),            // 
                           S('M30 6 L30 1', 'hi', 1.6), S('M27 3 L33 3', 'hi', 1.6),
                           ...[0, 1].map(i => S(`M${10 + i * 36} 50 L${20 + i * 20} 40`, 'gh', 1.4))]);
 
-def('monk',        () => [P('M20 52 L20 30 Q30 18 40 30 L40 52 Z', 'lo'),
-                          P('M22 30 Q30 20 38 30 L38 22 Q30 12 22 22 Z', 'bs'),   // the cowl
-                          C(30, 26, 4.4, 'gh'),
-                          S('M30 38 L30 46', 'hi', 1.6), S('M26 41 L34 41', 'hi', 1.6)]);
+def('monk', () => [                                             // a cowl over the head, a rosary, and a candle for the night office
+  ...figure({ cx: 17, head: 8, w: 10, body: 'lo' }),
+  P('M8.5 15 Q17 2 25.5 15 Z', 'bs'),                                  // the cowl, pulled up
+  C(12, 33, 1.2, 'ik'), C(15, 37, 1.2, 'ik'), C(19, 38, 1.2, 'ik'), C(23, 35, 1.2, 'ik'),   // the rosary
+  P('M42 30 L46 30 L46 52 L42 52 Z', 'hi'),                            // the candle
+  C(44, 26, 2.4, 'fire-hi'), C(44, 26, 1.2, 'fire-bs'),                // its flame
+]);
 
 /* Places, batch 9 — the rest of Croatia. Pula is drawn as a complete ring
    because that is what makes it Pula: it is the only Roman amphitheatre whose
    outer wall survives all the way round.                                    */
-def('emperor', () => fitEyes(0.7, [[27.62, 26], [32.38, 26]], [
-  S('M24 40 L24 54', 'ik', 4.2), S('M36 40 L36 54', 'ik', 4.2),
-  P('M12 26 Q30 20 48 26 L52 50 L8 50 Z', 'bs'),                                                // the purple robe
-  P('M8 45 L52 45 L52 50 L8 50 Z', 'hi'), ...[12, 20, 28, 36, 44].map(x => C(x, 47.6, .9, 'ik')),   // the ermine hem
-  E(11, 34, 4.6, 8, 'bs'), E(49, 34, 4.6, 8, 'bs'), C(11, 42, 2.8, 'hi'), C(49, 42, 2.8, 'hi'),   // sleeves and hands
-  S('M50 20 L50 50', 'fire-hi', 2), C(50, 18, 3.2, 'fire-hi'),                                 // the sceptre and orb
-  ...[16, 22, 28, 34, 40, 44].map((x, i) => C(x - 4 + i * .6, 28, 3.4, 'hi')),                  // the ermine collar
-  C(30, 14, 8, 'hi'), S('M27.6 18.6 Q30 20 32.4 18.6', 'ik', 1), P('M22 14 Q22 22 30 26 Q38 22 38 14 Q36 24 30 24 Q24 24 22 14 Z', 'lo'),   // the beard
-  P('M22 8 L22 1 L26 5 L30 0 L34 5 L38 1 L38 8 Z', 'fire-hi'), S('M22 8 L38 8', 'fire-lo', 1.4)]));   // the crown
+def('emperor', () => [                                          // the crown, the ermine, and the orb
+  ...figure({ cx: 17, head: 8, w: 10, body: 'bs' }),
+  P('M10 12 L10 3 L13 7 L17 0 L21 7 L24 3 L24 12 Z', 'fire-hi'),      // the crown
+  P('M8 25 Q17 19 26 25 L26 29 Q17 24 8 29 Z', 'hi'),                  // the ermine collar
+  P('M7 42 L27 42 L27 46 L7 46 Z', 'hi'),                              // the ermine hem
+  C(11, 44, 1, 'ik'), C(17, 44, 1, 'ik'), C(23, 44, 1, 'ik'),
+  P('M46 17 L47.6 17 L47.6 54 L46 54 Z', 'fire-hi'),                   // the sceptre
+  C(46.8, 14, 3.4, 'fire-hi'), C(46.8, 14, 1.8, 'fire-bs'),            // and its orb
+]);
 def('amphitheatre',()=> [ring('lo', 30, 32, 22, 4),
                           ring('bs', 30, 32, 15, 3),
                           E(30, 32, 9, 6, 'hi'),
@@ -46180,10 +46229,14 @@ def('bung',      () => [P('M22 16 L42 16 L38 44 L26 44 Z', 'lo'),
                         S('M26 44 L38 44', 'hi', 1.0),
                         S('M32 20 L32 40', 'hi', 0.8)]);
 
-def('cooper',    () => [P('M20 22 Q14 36 20 50 L44 50 Q50 36 44 22 Z', 'lo'),
-                        S('M18 30 Q32 33 46 30', 'ik', 2.0),
-                        S('M18 42 Q32 45 46 42', 'ik', 2.0),
-                        C(32, 14, 5, 'ik')]);
+def('cooper', () => [                                           // a barrel he has bound with hoops, and the mallet
+  ...figure({ cx: 17, head: 8, w: 9.5, body: 'lo' }),
+  P('M36 24 Q30 38 36 52 L56 52 Q62 38 56 24 Z', 'bs'),                // the barrel
+  P('M35 30 L57 30 L57 31.8 L35 31.8 Z', 'ik'),                        // its hoops
+  P('M35 42 L57 42 L57 43.8 L35 43.8 Z', 'ik'),
+  P('M35 49 L57 49 L57 50.8 L35 50.8 Z', 'ik'),
+  P('M43 17 L53 17 L53 21 L43 21 Z', 'ik'), P('M47.4 21 L49.2 21 L49.2 26 L47.4 26 Z', 'ik'),   // the mallet
+]);
 
 def('lacquer',   () => [P('M14 34 Q32 26 50 34 Q32 42 14 34 Z', 'lo'),
                         S('M20 44 Q32 40 44 44', 'ik', 1.4),
@@ -59955,7 +60008,6 @@ const MKEK = {
   northern_gannet: () => [...nxBird(28, 32, 1.0, 'hi', { wing: 'ik', beak: 'bs', extra: [S('M36 24 L44 22', 'ik', 1.4), C(41, 24, 5, 'bs')] }), ...nyWave, S('M52 6 L54 14', 'ik', 1.4)],
   kookaburra: () => [...nxBird(26, 34, 1.0, 'bs', { wing: 'ik', beak: 'ik', extra: [S('M34 22 L46 22', 'ik', 2)] }), P('M2 50 L14 40 L14 50 Z', 'lo'), S('M52 8 L56 12 M50 14 L56 16', 'hi', 1.4), S('M8 56 L58 56', 'bs', 1.4)],
   bee_eater: () => [...nxBird(26, 36, 0.95, 'hi', { wing: 'bs', beak: 'ik', extra: [S('M34 24 L44 24', 'ik', 1.6), P('M2 34 L-2 30 L2 40 Z', 'bs')] }), ...nzWasp(48, 12, 0.5, 'hi', { stripes: 2 })],
-  oriental_pied_hornbill: () => [...nxBird(26, 34, 1.0, 'ik', { wing: 'hi', beak: 'hi', extra: [P('M38 24 L58 28 L38 32 Z', 'hi'), P('M40 16 L52 18 L48 26 L40 24 Z', 'hi'), S('M36 36 L28 44', 'hi', 1.4)] })],
   rufous_hummingbird: () => [...nxBird(24, 30, 0.7, 'hi', { wing: 'bs', beak: 'ik', extra: [P('M32 20 L58 24 L32 24 Z', 'ik')] }), ...nzFlower(48, 44, 7, 'hi', 'bs'), P('M2 14 Q-4 4 10 8 Q10 14 4 16 Z', 'hi'), P('M6 26 Q-2 20 4 14 Q14 18 12 26 Z', 'hi')],
   oilbird: () => [P('M0 60 L0 24 Q8 12 20 14 L40 18 Q60 18 60 30 L60 60 Z', 'bs'), S('M0 60 L0 24 Q8 12 20 14 L40 18 Q60 18 60 30 L60 60', 'ik', 1.4), ...nxBird(30, 44, 0.8, 'ik', { wing: 'ik', beak: 'hi' }), mgDrop(48, 28, 1.4, 'hi'), mgDrop(10, 28, 1.2, 'hi')],
   potoo: () => [S('M2 54 L58 54', 'bs', 5), S('M30 12 L30 54', 'bs', 8), E(30, 26, 8, 16, 'lo'), mmEll(30, 26, 8, 16, 'ik', 1.4), C(26, 14, 3.4, 'hi'), C(34, 14, 3.4, 'hi'), C(26, 14, 1.6, 'ik'), C(34, 14, 1.6, 'ik'), S('M24 28 L36 28 M24 34 L36 34', 'ik', 1.4), ...noMoon(50, 10, 0.3, 'hi')],
@@ -59997,6 +60049,3114 @@ const MKEK = {
   sea_monkeys: () => [...oaShrimp(24, 24, 0.7, 'hi', {}), ...oaShrimp(36, 46, 0.6, 'lo', {}), ring('hi', 52, 14, 4, 1.2), ring('hi', 8, 50, 3, 1.2), ring('hi', 52, 54, 2.6, 1.2), P('M2 58 L58 58 L54 62 L6 62 Z', 'gh')],
 };
 for (const [id, fn] of Object.entries(MKEK)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 66: animals VII — arachnid orders and tarantulas, caddisflies, beetles and bugs, termites, moth families, stick insects, flies, bivalves, cephalopods, sea snails, worms, Cambrian oddities, sponges, tunicates and more birds ── */
+const obSpire = (cx, y0, h, w, k, role = 'hi', o = {}) => [...Array.from({ length: k }, (_, i) => { const t = n(y0 + i * h / k), b = n(y0 + (i + 1) * h / k), hw = n(w * (0.25 + 0.75 * (i + 1) / k)), hw0 = n(w * (0.25 + 0.75 * i / k)); return P(`M${n(cx - hw0)} ${t} L${n(cx + hw0)} ${t} L${n(cx + hw)} ${b} L${n(cx - hw)} ${b} Z`, role); }), S(Array.from({ length: k }, (_, i) => { const b = n(y0 + (i + 1) * h / k), hw = n(w * (0.25 + 0.75 * (i + 1) / k)); return `M${n(cx - hw)} ${b} L${n(cx + hw)} ${b}`; }).join(' '), 'ik', 1.4), ...(o.spines ? [S(Array.from({ length: k }, (_, i) => { const b = n(y0 + (i + 0.5) * h / k), hw = n(w * (0.25 + 0.75 * (i + 0.5) / k)); return `M${n(cx - hw)} ${b} L${n(cx - hw - 4)} ${n(b - 2)} M${n(cx + hw)} ${b} L${n(cx + hw + 4)} ${n(b - 2)}`; }).join(' '), 'ik', 1.4)] : [])];
+const obValve = (cx, cy, rx, ry, role = 'hi', o = {}) => [E(cx, cy, rx, ry, role), mmEll(cx, cy, rx, ry, 'ik', 1.6), mmEll(cx, n(cy + ry * 0.1), n(rx * 0.7), n(ry * 0.7), 'ik', 1.2), mmEll(cx, n(cy + ry * 0.2), n(rx * 0.4), n(ry * 0.4), 'ik', 1.2), ...(o.extra || [])];
+const obVase = (cx, cy, s, role = 'hi', o = {}) => [P(`M${n(cx - 9 * s)} ${n(cy + 22 * s)} Q${n(cx - 16 * s)} ${n(cy - 4 * s)} ${n(cx - 10 * s)} ${n(cy - 20 * s)} L${n(cx + 10 * s)} ${n(cy - 20 * s)} Q${n(cx + 16 * s)} ${n(cy - 4 * s)} ${n(cx + 9 * s)} ${n(cy + 22 * s)} Z`, role), mmEll(cx, n(cy - 20 * s), n(10 * s), n(3 * s), 'ik', 1.4), S(`M${n(cx - 12 * s)} ${n(cy - 8 * s)} L${n(cx + 12 * s)} ${n(cy - 8 * s)} M${n(cx - 11 * s)} ${n(cy + 2 * s)} L${n(cx + 11 * s)} ${n(cy + 2 * s)} M${n(cx - 10 * s)} ${n(cy + 12 * s)} L${n(cx + 10 * s)} ${n(cy + 12 * s)} M${n(cx - 6 * s)} ${n(cy - 18 * s)} L${n(cx - 8 * s)} ${n(cy + 20 * s)} M${n(cx)} ${n(cy - 18 * s)} L${n(cx)} ${n(cy + 22 * s)} M${n(cx + 6 * s)} ${n(cy - 18 * s)} L${n(cx + 8 * s)} ${n(cy + 20 * s)}`, 'ik', o.lattice || 1), ...(o.extra || [])];
+const obFossil = [P('M0 54 L60 54 L60 60 L0 60 Z', 'bs'), S('M0 54 L60 54', 'ik', 1.4), S('M6 57 L18 57 M26 57 L40 57 M46 57 L56 57', 'ik', 1)];
+const MKEL = {
+  camel_spider: () => [...nzSpider(30, 28, 1.0, 'lo', { lw: 2, extra: [P('M30 12 L24 4 L30 8 L36 4 Z', 'ik')] }), noSun(10, 10, 4, 'hi')[0], S('M0 58 Q10 54 20 58 Q30 54 40 58 Q50 54 60 58', 'ik', 1.4)],
+  vinegaroon: () => [...nzScorp(28, 36, 1.0, 'ik', {}), S('M44 12 Q56 4 58 20', 'ik', 1.4), mgDrop(8, 12, 1.6, 'hi')],
+  tailless_whip_scorpion: () => [...nzSpider(30, 32, 0.9, 'bs', { lw: 1.6, extra: [S('M22 18 Q8 6 2 14 M38 18 Q52 6 58 14 M24 22 L10 24 L4 30', 'ik', 1.4)] })],
+  flour_mite: () => [E(30, 32, 7, 6, 'hi'), mmEll(30, 32, 7, 6, 'ik', 1.4), S('M25 36 L20 42 M28 38 L26 46 M32 38 L34 46 M35 36 L40 42 M26 28 L22 24 M34 28 L38 24', 'ik', 1.4), P('M2 50 L58 50 L52 58 L8 58 Z', 'hi'), ...nhDots([[14, 54], [26, 54], [38, 54], [48, 54]], 1.2, 'ik'), ...nhDots([[10, 12], [48, 14], [52, 40]], 1.4, 'hi')],
+  chigger: () => [E(30, 32, 7, 6, 'hi'), C(30, 25, 3, 'hi'), S('M25 36 L20 42 M28 38 L26 46 M32 38 L34 46 M35 36 L40 42', 'ik', 1.4), ...ntBroad(10, 50, 6, 'lo'), ...ntBroad(50, 50, 6, 'lo'), S('M2 58 L58 58', 'ik', 1.4), ...nhDots([[44, 14], [50, 20], [54, 12]], 1.6, 'hi')],
+  brazilian_yellow_scorpion: () => [...nzScorp(28, 36, 1.0, 'hi', { fat: true }), ...nhDots([[50, 10], [46, 14]], 1.6, 'bs')],
+  brazilian_wandering_spider: () => [...nzSpider(30, 30, 1.0, 'bs', { lw: 2, mark: 'dots' }), P('M42 10 Q50 2 58 6 Q54 14 46 14 Z', 'hi')],
+  widow_spider: () => nzSpider(30, 24, 1.0, 'ik', { mark: 'hour', extra: [S('M30 0 L30 12', 'ik', 1)] }),
+  bagheera_kiplingi: () => [...nzSpider(30, 34, 0.8, 'lo', { lw: 1.6 }), S('M30 2 L30 8 M18 4 L22 12 M42 4 L38 12', 'bs', 2), ...ntLeaf(10, 52, 12, 4, 'hi', -20), ...ntLeaf(50, 52, 12, 4, 'hi', -160)],
+  jumping_spider_portia: () => [...nzSpider(24, 38, 0.8, 'bs', { lw: 1.6 }), ...nzSpider(46, 16, 0.4, 'lo', { lw: 1 }), S('M30 22 Q36 14 42 18', 'ik', 1.4)],
+  daddy_long_legs_spider: () => [E(30, 30, 5, 5, 'lo'), E(30, 40, 4, 4, 'lo'), S('M26 30 L10 16 L2 38 M26 32 L8 32 L2 52 M34 30 L50 16 L58 38 M34 32 L52 32 L58 52 M27 34 L14 44 L10 58 M33 34 L46 44 L50 58', 'ik', 1.2), S('M0 8 L60 8', 'bs', 2.4)],
+  barn_funnel_weaver: () => [...nzSpider(30, 26, 0.95, 'bs', {}), P('M0 50 L60 50 L60 60 L0 60 Z', 'hi'), S('M0 50 L60 50', 'ik', 1.4), P('M0 8 L16 8 L16 50 L0 50 Z', 'bs')],
+  crab_spider: () => [...nzFlower(30, 46, 9, 'hi', 'bs'), ...nzSpider(30, 22, 0.8, 'lo', { lw: 1.8, extra: [S('M22 14 L12 6 M38 14 L48 6', 'ik', 2)] })],
+  fishing_spider: () => [...nzSpider(30, 24, 0.9, 'bs', { lw: 1.6 }), ...nyWave, ring('hi', 10, 40, 4, 1.2), ring('hi', 50, 40, 4, 1.2), ...nyFish(30, 46, 8, 3.6, 'lo', {})],
+  mexican_redknee_tarantula: () => [...nzSpider(30, 28, 1.1, 'ik', { lw: 2.6 }), ...nhDots([[12, 24], [48, 24], [10, 38], [50, 38]], 2.6, 'hi')],
+  desert_blonde_tarantula: () => [...nzSpider(30, 28, 1.1, 'lo', { lw: 2.6 }), noSun(50, 10, 4, 'hi')[0], S('M0 58 Q10 54 20 58 Q30 54 40 58 Q50 54 60 58', 'bs', 1.4)],
+  gooty_tarantula: () => [...nzSpider(30, 28, 1.1, 'hi', { lw: 2.6, mark: 'dots' }), S('M8 54 L52 54', 'ik', 1.4)],
+  funnel_weaver: () => [P('M6 40 L54 40 L40 58 L20 58 Z', 'hi'), S('M6 40 L54 40 L40 58 L20 58 Z', 'ik', 1.4), E(30, 40, 24, 4, 'ik'), ...nzSpider(30, 20, 0.7, 'bs', { lw: 1.4 }), S('M2 60 L10 52 L16 60 L24 52 L30 60 L38 52 L46 60 L54 52 L58 60', 'lo', 1.6)],
+  sheet_weaver: () => [P('M2 34 L58 30 L58 38 L2 42 Z', 'hi'), S('M2 34 L58 30 M2 42 L58 38 M12 33 L12 41 M24 32 L24 40 M36 31 L36 39 M48 30 L48 38', 'ik', 1), ...nzSpider(30, 30, 0.5, 'ik', { lw: 1 }), ...nhDots([[10, 22], [40, 20], [20, 48], [50, 48]], 1.6, 'hi')],
+  cobweb_spider: () => [S('M30 0 L30 16 M30 0 L10 14 M30 0 L50 14 M10 14 L14 44 M50 14 L46 44 M14 44 L46 44 M10 14 L50 14', 'ik', 0.9), S('M14 24 L46 24 M16 34 L44 34', 'ik', 0.8), ...nzSpider(30, 30, 0.6, 'bs', { lw: 1.2 })],
+  caddisfly: () => [...nzDragon(26, 26, 0.9, 'lo', {}), ...obSpire(48, 36, 16, 7, 4, 'hi'), S('M2 56 Q10 52 18 56 Q26 52 34 56 Q42 52 50 56', 'ik', 1.4)],
+  snakefly: () => [...nzDragon(26, 30, 0.95, 'bs', {}), S('M42 24 Q50 14 56 20', 'ik', 3), C(57, 20, 2.6, 'bs')],
+  thrips: () => [E(30, 32, 12, 3, 'ik'), C(44, 32, 2.6, 'ik'), S('M26 30 L10 20 M28 30 L16 16 M32 30 L46 16 M34 30 L50 20', 'ik', 1), S('M10 20 l-2 -3 M12 18 l-2 -3 M16 16 l-1 -3 M46 16 l1 -3 M50 20 l2 -3 M10 20 l-3 -1', 'ik', 0.8), S('M24 35 L22 42 M30 35 L30 42 M36 35 L38 42', 'ik', 1.2), ...nzFlower(48, 50, 6, 'hi', 'bs')],
+  dog_flea: () => [E(26, 38, 10, 7, 'bs'), mmEll(26, 38, 10, 7, 'ik', 1.4), C(38, 34, 4, 'bs'), S('M20 42 L12 34 L6 54 M30 44 L38 52', 'ik', 2), ...nvDogH(46, 14, 9, 'hi', 'ik')],
+  cardinal_beetle: () => nzBeetle(30, 38, 0.95, 'hi', { stripes: 'ik', extra: [S('M26 22 L34 22', 'ik', 3)] }),
+  ground_beetle: () => [...nzBeetle(30, 36, 0.95, 'ik', { stripes: 'hi' }), S('M0 58 L60 58', 'bs', 2), ...noMoon(50, 10, 0.3, 'hi')],
+  rove_beetle: () => [E(30, 34, 5, 14, 'bs'), E(30, 20, 7, 5, 'ik'), C(30, 12, 3.6, 'ik'), S('M25 22 L14 16 M25 28 L12 30 M35 22 L46 16 M35 28 L48 30 M27 40 L22 50 M33 40 L38 50', 'ik', 1.6), P('M24 22 L36 22 L34 28 L26 28 Z', 'hi'), S('M30 48 Q40 52 36 56', 'ik', 2)],
+  seven_spot_ladybird: () => [...nzBeetle(30, 34, 0.95, 'hi', { spots: [[-5, -2], [5, -2], [-6, 6], [6, 6], [-3, 13], [3, 13], [0, 0]], spotRole: 'ik' }), ...ntLeaf(8, 54, 14, 4, 'lo', -10)],
+  honeypot_ant: () => [E(24, 40, 14, 11, 'hi'), mmEll(24, 40, 14, 11, 'ik', 1.6), E(42, 34, 4.4, 3, 'bs'), C(50, 34, 3.6, 'bs'), S('M36 36 L38 46 M42 36 L44 46 M46 36 L52 44', 'ik', 1.4), S('M10 40 Q24 46 38 40', 'bs', 1.4), P('M2 56 L58 56 L58 60 L2 60 Z', 'bs')],
+  red_wood_ant: () => [P('M4 56 Q14 26 30 22 Q46 26 56 56 Z', 'bs'), S('M4 56 Q14 26 30 22 Q46 26 56 56', 'ik', 1.4), S('M18 40 L22 36 M36 34 L40 40 M26 48 L30 44', 'ik', 1.2), ...nzAnt(14, 14, 0.7, 'hi')],
+  yellow_crazy_ant: () => [...nzAnt(24, 34, 1.1, 'hi', {}), S('M32 24 L44 14 L50 18 M32 26 L46 22', 'ik', 1.2), nqBurst(48, 48, 2, 6, 8, 'ik', 1.4), S('M0 58 L60 58', 'bs', 1.4)],
+  sea_skater: () => [E(30, 30, 4, 8, 'bs'), S('M26 26 L10 20 L2 26 M34 26 L50 20 L58 26 M26 32 L8 38 L2 46 M34 32 L52 38 L58 46', 'ik', 1.6), C(30, 22, 3, 'bs'), ...nyWave, S('M2 54 Q10 50 18 54 Q26 50 34 54 Q42 50 50 54 Q54 52 58 54', 'ik', 1.4)],
+  giant_water_bug: () => [E(30, 34, 11, 16, 'bs'), mmEll(30, 34, 11, 16, 'ik', 1.6), C(30, 16, 5, 'bs'), S('M22 20 L12 12 L8 20 M38 20 L48 12 L52 20 M20 36 L8 44 M40 36 L52 44 M24 48 L18 56 M36 48 L42 56', 'ik', 2.4), S('M30 50 L30 58', 'ik', 2), ...nyWave],
+  water_boatman: () => [E(30, 32, 8, 14, 'lo'), C(30, 14, 4, 'lo'), S('M22 30 L6 38 M38 30 L54 38', 'ik', 2.4), E(6, 38, 4, 1.6, 'ik'), E(54, 38, 4, 1.6, 'ik'), S('M24 40 L16 52 M36 40 L44 52', 'ik', 1.6), ...nyWave],
+  backswimmer: () => [E(30, 32, 8, 15, 'hi'), mmEll(30, 32, 8, 15, 'ik', 1.4), C(30, 14, 5, 'hi'), S('M24 32 L8 44 M36 32 L52 44', 'ik', 2), S('M2 20 L58 20', 'ik', 1.4), S('M2 24 Q10 20 18 24 Q26 20 34 24 Q42 20 50 24 Q54 22 58 24', 'hi', 1.4)],
+  water_scorpion: () => [S('M30 14 L30 44', 'bs', 5), C(30, 12, 4, 'bs'), S('M26 14 L14 8 L12 18 M34 14 L46 8 L48 18', 'bs', 2.4), S('M30 44 L30 58', 'ik', 1.8), S('M26 28 L16 36 L14 50 M34 28 L44 36 L46 50', 'ik', 1.6), ...ntLeaf(8, 54, 12, 3, 'lo', -30), ...nyWave],
+  stink_bug: () => [P('M30 14 L46 22 L48 40 L30 54 L12 40 L14 22 Z', 'lo'), S('M30 14 L46 22 L48 40 L30 54 L12 40 L14 22 Z', 'ik', 1.6), C(30, 10, 4, 'lo'), S('M26 8 L22 2 M34 8 L38 2', 'ik', 1.2), S('M14 28 L6 28 M14 38 L6 42 M46 28 L54 28 M46 38 L54 42', 'ik', 1.6), S('M30 24 L30 46', 'ik', 1), nqBurst(50, 12, 2, 6, 8, 'hi', 1.4)],
+  firebug: () => [P('M30 14 L44 22 L46 40 L30 54 L14 40 L16 22 Z', 'hi'), S('M30 14 L44 22 L46 40 L30 54 L14 40 L16 22 Z', 'ik', 1.6), C(30, 10, 4, 'ik'), P('M22 20 L38 20 L36 26 L24 26 Z', 'ik'), C(24, 36, 3, 'ik'), C(36, 36, 3, 'ik'), S('M14 28 L6 28 M14 38 L6 42 M46 28 L54 28 M46 38 L54 42', 'ik', 1.6), nqBurst(50, 12, 2, 6, 8, 'hi', 1.4)],
+  assassin_bug: () => [E(30, 40, 9, 14, 'ik'), mmEll(30, 40, 9, 14, 'hi', 1.2), C(30, 18, 4, 'ik'), S('M30 20 L30 30', 'ik', 1.4), S('M30 16 L46 8 L48 16', 'hi', 2), S('M22 36 L8 40 L4 52 M38 36 L52 40 L56 52 M24 48 L16 58 M36 48 L44 58', 'ik', 1.6), P('M46 18 L58 12 L52 22 Z', 'hi')],
+  lanternfly: () => [...nzButter(30, 30, 0.8, 'lo', { hind: 'hi', spots: [[14, -8, 1.6], [16, 2, 1.4], [12, 8, 1.2]], spotRole: 'ik' }), S('M30 14 Q40 6 48 12', 'hi', 3), noSun(10, 10, 3, 'hi')[0]],
+  spittlebug: () => [E(30, 38, 10, 12, 'bs'), C(30, 22, 5, 'bs'), S('M24 26 L10 22 M36 26 L50 22 M22 40 L10 50 M38 40 L50 50', 'ik', 1.8), ...nhDots([[22, 38], [30, 34], [38, 40], [28, 44], [34, 46]], 3, 'hi'), ...nhDots([[24, 44], [36, 36]], 2, 'hi')],
+  macrotermes_bellicosus: () => [P('M10 58 Q12 30 30 6 Q48 30 50 58 Z', 'bs'), S('M10 58 Q12 30 30 6 Q48 30 50 58', 'ik', 1.4), S('M18 40 L22 36 M38 30 L42 36 M26 50 L32 46', 'ik', 1.2), ...nzAnt(30, 50, 0.55, 'hi'), ...nzFlower(8, 12, 4, 'hi', 'bs')],
+  asian_subterranean_termite: () => [...nzLog(46, 44, 11), ...nzAnt(22, 22, 1.0, 'hi', {}), S('M0 58 L60 58', 'bs', 1.6), ...nhDots([[8, 40], [14, 50]], 1.6, 'bs')],
+  parasitoid_wasp: () => [...nzWasp(30, 20, 0.95, 'ik', { stripes: 2, extra: [S('M12 22 L4 30', 'ik', 1.2)] }), ...nzChain(14, 50, 5, 0, 7, 3.4, 'hi'), C(50, 50, 4.4, 'bs')],
+  hawk_moth: () => nzButter(30, 28, 1.0, 'lo', { fat: true, hind: 'hi', spots: [[14, -12, 1.6]], spotRole: 'ik', extra: [S('M30 14 Q42 8 50 14', 'ik', 1)] }),
+  owlet_moth: () => [...nzButter(30, 34, 0.9, 'bs', { fat: true, spots: [[12, -4, 2.4], [8, 6, 1.6]], spotRole: 'hi' }), C(46, 12, 5, 'hi'), C(46, 12, 2, 'ik'), noMoon(10, 10, 0.3, 'hi')[0], noMoon(10, 10, 0.3, 'hi')[1] || []].filter(Boolean),
+  lappet_moth: () => nzButter(30, 28, 1.0, 'bs', { fat: true, hind: 'lo', spots: [[16, -10, 1.8]], spotRole: 'hi', extra: [nqBurst(30, 30, 8, 12, 14, 'bs', 1.2)] }),
+  tortrix_moth: () => [...ntLeaf(30, 44, 36, 14, 'hi', 90), S('M16 50 Q30 34 44 50', 'ik', 2), ...nzButter(30, 18, 0.5, 'lo', { fat: true })],
+  empusa: () => nzMantis(30, 34, 1.0, 'lo', { extra: [P('M26 -2 L30 -8 L34 -2 Z', 'ik')] }),
+  skimmer_dragonfly: () => [...nzDragon(28, 28, 0.95, 'hi', {}), S('M0 54 Q10 50 20 54 Q30 50 40 54 Q50 50 60 54', 'ik', 1.4), ring('hi', 44, 56, 3, 1)],
+  cave_cricket: () => [E(30, 36, 12, 8, 'bs'), mmEll(30, 36, 12, 8, 'ik', 1.4), C(44, 32, 4.4, 'bs'), S('M46 30 Q56 14 58 26 M44 28 Q50 10 56 12', 'ik', 1), S('M22 40 L8 24 L2 50 M30 42 L26 56 M38 42 L44 56', 'ik', 2), P('M0 0 L60 0 L60 10 L48 14 L38 8 L24 14 L12 8 L0 12 Z', 'ik')],
+  pygmy_grasshopper: () => [E(26, 38, 10, 6, 'bs'), P('M16 36 L-2 44 L16 40 Z', 'bs'), C(40, 34, 4, 'bs'), S('M20 42 L10 28 L6 52 M28 44 L26 54 M34 44 L38 54', 'ik', 2), S('M42 30 L48 22', 'ik', 1), ...ntLeaf(48, 50, 14, 4, 'lo', -20)],
+  malaysian_jungle_nymph: () => [E(28, 36, 18, 8, 'lo'), mmEll(28, 36, 18, 8, 'ik', 1.4), C(48, 32, 4.4, 'lo'), S('M10 32 L14 24 M18 30 L22 22 M26 30 L30 22 M34 30 L38 22', 'ik', 2), S('M14 42 L8 54 M24 44 L20 56 M34 44 L38 56 M44 40 L52 52', 'ik', 1.8), ...ntBroad(8, 12, 7, 'hi'), ...ntBroad(48, 12, 6, 'hi')],
+  leaf_insect: () => [...ntLeaf(26, 34, 40, 16, 'hi', 20), S('M10 40 L44 26', 'ik', 1.2), C(48, 22, 4, 'hi'), S('M46 18 L52 10 M50 20 L58 14', 'ik', 1.2), S('M20 40 L16 52 M30 36 L28 50', 'ik', 1.6), ...ntBroad(8, 12, 5, 'lo')],
+  timema: () => [S('M4 36 L50 34', 'lo', 6), C(52, 33, 4, 'lo'), S('M16 38 L10 52 M28 38 L26 54 M40 38 L44 52 M56 28 L58 20', 'ik', 1.6), ...ntBroad(16, 12, 7, 'hi'), ...ntBroad(40, 12, 6, 'hi'), S('M2 58 L58 58', 'bs', 1.4)],
+  booklouse: () => [E(40, 36, 8, 5, 'hi'), C(50, 34, 3.4, 'hi'), S('M36 40 L32 48 M42 40 L42 48 M46 40 L50 46', 'ik', 1.2), P('M2 20 L28 14 L28 56 L2 58 Z', 'bs'), P('M28 14 L54 20 L54 58 L28 56 Z', 'lo'), S('M6 26 L24 24 M6 32 L24 30 M32 24 L50 26 M32 30 L50 32', 'ik', 1)],
+  gall_midge: () => [...nzFly(24, 26, 0.7, 'ik', { th: 2 }), C(40, 46, 8, 'bs'), ring('ik', 40, 46, 8, 1.4), C(40, 46, 3, 'hi'), P('M20 40 L34 38 L28 54 Z', 'lo'), ...ntLeaf(48, 20, 12, 5, 'hi', 60)],
+  moth_fly: () => [...nzButter(30, 28, 0.6, 'lo', { fat: true }), P('M2 46 L58 46 L58 58 L2 58 Z', 'hi'), ring('ik', 30, 52, 4, 1.4), S('M2 46 L58 46', 'ik', 1.4)],
+  tachinid_fly: () => [...nzFly(26, 30, 1.1, 'ik', { th: 4, extra: [S('M18 26 L14 20 M24 26 L22 20 M30 26 L30 20', 'ik', 1.2)] })],
+  fruit_fly_tephritid: () => [...nzFly(24, 28, 1.0, 'hi', { th: 3.4 }), C(46, 46, 10, 'hi'), ring('ik', 46, 46, 10, 1.4), S('M46 36 L46 30 M46 34 L52 30', 'bs', 2)],
+  leaf_footed_bug: () => [P('M30 14 L44 22 L46 40 L30 54 L14 40 L16 22 Z', 'bs'), S('M30 14 L44 22 L46 40 L30 54 L14 40 L16 22 Z', 'ik', 1.6), C(30, 10, 4, 'bs'), S('M14 38 L6 32 M46 38 L54 32', 'ik', 1.6), P('M4 42 Q-2 46 4 52 L10 48 Z M56 42 Q62 46 56 52 L50 48 Z', 'hi'), S('M14 28 L6 24 M46 28 L54 24', 'ik', 1.6)],
+  cockle: () => [E(30, 32, 20, 18, 'hi'), mmEll(30, 32, 20, 18, 'ik', 1.8), S('M30 50 L30 16 M24 49 L20 20 M18 46 L12 24 M36 49 L40 20 M42 46 L48 24', 'ik', 1.4), P('M26 50 L34 50 L32 56 L28 56 Z', 'hi'), ...nyWave],
+  venus_clam: () => [...obValve(30, 34, 22, 17, 'hi', {}), P('M2 56 L58 56 L58 60 L2 60 Z', 'bs'), nqBurst(50, 10, 2, 6, 8, 'hi', 1.4)],
+  pen_shell: () => [P('M30 4 L48 40 Q40 54 30 56 Q20 54 12 40 Z', 'bs'), S('M30 4 L48 40 Q40 54 30 56 Q20 54 12 40 Z', 'ik', 1.6), S('M30 6 L30 54 M24 20 L24 48 M36 20 L36 48', 'ik', 1), S('M30 56 L30 60', 'hi', 3), ...nzSoil],
+  rudist: () => [P('M12 54 L16 18 Q30 10 44 18 L48 54 Z', 'bs'), S('M12 54 L16 18 Q30 10 44 18 L48 54 Z', 'ik', 1.6), E(30, 16, 14, 5, 'hi'), mmEll(30, 16, 14, 5, 'ik', 1.4), S('M18 28 L44 28 M16 38 L46 38 M14 48 L46 48', 'ik', 1), ...obFossil],
+  freshwater_mussel: () => [P('M4 44 Q8 18 36 14 Q56 18 56 40 Q40 52 4 44 Z', 'ik'), S('M4 44 Q8 18 36 14 Q56 18 56 40 Q40 52 4 44 Z', 'hi', 1.6), S('M12 42 Q20 24 40 22 M18 44 Q26 32 46 30', 'hi', 1.2), ...nyWave],
+  nautiloid: () => [P('M6 42 Q14 14 46 14 Q56 30 46 48 Q20 56 6 42 Z', 'hi'), S('M6 42 Q14 14 46 14 Q56 30 46 48 Q20 56 6 42 Z', 'ik', 1.6), nzSpiral(32, 34, 1, 16, 2, 'ik', 1.4), S('M46 14 L52 8 M50 22 L58 18', 'hi', 2), C(52, 28, 2.4, 'ik'), S('M6 42 L2 50 M10 46 L8 54', 'hi', 2)],
+  coconut_octopus: () => [C(40, 38, 16, 'bs'), ring('ik', 40, 38, 16, 1.6), S('M26 38 Q40 30 54 38', 'ik', 1.4), ...nzOcto(22, 20, 0.7, 'lo', {})],
+  ram_s_horn_squid: () => [nzSpiral(26, 30, 1, 16, 2.2, 'hi', 3), S('M34 30 Q48 34 52 46', 'bs', 5), ...nhDots([[50, 12], [44, 8]], 1.6, 'hi'), ...nyWave],
+  sea_hare: () => [P('M8 50 Q4 30 22 24 Q30 12 38 22 Q52 24 52 50 Z', 'bs'), S('M8 50 Q4 30 22 24 Q30 12 38 22 Q52 24 52 50', 'ik', 1.4), S('M36 22 L32 8 M42 24 L46 10', 'bs', 2.4), C(32, 7, 1.6, 'ik'), C(46, 9, 1.6, 'ik'), ...nhDots([[16, 38], [26, 34], [36, 40], [44, 36]], 2, 'hi'), ...nyWave],
+  sea_angel: () => [E(30, 34, 8, 14, 'hi'), mmEll(30, 34, 8, 14, 'ik', 1.4), C(30, 18, 5, 'hi'), P('M22 30 Q6 20 4 32 Q10 38 22 38 Z M38 30 Q54 20 56 32 Q50 38 38 38 Z', 'hi'), S('M24 18 L20 10 M36 18 L40 10', 'bs', 1.6), ...nyWave],
+  land_snail: () => nzSnail(24, 34, 1.15, 'bs', { body: 'lo' }),
+  achatina: () => [...nzSnail(22, 36, 1.1, 'bs', { body: 'lo' }), ...ntBroad(48, 10, 7, 'hi'), nzSpiral(20, 32, 1, 14, 3, 'hi', 1.4)],
+  helicidae: () => [...nzSnail(24, 34, 1.1, 'hi', { body: 'lo' }), ...nzFlower(8, 10, 4, 'hi', 'bs')],
+  sea_snail: () => [...nzSnail(22, 34, 1.1, 'hi', { body: 'lo' }), ...nyWave, S('M2 58 L58 58', 'ik', 1.2)],
+  tritons_trumpet: () => [...obSpire(32, 4, 40, 18, 5, 'hi', {}), E(32, 48, 14, 8, 'hi'), mmEll(32, 48, 14, 8, 'ik', 1.4), P('M20 50 L2 56 L8 44 Z', 'hi'), S('M24 48 L40 48', 'ik', 1.4), ...nyWave],
+  murex: () => [...obSpire(30, 8, 34, 14, 4, 'hi', { spines: true }), E(30, 48, 12, 8, 'hi'), mmEll(30, 48, 12, 8, 'ik', 1.4), S('M30 56 L30 62', 'ik', 2), nqBurst(10, 52, 2, 6, 8, 'ik', 1.2)],
+  turritella: () => [...obSpire(30, 4, 52, 12, 9, 'bs', {}), ...nyWave],
+  wentletrap: () => [...obSpire(30, 6, 48, 10, 7, 'hi', {}), S('M24 52 L36 52', 'ik', 1.4), S('M20 18 L40 18 M22 28 L38 28 M20 38 L40 38', 'ik', 1), ...nyWave],
+  sea_pig: () => [E(30, 36, 18, 11, 'hi'), mmEll(30, 36, 18, 11, 'ik', 1.6), S('M16 46 L12 54 M24 47 L22 56 M34 47 L36 56 M44 46 L48 54', 'hi', 2.4), S('M38 26 L44 18 M32 26 L34 16 M44 28 L52 22', 'hi', 2.2), C(48, 34, 1.6, 'ik'), ...nhDots([[18, 32], [26, 38], [36, 32]], 1.6, 'bs'), S('M0 58 L60 58', 'ik', 1.2)],
+  cushion_star: () => [E(30, 32, 22, 22, 'hi'), nzStarP(30, 32, 24, 14, 5, 'hi'), mmEll(30, 32, 14, 14, 'ik', 1.4), ...nhDots([[30, 20], [40, 28], [36, 40], [24, 40], [20, 28], [30, 32]], 2, 'bs'), S('M30 32 L30 12 M30 32 L50 26 M30 32 L42 48 M30 32 L18 48 M30 32 L10 26', 'ik', 0.9)],
+  lugworm: () => [...nzWorm(4, 34, 1.4, 'bs', 12, 3.4, { alt: 'lo' }), ...nhDots([[8, 54], [14, 56], [20, 54], [28, 56], [38, 54], [48, 56]], 2.4, 'bs'), S('M0 50 L60 50', 'ik', 1.2)],
+  ragworm: () => [...nzWorm(4, 32, 1.4, 'lo', 12, 3.4, { alt: 'hi' }), S('M8 26 L8 22 M14 26 L14 22 M20 26 L20 22 M26 26 L26 22 M32 26 L32 22 M38 26 L38 22 M44 26 L44 22', 'ik', 1.2), S('M0 52 L60 52', 'bs', 2)],
+  tubifex: () => [P('M0 40 L60 40 L60 60 L0 60 Z', 'bs'), S('M6 40 Q4 28 10 22 M16 40 Q18 26 12 16 M26 40 Q22 28 28 20 M36 40 Q40 26 34 18 M46 40 Q44 28 50 22 M54 40 Q58 28 52 24', 'hi', 2.6), ...nhDots([[10, 50], [24, 54], [40, 50], [50, 56]], 1.6, 'ik')],
+  horsehair_worm: () => [S('M4 20 Q20 4 30 20 Q40 36 28 40 Q14 44 22 54 Q36 62 56 50', 'ik', 2.4), S('M4 20 Q20 4 30 20', 'ik', 1), C(4, 20, 2.4, 'ik'), ...nhDots([[50, 14], [54, 20]], 1.6, 'hi'), ...nyWave],
+  arrow_worm: () => [P('M4 32 L40 26 L56 32 L40 38 Z', 'hi'), S('M4 32 L40 26 L56 32 L40 38 Z', 'ik', 1.4), P('M14 32 L10 22 L22 28 Z M14 32 L10 42 L22 36 Z', 'hi'), C(44, 30, 1.6, 'ik'), S('M50 28 L58 22 M50 36 L58 42', 'ik', 1.4), ...nhDots([[8, 10], [20, 14], [44, 12], [30, 50], [44, 52], [12, 50]], 1.6, 'hi')],
+  rotifer: () => [E(30, 40, 8, 14, 'hi'), mmEll(30, 40, 8, 14, 'ik', 1.4), S('M30 26 L30 12', 'hi', 3), ...[0, 1, 2, 3, 4, 5, 6, 7].map(i => { const a = i * Math.PI / 4; return S(`M${n(30 + 4 * Math.cos(a))} ${n(12 + 4 * Math.sin(a))} L${n(30 + 12 * Math.cos(a))} ${n(12 + 12 * Math.sin(a))}`, 'ik', 1.2); }), ring('ik', 30, 12, 12, 1), S('M30 54 L24 60 M30 54 L36 60', 'ik', 1.6), ...nhDots([[28, 38], [32, 44], [29, 32]], 1.4, 'bs')],
+  hallucigenia: () => [S('M6 38 Q20 34 36 36 L50 34', 'lo', 7), C(52, 33, 4.4, 'lo'), S('M12 32 L10 14 M20 31 L18 12 M28 31 L26 12 M36 32 L34 14', 'ik', 1.8), S('M12 42 L8 56 M22 42 L20 56 M32 42 L30 56 M42 40 L42 56', 'ik', 2), S('M4 38 Q-2 30 4 26', 'ik', 2), ...obFossil],
+  ottoia: () => [P('M4 36 Q20 26 34 34 Q44 40 50 34 L52 40 Q40 48 30 42 Q18 36 4 42 Z', 'hi'), S('M10 38 L10 42 M18 36 L18 40 M26 38 L26 42 M34 38 L34 42 M42 38 L42 42', 'ik', 1.2), P('M50 30 L58 28 L58 44 L50 42 Z', 'bs'), S('M52 32 L56 32 M52 38 L56 38', 'ik', 1.2), ...obFossil],
+  dickinsonia: () => [E(30, 30, 24, 14, 'hi'), mmEll(30, 30, 24, 14, 'ik', 1.8), S('M8 30 L52 30', 'ik', 1.2), S(Array.from({ length: 9 }, (_, i) => { const x = 12 + i * 4.6; return `M${n(x)} ${n(30 - 12 * (1 - Math.abs(x - 30) / 24 * 0.4))} L${n(x)} ${n(30 + 12 * (1 - Math.abs(x - 30) / 24 * 0.4))}`; }).join(' '), 'ik', 1), ...obFossil],
+  trichoplax: () => [P('M6 32 Q10 14 26 18 Q40 8 52 22 Q60 34 48 44 Q34 54 20 46 Q6 46 6 32 Z', 'hi'), S('M6 32 Q10 14 26 18 Q40 8 52 22 Q60 34 48 44 Q34 54 20 46 Q6 46 6 32 Z', 'ik', 1.6), ...nhDots([[22, 30], [32, 24], [40, 34], [28, 40], [18, 38]], 2.4, 'bs'), ring('ik', 30, 32, 26, 0.8)],
+  sea_squirt: () => [P('M18 56 Q14 28 22 20 L38 20 Q46 28 42 56 Z', 'hi'), S('M18 56 Q14 28 22 20 L38 20 Q46 28 42 56 Z', 'ik', 1.6), P('M22 20 L20 8 L28 8 L28 20 Z M32 20 L32 10 L40 10 L38 20 Z', 'hi'), mmEll(24, 8, 4, 1.6, 'ik', 1.2), mmEll(36, 10, 4, 1.6, 'ik', 1.2), S('M14 56 L46 56', 'bs', 3), S('M22 34 L38 34 M20 44 L40 44', 'ik', 1), mgDrop(50, 14, 1.4, 'hi')],
+  salp: () => [...[0, 1, 2].map(i => E(18 + i * 12, 20 + i * 12, 10, 7, 'hi')), ...[0, 1, 2].map(i => mmEll(18 + i * 12, 20 + i * 12, 10, 7, 'ik', 1.4)), S('M10 20 L10 20 M18 14 L18 26 M30 26 L30 38 M42 38 L42 50', 'ik', 1), ...nhDots([[8, 50], [50, 12], [52, 24]], 1.6, 'hi'), ...nyWave],
+  praya_dubia: () => [C(30, 8, 5, 'hi'), S('M30 12 Q44 22 30 32 Q16 42 30 52 Q40 58 34 62', 'hi', 3), ...nhDots([[38, 22], [24, 30], [38, 40], [24, 48]], 2.6, 'bs'), S('M38 22 L46 26 M24 30 L16 34 M38 40 L46 44 M24 48 L16 52', 'ik', 1.2), noSun(50, 8, 2, 'hi')[0]],
+  pacific_sea_nettle: () => [...nzJelly(30, 22, 1.0, 'hi', { arms: 6, tent: 'hi', extra: [S('M18 30 Q14 44 20 56 M42 30 Q46 44 40 56 M30 30 Q30 46 26 58', 'bs', 3)] })],
+  soft_coral: () => [P('M6 58 Q8 40 14 40 L14 20 Q14 14 20 14 Q26 14 26 20 L26 34 Q30 30 34 34 L34 22 Q34 16 40 16 Q46 16 46 22 L46 40 Q52 40 54 58 Z', 'hi'), S('M6 58 Q8 40 14 40 L14 20 Q14 14 20 14 Q26 14 26 20 L26 34 Q30 30 34 34 L34 22 Q34 16 40 16 Q46 16 46 22 L46 40 Q52 40 54 58', 'ik', 1.4), ...nhDots([[20, 22], [20, 30], [40, 24], [40, 32], [30, 44], [20, 46]], 1.6, 'bs')],
+  glass_sponge: () => [...obVase(30, 34, 1.1, 'hi', { lattice: 1.2 }), ...nzSoil.slice(0, 1), S('M0 54 L60 54', 'ik', 1.4)],
+  demosponge: () => [E(18, 40, 12, 14, 'hi'), E(34, 32, 12, 20, 'hi'), E(46, 44, 9, 10, 'hi'), mmEll(18, 40, 12, 14, 'ik', 1.4), mmEll(34, 32, 12, 20, 'ik', 1.4), mmEll(46, 44, 9, 10, 'ik', 1.4), ...nhDots([[16, 34], [20, 44], [32, 20], [36, 32], [32, 42], [46, 40], [46, 48]], 2, 'bs'), ...nzSoil.slice(0, 1)],
+  calcareous_sponge: () => [P('M22 56 L20 22 Q30 12 40 22 L38 56 Z', 'lo'), S('M22 56 L20 22 Q30 12 40 22 L38 56', 'ik', 1.4), mmEll(30, 18, 9, 3, 'ik', 1.4), S('M22 28 l-4 -2 M22 38 l-4 -2 M22 48 l-4 -2 M38 28 l4 -2 M38 38 l4 -2 M38 48 l4 -2', 'ik', 1), ...nhDots([[26, 32], [34, 40], [28, 48], [34, 28]], 1.4, 'ik'), ...obFossil.slice(0, 1)],
+  peanut_worm: () => [E(24, 38, 16, 8, 'hi'), mmEll(24, 38, 16, 8, 'ik', 1.4), S('M38 36 Q48 30 52 36 Q56 44 50 46', 'hi', 5), C(50, 46, 2.6, 'hi'), S('M10 38 L38 38', 'ik', 0.9), S('M14 32 L14 44 M20 31 L20 45 M26 31 L26 45 M32 32 L32 44', 'ik', 0.9), ...nzSoil],
+  wiwaxia: () => [E(30, 36, 22, 12, 'hi'), mmEll(30, 36, 22, 12, 'ik', 1.6), S(Array.from({ length: 7 }, (_, i) => `M${n(14 + i * 5.4)} ${n(26 + Math.abs(i - 3) * 1.4)} L${n(12 + i * 5.6)} ${n(14 + Math.abs(i - 3) * 2)}`).join(' '), 'ik', 1.8), S('M12 36 Q30 30 48 36 M14 42 Q30 38 46 42', 'ik', 1), ...obFossil],
+  canadaspis: () => [P('M8 38 Q10 18 34 18 Q54 20 54 36 Q40 48 8 38 Z', 'hi'), S('M8 38 Q10 18 34 18 Q54 20 54 36 Q40 48 8 38 Z', 'ik', 1.6), S('M8 38 L2 42', 'ik', 2), C(46, 26, 2, 'ik'), S('M18 44 L16 52 M26 46 L24 54 M34 46 L34 54 M42 42 L44 50', 'ik', 1.4), S('M28 22 L28 36', 'ik', 1), ...obFossil],
+  sidneyia: () => [E(30, 34, 20, 9, 'bs'), mmEll(30, 34, 20, 9, 'ik', 1.6), S('M16 30 L16 38 M22 28 L22 40 M28 28 L28 40 M34 28 L34 40 M40 30 L40 38', 'ik', 1.2), C(52, 32, 4, 'bs'), S('M54 30 L58 24 M54 36 L58 42', 'ik', 1.6), P('M10 34 L2 28 L2 40 Z', 'bs'), S('M20 42 L16 50 M30 43 L28 52 M40 42 L44 50', 'ik', 1.6), ...obFossil],
+  jaekelopterus: () => [E(26, 32, 18, 6, 'lo'), mmEll(26, 32, 18, 6, 'ik', 1.4), S('M8 32 L0 32', 'lo', 2.4), P('M0 32 L-4 28 L-4 36 Z', 'ik'), E(46, 32, 6, 5, 'lo'), S('M48 28 L58 20 L58 14 M48 36 L58 44 L58 50', 'ik', 3), C(48, 30, 1.4, 'hi'), S('M16 38 L12 46 M24 38 L22 48 M32 38 L32 48', 'ik', 1.6), P('M14 50 L22 58 L8 56 Z', 'hi'), ...nyWave],
+  megarachne: () => [...nzSpider(30, 32, 1.0, 'bs', { lw: 2, extra: [S('M18 20 L12 10', 'ik', 1.4)] }), S('M0 58 L60 58', 'ik', 1.4), P('M4 50 L10 44 L16 50 Z', 'lo'), ...noMoon(50, 10, 0.3, 'hi')],
+  eurasian_curlew: () => [...nxHeron(24, 28, 0.9, 'bs', { beak: 'ik', extra: [S('M40 12 Q52 12 58 22', 'ik', 1.8)] }), S('M2 56 L58 56', 'ik', 1.4), ...nyWave],
+  phalarope: () => [...oaDuck(28, 30, 0.85, 'hi', { head: 'hi', wing: 'ik', beak: 'ik' }), ring('hi', 28, 40, 6, 1.2), ring('hi', 28, 40, 12, 1.2), ring('hi', 28, 40, 18, 1.2)],
+  common_wood_pigeon: () => [...nxBird(28, 36, 1.1, 'lo', { wing: 'bs', beak: 'hi', extra: [P('M34 24 L40 22 L44 28 L36 30 Z', 'hi')] }), ...ntBroad(10, 12, 8, 'hi'), ...ntBroad(48, 12, 7, 'hi')],
+  himalayan_monal: () => [...nxBird(28, 36, 1.0, 'hi', { wing: 'bs', crest: true, beak: 'ik', extra: [S('M10 30 Q2 24 4 12 M12 34 Q4 30 2 22', 'bs', 2.4)] }), P('M0 60 L16 38 L28 50 L40 30 L60 60 Z', 'bs'), S('M0 60 L16 38 L28 50 L40 30 L60 60', 'ik', 1.2)],
+  pheasant: () => [...nxBird(24, 34, 1.0, 'bs', { wing: 'hi', beak: 'hi', extra: [S('M10 34 Q-2 36 0 52 M12 36 Q4 40 6 54 M8 32 Q-4 30 -2 46', 'ik', 2.4), ring('hi', 37, 26, 6.8, 1.4)] }), ...ntLeaf(48, 52, 12, 4, 'lo', -30)],
+  australian_magpie: () => [...nxBird(28, 36, 1.0, 'ik', { wing: 'hi', beak: 'hi', extra: [P('M20 26 L36 24 L36 30 L22 32 Z', 'hi')] }), noSun(50, 10, 4, 'hi')[0], S('M0 58 L60 58', 'bs', 1.4)],
+  oriental_pied_hornbill: () => [...nxBird(26, 34, 1.0, 'ik', { wing: 'hi', beak: 'hi', extra: [P('M38 24 L58 28 L38 32 Z', 'hi'), P('M40 14 L52 16 L48 26 L40 24 Z', 'ik')] }), ...nzFlower(10, 12, 5, 'hi', 'bs')],
+};
+for (const [id, fn] of Object.entries(MKEL)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 67: animals VIII — dinosaur clades and genera, pterosaurs, Triassic archosaurs, sea reptiles, synapsids, extinct mammals and fossil apes ── */
+const ocTheropod = (cx, cy, s, role = 'bs', o = {}) => [P(`M${n(cx - 8 * s)} ${n(cy - 2 * s)} Q${n(cx - 24 * s)} ${n(cy - 6 * s)} ${n(cx - 32 * s)} ${n(cy + 2 * s)} Q${n(cx - 22 * s)} ${n(cy + 2 * s)} ${n(cx - 8 * s)} ${n(cy + 6 * s)} Z`, role), E(n(cx), n(cy), n(12 * s), n(8 * s), role), mmEll(n(cx), n(cy), n(12 * s), n(8 * s), 'ik', 1.4), S(`M${n(cx - 2 * s)} ${n(cy + 6 * s)} L${n(cx - 4 * s)} ${n(cy + 16 * s)} L${n(cx + 4 * s)} ${n(cy + 18 * s)} M${n(cx + 4 * s)} ${n(cy + 6 * s)} L${n(cx + 2 * s)} ${n(cy + 16 * s)} L${n(cx + 9 * s)} ${n(cy + 18 * s)}`, 'ik', n(2.6 * s)), S(`M${n(cx + 8 * s)} ${n(cy - 4 * s)} L${n(cx + 14 * s)} ${n(cy - 14 * s)}`, role, n(5 * s)), E(n(cx + 18 * s), n(cy - 16 * s), n((o.head || 7) * s), n(4 * s), role), mmEll(n(cx + 18 * s), n(cy - 16 * s), n((o.head || 7) * s), n(4 * s), 'ik', 1.2), S(`M${n(cx + 14 * s)} ${n(cy - 14 * s)} L${n(cx + 24 * s)} ${n(cy - 14 * s)}`, 'ik', 1), C(n(cx + 17 * s), n(cy - 17.4 * s), n(0.9 * s), 'ik'), S(`M${n(cx + 8 * s)} ${n(cy + 1 * s)} L${n(cx + 13 * s)} ${n(cy + 5 * s)}`, 'ik', 1.6), ...(o.crest ? [P(`M${n(cx - 6 * s)} ${n(cy - 8 * s)} L${n(cx - 3 * s)} ${n(cy - 13 * s)} L${n(cx)} ${n(cy - 8 * s)} L${n(cx + 3 * s)} ${n(cy - 13 * s)} L${n(cx + 6 * s)} ${n(cy - 8 * s)} Z`, 'ik')] : []), ...(o.feather ? [S(`M${n(cx - 8 * s)} ${n(cy - 6 * s)} L${n(cx - 12 * s)} ${n(cy - 12 * s)} M${n(cx - 2 * s)} ${n(cy - 8 * s)} L${n(cx - 4 * s)} ${n(cy - 15 * s)} M${n(cx + 4 * s)} ${n(cy - 8 * s)} L${n(cx + 4 * s)} ${n(cy - 15 * s)} M${n(cx - 20 * s)} ${n(cy - 2 * s)} L${n(cx - 26 * s)} ${n(cy - 8 * s)}`, 'hi', 1.6)] : []), ...(o.extra || [])];
+const ocSauro = (cx, cy, s, role = 'bs', o = {}) => { const k = o.neck || 1; return [S(`M${n(cx - 12 * s)} ${n(cy + 4 * s)} Q${n(cx - 26 * s)} ${n(cy + 8 * s)} ${n(cx - 32 * s)} ${n(cy + 14 * s)}`, role, n(3.4 * s)), S(`M${n(cx - 9 * s)} ${n(cy + 10 * s)} L${n(cx - 9 * s)} ${n(cy + 20 * s)} M${n(cx - 4 * s)} ${n(cy + 11 * s)} L${n(cx - 4 * s)} ${n(cy + 20 * s)} M${n(cx + 5 * s)} ${n(cy + 11 * s)} L${n(cx + 5 * s)} ${n(cy + 20 * s)} M${n(cx + 10 * s)} ${n(cy + 10 * s)} L${n(cx + 10 * s)} ${n(cy + 20 * s)}`, 'ik', n(3 * s)), E(n(cx), n(cy + 4 * s), n(14 * s), n(8 * s), role), mmEll(n(cx), n(cy + 4 * s), n(14 * s), n(8 * s), 'ik', 1.4), S(`M${n(cx + 10 * s)} ${n(cy)} Q${n(cx + 18 * s)} ${n(cy - 10 * s * k)} ${n(cx + 16 * s)} ${n(cy - 22 * s * k)}`, role, n(4 * s)), E(n(cx + 18 * s), n(cy - 24 * s * k), n(4 * s), n(2.6 * s), role), C(n(cx + 18 * s), n(cy - 25 * s * k), n(0.8 * s), 'ik'), ...(o.plates ? [P(`M${n(cx - 8 * s)} ${n(cy - 3 * s)} L${n(cx - 5 * s)} ${n(cy - 8 * s)} L${n(cx - 2 * s)} ${n(cy - 3 * s)} L${n(cx + 1 * s)} ${n(cy - 8 * s)} L${n(cx + 4 * s)} ${n(cy - 3 * s)} Z`, 'ik')] : []), ...(o.extra || [])]; };
+const ocOrnith = (cx, cy, s, role = 'bs', o = {}) => [P(`M${n(cx - 8 * s)} ${n(cy - 2 * s)} Q${n(cx - 22 * s)} ${n(cy - 4 * s)} ${n(cx - 30 * s)} ${n(cy + 4 * s)} Q${n(cx - 20 * s)} ${n(cy + 4 * s)} ${n(cx - 8 * s)} ${n(cy + 6 * s)} Z`, role), E(n(cx), n(cy), n(12 * s), n(8 * s), role), mmEll(n(cx), n(cy), n(12 * s), n(8 * s), 'ik', 1.4), S(`M${n(cx - 2 * s)} ${n(cy + 6 * s)} L${n(cx - 4 * s)} ${n(cy + 16 * s)} L${n(cx + 4 * s)} ${n(cy + 18 * s)} M${n(cx + 4 * s)} ${n(cy + 6 * s)} L${n(cx + 2 * s)} ${n(cy + 16 * s)} L${n(cx + 9 * s)} ${n(cy + 18 * s)}`, 'ik', n(2.6 * s)), S(`M${n(cx + 8 * s)} ${n(cy - 3 * s)} L${n(cx + 12 * s)} ${n(cy - 10 * s)}`, role, n(5 * s)), E(n(cx + 14 * s), n(cy - 12 * s), n(5 * s), n(3.6 * s), role), P(`M${n(cx + 17 * s)} ${n(cy - 13 * s)} L${n(cx + 25 * s)} ${n(cy - 12 * s)} L${n(cx + 17 * s)} ${n(cy - 9 * s)} Z`, o.beak || 'hi'), C(n(cx + 14 * s), n(cy - 13 * s), n(0.9 * s), 'ik'), ...(o.crest ? [S(`M${n(cx + 12 * s)} ${n(cy - 15 * s)} Q${n(cx + 6 * s)} ${n(cy - 24 * s)} ${n(cx - 2 * s)} ${n(cy - 20 * s)}`, 'ik', n(3 * s))] : []), ...(o.frill ? [P(`M${n(cx + 10 * s)} ${n(cy - 16 * s)} L${n(cx + 8 * s)} ${n(cy - 22 * s)} L${n(cx + 14 * s)} ${n(cy - 20 * s)} L${n(cx + 18 * s)} ${n(cy - 22 * s)} L${n(cx + 18 * s)} ${n(cy - 16 * s)} Z`, 'ik')] : []), S(`M${n(cx + 8 * s)} ${n(cy + 1 * s)} L${n(cx + 13 * s)} ${n(cy + 5 * s)}`, 'ik', 1.6), ...(o.extra || [])];
+const ocArmor = (cx, cy, s, role = 'bs', o = {}) => [S(`M${n(cx - 16 * s)} ${n(cy + 4 * s)} Q${n(cx - 26 * s)} ${n(cy + 6 * s)} ${n(cx - 32 * s)} ${n(cy + 2 * s)}`, role, n(4 * s)), ...(o.club ? [C(n(cx - 32 * s), n(cy + 2 * s), n(5 * s), role), ring('ik', n(cx - 32 * s), n(cy + 2 * s), n(5 * s), 1.2)] : []), S(`M${n(cx - 12 * s)} ${n(cy + 8 * s)} L${n(cx - 12 * s)} ${n(cy + 17 * s)} M${n(cx - 4 * s)} ${n(cy + 9 * s)} L${n(cx - 4 * s)} ${n(cy + 17 * s)} M${n(cx + 6 * s)} ${n(cy + 9 * s)} L${n(cx + 6 * s)} ${n(cy + 17 * s)} M${n(cx + 13 * s)} ${n(cy + 8 * s)} L${n(cx + 13 * s)} ${n(cy + 17 * s)}`, 'ik', n(3 * s)), E(n(cx), n(cy + 3 * s), n(19 * s), n(8 * s), role), mmEll(n(cx), n(cy + 3 * s), n(19 * s), n(8 * s), 'ik', 1.4), E(n(cx + 21 * s), n(cy + 2 * s), n(5 * s), n(3.6 * s), role), C(n(cx + 22 * s), n(cy + 1 * s), n(0.8 * s), 'ik'), S(`M${n(cx - 14 * s)} ${n(cy - 3 * s)} Q${n(cx)} ${n(cy - 8 * s)} ${n(cx + 14 * s)} ${n(cy - 3 * s)}`, 'ik', 1), S(`M${n(cx - 10 * s)} ${n(cy - 3 * s)} L${n(cx - 10 * s)} ${n(cy + 8 * s)} M${n(cx - 2 * s)} ${n(cy - 5 * s)} L${n(cx - 2 * s)} ${n(cy + 9 * s)} M${n(cx + 6 * s)} ${n(cy - 4 * s)} L${n(cx + 6 * s)} ${n(cy + 9 * s)}`, 'ik', 0.9), ...(o.spikes ? [S(`M${n(cx - 14 * s)} ${n(cy - 2 * s)} L${n(cx - 16 * s)} ${n(cy - 8 * s)} M${n(cx - 6 * s)} ${n(cy - 5 * s)} L${n(cx - 6 * s)} ${n(cy - 11 * s)} M${n(cx + 2 * s)} ${n(cy - 6 * s)} L${n(cx + 2 * s)} ${n(cy - 12 * s)} M${n(cx + 10 * s)} ${n(cy - 4 * s)} L${n(cx + 12 * s)} ${n(cy - 10 * s)}`, 'ik', n(2 * s))] : []), ...(o.plates ? [P(`M${n(cx - 12 * s)} ${n(cy - 2 * s)} L${n(cx - 9 * s)} ${n(cy - 14 * s)} L${n(cx - 5 * s)} ${n(cy - 4 * s)} L${n(cx - 2 * s)} ${n(cy - 16 * s)} L${n(cx + 2 * s)} ${n(cy - 5 * s)} L${n(cx + 6 * s)} ${n(cy - 14 * s)} L${n(cx + 9 * s)} ${n(cy - 3 * s)} Z`, 'hi')] : []), ...(o.extra || [])];
+const ocCeratops = (cx, cy, s, role = 'bs', o = {}) => [S(`M${n(cx - 14 * s)} ${n(cy + 2 * s)} Q${n(cx - 24 * s)} ${n(cy + 4 * s)} ${n(cx - 28 * s)} ${n(cy + 10 * s)}`, role, n(3 * s)), E(n(cx), n(cy + 3 * s), n(15 * s), n(9 * s), role), mmEll(n(cx), n(cy + 3 * s), n(15 * s), n(9 * s), 'ik', 1.4), S(`M${n(cx - 9 * s)} ${n(cy + 9 * s)} L${n(cx - 9 * s)} ${n(cy + 19 * s)} M${n(cx - 3 * s)} ${n(cy + 10 * s)} L${n(cx - 3 * s)} ${n(cy + 19 * s)} M${n(cx + 7 * s)} ${n(cy + 10 * s)} L${n(cx + 7 * s)} ${n(cy + 19 * s)} M${n(cx + 12 * s)} ${n(cy + 9 * s)} L${n(cx + 12 * s)} ${n(cy + 19 * s)}`, 'ik', n(3 * s)), P(`M${n(cx + 8 * s)} ${n(cy - 6 * s)} L${n(cx + 10 * s)} ${n(cy - 18 * s)} L${n(cx + 18 * s)} ${n(cy - 16 * s)} L${n(cx + 24 * s)} ${n(cy - 4 * s)} Z`, o.frill || 'hi'), E(n(cx + 20 * s), n(cy + 1 * s), n(7 * s), n(5 * s), role), P(`M${n(cx + 24 * s)} ${n(cy - 2 * s)} L${n(cx + 28 * s)} ${n(cy + 1 * s)} L${n(cx + 24 * s)} ${n(cy + 3 * s)} Z`, 'ik'), ...(o.horn ? [P(`M${n(cx + 26 * s)} ${n(cy - 2 * s)} L${n(cx + 30 * s)} ${n(cy - 10 * s)} L${n(cx + 28 * s)} ${n(cy - 1 * s)} Z`, 'hi')] : []), C(n(cx + 21 * s), n(cy), n(0.9 * s), 'ik'), ...(o.extra || [])];
+const ocSail = (cx, cy, s, role = 'hi', k = 7) => [P(`M${n(cx - 16 * s)} ${n(cy - 4 * s)} L${n(cx - 12 * s)} ${n(cy - 20 * s)} L${n(cx + 12 * s)} ${n(cy - 20 * s)} L${n(cx + 16 * s)} ${n(cy - 4 * s)} Z`, role), S(Array.from({ length: k }, (_, i) => { const x = cx - 12 * s + i * 24 * s / (k - 1); return `M${n(x)} ${n(cy - 4 * s)} L${n(x)} ${n(cy - 20 * s)}`; }).join(' '), 'ik', 1)];
+const ocFoss = [P('M0 56 L60 56 L60 60 L0 60 Z', 'bs'), S('M0 56 L60 56', 'ik', 1.4)];
+const MKEM = {
+  feathered_dinosaur: () => [...ocTheropod(30, 34, 0.95, 'hi', { feather: true }), ...ntLeaf(8, 12, 10, 4, 'hi', -30)],
+  saurischia: () => [...ocTheropod(28, 34, 0.9, 'bs', {}), P('M40 6 L52 6 L52 18 L40 18 Z', 'hi'), S('M42 10 L50 10 M42 14 L50 14', 'ik', 1.2)],
+  thescelosaurus: () => [...ocOrnith(30, 34, 0.95, 'lo', {}), ...ntConifer(52, 20, 34, 8, 'bs')],
+  pachycephalosaur: () => [...ocOrnith(28, 34, 0.9, 'bs', { extra: [C(42, 20, 6, 'hi'), ring('ik', 42, 20, 6, 1.4)] })],
+  pachyrhinosaurus: () => [...ocCeratops(26, 32, 0.95, 'bs', { horn: true, frill: 'hi' }), ...nhDots([[50, 10], [44, 6]], 1.6, 'hi')],
+  yinlong: () => [...ocOrnith(26, 34, 0.85, 'hi', { beak: 'ik', extra: [P('M36 14 L42 8 L44 16 Z', 'ik')] }), ...ntBroad(50, 12, 6, 'lo')],
+  ornithopod: () => [...ocOrnith(28, 34, 1.0, 'bs', {}), S('M0 56 L8 50 L16 56 L24 50 L32 56', 'hi', 1.6)],
+  hypsilophodon: () => [...ocOrnith(28, 36, 0.85, 'lo', {}), S('M2 56 L58 56', 'ik', 1.4), ...nyWave],
+  leaellynasaura: () => [...ocOrnith(28, 36, 0.8, 'lo', {}), ...noMoon(50, 10, 0.3, 'hi'), S('M0 56 L60 56', 'ik', 1.2)],
+  hadrosaur: () => [...ocOrnith(28, 34, 1.0, 'bs', { beak: 'hi', extra: [P('M40 16 L52 14 L52 20 L40 22 Z', 'hi')] }), ...nyWave],
+  lambeosaurus: () => [...ocOrnith(28, 34, 1.0, 'lo', { crest: true, extra: [P('M30 10 L22 2 L34 8 Z', 'hi')] }), ...ntBroad(50, 12, 6, 'hi')],
+  thyreophora: () => [...ocArmor(28, 36, 0.95, 'bs', { plates: true, spikes: true })],
+  ankylosaur: () => [...ocArmor(28, 38, 1.0, 'bs', { club: true, spikes: true })],
+  nodosaurid: () => [...ocArmor(28, 38, 1.0, 'lo', { spikes: true, extra: [S('M12 30 L8 24 M44 30 L48 24', 'ik', 2)] })],
+  scelidosaurus: () => [...ocArmor(28, 38, 0.95, 'lo', { extra: [S('M14 28 L14 34 M20 27 L20 33 M26 27 L26 33 M32 28 L32 34', 'hi', 1.6)] }), ...nyWave],
+  stegosaur: () => [...ocArmor(28, 40, 0.95, 'bs', { plates: true, extra: [S('M6 42 L0 36 M6 44 L0 46', 'ik', 2.4)] })],
+  camarasaurus: () => [...ocSauro(26, 36, 0.95, 'bs', { neck: 0.8 }), ...ntBroad(52, 14, 6, 'hi')],
+  europasaurus: () => [...ocSauro(28, 40, 0.8, 'lo', { neck: 0.8 }), ...nyWave, ...ntBroad(8, 12, 5, 'hi')],
+  mamenchisaurid: () => [...ocSauro(24, 40, 0.9, 'hi', { neck: 1.45 })],
+  titanosaur: () => [...ocSauro(24, 40, 1.0, 'bs', { neck: 1.0 }), ...nhDots([[4, 10], [10, 6]], 1.4, 'hi'), P('M0 60 L16 48 L26 60 Z M34 60 L48 44 L60 60 Z', 'lo')],
+  saltasaurid: () => [...ocSauro(26, 38, 0.95, 'bs', { neck: 0.9, plates: true }), ...nhDots([[18, 32], [24, 34], [30, 32], [36, 34]], 1.6, 'hi'), ...nuNut(50, 54, 4, 3, 'hi')],
+  carnosaur: () => [...ocTheropod(28, 34, 1.0, 'ik', { head: 8, extra: [S('M42 20 l1 3 M45 20 l1 3 M48 20 l1 3', 'hi', 1.2)] })],
+  abelisaurid: () => [...ocTheropod(28, 34, 1.0, 'bs', { head: 6.4, extra: [P('M40 14 L44 8 L46 14 Z', 'ik'), S('M38 26 L40 30', 'ik', 1.4)] }), S('M0 58 L60 58', 'ik', 1.4)],
+  masiakasaurus: () => [...ocTheropod(28, 34, 0.85, 'hi', { head: 6, extra: [S('M42 18 L46 22 M44 17 L48 20', 'ik', 1.4)] }), ...nyFish(46, 52, 7, 3, 'bs', {})],
+  spinosaurid: () => [...ocTheropod(28, 36, 0.95, 'hi', { extra: [...ocSail(24, 28, 0.8, 'ik', 6)] }), ...nyWave],
+  coelurosaur: () => [...ocTheropod(28, 34, 0.95, 'hi', { feather: true, head: 6.4, extra: [S('M8 36 L2 40', 'ik', 1.2)] })],
+  alvarezsaurid: () => [...ocTheropod(26, 34, 0.9, 'lo', { head: 5.4, extra: [S('M38 38 L48 40 M38 42 L48 44', 'ik', 2.4)] }), ...nzAnt(48, 52, 0.4, 'ik'), S('M0 58 L60 58', 'bs', 1.4), noSun(50, 10, 3, 'hi')[0]],
+  anchiornis: () => [...ocTheropod(28, 36, 0.8, 'ik', { feather: true, head: 5.4, extra: [P('M20 34 L8 28 L10 38 Z M36 30 L50 24 L46 34 Z', 'hi')] })],
+  caenagnathid: () => [...ocTheropod(28, 34, 0.9, 'hi', { head: 5, feather: true, extra: [P('M40 14 L48 18 L40 22 Z', 'ik'), ...nuNut(50, 52, 5, 3.6, 'bs')] })],
+  dromaeosaurid: () => [...ocTheropod(26, 34, 0.9, 'bs', { feather: true, head: 6.4, extra: [S('M26 52 L32 44', 'ik', 2.4), S('M4 36 L-2 32', 'ik', 1.4)] })],
+  halszkaraptor: () => [...ocTheropod(26, 34, 0.9, 'lo', { head: 5, extra: [S('M38 14 Q46 8 52 14', 'bs', 2.4)] }), ...nyWave],
+  incisivosaurus: () => [...ocTheropod(26, 34, 0.9, 'hi', { head: 5.4, extra: [P('M42 18 L46 18 L46 24 L42 22 Z', 'ik'), S('M44 20 L44 24', 'hi', 1.2)] })],
+  ornithomimosaur: () => [...ocTheropod(26, 34, 0.9, 'bs', { head: 4.6, feather: true, extra: [P('M38 14 L48 16 L38 18 Z', 'ik')] })],
+  ornithomimus: () => [...ocTheropod(28, 36, 0.85, 'lo', { head: 4.6, extra: [P('M40 18 L50 20 L40 22 Z', 'ik'), S('M2 58 L58 58', 'ik', 1.4)] })],
+  scansoriopterygid: () => [S('M30 2 L30 60', 'bs', 8), ...ocTheropod(36, 30, 0.7, 'ik', { feather: true, head: 5, extra: [P('M30 26 L14 20 L16 32 Z', 'hi')] })],
+  troodontid: () => [...ocTheropod(26, 34, 0.9, 'hi', { head: 5.4, extra: [C(40, 15, 2.6, 'ik'), C(40, 15, 1, 'hi')] }), ...noMoon(52, 10, 0.3, 'hi')],
+  tyrannosauroid: () => [...ocTheropod(26, 34, 1.0, 'bs', { head: 9, extra: [P('M36 4 L40 -2 L44 4 L48 -2 L52 4 L52 10 L36 10 Z', 'hi'), S('M44 16 L44 20', 'hi', 1.4)] })],
+  anurognathid: () => [...nxPtero(30, 30, 0.8, 'lo', { extra: [...nzAnt(48, 50, 0.4, 'ik')] })],
+  azhdarchid: () => [...nxPtero(30, 24, 1.0, 'bs', { extra: [S('M30 28 L30 52', 'ik', 3), S('M24 52 L36 52', 'ik', 1.6)] })],
+  hatzegopteryx: () => [...nxPtero(30, 28, 1.05, 'ik', { extra: [P('M0 60 L10 48 L22 60 Z M34 60 L46 46 L60 60 Z', 'bs')] })],
+  dimorphodon: () => [...nxPtero(30, 28, 1.0, 'hi', { extra: [S('M2 58 Q10 54 18 58 Q26 54 34 58 Q42 54 50 58', 'ik', 1.4)] })],
+  dsungaripterus: () => [...nxPtero(30, 26, 1.0, 'bs', { extra: [P('M26 12 L30 4 L34 12 Z', 'hi')] })],
+  peteinosaurus: () => [...nxPtero(30, 28, 0.8, 'lo', { extra: [S('M30 38 L30 56', 'ik', 1.4)] })],
+  pterodaustro: () => [...nxPtero(30, 26, 0.95, 'hi', { extra: [S('M26 12 L22 6 M30 12 L30 4 M34 12 L38 6', 'ik', 1.2), ...nyWave] })],
+  rhamphorhynchus: () => [...nxPtero(30, 26, 1.0, 'bs', { extra: [S('M30 32 L30 52 L34 56', 'ik', 1.6), ...nyFish(46, 54, 7, 3, 'hi', {})] })],
+  ornithocheirus: () => [...nxPtero(30, 26, 1.05, 'ik', { extra: [...nyWave] })],
+  tapejarid: () => [...nxPtero(30, 26, 1.0, 'hi', { extra: [P('M24 14 Q30 -2 38 12 Z', 'bs')] })],
+  thalassodromeus: () => [...nxPtero(30, 28, 1.0, 'bs', { extra: [P('M22 14 Q32 -4 42 14 Z', 'hi'), ...nyFish(46, 54, 7, 3, 'lo', {})] })],
+  aetosaur: () => [...nxCroc(28, 38, 0.85, 'bs', { snout: 24, extra: [S('M8 32 L12 28 L16 32 L20 28 L24 32 L28 28 L32 32 L36 28', 'hi', 2)] })],
+  euparkeria: () => [...nxLizard(28, 38, 0.9, 'lo', { extra: [S('M18 44 L14 54 M34 44 L38 54', 'ik', 2)] }), ...noMoon(52, 10, 0.3, 'hi')],
+  phytosaur: () => [...nxCroc(26, 38, 0.8, 'ik', { snout: 42 }), ...nyWave],
+  postosuchus: () => [...nxCroc(28, 34, 0.9, 'bs', { snout: 32, extra: [S('M14 42 L12 56 M32 42 L34 56', 'ik', 2.6)] })],
+  proterosuchus: () => [...nxCroc(26, 40, 0.9, 'lo', { snout: 34 }), S('M0 58 L60 58', 'ik', 1.4)],
+  teleosaurid: () => [...nxCroc(24, 38, 0.8, 'hi', { snout: 46 }), ...nyWave],
+  notosuchian: () => [...nxCroc(28, 34, 0.9, 'bs', { snout: 28, extra: [S('M14 40 L12 54 M32 40 L34 54 M22 40 L20 54 M40 40 L42 54', 'ik', 2.2)] }), ...ntBroad(10, 12, 6, 'hi')],
+  kaprosuchus: () => [...nxCroc(28, 36, 0.9, 'ik', { snout: 30, extra: [P('M44 34 L46 42 L48 34 Z', 'hi'), P('M50 34 L52 42 L54 34 Z', 'hi')] })],
+  simosuchus: () => [...nxCroc(28, 38, 0.9, 'hi', { snout: 20, extra: [S('M10 32 L16 30 L22 32 L28 30 L34 32', 'ik', 2)] })],
+  voay: () => [...nxCroc(26, 38, 0.9, 'bs', { snout: 34, extra: [P('M40 28 L44 22 L46 30 Z', 'hi')] }), ...ntBroad(52, 12, 6, 'hi')],
+  longisquama: () => [...nxLizard(28, 38, 0.9, 'lo', { extra: [S('M14 30 L12 14 M20 28 L20 12 M26 28 L28 12 M32 30 L36 14', 'hi', 2)] })],
+  tanystropheus: () => [E(20, 44, 14, 6, 'bs'), mmEll(20, 44, 14, 6, 'ik', 1.4), S('M30 40 Q50 36 50 20 Q50 12 54 10', 'bs', 4), C(55, 10, 3.2, 'bs'), S('M12 48 L10 56 M24 49 L26 56', 'ik', 2), S('M6 44 L0 50', 'bs', 3), ...nyWave],
+  rhynchosaur: () => [E(28, 38, 14, 8, 'lo'), mmEll(28, 38, 14, 8, 'ik', 1.4), E(46, 34, 6, 4.6, 'lo'), P('M50 32 L56 36 L50 38 Z', 'hi'), C(46, 32, 1, 'ik'), S('M20 44 L18 54 M34 44 L36 54', 'ik', 2.6), S('M14 36 L6 40', 'lo', 3), ...ntLeaf(10, 52, 12, 4, 'hi', -20)],
+  scutosaurus: () => [E(28, 36, 18, 10, 'bs'), mmEll(28, 36, 18, 10, 'ik', 1.4), E(48, 34, 6, 5, 'bs'), S('M16 44 L14 56 M26 46 L26 56 M36 46 L38 56 M44 44 L46 54', 'ik', 3), S('M12 28 L16 22 L20 28 L24 22 L28 28 L32 22 L36 28', 'hi', 2), S('M10 38 L4 42', 'bs', 3)],
+  megalania: () => [...nxLizard(28, 38, 1.0, 'bs', { extra: [S('M42 34 L52 32', 'ik', 1.4)] }), ...noSun(50, 10, 4, 'hi')[0] ? [noSun(50, 10, 4, 'hi')[0]] : []],
+  tylosaurus: () => [...nwDolph(28, 34, 1.0, 'ik', [P('M40 36 L56 34 L56 40 L40 40 Z', 'ik'), S('M44 36 l1 3 M48 36 l1 3 M52 36 l1 3', 'hi', 1.2)]), ...nyWave],
+  champsosaur: () => [...nxCroc(26, 38, 0.8, 'bs', { snout: 44 }), ...ntLeaf(8, 54, 12, 4, 'lo', -20), ...ntLeaf(48, 54, 12, 4, 'lo', -150)],
+  meiolania: () => [...nxTurtle(28, 38, 1.0, 'bs', { extra: [P('M46 28 L52 22 L50 32 Z', 'hi'), P('M40 26 L42 18 L46 28 Z', 'hi')] }), noSun(10, 10, 3, 'hi')[0]],
+  proganochelys: () => [...nxTurtle(28, 38, 1.0, 'lo', { extra: [S('M12 34 l2 -4 l2 4 l2 -4 l2 4', 'ik', 1.2)] }), ...nvBone(48, 12)],
+  ophthalmosaurus: () => [...nwDolph(28, 34, 1.0, 'hi', [C(44, 30, 4, 'bs'), C(44, 30, 1.6, 'ik'), S('M46 33 L58 31', 'ik', 1.4)]), ...nyWave],
+  temnodontosaurus: () => [...nwDolph(28, 34, 1.05, 'bs', [S('M46 34 L58 32 M48 34 l1 3 M52 34 l1 3', 'hi', 1.4), C(42, 28, 2.4, 'hi')]), ...nyWave],
+  mesosaurus: () => [...nxLizard(28, 36, 0.95, 'hi', { extra: [S('M42 40 L58 42', 'ik', 1.2)] }), ...nyWave, S('M2 56 L58 56', 'ik', 1.2)],
+  nothosaurus: () => [...nxPlesio(28, 36, 0.9, 'lo', { extra: [S('M2 56 L58 56', 'ik', 1.2)] }), ...nyFish(10, 14, 7, 3, 'hi', {})],
+  placodont: () => [...nxTurtle(28, 36, 1.0, 'bs', { extra: [S('M12 34 L44 34 M14 28 L42 28', 'ik', 1.2), P('M44 38 L54 40 L44 42 Z', 'hi')] }), ...nuNut(8, 52, 5, 3.6, 'hi')],
+  cryptoclidus: () => [...nxPlesio(28, 34, 1.0, 'hi', {}), ...nyWave, ...nyFish(8, 52, 7, 3, 'bs', {})],
+  kronosaurus: () => [...nxPlesio(26, 36, 1.05, 'ik', { extra: [P('M44 18 L58 16 L58 24 L44 24 Z', 'ik'), S('M46 24 l1 3 M50 24 l1 3 M54 24 l1 3', 'hi', 1.2)] }), ...nyWave],
+  diadectes: () => [...nvQuad(28, 34, 1.0, 'bs', 'bs'), S('M2 56 L58 56', 'ik', 1.4), ...ntLeaf(48, 12, 10, 4, 'hi', 30)],
+  seymouria: () => [...nxLizard(28, 42, 0.9, 'lo', {}), S('M2 56 L58 56', 'ik', 1.4)],
+  edaphosaurus: () => [...nvQuad(28, 40, 0.9, 'bs', 'bs'), ...ocSail(28, 32, 1.0, 'hi', 9)],
+  thrinaxodon: () => [...nvQuad(28, 40, 0.9, 'lo', 'lo'), S('M46 34 L56 32 M46 36 L56 38', 'ik', 1), S('M8 44 Q-2 40 0 52', 'ik', 2), P('M0 56 L60 56 L60 60 L0 60 Z', 'bs')],
+  lystrosaurus: () => [...nvQuad(28, 38, 1.0, 'bs', 'bs'), P('M44 34 L46 44 L48 34 Z M48 34 L50 44 L52 34 Z', 'hi'), S('M0 56 L12 46 L24 56 L36 42 L48 56 L60 48', 'hi', 1.4)],
+  moschops: () => [...nvQuad(28, 38, 1.0, 'lo', 'lo'), E(46, 28, 7, 6, 'hi'), mmEll(46, 28, 7, 6, 'ik', 1.4)],
+  gorgonops: () => [...nvQuad(28, 38, 1.0, 'ik', 'ik'), P('M44 32 L46 44 L48 32 Z M50 32 L52 44 L54 32 Z', 'hi')],
+  inostrancevia: () => [...nvQuad(28, 38, 1.1, 'bs', 'bs'), P('M44 32 L45 46 L47 32 Z M49 32 L50 46 L52 32 Z', 'hi'), S('M0 56 L60 56', 'ik', 1.4)],
+  hylonomus: () => [...nxLizard(26, 42, 0.85, 'lo', {}), ...nzLog(48, 40, 9), S('M2 58 L58 58', 'ik', 1.4)],
+  hyaenodont: () => [...nvQuad(28, 36, 1.0, 'bs', 'bs'), P('M44 32 L46 42 L48 32 Z', 'hi'), S('M18 28 L20 22 L24 28 L26 22 L30 28', 'ik', 1.4)],
+  mesonychid: () => [...nvQuad(28, 36, 1.0, 'lo', 'lo'), S('M17 52 L15 56 M23 52 L21 56 M31 52 L29 56 M37 52 L35 56', 'hi', 2), P('M44 32 L46 40 L48 32 Z', 'hi')],
+  oxyaenid: () => [...nvCat(24, 30, 12, 'bs', {}), ...nvQuad(30, 46, 0.7, 'bs', 'bs')],
+  pantodont: () => [...nvQuad(28, 36, 1.1, 'hi', 'hi'), P('M44 34 L46 42 L48 34 Z', 'ik'), ...nzFlower(8, 12, 4, 'lo', 'hi')],
+  notoungulate: () => [...nvQuad(28, 36, 1.0, 'bs', 'bs'), P('M0 60 L18 50 L34 56 L48 46 L60 56 L60 60 Z', 'lo')],
+  litoptern: () => [...nvQuad(26, 36, 1.0, 'lo', 'lo'), S('M17 52 L17 56 M22 52 L22 56 M31 52 L31 56 M36 52 L36 56', 'ik', 2.4), S('M42 26 L52 24', 'ik', 3)],
+  brontothere: () => [...nvQuad(26, 36, 1.1, 'bs', 'bs'), P('M42 26 L46 14 L50 14 L48 28 Z', 'hi'), P('M48 26 L54 16 L56 20 L52 28 Z', 'hi')],
+  chalicothere: () => [...nvQuad(28, 34, 1.0, 'lo', 'lo'), S('M17 48 L12 56 M17 50 L16 58 M37 48 L42 56 M37 50 L38 58', 'ik', 1.8), S('M42 26 L48 20', 'ik', 3)],
+  anoplotherium: () => [...nvQuad(28, 38, 1.0, 'bs', 'bs'), S('M8 38 Q-2 36 0 52', 'ik', 3), P('M0 60 L8 52 L16 60 Z M44 60 L52 50 L60 60 Z', 'hi')],
+  entelodont: () => [...nwBoar(28, 36, 1.0, 'bs', { extra: [P('M40 28 L48 24 L46 32 Z', 'hi'), P('M10 20 L16 12 L18 22 Z', 'ik')] }), S('M10 56 L50 56', 'ik', 1.4)],
+  dorcatherium: () => [...nwDeer(28, 38, 0.9, 'lo', 0, [P('M42 28 L46 36 L40 34 Z', 'hi')]), ...ntBroad(8, 12, 6, 'hi')],
+  odobenocetops: () => [...nwDolph(28, 32, 1.0, 'bs', [P('M42 36 L50 50 L52 36 Z', 'hi'), P('M48 36 L58 48 L58 36 Z', 'hi')]), ...nyWave],
+  moeritherium: () => [...nxEle(28, 36, 0.85, 'bs', {}), ...nyWave, ...ntLeaf(8, 52, 12, 4, 'hi', -20)],
+  gomphothere: () => [...nxEle(26, 34, 1.0, 'lo', { extra: [S('M42 34 L56 44 L56 50 M44 36 L58 48', 'hi', 2.6)] })],
+  desmostylian: () => [E(26, 38, 16, 9, 'bs'), mmEll(26, 38, 16, 9, 'ik', 1.4), E(44, 34, 6, 5, 'bs'), P('M46 38 L54 44 L48 40 Z M48 36 L56 40 L50 40 Z', 'hi'), S('M16 44 L14 54 M26 46 L26 54', 'ik', 2.4), S('M4 36 L-1 32', 'bs', 3), ...nyWave],
+  castorocauda: () => [...nwRodent(26, 36, 1.0, 'bs', { tail: 4, extra: [P('M2 44 Q10 54 18 44 Z', 'ik')] }), ...nyWave, ...nyFish(46, 20, 7, 3, 'hi', {})],
+  megazostrodon: () => [...nwRodent(28, 40, 0.9, 'lo', { tail: 1.6, extra: [P('M40 36 L52 40 L40 42 Z', 'lo')] }), ...nzAnt(48, 20, 0.5, 'ik'), S('M0 58 L60 58', 'ik', 1.4)],
+  repenomamus: () => [...nwRodent(24, 38, 1.1, 'bs', { tail: 2, extra: [P('M40 34 L54 38 L40 42 Z', 'bs')] }), ...ocTheropod(50, 20, 0.35, 'ik', {})],
+  eomaia: () => [...nwRodent(28, 40, 0.9, 'hi', { tail: 1.6 }), noSun(10, 10, 4, 'hi')[0], ...ntBroad(48, 14, 6, 'lo')],
+  sparassodont: () => [...nvQuad(26, 36, 1.0, 'bs', 'bs'), P('M44 30 L46 40 L48 30 Z', 'hi'), S('M20 44 Q28 52 36 44', 'hi', 1.6)],
+  didelphodon: () => [...nwRodent(26, 38, 1.0, 'ik', { tail: 3, extra: [P('M40 34 L52 38 L40 42 Z', 'ik')] }), ...ocTheropod(48, 16, 0.4, 'bs', {})],
+  ceratogaulus: () => [...nwRodent(26, 38, 1.0, 'bs', { tail: 1.2, extra: [P('M36 28 L38 20 L40 30 Z', 'hi'), P('M40 28 L44 22 L44 31 Z', 'hi')] }), S('M0 56 L60 56', 'ik', 1.4)],
+  dryopithecus: () => [...nwApe(30, 34, 15, 'bs', 'hi', { brow: true }), ...ntBroad(8, 10, 6, 'hi'), ...ntBroad(52, 10, 6, 'hi')],
+  sivapithecus: () => [...nwApe(30, 34, 15, 'ik', 'hi', { brow: true, mane: true }), ...nvBone(48, 54)],
+};
+for (const [id, fn] of Object.entries(MKEM)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 68: animals IX — hominins and fossil humans, apes and monkeys, lemurs, whales and dolphins, small mammals, hoofed mammals, extinct carnivorans ── */
+const odSkull = (cx, cy, s, role = 'bs', o = {}) => [E(n(cx - 2 * s), n(cy - 2 * s), n(14 * s), n(11 * s), role), mmEll(n(cx - 2 * s), n(cy - 2 * s), n(14 * s), n(11 * s), 'ik', 1.5), P(`M${n(cx + 6 * s)} ${n(cy + 1 * s)} L${n(cx + 17 * s)} ${n(cy + 5 * s)} L${n(cx + 15 * s)} ${n(cy + 12 * s)} L${n(cx + 4 * s)} ${n(cy + 11 * s)} Z`, role), S(`M${n(cx + 6 * s)} ${n(cy + 1 * s)} L${n(cx + 17 * s)} ${n(cy + 5 * s)} L${n(cx + 15 * s)} ${n(cy + 12 * s)} L${n(cx + 4 * s)} ${n(cy + 11 * s)}`, 'ik', 1.3), C(n(cx + 7 * s), n(cy - 1 * s), n(2.8 * s), 'ik'), S(`M${n(cx + 4 * s)} ${n(cy - 5 * s)} L${n(cx + 11 * s)} ${n(cy - 4 * s)}`, 'ik', n((o.brow || 1.6) * 1)), S(`M${n(cx + 6 * s)} ${n(cy + 8 * s)} L${n(cx + 15 * s)} ${n(cy + 9 * s)}`, 'hi', 1.6), P(`M${n(cx - 4 * s)} ${n(cy + 8 * s)} L${n(cx + 12 * s)} ${n(cy + 13 * s)} L${n(cx + 10 * s)} ${n(cy + 18 * s)} L${n(cx - 2 * s)} ${n(cy + 14 * s)} Z`, role), S(`M${n(cx - 4 * s)} ${n(cy + 8 * s)} L${n(cx + 12 * s)} ${n(cy + 13 * s)} L${n(cx + 10 * s)} ${n(cy + 18 * s)} L${n(cx - 2 * s)} ${n(cy + 14 * s)}`, 'ik', 1.2), ...(o.crest ? [S(`M${n(cx - 10 * s)} ${n(cy - 10 * s)} Q${n(cx - 2 * s)} ${n(cy - 18 * s)} ${n(cx + 6 * s)} ${n(cy - 9 * s)}`, 'ik', 2.6)] : []), ...(o.jawy ? [S(`M${n(cx + 8 * s)} ${n(cy + 12 * s)} L${n(cx + 8 * s)} ${n(cy + 16 * s)} M${n(cx + 12 * s)} ${n(cy + 13 * s)} L${n(cx + 12 * s)} ${n(cy + 17 * s)}`, 'hi', 1.6)] : []), ...(o.extra || [])];
+const odMonk = (cx, cy, s, role = 'bs', o = {}) => [S(o.tail === 'none' ? `M${n(cx - 6 * s)} ${n(cy + 12 * s)} L${n(cx - 8 * s)} ${n(cy + 14 * s)}` : `M${n(cx - 6 * s)} ${n(cy + 12 * s)} Q${n(cx - 22 * s)} ${n(cy + 14 * s)} ${n(cx - 20 * s)} ${n(cy - 6 * s)} Q${n(cx - 19 * s)} ${n(cy - 14 * s)} ${n(cx - 14 * s)} ${n(cy - 16 * s)}`, o.tailRole || role, n(3 * s)), E(cx, n(cy + 8 * s), n(10 * s), n(12 * s), role), mmEll(cx, n(cy + 8 * s), n(10 * s), n(12 * s), 'ik', 1.4), S(`M${n(cx - 8 * s)} ${n(cy + 2 * s)} L${n(cx - 14 * s)} ${n(cy + 16 * s)} M${n(cx + 8 * s)} ${n(cy + 2 * s)} L${n(cx + 14 * s)} ${n(cy + 16 * s)}`, role, n(3.4 * s)), S(`M${n(cx - 6 * s)} ${n(cy + 18 * s)} L${n(cx - 8 * s)} ${n(cy + 24 * s)} M${n(cx + 6 * s)} ${n(cy + 18 * s)} L${n(cx + 8 * s)} ${n(cy + 24 * s)}`, 'ik', n(3 * s)), ...(o.mane ? [nqBurst(cx, n(cy - 8 * s), n(8 * s), n(12 * s), 14, o.maneRole || 'hi', 1.6)] : []), C(cx, n(cy - 8 * s), n(8 * s), o.headRole || role), ring('ik', cx, n(cy - 8 * s), n(8 * s), 1.4), E(cx, n(cy - 6 * s), n(5 * s), n(4.4 * s), o.face || 'hi'), ...nvEyes(cx, n(cy - 9 * s), n(3 * s), 1.3, 'ik'), S(`M${n(cx - 2 * s)} ${n(cy - 3 * s)} L${n(cx + 2 * s)} ${n(cy - 3 * s)}`, 'ik', 1), ...(o.cap ? [P(`M${n(cx - 8 * s)} ${n(cy - 10 * s)} Q${cx} ${n(cy - 20 * s)} ${n(cx + 8 * s)} ${n(cy - 10 * s)} Z`, o.cap)] : []), ...(o.extra || [])];
+const odGibbon = (cx, cy, s, role = 'ik', o = {}) => [E(cx, n(cy + 6 * s), n(7 * s), n(10 * s), role), S(`M${n(cx - 6 * s)} ${n(cy)} Q${n(cx - 20 * s)} ${n(cy - 8 * s)} ${n(cx - 26 * s)} ${n(cy - 20 * s)} M${n(cx + 6 * s)} ${n(cy)} Q${n(cx + 20 * s)} ${n(cy - 8 * s)} ${n(cx + 26 * s)} ${n(cy - 20 * s)}`, role, n(3 * s)), S(`M${n(cx - 4 * s)} ${n(cy + 14 * s)} L${n(cx - 6 * s)} ${n(cy + 22 * s)} M${n(cx + 4 * s)} ${n(cy + 14 * s)} L${n(cx + 6 * s)} ${n(cy + 22 * s)}`, role, n(3 * s)), C(cx, n(cy - 6 * s), n(6 * s), role), ring('ik', cx, n(cy - 6 * s), n(6 * s), 1.3), ring('hi', cx, n(cy - 6 * s), n(6.8 * s), 1.6), E(cx, n(cy - 5 * s), n(3.6 * s), n(3.2 * s), 'hi'), ...nvEyes(cx, n(cy - 7 * s), n(2.2 * s), 1.1, 'ik'), ...(o.extra || [])];
+const odCamel = (cx, cy, s, role = 'lo', humps = 2, o = {}) => [...nvQuad(cx, cy, s, role), S(`M${n(cx + 12 * s)} ${n(cy - 4 * s)} Q${n(cx + 20 * s)} ${n(cy - 12 * s)} ${n(cx + 20 * s)} ${n(cy - 20 * s)}`, role, n(4 * s)), E(n(cx + 22 * s), n(cy - 22 * s), n(5 * s), n(3 * s), role), C(n(cx + 22 * s), n(cy - 23 * s), 1, 'ik'), ...(humps === 2 ? [C(n(cx - 4 * s), n(cy - 10 * s), n(5 * s), role), C(n(cx + 5 * s), n(cy - 10 * s), n(5 * s), role), ring('ik', n(cx - 4 * s), n(cy - 10 * s), n(5 * s), 1.2), ring('ik', n(cx + 5 * s), n(cy - 10 * s), n(5 * s), 1.2)] : [C(n(cx), n(cy - 10 * s), n(6 * s), role), ring('ik', n(cx), n(cy - 10 * s), n(6 * s), 1.2)]), ...(o.extra || [])];
+const odGiraffe = (cx, cy, s, role = 'hi', o = {}) => [...nvQuad(cx - 6 * s, cy + 6 * s, s * 0.85, role), S(`M${n(cx + 6 * s)} ${n(cy)} L${n(cx + 12 * s)} ${n(cy - 26 * s)}`, role, n(5 * s)), E(n(cx + 14 * s), n(cy - 28 * s), n(5 * s), n(3 * s), role), C(n(cx + 14 * s), n(cy - 29 * s), 1, 'ik'), S(`M${n(cx + 11 * s)} ${n(cy - 31 * s)} L${n(cx + 11 * s)} ${n(cy - 35 * s)} M${n(cx + 15 * s)} ${n(cy - 31 * s)} L${n(cx + 15 * s)} ${n(cy - 35 * s)}`, 'ik', 1.6), ...(o.spots ? nhDots(o.spots.map(([x, y]) => [n(cx + x * s), n(cy + y * s)]), n(1.8 * s), 'ik') : []), ...(o.extra || [])];
+const odFossil = [P('M0 56 L60 56 L60 60 L0 60 Z', 'bs')];
+const odTooth = (x, y, s, role = 'hi') => P(`M${n(x)} ${n(y)} L${n(x - 1.6 * s)} ${n(y + 10 * s)} L${n(x + 1.6 * s)} ${n(y + 10 * s)} Z`, role);
+const MKEN = {
+  hominidae: () => [...nwApe(14, 22, 9, 'bs', 'hi', {}), ...nwApe(46, 22, 8, 'ik', 'hi', { brow: true }), ...nwApe(30, 46, 7, 'lo', 'hi', {})],
+  homininae: () => [...nwApe(18, 26, 11, 'ik', 'hi', { brow: true }), ...nwApe(44, 30, 9, 'bs', 'hi', {}), ...nhDots([[30, 8]], 2, 'hi')],
+  hominini: () => [...nwApe(16, 28, 10, 'bs', 'hi', {}), ...odSkull(44, 30, 0.9, 'hi', {})],
+  australopithecine: () => [...odSkull(26, 30, 1.15, 'bs', { jawy: true }), ...nvBone(48, 52)],
+  australopithecus_anamensis: () => [...odSkull(26, 28, 1.05, 'bs', { jawy: true }), P('M0 50 Q10 44 20 50 Q30 56 40 50 Q50 44 60 50 L60 60 L0 60 Z', 'lo')],
+  australopithecus_bahrelghazali: () => [...odSkull(26, 28, 1.05, 'bs', { jawy: true }), P('M0 56 Q14 46 28 54 Q44 44 60 54 L60 60 L0 60 Z', 'hi'), ...noSun(50, 10, 4, 'hi').slice(0, 1)],
+  australopithecus_deyiremeda: () => [P('M2 56 L8 44 L16 50 L24 38 L34 52 L44 44 L58 56 Z', 'lo'), ...odSkull(32, 26, 0.9, 'bs', { jawy: true })],
+  australopithecus_garhi: () => [...odSkull(24, 26, 1.0, 'bs', { jawy: true }), ...nvBone(44, 50), P('M36 36 L42 30 L48 36 L44 42 Z', 'ik')],
+  ardipithecus_kadabba: () => [...ntBroad(10, 14, 8, 'lo'), ...ntBroad(50, 14, 8, 'lo'), ...odSkull(30, 32, 0.95, 'bs', { jawy: true }), odTooth(14, 46, 1, 'hi'), odTooth(46, 46, 1, 'hi')],
+  ardi: () => [...odMonk(30, 16, 0.95, 'bs', { tail: 'none', face: 'hi' }), S('M24 46 L20 56 L28 56 M36 46 L34 56 L42 56', 'ik', 2), ...nvBone(48, 6)],
+  kenyanthropus: () => [...odSkull(28, 26, 1.0, 'bs', { jawy: true, brow: 1.2 }), P('M0 52 Q15 46 30 52 Q45 58 60 50 L60 60 L0 60 Z', 'hi')],
+  paranthropus_aethiopicus: () => [...odSkull(26, 28, 1.1, 'ik', { crest: true, jawy: true }), odTooth(46, 48, 1.3, 'hi'), odTooth(52, 48, 1.3, 'hi')],
+  homo_ergaster: () => [...odSkull(28, 28, 1.1, 'bs', { brow: 3, jawy: true }), S('M12 52 L18 44 L24 52 Z', 'hi', 1)],
+  homo_gautengensis: () => [...odSkull(28, 26, 1.0, 'bs', { brow: 2.4 }), P('M0 60 Q8 40 30 40 Q52 40 60 60 Z', 'ik'), S('M12 56 Q30 44 48 56', 'bs', 1.6)],
+  homo_luzonensis: () => [...odSkull(26, 26, 0.9, 'bs', { jawy: true }), P('M0 60 L14 46 L24 56 L36 42 L48 54 L60 46 L60 60 Z', 'lo'), S('M0 58 Q8 54 16 58 Q24 54 32 58 Q40 54 48 58 Q54 56 60 58', 'hi', 1.4)],
+  penghu_1: () => [P('M10 18 Q20 44 44 44 Q54 44 52 34 Q48 40 38 36 Q24 30 20 16 Z', 'bs'), S('M12 20 Q22 42 44 42', 'ik', 1.4), odTooth(26, 36, 0.8, 'hi'), odTooth(32, 38, 0.8, 'hi'), odTooth(38, 38, 0.8, 'hi'), S('M0 56 Q8 52 16 56 Q24 52 32 56 Q40 52 48 56 Q54 54 60 56', 'hi', 1.6)],
+  dmanisi_hominins: () => [...odSkull(24, 28, 1.0, 'bs', { jawy: true }), ...odSkull(46, 32, 0.7, 'lo', { jawy: true }), P('M0 60 L10 52 L20 60 Z M36 60 L48 50 L60 60 Z', 'ik')],
+  lantian_man: () => [...odSkull(28, 30, 1.05, 'bs', { brow: 2.6, jawy: true }), P('M2 60 L12 46 L22 60 Z M38 60 L50 42 L60 60 Z', 'lo')],
+  nanjing_man: () => [P('M6 60 L6 28 Q30 4 54 28 L54 60 Z', 'ik'), ...odSkull(30, 36, 0.8, 'bs', { brow: 2 }), ...nhDots([[16, 20], [44, 16]], 1.6, 'hi')],
+  solo_man: () => [...odSkull(28, 24, 1.0, 'bs', { brow: 2.6 }), S('M0 48 Q10 42 20 48 Q30 54 40 48 Q50 42 60 48', 'hi', 2.4), S('M0 54 Q10 48 20 54 Q30 60 40 54 Q50 48 60 54', 'hi', 2.4)],
+  tautavel_man: () => [P('M2 60 L2 24 Q30 2 58 24 L58 60 Z', 'ik'), ...odSkull(30, 34, 0.85, 'bs', { brow: 2.4 }), S('M12 14 L12 24 M30 8 L30 16 M46 14 L46 22', 'hi', 1.6)],
+  yuanmou_man: () => [...odSkull(26, 24, 0.95, 'bs', { brow: 2.2, jawy: true }), odTooth(40, 46, 1.6, 'hi'), odTooth(47, 46, 1.6, 'hi'), P('M0 60 L10 50 L20 60 Z', 'lo')],
+  ceprano_man: () => [E(30, 28, 18, 14, 'bs'), mmEll(30, 28, 18, 14, 'ik', 1.6), S('M14 30 L46 30', 'ik', 1.6), S('M26 14 Q30 10 34 14', 'ik', 1.2), P('M0 60 Q15 46 30 54 Q45 46 60 60 Z', 'lo'), ...nhDots([[8, 8], [52, 8]], 1.4, 'hi')],
+  homo_rhodesiensis: () => [...odSkull(28, 24, 1.1, 'bs', { brow: 3.4, jawy: true }), P('M0 60 L8 46 L16 60 Z M20 60 L30 46 L42 60 Z', 'ik'), S('M44 44 L56 44 L56 58 L44 58 Z', 'lo', 1.6)],
+  herto_man: () => [...odSkull(28, 24, 1.1, 'bs', { jawy: true }), P('M0 60 Q14 46 28 54 Q44 46 60 58 L60 60 Z', 'hi'), ...noSun(50, 10, 4, 'hi').slice(0, 1)],
+  manot_1: () => [E(30, 30, 16, 13, 'bs'), mmEll(30, 30, 16, 13, 'ik', 1.6), S('M16 30 Q30 24 44 30', 'ik', 1.4), S('M0 56 Q8 52 16 56 Q24 52 32 56 Q40 52 48 56 Q54 54 60 56', 'hi', 1.6), P('M2 14 Q14 4 26 14 Z', 'lo')],
+  red_deer_cave_people: () => [...nwDeer(22, 40, 0.8, 'lo', 1), P('M32 56 L32 30 Q44 6 56 30 L56 56 Z', 'ik'), ...odSkull(44, 40, 0.5, 'bs', {})],
+  graecopithecus: () => [P('M6 20 Q10 40 30 44 Q42 44 46 36 Q36 36 24 30 Q16 24 16 18 Z', 'bs'), S('M8 22 Q12 40 30 42', 'ik', 1.4), odTooth(24, 36, 0.8, 'hi'), odTooth(30, 38, 0.8, 'hi'), odTooth(36, 38, 0.8, 'hi'), S('M0 56 L60 56', 'ik', 1.4), ...ntBroad(50, 14, 6, 'lo')],
+  mitochondrial_eve: () => [C(30, 12, 7, 'bs'), P('M30 20 L18 52 L42 52 Z', 'hi'), S('M30 20 L12 34 M30 20 L48 34', 'bs', 3), ...nzChain(8, 56, 8, 0, 6, 2.4, 'ik')],
+  lar_gibbon: () => [...odGibbon(30, 30, 1.0, 'ik'), S('M0 6 L60 6', 'bs', 3), S('M4 6 Q4 12 8 12 M52 6 Q56 12 56 6', 'bs', 1.4)],
+  cross_river_gorilla: () => [...nwApe(30, 28, 15, 'ik', 'bs', { brow: true }), P('M0 60 L10 50 L20 60 Z M40 60 L50 46 L60 60 Z', 'lo')],
+  eastern_lowland_gorilla: () => [...nwApe(30, 28, 15, 'ik', 'bs', { brow: true }), P('M4 60 L14 48 L24 60 Z M34 60 L46 44 L58 60 Z', 'hi')],
+  western_lowland_gorilla: () => [...nwApe(30, 26, 15, 'bs', 'ik', { brow: true }), S('M4 56 Q10 50 16 56 Q22 50 28 56 Q34 50 40 56 Q46 50 52 56', 'lo', 2)],
+  sumatran_orangutan: () => [...nwApe(30, 28, 14, 'lo', 'hi', { mane: true }), ...ntBroad(8, 10, 6, 'bs'), ...ntBroad(52, 10, 6, 'bs')],
+  lion_tamarin: () => [...odMonk(30, 22, 0.95, 'hi', { mane: true, maneRole: 'ik', face: 'bs' }), ...noSun(50, 10, 3, 'hi').slice(0, 1)],
+  pygmy_marmoset: () => [...odMonk(30, 30, 0.7, 'lo', { face: 'hi' }), S('M44 6 L44 60', 'bs', 5), S('M30 10 Q36 14 44 14', 'bs', 2.4)],
+  night_monkey: () => [...odMonk(30, 22, 0.95, 'bs', { face: 'hi', extra: [C(26, 14, 2.2, 'hi'), C(34, 14, 2.2, 'hi'), C(26, 14, 0.9, 'ik'), C(34, 14, 0.9, 'ik')] }), ...noMoon(52, 10, 0.3, 'hi')],
+  tamarin: () => [...odMonk(30, 22, 0.95, 'ik', { face: 'hi', extra: [S('M22 22 Q18 26 20 32 M38 22 Q42 26 40 32', 'hi', 1.6)] }), ...ntBroad(10, 12, 6, 'lo')],
+  uakari: () => [...odMonk(30, 22, 0.95, 'hi', { headRole: 'bs', face: 'bs', extra: [E(30, 14, 7, 3, 'bs')] }), S('M0 56 Q8 50 16 56 Q24 50 32 56 Q40 50 48 56', 'lo', 1.6)],
+  colobinae: () => [...odMonk(26, 22, 0.95, 'bs', { face: 'hi' }), ...ntLeaf(50, 40, 14, 7, 'lo', -30), ...ntLeaf(52, 22, 12, 6, 'lo', 20)],
+  colobus: () => [...odMonk(30, 22, 0.95, 'ik', { face: 'ik', mane: true, maneRole: 'hi', extra: [S('M30 36 Q30 44 26 52', 'hi', 3)] })],
+  semnopithecus: () => [...odMonk(28, 22, 0.95, 'lo', { headRole: 'ik', face: 'ik' }), P('M36 56 L36 38 L46 32 L56 38 L56 56 Z', 'bs'), P('M34 38 L46 28 L58 38 Z', 'hi')],
+  cercopithecinae: () => [...odMonk(26, 22, 0.95, 'lo', { face: 'hi' }), ...odMonk(46, 34, 0.6, 'bs', { face: 'hi' })],
+  chlorocebus: () => [...odMonk(30, 22, 0.95, 'hi', { headRole: 'lo', face: 'ik' }), S('M0 58 Q15 52 30 58 Q45 52 60 58', 'lo', 2)],
+  macaca_fascicularis: () => [...odMonk(24, 22, 0.9, 'lo', { face: 'hi' }), ...nyCrab(48, 52, 0.45, 'bs', {})],
+  white_eyelid_mangabey: () => [...odMonk(30, 22, 0.95, 'ik', { face: 'ik', extra: [S('M24 12 L36 12', 'hi', 2.4)] }), ...ntBroad(10, 12, 6, 'lo')],
+  ruffed_lemur: () => [...odMonk(26, 22, 0.9, 'ik', { mane: true, maneRole: 'hi', face: 'hi', tailRole: 'hi', extra: [P('M22 8 L26 -2 L30 8 Z', 'ik'), P('M30 8 L34 -2 L38 8 Z', 'ik')] }), P('M42 60 L50 44 L60 60 Z', 'lo')],
+  subfossil_lemur: () => [...odMonk(22, 22, 0.8, 'lo', { face: 'hi' }), P('M38 40 Q52 34 58 44 L56 56 L40 56 Z', 'bs'), S('M42 42 L54 42', 'ik', 1.4), ...nvBone(46, 6), P('M0 60 L60 60 L60 56 L0 56 Z', 'ik')],
+  evolution_of_cetaceans: () => [...nvQuad(14, 14, 0.5, 'lo', 'lo'), ...nwDolph(38, 34, 0.7, 'bs', []), S('M6 24 L14 34 L22 46', 'hi', 1.4), S('M0 56 L60 56', 'ik', 1.4)],
+  remingtonocetidae: () => [...nxCroc(30, 32, 0.8, 'lo', { snout: 40 }), ...nyWave],
+  baleen_whale: () => [...nwWhale(30, 28, 1.0, 'bs', { spray: true }), S('M46 34 L56 34 M46 37 L56 37 M46 40 L56 40', 'hi', 1.2), ...nyWave],
+  bowhead_whale: () => [...nwWhale(30, 32, 1.0, 'ik', { spray: true }), P('M0 54 L14 44 L24 54 Z M36 54 L50 42 L60 54 Z', 'hi'), S('M0 58 L60 58', 'bs', 2)],
+  right_whale: () => [...nwWhale(30, 30, 1.0, 'lo', { fin: true }), S('M44 26 L52 24 M44 28 L54 28', 'ik', 1.6), ...nyWave],
+  toothed_whale: () => [...nwWhale(30, 30, 1.0, 'bs', { teeth: true }), ...nyWave],
+  beaked_whale: () => [...nwDolph(28, 30, 1.0, 'lo', [P('M44 30 L56 32 L44 34 Z', 'ik'), C(40, 26, 1.4, 'hi')]), ...nyWave],
+  mesoplodon: () => [...nwDolph(28, 30, 1.0, 'bs', [P('M44 30 L56 33 L44 34 Z', 'hi'), P('M48 32 L50 28 L51 33 Z', 'ik')]), S('M0 50 L60 50', 'ik', 1), ...nyWave],
+  oceanic_dolphin: () => [...nwDolph(30, 28, 1.0, 'hi', []), ...nyWave, ...noSun(50, 8, 3, 'hi').slice(0, 1)],
+  false_killer_whale: () => [...nwDolph(30, 28, 1.05, 'ik', [P('M44 28 Q50 26 54 28 L50 32 Z', 'ik')]), ...nyWave],
+  pilot_whale: () => [...nwDolph(30, 30, 1.05, 'ik', [E(44, 26, 6, 5, 'ik'), S('M26 20 L22 14 L32 20 Z', 'ik', 1.4)]), ...nyWave],
+  hectors_dolphin: () => [...nwDolph(30, 30, 0.9, 'lo', [E(30, 24, 8, 4, 'hi')]), P('M0 60 L10 52 L24 60 Z', 'hi'), ...nyWave],
+  right_whale_dolphin: () => [...nwDolph(30, 30, 1.0, 'hi', [P('M16 36 Q30 44 44 36 Z', 'ik')]), ...nyWave],
+  river_dolphin: () => [...nwDolph(28, 30, 0.9, 'hi', [P('M44 30 L58 32 L44 34 Z', 'hi')]), S('M0 52 Q15 48 30 54 Q45 58 60 52', 'lo', 4), ...ntLeaf(8, 14, 10, 4, 'lo', 20)],
+  pygmy_sperm_whale: () => [...nwWhale(30, 30, 0.9, 'lo', {}), P('M40 24 Q50 22 54 32 L46 36 Z', 'bs'), S('M0 56 L60 56', 'ik', 1.4), ...nyWave],
+  treeshrew: () => [...nwRodent(26, 36, 0.95, 'lo', { tail: 2.4, extra: [P('M38 32 L52 36 L38 38 Z', 'lo')] }), S('M52 6 L52 60', 'bs', 5), S('M52 20 L40 24', 'bs', 2.4)],
+  ungulate: () => [...nvQuad(24, 36, 1.0, 'bs', 'bs'), S('M17 52 L17 57 M22 52 L22 57 M31 52 L31 57 M36 52 L36 57', 'ik', 2.6), ...nwDeer(44, 22, 0.4, 'lo', 1, [])],
+  marine_mammal: () => [...nvSeal(22, 36, 1.0, 'lo'), ...nwDolph(42, 18, 0.5, 'bs', []), ...nyWave],
+  placentalia: () => [...nwRodent(24, 38, 1.0, 'lo', {}), E(46, 24, 8, 10, 'hi'), mmEll(46, 24, 8, 10, 'ik', 1.4), C(46, 24, 4, 'bs')],
+  taeniodonta: () => [...nwRodent(26, 38, 1.0, 'bs', { tail: 2.4, extra: [S('M36 42 L42 46 M38 40 L44 44', 'hi', 1.6)] }), ...nvBone(46, 10), S('M0 58 L60 58', 'ik', 1.4)],
+  vespertilionidae: () => [...nvBat(30, 24, 22, 'bs'), P('M0 56 L12 46 L24 58 L36 44 L48 58 L60 50 L60 60 L0 60 Z', 'lo'), ...noMoon(8, 8, 0.25, 'hi')],
+  erinaceidae: () => [...nwRodent(28, 40, 1.0, 'lo', { tail: 1, extra: [nqBurst(26, 38, 12, 18, 14, 'ik', 1.8)] }), ...ntBroad(52, 14, 6, 'hi')],
+  moonrat: () => [...nwRodent(26, 38, 1.0, 'hi', { tail: 2.6 }), ...noMoon(48, 12, 0.35, 'hi'), S('M0 58 L60 58', 'ik', 1.4)],
+  desman: () => [...nwRodent(26, 40, 0.95, 'bs', { tail: 3, extra: [S('M38 38 Q50 30 58 24', 'ik', 3)] }), ...nyWave],
+  eastern_mole: () => [...nwRodent(28, 42, 0.95, 'lo', { tail: 1.4, extra: [S('M36 46 L48 52 M38 50 L50 56', 'hi', 2.6)] }), P('M0 52 L60 52 L60 60 L0 60 Z', 'ik'), P('M16 52 L22 44 L28 52 Z', 'lo')],
+  antelope_jackrabbit: () => [...nwRodent(26, 40, 1.0, 'lo', { tail: 1.4, extra: [P('M34 28 L38 10 L42 28 Z', 'lo'), P('M40 28 L46 12 L47 30 Z', 'lo')] }), P('M0 58 L14 50 L28 58 L42 50 L60 58 L60 60 L0 60 Z', 'hi')],
+  pika: () => [...nwRodent(28, 40, 0.9, 'lo', { tail: 0.6, extra: [E(38, 28, 3.4, 4.4, 'lo')] }), P('M0 60 L12 48 L22 60 Z M30 60 L44 44 L58 60 Z', 'ik')],
+  cottontail_rabbit: () => [...nwRodent(28, 40, 1.0, 'lo', { tail: 1.4, extra: [P('M34 28 L38 10 L42 28 Z', 'lo'), P('M40 28 L46 12 L47 30 Z', 'lo')] }), C(14, 38, 4.4, 'hi'), S('M0 58 L60 58', 'bs', 1.6)],
+  lophiodon: () => [...nvQuad(26, 36, 1.0, 'lo', 'lo'), P('M42 32 L50 36 L42 38 Z', 'ik'), ...ntBroad(48, 12, 6, 'hi'), P('M0 60 L60 60 L60 56 L0 56 Z', 'bs')],
+  rhinocerotoidea: () => [...nwBoar(28, 36, 1.0, 'bs', { extra: [P('M44 26 L50 14 L52 28 Z', 'hi'), P('M40 28 L44 20 L46 30 Z', 'hi')] }), P('M0 60 L10 52 L20 60 Z', 'lo')],
+  feral_horse: () => [...nvQuad(26, 36, 1.0, 'lo', 'lo'), ...nvHorseH(46, 26, 0.6, 'lo'), P('M0 58 Q15 52 30 58 Q45 52 60 58 L60 60 L0 60 Z', 'hi')],
+  duiker: () => [...nwAnte(26, 38, 0.8, 'lo', 'straight'), ...ntBroad(8, 12, 7, 'hi'), ...ntBroad(50, 14, 6, 'hi')],
+  oryx: () => [...nwAnte(26, 36, 1.1, 'hi', 'straight'), P('M0 60 Q15 52 30 60 Z', 'lo'), ...noSun(52, 8, 3, 'hi').slice(0, 1)],
+  serow: () => [...nwAnte(26, 36, 1.0, 'ik', 'curve'), S('M4 50 L14 42 L24 52 L34 40 L44 54', 'hi', 1.4), ...nhDots([[48, 10]], 2, 'hi')],
+  tahr: () => [...nwBeardGoat(26, 36, 1.0, 'bs', 'curve'), P('M0 60 L14 40 L26 60 Z M30 60 L44 36 L60 60 Z', 'lo'), S('M4 54 L12 48', 'hi', 1.4)],
+  aepycamelus: () => [...odCamel(24, 40, 0.85, 'bs', 0), P('M0 60 L60 60 L60 56 L0 56 Z', 'ik'), ...nvBone(48, 8)],
+  wild_bactrian_camel: () => [...odCamel(24, 36, 0.9, 'lo', 2), P('M0 60 L12 54 L24 60 L36 52 L48 60 L60 56 L60 60 Z', 'hi')],
+  european_fallow_deer: () => [...nwDeer(26, 38, 1.0, 'lo', 1.3), nwAntler(40, 28, 1.2, 'ik'), ...nhDots([[18, 32], [24, 30], [30, 32], [22, 38], [30, 38]], 1.4, 'hi')],
+  siberian_roe_deer: () => [...nwDeer(26, 40, 0.9, 'lo', 0.7), S('M0 58 L60 58', 'hi', 3), ...nhDots([[8, 8], [20, 14], [48, 8], [54, 18]], 1.4, 'hi')],
+  giraffidae: () => [...odGiraffe(26, 40, 0.8, 'hi', { spots: [[-12, 0], [-6, 6], [0, 0]] }), ...nwDeer(46, 48, 0.4, 'lo', 1, [])],
+  northern_giraffe: () => [...odGiraffe(26, 40, 0.95, 'hi', { spots: [[-12, 0], [-4, 6], [0, -2]] }), P('M14 60 Q30 46 46 60 Z', 'lo'), S('M32 8 L32 6', 'ik', 1)],
+  reticulated_giraffe: () => [...odGiraffe(26, 40, 0.95, 'hi', { extra: [S('M8 34 L24 34 M8 40 L24 40 M12 30 L12 46 M18 30 L18 46', 'ik', 1.4)] })],
+  southern_giraffe: () => [...odGiraffe(26, 40, 0.95, 'bs', { spots: [[-12, 0], [-4, 6], [0, -2]] }), S('M4 58 L20 52 L36 58 L56 52', 'hi', 1.8)],
+  suidae: () => [...nwPig(28, 36, 1.0, 'lo', [P('M44 36 L50 42 L44 40 Z', 'hi')]), S('M0 58 L60 58', 'bs', 3)],
+  bornean_bearded_pig: () => [...nwPig(28, 36, 1.0, 'ik', [S('M42 40 L42 48 M44 40 L46 48 M40 40 L38 48', 'hi', 2)]), ...nyWave],
+  antilocapridae: () => [...nwAnte(26, 36, 1.0, 'bs', 'curve'), P('M10 46 L20 46 L20 52 L10 52 Z', 'hi'), P('M0 60 Q15 52 30 60 Z', 'lo')],
+  moschidae: () => [...nwDeer(26, 38, 0.95, 'lo', 0, [P('M40 30 L41 40 L43 30 Z', 'hi')]), ...ntConifer(52, 10, 36, 10, 'bs')],
+  protoceratidae: () => [...nwDeer(26, 38, 0.95, 'bs', 0, [P('M40 24 L44 12 L46 26 Z M46 26 L52 14 L52 28 Z', 'hi')]), P('M0 60 L60 60 L60 56 L0 56 Z', 'ik')],
+  palaeomerycidae: () => [...nwDeer(26, 38, 0.95, 'lo', 0, [S('M38 24 L38 14 M42 24 L44 14', 'ik', 2.2), P('M44 12 L52 8 L50 16 Z', 'hi')]), P('M0 60 L60 60 L60 56 L0 56 Z', 'bs')],
+  cainotheriidae: () => [...nwRodent(26, 38, 1.0, 'lo', { tail: 1.6, extra: [P('M34 28 L36 14 L40 28 Z', 'lo'), S('M16 52 L14 58 M22 52 L24 58 M32 52 L30 58 M38 52 L40 58', 'ik', 2)] }), P('M0 60 L60 60 L60 56 L0 56 Z', 'bs')],
+  anthracotheriidae: () => [...nwPig(26, 38, 1.1, 'bs', [P('M44 34 L50 40 L44 38 Z', 'hi')]), ...nyWave, ...nvBone(48, 10)],
+  machairodontinae: () => [...nvCat(30, 26, 14, 'hi', {}), P('M24 38 L26 52 L28 38 Z M32 38 L34 52 L36 38 Z', 'ik'), S('M0 58 L60 58', 'bs', 1.4)],
+  panthera_spelaea: () => [...nvCat(30, 28, 13, 'hi', { ruff: true }), P('M0 60 L12 50 L24 60 Z M36 60 L48 46 L60 60 Z', 'lo')],
+  megalictis: () => [...nwRodent(24, 36, 1.2, 'bs', { tail: 3.4, extra: [P('M38 32 L52 36 L38 40 Z', 'bs')] }), ...nvBone(48, 10), S('M0 58 L60 58', 'ik', 1.4)],
+  amphicyonidae: () => [...nvQuad(26, 36, 1.1, 'bs', 'bs'), ...nvDogH(48, 22, 7, 'bs', 'pointed'), nqBurst(48, 22, 7, 11, 10, 'ik', 1.2)],
+  nimravidae: () => [...nvCat(30, 28, 13, 'lo', {}), P('M25 40 L26 50 L28 40 Z M32 40 L34 50 L36 40 Z', 'hi'), P('M0 60 L60 60 L60 56 L0 56 Z', 'ik'), ...nvBone(8, 8)],
+};
+for (const [id, fn] of Object.entries(MKEN)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 69: animals X — canids, cats, mustelids and civets, dogs and horses, rodents, elephants, marsupials and early synapsids ── */
+const oeSquir = (cx, cy, s, role = 'lo', o = {}) => [S(`M${n(cx - 8 * s)} ${n(cy + 6 * s)} Q${n(cx - 24 * s)} ${n(cy + 4 * s)} ${n(cx - 20 * s)} ${n(cy - 12 * s)} Q${n(cx - 16 * s)} ${n(cy - 20 * s)} ${n(cx - 10 * s)} ${n(cy - 16 * s)}`, o.tailRole || role, n(6 * s)), ...nwRodent(cx, cy, s * 0.85, role, { tail: 0.8, extra: [P(`M${n(cx + 8 * s)} ${n(cy - 10 * s)} L${n(cx + 9 * s)} ${n(cy - 16 * s)} L${n(cx + 13 * s)} ${n(cy - 10 * s)} Z`, role), ...(o.extra || [])] })];
+const oeSyn = (cx, cy, s, role = 'bs', o = {}) => [...nvQuad(cx, cy, s, role, role), S(`M${n(cx - 14 * s)} ${n(cy)} Q${n(cx - 26 * s)} ${n(cy + 4 * s)} ${n(cx - 30 * s)} ${n(cy + 12 * s)}`, role, n(3 * s)), ...(o.sail ? [P(`M${n(cx - 10 * s)} ${n(cy - 8 * s)} L${n(cx - 6 * s)} ${n(cy - 22 * s)} L${n(cx + 8 * s)} ${n(cy - 22 * s)} L${n(cx + 12 * s)} ${n(cy - 8 * s)} Z`, 'hi')] : []), ...(o.tusk ? [P(`M${n(cx + 18 * s)} ${n(cy - 2 * s)} L${n(cx + 19 * s)} ${n(cy + 8 * s)} L${n(cx + 21 * s)} ${n(cy - 2 * s)} Z`, 'hi'), P(`M${n(cx + 23 * s)} ${n(cy - 2 * s)} L${n(cx + 24 * s)} ${n(cy + 8 * s)} L${n(cx + 26 * s)} ${n(cy - 2 * s)} Z`, 'hi')] : []), ...(o.fang ? [P(`M${n(cx + 19 * s)} ${n(cy - 2 * s)} L${n(cx + 20 * s)} ${n(cy + 10 * s)} L${n(cx + 22 * s)} ${n(cy - 2 * s)} Z`, 'hi')] : []), ...(o.extra || [])];
+const MKEO = {
+  caninae: () => [...nvDogH(16, 22, 11, 'lo', 'erect'), ...nvFoxH(44, 22, 11, 'hi', 1), ...nvDogH(30, 46, 9, 'bs', 'floppy')],
+  african_wolf: () => [...nvFoxH(30, 28, 17, 'lo', 1.1), P('M0 60 L14 50 L28 60 Z M34 60 L48 48 L60 60 Z', 'hi'), noSun(50, 8, 3, 'hi')[0]],
+  bush_dog: () => [...nvDogH(30, 28, 15, 'bs', 'erect'), ...ntBroad(8, 12, 7, 'lo'), S('M0 56 Q15 52 30 56 Q45 52 60 56', 'hi', 2.4)],
+  canis: () => [...nvFoxH(20, 26, 13, 'bs', 1.1), ...nvDogH(46, 36, 12, 'lo', 'erect')],
+  ethiopian_wolf: () => [...nvFoxH(30, 26, 15, 'hi', 1.2), P('M0 60 L14 40 L28 60 Z M32 60 L46 36 L60 60 Z', 'lo'), S('M22 16 L24 22 M38 16 L36 22', 'ik', 1.8)],
+  falkland_islands_wolf: () => [...nvFoxH(30, 26, 15, 'lo', 1), ...nyWave, P('M0 52 L12 46 L24 54 Z', 'bs')],
+  crab_eating_fox: () => [...nvFoxH(24, 26, 13, 'bs', 1), ...nyCrab(48, 50, 0.5, 'hi', {}), S('M0 58 L60 58', 'lo', 2.4)],
+  vulpes: () => [...nvFoxH(28, 26, 16, 'hi', 1.2), S('M44 40 Q58 34 56 52 Q50 46 44 48', 'hi', 4)],
+  black_backed_jackal: () => [...nvFoxH(30, 28, 16, 'lo', 1.2), P('M16 18 Q30 10 44 18 Q40 24 30 22 Q20 24 16 18 Z', 'ik')],
+  side_striped_jackal: () => [...nvFoxH(30, 28, 16, 'lo', 1.1), S('M10 50 L50 50 M12 54 L48 54', 'hi', 2), ...ntBroad(52, 12, 6, 'hi')],
+  nyctereutes: () => [...nvFoxH(30, 28, 15, 'lo', 0.7), P('M14 24 Q30 18 46 24 L44 30 Q30 26 16 30 Z', 'ik')],
+  south_american_fox: () => [...nvFoxH(28, 28, 14, 'bs', 1), P('M2 60 L14 44 L26 60 Z M30 60 L46 40 L60 60 Z', 'lo')],
+  feral_cat: () => [...nvCat(30, 28, 13, 'lo', {}), P('M0 60 L0 44 L12 44 L12 60 Z M48 60 L48 40 L60 40 L60 60 Z', 'ik'), noMoon(50, 12, 0.3, 'hi')[0]],
+  wildcat: () => [...nvCat(30, 28, 14, 'bs', {}), ...ntConifer(8, 20, 38, 10, 'lo'), ...ntConifer(52, 24, 34, 10, 'lo')],
+  rusty_spotted_cat: () => [...nvCat(30, 28, 12, 'hi', {}), ...nhDots([[24, 20], [36, 20], [30, 36], [22, 30], [38, 30]], 1.8, 'bs')],
+  sunda_clouded_leopard: () => [...nvCat(30, 28, 14, 'lo', {}), ...nhDots([[22, 18], [38, 18]], 3, 'ik'), P('M0 60 L12 52 L24 60 Z', 'bs')],
+  panthera: () => [...nvCat(16, 24, 11, 'hi', { ruff: true }), ...nvCat(44, 24, 11, 'bs', {}), ...nvCat(30, 48, 8, 'lo', {})],
+  ferret_badger: () => [...nvCat(30, 28, 13, 'lo', {}), P('M18 22 Q30 14 42 22 L40 28 Q30 24 20 28 Z', 'ik'), S('M30 10 L30 20', 'hi', 3)],
+  ictonychinae: () => [...nwRodent(26, 38, 1.1, 'lo', { tail: 3, extra: [S('M12 30 L40 30', 'hi', 2)] }), ...nvBone(46, 10)],
+  yellow_throated_marten: () => [...nwRodent(26, 38, 1.1, 'ik', { tail: 3.4, extra: [E(38, 42, 6, 4, 'hi')] }), ...ntBroad(10, 12, 7, 'lo')],
+  neogale: () => [...nwRodent(26, 40, 1.05, 'bs', { tail: 2.6 }), S('M0 56 Q15 50 30 56 Q45 50 60 56', 'hi', 2.4)],
+  european_mink: () => [...nwRodent(26, 38, 1.05, 'ik', { tail: 3, extra: [E(40, 34, 4, 2.6, 'hi')] }), ...nyWave],
+  bassaricyon: () => [...nwRodent(24, 36, 1.0, 'lo', { tail: 3.4, extra: [S('M8 30 Q2 40 6 52', 'ik', 2.6)] }), S('M40 6 L40 60', 'bs', 5), ...noMoon(14, 12, 0.3, 'hi')],
+  african_palm_civet: () => [...nvQuad(26, 36, 0.95, 'lo', 'lo'), ...nhDots([[20, 30], [28, 32]], 2, 'ik'), S('M44 6 L44 60', 'bs', 5), S('M26 10 Q36 8 44 12', 'bs', 2)],
+  ailuridae: () => [...nvCat(30, 28, 14, 'hi', {}), P('M18 24 Q30 20 42 24 L40 34 Q30 38 20 34 Z', 'bs'), S('M0 56 L60 56', 'ik', 1.4), ...ntLeaf(8, 12, 12, 4, 'lo', 20)],
+  asiatic_linsang: () => [...nvQuad(26, 38, 0.95, 'hi', 'hi'), ...nhDots([[16, 34], [22, 32], [28, 34], [34, 32]], 1.8, 'ik'), S('M12 32 Q2 34 0 44', 'ik', 3)],
+  eupleridae: () => [...nvQuad(26, 36, 1.0, 'bs', 'bs'), S('M12 32 Q0 30 2 16', 'bs', 3), P('M44 40 L50 46 L44 44 Z', 'hi'), noSun(52, 10, 3, 'hi')[0]],
+  mephitidae: () => [...nwRodent(26, 40, 1.05, 'ik', { tail: 3.4, extra: [S('M14 34 L34 34', 'hi', 3)] }), S('M2 14 Q8 6 14 14 M2 22 Q8 14 14 22', 'hi', 1.4)],
+  viverridae: () => [...nvQuad(26, 36, 1.0, 'lo', 'lo'), ...nhDots([[18, 32], [24, 30], [30, 32]], 1.8, 'ik'), S('M12 30 Q0 28 2 18', 'ik', 3)],
+  banded_palm_civet: () => [...nvQuad(26, 38, 0.95, 'hi', 'hi'), S('M16 32 L16 44 M22 31 L22 44 M28 31 L28 44 M34 32 L34 44', 'ik', 2), ...ntBroad(52, 12, 6, 'lo')],
+  asian_black_bear: () => [...nvBearH(30, 28, 15, 'ik', 'hi'), P('M20 42 Q30 54 40 42 Q30 46 20 42 Z', 'hi'), ...noMoon(8, 10, 0.3, 'hi')],
+  quagga: () => [...nvQuad(26, 36, 1.1, 'bs', 'bs'), S('M14 28 L14 42 M20 27 L20 42 M26 27 L26 42', 'ik', 2.2), ...nvHorseH(46, 24, 0.55, 'bs')],
+  husky: () => [...nvDogH(30, 28, 15, 'lo', 'erect'), P('M18 30 Q30 22 42 30 L38 44 Q30 48 22 44 Z', 'hi'), P('M0 60 L12 52 L24 60 Z', 'hi'), S('M44 52 L60 52', 'ik', 1.4)],
+  balto: () => [...nvDogH(24, 28, 13, 'lo', 'erect'), S('M38 36 L58 36 M38 42 L58 42', 'ik', 1.4), S('M52 30 L52 50', 'bs', 2), P('M0 60 L10 54 L20 60 Z', 'hi')],
+  palomino: () => [...nvHorseH(30, 30, 1.2, 'hi'), P('M10 14 Q4 30 10 44 Q12 30 16 14 Z', 'bs')],
+  seabiscuit: () => [...nvHorseH(26, 30, 1.0, 'lo'), P('M46 14 L58 14 L58 22 L46 22 Z', 'hi'), S('M50 22 L50 40', 'ik', 1.6), S('M0 58 L60 58', 'hi', 2)],
+  livestock_guardian_dog: () => [...nvDogH(24, 28, 14, 'hi', 'floppy'), ...nwAnte(44, 46, 0.3, 'lo', 'curve')],
+  scent_hound: () => [...nvDogH(28, 28, 15, 'bs', 'floppy'), S('M42 38 Q50 36 56 40', 'ik', 1.6), S('M0 56 Q8 50 16 56 Q24 50 32 56 Q40 50 48 56', 'hi', 1.6)],
+  water_dog: () => [...nvDogH(28, 26, 14, 'lo', 'floppy'), ...nyWave, ...nyWave.slice(0, 0), mgDrop(50, 14, 1.4, 'hi')],
+  blesmol: () => [...nwRodent(28, 42, 0.95, 'hi', { tail: 1, extra: [S('M36 44 L40 52 M38 42 L44 50', 'ik', 1.6)] }), P('M0 50 L60 50 L60 60 L0 60 Z', 'ik'), S('M6 56 Q30 52 54 56', 'bs', 3)],
+  gopher: () => [...nwRodent(28, 40, 0.95, 'lo', { tail: 1.2, extra: [E(38, 44, 4, 3, 'hi')] }), P('M0 52 L60 52 L60 60 L0 60 Z', 'ik'), P('M20 52 L28 46 L36 52 Z', 'bs')],
+  octodon: () => [...nwRodent(28, 40, 0.95, 'lo', { tail: 2.6 }), P('M0 60 L12 44 L24 60 Z M34 60 L46 40 L60 60 Z', 'ik'), S('M2 56 L58 56', 'bs', 1.6)],
+  pedetes: () => [...nwRodent(24, 40, 1.0, 'bs', { tail: 3, extra: [S('M10 44 L8 56 L16 56', 'ik', 2.6)] }), S('M0 58 L60 58', 'hi', 2), noSun(50, 10, 3, 'hi')[0]],
+  old_world_porcupine: () => [...nwRodent(30, 40, 1.05, 'ik', { tail: 1, extra: [S('M12 30 L6 16 M18 28 L14 12 M24 26 L22 10 M30 26 L30 8 M36 28 L40 12', 'hi', 2)] })],
+  prehensile_tailed_porcupine: () => [...nwRodent(26, 36, 1.0, 'lo', { tail: 1, extra: [S('M10 28 L6 14 M16 26 L14 10 M22 26 L22 8 M28 28 L32 12', 'ik', 2), S('M10 40 Q0 44 4 54 Q10 56 12 50', 'ik', 3)] }), S('M44 4 L44 60', 'bs', 5)],
+  spalax: () => [...nwRodent(28, 42, 0.95, 'lo', { tail: 0.6, extra: [S('M36 38 L42 40', 'ik', 2.4)] }), P('M0 52 L60 52 L60 60 L0 60 Z', 'ik'), noMoon(48, 14, 0.3, 'hi')[0]],
+  viscacha: () => [...nwRodent(28, 40, 1.0, 'lo', { tail: 3.4, extra: [P('M34 28 L38 12 L42 28 Z', 'lo')] }), P('M0 60 L14 46 L28 56 L42 42 L60 58 L60 60 Z', 'ik')],
+  gerbillinae: () => [...nwRodent(26, 40, 0.95, 'hi', { tail: 3, extra: [S('M8 34 L2 30', 'ik', 1.4)] }), P('M0 56 Q15 48 30 56 Q45 48 60 56 L60 60 L0 60 Z', 'lo'), noSun(50, 10, 4, 'hi')[0]],
+  polynesian_rat: () => [...nwRodent(26, 38, 1.0, 'bs', { tail: 2.4 }), ...ntBroad(48, 12, 7, 'lo'), ...nyWave],
+  callosciurus: () => [...oeSquir(30, 38, 1.0, 'hi', { tailRole: 'bs' }), S('M52 4 L52 60', 'lo', 5), ...ntBroad(10, 12, 6, 'lo')],
+  ground_squirrel: () => [...oeSquir(28, 38, 0.95, 'lo', {}), P('M0 52 L60 52 L60 60 L0 60 Z', 'ik'), P('M36 52 L44 44 L52 52 Z', 'bs')],
+  xerini: () => [...oeSquir(28, 38, 0.95, 'hi', {}), S('M14 40 L40 40', 'ik', 1.4), noSun(50, 10, 4, 'hi')[0], P('M0 56 Q15 50 30 56 Q45 50 60 56 L60 60 L0 60 Z', 'lo')],
+  tree_squirrel: () => [...oeSquir(28, 36, 1.0, 'lo', {}), S('M50 6 L50 60', 'bs', 6), S('M50 22 L40 28', 'bs', 2.4)],
+  american_red_squirrel: () => [...oeSquir(26, 38, 1.0, 'hi', { tailRole: 'bs' }), ...ntConifer(50, 12, 46, 12, 'lo')],
+  oriental_giant_squirrel: () => [...oeSquir(26, 36, 1.2, 'bs', { tailRole: 'ik' }), ...ntBroad(50, 14, 8, 'lo'), S('M0 58 L60 58', 'lo', 1.6)],
+  sciurus: () => [...oeSquir(26, 38, 1.0, 'lo', {}), ...nuNut(46, 46, 4, 5, 'bs'), ...ntBroad(48, 14, 7, 'hi')],
+  deinotheriidae: () => [...nxEle(28, 34, 1.0, 'lo', { extra: [S('M44 38 Q44 50 36 52 M46 38 Q50 50 42 54', 'hi', 2.6)] })],
+  mammutidae: () => [...nxEle(28, 34, 1.0, 'ik', { extra: [S('M42 34 Q58 34 56 22 M44 36 Q60 36 58 26', 'hi', 2.6)] }), ...ntConifer(8, 12, 30, 8, 'lo')],
+  stegodontidae: () => [...nxEle(28, 34, 1.0, 'bs', { extra: [S('M42 34 L58 36 M42 38 L58 42', 'hi', 3)] })],
+  elephantidae: () => [...nxEle(22, 38, 0.8, 'lo', {}), ...nxEle(44, 28, 0.5, 'ik', {})],
+  african_forest_elephant: () => [...nxEle(28, 38, 0.95, 'lo', {}), ...ntBroad(10, 12, 8, 'hi'), ...ntBroad(50, 10, 8, 'hi')],
+  dwarf_elephant: () => [...nxEle(28, 40, 0.65, 'lo', {}), P('M0 58 L12 48 L24 58 L36 46 L48 58 L60 52 L60 60 L0 60 Z', 'hi'), ...nyWave],
+  giant_otter_shrew: () => [...nwRodent(26, 38, 1.0, 'bs', { tail: 4, extra: [P('M36 34 L48 38 L36 40 Z', 'bs')] }), ...nyWave, ...ntBroad(48, 12, 7, 'hi')],
+  ground_sloth: () => [...nxSloth(30, 36, 1.0, 'lo', {})],
+  macrotis: () => [...nwRodent(26, 40, 0.95, 'hi', { tail: 2.4, extra: [P('M34 28 L38 8 L42 28 Z', 'hi'), P('M40 28 L46 10 L46 30 Z', 'hi')] }), P('M0 58 Q15 50 30 58 Q45 50 60 58 L60 60 L0 60 Z', 'lo'), noSun(50, 8, 3, 'hi')[0]],
+  phalangeriformes: () => [...nxMars(26, 38, 0.95, 'lo', {}), S('M50 4 L50 60', 'bs', 5)],
+  common_ringtail_possum: () => [...nxMars(24, 36, 0.95, 'lo', {}), ring('hi', 8, 34, 4, 2), S('M50 4 L50 60', 'bs', 5), noMoon(12, 12, 0.3, 'hi')[0]],
+  vombatiformes: () => [...nvQuad(18, 40, 0.7, 'bs', 'bs'), ...nxSloth(44, 36, 0.4, 'lo', {}).slice(0, 0), E(44, 36, 10, 7, 'lo'), mmEll(44, 36, 10, 7, 'ik', 1.4), C(52, 34, 3, 'lo'), P('M40 28 L42 22 L45 28 Z', 'lo')],
+  macropodidae: () => [...nxMars(26, 38, 1.0, 'bs', { pouch: true }), S('M10 36 Q0 38 2 52', 'bs', 4), P('M0 58 L60 58 L60 60 L0 60 Z', 'hi')],
+  sthenurus: () => [...nxMars(26, 36, 1.1, 'bs', {}), ...nvBone(46, 8), P('M0 58 L60 58 L60 60 L0 60 Z', 'ik'), S('M10 34 Q0 38 2 52', 'bs', 4)],
+  mammaliaformes: () => [...nwRodent(26, 38, 1.0, 'lo', { tail: 2, extra: [S('M36 36 L46 36 M36 40 L46 40', 'hi', 1.2)] }), ...oeSyn(40, 14, 0.3, 'ik', {})],
+  eutriconodonta: () => [...nwRodent(26, 38, 1.0, 'bs', { tail: 2, extra: [P('M36 34 L48 38 L36 40 Z', 'hi')] }), ...nvBone(48, 8), P('M0 58 L60 58 L60 60 L0 60 Z', 'ik')],
+  cotylorhynchus: () => [...oeSyn(28, 38, 1.15, 'lo', {}), P('M0 58 L60 58 L60 60 L0 60 Z', 'bs'), ...noSun(50, 8, 3, 'hi').slice(0, 1)],
+  pelycosaur: () => [...oeSyn(28, 40, 1.0, 'bs', { sail: true }), S('M10 56 L50 56', 'ik', 1.4)],
+  therapsida: () => [...oeSyn(28, 38, 1.0, 'lo', {}), ...nwRodent(48, 18, 0.5, 'hi', { tail: 1 })],
+  cynodontia: () => [...oeSyn(28, 38, 0.95, 'hi', { extra: [P('M44 30 L46 38 L48 30 Z', 'ik')] }), ...nvFoxH(48, 16, 6, 'lo', 1)],
+  dicynodontia: () => [...oeSyn(28, 38, 1.05, 'bs', { tusk: true }), S('M0 58 L60 58', 'ik', 1.4)],
+  placerias: () => [...oeSyn(28, 36, 1.2, 'lo', { tusk: true }), ...nyWave, P('M44 8 L52 4 L50 12 Z', 'hi')],
+  gorgonopsia: () => [...oeSyn(28, 38, 1.0, 'ik', { fang: true }), P('M0 58 L60 58 L60 60 L0 60 Z', 'bs'), S('M46 36 L52 34', 'hi', 1.4)],
+  therocephalia: () => [...oeSyn(28, 38, 1.0, 'bs', { fang: true, extra: [E(44, 28, 7, 6, 'hi'), mmEll(44, 28, 7, 6, 'ik', 1.2)] }), ...ntBroad(8, 12, 6, 'lo')],
+};
+for (const [id, fn] of Object.entries(MKEO)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 70: birds — raptors, waterfowl, game birds, kingfishers and rollers, waders, gulls, doves, cuckoos, songbirds, seabirds, parrots and owls ── */
+const ofGnd = (role = 'bs') => S('M0 54 L60 54', role, 2);
+const ofBranch = () => [S('M0 48 L60 48', 'bs', 3), S('M44 48 L52 40 M50 48 L58 44', 'bs', 2)];
+const ofReeds = () => [S('M6 56 L8 36 M12 56 L12 32 M52 56 L50 34 M56 56 L58 38', 'lo', 2), ...nyWave];
+const ofSun = (x = 50, y = 10) => noSun(x, y, 4, 'hi')[0];
+const ofMoon = (x = 50, y = 10) => noMoon(x, y, 0.3, 'hi')[0];
+const ofHills = () => P('M0 60 L14 46 L28 60 Z M32 60 L46 42 L60 60 Z', 'lo');
+const ofTail = (cx, cy, s, role, n2 = 3, len = 10) => S(Array.from({ length: n2 }, (_, i) => `M${n(cx - 12 * s)} ${n(cy - 2 * s + i * 3 * s)} L${n(cx - (12 + len) * s)} ${n(cy - 2 * s + (i - 1) * 4 * s)}`).join(' '), role, n(1.8 * s));
+const MKER = {
+  fowl: () => [...nvChicken(20, 30, 0.8, 'lo', 'hi'), ...oaDuck(40, 40, 0.6, 'bs', {}), ofGnd()],
+  lesser_florican: () => [...nxBird(28, 34, 1.0, 'lo', { beak: 'ik', wing: 'hi', extra: [S('M42 14 L46 8 M46 14 L50 8', 'ik', 1.6)] }), P('M0 56 Q8 48 16 56 Q24 46 32 56 Q40 46 48 56 Q54 50 60 56 L60 60 L0 60 Z', 'hi')],
+  mousebird: () => [...nxBird(24, 34, 0.95, 'lo', { beak: 'ik', crest: true, extra: [S('M10 34 L0 44', 'bs', 2.6)] }), ...nvMouse(48, 14), ...ofBranch()],
+  buteo: () => [...nxBird(28, 32, 1.1, 'bs', { beak: 'ik', wing: 'lo', extra: [P('M16 34 L4 40 L14 42 Z', 'hi')] }), ofHills(), ofSun()],
+  crested_caracara: () => [...nxBird(26, 32, 1.05, 'ik', { beak: 'hi', crest: true, wing: 'bs', extra: [E(40, 26, 4, 2.6, 'hi')] }), S('M0 56 L60 56', 'lo', 2), ofSun()],
+  sea_eagle: () => [...nxBird(26, 28, 1.15, 'lo', { beak: 'hi', wing: 'ik', extra: [P('M2 36 L12 32 L12 40 Z', 'hi')] }), ...nyWave, ...nyFish(46, 48, 7, 3, 'hi', {})],
+  bateleur: () => [...nxBird(26, 30, 1.1, 'ik', { beak: 'hi', wing: 'hi', extra: [E(40, 24, 5, 3, 'bs')] }), S('M0 56 Q15 50 30 56 Q45 50 60 56', 'lo', 2), ofSun()],
+  elaninae: () => [...nxBird(28, 28, 1.0, 'hi', { beak: 'ik', wing: 'ik', extra: [P('M16 34 L0 38 L14 42 Z', 'ik'), P('M36 30 L58 18 L44 34 Z', 'ik')] }), S('M0 56 L60 56', 'lo', 2)],
+  european_honey_buzzard: () => [...nxBird(26, 30, 1.0, 'lo', { beak: 'ik', wing: 'bs' }), ...nzWasp(50, 12, 0.4, 'hi'), P('M0 60 L16 50 L30 60 Z', 'bs'), ofGnd('lo')],
+  vulture: () => [...nxBird(30, 34, 1.1, 'ik', { beak: 'hi', wing: 'ik', extra: [S('M42 28 L44 36', 'hi', 3), C(45, 24, 5, 'hi')] }), ...nvBone(14, 54), ofGnd()],
+  anatidae: () => [...oaDuck(18, 30, 0.7, 'bs', {}), ...oaSwan(44, 38, 0.6, 'hi', {}), ...nyWave],
+  diving_duck: () => [...oaDuck(26, 26, 0.95, 'lo', { head: 'ik' }), S('M26 44 L26 56 M32 44 L32 56', 'hi', 2), P('M24 56 L36 56 L30 60 Z', 'hi'), ...nyWave],
+  mergus: () => [...oaDuck(24, 28, 1.0, 'bs', { head: 'ik', beak: 'ik', extra: [S('M38 20 L46 14', 'ik', 2)] }), ...nyFish(48, 50, 7, 3, 'hi', {})],
+  swan_goose: () => [...oaSwan(28, 36, 0.95, 'lo', { neck: 1.1, beak: 'ik' }), P('M18 14 L38 14 L38 18 L18 18 Z', 'hi')],
+  branta: () => [...oaDuck(26, 32, 1.05, 'ik', { head: 'ik', beak: 'ik', extra: [E(38, 26, 3, 2, 'hi')] }), S('M0 56 L60 56', 'hi', 2), ofSun(50, 10)],
+  screamer: () => [...oaDuck(26, 32, 1.05, 'lo', { head: 'bs', extra: [S('M38 16 L42 6', 'ik', 2), P('M20 22 L30 22 L26 34 Z', 'bs')] }), ...ofReeds()],
+  tadorna: () => [...oaDuck(26, 32, 1.0, 'hi', { head: 'ik', beak: 'bs', extra: [E(26, 30, 12, 4, 'bs')] }), P('M0 56 Q15 50 30 56 Q45 50 60 56 L60 60 L0 60 Z', 'lo')],
+  whistling_duck: () => [...oaDuck(26, 32, 1.0, 'bs', { tail: -2, extra: [S('M8 32 L2 26', 'ik', 2)] }), ...ofBranch().slice(0, 1), ofMoon(12, 10)],
+  frogmouth: () => [...nxOwl(30, 30, 0.95, 'lo', { extra: [P('M24 28 L36 28 L34 34 L26 34 Z', 'hi')] }), ...ofBranch()],
+  owlet_nightjar: () => [...nxOwl(30, 34, 0.7, 'bs', {}), P('M10 56 L22 44 L34 56 Z', 'ik'), ofMoon(48, 10)],
+  patagona: () => [...nxBird(24, 30, 0.8, 'hi', { beak: 'ik', wing: 'lo', extra: [S('M38 20 L58 18', 'ik', 1.4)] }), ...nzFlower(48, 42, 7, 'bs', 'hi'), S('M48 48 L48 60', 'lo', 2), ofHills()],
+  swiftlet: () => [...nxBird(24, 24, 0.8, 'ik', { beak: 'ik', wing: 'ik' }), P('M20 52 Q30 38 40 52 Q30 56 20 52 Z', 'hi'), S('M0 60 L8 46 L20 52 M60 60 L52 46 L40 52', 'bs', 2)],
+  tree_kingfisher: () => [...nxBird(24, 34, 0.95, 'hi', { beak: 'ik', wing: 'bs', extra: [E(30, 38, 8, 5, 'lo')] }), ...ofBranch()],
+  ground_roller: () => [...nxBird(26, 36, 1.0, 'lo', { beak: 'ik', wing: 'hi', extra: [S('M24 52 L24 58 M30 52 L30 58', 'ik', 2.2)] }), P('M0 58 L60 58 L60 60 L0 60 Z', 'bs'), ...ntBroad(50, 14, 7, 'hi')],
+  ground_hornbill: () => [...nxBird(24, 32, 1.1, 'ik', { beak: 'hi', wing: 'ik', extra: [P('M40 20 L50 14 L50 22 Z', 'ik'), E(40, 24, 4, 3, 'bs')] }), S('M0 56 L60 56', 'hi', 2), ofSun()],
+  motmot: () => [...nxBird(24, 30, 0.95, 'hi', { beak: 'ik', wing: 'lo', extra: [S('M12 36 L2 52', 'ik', 1.6), C(1, 54, 2.4, 'ik')] }), ...ntBroad(48, 14, 8, 'lo'), ...ofBranch().slice(0, 1)],
+  piciformes: () => [...nxBird(26, 32, 0.95, 'ik', { beak: 'hi', wing: 'hi', crest: true }), S('M48 4 L48 60', 'bs', 8), S('M42 20 L54 20 M42 36 L54 36', 'ik', 1)],
+  lybiidae: () => [...nxBird(26, 34, 1.0, 'ik', { beak: 'hi', wing: 'bs', extra: [P('M36 26 L44 22 L44 30 Z', 'ik')] }), ...nhDots([[50, 14], [54, 20], [48, 22]], 2.4, 'hi'), ...ofBranch().slice(0, 1)],
+  coraciidae: () => [...nxBird(26, 32, 1.0, 'hi', { beak: 'ik', wing: 'bs', extra: [P('M14 30 L2 24 L10 38 Z', 'bs')] }), ofSun(), S('M0 56 L60 56', 'lo', 2)],
+  guillemot: () => [...nxPeng(28, 32, 0.9, 'ik', {}), P('M0 60 L8 50 L18 60 Z M36 60 L46 44 L60 60 Z', 'lo'), ...nyWave],
+  courser: () => [...nxBird(26, 32, 1.0, 'lo', { beak: 'ik', wing: 'bs', extra: [S('M24 44 L22 58 M30 44 L32 58', 'ik', 2.4)] }), P('M0 58 Q15 52 30 58 Q45 52 60 58 L60 60 L0 60 Z', 'hi'), ofSun()],
+  greater_painted_snipe: () => [...nxBird(26, 30, 1.0, 'bs', { beak: 'ik', wing: 'hi', extra: [P('M38 22 L56 24 L38 28 Z', 'ik'), ...nhDots([[18, 28], [24, 26]], 2, 'hi')] }), ...ofReeds()],
+  jacanidae: () => [...nxBird(26, 34, 0.9, 'lo', { beak: 'hi', wing: 'hi', extra: [S('M22 44 L8 56 M24 44 L18 56 M30 44 L38 56 M32 44 L48 56', 'ik', 1.6)] }), P('M2 56 Q10 52 18 56 Q10 60 2 56 Z M40 56 Q48 52 56 56 Q48 60 40 56 Z', 'hi'), ...nyWave],
+  laridae: () => [...nxBird(26, 28, 1.0, 'hi', { beak: 'hi', wing: 'bs' }), ...nyWave, ...nyWave.slice(0, 0), ofSun(52, 10)],
+  larus: () => [...nxBird(26, 30, 1.1, 'hi', { beak: 'hi', wing: 'ik', extra: [E(40, 26, 3, 2, 'ik')] }), P('M0 60 L10 50 L20 60 Z', 'lo'), ...nyWave],
+  stilt: () => [...nxHeron(28, 18, 0.9, 'hi', { beak: 'ik', extra: [S('M26 22 L24 52 M32 22 L34 52', 'hi', 1.6)] }), ...nyWave],
+  stone_curlew: () => [...nxBird(26, 32, 1.0, 'lo', { beak: 'ik', wing: 'bs', extra: [C(40, 24, 3.4, 'hi'), C(40, 24, 1.4, 'ik'), S('M24 44 L22 56 M30 44 L32 56', 'ik', 2)] }), ofMoon(10, 10), P('M0 58 L60 58 L60 60 L0 60 Z', 'bs')],
+  eared_dove: () => [...nxBird(26, 34, 1.0, 'lo', { beak: 'ik', wing: 'bs', extra: [E(32, 28, 3, 2, 'ik')] }), P('M0 58 Q15 52 30 58 Q45 52 60 58 L60 60 L0 60 Z', 'hi')],
+  zebra_dove: () => [...nxBird(26, 34, 0.95, 'bs', { beak: 'ik', wing: 'hi', extra: [S('M22 36 L34 36 M22 40 L34 40 M22 32 L34 32', 'ik', 1.2)] }), P('M0 58 Q15 52 30 58 Q45 52 60 58 L60 60 L0 60 Z', 'lo')],
+  clamator: () => [...nxBird(26, 34, 1.0, 'lo', { beak: 'ik', wing: 'bs', crest: true, extra: [S('M8 30 L0 24', 'ik', 2)] }), ...nuNut(50, 50, 5, 3.6, 'hi'), P('M40 54 L60 54 L58 60 L42 60 Z', 'bs')],
+  koel: () => [...nxBird(26, 32, 1.0, 'ik', { beak: 'hi', wing: 'ik', extra: [C(40, 24, 1.6, 'bs')] }), ...ofBranch(), ...nuNut(50, 14, 5, 3.6, 'hi')],
+  chachalaca: () => [...nvChicken(26, 34, 0.9, 'lo', 'hi'), ...ofBranch(), ...noMoon(8, 10, 0.3, 'hi')],
+  curassow: () => [...nvChicken(26, 34, 1.0, 'ik', 'hi'), S('M36 14 L34 4 M40 14 L40 4 M44 14 L46 4', 'ik', 1.6), ...ntBroad(8, 14, 7, 'lo')],
+  francolin: () => [...nvChicken(26, 36, 0.9, 'bs', 'lo'), P('M0 58 Q15 50 30 58 Q45 50 60 58 L60 60 L0 60 Z', 'hi'), S('M10 54 L14 46 M16 54 L18 44', 'lo', 1.4)],
+  guan_bird: () => [...nvChicken(26, 34, 1.0, 'lo', 'bs'), S('M42 26 Q48 32 44 38', 'ik', 3), ...ofBranch().slice(0, 1), P('M0 60 L10 50 L20 60 Z', 'bs')],
+  megapode: () => [...nvChicken(24, 32, 0.9, 'ik', 'hi'), P('M30 60 Q46 40 60 60 Z', 'lo'), ...nuNut(46, 54, 4, 3, 'hi')],
+  partridge: () => [...nvChicken(26, 34, 0.9, 'bs', 'ik'), ...nhDots([[16, 30], [22, 28], [28, 30]], 1.6, 'hi'), P('M0 58 Q15 52 30 58 Q45 52 60 58 L60 60 L0 60 Z', 'lo')],
+  phasianidae: () => [...nvChicken(24, 34, 0.9, 'lo', 'hi'), ...nxBird(44, 18, 0.5, 'bs', { beak: 'ik' }), ofGnd()],
+  tragopan: () => [...nvChicken(26, 34, 1.0, 'hi', 'bs'), P('M36 16 L38 6 L40 16 Z M42 16 L46 8 L46 18 Z', 'ik'), ...nzFlower(8, 12, 5, 'lo', 'hi')],
+  blue_eared_pheasant: () => [...nvChicken(26, 34, 1.0, 'hi', 'hi'), P('M32 18 L24 10 L34 14 Z M38 18 L46 10 L36 14 Z', 'bs'), ofHills()],
+  green_pheasant: () => [...nvChicken(26, 34, 1.0, 'lo', 'hi'), S('M12 34 L0 28 M12 38 L0 40', 'ik', 2.4), ...ntBroad(50, 14, 7, 'lo')],
+  domesticated_quail: () => [...nvChicken(26, 36, 0.7, 'bs', 'ik'), S('M4 20 L56 20 M4 56 L56 56 M10 20 L10 56 M20 20 L20 56 M30 20 L30 56 M40 20 L40 56 M50 20 L50 56', 'hi', 1)],
+  new_world_quail: () => [...nvChicken(26, 36, 0.8, 'lo', 'bs'), S('M38 20 Q40 10 36 8', 'ik', 2.4), P('M0 58 Q15 50 30 58 Q45 50 60 58 L60 60 L0 60 Z', 'hi')],
+  old_world_quail: () => [...nvChicken(26, 36, 0.8, 'bs', 'lo'), S('M0 56 L8 50 L16 56 L24 50 L32 56 L40 50 L48 56', 'hi', 1.6), ofSun()],
+  king_quail: () => [...nvChicken(26, 36, 0.7, 'hi', 'bs'), P('M30 24 L32 16 L36 24 Z', 'ik'), ...ofReeds()],
+  chough: () => [...nxBird(26, 30, 1.05, 'ik', { beak: 'bs', wing: 'ik', extra: [S('M24 44 L24 52 M30 44 L30 52', 'bs', 2.4)] }), P('M0 60 L0 36 L16 40 L20 60 Z', 'lo'), S('M0 36 L16 40', 'ik', 1.4)],
+  jay: () => [...nxBird(26, 32, 1.0, 'lo', { beak: 'ik', wing: 'hi', crest: true, extra: [S('M18 30 L30 32', 'hi', 3)] }), ...nuNut(48, 48, 4, 5, 'bs'), ...ntBroad(8, 12, 7, 'bs')],
+  drongo: () => [...nxBird(24, 32, 1.0, 'ik', { beak: 'ik', wing: 'ik', extra: [S('M12 34 L0 28 M12 38 L0 46', 'ik', 2.4)] }), ...ofBranch().slice(0, 1), ofSun()],
+  emberiza: () => [...nxBird(26, 34, 0.9, 'hi', { beak: 'bs', wing: 'bs', extra: [S('M30 28 L38 26', 'ik', 1.4)] }), P('M0 56 Q10 48 20 56 Q30 48 40 56 Q50 48 60 56 L60 60 L0 60 Z', 'lo')],
+  crossbill: () => [...nxBird(26, 34, 1.0, 'bs', { beak: 'ik', wing: 'hi', extra: [S('M38 26 L44 30 M38 28 L44 24', 'ik', 1.6)] }), ...ntConifer(52, 12, 30, 10, 'lo'), S('M0 50 L60 50', 'ik', 2)],
+  northern_mockingbird: () => [...nxBird(24, 34, 0.95, 'lo', { beak: 'ik', wing: 'bs' }), S('M44 12 Q50 8 56 12 M44 18 Q52 14 58 18', 'hi', 1.4), ...ofBranch().slice(0, 1)],
+  pipit: () => [...nxBird(26, 36, 0.85, 'bs', { beak: 'ik', wing: 'lo', extra: [S('M10 40 L0 36', 'ik', 1.6)] }), P('M0 58 Q15 52 30 58 Q45 52 60 58 L60 60 L0 60 Z', 'hi'), ofHills()],
+  white_browed_wagtail: () => [...nxBird(26, 34, 0.9, 'ik', { beak: 'ik', wing: 'hi', extra: [S('M12 36 L0 42', 'ik', 2.2), S('M34 24 L40 24', 'hi', 2.4)] }), ...nyWave],
+  old_world_oriole: () => [...nxBird(26, 32, 1.0, 'hi', { beak: 'bs', wing: 'ik' }), ...ntBroad(8, 12, 8, 'lo'), ofSun(50, 10), ...ofBranch().slice(0, 1)],
+  eurasian_tree_sparrow: () => [...nxBird(26, 34, 0.9, 'bs', { beak: 'ik', wing: 'lo', extra: [E(36, 28, 3, 2, 'ik'), E(33, 30, 3, 2, 'hi')] }), ...ntBroad(48, 14, 9, 'lo'), ...ofBranch().slice(0, 1)],
+  oxpecker: () => [...nxBird(18, 18, 0.75, 'bs', { beak: 'hi', wing: 'lo' }), ...nvQuad(34, 44, 0.9, 'lo', 'lo'), P('M40 38 L44 30 L46 40 Z', 'hi')],
+  delichon: () => [...nxBird(26, 26, 0.9, 'ik', { beak: 'ik', wing: 'ik', extra: [E(30, 30, 6, 3, 'hi')] }), P('M0 60 L0 44 L30 44 L30 60 Z', 'bs'), S('M30 44 L44 44', 'ik', 2), E(46, 50, 8, 5, 'lo')],
+  vireo: () => [...nxBird(26, 34, 0.9, 'lo', { beak: 'ik', wing: 'bs', extra: [S('M32 26 L42 26', 'hi', 2.4)] }), ...ntBroad(10, 12, 8, 'hi'), ...ofBranch().slice(0, 1)],
+  wallcreeper: () => [...nxBird(30, 30, 0.9, 'hi', { beak: 'ik', wing: 'ik', extra: [...nhDots([[22, 28], [28, 26]], 1.6, 'bs')] }), P('M0 60 L0 6 L14 6 L14 60 Z M46 60 L46 6 L60 6 L60 60 Z', 'bs'), ofHills()],
+  white_eye: () => [...nxBird(26, 34, 0.9, 'lo', { beak: 'ik', wing: 'bs', extra: [ring('hi', 39.4, 26, 4, 1.6)] }), ...ntLeaf(48, 16, 12, 5, 'hi', 20), ...ofBranch().slice(0, 1)],
+  austral_storm_petrel: () => [...nxBird(28, 28, 0.85, 'ik', { beak: 'ik', wing: 'ik', extra: [E(30, 30, 5, 2.4, 'hi')] }), ...nyWave, ...nyWave.slice(0, 0), S('M0 52 Q8 46 16 52 Q24 46 32 52', 'hi', 1.4)],
+  giant_petrel: () => [...nxBird(26, 26, 1.1, 'hi', { beak: 'ik', wing: 'bs', extra: [S('M38 22 L48 20', 'bs', 3)] }), P('M0 60 L12 48 L24 60 Z M36 60 L48 46 L60 60 Z', 'lo'), ...nyWave],
+  new_zealand_parrot: () => [...nxBird(26, 32, 1.0, 'lo', { beak: 'hi', wing: 'hi', extra: [P('M16 30 L8 34 L16 38 Z', 'bs')] }), P('M0 60 L14 40 L28 60 Z M30 60 L44 36 L60 60 Z', 'bs'), ...ntBroad(50, 14, 7, 'hi')],
+  true_parrot: () => [...nxBird(24, 32, 1.0, 'hi', { beak: 'ik', wing: 'bs', extra: [S('M12 34 L0 50', 'bs', 3.4), S('M10 34 L2 46', 'lo', 2)] }), ...ofBranch().slice(0, 1), ...ntBroad(50, 14, 7, 'lo')],
+  loriini: () => [...nxBird(26, 32, 0.95, 'bs', { beak: 'hi', wing: 'hi', extra: [S('M40 26 L50 28', 'bs', 2)] }), ...nzFlower(50, 46, 7, 'hi', 'bs'), S('M50 52 L50 60', 'lo', 2)],
+  parakeet: () => [...nxBird(24, 32, 0.85, 'hi', { beak: 'bs', wing: 'lo', extra: [S('M12 34 L0 50', 'lo', 2.6)] }), S('M10 14 L50 14 M10 14 L10 56 M50 14 L50 56 M10 56 L50 56 M20 14 L20 56 M30 14 L30 56 M40 14 L40 56', 'ik', 1)],
+  strigidae: () => [...nxOwl(30, 32, 1.1, 'lo', {}), ...ofBranch(), ofMoon(10, 10)],
+  strix_bird: () => [...nxOwl(30, 32, 1.1, 'bs', { tuft: false }), ...ntConifer(8, 16, 40, 10, 'lo'), ...ntConifer(52, 20, 36, 10, 'lo')],
+  evolution_of_birds: () => [...nvBone(20, 42), ...ntLeaf(16, 22, 16, 5, 'hi', -20), ...nxBird(42, 24, 0.7, 'hi', { beak: 'ik' }), S('M0 56 L60 56', 'bs', 1.4)],
+  treeswift: () => [...nxBird(26, 28, 0.9, 'ik', { beak: 'ik', wing: 'ik', crest: true, extra: [S('M12 30 L0 38 M12 32 L2 44', 'ik', 1.4)] }), ...ntBroad(48, 14, 8, 'lo'), ...ofBranch().slice(0, 1)],
+  river_kingfisher: () => [...nxBird(24, 34, 0.9, 'hi', { beak: 'ik', wing: 'bs', extra: [E(30, 38, 8, 4, 'lo')] }), ...nyWave, ...nyFish(48, 18, 7, 3, 'lo', {}), S('M0 48 L32 48', 'bs', 3)],
+  water_kingfisher: () => [...nxBird(26, 28, 0.95, 'ik', { beak: 'ik', wing: 'hi', crest: true, extra: [E(32, 32, 8, 4, 'hi')] }), S('M40 36 L44 50', 'hi', 1.4), ...nyWave, ...nyFish(46, 52, 6, 2.6, 'hi', {})],
+  tody: () => [...nxBird(28, 34, 0.7, 'hi', { beak: 'ik', wing: 'lo', extra: [E(36, 30, 3, 2, 'bs')] }), ...nzFlower(46, 46, 5, 'bs', 'hi'), ...nyWave, ...ofBranch().slice(0, 1)],
+  megalaimidae: () => [...nxBird(26, 34, 0.95, 'hi', { beak: 'hi', wing: 'lo', extra: [E(32, 28, 6, 3, 'bs'), P('M38 24 L46 22 L46 30 Z', 'ik')] }), ...ntBroad(10, 12, 8, 'lo')],
+  jacamar: () => [...nxBird(24, 32, 0.95, 'lo', { beak: 'ik', wing: 'hi', extra: [P('M38 28 L58 30 L38 32 Z', 'ik')] }), ...ntBroad(10, 12, 8, 'hi'), ...ofBranch().slice(0, 1)],
+  new_world_barbet: () => [...nxBird(26, 34, 0.95, 'hi', { beak: 'ik', wing: 'lo', extra: [E(34, 24, 5, 3, 'bs')] }), ...nzFlower(48, 14, 6, 'hi', 'bs'), ...ofBranch().slice(0, 1)],
+  charadriiformes: () => [...nxBird(18, 30, 0.7, 'bs', { beak: 'ik' }), ...nxHeron(44, 24, 0.55, 'hi', {}), ...nyWave],
+  buttonquail: () => [...nvChicken(26, 36, 0.7, 'lo', 'bs'), ...nuNut(46, 52, 4, 3, 'hi'), ...nuNut(52, 50, 4, 3, 'hi'), P('M0 58 L60 58 L60 60 L0 60 Z', 'bs')],
+  lapwing: () => [...nxBird(26, 34, 1.0, 'ik', { beak: 'ik', wing: 'hi', crest: true, extra: [S('M24 44 L22 56 M30 44 L32 56', 'ik', 2)] }), P('M0 58 Q15 52 30 58 Q45 52 60 58 L60 60 L0 60 Z', 'hi')],
+  plover: () => [...nxBird(26, 34, 0.9, 'bs', { beak: 'ik', wing: 'hi', extra: [S('M26 28 L36 28', 'ik', 2.4), S('M24 44 L22 56 M30 44 L32 56', 'ik', 1.8)] }), P('M0 58 Q15 52 30 58 Q45 52 60 58 L60 60 L0 60 Z', 'hi'), ...nyWave],
+  pratincole: () => [...nxBird(26, 30, 0.95, 'lo', { beak: 'ik', wing: 'ik', extra: [S('M12 32 L0 40 M12 34 L0 46', 'ik', 1.6)] }), ...nyWave, P('M0 56 L60 56 L60 60 L0 60 Z', 'hi')],
+  dowitcher: () => [...nxBird(26, 30, 0.95, 'bs', { beak: 'ik', wing: 'lo', extra: [S('M38 24 L58 28', 'ik', 2), S('M24 44 L22 56 M30 44 L32 56', 'ik', 1.6)] }), P('M0 56 L60 56 L60 60 L0 60 Z', 'lo'), ...ofReeds().slice(0, 1)],
+  tringa: () => [...nxBird(26, 28, 0.95, 'lo', { beak: 'ik', wing: 'hi', extra: [S('M38 24 L54 24', 'ik', 1.8), S('M24 40 L22 56 M30 40 L32 56', 'hi', 2)] }), ...nyWave],
+  fruit_dove: () => [...nxBird(26, 34, 1.0, 'hi', { beak: 'ik', wing: 'bs', extra: [C(33, 28, 3, 'ik'), E(28, 40, 8, 4, 'ik')] }), ...nhDots([[48, 14], [54, 20], [46, 22]], 3, 'bs'), ...ofBranch().slice(0, 1)],
+  gallicolumba: () => [...nxBird(26, 36, 0.95, 'lo', { beak: 'ik', wing: 'hi', extra: [S('M24 46 L22 58 M30 46 L32 58', 'ik', 2.4)] }), P('M0 58 L60 58 L60 60 L0 60 Z', 'bs'), ...ntBroad(50, 14, 8, 'hi')],
+  laughing_dove: () => [...nxBird(26, 34, 0.95, 'bs', { beak: 'ik', wing: 'lo', extra: [S('M30 26 L38 26', 'ik', 2)] }), S('M44 10 Q50 6 56 10 M44 16 Q50 12 58 16', 'hi', 1.4), P('M0 60 L12 52 L24 60 Z', 'hi')],
+  spotted_dove: () => [...nxBird(26, 34, 0.95, 'lo', { beak: 'ik', wing: 'hi', extra: [...nhDots([[22, 30], [26, 32], [30, 30], [24, 36], [30, 36]], 1.4, 'ik')] }), ...nzFlower(48, 46, 6, 'bs', 'hi'), S('M48 52 L48 60', 'lo', 2)],
+  coua: () => [...nxBird(26, 32, 1.0, 'hi', { beak: 'ik', wing: 'ik', extra: [S('M12 34 L0 42', 'ik', 2.6), E(38, 26, 4, 3, 'bs')] }), ...ntBroad(48, 14, 8, 'lo'), ...ofBranch().slice(0, 1)],
+  coucal: () => [...nxBird(26, 34, 1.0, 'bs', { beak: 'ik', wing: 'ik', extra: [S('M12 36 L0 50', 'ik', 3), E(38, 26, 3, 2, 'ik')] }), ...ofReeds()],
+  swamphen: () => [...nxBird(26, 34, 1.0, 'hi', { beak: 'bs', wing: 'ik', extra: [P('M36 18 L40 14 L42 20 Z', 'bs'), S('M24 44 L22 56 M30 44 L32 56', 'bs', 2.4)] }), ...ofReeds()],
+  bowerbird: () => [...nxBird(18, 34, 0.8, 'ik', { beak: 'ik', wing: 'hi' }), P('M30 56 L30 36 Q44 20 58 36 L58 56 Z', 'bs'), S('M32 40 L56 40 M32 46 L56 46', 'lo', 1.4), ...nhDots([[38, 52], [44, 52], [50, 52]], 2, 'hi')],
+  accentor: () => [...nxBird(26, 34, 0.9, 'bs', { beak: 'ik', wing: 'lo', extra: [S('M26 28 L34 28', 'hi', 1.6)] }), P('M0 60 L14 40 L28 60 Z M32 60 L46 38 L60 60 Z', 'lo'), S('M0 56 L60 56', 'ik', 1.4)],
+  estrildidae: () => [...nxBird(26, 34, 0.8, 'hi', { beak: 'bs', wing: 'bs' }), ...nzFlower(8, 12, 5, 'lo', 'hi'), ...nhDots([[44, 50], [48, 54], [52, 50], [40, 54]], 1.6, 'bs'), P('M0 58 L60 58 L60 60 L0 60 Z', 'lo')],
+  hawaiian_honeycreeper: () => [...nxBird(24, 32, 0.9, 'hi', { beak: 'ik', wing: 'bs', extra: [S('M38 26 Q50 24 54 32', 'ik', 2)] }), ...nzFlower(50, 44, 7, 'bs', 'hi'), P('M0 60 L10 50 L22 60 Z', 'lo')],
+  gnatcatcher: () => [...nxBird(26, 34, 0.75, 'lo', { beak: 'ik', wing: 'ik', extra: [S('M12 34 L0 30', 'ik', 1.6)] }), ...nzFly(48, 14, 0.4, 'ik', {}), ...ntBroad(10, 12, 8, 'hi'), ...ofBranch().slice(0, 1)],
+  kinglet: () => [...nxBird(26, 34, 0.8, 'hi', { beak: 'ik', wing: 'bs', extra: [P('M28 22 L32 16 L36 22 Z', 'bs')] }), ...ntConifer(50, 10, 36, 10, 'lo'), ...ofBranch().slice(0, 1)],
+  locustellidae: () => [...nxBird(26, 34, 0.85, 'bs', { beak: 'ik', wing: 'lo', extra: [S('M28 26 L36 24', 'ik', 1.6)] }), ...ofReeds(), S('M44 10 Q50 6 56 10', 'hi', 1.4)],
+  manakin: () => [...nxBird(26, 34, 0.9, 'ik', { beak: 'ik', wing: 'bs', extra: [C(33, 24, 5, 'hi'), S('M24 44 L22 56 M30 44 L32 56', 'bs', 2)] }), ...ntBroad(10, 12, 8, 'lo'), ...ntBroad(50, 12, 8, 'lo')],
+  motacillidae: () => [...nxBird(24, 34, 0.85, 'hi', { beak: 'ik', wing: 'ik', extra: [S('M12 36 L0 44', 'ik', 2)] }), ...nxBird(46, 22, 0.5, 'bs', { beak: 'ik' }), P('M0 58 L60 58 L60 60 L0 60 Z', 'lo')],
+  penduline_tit: () => [...nxBird(22, 38, 0.75, 'lo', { beak: 'ik', wing: 'hi' }), S('M44 4 L44 14', 'bs', 1.6), E(44, 28, 8, 12, 'bs'), mmEll(44, 28, 8, 12, 'ik', 1.4), ...ofReeds().slice(0, 1)],
+  old_world_warbler: () => [...nxBird(26, 34, 0.85, 'bs', { beak: 'ik', wing: 'lo' }), ...ofReeds(), S('M44 10 Q50 6 56 10 M44 16 Q52 12 58 16', 'hi', 1.4)],
+  myna: () => [...nxBird(26, 34, 1.0, 'ik', { beak: 'hi', wing: 'bs', extra: [E(36, 26, 3, 2, 'hi')] }), S('M44 12 Q50 8 56 12', 'hi', 1.4), S('M0 56 L60 56', 'bs', 2)],
+  tanager: () => [...nxBird(26, 34, 1.0, 'hi', { beak: 'ik', wing: 'ik' }), ...nzFlower(8, 12, 5, 'bs', 'hi'), ...ntBroad(50, 12, 8, 'lo'), ...ofBranch().slice(0, 1)],
+  tyranni: () => [...nxBird(26, 34, 0.95, 'lo', { beak: 'ik', wing: 'bs', extra: [S('M12 36 L2 44', 'ik', 2)] }), ...nzFly(48, 14, 0.4, 'ik', {}), ...ofBranch()],
+  cotinga: () => [...nxBird(26, 34, 1.0, 'hi', { beak: 'ik', wing: 'bs', extra: [S('M26 40 L38 40', 'ik', 3)] }), ...ntBroad(8, 12, 7, 'lo'), ...nhDots([[48, 10], [54, 16]], 2, 'hi')],
+  booby: () => [...nxBird(26, 26, 1.05, 'hi', { beak: 'ik', wing: 'ik', extra: [P('M36 20 L56 36 L38 28 Z', 'bs')] }), ...nyWave, S('M54 36 L56 56', 'hi', 1.4)],
+  northern_storm_petrel: () => [...nxBird(28, 28, 0.8, 'ik', { beak: 'ik', wing: 'ik' }), S('M0 56 Q10 46 20 56 Q30 46 40 56 Q50 46 60 56', 'hi', 2), ofMoon(10, 10)],
+  procellariidae: () => [...nxBird(26, 26, 1.0, 'lo', { beak: 'ik', wing: 'bs', extra: [P('M8 30 L0 40 L16 34 Z M36 30 L56 40 L40 36 Z', 'bs')] }), ...nyWave, ...nyWave.slice(0, 0), S('M0 54 Q10 46 20 54 Q30 46 40 54', 'hi', 1.8)],
+};
+for (const [id, fn] of Object.entries(MKER)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 71: reptiles and amphibians — crocodilians, lizards, snakes, turtles, Triassic and marine reptiles, frogs, toads and salamanders ── */
+const ogGnd = (role = 'bs') => P('M0 56 L60 56 L60 60 L0 60 Z', role);
+const ogRock = () => P('M0 60 L10 48 L22 60 Z M36 60 L48 46 L60 60 Z', 'lo');
+const ogLeaf = (x, y, r = 7) => ntBroad(x, y, r, 'hi');
+const ogCoil = (cx, cy, s, role = 'lo', o = {}) => [S(`M${n(cx - 20 * s)} ${n(cy + 10 * s)} Q${n(cx - 20 * s)} ${n(cy + 22 * s)} ${n(cx)} ${n(cy + 20 * s)} Q${n(cx + 22 * s)} ${n(cy + 18 * s)} ${n(cx + 18 * s)} ${n(cy + 8 * s)} Q${n(cx + 12 * s)} ${n(cy + 2 * s)} ${n(cx)} ${n(cy + 8 * s)} Q${n(cx - 10 * s)} ${n(cy + 12 * s)} ${n(cx - 4 * s)} ${n(cy + 2 * s)}`, role, n(5 * s)), S(`M${n(cx - 4 * s)} ${n(cy + 2 * s)} Q${n(cx - 2 * s)} ${n(cy - 10 * s)} ${n(cx + 4 * s)} ${n(cy - 14 * s)}`, role, n(5 * s)), E(n(cx + 6 * s), n(cy - 16 * s), n(5 * s), n(3.4 * s), role), C(n(cx + 7 * s), n(cy - 17 * s), n(0.9 * s), 'ik'), S(`M${n(cx + 11 * s)} ${n(cy - 16 * s)} L${n(cx + 16 * s)} ${n(cy - 16 * s)} L${n(cx + 18 * s)} ${n(cy - 18 * s)} M${n(cx + 16 * s)} ${n(cy - 16 * s)} L${n(cx + 18 * s)} ${n(cy - 14 * s)}`, 'hi', 1), ...(o.stripe ? [S(`M${n(cx - 18 * s)} ${n(cy + 14 * s)} L${n(cx - 14 * s)} ${n(cy + 20 * s)} M${n(cx - 8 * s)} ${n(cy + 20 * s)} L${n(cx - 4 * s)} ${n(cy + 22 * s)} M${n(cx + 6 * s)} ${n(cy + 20 * s)} L${n(cx + 10 * s)} ${n(cy + 18 * s)}`, 'hi', 1.6)] : []), ...(o.extra || [])];
+const MKEU = {
+  evolution_of_reptiles: () => [...nxLizard(28, 38, 1.0, 'lo', {}), ...nvBone(46, 10), ...nxTurtle(44, 24, 0.4, 'bs', {}), ogGnd()],
+  sauria: () => [...nxLizard(18, 22, 0.55, 'lo', {}), ...nxCroc(38, 44, 0.5, 'bs', { snout: 30 }), ...nxBird(44, 18, 0.5, 'hi', { beak: 'ik' })],
+  archosauromorpha: () => [...nxCroc(26, 40, 0.65, 'bs', { snout: 30 }), ...nxBird(44, 18, 0.55, 'hi', { beak: 'ik' }), ...ocTheropod(18, 22, 0.35, 'lo', {})],
+  cuviers_dwarf_caiman: () => [...nxCroc(26, 38, 0.75, 'ik', { snout: 22 }), ...nyWave, ...ogLeaf(8, 12), ...ogLeaf(52, 12)],
+  dwarf_crocodile: () => [...nxCroc(26, 38, 0.7, 'lo', { snout: 22, extra: [S('M10 34 L40 34', 'ik', 1)] }), ...ogLeaf(8, 12, 8), ...ogLeaf(52, 12, 8)],
+  freshwater_crocodile: () => [...nxCroc(24, 36, 0.85, 'hi', { snout: 42 }), ...nyWave, ...nyWave.slice(0, 0), noSun(50, 10, 4, 'hi')[0]],
+  false_gharial: () => [...nxCroc(22, 38, 0.8, 'bs', { snout: 48 }), ...nyFish(48, 52, 6, 2.6, 'hi', {}), ...nyWave],
+  cordylidae: () => [...nxLizard(28, 38, 1.0, 'bs', { extra: [S('M14 32 L12 26 M20 31 L18 25 M26 31 L26 24 M32 32 L34 26', 'ik', 2)] }), ogRock()],
+  dibamidae: () => [...nxSnake(8, 38, 0.8, 'lo', { w: 5 }), P('M0 50 L60 50 L60 60 L0 60 Z', 'ik'), ...ogLeaf(10, 12), S('M38 36 L44 40', 'hi', 1.2)],
+  eublepharis: () => [...nxLizard(28, 38, 0.95, 'hi', { extra: [...nhDots([[16, 34], [22, 32], [28, 34], [34, 32]], 1.8, 'bs'), C(41, 34, 3, 'ik')] }), P('M0 56 Q15 50 30 56 Q45 50 60 56 L60 60 L0 60 Z', 'lo')],
+  gekkonidae: () => [...nxLizard(30, 32, 0.95, 'lo', { extra: [S('M18 34 L14 40 M24 36 L22 42 M34 36 L36 42 M40 34 L44 40', 'ik', 2.6)] }), P('M0 60 L0 20 L12 20 L12 60 Z', 'bs'), noMoon(50, 10, 0.3, 'hi')[0]],
+  mediterranean_house_gecko: () => [...nxLizard(30, 32, 0.9, 'hi', { extra: [...nhDots([[18, 30], [26, 28], [34, 30]], 1.6, 'bs')] }), P('M0 60 L0 18 L60 18 L60 60 Z', 'bs'), P('M6 40 L20 40 L20 54 L6 54 Z', 'lo'), ...nyWave],
+  lacertidae: () => [...nxLizard(28, 38, 1.0, 'lo', {}), P('M0 60 L0 44 L16 44 L16 60 Z M20 60 L20 46 L36 46 L36 60 Z', 'bs'), noSun(50, 10, 4, 'hi')[0]],
+  viviparous_lizard: () => [...nxLizard(28, 38, 0.95, 'bs', {}), ...nuNut(46, 20, 4, 3, 'hi'), S('M0 58 L60 58', 'hi', 3), ...nhDots([[8, 12], [20, 8], [48, 10]], 1.6, 'hi')],
+  legless_lizard: () => [...nxSnake(6, 38, 0.8, 'hi', { w: 5 }), P('M0 52 L60 52 L60 60 L0 60 Z', 'lo'), S('M0 50 L60 50', 'bs', 1.4)],
+  anguinae: () => [...nxSnake(6, 36, 0.8, 'hi', { w: 5, extra: [S('M52 40 L58 44', 'ik', 1.4)] }), ...ntLeaf(10, 14, 12, 5, 'lo', 20), ogGnd('lo')],
+  monitor_lizard: () => [...nxLizard(28, 38, 1.1, 'ik', { extra: [S('M44 34 L54 30 L58 34 M54 30 L58 26', 'hi', 1.4)] }), ogGnd(), noSun(50, 10, 4, 'hi')[0]],
+  bengal_monitor: () => [...nxLizard(28, 38, 1.0, 'bs', { extra: [...nhDots([[18, 34], [24, 32], [30, 34], [36, 32]], 1.4, 'hi')] }), ...ntBroad(10, 12, 8, 'lo'), ogGnd('lo')],
+  teiidae: () => [...nxLizard(28, 38, 1.0, 'lo', { extra: [S('M12 34 L28 34 M12 38 L28 38', 'hi', 1.2)] }), S('M44 34 L56 30 L58 34 M56 30 L58 26', 'hi', 1.4), ...ogLeaf(10, 12)],
+  new_mexico_whiptail: () => [...nxLizard(26, 38, 0.95, 'bs', { extra: [S('M6 34 Q-2 28 2 18', 'bs', 2), S('M16 34 L36 34 M16 38 L36 38', 'hi', 1.2)] }), P('M0 58 Q15 52 30 58 Q45 52 60 58 L60 60 L0 60 Z', 'hi'), noSun(50, 10, 4, 'hi')[0]],
+  agamidae: () => [...nxLizard(28, 38, 1.0, 'hi', { extra: [S('M38 28 L40 22 M42 28 L46 22 M34 28 L34 22', 'ik', 2)] }), ogRock()],
+  frilled_lizard: () => [P('M36 22 Q56 18 54 40 Q46 44 38 38 Z', 'hi'), S('M38 24 L52 24 M38 30 L52 32 M40 36 L50 40', 'ik', 1), ...nxLizard(26, 44, 0.9, 'lo', {}), S('M52 6 L52 60', 'bs', 5)],
+  hydrosaurus: () => [...nxLizard(28, 40, 1.0, 'bs', {}), ...ocSail(26, 34, 0.7, 'hi', 7), ...nyWave],
+  oriental_garden_lizard: () => [...nxLizard(26, 40, 0.95, 'lo', { extra: [E(40, 34, 4, 3, 'hi')] }), ...nzFlower(48, 14, 6, 'hi', 'bs'), S('M48 20 L48 30', 'lo', 2), ogGnd('lo')],
+  pogona: () => [...nxLizard(28, 40, 1.0, 'hi', { extra: [nqBurst(42, 38, 4, 8, 10, 'ik', 1.6), S('M14 34 L12 30 M20 33 L18 29 M26 33 L26 29', 'ik', 1.6)] }), P('M0 58 Q15 52 30 58 Q45 52 60 58 L60 60 L0 60 Z', 'lo'), noSun(50, 10, 4, 'hi')[0]],
+  uromastyx: () => [...nxLizard(30, 38, 0.95, 'lo', { extra: [S('M4 40 Q-2 38 2 32', 'bs', 5), S('M6 36 L2 40 M8 38 L4 44 M10 36 L8 42', 'ik', 1.6)] }), ogRock(), ogGnd('hi')],
+  common_collared_lizard: () => [...nxLizard(28, 38, 1.0, 'hi', { extra: [S('M40 32 L40 38', 'ik', 3), S('M42 30 L42 38', 'ik', 2)] }), P('M0 60 L12 46 L26 60 Z', 'bs'), ring('ik', 44, 36, 4, 2)],
+  anolidae: () => [...nxLizard(26, 40, 0.95, 'hi', { extra: [P('M40 34 L46 40 L40 40 Z', 'bs')] }), ...ntLeaf(48, 16, 14, 6, 'lo', 20), ...ntLeaf(10, 14, 12, 5, 'lo', -20)],
+  iguanidae: () => [...nxLizard(28, 40, 1.0, 'lo', { extra: [S('M14 34 L12 28 M20 33 L19 27 M26 33 L26 27 M32 34 L33 28', 'ik', 2.2)] }), ...nyWave, P('M0 56 L60 56 L60 60 L0 60 Z', 'hi')],
+  iguana: () => [...nxLizard(28, 38, 1.1, 'hi', { extra: [S('M12 33 L10 27 M18 32 L16 26 M24 32 L24 26 M30 32 L32 26', 'ik', 2.4), E(40, 38, 3, 2.4, 'bs')] }), ...ntBroad(48, 12, 8, 'lo'), S('M0 50 L60 50', 'bs', 3)],
+  pythonidae: () => [...ogCoil(30, 28, 0.85, 'bs', { stripe: true }), ...ntBroad(10, 12, 8, 'lo')],
+  python_genus: () => [...ogCoil(30, 26, 0.95, 'lo', { stripe: true }), P('M0 60 L10 52 L22 60 Z', 'bs')],
+  scolecophidia: () => [...nxSnake(6, 40, 0.8, 'hi', { w: 3 }), P('M0 48 L60 48 L60 60 L0 60 Z', 'ik'), ...nzAnt(46, 40, 0.4, 'bs')],
+  xenopeltis: () => [...nxSnake(6, 38, 0.8, 'bs', { w: 5, extra: [S('M10 36 Q20 28 30 36', 'hi', 1.4)] }), P('M0 52 Q15 46 30 52 Q45 46 60 52 L60 60 L0 60 Z', 'hi'), noSun(50, 10, 4, 'hi')[0]],
+  colubridae: () => [...nxSnake(6, 38, 0.85, 'lo', { w: 5 }), ...nxFrog(46, 22, 0.4, 'hi', {}), ogGnd('hi')],
+  ahaetulla: () => [S('M52 4 Q46 14 52 26 Q56 36 50 48', 'lo', 3), S('M4 30 Q16 22 28 30 Q38 36 46 28', 'hi', 4), E(50, 26, 4, 3, 'hi'), C(51, 25, 0.9, 'ik'), P('M54 26 L60 26 L54 28 Z', 'hi'), ...ntLeaf(10, 14, 12, 5, 'lo', 20)],
+  chrysopelea: () => [...nxSnake(6, 38, 0.85, 'hi', { w: 5, extra: [S('M12 30 Q20 24 28 30', 'ik', 1.4)] }), P('M20 34 L40 12 L46 22 Z', 'bs'), ...noSun(8, 10, 3, 'hi').slice(0, 1)],
+  elapidae: () => nxCobra(30, 'lo', 'bs', { extra: [P('M28 14 L28 20 L29 14 Z M32 14 L32 20 L33 14 Z', 'hi')] }),
+  common_death_adder: () => [...nxSnake(6, 40, 0.85, 'bs', { w: 7, extra: [P('M52 34 L56 28 L56 36 Z', 'ik'), S('M20 38 L26 44', 'hi', 1.4)] }), P('M0 52 Q15 46 30 52 Q45 46 60 52 L60 60 L0 60 Z', 'hi'), ...ntLeaf(8, 14, 12, 5, 'lo', 10)],
+  bungarus: () => [...nxSnake(6, 38, 0.85, 'ik', { w: 5, extra: [S('M14 33 L14 43 M22 31 L22 41 M30 34 L30 44 M38 31 L38 41', 'hi', 2)] }), noMoon(50, 10, 0.3, 'hi')[0], ogGnd('lo')],
+  red_bellied_black_snake: () => [...nxSnake(6, 36, 0.85, 'ik', { w: 5, extra: [S('M10 38 L40 38', 'hi', 1.6)] }), ...nxFrog(46, 18, 0.35, 'hi', {}), ...nyWave],
+  inland_taipan: () => [...nxSnake(6, 40, 0.85, 'hi', { w: 5 }), P('M0 54 Q15 48 30 54 Q45 48 60 54 L60 60 L0 60 Z', 'lo'), noSun(50, 10, 4, 'hi')[0], S('M48 36 L52 32', 'ik', 1.4)],
+  pit_viper: () => [...nxSnake(6, 38, 0.85, 'lo', { w: 6, extra: [C(54, 34, 1.4, 'ik'), P('M52 30 L58 28 L52 32 Z', 'bs'), S('M14 34 L22 40 M28 34 L36 40', 'hi', 1.6)] }), ...noSun(48, 12, 4, 'hi').slice(0, 1), S('M46 18 L50 28 M52 18 L52 28 M58 18 L56 28', 'hi', 1)],
+  rhynchocephalia: () => [...nxLizard(28, 40, 1.0, 'lo', { extra: [S('M14 34 L12 28 M20 33 L18 27 M26 33 L26 27 M32 34 L34 28', 'ik', 2), S('M40 36 L44 36', 'hi', 1.4)] }), P('M0 58 L0 40 L22 40 L22 58 Z', 'bs'), ...nyWave],
+  pleurosauridae: () => [...nxSnake(6, 38, 0.85, 'bs', { w: 5, extra: [S('M12 34 L12 42 M18 33 L18 43 M24 34 L24 44 M30 33 L30 43', 'ik', 1.2)] }), ...nyWave, ...nvBone(30, 10)],
+  chelodina: () => [...nxTurtle(24, 42, 0.9, 'lo', {}), S('M36 36 Q46 30 44 18 Q44 12 50 12', 'lo', 4), C(51, 12, 3, 'lo'), ...nyWave, ...ntLeaf(8, 14, 12, 5, 'hi', 20)],
+  trionychidae: () => [...nxTurtle(28, 40, 1.0, 'hi', { extra: [S('M42 32 L54 30', 'lo', 3)] }), P('M0 54 L60 54 L60 60 L0 60 Z', 'ik'), S('M4 52 Q15 48 28 52 Q40 48 56 52', 'lo', 2)],
+  marginocephalia: () => [...ocCeratops(26, 32, 0.9, 'bs', { frill: 'hi' }), ...ocOrnith(46, 52, 0.3, 'lo', {})],
+  lagerpetidae: () => [...ocTheropod(30, 38, 0.6, 'lo', { head: 5 }), P('M0 56 L60 56 L60 60 L0 60 Z', 'bs'), ...nvBone(46, 10)],
+  metriorhynchidae: () => [...nxCroc(26, 30, 0.8, 'ik', { snout: 36, extra: [P('M8 28 L0 22 L6 34 Z', 'ik'), P('M24 36 L28 46 L32 36 Z', 'hi')] }), ...nyWave, ...nyWave.slice(0, 0)],
+  poposauroidea: () => [...nxCroc(26, 38, 0.8, 'bs', { snout: 28, extra: [...ocSail(26, 32, 0.6, 'hi', 7)] }), ogGnd('lo')],
+  arizonasaurus: () => [...nxCroc(26, 40, 0.85, 'lo', { snout: 30 }), ...ocSail(26, 34, 0.7, 'hi', 8), P('M0 58 Q15 52 30 58 Q45 52 60 58 L60 60 L0 60 Z', 'bs'), noSun(50, 10, 4, 'hi')[0]],
+  effigia: () => [...ocTheropod(28, 34, 1.0, 'hi', { head: 5, extra: [P('M40 14 L52 18 L40 22 Z', 'ik')] }), P('M0 58 Q15 52 30 58 Q45 52 60 58 L60 60 L0 60 Z', 'bs'), noSun(50, 8, 3, 'hi')[0]],
+  scleromochlus: () => [...nxLizard(28, 40, 0.8, 'lo', { extra: [S('M14 44 L8 54 L16 54', 'ik', 2.4)] }), ...ntBroad(8, 12, 7, 'hi'), ogGnd('bs')],
+  silesauridae: () => [...ocTheropod(28, 34, 0.95, 'lo', { head: 5.4 }), S('M0 56 L60 56', 'ik', 1.4), ...ntLeaf(48, 52, 10, 4, 'hi', -20)],
+  boverisuchus: () => [...nxCroc(26, 38, 0.85, 'bs', { snout: 28, extra: [S('M14 44 L12 56 M32 44 L34 56', 'ik', 2.6), P('M44 36 L46 44 L48 36 Z', 'hi')] }), ...ntBroad(8, 12, 8, 'lo'), ...ntBroad(52, 12, 8, 'lo')],
+  baurusuchidae: () => [...nxCroc(26, 36, 0.85, 'ik', { snout: 30, extra: [S('M14 42 L12 56 M32 42 L34 56', 'bs', 2.6), P('M42 34 L44 44 L46 34 Z M48 34 L50 44 L52 34 Z', 'hi')] }), P('M0 58 Q15 52 30 58 Q45 52 60 58 L60 60 L0 60 Z', 'hi')],
+  mekosuchus: () => [...nxCroc(26, 38, 0.75, 'lo', { snout: 22, extra: [S('M12 44 L10 56 M30 44 L32 56', 'ik', 2.6)] }), ...nyWave.slice(0, 0), ...ntBroad(50, 14, 8, 'hi'), P('M0 58 L60 58 L60 60 L0 60 Z', 'bs')],
+  stomatosuchidae: () => [...nxCroc(22, 40, 0.8, 'hi', { snout: 42, extra: [E(46, 34, 6, 3, 'ik')] }), ...nyWave],
+  drepanosauromorpha: () => [...nxLizard(26, 40, 0.9, 'bs', { extra: [S('M8 38 Q-2 30 4 20 Q8 14 14 20', 'ik', 3), P('M40 34 L48 30 L42 38 Z', 'hi')] }), S('M0 58 L60 58', 'lo', 2), ...nvBone(48, 12)],
+  youngina: () => [...nxLizard(28, 40, 0.85, 'lo', {}), ...nvBone(46, 12), P('M0 58 L60 58 L60 60 L0 60 Z', 'bs')],
+  sharovipteryx: () => [...nxLizard(28, 34, 0.8, 'lo', {}), P('M20 36 L4 52 L20 46 Z M36 36 L52 52 L38 46 Z', 'hi'), noSun(50, 10, 4, 'hi')[0]],
+  shringasaurus: () => [...nxLizard(28, 38, 1.0, 'bs', { extra: [S('M40 28 L38 18 M44 28 L48 18', 'ik', 2.6)] }), ...ntBroad(10, 12, 8, 'lo'), ogGnd('lo')],
+  parareptilia: () => [...nxTurtle(28, 38, 0.9, 'lo', {}), ...nxLizard(48, 18, 0.4, 'hi', {}), ...nvBone(10, 12)],
+  pareiasauria: () => [...nxTurtle(28, 38, 1.0, 'bs', { extra: [S('M12 30 L16 24 L20 30 L24 24 L28 30', 'ik', 2)] }), ...nyWave],
+  madtsoiidae: () => [...nxSnake(4, 36, 0.9, 'bs', { w: 8 }), ...nvBone(46, 12), P('M0 56 L60 56 L60 60 L0 60 Z', 'ik')],
+  najash: () => [...nxSnake(6, 38, 0.85, 'lo', { w: 5, extra: [S('M40 40 L44 46 M42 38 L48 44', 'ik', 1.8)] }), ...nvBone(46, 10), P('M0 56 Q15 50 30 56 Q45 50 60 56 L60 60 L0 60 Z', 'hi')],
+  choristodera: () => [...nxCroc(24, 40, 0.8, 'lo', { snout: 34 }), S('M38 32 Q46 28 44 18', 'lo', 3), ...nyWave, ...ntLeaf(8, 14, 12, 5, 'hi', 20)],
+  ichthyosauria: () => [...nwDolph(28, 34, 1.0, 'bs', [P('M40 28 L58 30 L58 34 L40 34 Z', 'bs'), C(42, 27, 2, 'hi')]), ...nyWave],
+  platypterygius: () => [...nwDolph(28, 34, 1.0, 'lo', [P('M20 38 L12 54 L28 44 Z', 'ik'), S('M40 32 L58 31', 'ik', 1.4)]), ...nyWave],
+  thalattosauria: () => [...nxLizard(28, 32, 1.0, 'hi', { extra: [P('M2 34 L-2 26 L8 36 Z', 'hi')] }), ...nyWave, S('M0 54 Q15 48 30 54 Q45 48 60 54', 'lo', 2)],
+  plesiosauroidea: () => [...nxPlesio(28, 36, 1.0, 'lo', {}), ...nyWave],
+  polycotylidae: () => [...nxPlesio(28, 36, 1.05, 'bs', { extra: [S('M42 20 L56 22', 'ik', 1.6)] }), ...nyWave, ...nyFish(10, 14, 6, 2.6, 'hi', {})],
+  pliosauroidea: () => [...nxPlesio(26, 36, 1.1, 'ik', { extra: [P('M44 18 L58 16 L58 24 L44 24 Z', 'ik'), S('M46 24 l1 3 M50 24 l1 3 M54 24 l1 3', 'hi', 1.2)] }), ...nyWave],
+  reptiliomorpha: () => [...nxLizard(20, 24, 0.6, 'lo', {}), ...nxSalam(42, 46, 0.6, 'bs', {}), ogGnd('ik')],
+  alytidae: () => [...nxFrog(28, 38, 0.9, 'lo', { extra: [...nuNut(28, 50, 3, 2.4, 'hi'), ...nuNut(34, 50, 3, 2.4, 'hi'), ...nuNut(22, 50, 3, 2.4, 'hi')] }), ...nyWave],
+  common_midwife_toad: () => [...nxFrog(28, 36, 0.9, 'bs', { extra: [E(28, 46, 12, 4, 'hi'), ...nhDots([[22, 46], [28, 47], [34, 46], [25, 44], [31, 44]], 1.4, 'ik')] }), P('M0 58 L60 58 L60 60 L0 60 Z', 'lo')],
+  ceratophryidae: () => [...nxFrog(28, 36, 1.0, 'hi', { extra: [P('M16 22 L14 14 L20 22 Z M40 22 L42 14 L36 22 Z', 'ik'), S('M18 42 Q28 52 38 42', 'ik', 2.4)] }), ...ogLeaf(8, 12), ...ogLeaf(52, 12)],
+  darwins_frog: () => [...nxFrog(28, 36, 0.85, 'lo', { extra: [P('M36 30 L48 36 L36 38 Z', 'bs')] }), ...ntBroad(10, 14, 8, 'hi'), ...ntBroad(50, 14, 8, 'hi'), ogGnd('bs')],
+  european_spadefoot_toad: () => [...nxFrog(28, 34, 0.9, 'bs', { extra: [S('M16 50 L12 56 L22 56 M40 50 L36 56 L46 56', 'ik', 2.4)] }), P('M0 54 Q15 50 30 54 Q45 50 60 54 L60 60 L0 60 Z', 'ik'), S('M24 54 L32 58', 'hi', 1.4)],
+  agalychnis: () => [...nxFrog(28, 36, 0.95, 'hi', { extra: [C(21, 26, 3.4, 'bs'), C(35, 26, 3.4, 'bs'), C(21, 26, 1.8, 'ik'), C(35, 26, 1.8, 'ik')] }), ...ntLeaf(10, 52, 16, 7, 'lo', 10), ...ntLeaf(50, 52, 16, 7, 'lo', 170)],
+  mantella: () => [...nxFrog(28, 38, 0.85, 'bs', { extra: [S('M18 36 L38 36', 'ik', 1.6)] }), ...nzFlower(8, 14, 5, 'hi', 'bs'), ...ntBroad(50, 14, 8, 'lo'), ogGnd('lo')],
+  tailed_frog: () => [...nxFrog(28, 36, 0.9, 'lo', { extra: [S('M28 46 L28 54', 'ik', 2.4)] }), S('M0 52 Q15 48 30 54 Q45 58 60 52', 'hi', 3), P('M0 60 L8 50 L18 60 Z M40 60 L50 46 L60 60 Z', 'bs')],
+  toad: () => [...nxFrog(28, 38, 1.0, 'bs', { extra: [...nhDots([[20, 36], [26, 34], [32, 36], [38, 34], [24, 42], [32, 42]], 1.6, 'ik')] }), P('M0 56 L14 48 L26 56 Z', 'lo'), ogGnd('lo')],
+  rana_genus: () => [...nxFrog(28, 36, 1.0, 'hi', {}), P('M2 52 Q10 48 18 52 Q10 56 2 52 Z M40 54 Q48 50 56 54 Q48 58 40 54 Z', 'lo'), ...nyWave],
+  duttaphrynus_melanostictus: () => [...nxFrog(28, 38, 0.95, 'lo', { extra: [...nhDots([[22, 36], [28, 34], [34, 36]], 1.8, 'ik')] }), P('M0 56 L0 30 L12 30 L12 56 Z M48 56 L48 24 L60 24 L60 56 Z', 'bs'), noMoon(30, 10, 0.3, 'hi')[0]],
+  asiatic_salamander: () => [...nxSalam(28, 40, 1.0, 'lo', {}), S('M0 54 Q15 48 30 54 Q45 58 60 52', 'hi', 3), P('M0 60 L8 52 L18 60 Z', 'bs')],
+  giant_salamander: () => [...nxSalam(28, 38, 1.2, 'bs', { extra: [S('M10 34 L48 34', 'ik', 1)] }), ogRock(), S('M0 56 Q15 52 30 56 Q45 52 60 56', 'hi', 2)],
+  mole_salamander: () => [...nxSalam(28, 40, 0.95, 'ik', { extra: [...nhDots([[16, 36], [22, 38], [28, 36], [34, 38]], 1.8, 'hi')] }), P('M0 52 L60 52 L60 60 L0 60 Z', 'bs'), S('M6 56 Q30 52 54 56', 'lo', 3)],
+  necturus: () => [...nxSalam(28, 42, 0.9, 'lo', { extra: [S('M38 32 L46 26 M40 34 L50 30 M40 36 L50 36', 'bs', 2)] }), ...nyWave, ...nyFish(10, 18, 7, 3, 'hi', {})],
+  sirenidae: () => [...nxSnake(6, 40, 0.8, 'ik', { w: 6, extra: [S('M50 36 L58 32 M50 38 L58 40', 'bs', 1.6)] }), ...nyWave],
+  lepospondyli: () => [...nxSalam(28, 38, 0.9, 'bs', {}), ...nvBone(46, 10), P('M0 56 L60 56 L60 60 L0 60 Z', 'ik')],
+  diplocaulus: () => [P('M30 18 L8 28 L18 32 L30 30 L42 32 L52 28 Z', 'hi'), E(30, 34, 8, 6, 'bs'), mmEll(30, 34, 8, 6, 'ik', 1.4), S('M30 40 L30 54', 'bs', 4), C(24, 32, 1.4, 'ik'), C(36, 32, 1.4, 'ik'), ...nyWave],
+  microsauria: () => [...nxSalam(28, 40, 0.7, 'lo', {}), ...nvBone(46, 12), P('M0 56 L60 56 L60 60 L0 60 Z', 'bs')],
+  temnospondyli: () => [...nxSalam(26, 38, 1.1, 'bs', { extra: [P('M44 30 L50 34 L44 36 Z', 'hi')] }), ...nyWave],
+  koolasuchus: () => [...nxSalam(26, 38, 1.1, 'lo', { extra: [S('M42 32 L56 32', 'ik', 2)] }), P('M0 56 L60 56 L60 60 L0 60 Z', 'hi'), ...nhDots([[8, 10], [20, 6], [46, 8], [54, 16]], 1.6, 'hi')],
+  stereospondyli: () => [...nxSalam(26, 38, 1.1, 'ik', { extra: [E(44, 32, 8, 4, 'ik')] }), ...nyWave, ...nyFish(46, 18, 7, 3, 'hi', {})],
+  triadobatrachus: () => [...nxFrog(28, 36, 0.9, 'bs', { extra: [S('M12 44 L6 52', 'ik', 2.4)] }), ...nvBone(46, 10), P('M0 56 L60 56 L60 60 L0 60 Z', 'ik')],
+  yellow_lipped_sea_krait: () => [...nxSnake(6, 36, 0.85, 'hi', { w: 5, extra: [S('M14 33 L14 43 M22 31 L22 41 M30 34 L30 44 M38 31 L38 41', 'ik', 2), P('M52 32 L58 30 L52 34 Z', 'bs')] }), ...nyWave, P('M0 56 L10 48 L22 56 Z', 'bs')],
+  unenlagiinae: () => [...ocTheropod(28, 34, 0.95, 'hi', { feather: true, head: 7 }), P('M0 58 L0 46 L20 46 L20 58 Z', 'lo')],
+  dallasaurus: () => [...nxLizard(28, 32, 1.0, 'hi', { extra: [P('M2 34 L-2 26 L8 36 Z', 'hi')] }), ...nyWave, S('M0 54 Q15 48 30 54 Q45 48 60 54', 'lo', 2)],
+  banded_bullfrog: () => [...nxFrog(28, 38, 1.0, 'ik', { extra: [S('M16 30 L40 30 M16 36 L40 36', 'hi', 2)] }), ...nyWave, ...ntBroad(10, 12, 8, 'lo')],
+  jamesons_mamba: () => [S('M52 4 Q46 14 52 26 Q56 36 50 48', 'hi', 3), S('M4 34 Q16 26 28 34 Q38 40 46 30', 'hi', 4), E(50, 28, 4, 3, 'hi'), C(51, 27, 0.9, 'ik'), P('M54 28 L60 28 L54 30 Z', 'hi'), ...ntBroad(10, 12, 8, 'lo'), ...ntLeaf(14, 52, 14, 5, 'lo', -10)],
+};
+for (const [id, fn] of Object.entries(MKEU)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 72: fish — cartilaginous and bony fishes, eels, rays, sharks, lobe-finned, deep-sea and jawless fishes, sourced, audited, hand-drawn ── */
+const ohGnd = (role = 'bs') => P('M0 54 L60 54 L60 60 L0 60 Z', role);
+const ohW = (y = 10) => S(`M2 ${y} Q10 ${y - 4} 18 ${y} Q26 ${y - 4} 34 ${y} Q42 ${y - 4} 50 ${y} Q54 ${y - 2} 58 ${y}`, 'ik', 1.4);
+const ohB = (x, y, r = 2) => ring('ik', x, y, r, 1.2);
+const ohSnow = (x, y, r = 7) => nqBurst(x, y, r * 0.35, r, 6, 'hi', 1.6);
+const ohScale = (cx, cy, rx, ry) => S([-0.5, -0.1, 0.3].flatMap((a, i) => [-0.4, 0.2].map(b => { const x = n(cx + a * rx), y = n(cy + b * ry + (i % 2) * 2); return `M${x - 2} ${y} Q${x} ${y + 3} ${x + 2} ${y}`; })).join(' '), 'ik', 1);
+const ohKnife = (cx, cy, len, h, role = 'lo', o = {}) => { const d = `M${n(cx - len)} ${cy} Q${n(cx - len * 0.3)} ${n(cy - h * 0.9)} ${n(cx + len * 0.7)} ${n(cy - h * 0.6)} Q${n(cx + len)} ${n(cy - h * 0.2)} ${n(cx + len)} ${cy} Q${n(cx + len * 0.9)} ${n(cy + h * 0.4)} ${n(cx + len * 0.6)} ${n(cy + h * 0.5)} Q${n(cx - len * 0.2)} ${n(cy + h * 1.1)} ${n(cx - len)} ${cy} Z`; return [o.outline ? S(d, role, 2.2) : P(d, role), C(n(cx + len * 0.8), n(cy - h * 0.2), 1.4, o.eye || 'ik'), ...(o.extra || [])]; };
+const ohGarden = (x, h) => [S(`M${x} 54 Q${x - 3} ${54 - h / 2} ${x + 3} ${54 - h}`, 'lo', 3.5), E(x + 4, 54 - h - 1, 3.6, 2.6, 'lo'), C(x + 5, 54 - h - 2, 0.8, 'ik')];
+const MKEV = {
+  aquatic_animal: () => [...nyFish(32, 34, 16, 9, 'lo', { stripes: 2 }), ohW(14), ohB(12, 28), ohB(10, 20, 1.5), ohB(52, 22)],
+  ediacaran_biota: () => [S('M22 56 L22 12', 'lo', 2), S('M22 18 L12 26 M22 18 L32 26 M22 26 L11 36 M22 26 L33 36 M22 34 L10 46 M22 34 L34 46', 'lo', 2.4), E(46, 50, 9, 4, 'bs'), mmEll(46, 50, 9, 4, 'ik', 1.4), mmEll(46, 50, 4, 1.8, 'ik', 1.2), ohGnd()],
+  evolution_of_fish: () => [...nyFish(20, 50, 7, 3.2, 'bs'), ...nyFish(30, 36, 10, 5.5, 'lo'), ...nyFish(38, 22, 13, 7, 'hi', { teeth: 1 }), S('M4 8 L22 8 M17 4 L22 8 L17 12', 'ik', 1.8)],
+  coastal_fish: () => [P('M0 34 L14 44 L30 56 L0 56 Z', 'bs'), S('M6 40 Q8 28 6 16', 'lo', 2), S('M6 16 Q0 14 -2 20 M6 16 Q12 12 16 18 M6 16 Q6 10 10 8', 'hi', 2.2), ...nyFish(42, 36, 13, 8, 'lo'), ohW(14)],
+  coldwater_fish: () => [...nyFish(32, 34, 16, 9, 'lo'), ohSnow(46, 12, 7), ohSnow(14, 16, 5), P('M0 54 L10 46 L20 54 L32 44 L44 54 L60 54 L60 60 L0 60 Z', 'hi')],
+  demersal_fish: () => [...nyFish(32, 42, 16, 7, 'lo', { spots: [[-0.2, -0.2], [0.2, 0.1]] }), ohGnd(), P('M46 54 L52 46 L58 54 Z', 'lo'), ohW(12)],
+  pelagic_fish: () => [...nyFish(30, 28, 16, 9, 'lo', { stripes: 3 }), ...nyFish(46, 48, 7, 4, 'bs'), ohW(10), ohB(10, 40), ohB(52, 24, 1.5)],
+  marine_fish: () => [...nyFish(32, 30, 16, 9, 'lo'), ohW(12), ohW(50), P('M8 40 l4 0 l0 4 l-4 0 Z M48 42 l4 0 l0 4 l-4 0 Z', 'hi')],
+  fiddler_ray: () => [...nyRay(30, 22, 1.0, 'lo', { extra: nhDots([[24, 20], [36, 20], [30, 28]], 1.4, 'ik') }), S('M30 8 L30 2', 'ik', 1.6), ohGnd()],
+  whiptail_stingray: () => [...nyRay(30, 16, 0.9, 'lo'), S('M30 41 Q38 46 28 50 Q22 54 34 58', 'lo', 1.6)],
+  potamotrygonidae: () => [...nyRay(30, 22, 0.9, 'bs', { extra: nhDots([[22, 20], [38, 20], [30, 14], [30, 26]], 1.4, 'hi') }), ohW(50), S('M6 56 L8 38 M54 56 L52 40', 'hi', 2)],
+  callorhinchus: () => [...nyFish(30, 34, 15, 9, 'lo'), S('M44 36 Q54 36 54 46 Q54 50 51 50', 'ik', 2.6), ohW(12)],
+  rabbit_fish: () => [...nyFish(30, 36, 14, 8, 'bs'), E(40, 21, 2.4, 7, 'bs'), E(46, 23, 2.4, 6, 'bs'), S('M16 36 Q8 40 2 52', 'ik', 1.4), ohGnd()],
+  bullhead_shark: () => [...nxShark(30, 34, 1.0, 'lo', { extra: [S('M44 28 Q48 24 52 28', 'ik', 2.4), P('M24 22 L26 14 L28 22 Z', 'ik')] }), ohGnd()],
+  carpet_shark: () => [...nxShark(30, 38, 1.0, 'lo', { extra: [...nhDots([[16, 36], [22, 40], [28, 34], [34, 38]], 1.6, 'hi'), S('M50 40 l3 4 M52 38 l4 3', 'ik', 1.4)] }), ohGnd()],
+  scyliorhinidae: () => [...nxShark(30, 38, 1.0, 'lo', { extra: [P('M44 33 L46 24 L50 32 Z', 'lo'), P('M50 34 L54 26 L55 36 Z', 'lo'), S('M52 40 L58 38 M52 42 L58 44', 'ik', 1)] }), ohW(16)],
+  lamniformes: () => [...nxShark(26, 32, 0.9, 'lo'), P('M42 46 L50 58 L58 46 Z', 'hi'), S('M42 46 L50 58 L58 46', 'ik', 1.4)],
+  sand_shark: () => [...nxShark(30, 30, 0.95, 'lo'), P('M0 54 Q15 46 30 54 Q45 46 60 54 L60 60 L0 60 Z', 'bs')],
+  river_shark: () => [...nxShark(30, 32, 0.9, 'lo'), ohW(46), S('M6 56 L8 42 M12 56 L12 40 M52 56 L50 42', 'hi', 2), ...ntBroad(10, 14, 7, 'hi')],
+  indonesian_coelacanth: () => [...nyFish(28, 32, 16, 9, 'lo', { extra: [E(20, 44, 3, 6, 'lo'), E(36, 43, 3, 5, 'lo')] }), S('M52 54 Q50 40 52 28', 'lo', 2), S('M52 28 Q46 26 44 32 M52 28 Q58 24 60 30', 'hi', 2.2), ohGnd()],
+  west_indian_ocean_coelacanth: () => [P('M0 32 Q0 10 14 10 Q28 10 28 32 L28 36 L22 36 L22 30 Q22 18 14 18 Q6 18 6 30 L6 36 L0 36 Z', 'bs'), ...nyFish(38, 44, 14, 8, 'lo', { extra: [E(30, 55, 3, 4, 'lo')] }), ohGnd()],
+  teleost: () => [...nyFish(32, 32, 18, 12, 'lo'), ohScale(32, 32, 18, 12)],
+  snipe_eel: () => [...nyEel(34, 0.9, 'lo', { w: 3, extra: [S('M44 32 L52 26 M44 33 L54 34', 'ik', 1.2)] }), ohW(14), ohB(14, 46), ohB(50, 50, 1.5)],
+  heterocongrinae: () => [ohGnd(), ...ohGarden(12, 16), ...ohGarden(30, 26), ...ohGarden(46, 20), ohW(10)],
+  bathypterois_grallator: () => [...nyFish(30, 26, 14, 7, 'lo'), S('M28 32 L20 54 M34 32 L42 54 M16 28 L8 54', 'ik', 1.6), ohGnd()],
+  synodontidae: () => [...nyFish(28, 42, 18, 6, 'lo', { teeth: 1 }), ohGnd(), ohW(14)],
+  tetra: () => [...nyFish(28, 34, 16, 8, 'lo'), S('M14 34 L42 34', 'hi', 2.2), S('M54 56 Q52 44 56 34 M48 56 Q50 46 46 42', 'hi', 2), ohW(14)],
+  pencil_fish: () => [...nyFish(33, 32, 20, 4.5, 'lo'), S('M16 32 L50 32', 'hi', 1.6), ohW(14), S('M6 56 L8 44 M54 56 L52 44', 'hi', 2)],
+  clupeiformes: () => [...nyFish(22, 16, 9, 4, 'bs'), ...nyFish(38, 32, 9, 4, 'lo'), ...nyFish(26, 46, 9, 4, 'hi'), ohW(6)],
+  alosa: () => [...nyFish(30, 30, 14, 8, 'lo'), ohW(12), S('M10 48 L50 48 M44 43 L50 48 L44 53', 'ik', 2)],
+  cyprinidae: () => [...nyFish(30, 32, 17, 11, 'hi', { whisk: 1 }), ohScale(30, 32, 17, 11)],
+  carassius: () => [ring('ik', 30, 32, 22, 2.4), ...nyFish(32, 34, 11, 6.5, 'hi'), S('M10 22 Q20 19 30 22 T50 22', 'ik', 1.2), S('M18 56 L42 56', 'ik', 2.5)],
+  danionin: () => [...nyFish(30, 30, 17, 8, 'lo'), S('M14 28 L46 28 M14 32 L46 32 M16 36 L44 36', 'hi', 1.8), ohW(12), S('M6 56 L8 44 M54 56 L52 44', 'hi', 2)],
+  gonorynchiformes: () => [...nyFish(34, 34, 15, 8, 'lo'), P('M19 34 L6 20 L12 34 L6 48 Z', 'lo'), P('M50 6 Q56 14 50 20 Q44 14 50 6 Z', 'hi')],
+  gymnotiformes: () => [...ohKnife(30, 32, 26, 8, 'lo'), S('M44 8 L40 16 L46 16 L42 24', 'hi', 2), ohW(52)],
+  black_ghost_knifefish: () => [...ohKnife(30, 32, 26, 8, 'ik', { eye: 'hi', extra: [S('M22 28 L24 38 M32 26 L33 36', 'hi', 2.4)] }), ohW(14)],
+  glass_knifefish: () => [...ohKnife(30, 32, 26, 8, 'lo', { outline: true }), S('M6 32 L50 28', 'ik', 1.4), S('M14 30 L14 36 M20 30 L20 37 M26 29 L26 37 M32 29 L32 36 M38 28 L38 35', 'ik', 1.2)],
+  myctophiformes: () => [...nyFish(30, 30, 17, 9, 'lo', {}), ...nhDots([[16, 36], [22, 38], [28, 38], [34, 38], [40, 36]], 1.5, 'hi'), nqBurst(50, 10, 3, 8, 6, 'hi', 1.4)],
+  osteoglossiformes: () => [...nyFish(33, 34, 19, 8, 'lo', { whisk: 1 }), ring('ik', 22, 34, 3, 1.2), ring('ik', 30, 34, 3, 1.2), ring('ik', 38, 34, 3, 1.2), ring('ik', 26, 39, 3, 1.2), ring('ik', 34, 39, 3, 1.2), ohW(14)],
+  notopteridae: () => [...ohKnife(30, 32, 24, 8, 'lo'), S('M10 24 Q20 18 34 22 M12 27 Q22 21 36 25', 'hi', 1.6), ohW(52)],
+  mormyridae: () => [...nyFish(30, 32, 16, 8, 'lo'), S('M46 34 Q52 38 54 44', 'ik', 2.2), S('M8 10 L12 16 L8 22', 'hi', 2), S('M50 8 L54 14 L50 20', 'hi', 2)],
+  antarctic_fishes: () => [P('M2 24 L12 6 L20 16 L26 24 Z', 'hi'), ohW(24), ...nyFish(34, 42, 15, 8, 'lo'), ohSnow(48, 10, 6)],
+  channichthyidae: () => [...nyFish(30, 34, 15, 7, 'hi', { teeth: 1 }), P('M44 31 L58 33 L44 37 Z', 'hi'), S('M44 31 L58 33 L44 37', 'ik', 1.2), ohSnow(12, 14, 6), ohW(46)],
+  batrachoididae: () => [...nyFish(30, 36, 15, 10, 'lo', { spots: [[-0.4, -0.3], [0, -0.4], [0.3, 0.2], [-0.1, 0.3]] }), C(44, 24, 3, 'lo'), C(44, 24, 1.2, 'ik'), S('M30 42 Q46 48 50 38', 'ik', 2), ohGnd()],
+  beloniformes: () => [...nyFish(26, 24, 14, 3.5, 'lo'), S('M40 23 L58 23', 'ik', 2), P('M24 22 L16 10 L32 21 Z', 'hi'), ohW(38), ohW(46)],
+  ricefish: () => [...nyFish(32, 42, 10, 5, 'lo'), ohW(30), S('M8 30 Q8 14 14 8 M14 30 Q14 16 20 12 M46 30 Q46 14 52 8 M52 30 Q52 18 56 14', 'hi', 1.8), ...nhDots([[14, 9], [20, 13], [52, 9], [56, 15]], 1.4, 'hi')],
+  wrestling_halfbeak: () => [...nyFish(24, 22, 11, 4, 'lo'), ...nyFish(34, 42, 11, 4, 'bs'), S('M35 22 L44 22', 'ik', 1.5), S('M45 42 L54 42', 'ik', 1.5), ohW(8)],
+  blennioidei: () => [P('M2 58 L2 34 Q6 20 20 20 Q40 18 54 30 L58 58 Z', 'bs'), E(30, 44, 10, 8, 'ik'), E(30, 46, 7, 5, 'lo'), C(34, 44, 1.4, 'ik'), S('M22 41 L20 33 M26 39 L25 31 M30 38 L30 30', 'lo', 1.6)],
+  gadiformes: () => [...nyFish(30, 34, 17, 9, 'lo'), S('M46 40 L48 48', 'ik', 1.4), P('M16 24 L20 16 L24 24 Z M26 24 L30 16 L34 24 Z M36 24 L38 17 L42 26 Z', 'lo'), ohW(12)],
+  grenadiers_fish: () => [E(46, 32, 12, 9, 'lo'), P('M36 28 L2 50 L38 38 Z', 'lo'), C(50, 29, 2.4, 'ik'), S('M52 38 Q56 38 58 34', 'ik', 1.4), ohGnd()],
+  gasterosteoidei: () => [...nyFish(32, 34, 15, 8, 'lo'), S('M22 26 L20 16 M30 25 L30 14 M38 26 L40 16', 'ik', 1.6), ohW(10)],
+  gobiidae: () => [P('M6 58 Q8 40 30 38 Q52 40 54 58 Z', 'bs'), E(30, 48, 8, 5, 'ik'), E(30, 46, 6, 4, 'lo'), C(33, 45, 1.2, 'ik'), P('M26 42 L28 36 L34 42 Z', 'lo'), ohW(14)],
+  lampriformes: () => [...nyFish(32, 32, 15, 14, 'lo', { spots: [[-0.3, -0.3], [0, 0.3], [0.3, -0.2], [-0.1, -0.1], [0.2, 0.4]] }), ohW(8)],
+  ribbonfish: () => [S('M4 40 Q16 28 28 36 T52 28', 'lo', 6), E(54, 26, 4, 3, 'lo'), C(55, 25, 0.9, 'ik'), S('M52 24 L46 14 M54 23 L52 12', 'hi', 1.8), ohW(52)],
+  black_seadevil: () => [P('M13 36 L4 28 L4 44 Z', 'lo'), E(30, 36, 17, 13, 'lo'), mmEll(30, 36, 17, 13, 'ik', 1.4), S('M16 42 L20 48 L24 42 L28 48 L32 42 L36 48 L40 42', 'hi', 1.6), C(40, 30, 2.4, 'ik'), S('M34 24 Q34 10 46 8', 'ik', 1.6), C(47, 8, 3, 'hi')],
+  sea_toad: () => [E(30, 38, 18, 12, 'lo'), mmEll(30, 38, 18, 12, 'ik', 1.4), C(40, 32, 2.2, 'ik'), S('M36 28 Q38 20 44 20', 'ik', 1.6), C(45, 20, 2, 'hi'), P('M12 44 L4 52 L16 50 Z', 'lo'), ...nhDots([[22, 36], [28, 42], [34, 40]], 1.4, 'ik'), ohGnd()],
+  flathead_grey_mullet: () => [...nyFish(30, 26, 16, 8, 'lo'), S('M16 25 L46 25 M16 29 L44 29', 'hi', 1.2), ohW(44), S('M10 40 l-3 -5 M50 40 l3 -5', 'ik', 1.4)],
+  cusk_eel: () => [P('M0 58 L0 24 Q0 10 20 10 Q40 10 56 22 L60 58 Z', 'bs'), E(28, 40, 14, 16, 'ik'), S('M28 54 Q26 44 36 38 Q44 34 50 38', 'lo', 5), E(51, 38, 4, 3, 'lo'), C(52, 37, 0.8, 'ik')],
+  flathead_fish: () => [P('M2 30 L30 24 L30 36 Z', 'lo'), E(40, 30, 14, 11, 'lo'), C(44, 24, 2, 'ik'), C(44, 36, 2, 'ik'), S('M52 26 Q56 30 52 34', 'ik', 1.6), S('M36 18 L34 12 M36 42 L34 48', 'ik', 1.4), ...nhDots([[16, 30], [24, 28], [34, 30]], 1.4, 'ik')],
+  sebastinae: () => [...nyFish(30, 30, 16, 10, 'hi', { spiny: 1 }), P('M0 60 L10 46 L22 60 Z M36 60 L48 44 L60 60 Z', 'lo')],
+  triglidae: () => [...nyFish(32, 28, 14, 9, 'lo'), P('M30 32 L14 50 L28 46 L34 40 Z', 'hi'), S('M32 38 L28 52 M38 38 L40 52', 'ik', 1.4), ohGnd()],
+  anthias_anthias: () => [...nyFish(30, 34, 13, 8, 'hi'), P('M18 34 L6 22 L12 34 L6 46 Z', 'hi'), S('M26 26 Q24 14 18 8', 'hi', 1.2), S('M50 56 L50 44 M50 50 L56 44 M50 48 L44 40', 'lo', 2.4)],
+  syngnathiformes: () => [E(36, 14, 5, 4.5, 'lo'), S('M40 14 L50 14', 'lo', 2.4), C(36, 13, 1, 'ik'), S('M35 19 Q27 27 33 36 Q38 44 31 50', 'lo', 7), S('M31 50 Q24 56 20 50 Q18 45 23 45', 'lo', 3.5), S('M33 12 L31 6 M36 10 L36 4', 'lo', 1.6), ohB(48, 30), ohB(12, 22, 1.5)],
+  dragonet: () => [E(30, 42, 16, 6, 'lo'), P('M24 38 Q26 14 36 12 Q44 14 40 38 Z', 'hi'), S('M28 36 L30 18 M32 36 L34 16 M36 36 L38 18', 'ik', 1), C(42, 40, 1.6, 'ik'), P('M14 42 L4 36 L4 48 Z', 'lo'), ohGnd()],
+  tetraodontiformes: () => [...nyFish(30, 32, 15, 11, 'lo', { spiny: 1 }), ohW(10)],
+  ostraciidae: () => [P('M12 22 L44 22 L48 30 L48 40 L12 40 Z', 'hi'), P('M12 28 L2 22 L2 40 L12 36 Z', 'hi'), S('M22 22 L22 40 M32 22 L32 40 M12 31 L48 31', 'ik', 1.2), C(42, 28, 2, 'ik'), S('M46 36 L50 36', 'ik', 1.6), P('M28 22 L32 14 L36 22 Z', 'hi'), ohW(10)],
+  takifugu: () => [nqBurst(30, 32, 17, 23, 14, 'ik', 1.2), C(30, 32, 17, 'lo'), C(38, 26, 2.4, 'ik'), S('M44 36 L48 38', 'ik', 1.6), P('M12 32 L4 26 L4 38 Z', 'lo'), P('M28 46 L22 54 L34 50 Z', 'lo')],
+  anomalopidae: () => [...nyFish(24, 30, 15, 9, 'lo'), C(36, 33, 3, 'hi'), S('M40 35 L58 42 M40 35 L58 30 M40 35 L56 50', 'hi', 1.4)],
+  slimehead: () => [...nyFish(30, 30, 16, 12, 'hi'), P('M44 42 Q48 50 44 54 Q40 50 44 42 Z', 'lo'), P('M20 42 Q24 50 20 54 Q16 50 20 42 Z', 'lo'), ohB(52, 14)],
+  tilefish: () => [...nyFish(30, 28, 15, 9, 'lo'), S('M18 24 L42 24 M18 30 L42 30 M24 20 L24 36 M32 20 L32 36 M40 20 L40 36', 'ik', 0.8), P('M14 58 Q20 46 30 46 Q42 46 46 58 Z', 'bs'), E(30, 53, 7, 3, 'ik')],
+  acanthuridae: () => [...nyFish(30, 34, 16, 10, 'lo'), P('M16 34 L10 28 L12 38 Z', 'ik'), P('M44 8 L56 10 L46 14 Z', 'hi'), S('M44 8 L38 4', 'ik', 2)],
+  paracanthurus: () => [...nyFish(30, 32, 16, 10, 'lo'), P('M12 30 Q22 20 36 24 Q44 30 34 40 Q24 36 12 38 Z', 'ik'), P('M14 32 L4 22 L8 32 L4 42 Z', 'hi')],
+  platax: () => [E(30, 32, 10, 16, 'lo'), P('M20 28 L4 8 L10 34 Z', 'lo'), P('M30 48 L22 58 L38 56 Z', 'lo'), P('M28 16 L34 2 L42 18 Z', 'lo'), C(36, 28, 2, 'ik'), S('M34 18 L34 46', 'ik', 2)],
+  billfish: () => [...nyFish(24, 36, 14, 6, 'lo'), P('M38 33 L58 27 L38 37 Z', 'ik'), P('M12 30 Q22 6 36 30 Z', 'hi'), ohW(52)],
+  caranx: () => [...nyFish(30, 32, 16, 10, 'lo', { spots: [[-0.85, 0], [-0.7, 0], [-0.55, 0]] }), S('M16 30 L44 30', 'ik', 1), ohW(12)],
+  reedfish: () => [...nyEel(44, 1.0, 'hi', { w: 4 }), S('M4 56 L6 30 M12 56 L10 34 M52 56 L54 30', 'lo', 2), ohW(18)],
+  esox: () => [...nyFish(33, 34, 20, 7, 'lo', { teeth: 1, spots: [[-0.6, -0.2], [-0.2, 0], [0.2, -0.3]] }), P('M50 31 L58 32 L56 36 L50 36 Z', 'lo'), ohW(16)],
+  oncorhynchus: () => [S('M48 2 L48 34 M54 2 L54 34', 'hi', 3.5), ...nyFish(26, 24, 12, 6, 'lo'), ohW(42), S('M44 36 l-3 -4 M54 36 l3 -4', 'ik', 1.4)],
+  atlantic_salmon: () => [...nyFish(32, 30, 18, 9, 'lo', { spots: [[-0.4, -0.3], [0, -0.4], [0.3, -0.2], [-0.2, 0.1]] }), ohW(12), ohW(52), S('M8 46 Q30 38 52 46', 'ik', 1.4)],
+  basa_fish: () => [P('M8 14 L52 14 L46 22 L14 22 Z', 'bs'), S('M30 14 L30 4', 'ik', 1.6), ...nyFish(32, 38, 16, 8, 'lo', { whisk: 1 }), ohW(26)],
+  black_bullhead: () => [...nyFish(30, 34, 16, 10, 'lo', { whisk: 1 }), S('M46 32 L54 28 M46 36 L54 40', 'ik', 1.2), ohGnd()],
+  stomiiformes: () => [...nyFish(28, 32, 17, 6, 'lo', { teeth: 1 }), S('M44 38 Q46 46 42 52', 'ik', 1.4), C(42, 53, 2.4, 'hi'), P('M44 36 L45 42 L47 36 Z M50 36 L51 41 L53 36 Z', 'hi'), ...nhDots([[16, 36], [22, 37], [28, 37]], 1.2, 'hi')],
+  gonostomatidae: () => [P('M12 32 L3 24 L3 40 Z', 'lo'), E(30, 32, 18, 9, 'lo'), P('M38 36 L58 28 L58 40 Z', 'ik'), S('M42 34 l0 4 M46 32 l0 5 M50 31 l0 5', 'hi', 1.2), C(40, 28, 1.8, 'ik'), ...nhDots([[14, 36], [20, 38], [26, 38], [32, 38]], 1.2, 'hi')],
+  marine_hatchetfish: () => [P('M8 34 L20 26 L44 14 L50 26 L52 40 L40 52 L14 40 Z', 'lo'), C(44, 26, 1.8, 'ik'), ...nhDots([[18, 40], [24, 44], [30, 46], [36, 46], [42, 44]], 1.4, 'hi'), S('M20 30 L40 20', 'ik', 1)],
+  hybodontiformes: () => [...nxShark(30, 38, 0.95, 'bs', { extra: [S('M30 24 L32 14', 'ik', 2.4), S('M20 31 L18 22', 'ik', 2)] }), ...nvBone(48, 10)],
+  cyclostomi: () => [...nyEel(24, 0.7, 'lo', { w: 4 }), ...nyEel(44, 0.7, 'bs', { w: 4 }), ring('ik', 37, 23, 3, 1.4), ring('ik', 37, 43, 3, 1.4)],
+  pouched_lamprey: () => [S('M2 44 Q14 30 26 38 T44 32', 'lo', 6), C(48, 30, 8, 'hi'), nqBurst(48, 30, 3, 7, 10, 'ik', 1), E(20, 44, 8, 3, 'bs'), ohW(10)],
+  anaspida: () => [P('M10 32 Q22 22 40 26 Q50 28 52 34 Q44 42 28 40 Q16 40 10 32 Z', 'lo'), P('M10 32 L2 44 L14 38 Z', 'lo'), C(44, 31, 1.8, 'ik'), ohScale(28, 33, 12, 6), S('M38 28 L38 38', 'ik', 1.2), ohW(12)],
+  galeaspida: () => [E(38, 32, 18, 14, 'lo'), P('M22 32 L2 24 L6 32 L2 42 Z', 'lo'), C(44, 28, 1.8, 'ik'), C(32, 28, 1.8, 'ik'), ...nhDots([[34, 38], [40, 38], [46, 36], [28, 36]], 1.2, 'ik'), S('M28 20 Q38 16 48 22', 'hi', 1.6)],
+  haikouichthys: () => [S('M2 14 L58 14 L58 54 L2 54 Z', 'ik', 1.2), P('M8 34 Q30 22 52 32 Q30 42 8 34 Z', 'lo'), S('M18 32 L22 36 L26 32 L30 36 L34 32 L38 36', 'ik', 1.4), C(48, 31, 1.6, 'ik')],
+  pikaia: () => [P('M6 38 Q30 18 54 34 Q30 44 6 38 Z', 'lo'), S('M52 32 L58 26 M52 34 L58 38', 'ik', 1.2), S('M14 36 L14 41 M20 33 L20 40 M26 31 L26 39 M32 30 L32 38 M38 30 L38 37 M44 31 L44 36', 'ik', 1.2), ohGnd()],
+  thelodonti: () => [...nyFish(30, 30, 15, 8, 'lo'), P('M16 30 L4 42 L10 28 Z', 'lo'), ohScale(30, 30, 15, 8), ohW(12)],
+  vetulicolia: () => [E(40, 32, 14, 11, 'lo'), S('M36 24 L36 40 M41 22 L41 42 M46 24 L46 40', 'ik', 1.4), C(52, 32, 3, 'ik'), P('M26 30 L6 31 L6 34 L26 35 Z', 'lo'), S('M12 30 L12 35 M18 30 L18 35 M22 30 L22 35', 'ik', 1.2), ohGnd()],
+  red_mullet: () => [...nyFish(30, 32, 16, 9, 'hi'), S('M46 38 L52 46 M45 38 L48 48', 'ik', 1.4), ohGnd()],
+  lutjanidae: () => [...nyFish(30, 32, 16, 10, 'lo', { teeth: 1 }), P('M46 36 L47 41 L49 36 Z', 'hi'), ohScale(26, 32, 12, 8), ohW(12)],
+  priacanthidae: () => [...nyFish(32, 34, 15, 9, 'hi', { eye: 4.5 }), ring('ik', 41, 32, 6, 1.4), ohW(10)],
+  rabbitfish: () => [...nyFish(30, 34, 14, 8, 'lo'), S('M22 26 L20 18 M28 25 L28 16 M34 26 L36 18', 'ik', 1.4), P('M44 38 l1 4 l2 0 l1 -4 Z', 'hi'), ohW(12)],
+  sparidae: () => [...nyFish(30, 30, 16, 11, 'lo'), ohScale(30, 30, 16, 11), P('M44 46 Q44 42 48 42 Q54 42 52 48 L52 54 L50 54 L49 50 L47 54 L45 54 Z', 'hi')],
+  coregonus: () => [P('M0 28 L12 10 L22 24 L34 8 L46 24 L60 14 L60 28 Z', 'bs'), ohW(30), ...nyFish(30, 42, 18, 6, 'hi')],
+  mawsonia_fish: () => [...nyFish(30, 34, 18, 10, 'lo', { extra: [E(22, 46, 3, 6, 'lo'), E(38, 45, 3, 5, 'lo')] }), S('M54 56 Q52 40 56 28 M54 44 L48 40 M54 36 L60 32', 'hi', 2), ...nvBone(8, 12)],
+  misgurnus_fossilis: () => [E(30, 10, 16, 6, 'bs'), S('M20 18 L18 24 M30 18 L28 24 M40 18 L38 24', 'ik', 1.4), ...nyEel(40, 0.9, 'lo', { w: 4.5, extra: [S('M47 39 L52 36 M47 41 L52 44', 'ik', 1.2)] }), ohGnd()],
+  elacatinus: () => [S('M10 56 L10 40 M10 48 L4 42 M10 46 L16 40 M48 56 L48 38 M48 46 L54 40', 'bs', 3), ...nyFish(30, 40, 9, 4.5, 'lo'), S('M24 38 L38 38', 'hi', 2.2), ohW(14), ohGnd()],
+  weever: () => [P('M0 40 L60 40 L60 60 L0 60 Z', 'bs'), P('M18 40 L22 28 L30 36 L36 40 Z', 'ik'), E(30, 40, 9, 4, 'lo'), C(34, 37, 1.4, 'ik'), P('M23 18 Q26 24 23 26 Q20 24 23 18 Z', 'hi'), ohW(12)],
+  pomacanthidae: () => [E(30, 32, 13, 15, 'lo'), P('M22 20 Q26 6 40 2 Q34 14 36 20 Z', 'lo'), P('M24 44 Q30 56 44 58 Q38 48 38 44 Z', 'lo'), P('M17 32 L6 24 L9 32 L6 40 Z', 'lo'), C(38, 28, 1.8, 'ik'), S('M26 18 L26 46 M32 18 L32 46', 'hi', 2)],
+};
+for (const [id, fn] of Object.entries(MKEV)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 73: crustaceans, arachnids and freshwater fishes — water fleas, shrimps, crabs, lobsters, mites, ticks, spiders and fossil arachnids, sourced, audited, hand-drawn ── */
+const oiShr = (cx, cy, s, role = 'lo', o = {}) => [P(`M${n(cx - 16 * s)} ${n(cy + 10 * s)} Q${n(cx - 14 * s)} ${n(cy - 12 * s)} ${n(cx + 4 * s)} ${n(cy - 12 * s)} Q${n(cx + 18 * s)} ${n(cy - 10 * s)} ${n(cx + 16 * s)} ${n(cy + 4 * s)} L${n(cx + 10 * s)} ${n(cy + 4 * s)} Q${n(cx + 10 * s)} ${n(cy - 6 * s)} ${n(cx + 4 * s)} ${n(cy - 6 * s)} Q${n(cx - 8 * s)} ${n(cy - 6 * s)} ${n(cx - 10 * s)} ${n(cy + 10 * s)} Z`, role), P(`M${n(cx - 16 * s)} ${n(cy + 10 * s)} L${n(cx - 25 * s)} ${n(cy + 5 * s)} L${n(cx - 23 * s)} ${n(cy + 14 * s)} L${n(cx - 15 * s)} ${n(cy + 16 * s)} Z`, role), C(n(cx + 14 * s), n(cy - 2 * s), n(1.4 * s), 'ik'), S(`M${n(cx + 16 * s)} ${n(cy - 4 * s)} Q${n(cx + 26 * s)} ${n(cy - 12 * s)} ${n(cx + 30 * s)} ${n(cy - 8 * s)}`, 'ik', 1), S(`M${n(cx - 10 * s)} ${n(cy - 6 * s)} L${n(cx - 11 * s)} ${n(cy + 2 * s)} M${n(cx - 3 * s)} ${n(cy - 11 * s)} L${n(cx - 2 * s)} ${n(cy - 5 * s)} M${n(cx + 4 * s)} ${n(cy - 12 * s)} L${n(cx + 4 * s)} ${n(cy - 6 * s)} M${n(cx + 11 * s)} ${n(cy - 9 * s)} L${n(cx + 9 * s)} ${n(cy - 4 * s)}`, 'ik', 1), S(`M${n(cx + 6 * s)} ${n(cy - 4 * s)} L${n(cx + 4 * s)} ${n(cy + 2 * s)} M${n(cx + 11 * s)} ${n(cy + 3 * s)} L${n(cx + 9 * s)} ${n(cy + 9 * s)}`, 'ik', 1.2), ...(o.extra || [])];
+const oiMite = (cx, cy, s, role = 'bs', o = {}) => [S(Array.from({ length: 8 }, (_, i) => { const sd = i < 4 ? -1 : 1, k = i % 4; return `M${n(cx + sd * 6 * s)} ${n(cy - 6 * s + k * 4 * s)} L${n(cx + sd * 16 * s)} ${n(cy - 12 * s + k * 7 * s)}`; }).join(' '), 'ik', 1.6), E(cx, n(cy + 2 * s), n(9 * s), n(10 * s), role), mmEll(cx, n(cy + 2 * s), n(9 * s), n(10 * s), 'ik', 1.4), E(cx, n(cy - 9 * s), n(4 * s), n(3 * s), role), ...(o.extra || [])];
+const oiSlab = () => S('M2 8 L58 8 L58 54 L2 54 Z', 'ik', 1.2);
+const MKEW = {
+  branchiopoda: () => [...oiShr(28, 30, 0.9, 'lo', { extra: [S('M14 36 L18 42 M20 38 L22 44 M26 38 L28 44', 'hi', 1.6)] }), ohW(12), ohGnd(), ohB(50, 40), ohB(8, 46, 1.5)],
+  cladocera: () => [E(30, 32, 13, 11, 'lo'), mmEll(30, 32, 13, 11, 'ik', 1.4), C(38, 28, 2.6, 'ik'), S('M42 24 L52 14 M52 14 L56 10 M52 14 L57 17', 'ik', 1.6), S('M20 40 Q30 46 40 40', 'ik', 1), S('M17 30 L10 24', 'ik', 1.4), ohW(10), ohB(10, 50), ohB(52, 46, 1.5)],
+  notostraca: () => [E(32, 30, 14, 12, 'bs'), mmEll(32, 30, 14, 12, 'ik', 1.4), P('M18 34 L4 36 L18 40 Z', 'bs'), S('M4 36 L-2 30 M4 38 L-2 44', 'ik', 1.2), C(36, 24, 1.4, 'ik'), C(30, 24, 1.4, 'ik'), S('M24 40 L26 48 M32 42 L32 50 M40 40 L38 48', 'ik', 1.4), ohW(10), ohGnd()],
+  cumacea: () => [E(42, 28, 10, 9, 'lo'), mmEll(42, 28, 10, 9, 'ik', 1.4), C(46, 26, 1.4, 'ik'), S('M34 34 Q22 40 14 36 Q8 34 4 40', 'lo', 4), S('M4 40 L0 38 M4 40 L1 44', 'ik', 1.2), P('M34 18 Q42 10 50 18 Z', 'bs'), ohGnd()],
+  ligia: () => [P('M0 60 L12 44 L50 44 L60 60 Z', 'bs'), E(30, 36, 18, 8, 'lo'), mmEll(30, 36, 18, 8, 'ik', 1.4), S('M20 30 Q20 36 20 42 M26 29 Q26 36 26 43 M32 29 Q32 36 32 43 M38 30 Q38 36 38 42', 'ik', 1.2), C(46, 34, 1.4, 'ik'), S('M48 32 L56 24 M48 36 L58 32', 'ik', 1.2), S('M18 42 L14 48 M26 43 L24 49 M34 43 L36 49 M42 42 L46 48', 'ik', 1.4), ohW(54)],
+  leptostraca: () => [...oiShr(28, 34, 0.85, 'lo'), E(32, 26, 12, 8, 'bs'), mmEll(32, 26, 12, 8, 'ik', 1.2), ohGnd(), ohW(10)],
+  squilla_mantis: () => [...oiShr(26, 36, 0.8, 'lo'), S('M36 30 L44 22 L40 14 L48 10', 'ik', 2.4), P('M48 10 L56 6 L52 14 Z', 'ik'), C(52, 36, 2.4, 'bs'), C(52, 36, 1, 'ik'), ring('hi', 14, 44, 3, 1.2), ohGnd()],
+  axiidea: () => [P('M2 58 Q6 40 30 38 Q54 40 58 58 Z', 'bs'), E(30, 46, 9, 6, 'ik'), ...oiShr(30, 42, 0.4, 'lo'), S('M44 38 Q50 30 52 24', 'ik', 1.2), ohW(14)],
+  stenopodidea: () => [...oiShr(26, 36, 0.85, 'lo', { extra: [S('M18 36 L22 44', 'ik', 1)] }), S('M38 36 L46 30', 'lo', 2.6), C(48, 28, 4, 'hi'), S('M38 40 L46 44', 'lo', 2.6), C(48, 46, 4, 'hi'), ohGnd()],
+  anomura: () => [E(38, 28, 13, 11, 'bs'), mmEll(38, 28, 13, 11, 'ik', 1.4), S('M42 22 Q34 22 34 28 Q34 34 40 34', 'ik', 1.4), E(18, 40, 8, 6, 'lo'), S('M10 38 L4 28 M12 34 L8 24', 'lo', 2.6), C(4, 26, 3, 'lo'), C(8, 22, 3, 'lo'), S('M16 46 L12 54 M22 46 L22 54', 'ik', 1.8), ohGnd()],
+  king_crab: () => [...nyCrab(30, 36, 0.9, 'hi'), P('M18 12 L22 4 L26 10 L30 2 L34 10 L38 4 L42 12 Z', 'hi'), S('M18 12 L42 12', 'ik', 1.4), ohGnd()],
+  squat_lobster: () => [...nyLob(30, 34, 0.95, 'lo', { extra: [S('M16 40 Q10 46 18 50', 'lo', 4)] }), P('M0 60 L8 48 L18 60 Z M42 60 L52 46 L60 60 Z', 'bs')],
+  kiwa_hirsuta: () => [...nyLob(30, 32, 0.9, 'hi', { extra: [S('M42 20 l3 -3 M44 22 l4 -2 M46 24 l4 0 M42 40 l3 3 M44 38 l4 2 M46 36 l4 0', 'ik', 1.2)] }), P('M2 60 L6 48 L12 48 L16 60 Z', 'bs'), ohB(8, 40, 2), ohB(12, 32, 1.5), ohB(6, 24, 2)],
+  dromiidae: () => [...nyCrab(30, 42, 0.8, 'lo'), E(30, 26, 15, 10, 'hi'), mmEll(30, 26, 15, 10, 'ik', 1.4), ...nhDots([[22, 24], [30, 20], [38, 26], [28, 30], [34, 31]], 1.5, 'ik')],
+  grapsus_grapsus: () => [P('M0 60 L8 46 L22 52 L36 44 L60 60 Z', 'bs'), ...nyCrab(30, 36, 0.95, 'hi'), ohW(54)],
+  horsehair_crab: () => [...nyCrab(30, 38, 0.9, 'lo'), S('M16 30 l-3 -5 M20 27 l-2 -6 M26 25 l-1 -6 M32 25 l1 -6 M38 27 l2 -6 M44 30 l3 -5', 'ik', 1.2), ohGnd()],
+  majoidea: () => [...nyCrab(30, 32, 0.7, 'lo', { extra: [S('M18 30 L6 22 L2 40 M42 30 L54 22 L58 40 M22 38 L12 52 M38 38 L48 52', 'lo', 1.8)] }), ...ntLeaf(8, 52, 10, 4, 'hi', -20), ohGnd()],
+  chionoecetes: () => [...nyCrab(30, 40, 0.85, 'hi'), ohSnow(12, 12, 7), ohSnow(48, 14, 6), P('M0 56 L12 48 L24 56 L36 46 L48 56 L60 50 L60 60 L0 60 Z', 'hi')],
+  mangrove_crab: () => [S('M8 20 Q8 40 4 56 M14 20 Q16 40 20 56 M52 20 Q52 40 56 56 M46 20 Q44 40 40 56', 'lo', 2.2), ...ntBroad(30, 10, 9, 'hi'), ...nyCrab(30, 44, 0.75, 'lo'), ohGnd()],
+  terrestrial_crab: () => [S('M50 54 Q52 36 50 18', 'lo', 2.4), S('M50 18 Q42 14 38 22 M50 18 Q58 12 60 20 M50 18 Q50 8 56 6', 'hi', 2.4), C(46, 24, 2.6, 'bs'), C(52, 25, 2.6, 'bs'), ...nyCrab(24, 42, 0.75, 'hi'), ohGnd()],
+  trapeziidae: () => [S('M6 56 L6 36 M6 46 L0 38 M6 42 L12 34 M50 56 L50 30 M50 44 L58 36 M50 38 L42 30 M28 56 L28 44 M28 50 L22 44', 'lo', 3), ...nyCrab(28, 34, 0.55, 'hi'), ohGnd()],
+  cherax_pulcher: () => [S('M4 10 L56 10 L56 56 L4 56 Z', 'ik', 1.4), ...nyLob(30, 36, 0.8, 'hi'), S('M8 56 Q10 46 8 40 M52 56 Q50 48 54 40', 'lo', 2), ohW(16)],
+  metanephrops_challengeri: () => [...nyLob(30, 32, 0.95, 'hi'), ohGnd(), ohW(10)],
+  reef_lobster: () => [...nyLob(30, 36, 0.9, 'hi'), S('M6 56 L6 40 M6 48 L0 42 M6 44 L12 38 M54 56 L54 38 M54 46 L60 40 M54 42 L48 34', 'lo', 3), noSun(50, 10, 4, 'hi')[0], ohGnd()],
+  furry_lobster: () => [...nyLob(30, 36, 0.9, 'lo', { extra: [S('M18 28 l-2 -4 M24 28 l-1 -5 M30 28 l0 -5 M36 28 l1 -5 M42 29 l2 -4 M18 44 l-2 4 M26 43 l-1 5 M34 43 l1 5 M42 42 l2 4', 'ik', 1.2)] }), S('M6 56 L6 44 M6 50 L0 44 M54 56 L54 42 M54 48 L60 42', 'bs', 3), ohGnd()],
+  caridea: () => [...oiShr(24, 22, 0.7, 'lo'), ...oiShr(34, 44, 0.7, 'hi'), ohW(8)],
+  palaemon_serratus: () => [P('M0 60 L12 44 L24 60 Z M36 60 L48 42 L60 60 Z', 'bs'), ...oiShr(28, 34, 0.9, 'lo'), S('M46 30 l3 -2 l1 3 l3 -2 l1 3 l3 -2', 'ik', 1.2), ohW(12)],
+  indian_prawn: () => [...oiShr(28, 32, 1.0, 'hi'), ohW(12), ohGnd(), S('M8 50 L50 50', 'ik', 1)],
+  argulidae: () => [...nyFish(30, 34, 16, 9, 'lo'), E(28, 28, 4.5, 3, 'hi'), mmEll(28, 28, 4.5, 3, 'ik', 1.2), C(28, 28, 1, 'ik'), ohW(12)],
+  lepas_anatifera: () => [P('M0 4 L60 4 L60 14 L0 14 Z', 'bs'), ...[12, 30, 48].flatMap((x, i) => [S(`M${x} 14 Q${x + 4} ${26 + i * 3} ${x} ${34 + i * 4}`, 'lo', 4), P(`M${x - 7} ${34 + i * 4} Q${x} ${28 + i * 4} ${x + 7} ${34 + i * 4} Q${x + 4} ${46 + i * 4} ${x} ${48 + i * 4} Q${x - 4} ${46 + i * 4} ${x - 7} ${34 + i * 4} Z`, 'hi'), S(`M${x} ${32 + i * 4} L${x} ${46 + i * 4}`, 'ik', 1)])],
+  characidae: () => [...nyFish(28, 34, 15, 9, 'lo', { teeth: 1 }), S('M14 34 L42 34', 'hi', 2), S('M54 56 Q52 44 56 34 M48 56 Q50 46 46 42', 'hi', 2), ohW(14)],
+  clupeidae: () => [...nyFish(18, 14, 8, 3.8, 'bs'), ...nyFish(34, 26, 8, 3.8, 'lo'), ...nyFish(22, 38, 8, 3.8, 'hi'), ...nyFish(42, 50, 8, 3.8, 'lo')],
+  freshwater_butterflyfish: () => [...nyFish(30, 34, 12, 6, 'lo'), P('M28 30 L10 12 L30 26 Z M32 30 L52 12 L34 26 Z', 'hi'), ohW(46), ohW(54)],
+  centrarchidae: () => [...nyFish(30, 34, 13, 13, 'hi', { stripes: 2 }), noSun(50, 10, 4, 'hi')[0], ohW(8)],
+  pterophyllum: () => [S('M4 8 L56 8 L56 56 L4 56 Z', 'ik', 1.4), E(30, 34, 8, 12, 'lo'), P('M24 24 Q30 6 36 24 Z', 'lo'), P('M24 44 Q30 54 36 44 Z', 'lo'), P('M22 34 L12 28 L14 34 L12 40 Z', 'lo'), C(34, 30, 1.6, 'ik'), S('M8 56 Q10 46 8 40', 'hi', 2)],
+  palpigradi: () => [P('M0 0 L60 0 L60 8 L52 8 L50 18 L48 8 L36 8 L33 14 L30 8 L16 8 L13 20 L10 8 L0 8 Z', 'bs'), E(38, 40, 9, 4.5, 'lo'), mmEll(38, 40, 9, 4.5, 'ik', 1.2), S('M29 40 Q18 40 8 28', 'ik', 1.4), S('M34 44 L32 50 M40 44 L40 50 M45 42 L50 48 M47 38 L54 34', 'ik', 1.4), C(44, 38, 1, 'ik')],
+  ricinulei: () => [...oiMite(30, 34, 1.0, 'lo', { extra: [P('M23 21 Q30 13 37 21 Z', 'bs')] }), S('M24 20 L18 12 M36 20 L42 12', 'ik', 2), ...ntBroad(8, 52, 7, 'hi'), ohGnd()],
+  schizomida: () => [...nzSpider(30, 28, 0.85, 'lo', { extra: [S('M30 42 L30 54', 'lo', 2.4), S('M25 24 L18 14 M35 24 L42 14', 'ik', 2)] }), ohGnd()],
+  parasitiformes: () => [...oiMite(30, 28, 1.1, 'lo'), P('M44 42 Q50 52 44 56 Q38 52 44 42 Z', 'hi')],
+  acariformes: () => [...oiMite(30, 28, 0.9, 'bs'), ohGnd(), ...nhDots([[8, 56], [18, 57], [32, 56], [46, 57], [54, 56]], 1.2, 'ik')],
+  evolution_of_spiders: () => [E(30, 32, 24, 20, 'hi'), mmEll(30, 32, 24, 20, 'ik', 1.6), ...nzSpider(30, 28, 0.75, 'lo'), S('M16 20 Q20 14 26 14', 'bs', 1.6)],
+  mesothelae: () => [P('M0 40 L60 40 L60 60 L0 60 Z', 'bs'), E(30, 42, 12, 4, 'ik'), P('M40 42 L52 30 L54 34 L44 46 Z', 'lo'), S('M24 40 L20 28 L18 36 M36 40 L40 32 M26 41 L24 34', 'lo', 2), E(30, 38, 6, 4, 'lo'), C(28, 37, 0.9, 'hi'), C(32, 37, 0.9, 'hi')],
+  kimura_spider: () => [...nzSpider(30, 32, 0.95, 'lo', { mark: 'stripe' }), noSun(50, 10, 4, 'hi')[0]],
+  pholcidae: () => [P('M0 0 L60 0 L60 5 L0 5 Z', 'bs'), S('M30 5 L30 26', 'ik', 1), ...nzSpider(30, 32, 0.6, 'lo', { extra: [S('M24 34 L8 20 L4 44 M36 34 L52 20 L56 44 M24 40 L10 52 M36 40 L50 52', 'ik', 1)] })],
+  phalangiotarbida: () => [oiSlab(), E(30, 34, 9, 8, 'bs'), mmEll(30, 34, 9, 8, 'ik', 1.4), S('M21 34 L8 24 L6 40 M39 34 L52 24 L54 40 M22 38 L10 48 M38 38 L50 48', 'ik', 1.4), S('M24 30 L36 30 M23 35 L37 35', 'ik', 1)],
+  trigonotarbida: () => [oiSlab(), P('M30 18 L44 44 L16 44 Z', 'bs'), S('M30 18 L30 44 M24 32 L36 32', 'ik', 1.2), S('M18 40 L8 34 M16 44 L8 50 M42 40 L52 34 M44 44 L52 50', 'ik', 1.6), C(28, 24, 1, 'ik'), C(32, 24, 1, 'ik')],
+  freshwater_fish: () => [...nyFish(32, 32, 14, 8, 'lo'), ohW(12), S('M6 56 L8 44 M12 56 L12 42 M52 56 L50 44', 'hi', 2), P('M0 50 Q15 46 30 52 Q45 58 60 52 L60 60 L0 60 Z', 'bs')],
+  tropical_fish: () => [...nyFish(28, 34, 14, 8, 'hi', { stripes: 3 }), S('M52 56 Q50 42 52 28', 'lo', 2), S('M52 28 Q46 26 44 32 M52 28 Q58 24 60 30', 'hi', 2.2), ohW(12), ohGnd()],
+  halfbeak: () => [...nyFish(26, 30, 14, 3.5, 'lo'), S('M40 31 L58 35', 'ik', 2), ohW(18), ohW(46)],
+  portia_labiata: () => [...nzSpider(32, 28, 0.9, 'lo', { extra: [C(28, 21, 2.2, 'hi'), C(36, 21, 2.2, 'hi')] }), S('M4 54 Q24 10 46 22', 'ik', 1), ...ntBroad(8, 52, 7, 'hi'), ohGnd()],
+};
+for (const [id, fn] of Object.entries(MKEW)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 74: insects, myriapods and early arthropods and molluscs — scorpionflies, lacewings, beetles, true bugs, wasps, ants, bees, moths, crickets, millipedes, radiodonts and shells, sourced, audited, hand-drawn ── */
+const ojBug = (cx, cy, s, role = 'lo', o = {}) => [S(`M${n(cx - 8 * s)} ${n(cy - 2 * s)} L${n(cx - 17 * s)} ${n(cy - 6 * s)} M${n(cx - 9 * s)} ${n(cy + 5 * s)} L${n(cx - 19 * s)} ${n(cy + 6 * s)} M${n(cx - 8 * s)} ${n(cy + 11 * s)} L${n(cx - 17 * s)} ${n(cy + 17 * s)} M${n(cx + 8 * s)} ${n(cy - 2 * s)} L${n(cx + 17 * s)} ${n(cy - 6 * s)} M${n(cx + 9 * s)} ${n(cy + 5 * s)} L${n(cx + 19 * s)} ${n(cy + 6 * s)} M${n(cx + 8 * s)} ${n(cy + 11 * s)} L${n(cx + 17 * s)} ${n(cy + 17 * s)}`, 'ik', 1.8), P(`M${n(cx)} ${n(cy - 10 * s)} L${n(cx + 11 * s)} ${n(cy - 4 * s)} L${n(cx + 9 * s)} ${n(cy + 14 * s)} L${n(cx)} ${n(cy + 17 * s)} L${n(cx - 9 * s)} ${n(cy + 14 * s)} L${n(cx - 11 * s)} ${n(cy - 4 * s)} Z`, role), S(`M${n(cx)} ${n(cy - 6 * s)} L${n(cx)} ${n(cy + 14 * s)} M${n(cx - 9 * s)} ${n(cy + 2 * s)} L${n(cx + 9 * s)} ${n(cy + 2 * s)}`, 'ik', 1.2), E(cx, n(cy - 13 * s), n(4 * s), n(3.4 * s), role), S(`M${n(cx - 2 * s)} ${n(cy - 15 * s)} L${n(cx - 8 * s)} ${n(cy - 24 * s)} M${n(cx + 2 * s)} ${n(cy - 15 * s)} L${n(cx + 8 * s)} ${n(cy - 24 * s)}`, 'ik', 1.2), ...(o.extra || [])];
+const ojHex = (x, y, r, role = 'bs') => P(`M${n(x + r)} ${y} L${n(x + r / 2)} ${n(y + r * 0.87)} L${n(x - r / 2)} ${n(y + r * 0.87)} L${n(x - r)} ${y} L${n(x - r / 2)} ${n(y - r * 0.87)} L${n(x + r / 2)} ${n(y - r * 0.87)} Z`, role);
+const ojClam = (cx, cy, r, role = 'bs') => [P(`M${n(cx - r)} ${n(cy + r * 0.5)} Q${n(cx - r)} ${n(cy - r)} ${cx} ${n(cy - r)} Q${n(cx + r)} ${n(cy - r)} ${n(cx + r)} ${n(cy + r * 0.5)} Z`, role), S(Array.from({ length: 5 }, (_, i) => { const a = Math.PI * (0.15 + i * 0.175); return `M${cx} ${n(cy + r * 0.5)} L${n(cx - r * Math.cos(a) * 0.95)} ${n(cy + r * 0.5 - r * 1.4 * Math.sin(a))}`; }).join(' '), 'ik', 1.1)];
+const ojArth = (cx, cy, s, role = 'bs', o = {}) => [S(`M${n(cx - 20 * s)} ${n(cy - 8 * s)} L${n(cx - 20 * s)} ${n(cy + 8 * s)} M${n(cx - 14 * s)} ${n(cy - 9 * s)} L${n(cx - 14 * s)} ${n(cy + 9 * s)} M${n(cx - 8 * s)} ${n(cy - 9 * s)} L${n(cx - 8 * s)} ${n(cy + 9 * s)} M${n(cx - 2 * s)} ${n(cy - 9 * s)} L${n(cx - 2 * s)} ${n(cy + 9 * s)} M${n(cx + 4 * s)} ${n(cy - 8 * s)} L${n(cx + 4 * s)} ${n(cy + 8 * s)}`, 'ik', 1.6), ...[0, 1, 2, 3, 4, 5].map(i => E(n(cx - 20 * s + i * 6 * s), cy, n(3.4 * s), n((6 - i * 0.2) * s), role)), E(n(cx + 12 * s), cy, n(6 * s), n(6.4 * s), role), mmEll(n(cx + 12 * s), cy, n(6 * s), n(6.4 * s), 'ik', 1.3), C(n(cx + 14 * s), n(cy - 3 * s), n(1.2 * s), 'ik'), C(n(cx + 14 * s), n(cy + 3 * s), n(1.2 * s), 'ik'), S(`M${n(cx + 17 * s)} ${n(cy - 3 * s)} L${n(cx + 26 * s)} ${n(cy - 8 * s)} L${n(cx + 30 * s)} ${n(cy - 4 * s)} M${n(cx + 17 * s)} ${n(cy + 3 * s)} L${n(cx + 26 * s)} ${n(cy + 8 * s)} L${n(cx + 30 * s)} ${n(cy + 4 * s)}`, role, 2.4), P(`M${n(cx - 22 * s)} ${cy} L${n(cx - 28 * s)} ${n(cy - 4 * s)} L${n(cx - 28 * s)} ${n(cy + 4 * s)} Z`, role), ...(o.extra || [])];
+const ojCricket = (cx, cy, s, role = 'lo', o = {}) => [S(`M${n(cx + 4 * s)} ${n(cy + 2 * s)} L${n(cx - 4 * s)} ${n(cy - 10 * s)} L${n(cx - 16 * s)} ${n(cy + 12 * s)}`, 'ik', 2), S(`M${n(cx + 6 * s)} ${n(cy + 4 * s)} L${n(cx + 8 * s)} ${n(cy + 13 * s)} M${n(cx + 10 * s)} ${n(cy + 3 * s)} L${n(cx + 16 * s)} ${n(cy + 11 * s)}`, 'ik', 1.4), E(cx, cy, n(13 * s), n(6 * s), role), mmEll(cx, cy, n(13 * s), n(6 * s), 'ik', 1.3), C(n(cx + 14 * s), n(cy - 2 * s), n(4.4 * s), role), C(n(cx + 16 * s), n(cy - 3 * s), n(0.9 * s), 'hi'), S(`M${n(cx + 16 * s)} ${n(cy - 5 * s)} Q${n(cx + 24 * s)} ${n(cy - 18 * s)} ${n(cx + (o.ant || 30) * s)} ${n(cy - 12 * s)}`, 'ik', 1.2), ...(o.extra || [])];
+const ojNet = (d, k = 3) => [P(d, 'gh'), S(d, 'ik', 1.2)];
+const MKEX = {
+  evolution_of_insects: () => [oiSlab(), P('M8 42 Q28 12 52 20 Q40 38 8 42 Z', 'hi'), S('M10 41 L48 22 M16 38 L46 28 M22 34 L40 31 M12 40 L30 22', 'ik', 1), S('M4 44 L12 41', 'ik', 2.4)],
+  embioptera: () => [P('M2 8 L58 8 L58 54 L2 54 Z', 'bs'), S('M6 32 Q30 20 54 32', 'hi', 8), S('M6 24 L54 20 M6 40 L54 44 M20 24 L22 40 M36 22 L38 42', 'hi', 1), E(30, 28, 8, 3, 'lo'), C(37, 27, 2, 'lo')],
+  grylloblattidae: () => [P('M0 54 L14 30 L24 44 L34 24 L48 46 L60 38 L60 60 L0 60 Z', 'hi'), ...nzRoach(30, 38, 0.75, 'lo'), ohSnow(48, 10, 6)],
+  mantophasmatidae: () => [...nzMantis(30, 34, 0.9, 'lo'), noSun(10, 10, 4, 'hi')[0], ohGnd()],
+  mecoptera: () => [...nzFly(30, 30, 1.1, 'lo'), S('M17 32 Q6 34 8 44 Q12 52 20 46', 'lo', 3), P('M20 46 L24 54 L27 46 Z', 'ik')],
+  megaloptera: () => [...nzFly(30, 32, 1.0, 'lo'), S('M42 31 L54 24 M42 35 L54 40', 'ik', 2.6), ohW(52)],
+  neuroptera: () => [...ojNet('M30 30 Q8 10 3 28 Q14 36 30 30 Z'), ...ojNet('M30 30 Q52 10 57 28 Q46 36 30 30 Z'), ...ojNet('M30 32 Q10 40 6 54 Q22 52 30 36 Z'), ...ojNet('M30 32 Q50 40 54 54 Q38 52 30 36 Z'), S('M30 22 L30 50', 'lo', 3.4), S('M28 22 L22 12 M32 22 L38 12', 'ik', 1), S('M8 26 L26 30 M12 20 L24 28 M52 26 L34 30 M48 20 L36 28', 'ik', 0.8)],
+  plecoptera: () => [P('M0 60 L8 52 L20 60 Z M36 60 L46 50 L60 60 Z', 'bs'), ...nzFly(32, 30, 1.0, 'lo'), ohW(48)],
+  strepsiptera: () => [...nzWasp(30, 32, 1.0, 'lo'), E(17, 36, 2.4, 4, 'hi'), S('M17 32 L16 27', 'ik', 1.2)],
+  zoraptera: () => [P('M0 54 L60 54 L60 60 L0 60 Z', 'bs'), ...nzAnt(30, 42, 1.2, 'hi'), ring('hi', 32, 24, 7, 1.6)],
+  cleridae: () => [...nzBeetle(30, 32, 0.95, 'lo'), P('M24 28 l5 0 l0 5 l-5 0 Z M34 33 l5 0 l0 5 l-5 0 Z M24 38 l5 0 l0 5 l-5 0 Z M34 43 l5 0 l0 4 l-5 0 Z', 'ik')],
+  leaf_beetle: () => [...ntBroad(30, 34, 22, 'lo'), ...nzBeetle(30, 32, 0.8, 'hi')],
+  scarabaeidae: () => [...nzBeetle(20, 36, 0.8, 'lo', { horn: 'rhino' }), C(44, 42, 11, 'bs'), ring('ik', 44, 42, 11, 1.4), ohGnd()],
+  water_beetle: () => [...nzBeetle(30, 34, 0.85, 'lo'), ohW(10), ohB(12, 30), ohB(50, 26, 3), ohB(48, 44, 1.5)],
+  dytiscus: () => [...nzBeetle(30, 32, 1.0, 'lo'), S('M22 40 L8 50 M38 40 L52 50', 'ik', 2.4), ohW(8), ohB(10, 24), ohB(52, 30, 1.5)],
+  curculionidae: () => [...nzBeetle(30, 38, 0.85, 'lo'), S('M30 24 Q30 14 40 12', 'ik', 2.6), C(48, 12, 6, 'hi'), ring('ik', 48, 12, 6, 1.2)],
+  blattodea: () => [...nzRoach(26, 38, 0.8, 'lo'), P('M42 58 Q46 36 50 58 Z M50 58 Q54 40 58 58 Z', 'bs')],
+  heteroptera: () => [...ojBug(30, 34, 1.0, 'lo')],
+  lygaeidae: () => [...ojBug(28, 34, 1.0, 'lo', { extra: [P('M22 28 L28 24 L28 32 Z M34 24 L40 28 L34 32 Z', 'hi')] }), P('M50 40 Q58 50 52 58 Q48 52 50 40 Z', 'hi')],
+  nepomorpha: () => [...ojBug(30, 34, 0.9, 'lo', { extra: [S('M22 40 L8 50 M38 40 L52 50', 'ik', 2)] }), ohW(8), ohB(10, 24), ohB(50, 24)],
+  acanthosoma: () => [...ojBug(30, 36, 1.0, 'hi'), ...ntBroad(10, 12, 7, 'lo'), ...ntBroad(50, 12, 7, 'lo')],
+  veliidae: () => [E(30, 30, 5, 3, 'lo'), S('M28 30 L8 34 L4 40 M28 31 L14 38 L10 46 M32 30 L52 34 L56 40 M32 31 L46 38 L50 46 M30 32 L26 44 M30 32 L36 46', 'ik', 1.4), mmEll(4, 41, 4, 1.4, 'ik', 1), mmEll(56, 41, 4, 1.4, 'ik', 1), mmEll(10, 47, 4, 1.4, 'ik', 1), mmEll(50, 47, 4, 1.4, 'ik', 1), ohW(52)],
+  planthopper: () => [S('M54 56 L52 24 M48 56 L48 32', 'hi', 2), E(28, 36, 14, 7, 'lo'), P('M14 36 Q26 14 46 30 Q34 36 14 36 Z', 'gh'), S('M14 36 Q26 14 46 30', 'ik', 1.2), C(42, 34, 3, 'lo'), S('M32 42 L24 54 M36 42 L42 54', 'ik', 2), S('M44 30 L50 22', 'ik', 1.2)],
+  gall_wasp: () => [...ntBroad(44, 18, 12, 'hi'), C(44, 20, 5, 'bs'), ring('ik', 44, 20, 5, 1.2), ...nzWasp(22, 42, 0.9, 'lo', { stripes: 0 })],
+  sceliphrini: () => [...nzWasp(20, 22, 0.85, 'lo', { stripes: 0 }), P('M32 40 L32 58 L38 58 L38 40 Z M41 38 L41 58 L47 58 L47 38 Z M50 42 L50 58 L56 58 L56 42 Z', 'bs'), E(35, 40, 3, 1.5, 'ik'), E(44, 38, 3, 1.5, 'ik'), E(53, 42, 3, 1.5, 'ik')],
+  myrmecia_ant: () => [...nzAnt(26, 36, 1.3, 'lo', { extra: [S('M46 34 L54 28 M46 38 L55 38', 'ik', 2.4)] }), ohGnd()],
+  tapinoma_melanocephalum: () => [...nzAnt(26, 38, 1.2, 'hi', { extra: [C(41, 38, 4.3, 'lo')] }), S('M6 20 Q10 14 14 20 Q18 26 22 20', 'hi', 1.4), S('M36 14 Q40 8 44 14 Q48 20 52 14', 'hi', 1.4)],
+  tapinoma_sessile: () => [...nzAnt(26, 40, 1.2, 'lo'), S('M10 14 Q14 8 10 2 M20 16 Q24 10 20 4 M30 14 Q34 8 30 2', 'hi', 1.6), P('M44 8 l10 0 l0 10 l-10 0 Z', 'hi')],
+  honey_bee: () => [ojHex(14, 50, 6), ojHex(26, 50, 6), ojHex(20, 40, 6), ojHex(38, 50, 6), ojHex(50, 50, 6), ...nzWasp(32, 24, 1.1, 'hi', { stripes: 3 })],
+  erebidae: () => [...nzButter(30, 30, 0.9, 'lo'), S('M28 18 Q22 10 16 12 M32 18 Q38 10 44 12', 'ik', 1.2), C(8, 10, 3, 'hi')],
+  nymphalidae: () => [...nzButter(30, 30, 1.0, 'hi', { hind: 'lo' }), ring('ik', 12, 14, 3, 1.2), ring('ik', 48, 14, 3, 1.2)],
+  libellula: () => [...nzDragon(30, 34, 1.0, 'lo'), S('M6 56 L8 40 M12 56 L12 42 M52 56 L50 42', 'hi', 2), ohW(54)],
+  ensifera: () => [...ojCricket(26, 34, 0.9, 'lo', { ant: 36 })],
+  cooloola_insect: () => [P('M0 44 Q15 36 30 44 Q45 52 60 44 L60 60 L0 60 Z', 'bs'), E(20, 50, 8, 3, 'ik'), ...ojCricket(34, 30, 0.75, 'lo')],
+  weta: () => [P('M50 60 L52 6 L58 6 L58 60 Z', 'bs'), ...ojCricket(26, 36, 0.95, 'lo', { ant: 36, extra: [S('M12 34 l-1 -4 M14 32 l1 -4', 'ik', 1.2)] }), ohGnd()],
+  psocoptera: () => [P('M6 36 L54 36 L54 56 L6 56 Z', 'bs'), S('M10 42 L50 42 M10 48 L50 48 M10 52 L40 52', 'ik', 1), ...nzAnt(30, 30, 0.8, 'hi')],
+  zygentoma: () => [P('M4 52 L56 52 L56 58 L4 58 Z', 'bs'), P('M14 42 L46 32 Q54 34 54 40 Q54 46 46 46 Z', 'hi'), S('M14 42 L6 38 M14 42 L6 42 M14 43 L6 46', 'ik', 1.4), S('M54 36 L58 28', 'ik', 1.2), S('M24 40 L24 46 M30 38 L30 46 M36 36 L36 46 M42 35 L42 46', 'ik', 1)],
+  julida: () => [...nzCent(8, 30, 1.0, 'lo', 10, { step: 5, amp: 6 }), ohGnd()],
+  pauropoda: () => [...nzCent(12, 38, 0.7, 'hi', 9, {}), ohGnd(), ...ntBroad(48, 14, 7, 'lo')],
+  symphyla: () => [S('M6 4 L8 24 M20 4 L18 22 M44 4 L46 24', 'hi', 2), ...nzCent(8, 36, 1.0, 'bs', 9, {}), ohGnd()],
+  diplura: () => [E(30, 38, 18, 5, 'hi'), S('M12 38 L4 32 M12 40 L4 46', 'ik', 2.4), C(48, 38, 4, 'hi'), S('M50 35 L58 28', 'ik', 1.2), S('M22 43 L20 50 M30 43 L30 50 M38 43 L40 50', 'ik', 1.4), ohGnd()],
+  protura: () => [P('M54 38 L40 32 L40 44 Z', 'hi'), E(26, 38, 14, 5, 'hi'), S('M44 34 L52 26 M44 42 L52 48 M30 43 L28 50 M22 43 L20 50', 'ik', 1.4), ohGnd(), ...nhDots([[8, 56], [20, 57], [40, 56], [52, 57]], 1.4, 'hi')],
+  dinocaridida: () => [oiSlab(), ...ojArth(30, 32, 0.85, 'bs')],
+  radiodonta: () => [...ojArth(28, 36, 0.85, 'lo', { extra: [S('M52 30 l3 -3 M54 34 l4 -1 M52 40 l3 3 M54 42 l4 1', 'ik', 1.2), nqBurst(44, 36, 2, 5, 10, 'ik', 1)] }), ohW(12), ohGnd()],
+  tamisiocarididae: () => [...ojArth(28, 36, 0.85, 'bs', { extra: [S('M50 24 L56 18 M52 26 L58 20 M54 28 L60 22', 'ik', 1)] }), ohW(12)],
+  leanchoilia: () => [oiSlab(), ...ojArth(26, 32, 0.8, 'bs', { extra: [S('M46 24 L52 18 M46 24 L54 22 M46 24 L52 28', 'ik', 1.4)] })],
+  thylacocephala: () => [...ojClam(28, 32, 16, 'lo'), C(46, 26, 4, 'hi'), C(46, 26, 1.6, 'ik'), S('M44 36 L56 34 M44 40 L56 42 M42 44 L54 50', 'ik', 1.8), S('M12 38 L2 42', 'ik', 2.4), ohW(10)],
+  evolution_of_molluscs: () => [...ojClam(16, 40, 10, 'bs'), P('M36 52 L44 20 L52 52 Z', 'lo'), S('M38 44 L50 44 M40 36 L48 36 M42 28 L46 28', 'ik', 1.2), S('M4 10 L52 10 M46 6 L52 10 L46 14', 'ik', 1.6), ohGnd()],
+  aplacophora: () => [S('M4 40 Q16 28 28 38 T52 34', 'lo', 7), S('M10 32 l-1 -4 M16 30 l0 -4 M22 33 l-1 -4 M30 38 l1 -4 M38 42 l1 -4 M44 36 l0 -4', 'ik', 1.2), ohGnd(), ohW(12)],
+  halkieriid: () => [E(30, 36, 22, 7, 'lo'), P('M6 34 Q10 22 20 32 Z', 'bs'), P('M48 32 Q54 22 58 34 Z', 'bs'), ohScale(30, 36, 20, 6), ohGnd()],
+  monoplacophora: () => [E(30, 46, 22, 4, 'lo'), P('M10 44 Q30 10 50 44 Z', 'bs'), S('M16 40 Q30 18 44 40 M22 40 Q30 26 38 40', 'ik', 1), ohGnd(), ...nhDots([[8, 20], [50, 16], [44, 28]], 1.4, 'hi')],
+  ensis: () => [P('M6 20 L54 20 Q58 20 58 24 L58 36 Q58 40 54 40 L6 40 Q2 40 2 36 L2 24 Q2 20 6 20 Z', 'hi'), S('M12 20 L12 40 M20 20 L20 40 M28 20 L28 40 M36 20 L36 40 M44 20 L44 40', 'ik', 1), S('M2 30 L58 30', 'ik', 0.8), ohGnd(), P('M30 54 Q34 46 30 42 Q26 46 30 54 Z', 'hi')],
+  turridae: () => [...[[6, 6], [9, 14], [12, 22], [16, 30], [20, 38], [24, 46]].flatMap(([w, y]) => [P(`M${30 - w / 2} ${y} L${30 + w / 2} ${y} L${30 + w / 2 + 2} ${y + 8} L${30 - w / 2 - 2} ${y + 8} Z`, 'bs'), S(`M${30 - w / 2 - 2} ${y + 8} L${30 + w / 2 + 2} ${y + 8}`, 'ik', 1.2)]), P('M42 56 L48 50 L50 56 Z', 'hi')],
+};
+for (const [id, fn] of Object.entries(MKEX)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 75: extinct birds, prehistoric mammals and reptiles, evolution pages and a few domestic breeds, sourced, audited, hand-drawn ── */
+const okSkullB = (cx, cy, s, role = 'bs', o = {}) => [P(`M${n(cx - 24 * s)} ${n(cy + 2 * s)} Q${n(cx - 14 * s)} ${n(cy - 10 * s)} ${n(cx)} ${n(cy - 8 * s)} L${n(cx + 26 * s)} ${n(cy + 2 * s)} L${n(cx + 22 * s)} ${n(cy + 8 * s)} L${n(cx + 4 * s)} ${n(cy + 4 * s)} Q${n(cx - 14 * s)} ${n(cy + 8 * s)} ${n(cx - 24 * s)} ${n(cy + 2 * s)} Z`, role), C(n(cx - 4 * s), n(cy - 2 * s), n(2 * s), 'ik'), ...(o.teeth ? [S(`M${n(cx + 4 * s)} ${n(cy + 5 * s)} l${n(2 * s)} ${n(5 * s)} l${n(2 * s)} ${n(-5 * s)} l${n(2 * s)} ${n(5 * s)} l${n(2 * s)} ${n(-5 * s)} l${n(2 * s)} ${n(5 * s)} l${n(2 * s)} ${n(-5 * s)} l${n(2 * s)} ${n(5 * s)} l${n(2 * s)} ${n(-5 * s)}`, 'hi', 1.4)] : []), ...(o.hook ? [P(`M${n(cx + 22 * s)} ${n(cy + 2 * s)} L${n(cx + 26 * s)} ${n(cy + 14 * s)} L${n(cx + 18 * s)} ${n(cy + 6 * s)} Z`, 'ik')] : []), ...(o.extra || [])];
+const MKEY = {
+  asteriornis: () => [...nxBird(26, 34, 0.8, 'lo', { extra: [S('M20 40 L20 54 M28 40 L28 54', 'ik', 1.8)] }), E(48, 50, 4, 5, 'hi'), ohGnd(), ohW(8)],
+  dromornis: () => [...nxBird(24, 32, 1.0, 'bs', { wing: 'lo', beak: 'lo', extra: [S('M20 40 L18 54 M28 40 L30 54', 'ik', 2.4)] }), ohGnd()],
+  pelagornis: () => [...nxBird(30, 34, 0.8, 'lo', { extra: [S('M44 30 l1 4 M46 30 l1 4 M48 30 l1 4', 'hi', 1.4)] }), P('M30 30 L2 16 L8 26 L2 32 L22 34 Z', 'bs'), P('M30 30 L56 14 L52 26 L58 32 L38 34 Z', 'bs'), ohW(52)],
+  pelagornithidae: () => [oiSlab(), ...okSkullB(30, 30, 1.0, 'bs', { teeth: true })],
+  phorusrhacidae: () => [...nxBird(24, 38, 0.85, 'lo', { extra: [E(38, 18, 8, 6, 'lo'), P('M42 14 L58 18 L52 28 L48 22 Z', 'ik'), S('M20 46 L20 56 M28 46 L28 56', 'ik', 2)] }), ohGnd()],
+  kelenken: () => [oiSlab(), ...okSkullB(30, 32, 1.05, 'bs', { hook: true })],
+  titanis: () => [...nxBird(24, 32, 1.0, 'lo', { extra: [S('M20 40 L18 54 M28 40 L30 54', 'ik', 2.2), P('M30 54 Q40 50 42 58 Q36 56 28 58 Z', 'ik')] }), ...ofReeds()],
+  teratornithidae: () => [E(30, 30, 10, 5, 'lo'), P('M24 28 L2 14 L6 26 L2 30 L22 34 Z', 'bs'), P('M36 28 L58 14 L54 26 L58 30 L38 34 Z', 'bs'), C(42, 28, 3.4, 'lo'), P('M45 27 L52 30 L46 32 Z', 'ik'), P('M20 32 L12 44 L26 36 Z', 'lo')],
+  ichthyornis: () => [...nxBird(26, 34, 0.9, 'lo', { extra: [S('M46 30 l1 3 M48 30 l1 3', 'hi', 1.2)] }), ...nyFish(50, 14, 6, 3, 'hi'), ohW(52)],
+  inkayacu: () => [oiSlab(), ...nxPeng(28, 32, 0.95, 'bs'), S('M36 30 l8 4 M36 34 l8 6 M36 38 l7 6', 'ik', 1.2)],
+  presbyornis: () => [...nxBird(26, 30, 1.0, 'lo', { beak: 'hi', extra: [S('M20 38 L20 52 M28 38 L28 52', 'ik', 1.8)] }), ohW(54)],
+  plotopteridae: () => [...nxPeng(30, 32, 0.95, 'lo'), ohW(10), ohW(54)],
+  moa_nalo: () => [P('M0 54 L16 30 L26 30 L42 54Z', 'bs'), ...oaDuck(40, 36, 0.9, 'lo', {}), ohGnd()],
+  balaur_bondoc: () => [...ocTheropod(28, 34, 0.9, 'bs'), S('M30 46 Q34 52 32 58 M36 46 Q40 52 38 58', 'ik', 2), ohGnd()],
+  rynchops: () => [...nxBird(28, 28, 0.9, 'lo', { beak: 'ik', extra: [P('M42 24 L56 28 L42 28 Z', 'ik')] }), ohW(46), S('M54 30 Q56 40 52 46', 'ik', 1)],
+  stupendemys: () => [...nxTurtle(30, 36, 1.3, 'bs'), ohW(10)],
+  shonisaurus: () => [...nwDolph(28, 34, 1.0, 'lo', [S('M50 30 L58 28', 'lo', 2.4)]), ohW(12), ohW(54)],
+  evolution_of_tetrapods: () => [...nyFish(18, 46, 9, 4.5, 'lo'), ...nxLizard(42, 22, 0.6, 'hi'), S('M10 32 Q24 30 32 26 M28 24 L33 26 L29 30', 'ik', 1.6), ohW(38)],
+  evolution_of_mammals: () => [...oeSyn(16, 46, 0.6, 'bs', { sail: 1 }), ...nwRodent(42, 22, 0.8, 'lo'), S('M10 34 Q20 30 28 26 M24 24 L29 26 L25 30', 'ik', 1.6)],
+  mesonychia: () => [...nvQuad(26, 36, 0.95, 'lo'), ...nvDogH(46, 24, 7, 'lo', 'erect'), S('M12 54 l0 3 M16 54 l0 3 M32 54 l0 3 M36 54 l0 3', 'ik', 1.6)],
+  saber_toothed_predator: () => [...nvCat(30, 28, 16, 'lo', {}), P('M22 34 L20 54 L26 36 Z M38 34 L40 54 L34 36 Z', 'hi')],
+  palaeotheriidae: () => [...nvQuad(28, 36, 1.0, 'lo', 'lo'), S('M44 30 Q52 32 52 40', 'lo', 4), ...ntBroad(10, 12, 7, 'hi'), ohGnd()],
+  evolution_of_the_horse: () => [...nvHorseH(12, 42, 0.5, 'bs'), ...nvHorseH(30, 36, 0.72, 'lo'), ...nvHorseH(48, 30, 0.9, 'hi'), S('M4 56 L56 56', 'ik', 1.4)],
+  anoplotheriidae: () => [...nvQuad(28, 36, 1.0, 'lo'), S('M14 32 Q4 36 2 48', 'lo', 3), ...nvBone(46, 12), ohGnd()],
+  merycoidodontoidea: () => [...nwBoar(28, 36, 0.9, 'bs'), S('M44 28 q4 2 0 6', 'ik', 1.2), ohGnd()],
+  dinocephalia: () => [...odSkull(30, 32, 1.6, 'bs'), ohGnd()],
+  euharamiyida: () => [oiSlab(), ...nwRodent(28, 36, 0.9, 'lo'), odTooth(46, 14, 1.5, 'hi')],
+  megafauna: () => [...nxEle(26, 34, 1.0, 'lo'), C(52, 40, 2, 'ik'), S('M52 42 L52 52 M48 46 L56 46 M52 52 L49 58 M52 52 L55 58', 'ik', 1.4), ohGnd()],
+  finless_porpoise: () => [...nwDolph(30, 32, 1.0, 'lo'), S('M48 34 Q52 38 56 34', 'ik', 1.2), ohW(10), ohW(54)],
+  north_african_elephant: () => [P('M0 54 Q15 44 30 54 Q45 44 60 54 L60 60 L0 60 Z', 'bs'), ...nxEle(28, 34, 1.0, 'bs'), noSun(10, 10, 4, 'hi')[0]],
+  spermophilus: () => [...oeSquir(28, 36, 1.0, 'lo'), E(50, 54, 8, 3, 'ik'), ohGnd(), S('M6 54 L8 46 M12 54 L12 44', 'hi', 1.6)],
+  zebu: () => [...nvQuad(28, 38, 1.0, 'lo', 'lo'), C(26, 22, 7, 'lo'), S('M44 26 Q50 20 46 14', 'ik', 2.2), ohGnd()],
+  sus_genus: () => [...nwBoar(28, 36, 1.0, 'bs'), P('M44 40 L50 36 L46 44 Z', 'hi'), ohGnd()],
+  zebroid: () => [...nvQuad(26, 38, 1.0, 'lo', 'lo'), S('M16 30 L18 46 M22 30 L24 46 M28 30 L30 46 M34 30 L36 46', 'hi', 2), ohGnd()],
+  wolfdog: () => [...nvDogH(22, 34, 12, 'lo', 'floppy'), ...nvDogH(42, 34, 12, 'bs', 'erect'), S('M30 12 Q34 6 38 12', 'ik', 1.4)],
+  dwarf_rabbit: () => [...nwRodent(30, 38, 1.0, 'lo', { extra: [E(38, 22, 3, 9, 'lo'), E(44, 23, 3, 8, 'lo')] }), ohGnd()],
+  domesticated_hedgehog: () => [ring('ik', 30, 32, 26, 1.4), E(28, 38, 16, 11, 'bs'), S('M16 32 l-4 -4 M20 28 l-3 -5 M26 26 l-2 -6 M32 26 l0 -6 M38 28 l2 -5 M42 32 l4 -3', 'ik', 1.6), E(46, 42, 6, 4, 'lo'), C(48, 40, 1, 'ik'), ohGnd()],
+  honduran_white_bat: () => [...ntBroad(30, 18, 18, 'lo'), ...nvBat(30, 38, 18, 'hi')],
+  australian_feral_camel: () => [P('M0 54 Q15 46 30 54 Q45 46 60 54 L60 60 L0 60 Z', 'bs'), ...odCamel(26, 38, 1.0, 'lo', 1), noSun(10, 10, 4, 'hi')[0]],
+  black_iberian_pig: () => [...nwBoar(28, 38, 0.95, 'lo'), E(48, 14, 3, 4, 'hi'), P('M45 12 Q48 8 51 12 Z', 'ik'), E(54, 22, 3, 4, 'hi'), P('M51 20 Q54 16 57 20 Z', 'ik'), ...ntBroad(10, 12, 7, 'hi'), ohGnd()],
+  spanish_fighting_bull: () => [...nvQuad(26, 38, 1.0, 'lo', 'lo'), S('M42 26 Q48 18 44 12 M36 24 Q36 16 42 12', 'hi', 2.4), P('M44 20 Q56 24 58 40 L46 44 Z', 'hi'), ohGnd()],
+  basset_hound: () => [...nvDogH(30, 32, 16, 'lo', 'floppy'), S('M24 24 L36 24 M25 27 L35 27', 'ik', 1)],
+  turkish_angora: () => [...nvCat(30, 32, 16, 'hi', { ruff: true })],
+  enantiornithes: () => [...nxBird(28, 34, 1.0, 'lo', { wing: 'bs', extra: [S('M46 30 l1 3 M48 30 l1 3', 'hi', 1.2), S('M30 30 l4 -4', 'ik', 2)] }), ohGnd()],
+  psophia: () => [...nxBird(26, 34, 0.95, 'lo', { extra: [S('M20 42 L20 54 M28 42 L28 54', 'ik', 1.8)] }), S('M44 12 Q50 10 52 16 M46 6 Q54 2 58 10', 'ik', 1.4), ...ntBroad(10, 14, 7, 'hi'), ohGnd()],
+  archosaur: () => [...nxCroc(20, 44, 0.6, 'bs', { snout: 22 }), ...nxBird(44, 20, 0.55, 'hi'), ...ocTheropod(20, 18, 0.45, 'lo')],
+  short_eared_dog: () => [...nvFoxH(30, 32, 14, 'bs', 0.5), ...ntBroad(10, 12, 7, 'hi'), ...ntBroad(50, 12, 7, 'hi')],
+  fancy_pigeon: () => [...nxBird(30, 34, 1.0, 'hi', { beak: 'ik' }), P('M16 32 L2 18 L4 32 L2 46 Z', 'hi'), S('M12 30 L6 24 M12 34 L5 34 M12 38 L6 44', 'ik', 1)],
+};
+for (const [id, fn] of Object.entries(MKEY)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 76: cnidarians, worm phyla, tiny animals, a few breeds and two human-evolution pages, sourced, audited, hand-drawn ── */
+const olAnem = (cx, cy, s, role = 'hi', k = 7) => [P(`M${n(cx - 6 * s)} ${n(cy + 16 * s)} L${n(cx - 8 * s)} ${n(cy)} L${n(cx + 8 * s)} ${n(cy)} L${n(cx + 6 * s)} ${n(cy + 16 * s)} Z`, role), ...Array.from({ length: k }, (_, i) => { const a = -Math.PI * (0.1 + 0.8 * i / (k - 1)); const x = cx + 16 * s * Math.cos(a), y = cy + 18 * s * Math.sin(a) + 2 * s; return S(`M${n(cx + 7 * s * Math.cos(a))} ${n(cy)} Q${n(cx + 12 * s * Math.cos(a))} ${n(cy - 8 * s)} ${n(x)} ${n(y)}`, role, 2); }), E(cx, cy, n(8 * s), n(2 * s), 'ik')];
+const olHydra = (cx, cy, s, role = 'lo') => [S(`M${cx} ${n(cy + 22 * s)} Q${n(cx - 3 * s)} ${cy} ${cx} ${n(cy - 12 * s)}`, role, n(5 * s)), E(cx, n(cy - 14 * s), n(4 * s), n(3 * s), role), S(`M${n(cx - 4 * s)} ${n(cy - 15 * s)} Q${n(cx - 12 * s)} ${n(cy - 18 * s)} ${n(cx - 14 * s)} ${n(cy - 10 * s)} M${n(cx - 2 * s)} ${n(cy - 16 * s)} Q${n(cx - 6 * s)} ${n(cy - 26 * s)} ${n(cx - 12 * s)} ${n(cy - 24 * s)} M${n(cx + 2 * s)} ${n(cy - 16 * s)} Q${n(cx + 6 * s)} ${n(cy - 26 * s)} ${n(cx + 12 * s)} ${n(cy - 24 * s)} M${n(cx + 4 * s)} ${n(cy - 15 * s)} Q${n(cx + 12 * s)} ${n(cy - 18 * s)} ${n(cx + 14 * s)} ${n(cy - 10 * s)}`, 'ik', 1.4), C(n(cx + 4 * s), n(cy + 6 * s), n(2.4 * s), role)];
+const olLobo = (cx, cy, s, role = 'lo', o = {}) => [S(`M${n(cx - 20 * s)} ${n(cy + 6 * s)} L${n(cx - 22 * s)} ${n(cy + 14 * s)} M${n(cx - 12 * s)} ${n(cy + 6 * s)} L${n(cx - 13 * s)} ${n(cy + 14 * s)} M${n(cx - 4 * s)} ${n(cy + 6 * s)} L${n(cx - 4 * s)} ${n(cy + 14 * s)} M${n(cx + 4 * s)} ${n(cy + 6 * s)} L${n(cx + 5 * s)} ${n(cy + 14 * s)} M${n(cx + 12 * s)} ${n(cy + 6 * s)} L${n(cx + 14 * s)} ${n(cy + 14 * s)}`, role, n(3.4 * s)), E(cx, cy, n(24 * s), n(7 * s), role), mmEll(cx, cy, n(24 * s), n(7 * s), 'ik', 1.4), E(n(cx + 24 * s), n(cy - 1 * s), n(5 * s), n(4.6 * s), role), C(n(cx + 26 * s), n(cy - 2 * s), n(1 * s), 'ik'), S(`M${n(cx + 28 * s)} ${n(cy - 5 * s)} L${n(cx + 32 * s)} ${n(cy - 9 * s)}`, 'ik', 1), ...(o.extra || [])];
+const olGoblet = (x, y, s) => [S(`M${x} ${n(y + 22 * s)} L${x} ${n(y + 6 * s)}`, 'lo', n(2.4 * s)), P(`M${n(x - 7 * s)} ${n(y - 2 * s)} Q${x} ${n(y + 10 * s)} ${n(x + 7 * s)} ${n(y - 2 * s)} Z`, 'hi'), S(`M${n(x - 6 * s)} ${n(y - 2 * s)} L${n(x - 9 * s)} ${n(y - 9 * s)} M${n(x - 3 * s)} ${n(y - 2 * s)} L${n(x - 4 * s)} ${n(y - 11 * s)} M${n(x)} ${n(y - 2 * s)} L${x} ${n(y - 12 * s)} M${n(x + 3 * s)} ${n(y - 2 * s)} L${n(x + 4 * s)} ${n(y - 11 * s)} M${n(x + 6 * s)} ${n(y - 2 * s)} L${n(x + 9 * s)} ${n(y - 9 * s)}`, 'ik', 1.2)];
+const MKEZ = {
+  anthozoa: () => [...olAnem(30, 30, 1.2, 'hi'), S('M6 56 L6 40 M6 48 L0 42 M6 44 L12 38 M54 56 L54 38 M54 46 L60 40 M54 42 L48 34', 'lo', 3), ohGnd(), ohW(8)],
+  chironex_fleckeri: () => [P('M16 8 L44 8 L44 28 L16 28 Z', 'hi'), S('M16 8 L44 8 L44 28 L16 28 Z M24 8 L24 28 M36 8 L36 28', 'ik', 1.2), S('M18 28 Q14 40 20 48 Q16 54 20 58 M26 28 Q24 42 28 50 M34 28 Q36 42 32 50 M42 28 Q46 40 40 48 Q44 54 40 58', 'ik', 1.6), S('M50 14 l4 -4 M52 20 l6 -1', 'hi', 1.6)],
+  hydrozoa: () => [...olHydra(20, 34, 1.0, 'lo'), ...olHydra(44, 34, 0.8, 'hi'), ohGnd()],
+  scyphozoa: () => [...nzJelly(30, 20, 1.15, 'hi', { arms: 6 }), ohW(8), ohB(10, 40), ohB(52, 46, 1.5)],
+  myxozoa: () => [C(30, 30, 16, 'bs'), ring('ik', 30, 30, 16, 1.6), E(24, 28, 5, 8, 'hi'), E(36, 28, 5, 8, 'hi'), ring('ik', 24, 28, 3, 1), ring('ik', 36, 28, 3, 1), C(30, 40, 3, 'lo'), ...nyFish(46, 54, 6, 3, 'lo')],
+  homosclerophorida: () => [P('M14 54 Q10 30 18 16 L42 16 Q50 30 46 54 Z', 'lo'), E(30, 16, 12, 3, 'ik'), ...nhDots([[22, 28], [34, 30], [28, 40], [38, 44], [22, 46]], 1.6, 'ik'), S('M26 24 l4 4 m0 -4 l-4 4 M36 36 l4 4 m0 -4 l-4 4', 'hi', 1.2), ohGnd()],
+  placozoa: () => [ring('ik', 30, 30, 26, 1.4), E(30, 32, 20, 8, 'lo'), mmEll(30, 32, 20, 8, 'ik', 1.2), ...nhDots([[20, 30], [28, 34], [38, 31], [34, 36]], 1.4, 'ik'), S('M14 40 l0 4 M22 41 l0 4 M30 41 l0 4 M38 41 l0 4 M46 40 l0 4', 'ik', 1.2)],
+  deuterostome: () => [nzStarP(18, 18, 12, 5, 5, 'hi'), ...nyFish(38, 46, 10, 5, 'lo'), ring('ik', 46, 16, 8, 1.4), C(46, 16, 2.6, 'ik'), S('M34 26 L40 20', 'ik', 1.2), ohGnd()],
+  protostome: () => [...nzWorm(6, 18, 0.9, 'lo', 9), ...nzSnail(10, 44, 0.6, 'bs'), ring('ik', 46, 40, 9, 1.4), C(42, 40, 2.4, 'ik'), S('M34 40 L38 40', 'ik', 1.2)],
+  lancelet: () => [P('M4 36 Q30 24 56 36 Q30 42 4 36 Z', 'lo'), S('M6 36 L54 36', 'ik', 1.6), S('M16 30 L20 36 L16 40 M24 28 L28 36 L24 41 M32 28 L36 36 L32 41 M40 29 L44 36 L40 40', 'ik', 1), S('M54 36 L58 32 M54 37 L59 38', 'ik', 1.2), ohGnd()],
+  ecdysozoa: () => [...nyCrab(22, 42, 0.6, 'lo'), ...nyCrab(42, 22, 0.6, 'gh'), S('M32 34 L36 28', 'ik', 1.2)],
+  kinorhyncha: () => [P('M6 34 L44 30 L44 42 L6 38 Z', 'lo'), S('M12 34 L12 40 M18 33 L18 40 M24 33 L24 41 M30 32 L30 41 M36 31 L36 42', 'ik', 1.2), S('M10 34 l-1 -4 M16 33 l-1 -4 M22 32 l-1 -4 M28 31 l-1 -4 M34 30 l-1 -4 M10 38 l-1 4 M18 38 l-1 4 M26 39 l-1 4 M34 41 l-1 4', 'ik', 1.2), E(48, 36, 5, 6, 'lo'), S('M52 32 l4 -3 M52 36 l5 0 M52 40 l4 3', 'ik', 1.2), ohGnd()],
+  lobopodia: () => [...olLobo(28, 36, 1.0, 'lo'), ohGnd()],
+  microdictyon: () => [...olLobo(28, 34, 1.0, 'lo', { extra: [...[-14, -6, 2, 10].flatMap(x => [P(`M${28 + x} 28 l6 0 l0 5 l-6 0 Z`, 'hi'), S(`M${28 + x} 30 l6 0 M${31 + x} 28 l0 5`, 'ik', 0.8)])] }), ohGnd()],
+  loricifera: () => [P('M22 22 Q18 38 24 50 L36 50 Q42 38 38 22 Z', 'lo'), S('M24 28 L36 28 M23 34 L37 34 M23 40 L37 40 M25 46 L35 46', 'ik', 1), S('M22 22 L16 12 M25 21 L22 8 M30 20 L30 6 M35 21 L38 8 M38 22 L44 12', 'ik', 1.6), ohGnd()],
+  ancylostoma: () => [S('M8 42 Q20 24 34 34 Q44 40 50 26', 'lo', 5), S('M50 26 Q58 22 56 32', 'ik', 2), S('M50 26 l3 3 M52 24 l4 3', 'hi', 1.2), ...nhDots([[14, 38], [22, 30]], 1.2, 'hi')],
+  gnathostomulid: () => [S('M4 38 Q14 30 24 38 Q34 46 44 36', 'lo', 3.4), P('M44 32 L54 36 L44 40 Z', 'hi'), S('M46 33 l4 2 M46 39 l4 -2', 'ik', 1), ...nhDots([[8, 50], [20, 52], [34, 50], [48, 52]], 1.2, 'ik'), ohGnd()],
+  limnognathia: () => [S('M30 6 Q52 30 46 44 Q40 56 30 56 Q20 56 14 44 Q8 30 30 6 Z', 'ik', 1.6), S('M20 40 Q26 30 34 38 Q38 42 42 36', 'lo', 3), P('M42 36 L46 38 L42 40 Z', 'hi'), ohB(24, 28, 1.5), ohB(36, 22, 1.2)],
+  acanthocephala: () => [S('M4 44 Q20 34 36 38', 'lo', 6), E(44, 36, 6, 4, 'bs'), S('M42 32 l-1 -4 M45 31 l0 -4 M48 32 l1 -4 M42 40 l-1 4 M46 40 l1 4 M50 36 l4 0', 'ik', 1.2), ohGnd()],
+  lophotrochozoa: () => [...ojClam(14, 44, 8, 'bs'), ...nzWorm(24, 16, 0.7, 'lo', 7), ...nzSnail(34, 46, 0.5, 'hi'), S('M30 30 Q36 24 42 30', 'ik', 1.4)],
+  lingulata: () => [E(30, 22, 9, 13, 'hi'), mmEll(30, 22, 9, 13, 'ik', 1.4), S('M30 10 L30 34 M24 16 L24 30 M36 16 L36 30', 'ik', 1), S('M30 35 Q26 46 32 56', 'lo', 3), ohGnd()],
+  symbion: () => [...nyLob(24, 24, 0.7, 'lo'), ring('ik', 46, 38, 11, 1.6), E(46, 38, 3, 6, 'hi'), S('M46 44 L46 49', 'ik', 1.4), S('M43 33 l-2 -3 M49 33 l2 -3', 'ik', 1)],
+  dicyemida: () => [...nzOcto(26, 22, 0.8, 'lo'), ring('ik', 44, 44, 12, 1.6), E(44, 44, 9, 4, 'hi'), ...nhDots([[38, 44], [44, 44], [50, 44]], 1.2, 'ik')],
+  entoprocta: () => [...olGoblet(18, 30, 1.0), ...olGoblet(34, 26, 1.2), ...olGoblet(48, 32, 0.9), ohGnd()],
+  gastrotrich: () => [P('M6 36 Q30 26 54 36 Q30 44 6 36 Z', 'lo'), S('M12 40 l0 4 M18 41 l0 4 M24 42 l0 4 M30 42 l0 4 M36 42 l0 4 M42 41 l0 4 M48 40 l0 4', 'ik', 1.2), S('M6 36 L0 30 M6 36 L0 42', 'ik', 1.6), S('M16 30 l-1 -3 M24 28 l-1 -3 M32 28 l0 -3 M40 29 l1 -3', 'ik', 1), ohW(14)],
+  orthonectida: () => [ring('ik', 30, 30, 26, 1.4), E(30, 30, 16, 9, 'lo'), S('M18 24 Q18 30 18 36 M24 22 Q24 30 24 38 M30 21 Q30 30 30 39 M36 22 Q36 30 36 38 M42 24 Q42 30 42 36', 'ik', 1)],
+  phoronid: () => [P('M0 40 L60 40 L60 60 L0 60 Z', 'bs'), S('M30 42 L30 24', 'bs', 7), S('M18 22 Q18 8 30 8 Q42 8 42 22', 'hi', 3), S('M16 24 l-3 -3 M18 16 l-4 -2 M22 10 l-3 -4 M38 10 l3 -4 M42 16 l4 -2 M44 24 l3 -3', 'hi', 1.4)],
+  riftia: () => [P('M40 60 L44 34 L56 34 L58 60 Z', 'bs'), S('M12 56 Q8 40 14 28 M22 56 Q26 38 20 26 M32 56 Q30 44 34 32', 'hi', 5), P('M10 28 Q14 16 18 28 Z M18 26 Q22 14 26 26 Z M30 32 Q34 20 38 32 Z', 'lo'), ohB(48, 24, 2.4), ohB(52, 14, 1.8), ohB(46, 8, 1.4)],
+  oligochaeta: () => [P('M0 44 L60 44 L60 60 L0 60 Z', 'bs'), ...nzWorm(6, 34, 1.0, 'lo', 12, 3.2), S('M26 29 L26 39', 'hi', 2.4), ohGnd()],
+  turbellaria: () => [...ntBroad(14, 50, 12, 'hi'), P('M4 38 Q20 30 38 32 L40 44 Q20 46 4 38 Z', 'lo'), P('M38 30 L56 38 L38 46 L42 38 Z', 'lo'), C(46, 35, 1.4, 'ik'), C(46, 41, 1.4, 'ik'), ohW(14)],
+  eucestoda: () => [...Array.from({ length: 9 }, (_, i) => P(`M${4 + i * 5.4} ${30 - i * 0.4} l4.4 0 l0 ${8 + i * 0.8} l-4.4 0 Z`, i % 2 ? 'lo' : 'bs')), C(54, 34, 4, 'lo'), S('M56 31 l4 -3 M57 34 l3 0 M56 37 l4 3', 'ik', 1.2), ohGnd()],
+  hemichordate: () => [P('M0 44 L60 44 L60 60 L0 60 Z', 'bs'), S('M4 38 L38 34', 'lo', 8), E(40, 34, 3, 7, 'bs'), E(48, 34, 7, 6, 'lo'), S('M12 32 l0 -3 M18 31 l0 -3 M24 31 l0 -3 M30 30 l0 -3', 'ik', 1.2)],
+  xenacoelomorpha: () => [E(30, 34, 20, 8, 'lo'), mmEll(30, 34, 20, 8, 'ik', 1.4), C(30, 34, 2.4, 'ik'), S('M12 28 l-1 -3 M20 26 l0 -3 M30 25 l0 -3 M40 26 l1 -3 M48 29 l2 -2 M12 40 l-1 3 M20 42 l0 3 M30 43 l0 3 M40 42 l1 3', 'ik', 1), ohW(12)],
+  genetta: () => [...nvQuad(28, 38, 1.0, 'lo'), S('M14 34 Q4 34 2 22', 'lo', 4), S('M3 28 l3 0 M2 24 l3 0', 'ik', 1.6), ...nhDots([[20, 34], [26, 36], [32, 34], [24, 40], [34, 40]], 1.4, 'ik'), ohGnd()],
+  dolichotis: () => [...nwRodent(30, 36, 1.0, 'lo', { extra: [E(40, 22, 3, 8, 'lo'), E(45, 22, 3, 7, 'lo'), S('M26 42 L24 56 M34 42 L36 56', 'lo', 2.4)] }), S('M4 56 L6 48 M10 56 L10 46 M52 56 L54 48', 'hi', 1.6)],
+  vechur_cattle: () => [...nvQuad(30, 42, 0.75, 'lo', 'lo'), C(28, 32, 5, 'lo'), S('M6 54 Q8 40 6 26', 'hi', 2.2), S('M6 26 Q0 24 -2 30 M6 26 Q12 22 16 28', 'hi', 2), ohGnd()],
+  american_rambouillet: () => [...nvQuad(28, 38, 0.95, 'bs', 'lo'), C(20, 30, 6, 'hi'), C(28, 27, 7, 'hi'), C(36, 30, 6, 'hi'), ohGnd()],
+  baudet_du_poitou: () => [...nvQuad(26, 38, 1.0, 'bs', 'bs'), E(40, 18, 2.4, 8, 'bs'), E(45, 19, 2.4, 7.5, 'bs'), S('M12 44 l-1 5 M16 46 l-1 5 M20 46 l0 5 M24 46 l0 5 M28 46 l0 5 M32 46 l0 5', 'ik', 1.4), ohGnd()],
+  australian_lowline: () => [P('M0 54 Q15 38 30 54 Q45 40 60 54 L60 60 L0 60 Z', 'bs'), ...nvQuad(28, 40, 0.9, 'lo', 'lo')],
+  pye_dog: () => [P('M4 54 L4 42 L14 34 L24 42 L24 54 Z', 'bs'), ...nvDogH(40, 30, 16, 'lo', 'erect'), ohGnd()],
+  missing_link: () => [...nwApe(12, 34, 8, 'bs', 'hi'), ...odSkull(50, 36, 0.6, 'lo'), ring('hi', 28, 34, 5, 2), ring('hi', 34, 34, 5, 2), S('M28 8 Q34 4 36 10 Q36 14 30 16 L30 20 M30 24 l0 1', 'ik', 2)],
+  y_chromosomal_adam: () => [S('M30 30 L18 10 M30 30 L42 10 M30 30 L30 54', 'lo', 7), C(50, 46, 6, 'hi'), S('M50 40 L50 36 M50 38 Q54 34 56 36', 'ik', 1.4)],
+  alpine_goat: () => [P('M0 54 L14 22 L24 40 L34 16 L50 54 Z', 'hi'), ...nwBeardGoat(34, 38, 0.95, 'lo', 'straight'), P('M52 8 Q58 18 52 22 Q46 18 52 8 Z', 'hi')],
+};
+for (const [id, fn] of Object.entries(MKEZ)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 77: plant orders, families, genera and species, sourced, audited, hand-drawn ── */
+const omPt = (cx, cy, d, a) => [n(cx + d * Math.sin(a * Math.PI / 180)), n(cy - d * Math.cos(a * Math.PI / 180))];
+const omFan = (cx, cy, d, len, wid, angles, role = 'lo') => angles.flatMap(a => { const [x, y] = omPt(cx, cy, d, a); return ntLeaf(x, y, len, wid, role, a - 90); });
+const omTwig = (x0, y0, x1, y1, k = 5, role = 'lo', ls = 3, sp = 30) => { const out = [S(`M${x0} ${y0} L${x1} ${y1}`, 'ik', 1.6)]; for (let i = 1; i <= k; i++) { const t = i / (k + 1), x = x0 + (x1 - x0) * t, y = y0 + (y1 - y0) * t; out.push(...ntLeaf(n(x - ls), n(y - ls * 0.5), ls, n(ls * 0.38), role, -sp), ...ntLeaf(n(x + ls), n(y - ls * 0.5), ls, n(ls * 0.38), role, sp)); } return out; };
+const omCone = (cx, cy, s, role = 'bs') => [E(cx, cy, n(5 * s), n(8 * s), role), S(`M${n(cx - 5 * s)} ${n(cy - 3 * s)} L${n(cx + 5 * s)} ${n(cy + 3 * s)} M${n(cx + 5 * s)} ${n(cy - 3 * s)} L${n(cx - 5 * s)} ${n(cy + 3 * s)} M${cx} ${n(cy - 8 * s)} L${cx} ${n(cy + 8 * s)}`, 'ik', 1.2), mmEll(cx, cy, n(5 * s), n(8 * s), 'ik', 1.4)];
+const omCatkin = (x, y, len, role = 'hi') => [S(`M${x} ${y} L${x} ${n(y + len)}`, 'ik', 1.2), ...[0, 1, 2, 3, 4].map(i => E(n(x + (i % 2 ? 1.6 : -1.6)), n(y + len * (i + 0.5) / 5), 2.2, 1.8, role))];
+const omSamara = (x, y, s = 1, role = 'hi') => [E(x, y, n(5 * s), n(6 * s), role), E(x, n(y + 0.5 * s), n(1.8 * s), n(2.4 * s), 'bs'), S(`M${x} ${n(y - 6 * s)} L${x} ${n(y - 3 * s)}`, 'ik', 1)];
+const omBell = (cx, cy, s = 1, role = 'hi') => [S(`M${cx} ${n(cy - 5 * s)} L${cx} ${cy}`, 'ik', 1.2), P(`M${n(cx - 3.4 * s)} ${cy} Q${n(cx - 4.4 * s)} ${n(cy + 7 * s)} ${n(cx - 6 * s)} ${n(cy + 8 * s)} L${n(cx + 6 * s)} ${n(cy + 8 * s)} Q${n(cx + 4.4 * s)} ${n(cy + 7 * s)} ${n(cx + 3.4 * s)} ${cy} Z`, role)];
+const omRuffle = (cx, cy, r0, r1, k, role = 'hi') => P('M' + Array.from({ length: k * 2 }, (_, i) => { const a = Math.PI * i / k, r = i % 2 ? r0 : r1; return `${n(cx + r * Math.cos(a))} ${n(cy + r * Math.sin(a))}`; }).join(' L') + ' Z', role);
+const MKom = {
+trimerophytopsida: () => [S('M30 55 L30 32', 'bs', 3.4), S('M30 40 L20 30 L16 18 M20 30 L25 16 M30 34 L40 26 L44 14 M40 26 L36 12', 'bs', 2.2), ...nhDots([[16, 17], [25, 15], [44, 13], [36, 11]], 3, 'hi'), S('M18 55 L42 55', 'ik', 2)],
+lycopodium: () => [S('M6 48 Q20 54 34 48 Q46 44 54 48', 'bs', 2.6), ...[14, 28, 42].flatMap(x => [S(`M${x} 48 L${x} 24`, 'lo', 2.6), E(x, 18, 2.8, 7, 'hi'), S(`M${x - 3} 42 L${x} 40 L${x + 3} 42 M${x - 3} 34 L${x} 32 L${x + 3} 34`, 'ik', 1.2)])],
+tempskya: () => [P('M19 55 L22 22 L38 22 L41 55 Z', 'bs'), ...nhDots([[25, 30], [31, 28], [36, 32], [27, 38], [34, 40], [24, 46], [31, 48], [37, 50]], 1.7, 'ik'), ...omTwig(30, 22, 10, 12, 3, 'lo', 3.4, 20), ...omTwig(30, 22, 50, 12, 3, 'lo', 3.4, 20), ...omTwig(30, 22, 30, 5, 3, 'lo', 3.4, 20)],
+wattieza: () => [S('M30 55 L30 22', 'bs', 4), ...[[-22, -10], [-11, -16], [0, -19], [11, -16], [22, -10]].flatMap(([dx, dy]) => [S(`M30 22 Q${n(30 + dx * 0.4)} ${n(22 + dy * 1.2)} ${30 + dx} ${22 + dy}`, 'lo', 2.4), S(`M${30 + dx} ${22 + dy} l-3 -3 M${30 + dx} ${22 + dy} l3 -3`, 'ik', 1.2)]), S('M18 55 L42 55', 'ik', 2)],
+gnetidae: () => [E(30, 44, 13, 8, 'bs'), mmEll(30, 44, 13, 8, 'ik', 1.6), S('M18 42 Q4 38 8 52 Q12 56 22 50', 'lo', 5), S('M42 42 Q56 38 52 52 Q48 56 38 50', 'lo', 5), S('M26 38 L26 26 M34 38 L34 26', 'bs', 2.4), E(26, 22, 3, 5, 'hi'), E(34, 22, 3, 5, 'hi')],
+gnetum_gnemon: () => [...ntBroad(30, 24, 17, 'lo'), ...ntBerries([[22, 20], [30, 14], [38, 22], [26, 28], [34, 30]], 3, 'hi')],
+afrocarpus: () => [...omTwig(8, 48, 44, 20, 5, 'lo', 3.6, 22), S('M44 20 L50 14', 'ik', 1.6), C(52, 12, 4.6, 'hi'), C(52, 12, 1.6, 'bs')],
+taxus: () => [...omTwig(6, 50, 42, 24, 5, 'lo', 3.8, 24), S('M42 24 L48 18', 'ik', 1.6), E(50, 15, 5.2, 5.8, 'hi'), mmEll(50, 15, 5.2, 5.8, 'ik', 1.2), E(50, 13.4, 2.2, 2.8, 'ik')],
+callitropsis_nootkatensis: () => [S('M30 56 L30 8', 'bs', 4), ...[[14, 16], [20, 28], [16, 40]].flatMap(([y, dx]) => [S(`M30 ${y} Q${30 - dx} ${y - 4} ${30 - dx - 2} ${y + 14}`, 'lo', 3.6), S(`M30 ${y} Q${30 + dx} ${y - 4} ${30 + dx + 2} ${y + 14}`, 'lo', 3.6)]), S('M12 56 L48 56', 'ik', 2)],
+hesperocyparis_lusitanica: () => [S('M4 50 L14 44 L24 38 L34 30 L46 22 L56 14', 'lo', 6), S('M4 50 L14 44 L24 38 L34 30 L46 22 L56 14', 'ik', 1), ...[[20, 50], [38, 38]].flatMap(([x, y]) => [C(x, y, 5.6, 'bs'), ring('ik', x, y, 5.6, 1.2), S(`M${x - 5} ${y} L${x + 5} ${y} M${x} ${y - 5} L${x} ${y + 5}`, 'ik', 1)])],
+juniperus_phoenicea: () => [E(30, 38, 21, 13, 'lo'), mmEll(30, 38, 21, 13, 'ik', 1.4), ...ntBerries([[18, 36], [26, 30], [34, 34], [42, 40], [30, 44]], 2.8, 'hi'), S('M4 54 L56 54', 'ik', 2)],
+juniperus_scopulorum: () => [P('M2 54 L20 18 L30 32 L40 22 L58 54 Z', 'gh'), ...ntConifer(30, 20, 32, 12, 'lo'), ...ntBerries([[25, 36], [35, 40], [30, 30]], 2.6, 'hi')],
+nymphaea_thermarum: () => [S('M4 52 Q15 49 30 52 T56 52', 'ik', 1.6), E(30, 46, 19, 5.4, 'lo'), P('M30 46 L40 41 L40 47 Z', 'gh'), ...omFan(30, 40, 7, 7, 2.8, [-72, -36, 0, 36, 72], 'hi'), C(30, 40, 2.6, 'bs')],
+lauraceae: () => [...ntLeaf(24, 30, 22, 8.5, 'lo', -35), ...ntLeaf(36, 36, 16, 6, 'lo', 35), ...ntBerries([[44, 14], [50, 20], [46, 24]], 3.2, 'ik')],
+annonaceae: () => [C(30, 33, 17, 'hi'), mmEll(30, 33, 17, 17, 'ik', 1.8), ...[[24, 24], [34, 22], [19, 34], [29, 32], [39, 32], [24, 42], [34, 42]].map(([x, y]) => ring('ik', x, y, 4.4, 1.2)), S('M30 16 L30 8', 'bs', 3), ...ntLeaf(40, 9, 8, 3, 'lo', -20)],
+acorus_calamus: () => [ntBlades(24, 55, 6, 40, 'lo'), S('M36 55 L42 24', 'lo', 2.6), E(42, 18, 2.8, 9, 'hi'), S('M4 55 L56 55', 'ik', 2)],
+roystonea: () => [P('M24 56 L26 40 Q21 28 26 18 L34 18 Q39 28 34 40 L36 56 Z', 'bs'), P('M26 18 L34 18 L34 9 L26 9 Z', 'lo'), ...[[-24, 12], [-14, 2], [14, 2], [24, 12]].map(([dx, dy]) => S(`M30 9 Q${30 + dx} 2 ${n(30 + dx * 1.3)} ${9 + dy}`, 'lo', 2.8))],
+roystonea_oleracea: () => [P('M27 56 L28 20 L32 20 L33 56 Z', 'bs'), P('M26 20 L34 20 L34 12 L26 12 Z', 'lo'), C(30, 8, 4.4, 'hi'), S('M30 4 L30 12', 'ik', 1.2), ...[[-24, 14], [-13, 4], [13, 4], [24, 14]].map(([dx, dy]) => S(`M30 12 Q${30 + dx} 4 ${n(30 + dx * 1.3)} ${12 + dy}`, 'lo', 2.6))],
+asparagales: () => [...[16, 30, 44].flatMap((x, i) => [P(`M${x - 3.4} 55 L${x - 3.4} ${34 - i * 4} Q${x} ${16 - i * 4} ${x + 3.4} ${34 - i * 4} L${x + 3.4} 55 Z`, 'lo'), S(`M${x - 3.4} ${40 - i * 4} L${x + 3.4} ${40 - i * 4} M${x - 3.4} ${46 - i * 4} L${x + 3.4} ${46 - i * 4}`, 'ik', 1)]), S('M6 55 L54 55', 'ik', 2)],
+commelinales: () => [E(22, 26, 9, 10, 'hi'), E(38, 26, 9, 10, 'hi'), E(30, 40, 4.4, 3.4, 'gh'), ...nhDots([[27, 31], [30, 29], [33, 31]], 1.9, 'bs'), S('M30 44 L30 56', 'lo', 2.2), ...ntLeaf(14, 52, 12, 3, 'lo', -12), ...ntLeaf(46, 52, 12, 3, 'lo', 12)],
+commelinaceae: () => [...ntFlower(30, 30, 9, 3, 'hi'), nqBurst(30, 31, 2, 7, 9, 'bs', 1.2), S('M30 50 L30 58', 'lo', 2.2), ...ntLeaf(12, 52, 11, 2.8, 'lo', -20), ...ntLeaf(48, 52, 11, 2.8, 'lo', 20)],
+fritillaria: () => [S('M30 24 Q30 8 42 6', 'lo', 2.4), P('M20 26 Q20 44 15 49 L45 49 Q40 44 40 26 Z', 'hi'), ...[[22, 29], [30, 29], [26, 35], [34, 35], [22, 41], [30, 41]].map(([x, y]) => box(x, y, 4.4, 4.4, 'ik')), ...ntLeaf(14, 54, 10, 2.2, 'lo', -10)],
+poales: () => [...[12, 24, 36, 48].flatMap((x, i) => [S(`M${x} 55 L${x} ${28 - (i % 2) * 6}`, 'lo', 1.8), E(x, 22 - (i % 2) * 6, 2.8, 8, 'hi'), S(`M${x - 2} ${16 - (i % 2) * 6} l-1 -5 M${x + 2} ${16 - (i % 2) * 6} l1 -5`, 'ik', 1)]), ntBlades(30, 55, 5, 22, 'lo')],
+fei_banana: () => [S('M30 56 L30 38', 'bs', 4), ...[-34, -17, 0, 17, 34].flatMap(a => { const [x, y] = omPt(30, 38, 22, a); return [S(`M30 38 L${x} ${y}`, 'hi', 6.4), C(x, y, 1.4, 'ik')]; })],
+musa_balbisiana: () => [S('M30 4 L30 18', 'bs', 4), ...ntBanana(8, 20, 0.95, 'hi'), ...ntBanana(10, 28, 0.95, 'hi'), ...ntBanana(8, 36, 0.95, 'hi'), P('M40 22 Q50 32 42 46 Q34 44 36 30 Z', 'bs'), mmEll(30, 52, 16, 3, 'ik', 1.4)],
+asterales: () => [S('M30 36 L30 56', 'lo', 2.6), ...ntLeaf(20, 50, 9, 3, 'lo', -30), nqBurst(30, 26, 8, 22, 14, 'hi', 3.2), C(30, 26, 8, 'bs'), ring('ik', 30, 26, 8, 1.4)],
+boraginaceae: () => [...nlPetals(30, 32, 10, 5, 'hi'), C(30, 32, 2.4, 'bs'), S('M30 44 L30 58', 'lo', 2.4), S('M10 12 Q22 4 25 12 Q26 20 20 19', 'lo', 2), ...nhDots([[14, 10], [20, 8], [24, 14]], 1.8, 'hi')],
+caryophyllales: () => [P('M4 32 Q16 22 26 32 Q24 46 15 56 Q6 46 4 32 Z', 'hi'), ...ntLeaf(10, 22, 8, 3, 'lo', -70), ...ntLeaf(20, 20, 8, 3, 'lo', 60), P('M40 55 L40 20 A5 5 0 0 1 50 20 L50 55 Z', 'lo'), S('M40 38 L33 38 L33 28', 'lo', 4), S('M45 24 L45 52', 'ik', 1.2)],
+amaranthaceae: () => [S('M30 56 L30 22', 'lo', 2.6), S('M30 24 Q24 8 38 6 Q50 8 48 28', 'hi', 9), ...nhDots([[32, 10], [40, 9], [46, 16], [47, 24]], 1.5, 'bs'), ...ntLeaf(20, 46, 9, 3, 'lo', -30)],
+polygonaceae: () => [S('M20 56 L24 28', 'hi', 5), S('M30 56 L30 24', 'hi', 5), S('M40 56 L36 28', 'hi', 5), P('M10 30 Q18 6 30 12 Q42 6 50 30 Q30 22 10 30 Z', 'lo'), S('M30 12 L30 26 M30 14 L18 26 M30 14 L42 26', 'ik', 1.2)],
+aizoaceae: () => [E(20, 46, 13, 9, 'bs'), mmEll(20, 46, 13, 9, 'ik', 1.6), S('M16 38 L22 54', 'ik', 1.8), E(42, 48, 11, 8, 'bs'), mmEll(42, 48, 11, 8, 'ik', 1.6), S('M38 42 L44 54', 'ik', 1.8), nqBurst(32, 24, 3, 11, 12, 'hi', 2.2), C(32, 24, 3, 'bs')],
+dianthus: () => [S('M30 44 L30 58', 'lo', 2.6), P('M22 38 L38 38 L36 46 L24 46 Z', 'lo'), omRuffle(30, 28, 11, 16, 9, 'hi'), omRuffle(30, 28, 6, 10, 7, 'bs'), ...ntLeaf(12, 54, 10, 2.4, 'lo', -15)],
+droseraceae: () => [E(30, 40, 18, 11, 'lo'), nqBurst(30, 40, 10, 17, 18, 'ik', 1.2), ...nhDots(Array.from({ length: 12 }, (_, i) => [n(30 + 18.5 * Math.cos(i * Math.PI / 6)), n(40 + 11.5 * Math.sin(i * Math.PI / 6))]), 1.7, 'hi'), E(30, 40, 3.4, 2.2, 'ik'), E(27, 37, 2.4, 1.2, 'gh'), E(33, 37, 2.4, 1.2, 'gh')],
+phytolacca: () => [S('M12 56 Q14 22 30 12', 'hi', 3), ...ntBerries([[20, 24], [26, 30], [30, 22], [34, 32], [38, 26], [24, 40], [32, 42]], 3.6, 'bs'), ...ntLeaf(44, 46, 10, 4, 'lo', -30)],
+ericales: () => [S('M6 52 Q30 42 54 20', 'bs', 2.4), ...ntBerries([[18, 44], [28, 40], [38, 30], [24, 50], [46, 26]], 4.2, 'hi'), ...omBell(14, 34, 0.8, 'gh'), ...omBell(42, 12, 0.8, 'gh')],
+styrax: () => [S('M4 14 Q30 8 56 16', 'bs', 2.6), ...omBell(14, 14, 1.1), ...omBell(26, 11, 1.1), ...omBell(38, 11, 1.1), ...omBell(50, 15, 1.1), ...ntLeaf(20, 38, 9, 3.4, 'lo', 30), ...ntLeaf(40, 40, 9, 3.4, 'lo', -30)],
+fabales: () => [P('M4 40 Q30 22 56 34 Q30 54 4 40 Z', 'lo'), ...[[14, 40], [24, 37], [34, 37], [44, 37]].flatMap(([x, y]) => [C(x, y, 4.4, 'hi'), ring('ik', x, y, 4.4, 1)]), S('M56 34 Q58 22 50 20 Q46 24 50 26', 'lo', 1.6)],
+dalbergia: () => [C(30, 30, 22, 'bs'), ring('ik', 30, 30, 22, 2), ring('ik', 30, 30, 16, 1.2), ring('ik', 30, 30, 10, 1.2), ring('ik', 30, 30, 4, 1.2), S('M30 30 L50 22', 'ik', 1.2), S('M52 52 L58 58', 'ik', 2)],
+fagales: () => [...ntOakL(18, 30, 14, 'lo'), ...ntAcorn(42, 34, 1.1), ...omCatkin(46, 4, 16)],
+betulaceae: () => [S('M4 14 Q30 8 56 16', 'bs', 2.4), ...omCatkin(16, 13, 16), ...omCatkin(28, 10, 18), ...omCatkin(40, 12, 16), ...ntLeaf(48, 28, 8, 4, 'lo', 40), ...ntLeaf(12, 36, 8, 4, 'lo', -40)],
+alnus_rubra: () => [S('M6 8 L54 12', 'bs', 2.4), ...omCone(18, 22, 0.7, 'bs'), ...omCone(32, 23, 0.7, 'bs'), ...omCone(46, 22, 0.7, 'bs'), ...ntLeaf(26, 12, 7, 3, 'lo', -10), S('M4 38 L56 38', 'ik', 2), S('M30 38 Q26 46 18 54 M30 38 Q34 46 42 54 M30 38 L30 56', 'bs', 2.2), ...nhDots([[24, 47], [36, 47], [27, 52]], 2.4, 'hi')],
+betula_nigra: () => [P('M22 56 L24 4 L38 4 L40 56 Z', 'bs'), S('M24 14 Q15 14 18 21 M38 26 Q47 26 44 33 M24 38 Q16 40 19 46', 'ik', 2), S('M2 58 Q8 54 14 58 T26 58 T38 58 T50 58', 'ik', 1.6)],
+fagaceae: () => [C(20, 32, 13, 'bs'), nqBurst(20, 32, 13, 18, 16, 'ik', 1.6), E(42, 34, 7.4, 9.4, 'hi'), mmEll(42, 34, 7.4, 9.4, 'ik', 1.4), ...ntLeaf(44, 12, 9, 3.4, 'lo', 20)],
+fagus_grandifolia: () => [...ntLeaf(22, 28, 20, 9, 'lo', -25), E(44, 20, 9, 9, 'bs'), nqBurst(44, 20, 9, 13, 10, 'ik', 1.4), P('M40 34 L48 34 L44 46 Z', 'hi'), P('M50 38 L56 38 L53 48 Z', 'hi')],
+juglandaceae: () => [C(20, 30, 15, 'lo'), ring('ik', 20, 30, 15, 1.6), ...nhDots([[14, 24], [22, 22], [26, 32], [16, 36]], 1.3, 'ik'), E(44, 38, 11, 13, 'bs'), mmEll(44, 38, 11, 13, 'ik', 1.6), S('M44 26 Q40 32 44 36 Q48 40 44 48 M38 32 Q36 38 40 42 M50 32 Q52 38 48 42', 'ik', 1.4)],
+lamiales: () => [...omTwig(30, 56, 30, 18, 4, 'lo', 5.4, 52), C(30, 12, 4.4, 'hi'), C(26, 22, 3.2, 'hi'), C(34, 22, 3.2, 'hi')],
+malpighiales: () => [S('M20 56 L18 24', 'lo', 1.6), S('M30 56 L32 20', 'lo', 1.6), S('M42 56 L44 28', 'lo', 1.6), ...nlPetals(18, 20, 5, 5, 'hi'), ...nlPetals(32, 16, 5, 5, 'hi'), ...nlPetals(44, 24, 5, 5, 'hi'), S('M16 40 l3 -2 M32 44 l3 -2 M42 46 l-3 -2', 'ik', 1.2)],
+salicaceae: () => [S('M4 44 Q30 36 56 14', 'bs', 2.4), ...[[14, 40], [22, 36], [30, 31], [38, 26], [46, 20]].flatMap(([x, y], i) => ntLeaf(x, y + (i % 2 ? 7 : -7), 8, 2, 'lo', i % 2 ? 70 : -70)), E(8, 38, 3, 5, 'gh'), E(52, 8, 3, 5, 'gh')],
+populus: () => [S('M30 56 L30 22', 'hi', 5), S('M27 32 L33 32 M27 42 L33 42 M28 50 L32 50', 'ik', 2), ...[[16, 14], [26, 8], [38, 8], [46, 16], [18, 26], [44, 28]].flatMap(([x, y]) => [S(`M30 24 L${x} ${y}`, 'bs', 1.2), C(x, y, 5, 'lo'), S(`M${x} ${y - 4} L${x} ${y + 4}`, 'ik', 1)])],
+rafflesia_arnoldii: () => [...ntFlower(30, 30, 11, 5, 'hi'), C(30, 30, 6, 'bs'), ring('ik', 30, 30, 6, 1.4), ...nhDots([[30, 10], [44, 20], [40, 40], [20, 40], [16, 20], [26, 16], [38, 16], [46, 28], [14, 28]], 1.7, 'bs')],
+adansonia_digitata: () => [P('M18 56 Q12 40 20 28 L22 18 L34 18 L36 28 Q44 40 38 56 Z', 'bs'), S('M22 18 L12 8 M28 18 L28 6 M34 18 L40 8', 'bs', 2.4), S('M50 6 L50 14', 'ik', 1.4), E(50, 25, 5, 11, 'hi'), mmEll(50, 25, 5, 11, 'ik', 1.4)],
+gossypium: () => [S('M30 56 L30 24', 'lo', 2.6), ...ntMaple(18, 24, 9, 'lo'), C(34, 16, 4.4, 'hi'), C(41, 19, 4.4, 'hi'), C(36, 23, 4.4, 'hi'), P('M29 26 L37 32 L45 26 L37 29 Z', 'bs')],
+gossypium_arboreum: () => [...ntBroad(30, 24, 18, 'lo'), ...nhDots([[22, 20], [32, 14], [40, 26], [26, 30], [16, 28]], 3.2, 'hi')],
+dipterocarpaceae: () => [P('M30 40 Q16 14 6 22 Q14 36 30 40 Z', 'hi'), P('M30 40 Q44 14 54 22 Q46 36 30 40 Z', 'hi'), C(30, 42, 5.4, 'bs'), S('M30 38 Q20 24 10 22 M30 38 Q40 24 50 22', 'ik', 1), S('M14 8 Q22 3 30 6', 'ik', 1.4)],
+melastomataceae: () => [P('M6 46 Q10 16 38 10 Q38 38 6 46 Z', 'lo'), S('M6 46 Q20 30 38 10 M9 40 Q16 22 32 12 M12 45 Q28 36 38 24', 'ik', 1.2), ...nlPetals(46, 42, 8, 5, 'hi'), S('M46 42 Q52 32 56 38', 'bs', 1.6)],
+rosales: () => [C(30, 28, 18, 'hi'), ring('ik', 30, 28, 18, 1.6), S('M30 28 Q35 23 30 19 Q22 19 22 28 Q22 38 32 38 Q42 36 40 26', 'ik', 1.6), S('M30 46 L30 58', 'lo', 3), ...ntLeaf(42, 52, 8, 3, 'lo', -20)],
+humulus_lupulus: () => [S('M30 14 L30 4', 'bs', 2), E(30, 30, 10, 16, 'lo'), ...[18, 24, 30, 36, 42].map(y => S(`M21 ${y} Q30 ${y + 6} 39 ${y}`, 'ik', 1.2)), mmEll(30, 30, 10, 16, 'ik', 1.4), ...ntLeaf(46, 10, 8, 3.4, 'lo', -30)],
+ficus: () => [P('M20 18 Q6 22 8 38 Q12 52 22 52 Q32 52 34 38 Q34 22 20 18 Z', 'hi'), S('M20 18 L24 10', 'bs', 2.4), P('M42 20 Q34 24 36 38 Q38 50 46 50 Q54 50 56 38 Q56 24 48 20 Z', 'ik'), P('M44 26 Q39 30 40 38 Q42 46 46 46 Q50 46 52 38 Q53 30 48 26 Z', 'bs'), ...nhDots([[45, 32], [49, 34], [44, 38], [48, 41], [46, 44]], 1.1, 'hi')],
+ficus_religiosa: () => [S('M30 18 L30 8', 'bs', 2), P('M30 18 Q14 6 8 24 Q8 40 30 46 Q52 40 52 24 Q46 6 30 18 Z', 'lo'), S('M30 46 Q28 54 34 58', 'lo', 3), S('M30 18 L30 46 M30 24 L18 30 M30 24 L42 30 M30 32 L20 38 M30 32 L40 38', 'ik', 1.2)],
+malus_sieversii: () => [P('M2 54 L18 22 L28 38 L38 26 L58 54 Z', 'gh'), ...ntApple(22, 40, 9, 'hi'), ...ntApple(40, 36, 8, 'hi')],
+pyrus_bretschneideri: () => [P('M30 12 Q38 16 38 26 Q50 32 48 44 Q44 56 30 56 Q16 56 12 44 Q10 32 22 26 Q22 16 30 12 Z', 'hi'), ...nhDots([[24, 38], [32, 34], [38, 44], [26, 48], [34, 50], [20, 44]], 1.2, 'bs'), S('M30 12 L32 5', 'bs', 2.4), ...ntLeaf(42, 8, 8, 3, 'lo', -20)],
+pyrus_pyrifolia: () => [C(22, 36, 14, 'hi'), ring('ik', 22, 36, 14, 1.4), C(42, 40, 11, 'hi'), ring('ik', 42, 40, 11, 1.4), ...nhDots([[16, 32], [24, 30], [28, 40], [18, 42], [38, 36], [44, 44], [48, 38]], 1.1, 'bs'), S('M22 22 L24 14', 'bs', 2.2), ...nlPetals(46, 12, 5, 5, 'gh')],
+ulmus_davidiana: () => [P('M30 6 Q10 12 10 32 Q18 50 32 54 Q48 40 42 20 Q40 10 30 6 Z', 'lo'), S('M32 54 L30 10 M30 22 L18 30 M30 22 L40 28 M31 34 L20 42 M31 34 L40 40', 'ik', 1.2), ...omSamara(50, 12, 0.8)],
+ulmus_glabra: () => [...ntLeaf(24, 32, 22, 11, 'lo', -30), ...omSamara(44, 12, 1), ...omSamara(52, 20, 1), ...omSamara(44, 26, 1)],
+ulmus_laevis: () => [S('M4 10 Q30 4 56 10', 'bs', 2.4), S('M14 7 L14 26', 'ik', 1), S('M30 5 L30 36', 'ik', 1), S('M46 7 L46 22', 'ik', 1), ...omSamara(14, 32, 1.3), ...omSamara(30, 42, 1.3), ...omSamara(46, 28, 1.3)],
+ulmus_minor: () => [S('M30 56 L30 30', 'bs', 5), S('M30 40 L18 28 M30 38 L42 26', 'bs', 3), E(30, 20, 20, 14, 'lo'), mmEll(30, 20, 20, 14, 'ik', 1.4), ntBlades(12, 56, 4, 10, 'lo'), ntBlades(48, 56, 4, 10, 'lo'), S('M4 56 L56 56', 'ik', 2)],
+ulmus_parvifolia: () => [P('M20 56 L22 6 L38 6 L40 56 Z', 'bs'), ...nhDots([[28, 14], [34, 24], [27, 32], [35, 40], [28, 48]], 4, 'hi'), ...ntLeaf(48, 20, 8, 4, 'lo', 20)],
+ulmus_pumila: () => [...ntBroad(28, 26, 16, 'lo'), nzStarP(50, 10, 7, 3, 6, 'hi'), S('M4 56 Q30 52 56 56', 'ik', 2)],
+anacardiaceae: () => [S('M30 10 L30 4', 'bs', 2.4), P('M30 10 Q18 12 18 28 Q18 42 26 48 L34 48 Q42 42 42 28 Q42 12 30 10 Z', 'hi'), P('M24 50 Q20 58 32 58 Q42 56 38 48 Q32 52 24 50 Z', 'bs')],
+schinus: () => [S('M6 8 Q30 4 54 22', 'bs', 2.4), ...ntBerries([[22, 18], [28, 24], [34, 20], [26, 30], [32, 30], [30, 36], [38, 26]], 3.4, 'hi'), ...ntLeaf(14, 18, 7, 2, 'lo', 20), ...ntLeaf(46, 10, 7, 2, 'lo', 40)],
+toxicodendron: () => [S('M30 26 L30 56', 'bs', 2.6), ...ntLeaf(30, 14, 11, 5.4, 'lo', 90), ...ntLeaf(19, 28, 11, 5.4, 'lo', 30), ...ntLeaf(41, 28, 11, 5.4, 'lo', -30)],
+toxicodendron_vernicifluum: () => [P('M20 56 L22 4 L40 4 L38 56 Z', 'bs'), S('M22 24 L38 30', 'ik', 2.4), S('M30 28 L30 40', 'hi', 2.4), P('M20 42 L40 42 L36 54 L24 54 Z', 'lo'), E(30, 44, 8, 1.8, 'hi')],
+rutaceae: () => [C(30, 30, 21, 'bs'), C(30, 30, 18, 'hi'), nqBurst(30, 30, 2, 18, 8, 'bs', 1.4), C(30, 30, 2.2, 'bs'), ...ntLeaf(52, 8, 8, 3, 'lo', -30)],
+citron: () => [E(30, 30, 13, 19, 'hi'), mmEll(30, 30, 13, 19, 'ik', 2.4), mmEll(30, 30, 8, 14, 'ik', 1.2), C(30, 10, 3, 'hi'), C(30, 50, 3, 'hi'), ...nhDots([[24, 20], [36, 24], [22, 34], [38, 38], [28, 44]], 1.1, 'ik')],
+sapindaceae: () => [C(22, 32, 15, 'hi'), ring('ik', 22, 32, 15, 1.6), ...nhDots([[14, 28], [22, 24], [30, 30], [16, 38], [26, 40], [22, 32]], 1.4, 'bs'), S('M22 17 L22 9', 'bs', 2.4), C(44, 38, 11, 'hi'), C(44, 38, 8.4, 'gh'), C(44, 38, 3.6, 'ik')],
+acer_saccharinum: () => [...ntMaple(24, 26, 18, 'lo'), S('M24 26 L24 14 M24 26 L12 20 M24 26 L36 20', 'gh', 1.2), P('M44 40 Q54 28 57 30 Q55 40 46 44 Z', 'hi'), P('M44 40 Q34 28 31 30 Q33 40 42 44 Z', 'hi'), C(44, 43, 3, 'bs')],
+ribes: () => [S('M10 12 Q28 4 48 14', 'bs', 2.2), S('M30 8 L30 20', 'bs', 1.8), ...ntBerries([[30, 22], [26, 28], [34, 28], [24, 35], [32, 35], [38, 34], [28, 42], [34, 42], [30, 49]], 3.6, 'hi'), ...ntMaple(48, 28, 8, 'lo')],
+convolvulaceae: () => [C(34, 28, 18, 'hi'), nqBurst(34, 28, 4, 18, 5, 'ik', 1.6), C(34, 28, 4, 'gh'), ring('ik', 34, 28, 18, 1.4), S('M4 58 Q12 44 6 28', 'lo', 1.6), ...ntLeaf(10, 52, 8, 5, 'lo', -30)],
+pinguicula: () => [...omFan(30, 46, 11, 12, 4.6, [-80, -42, -4, 34, 72, 110], 'lo'), ...nhDots([[16, 44], [22, 40], [38, 40], [44, 44], [30, 36]], 1.5, 'hi'), S('M30 46 L34 12', 'lo', 1.6), ...nlPetals(34, 8, 5, 5, 'hi')],
+utricularia: () => [S('M4 22 Q14 19 24 22 T44 22 T56 22', 'ik', 1.6), S('M30 56 L30 32 M30 46 L16 38 M30 40 L44 34', 'lo', 2), ...nhDots([[16, 38], [22, 41], [34, 38], [44, 34], [30, 50], [24, 32]], 2.8, 'hi'), S('M44 34 L44 12', 'lo', 1.6), E(44, 9, 5.4, 3.6, 'hi')],
+polylepis: () => [P('M0 48 L16 18 L26 34 L38 22 L60 50 Z', 'gh'), S('M30 56 Q22 44 32 34 Q40 26 28 18', 'bs', 5), S('M24 44 Q18 42 20 48 M34 32 Q42 32 38 38', 'ik', 1.8), E(26, 16, 13, 7, 'lo')],
+urticaceae: () => [P('M30 8 L36 14 L34 20 L42 24 L38 30 L44 36 L36 42 L30 56 L24 42 L16 36 L22 30 L18 24 L26 20 L24 14 Z', 'lo'), S('M30 8 L30 56', 'ik', 1.4), S('M36 14 l4 -3 M42 24 l4 -2 M44 36 l4 -1 M24 14 l-4 -3 M18 24 l-4 -2 M16 36 l-4 -1', 'ik', 1.2)],
+peony: () => [...ntFlower(30, 30, 10, 8, 'hi'), ...ntFlower(30, 30, 5, 6, 'gh'), nqBurst(30, 30, 1, 5, 10, 'bs', 1.2)],
+};
+for (const [id, fn] of Object.entries(MKom)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 78: fungus phyla, protist supergroups, archaea and bacteria phyla, sourced, audited, hand-drawn ── */
+const onFlag = (x, y, dx, dy, role = 'ik', w = 1.6) => S(`M${x} ${y} Q${n(x + dx / 2 + dy * 0.35)} ${n(y + dy / 2 - dx * 0.35)} ${n(x + dx)} ${n(y + dy)}`, role, w);
+const onCell = (cx, cy, r, role = 'lo', nuc = 'ik') => [C(cx, cy, r, role), ring('ik', cx, cy, r, 1.6), C(n(cx - r * 0.2), n(cy - r * 0.15), n(r * 0.3), nuc)];
+const onDiplo = (x, y, s = 1, role = 'hi') => [E(n(x - 4.2 * s), y, n(4.6 * s), n(6 * s), role), E(n(x + 4.2 * s), y, n(4.6 * s), n(6 * s), role), mmEll(n(x - 4.2 * s), y, n(4.6 * s), n(6 * s), 'ik', 1.2), mmEll(n(x + 4.2 * s), y, n(4.6 * s), n(6 * s), 'ik', 1.2)];
+const onWave = (y, role = 'ik', w = 1.6) => S(`M2 ${y} q7 -5 14 0 t14 0 t14 0 t14 0`, role, w);
+const MKon = {
+blastocladiomycota: () => [...onCell(26, 26, 11, 'lo'), onFlag(34, 34, 14, 18, 'ik', 1.8), S('M18 36 L10 50 M18 36 L20 54 M18 36 L28 50', 'bs', 1.6), ...nhDots([[46, 10], [52, 20]], 2.4, 'hi')],
+mucoromycotina: () => [box(4, 46, 52, 10, 'bs'), ...nhDots([[10, 51], [24, 52], [38, 50], [50, 52]], 1.2, 'ik'), ...[14, 30, 46].flatMap((x, i) => [S(`M${x} 46 L${x} ${20 + i * 3}`, 'ik', 1.6), C(x, 16 + i * 3, 5.4, 'ik'), C(x - 1.6, 14.6 + i * 3, 1.4, 'gh')]), S('M20 46 L16 54 M36 46 L40 54', 'bs', 1.4)],
+neocallimastigomycota: () => [E(30, 32, 23, 17, 'bs'), mmEll(30, 32, 23, 17, 'ik', 1.8), S('M12 32 Q20 22 28 30 T46 28', 'lo', 2.4), S('M16 40 Q26 46 34 38 T48 40', 'lo', 2.4), S('M28 30 L30 22 M34 36 L38 30', 'lo', 1.8), ...nhDots([[22, 26], [40, 34], [26, 42]], 2.2, 'hi')],
+opisthokont: () => [...onCell(30, 24, 13, 'lo'), onFlag(30, 37, 0, 20, 'ik', 2), ...nlCap(10, 46, 6, 'hi'), ...nyFish(48, 46, 8, 5, 'hi', {})],
+holozoa: () => [C(30, 40, 9, 'lo'), ring('ik', 30, 40, 9, 1.6), C(28, 38, 2.6, 'ik'), ...[22, 25, 28, 31, 34, 37].map(x => S(`M${x} 33 L${n(30 + (x - 30) * 1.7)} 22`, 'ik', 1.2)), S('M30 32 Q24 18 32 6', 'ik', 1.8)],
+ichthyosporea: () => [...nyFish(30, 30, 21, 11, 'lo', {}), ...nhDots([[20, 28], [30, 24], [38, 32], [26, 36], [34, 28]], 2.4, 'hi'), ...nhDots([[20, 28], [30, 24], [38, 32], [26, 36], [34, 28]], 0.8, 'ik')],
+diaphoretickes: () => [S('M30 54 L30 36 M30 36 L14 24 M30 36 L46 24 M14 24 L8 14 M14 24 L22 14 M46 24 L38 14 M46 24 L52 14', 'ik', 1.8), ...ntLeaf(8, 9, 5, 2, 'lo', 60), ...ntLeaf(22, 9, 5, 2, 'lo', 120), ...onCell(38, 9, 4.2, 'hi'), ...onCell(52, 9, 4.2, 'lo')],
+desmidiales: () => [E(21, 30, 13, 16, 'lo'), E(39, 30, 13, 16, 'lo'), mmEll(21, 30, 13, 16, 'ik', 1.6), mmEll(39, 30, 13, 16, 'ik', 1.6), S('M30 14 L30 46', 'ik', 1.4), C(21, 30, 4, 'hi'), C(39, 30, 4, 'hi'), ...nhDots([[12, 18], [48, 18], [12, 42], [48, 42]], 1.2, 'ik')],
+cryptomonad: () => [E(30, 38, 16, 12, 'lo'), mmEll(30, 38, 16, 12, 'ik', 1.6), E(34, 40, 8, 5, 'hi'), C(22, 36, 3, 'ik'), onFlag(24, 28, -6, -20, 'ik', 1.6), onFlag(30, 27, 4, -22, 'ik', 1.6)],
+sar_clade: () => [S('M30 32 L18 42 M30 32 L42 42 M30 32 L30 20', 'ik', 1.6), ...onCell(18, 44, 9, 'hi'), ...onCell(42, 44, 9, 'lo'), ...onCell(30, 18, 9, 'bs'), nqBurst(30, 18, 9, 14, 8, 'ik', 1)],
+cercozoa: () => [...onCell(30, 28, 9, 'lo'), nqBurst(30, 28, 9, 24, 14, 'ik', 1.2), onFlag(30, 37, 6, 14, 'ik', 1.6), S('M2 56 L58 56', 'bs', 3), ...nhDots([[10, 52], [48, 53], [22, 54]], 1.6, 'bs')],
+yellow_green_algae: () => [onWave(14, 'ik'), ...[6, 14, 22, 30, 38, 46].flatMap(x => [box(x, 24, 8, 16, 'hi'), S(`M${x} 24 L${x} 40 M${x + 8} 24 L${x + 8} 40`, 'ik', 1.2), C(x + 4, 32, 2.2, 'bs')]), S('M4 24 L52 24 M4 40 L52 40', 'ik', 1.2), onWave(50, 'ik')],
+bikont: () => [...onCell(30, 38, 12, 'lo'), onFlag(24, 28, -8, -20, 'ik', 2), onFlag(36, 28, 8, -20, 'ik', 2)],
+chromalveolata: () => [C(22, 30, 16, 'lo'), C(38, 30, 16, 'hi'), ring('ik', 22, 30, 16, 1.6), ring('ik', 38, 30, 16, 1.6), ...nhDots([[30, 26], [30, 34], [30, 30]], 2.4, 'bs')],
+chromista: () => [S('M30 56 Q22 42 32 30 Q40 20 30 8', 'bs', 3), ...ntLeaf(20, 44, 8, 2.8, 'lo', -50), ...ntLeaf(42, 36, 8, 2.8, 'lo', 50), ...ntLeaf(22, 28, 8, 2.8, 'lo', -50), ...ntLeaf(40, 16, 7, 2.6, 'lo', 50), C(36, 24, 2.6, 'hi'), C(26, 36, 2.6, 'hi'), S('M10 56 L50 56', 'ik', 2)],
+nanobdellati: () => [...onCell(24, 34, 18, 'bs'), C(50, 14, 5.4, 'hi'), ring('ik', 50, 14, 5.4, 1.4), S('M44 18 L38 24', 'ik', 2), ...nhDots([[18, 40], [28, 44], [32, 30]], 1.6, 'ik')],
+methanobacteriati: () => [...nlRod(18, 48, 10, 5, 'lo'), ...nlRod(40, 50, 10, 5, 'lo'), ring('ik', 18, 36, 3.4, 1.4), ring('ik', 24, 26, 4.6, 1.4), ring('ik', 38, 38, 3, 1.4), ring('ik', 42, 24, 5.6, 1.4), ring('ik', 32, 12, 4, 1.4)],
+thermoproteati: () => [E(30, 46, 25, 9, 'bs'), mmEll(30, 46, 25, 9, 'ik', 1.8), E(30, 46, 20, 6, 'hi'), ...nhDots([[20, 46], [30, 48], [40, 45]], 2, 'ik'), S('M18 36 q-5 -6 0 -12 t0 -12 M30 34 q-5 -6 0 -12 t0 -12 M42 36 q-5 -6 0 -12 t0 -12', 'gh', 2.4)],
+thermoproteota: () => [P('M4 56 L22 22 L38 22 L56 56 Z', 'bs'), E(30, 22, 8, 2.6, 'hi'), S('M30 20 Q24 12 32 4', 'gh', 3), ...onCell(30, 8, 4, 'lo'), nzStarP(12, 34, 5, 2, 5, 'hi')],
+nitrososphaeria: () => [onWave(14, 'ik'), onWave(24, 'ik'), onWave(54, 'ik'), ...onCell(30, 38, 9, 'lo'), ...nhDots([[14, 40], [46, 42], [20, 30], [42, 32]], 2.4, 'hi')],
+acidobacteriota: () => [box(2, 42, 56, 14, 'bs'), ...nhDots([[10, 48], [22, 52], [34, 47], [46, 52], [52, 46]], 1.6, 'ik'), ...nlRod(18, 34, 8, 4, 'lo'), ...nlRod(40, 34, 8, 4, 'lo'), P('M30 6 Q22 18 26 24 Q30 30 34 24 Q38 18 30 6 Z', 'hi')],
+aquificota: () => [P('M10 56 Q30 40 50 56 Z', 'bs'), S('M30 46 L30 14', 'hi', 6), S('M30 16 Q18 4 12 16 M30 16 Q42 4 48 16', 'hi', 3), S('M22 52 q-6 -6 -12 -2 M38 52 q6 -6 12 -2', 'lo', 3)],
+bacteroides: () => [S('M4 30 Q14 8 30 30 T56 30', 'bs', 12), ...nlRod(14, 30, 6, 3, 'lo'), ...nlRod(30, 30, 6, 3, 'lo'), ...nlRod(46, 30, 6, 3, 'lo'), ...nlRod(22, 18, 6, 3, 'lo')],
+chlamydia_pneumoniae: () => [P('M27 18 Q8 20 8 44 Q10 54 22 52 Q29 50 27 34 Z', 'hi'), P('M33 18 Q52 20 52 44 Q50 54 38 52 Q31 50 33 34 Z', 'hi'), S('M30 4 L30 26 M30 24 L25 32 M30 24 L35 32', 'ik', 2.4), ...nhDots([[18, 38], [22, 46], [42, 38], [38, 46], [16, 30], [44, 30]], 1.8, 'ik')],
+chlamydiota: () => [...onCell(30, 30, 23, 'bs'), E(36, 36, 11, 9, 'gh'), mmEll(36, 36, 11, 9, 'ik', 1.4), ...nhDots([[32, 34], [38, 32], [40, 40], [33, 40], [36, 36]], 2, 'hi')],
+chloroflexota: () => [C(46, 12, 5.6, 'hi'), nqBurst(46, 12, 8, 12, 10, 'hi', 1.6), S('M4 32 q8 -8 16 0 t16 0 t16 0', 'lo', 3.4), S('M4 42 q8 -8 16 0 t16 0 t16 0', 'lo', 3.4), S('M4 52 q8 -8 16 0 t16 0 t16 0', 'lo', 3.4)],
+fibrobacterota: () => [S('M4 18 L56 18 M4 30 L56 30 M4 42 L50 42', 'bs', 3), S('M44 42 L54 48', 'bs', 3), ...nlRod(16, 24, 5, 2.8, 'hi'), ...nlRod(34, 24, 5, 2.8, 'hi'), ...nlRod(24, 36, 5, 2.8, 'hi'), ...nlRod(44, 36, 5, 2.8, 'hi')],
+pseudomonadota: () => [...nlRod(18, 16, 11, 5, 'lo'), ...onCell(44, 16, 7, 'hi'), S('M6 42 q5 -9 10 0 t10 0 t10 0 t10 0', 'bs', 3.2), onFlag(6, 52, 14, 4, 'ik', 1.4), onFlag(30, 28, 10, 14, 'ik', 1.4)],
+neisseria: () => [...onDiplo(18, 18, 1.1), ...onDiplo(42, 22, 1.1), ...onDiplo(28, 36, 1.1), onWave(50, 'bs', 4), onWave(56, 'bs', 3)],
+gram_positive_bacteria: () => [C(30, 30, 20, 'lo'), C(30, 30, 15, 'hi'), ring('ik', 30, 30, 20, 1.6), ring('ik', 30, 30, 15, 1.4), ...nhDots([[24, 28], [34, 26], [30, 36]], 1.8, 'ik')],
+actinomycetota: () => [S('M30 54 L30 38 M30 38 L18 26 L12 14 M30 38 L42 24 L50 12 M18 26 L26 14 M42 24 L36 12', 'lo', 2.4), ...nhDots([[12, 12], [10, 8], [26, 12], [28, 8], [36, 10], [50, 10], [52, 6]], 1.9, 'hi'), S('M4 55 L56 55', 'bs', 3)],
+bacillota: () => [E(20, 22, 14, 6, 'lo'), mmEll(20, 22, 14, 6, 'ik', 1.4), E(26, 22, 3.6, 3, 'hi'), ...nlCocci([[12, 46], [22, 46], [32, 46], [42, 46]], 4.8, 'hi'), ...nlCocci([[38, 26], [46, 32], [34, 34]], 4, 'bs')],
+bacillus: () => [E(32, 30, 20, 8, 'lo'), mmEll(32, 30, 20, 8, 'ik', 1.6), E(38, 30, 6, 4.4, 'hi'), onFlag(12, 28, -10, -8, 'ik', 1.4), onFlag(12, 30, -10, 2, 'ik', 1.4), onFlag(12, 32, -10, 10, 'ik', 1.4)],
+parakaryon: () => [...onCell(30, 30, 21, 'lo', 'lo'), E(26, 28, 9.4, 8, 'bs'), mmEll(26, 28, 9.4, 8, 'ik', 1.6), mmEll(26, 28, 6.4, 5, 'ik', 1), ...nhDots([[42, 22], [44, 34], [38, 44], [20, 44], [14, 40]], 1.6, 'hi')],
+bacteroidota: () => [...nlRod(18, 20, 11, 4.6, 'lo'), ...nlRod(42, 30, 11, 4.6, 'lo'), ...nlRod(20, 40, 11, 4.6, 'lo'), onWave(52, 'ik'), ...nhDots([[50, 14], [8, 30], [52, 44]], 1.6, 'bs')],
+};
+for (const [id, fn] of Object.entries(MKon)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 79: blood and bone, cells and genes, body regions and symptoms, and leftover animals, sourced, audited, hand-drawn ── */
+const ooChrom = (cx, cy, s, role = 'lo') => [S(`M${n(cx - 5 * s)} ${n(cy - 9 * s)} L${n(cx + 5 * s)} ${n(cy + 9 * s)} M${n(cx + 5 * s)} ${n(cy - 9 * s)} L${n(cx - 5 * s)} ${n(cy + 9 * s)}`, role, n(4.2 * s)), C(cx, cy, n(2 * s), 'ik')];
+const ooDrop = (cx, cy, s, role = 'hi') => P(`M${cx} ${n(cy - 9 * s)} Q${n(cx - 7 * s)} ${n(cy + 1 * s)} ${n(cx - 6 * s)} ${n(cy + 4 * s)} Q${n(cx - 5 * s)} ${n(cy + 10 * s)} ${cx} ${n(cy + 10 * s)} Q${n(cx + 5 * s)} ${n(cy + 10 * s)} ${n(cx + 6 * s)} ${n(cy + 4 * s)} Q${n(cx + 7 * s)} ${n(cy + 1 * s)} ${cx} ${n(cy - 9 * s)} Z`, role);
+const ooCal = (x, y, w, h, role = 'hi') => [box(x, y, w, h, role), box(x, y, w, n(h * 0.24), 'ik'), ...[0, 1, 2].flatMap(r => [0, 1, 2, 3].map(c => C(n(x + w * (0.14 + 0.24 * c)), n(y + h * (0.45 + 0.2 * r)), 1.1, 'ik')))];
+const ooPill = (cx, cy, s = 1) => [S(`M${n(cx - 8 * s)} ${n(cy + 8 * s)} L${cx} ${cy}`, 'hi', n(11 * s)), S(`M${cx} ${cy} L${n(cx + 8 * s)} ${n(cy - 8 * s)}`, 'lo', n(11 * s)), C(n(cx - 8 * s), n(cy + 8 * s), n(5.5 * s), 'hi'), C(n(cx + 8 * s), n(cy - 8 * s), n(5.5 * s), 'lo')];
+const MKoo = {
+blood_cell: () => [E(20, 22, 13, 13, 'hi'), mmEll(20, 22, 13, 13, 'ik', 1.8), E(20, 22, 6, 6, 'bs'), C(42, 38, 11, 'gh'), ring('ik', 42, 38, 11, 1.8), ...nhDots([[38, 35], [43, 34], [41, 41], [46, 40]], 3, 'lo'), E(14, 48, 5, 2.6, 'bs'), E(26, 52, 5, 2.6, 'bs'), E(50, 14, 4, 2.2, 'bs')],
+sacrum: () => [E(10, 24, 9, 18, 'gh'), E(50, 24, 9, 18, 'gh'), P('M14 8 L46 8 L38 42 L30 56 L22 42 Z', 'bs'), S('M14 8 L46 8', 'ik', 2), ...nhDots([[24, 20], [36, 20], [26, 32], [34, 32]], 2.2, 'ik'), S('M30 12 L30 48', 'ik', 1.2)],
+ulna: () => [S('M16 12 L44 48', 'bs', 6.4), S('M20 8 Q14 8 14 14 L18 18', 'bs', 5), C(46, 50, 5, 'bs'), C(41, 46, 4, 'bs'), S('M16 12 L44 48', 'ik', 1)],
+taproot: () => [S('M4 14 L56 14', 'ik', 2), P('M24 14 L36 14 Q34 40 30 56 Q26 40 24 14 Z', 'hi'), S('M26 24 L18 28 M34 30 L42 34 M27 38 L20 44', 'bs', 1.6), ...ntLeaf(22, 8, 8, 2.8, 'lo', -60), ...ntLeaf(38, 8, 8, 2.8, 'lo', 60)],
+ascus: () => [P('M22 8 L38 8 Q42 30 34 54 L26 54 Q18 30 22 8 Z', 'lo'), S('M22 8 L38 8 Q42 30 34 54 L26 54 Q18 30 22 8', 'ik', 1.6), ...nhDots([[26, 16], [34, 16], [26, 24], [34, 24], [27, 32], [33, 32], [28, 40], [32, 40]], 2.4, 'hi')],
+sporangium: () => [S('M30 56 L30 32', 'ik', 2), C(30, 22, 11, 'bs'), ring('ik', 30, 22, 11, 1.8), ...nhDots([[26, 20], [32, 18], [34, 25], [27, 27], [30, 22]], 2, 'hi'), ...nhDots([[14, 10], [48, 12], [10, 24], [52, 28], [44, 4], [18, 4]], 1.8, 'ik')],
+cardiac_cycle: () => [P('M30 44 Q10 30 14 18 Q22 10 30 20 Q38 10 46 18 Q50 30 30 44 Z', 'hi'), S('M30 20 L30 30', 'ik', 1.4), S('M8 42 A26 26 0 0 0 52 42', 'ik', 2.4), P('M52 42 L46 38 L56 36 Z', 'ik'), S('M8 42 A26 26 0 0 1 12 14', 'gh', 2.4)],
+hemostasis: () => [S('M2 18 L24 18 M36 18 L58 18 M2 44 L58 44', 'ik', 2.6), E(30, 24, 9, 7, 'hi'), S('M24 18 L28 28 M36 18 L32 28 M24 22 L36 26 M26 28 L34 22', 'ik', 1.2), ...nhDots([[10, 32], [20, 34], [44, 30], [52, 34]], 3.2, 'hi'), P('M30 50 Q27 55 30 58 Q33 55 30 50 Z', 'hi')],
+glycoprotein: () => [...[6, 14, 22, 38, 46, 54].map(x => C(x, 46, 3.6, 'bs')), S('M6 52 L54 52', 'ik', 1.4), E(30, 42, 5.6, 14, 'lo'), mmEll(30, 42, 5.6, 14, 'ik', 1.4), S('M28 28 L22 18 L16 12 M22 18 L24 8 M32 28 L40 20 L46 12', 'ik', 1.6), ...nhDots([[16, 12], [24, 8], [46, 12], [40, 20], [22, 18]], 2.8, 'hi')],
+bird_nest: () => [E(30, 42, 24, 12, 'bs'), mmEll(30, 42, 24, 12, 'ik', 1.8), S('M10 40 Q30 50 50 40 M12 46 Q30 54 48 46 M8 36 L18 44 M52 36 L42 44', 'ik', 1.4), E(22, 34, 6, 8, 'hi'), E(32, 32, 6, 8, 'hi'), E(42, 35, 6, 8, 'hi'), S('M4 30 L12 38 M56 30 L48 38', 'bs', 2)],
+cell_polarity: () => [E(30, 32, 25, 15, 'lo'), mmEll(30, 32, 25, 15, 'ik', 1.8), C(30, 32, 5, 'ik'), ...nhDots([[10, 28], [12, 34], [14, 30], [10, 36], [16, 36]], 2.4, 'hi'), S('M8 54 L50 54', 'ik', 2), P('M52 54 L46 50 L46 58 Z', 'ik'), S('M8 10 L8 16', 'ik', 1.4)],
+atpase: () => [E(30, 50, 22, 5, 'bs'), mmEll(30, 50, 22, 5, 'ik', 1.4), E(30, 44, 10, 3.6, 'lo'), S('M30 44 L30 26', 'ik', 4), ...ntFlower(30, 16, 7, 3, 'lo'), S('M48 44 Q54 34 48 24', 'hi', 2), P('M48 20 L44 26 L52 26 Z', 'hi')],
+bacterial_cell_structure: () => [E(32, 30, 24, 14, 'lo'), mmEll(32, 30, 24, 14, 'ik', 1.8), S('M24 26 Q30 20 36 26 Q42 32 34 36 Q26 38 24 30', 'ik', 1.6), ...nhDots([[18, 30], [20, 36], [44, 24], [46, 32], [40, 38], [30, 22]], 1.8, 'hi'), S('M8 30 Q2 24 6 18 M8 30 Q2 36 6 42', 'ik', 1.6), S('M32 16 L32 12 M44 18 L47 14 M20 18 L17 14', 'ik', 1.2)],
+non_coding_dna: () => [box(4, 28, 14, 5, 'gh'), box(18, 28, 8, 5, 'hi'), box(26, 28, 18, 5, 'gh'), box(44, 28, 12, 5, 'hi'), S('M4 22 Q16 14 30 22 T56 22', 'ik', 1.6), S('M4 40 Q16 48 30 40 T56 40', 'ik', 1.6), S('M22 33 L22 38 M48 33 L48 38 M22 22 L22 28 M48 22 L48 28', 'ik', 1.2)],
+microrna: () => [S('M2 30 q8 -9 16 0 t16 0 t16 0 t12 0', 'bs', 3), S('M18 36 q4 -3 8 0 t8 0 t8 0', 'hi', 3.4), S('M20 32 L20 37 M28 32 L28 37 M36 32 L36 37 M44 32 L44 37', 'ik', 1.2), ...nhDots([[10, 22], [50, 24]], 1.8, 'ik')],
+sex_linkage: () => [S('M6 12 L26 50 M26 12 L6 50', 'bs', 5.4), C(16, 31, 2.6, 'ik'), S('M38 12 L46 30 L54 12 M46 30 L46 52', 'lo', 5), S('M10 20 L14 20 M18 42 L22 42 M44 42 L48 42', 'ik', 1.8), ...nhDots([[16, 31]], 1, 'hi')],
+chromosome_abnormality: () => [...ooChrom(14, 22, 1.4, 'lo'), ...ooChrom(34, 22, 1.4, 'lo'), ...ooChrom(24, 46, 1.4, 'hi'), S('M44 34 L50 30 L48 40', 'bs', 3.4), S('M44 40 L52 44', 'bs', 2.4)],
+chromosomal_translocation: () => [S('M14 54 L14 24', 'lo', 7), S('M14 24 L14 8', 'hi', 7), S('M46 54 L46 24', 'bs', 7), S('M46 24 L46 8', 'ik', 7), S('M20 12 Q30 2 40 12', 'ik', 1.8), P('M40 12 L34 8 L36 16 Z', 'ik'), S('M40 20 Q30 30 20 20', 'ik', 1.8), P('M20 20 L26 16 L26 24 Z', 'ik')],
+breech_birth: () => [E(30, 32, 22, 24, 'gh'), mmEll(30, 32, 22, 24, 'ik', 1.8), C(30, 18, 7, 'hi'), E(30, 32, 7, 9, 'hi'), S('M26 38 L24 52 M34 38 L36 52', 'hi', 3.4), S('M23 28 L16 34 M37 28 L44 34', 'hi', 2.6), ring('ik', 30, 18, 7, 1.4)],
+postterm_pregnancy: () => [...ooCal(6, 8, 32, 32, 'hi'), box(30, 22, 8, 7, 'bs'), S('M32 24 L36 28 M36 24 L32 28', 'ik', 1.2), C(46, 44, 11, 'gh'), ring('ik', 46, 44, 11, 1.8), S('M46 44 L46 36 M46 44 L52 48', 'ik', 1.8)],
+premenstrual_syndrome: () => [...ooCal(4, 28, 30, 28, 'hi'), E(30, 14, 12, 7, 'lo'), E(40, 16, 10, 6, 'lo'), E(20, 17, 9, 6, 'lo'), P('M34 20 L28 30 L34 30 L30 40 L42 26 L36 26 L40 20 Z', 'hi'), ooDrop(48, 44, 0.8, 'bs')],
+hot_flash: () => [E(26, 46, 5, 5, 'hi'), box(23, 10, 6, 36, 'hi'), P('M25 30 L27 30 L27 46 L25 46 Z', 'ik'), S('M24 14 L28 14 M24 20 L28 20 M24 26 L28 26', 'ik', 1.2), P('M46 8 Q38 20 42 28 Q44 34 48 34 Q54 30 52 22 Q50 26 48 22 Q52 14 46 8 Z', 'hi'), ooDrop(42, 46, 0.8, 'bs'), ooDrop(52, 52, 0.6, 'bs')],
+allied_health_professionals: () => [...njFig(12, 14, 5.4, 'hi', 2), ...njFig(30, 10, 6.4, 'lo', 2.4), ...njFig(48, 14, 5.4, 'bs', 2), P('M27 24 L33 24 L33 28 L37 28 L37 34 L33 34 L33 38 L27 38 L27 34 L23 34 L23 28 L27 28 Z', 'hi')],
+forearm: () => [P('M8 22 Q6 30 8 38 L44 34 L46 28 L44 24 Z', 'hi'), C(8, 30, 8, 'hi'), P('M44 24 L56 22 L56 38 L44 34 Z', 'bs'), S('M12 24 L40 27 M12 36 L40 33', 'ik', 1.2), S('M8 48 L46 48 M8 44 L8 52 M46 44 L46 52', 'ik', 1.8)],
+groin: () => [E(14, 14, 10, 7, 'gh'), E(46, 14, 10, 7, 'gh'), S('M20 18 L12 54 M40 18 L48 54', 'bs', 7), P('M22 22 L38 22 L30 34 Z', 'hi'), S('M22 22 L38 22 L30 34 Z', 'ik', 1.6), S('M20 18 L20 22 M40 18 L40 22', 'ik', 1.4)],
+skin_grafting: () => [P('M4 20 L56 20 L56 54 L4 54 Z', 'hi'), S('M4 28 L56 28', 'ik', 1.4), box(26, 36, 14, 12, 'ik'), box(6, 4, 16, 12, 'bs'), S('M22 10 L30 24 M30 24 L28 18 M30 24 L24 22', 'ik', 1.8), S('M26 36 L26 33 M30 36 L30 33 M34 36 L34 33 M38 36 L38 33', 'ik', 1.4)],
+hydroxyzine: () => [...ooPill(26, 36, 1.5), S('M42 10 Q48 6 52 12 Q46 12 42 10 Z', 'ik', 1.4), S('M40 18 l5 0 l-5 5 l5 0', 'ik', 1.6), S('M50 22 l4 0 l-4 4 l4 0', 'ik', 1.4)],
+psychiatric_medication: () => [E(24, 24, 16, 13, 'hi'), mmEll(24, 24, 16, 13, 'ik', 1.8), S('M24 12 Q20 24 24 36 M12 20 Q18 24 14 30 M36 18 Q30 24 34 32', 'ik', 1.6), ...ooPill(44, 46, 1)],
+hypovolemic_shock: () => [P('M18 8 L42 8 L46 18 L46 52 Q46 56 42 56 L18 56 Q14 56 14 52 L14 18 Z', 'gh'), S('M18 8 L42 8 L46 18 L46 52 Q46 56 42 56 L18 56 Q14 56 14 52 L14 18 Z', 'ik', 1.8), P('M16 46 L44 46 L44 52 Q44 54 42 54 L18 54 Q16 54 16 52 Z', 'hi'), S('M22 20 L22 40 M16 38 L22 44 L28 38', 'ik', 2), S('M30 4 L30 8', 'ik', 2)],
+injury_in_humans: () => [S('M10 48 L50 14', 'bs', 15), box(22, 24, 14, 12, 'gh'), ...nhDots([[16, 40], [44, 20], [26, 32], [32, 28]], 1, 'ik'), nzStarP(48, 46, 8, 3.4, 8, 'hi'), S('M8 10 L16 16 M14 6 L18 14', 'ik', 1.6)],
+dental_avulsion: () => [P('M2 40 L24 40 L24 54 L2 54 Z', 'hi'), P('M36 40 L58 40 L58 54 L36 54 Z', 'hi'), P('M24 40 L36 40 L36 54 L24 54 Z', 'ik'), P('M22 6 Q30 0 38 6 Q40 20 36 30 Q34 36 31 30 L30 24 L29 30 Q26 36 24 30 Q20 20 22 6 Z', 'gh'), S('M30 34 L30 38 M26 38 L30 42 L34 38', 'ik', 1.8)],
+farsightedness: () => [mmEll(32, 30, 22, 14, 'ik', 1.8), E(30, 30, 3.4, 12, 'hi'), S('M2 18 L30 22 L56 30 M2 30 L30 30 L56 30 M2 42 L30 38 L56 30', 'ik', 1.2), S('M46 14 Q54 30 46 46', 'bs', 3), C(56, 30, 1.8, 'hi')],
+pathogenic_bacteria: () => [C(30, 32, 14, 'lo'), nqBurst(30, 32, 14, 20, 14, 'ik', 1.8), C(25, 30, 2, 'ik'), C(35, 30, 2, 'ik'), S('M21 24 L28 27 M39 24 L32 27', 'ik', 2), S('M25 40 Q30 36 35 40', 'ik', 2), ooDrop(50, 10, 0.7, 'hi')],
+legionnaires_disease: () => [S('M4 8 L18 8 L18 16', 'bs', 3), P('M18 16 L32 16 L36 22 L14 22 Z', 'bs'), ...nhDots([[18, 28], [24, 30], [30, 28], [22, 34], [28, 36]], 1.4, 'hi'), P('M22 40 Q8 42 8 52 Q10 58 20 56 Q24 54 22 46 Z', 'hi'), P('M32 40 Q46 42 46 52 Q44 58 34 56 Q30 54 32 46 Z', 'hi'), S('M27 36 L27 50', 'ik', 2)],
+blurred_vision: () => [mmEll(30, 30, 26, 14, 'ik', 2), C(23, 30, 9, 'gh'), C(30, 30, 9, 'gh'), C(37, 30, 9, 'gh'), C(30, 30, 4, 'ik'), S('M4 52 L20 52 M26 52 L40 52 M46 52 L54 52', 'ik', 1.4), S('M10 8 L18 12 M50 8 L42 12', 'ik', 1.2)],
+rash: () => [E(30, 30, 24, 20, 'hi'), ...nhDots([[18, 24], [26, 20], [34, 24], [42, 28], [22, 32], [30, 36], [38, 38], [28, 28], [16, 38], [44, 20]], 2.6, 'bs'), S('M14 14 l6 4 M46 40 l6 -4 M8 34 l5 2', 'ik', 1.6)],
+gerontology: () => [C(26, 12, 6, 'hi'), S('M26 18 Q32 28 30 38 L26 56 M30 38 L36 56', 'ik', 3.2), S('M30 26 L42 34 L44 56', 'ik', 2.2), S('M44 34 L48 34', 'ik', 2.4), S('M18 10 Q20 4 28 5', 'gh', 2)],
+moggy: () => [...nvCat(30, 34, 18, 'lo'), S('M30 16 L30 24 M24 18 L25 24 M36 18 L35 24', 'ik', 1.6), S('M4 54 L56 54', 'ik', 2)],
+free_ranging_dog: () => [...nvDogH(30, 34, 17, 'bs', 'erect'), S('M2 54 L58 54', 'ik', 2), S('M44 54 L44 46 M52 54 L52 46', 'bs', 1.6), S('M8 24 l4 -3 M10 30 l5 -2', 'ik', 1.4)],
+dog_crossbreed: () => [...nvDogH(18, 38, 13, 'lo', 'floppy'), ...nvDogH(42, 38, 13, 'hi', 'erect'), S('M24 10 L36 22 M36 10 L24 22', 'ik', 3)],
+canid_hybrid: () => [...nvFoxH(14, 22, 10, 'bs'), ...nvDogH(46, 22, 10, 'lo', 'floppy'), ...nvDogH(30, 42, 14, 'hi', 'erect'), S('M20 30 L26 36 M40 30 L34 36', 'ik', 1.6)],
+panthera_hybrid: () => [...nvCat(30, 34, 20, 'hi'), S('M10 24 L16 28 M10 32 L16 34 M10 40 L16 40', 'ik', 2), ...[[44, 30], [46, 40], [40, 46]].map(([x, y]) => ring('ik', x, y, 3, 1.4)), S('M30 14 L30 22', 'ik', 2)],
+sheep_goat_hybrid: () => [...[[16, 36], [26, 30], [36, 32], [44, 38], [24, 42], [36, 44]].map(([x, y]) => C(x, y, 8, 'gh')), ...[[16, 36], [26, 30], [36, 32], [44, 38], [24, 42], [36, 44]].map(([x, y]) => ring('ik', x, y, 8, 1.2)), E(48, 28, 7, 9, 'lo'), S('M44 20 Q40 8 36 12 M52 20 Q56 8 60 12', 'ik', 2.4), P('M48 36 L52 36 L50 46 Z', 'bs'), S('M20 52 L20 58 M40 52 L40 58', 'ik', 2)],
+ursid_hybrid: () => [C(16, 18, 7, 'bs'), C(44, 18, 7, 'bs'), C(30, 34, 19, 'bs'), P('M30 15 A19 19 0 0 1 30 53 Z', 'hi'), E(30, 42, 9, 7, 'gh'), C(30, 38, 3, 'ik'), C(23, 30, 2, 'ik'), C(37, 30, 2, 'ik'), ring('ik', 30, 34, 19, 1.6)],
+puppy: () => [...nvDogH(30, 34, 17, 'hi', 'floppy'), C(24, 32, 3.4, 'ik'), C(36, 32, 3.4, 'ik'), C(25, 31, 1, 'gh'), C(37, 31, 1, 'gh'), S('M22 56 L38 56', 'ik', 2), S('M40 52 L52 46', 'bs', 3), C(53, 45, 2.6, 'bs'), C(52, 49, 2.6, 'bs')],
+kitten: () => [...nvCat(30, 34, 16, 'hi'), C(24, 33, 3.2, 'ik'), C(36, 33, 3.2, 'ik'), C(25, 32, 1, 'gh'), C(37, 32, 1, 'gh'), C(48, 48, 7, 'bs'), ring('ik', 48, 48, 7, 1.4), S('M42 46 Q48 52 54 46', 'ik', 1.2)],
+merlangius: () => [...nyFish(32, 30, 22, 8, 'lo', {}), S('M26 22 L30 14 L38 20 L44 14 L50 22', 'ik', 1.6), C(20, 31, 2.4, 'ik'), C(46, 31, 1.2, 'gh'), S('M10 30 L14 30', 'ik', 1.4)],
+fanfin: () => [E(28, 34, 16, 13, 'lo'), mmEll(28, 34, 16, 13, 'ik', 1.8), nqBurst(28, 34, 14, 19, 22, 'ik', 1), P('M44 34 L56 26 L52 34 L56 42 Z', 'lo'), S('M16 24 Q10 10 20 6', 'ik', 1.6), C(21, 6, 3, 'hi'), C(20, 36, 2.4, 'hi'), S('M14 40 L22 42 M16 44 L22 44', 'gh', 1.4)],
+interbreeding_archaic_modern_humans: () => [C(14, 26, 9, 'lo'), S('M6 22 L22 22', 'ik', 2.4), C(46, 26, 9, 'hi'), S('M20 36 Q14 42 18 50 M40 36 Q46 42 42 50', 'ik', 2), S('M20 8 q5 6 10 0 t10 0', 'ik', 1.8), S('M20 14 q5 -6 10 0 t10 0', 'bs', 1.8), S('M24 8 L24 14 M30 8 L30 14 M36 8 L36 14', 'ik', 1)],
+};
+for (const [id, fn] of Object.entries(MKoo)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 80: Earth science, geology, minerals, rivers and landforms, sourced, audited, hand-drawn ── */
+const opArrow = (x0, y0, x1, y1, role = 'ik', w = 2) => { const a = Math.atan2(y1 - y0, x1 - x0), h = 5; return [S(`M${x0} ${y0} L${x1} ${y1}`, role, w), P(`M${x1} ${y1} L${n(x1 - h * Math.cos(a - 0.5))} ${n(y1 - h * Math.sin(a - 0.5))} L${n(x1 - h * Math.cos(a + 0.5))} ${n(y1 - h * Math.sin(a + 0.5))} Z`, role)]; };
+const opCube = (x, y, s, role = 'hi') => [P(`M${x} ${n(y + 0.4 * s)} L${n(x + s)} ${n(y + 0.4 * s)} L${n(x + s)} ${n(y + 1.4 * s)} L${x} ${n(y + 1.4 * s)} Z`, role), P(`M${x} ${n(y + 0.4 * s)} L${n(x + 0.4 * s)} ${y} L${n(x + 1.4 * s)} ${y} L${n(x + s)} ${n(y + 0.4 * s)} Z`, 'gh'), P(`M${n(x + s)} ${n(y + 0.4 * s)} L${n(x + 1.4 * s)} ${y} L${n(x + 1.4 * s)} ${n(y + s)} L${n(x + s)} ${n(y + 1.4 * s)} Z`, 'bs')];
+const opMtn = (cx, base, w, h, role = 'bs', cap = true) => [P(`M${n(cx - w)} ${base} L${cx} ${n(base - h)} L${n(cx + w)} ${base} Z`, role), ...(cap ? [P(`M${n(cx - w * 0.28)} ${n(base - h * 0.72)} L${cx} ${n(base - h)} L${n(cx + w * 0.28)} ${n(base - h * 0.72)} L${n(cx + w * 0.1)} ${n(base - h * 0.64)} L${n(cx - w * 0.1)} ${n(base - h * 0.68)} Z`, 'hi')] : [])];
+const MKop = {
+schiehallion_experiment: () => [...opMtn(18, 54, 18, 34, 'bs'), S('M52 6 L50 38', 'gh', 1.6), S('M52 6 L47 38', 'ik', 1.6), C(46.4, 42, 4, 'hi'), ring('ik', 46.4, 42, 4, 1.2), ...opArrow(52, 52, 38, 52, 'ik', 1.4), S('M2 54 L58 54', 'ik', 1.8)],
+environmental_conflict: () => [...ntConifer(14, 12, 34, 10, 'lo'), box(36, 32, 20, 22, 'bs'), box(46, 14, 5, 18, 'bs'), E(46, 8, 7, 4, 'gh'), E(54, 4, 5, 3, 'gh'), S('M26 22 L34 42 M34 22 L26 42', 'hi', 3), S('M2 56 L58 56', 'ik', 1.8)],
+dvorak_technique: () => [S('M6 6 L6 54 L54 54 L54 6 Z', 'ik', 1.8), nzSpiral(30, 30, 3, 20, 2.2, 'lo', 3.2), C(30, 30, 4, 'ik'), C(30, 30, 2, 'hi'), S('M6 14 L12 14 M54 14 L48 14', 'ik', 1.4)],
+tropical_cyclone_rainfall_forecasting: () => [nzSpiral(20, 18, 2, 14, 1.8, 'lo', 2.8), C(20, 18, 2.4, 'ik'), ...[24, 32, 40, 48].map((x, i) => S(`M${x} ${30 + (i % 2) * 4} L${x - 4} ${40 + (i % 2) * 4}`, 'hi', 2)), box(6, 46, 12, 10, 'gh'), box(6, 52, 12, 4, 'hi'), S('M6 46 L6 56 L18 56 L18 46', 'ik', 1.4), ooDrop(46, 14, 0.9, 'hi')],
+tropical_cyclone_track_forecasting: () => [P('M14 46 L54 10 L56 26 Z', 'gh'), nzSpiral(14, 46, 1.5, 10, 1.6, 'lo', 2.6), C(14, 46, 2, 'ik'), S('M14 46 Q30 40 50 16', 'ik', 2), ...opArrow(44, 22, 52, 14, 'ik', 1.4), ...nhDots([[24, 40], [34, 32], [42, 24]], 1.6, 'hi')],
+climate_of_antarctica: () => [P('M2 54 Q30 22 58 54 Z', 'hi'), S('M10 46 Q30 30 50 46', 'ik', 1.2), ohSnow(14, 16, 7), ohSnow(32, 10, 5), box(48, 6, 5, 28, 'gh'), box(48, 26, 5, 8, 'hi'), C(50.5, 38, 5, 'hi'), ring('ik', 50.5, 38, 5, 1.2)],
+climate_of_the_arctic: () => [C(30, 40, 9, 'hi'), nqBurst(30, 40, 11, 17, 11, 'hi', 1.6), P('M0 40 L60 40 L60 60 L0 60 Z', 'gh'), P('M10 40 L16 28 L22 40 Z', 'hi'), P('M38 40 L46 24 L54 40 Z', 'hi'), S('M0 40 L60 40', 'ik', 1.6), ohSnow(10, 12, 5), ohSnow(50, 10, 4)],
+climate_change_mena: () => [C(44, 14, 7, 'hi'), nqBurst(44, 14, 9, 14, 10, 'hi', 1.6), P('M0 52 Q16 32 32 48 Q44 38 60 52 L60 60 L0 60 Z', 'bs'), P('M10 44 L16 30 L22 44 Z', 'gh'), S('M12 38 L20 38 M11 42 L21 42', 'ik', 1.2), box(4, 6, 5, 18, 'gh'), box(4, 14, 5, 10, 'hi'), C(6.5, 28, 4, 'hi')],
+partial_melting: () => [P('M6 18 L30 8 L54 18 L54 52 L6 52 Z', 'bs'), S('M6 18 L54 18', 'ik', 1.4), E(18, 30, 6, 4, 'hi'), E(38, 26, 7, 4, 'hi'), E(30, 40, 8, 4, 'hi'), S('M18 34 L18 52 M38 30 L38 52', 'hi', 2.4), ...nhDots([[46, 38], [12, 44]], 1.8, 'ik')],
+byerlees_law: () => [box(4, 34, 52, 18, 'bs'), box(14, 14, 32, 18, 'lo'), S('M4 33 l4 2 l4 -2 l4 2 l4 -2 l4 2 l4 -2 l4 2 l4 -2 l4 2 l4 -2 l4 2 l4 -2 l4 2', 'ik', 1.4), ...opArrow(48, 22, 58, 22, 'hi', 2.6), ...opArrow(4, 50, 12, 50, 'ik', 1.4)],
+theory_of_tides: () => [E(28, 30, 24, 14, 'hi'), C(28, 30, 11, 'lo'), mmEll(28, 30, 24, 14, 'ik', 1.4), C(56, 30, 4, 'gh'), ring('ik', 56, 30, 4, 1.2), S('M44 30 L50 30', 'ik', 1.4), S('M14 8 q4 -4 8 0 t8 0 M30 52 q4 4 8 0', 'ik', 1.2)],
+seismic_zone: () => [P('M4 8 L56 8 L56 52 L4 52 Z', 'gh'), S('M4 46 Q22 36 30 28 Q42 20 56 12', 'hi', 9), ...nhDots([[14, 40], [22, 34], [30, 28], [38, 22], [48, 16], [20, 30], [40, 28]], 1.8, 'ik'), S('M4 8 L56 8 L56 52 L4 52 Z', 'ik', 1.6)],
+intraplate_earthquake: () => [P('M2 14 L58 14 L58 46 L2 46 Z', 'bs'), S('M2 14 L2 46 M58 14 L58 46', 'ik', 3), S('M24 14 L30 24 L24 32 L32 46', 'ik', 2), nqBurst(30, 30, 3, 9, 8, 'hi', 1.8), S('M6 52 L54 52', 'gh', 2)],
+sturtian_glaciation: () => [C(30, 30, 24, 'hi'), ring('ik', 30, 30, 24, 2), P('M16 18 Q28 12 34 22 Q26 30 18 26 Z', 'gh'), P('M34 34 Q46 30 50 40 Q42 50 34 44 Z', 'gh'), S('M12 36 L22 30 L18 44 M44 18 L38 26', 'ik', 1.2), ohSnow(10, 8, 5), ohSnow(52, 54, 5)],
+mesoarchean: () => [onWave(12, 'ik', 1.6), P('M2 22 L30 22 L46 44 L40 50 L24 32 L2 32 Z', 'bs'), P('M58 22 L34 22 L50 40 L58 40 Z', 'lo'), box(2, 50, 56, 8, 'lo'), ...nhDots([[8, 18], [16, 18], [24, 18], [40, 16]], 1.8, 'hi'), ...opArrow(30, 36, 40, 48, 'hi', 2)],
+paleoproterozoic: () => [...[0, 1, 2, 3, 4, 5].map(i => box(6, 24 + i * 5.4, 48, 4, i % 2 ? 'hi' : 'bs')), ring('ik', 14, 14, 3.4, 1.4), ring('ik', 26, 8, 4.6, 1.4), ring('ik', 38, 16, 3, 1.4), ring('ik', 48, 10, 4, 1.4)],
+algoman_orogeny: () => [P('M2 50 L58 50 L58 56 L2 56 Z', 'bs'), S('M4 44 Q16 44 22 30 Q30 12 38 30 Q44 44 56 44', 'bs', 5), S('M4 36 Q18 36 24 24 Q30 12 36 24 Q42 36 56 36', 'hi', 4), ...opArrow(2, 54, 14, 54, 'ik', 2), ...opArrow(58, 54, 46, 54, 'ik', 2)],
+central_asian_orogenic_belt: () => [P('M2 54 L58 54 L58 58 L2 58 Z', 'bs'), ...opMtn(10, 54, 9, 18, 'bs'), ...opMtn(22, 54, 11, 30, 'bs'), ...opMtn(36, 54, 10, 22, 'bs'), ...opMtn(48, 54, 9, 34, 'bs'), S('M4 10 L56 10', 'gh', 4)],
+slave_craton: () => [P('M2 52 Q30 14 58 52 Z', 'bs'), S('M8 46 Q30 24 52 46 M14 48 Q30 32 46 48', 'ik', 1.2), E(24, 40, 4, 2.4, 'gh'), E(36, 36, 3.4, 2, 'gh'), E(30, 46, 5, 2.4, 'gh'), E(18, 46, 3, 1.8, 'gh'), E(42, 44, 3.6, 2, 'gh'), S('M2 52 L58 52', 'ik', 2)],
+arsenide_mineral: () => [...opCube(8, 28, 20, 'bs'), ...opCube(32, 16, 14, 'hi'), C(14, 44, 1.2, 'ik'), S('M8 36 L28 36 M8 44 L28 44', 'ik', 1), S('M32 24 L46 24', 'ik', 1), S('M4 56 L56 56', 'ik', 2)],
+psilomelane: () => [C(18, 38, 12, 'lo'), C(36, 34, 14, 'lo'), C(48, 44, 9, 'lo'), C(30, 48, 8, 'lo'), ring('ik', 18, 38, 12, 1.6), ring('ik', 36, 34, 14, 1.6), ring('ik', 48, 44, 9, 1.6), ring('ik', 30, 48, 8, 1.6), S('M12 34 Q16 30 20 32 M30 28 Q36 24 42 28', 'gh', 2)],
+allanite: () => [P('M2 56 L58 56 L58 46 Q30 40 2 46 Z', 'lo'), S('M14 46 L8 20 M24 44 L22 14 M34 44 L36 12 M44 46 L52 22', 'bs', 5.6), S('M14 46 L8 20 M24 44 L22 14 M34 44 L36 12 M44 46 L52 22', 'ik', 1)],
+cummingtonite: () => [P('M6 56 L54 56 L54 48 Q30 42 6 48 Z', 'lo'), ...Array.from({ length: 11 }, (_, i) => S(`M30 48 L${n(8 + i * 4.4)} ${n(10 + Math.abs(i - 5) * 3)}`, 'hi', 1.8))],
+hectorite: () => [E(30, 38, 22, 13, 'hi'), mmEll(30, 38, 22, 13, 'ik', 1.8), C(20, 28, 8, 'hi'), C(34, 24, 9, 'hi'), ring('ik', 34, 24, 9, 1.4), ring('ik', 20, 28, 8, 1.4), S('M18 42 Q30 48 44 40 M22 36 Q30 40 38 34', 'ik', 1.4)],
+feldspathoid: () => [mtHex(20, 36, 14, 'hi'), mtHex(42, 40, 11, 'bs'), mtHex(34, 16, 8, 'lo'), S('M14 36 L26 36 M36 40 L48 40', 'ik', 1.2)],
+sulfide_mineral: () => [...opCube(6, 28, 18, 'hi'), ...opCube(30, 22, 14, 'hi'), ...opCube(34, 40, 10, 'hi'), S('M8 34 L22 34 M8 40 L22 40 M8 46 L22 46', 'ik', 1), ...nhDots([[52, 18], [54, 30]], 2.4, 'bs')],
+boninite: () => [P('M6 20 L26 8 L54 16 L54 50 L12 52 Z', 'lo'), ...nhDots([[18, 28], [28, 36], [40, 24], [34, 44], [46, 40], [20, 44]], 2.2, 'hi'), S('M12 22 L22 16 M30 14 L48 20', 'gh', 2.4), S('M6 20 L26 8 L54 16 L54 50 L12 52 Z', 'ik', 1.4)],
+kainite: () => [E(30, 44, 26, 9, 'gh'), mmEll(30, 44, 26, 9, 'ik', 1.8), ...opCube(18, 18, 10, 'hi'), ...opCube(32, 24, 12, 'hi'), ...opCube(12, 34, 8, 'hi'), onWave(48, 'ik', 1.4)],
+aggradation: () => [onWave(10, 'ik', 1.6), box(4, 38, 52, 6, 'bs'), box(4, 30, 52, 6, 'hi'), box(10, 22, 40, 6, 'bs'), box(16, 14, 28, 6, 'hi'), box(4, 46, 52, 10, 'bs'), ...opArrow(54, 30, 54, 12, 'ik', 2)],
+soil_acidification: () => [box(4, 40, 52, 16, 'bs'), ...nhDots([[12, 46], [22, 50], [34, 46], [46, 50], [28, 54]], 1.6, 'ik'), ooDrop(24, 16, 1.3, 'hi'), ooDrop(44, 8, 0.8, 'hi'), S('M24 28 L24 38', 'ik', 1.6), ...nhDots([[10, 24], [50, 26]], 3, 'ik')],
+tilth: () => [P('M4 54 Q10 30 30 28 Q50 30 56 54 Z', 'bs'), ...nhDots([[14, 46], [22, 40], [30, 36], [38, 42], [46, 48], [26, 48], [36, 50]], 2.4, 'ik'), S('M30 28 L30 14', 'lo', 2.4), ...ntLeaf(22, 12, 8, 3, 'lo', -20), ...ntLeaf(38, 10, 8, 3, 'lo', 20)],
+cratonic_sequence: () => [box(4, 44, 52, 12, 'bs'), box(4, 34, 52, 8, 'hi'), box(4, 26, 52, 6, 'lo'), box(4, 18, 52, 6, 'hi'), onWave(12, 'ik', 1.6), ...opArrow(56, 30, 56, 14, 'ik', 1.6), ...opArrow(60, 16, 60, 30, 'ik', 1.6)],
+type_locality: () => [P('M6 56 L14 38 L30 34 L50 42 L56 56 Z', 'bs'), S('M12 46 L40 44 M18 52 L46 50', 'ik', 1.2), P('M30 4 Q18 6 18 18 Q18 26 30 36 Q42 26 42 18 Q42 6 30 4 Z', 'hi'), C(30, 16, 5, 'ik')],
+structural_geology: () => [S('M4 40 Q16 20 28 40 Q40 60 56 36', 'bs', 5), S('M4 30 Q16 10 28 30 Q40 50 56 26', 'hi', 4), S('M4 20 Q16 2 28 20 Q40 40 56 16', 'lo', 3.4), S('M34 4 L44 58', 'ik', 2), ...opArrow(40, 22, 44, 30, 'hi', 1.6)],
+boudinage: () => [box(4, 18, 52, 24, 'bs'), E(12, 30, 7, 4.4, 'hi'), E(27, 30, 7, 4.4, 'hi'), E(42, 30, 7, 4.4, 'hi'), E(54, 30, 4, 3.4, 'hi'), ...opArrow(4, 50, 16, 50, 'ik', 1.6), ...opArrow(56, 50, 44, 50, 'ik', 1.6)],
+brittle_ductile_transition_zone: () => [box(4, 8, 52, 22, 'bs'), S('M10 8 L16 18 L12 28 M26 8 L32 20 L28 30 M42 8 L48 16 L44 28', 'ik', 1.6), box(4, 32, 52, 22, 'lo'), S('M4 38 q8 -5 16 0 t16 0 t16 0 M4 46 q8 -5 16 0 t16 0 t16 0', 'hi', 2), S('M2 31 L58 31', 'ik', 2.4)],
+shear_geology: () => [S('M12 20 L12 50 L38 50 L38 20 Z', 'gh', 1.6), P('M18 20 L44 20 L38 50 L12 50 Z', 'bs'), ...opArrow(10, 14, 28, 14, 'hi', 2.4), ...opArrow(50, 56, 32, 56, 'hi', 2.4)],
+tectonic_uplift: () => [P('M4 50 L56 50 L56 58 L4 58 Z', 'lo'), P('M10 50 L26 20 L34 30 L44 14 L52 50 Z', 'bs'), ...opArrow(30, 44, 30, 26, 'hi', 2.6), ...opArrow(8, 36, 8, 24, 'ik', 1.6), ...opArrow(54, 36, 54, 24, 'ik', 1.6), S('M10 50 L52 50', 'ik', 1.4)],
+decollement: () => [box(4, 40, 52, 16, 'bs'), P('M6 40 Q16 24 26 34 Q34 20 44 30 Q52 24 56 40 Z', 'hi'), S('M4 40 L56 40', 'ik', 2.4), ...opArrow(4, 20, 18, 20, 'ik', 2.2)],
+volatile_astrogeology: () => [C(30, 44, 14, 'bs'), E(26, 38, 6, 3, 'hi'), S('M20 30 q-4 -6 0 -10 t0 -10 M30 30 q-4 -6 0 -10 t0 -10 M40 32 q-4 -6 0 -10 t0 -10', 'gh', 2.4), ring('ik', 30, 44, 14, 1.6), nzStarP(50, 12, 4, 1.6, 4, 'hi')],
+upland_and_lowland: () => [P('M2 8 L26 8 L34 30 L58 30 L58 56 L2 56 Z', 'bs'), S('M2 8 L26 8 L34 30 L58 30', 'ik', 1.8), onWave(36, 'hi', 1.6), S('M30 36 Q36 40 44 36', 'hi', 1.4), S('M8 50 L52 50', 'ik', 1)],
+depression_geology: () => [P('M2 22 L14 22 Q30 60 46 22 L58 22 L58 58 L2 58 Z', 'bs'), S('M2 22 L14 22 Q30 60 46 22 L58 22', 'ik', 2), ...opArrow(30, 8, 30, 38, 'hi', 2.4)],
+point_bar: () => [S('M2 52 Q16 6 34 30 Q48 48 58 8', 'hi', 11), P('M24 40 Q32 44 38 40 Q34 34 26 34 Z', 'bs'), ...nhDots([[28, 38], [33, 38], [30, 36]], 1, 'ik'), S('M2 52 Q16 6 34 30 Q48 48 58 8', 'ik', 1.2)],
+summit: () => [P('M4 56 L30 12 L56 56 Z', 'bs'), P('M22 26 L30 12 L38 26 L33 24 L30 28 L26 24 Z', 'hi'), S('M30 12 L30 2', 'ik', 1.8), P('M30 2 L40 5 L30 8 Z', 'hi')],
+bay_mud: () => [P('M2 8 L58 8 L58 20 Q40 22 34 34 Q30 48 44 58 L2 58 Z', 'bs'), P('M58 20 Q40 22 34 34 Q30 48 44 58 L58 58 Z', 'hi'), onWave(30, 'ik', 1.4), E(16, 40, 10, 4, 'lo'), E(24, 50, 9, 3, 'lo'), S('M8 38 q4 -2 8 0 M14 48 q4 -2 8 0', 'ik', 1.2)],
+oceanic_zone: () => [onWave(8, 'ik', 1.6), P('M2 14 L58 14 L58 58 L2 58 Z', 'hi'), P('M2 14 L18 14 L22 30 L34 44 L34 58 L2 58 Z', 'bs'), S('M18 14 L22 30 L34 44', 'ik', 1.8), ...nyFish(46, 34, 6, 3, 'lo', {}), S('M50 18 L50 54', 'ik', 1.2), S('M47 24 L53 24 M47 36 L53 36 M47 48 L53 48', 'ik', 1.2)],
+groundwater_recharge: () => [...[10, 22, 34].map((x, i) => S(`M${x} ${4 + i * 2} L${x - 3} ${14 + i * 2}`, 'hi', 2)), box(4, 18, 52, 12, 'bs'), box(4, 30, 52, 12, 'lo'), box(4, 42, 52, 14, 'hi'), S('M4 46 q8 -4 16 0 t16 0 t16 0', 'ik', 1.4), ...opArrow(30, 22, 30, 42, 'ik', 1.6)],
+thalweg: () => [P('M2 8 L26 52 L34 52 L58 8 L58 58 L2 58 Z', 'bs'), S('M2 8 L26 52 L34 52 L58 8', 'ik', 2), S('M30 50 L30 12', 'hi', 1.6), P('M24 52 L36 52 L34 48 L26 48 Z', 'hi'), S('M26 48 L34 48', 'ik', 1.2), C(30, 52, 1.8, 'ik')],
+tributary: () => [S('M30 58 L30 34 Q30 20 22 4', 'hi', 7), S('M56 10 Q40 20 32 32', 'hi', 3.6), C(32, 32, 3, 'ik'), S('M2 56 L58 56', 'bs', 3), ...opArrow(50, 14, 38, 24, 'ik', 1.4)],
+continental_fragment: () => [P('M2 8 Q22 10 20 30 Q14 40 22 52 L2 56 Z', 'bs'), E(46, 34, 9, 7, 'bs'), mmEll(46, 34, 9, 7, 'ik', 1.4), S('M24 22 L32 28 M24 40 L32 38', 'ik', 1.2), ...opArrow(34, 46, 42, 44, 'ik', 1.4), onWave(54, 'ik', 1.4)],
+uninhabited_island: () => [E(30, 50, 22, 7, 'hi'), ...nlPalm(30, 48, 30, 'lo'), onWave(56, 'ik', 1.6), onWave(8, 'gh', 1.4), C(50, 14, 4, 'hi')],
+};
+for (const [id, fn] of Object.entries(MKop)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 81: geography terms, regions, projections, map types and the four directions, sourced, audited, hand-drawn ── */
+const oqGlobe = (cx, cy, r, role = 'lo') => [C(cx, cy, r, role), mmEll(cx, cy, r, r, 'ik', 1.6), mmEll(cx, cy, r, n(r * 0.35), 'ik', 1.1), mmEll(cx, cy, n(r * 0.4), r, 'ik', 1.1), S(`M${cx} ${n(cy - r)} L${cx} ${n(cy + r)}`, 'ik', 1.1)];
+const oqBand = (cx, cy, r, ya, yb, role) => { const xa = Math.sqrt(Math.max(0, r * r - (ya - cy) ** 2)), xb = Math.sqrt(Math.max(0, r * r - (yb - cy) ** 2)); return P(`M${n(cx - xa)} ${ya} L${n(cx + xa)} ${ya} A${r} ${r} 0 0 1 ${n(cx + xb)} ${yb} L${n(cx - xb)} ${yb} A${r} ${r} 0 0 1 ${n(cx - xa)} ${ya} Z`, role); };
+const oqPin = (cx, cy, s = 1, role = 'hi') => [P(`M${cx} ${n(cy + 16 * s)} Q${n(cx - 12 * s)} ${n(cy + 2 * s)} ${n(cx - 10 * s)} ${n(cy - 6 * s)} Q${n(cx - 8 * s)} ${n(cy - 14 * s)} ${cx} ${n(cy - 14 * s)} Q${n(cx + 8 * s)} ${n(cy - 14 * s)} ${n(cx + 10 * s)} ${n(cy - 6 * s)} Q${n(cx + 12 * s)} ${n(cy + 2 * s)} ${cx} ${n(cy + 16 * s)} Z`, role), C(cx, n(cy - 5 * s), n(4 * s), 'ik')];
+const oqBubble = (cx, cy, w, h, role = 'hi') => [E(cx, cy, w, h, role), P(`M${n(cx - w * 0.4)} ${n(cy + h * 0.7)} L${n(cx - w * 0.7)} ${n(cy + h * 1.5)} L${n(cx - w * 0.05)} ${n(cy + h * 0.9)} Z`, role)];
+const oqLand = (d, role = 'bs') => [P(d, role), S(d, 'ik', 1.4)];
+const MKoq = {
+critical_geography: () => [S('M30 6 L30 24 M14 12 L46 12', 'ik', 2), S('M14 12 L10 22 L18 22 Z M46 12 L42 22 L50 22 Z', 'ik', 1.4), box(8, 30, 44, 24, 'hi'), S('M8 38 L52 38 M24 30 L24 54 M38 30 L38 54', 'ik', 1.2), E(30, 46, 6, 4, 'bs')],
+hypsometry: () => [S('M6 6 L6 54 L56 54', 'ik', 1.8), P('M8 14 Q14 20 24 24 Q34 28 38 46 Q46 52 56 52 L56 54 L8 54 Z', 'bs'), S('M8 14 Q14 20 24 24 Q34 28 38 46 Q46 52 56 52', 'hi', 2.6), S('M6 30 L56 30', 'ik', 1.2), C(30, 30, 2, 'ik')],
+bioregionalism: () => [P('M8 28 Q10 10 30 8 Q52 10 52 30 Q50 52 30 52 Q10 50 8 28 Z', 'gh'), S('M8 28 Q10 10 30 8 Q52 10 52 30 Q50 52 30 52 Q10 50 8 28 Z', 'ik', 1.8), S('M20 14 Q30 28 24 50', 'hi', 3), ...ntConifer(38, 18, 22, 8, 'lo'), ...ntConifer(46, 26, 18, 6, 'lo')],
+afro_eurasia: () => [...oqLand('M4 14 L18 8 L22 18 L16 22 L8 20 Z', 'hi'), ...oqLand('M24 10 L40 6 L56 10 L58 26 L48 34 L40 28 L32 22 L24 20 Z', 'lo'), ...oqLand('M16 24 L30 24 L36 32 L34 46 L28 56 L22 46 L18 34 Z', 'bs')],
+continental_europe: () => [...oqLand('M10 18 L24 8 L40 10 L52 20 L50 36 L40 42 L30 50 L22 42 L14 34 Z', 'bs'), ring('gh', 8, 46, 3, 1.6), ring('gh', 54, 10, 3.6, 1.6), ring('gh', 54, 44, 2.6, 1.6), S('M26 18 L40 20 L36 34', 'ik', 1.2)],
+kerguelen_plateau: () => [onWave(14, 'ik', 1.6), P('M2 58 L10 40 L16 34 L44 34 L50 40 L58 58 Z', 'bs'), P('M28 34 L32 22 L36 34 Z', 'bs'), S('M2 58 L10 40 L16 34 L44 34 L50 40 L58 58', 'ik', 1.6), P('M2 14 L58 14 L58 58 L2 58 Z', 'gh')],
+zealandia: () => [P('M2 24 L58 24 L58 58 L2 58 Z', 'hi'), onWave(24, 'ik', 1.8), ...oqLand('M6 34 Q14 28 30 32 Q48 30 54 40 Q50 52 30 54 Q10 54 6 34 Z', 'gh'), P('M14 24 L18 16 L22 24 Z', 'bs'), P('M40 24 L44 14 L48 24 Z', 'bs')],
+geography_of_africa: () => [...oqLand('M18 8 Q30 4 44 12 Q50 22 46 32 Q42 44 34 54 Q26 52 24 40 Q14 36 10 24 Q12 12 18 8 Z', 'bs'), S('M30 14 Q24 26 34 40', 'hi', 2.6), ...opMtn(38, 30, 5, 8, 'lo', false)],
+geography_of_antarctica: () => [C(30, 30, 24, 'hi'), ring('ik', 30, 30, 24, 2), P('M16 24 L22 16 L28 24 Z M32 36 L38 28 L46 38 Z', 'gh'), S('M14 38 L22 34 L30 38', 'ik', 1.6), C(30, 30, 2.4, 'ik'), ring('ik', 30, 30, 8, 1.2)],
+geography_of_asia: () => [...oqLand('M4 18 Q16 6 32 8 Q52 8 58 22 Q54 36 44 34 Q36 46 26 38 Q12 38 4 28 Z', 'bs'), ...opMtn(26, 30, 7, 12, 'lo'), ...opMtn(36, 30, 6, 9, 'lo'), S('M44 16 Q40 24 46 32', 'hi', 2.4)],
+geography_of_europe: () => [...oqLand('M4 30 Q10 14 24 12 Q34 6 46 10 Q58 16 56 28 L46 30 Q40 40 30 38 Q26 46 18 42 Q10 40 4 30 Z', 'bs'), ...opMtn(26, 30, 7, 10, 'lo'), S('M44 14 Q38 22 44 30', 'hi', 2.4)],
+geography_of_north_america: () => [...oqLand('M6 12 Q20 6 38 8 Q54 10 56 22 Q50 30 42 34 Q38 42 32 52 Q28 44 24 36 Q12 34 6 24 Z', 'bs'), E(34, 20, 4, 2.4, 'hi'), E(42, 22, 3.6, 2, 'hi'), E(28, 22, 3, 2, 'hi'), S('M8 14 L12 28', 'ik', 2.4)],
+geography_of_south_america: () => [...oqLand('M16 8 Q36 4 50 14 Q54 24 44 34 Q40 46 32 56 Q24 50 24 36 Q12 26 16 8 Z', 'bs'), S('M26 18 Q36 20 46 16', 'hi', 3), S('M18 14 Q16 30 26 46', 'ik', 2.4)],
+meridian_180th: () => [...oqGlobe(30, 30, 22, 'lo'), S('M12 14 Q8 30 12 46', 'hi', 3.4), S('M48 14 Q52 30 48 46', 'hi', 3.4), S('M2 30 L6 30 M54 30 L58 30', 'ik', 1.6)],
+celestial_pole: () => [ring('gh', 30, 14, 5, 1.4), ring('gh', 30, 14, 10, 1.4), ring('gh', 30, 14, 15, 1.4), nzStarP(30, 14, 4, 1.6, 5, 'hi'), S('M30 20 L30 40', 'ik', 1.6), C(30, 46, 9, 'lo'), ring('ik', 30, 46, 9, 1.6), S('M30 36 L30 56', 'ik', 1.4)],
+geographical_zone: () => [C(30, 30, 24, 'lo'), oqBand(30, 30, 24, 6, 14, 'hi'), oqBand(30, 30, 24, 14, 23, 'bs'), oqBand(30, 30, 24, 23, 37, 'lo'), oqBand(30, 30, 24, 37, 46, 'bs'), oqBand(30, 30, 24, 46, 54, 'hi'), mmEll(30, 30, 24, 24, 'ik', 1.8), S('M7 14 L53 14 M6 23 L54 23 M6 37 L54 37 M7 46 L53 46', 'ik', 1.2)],
+subarctic: () => [P('M2 46 L58 46 L58 58 L2 58 Z', 'hi'), ...ntConifer(12, 14, 34, 9, 'lo'), ...ntConifer(30, 10, 38, 10, 'lo'), ...ntConifer(48, 16, 32, 9, 'lo'), C(52, 8, 4, 'hi'), ohSnow(10, 8, 5)],
+subantarctic: () => [E(30, 46, 20, 8, 'bs'), mmEll(30, 46, 20, 8, 'ik', 1.4), ntBlades(22, 44, 5, 12, 'lo'), ntBlades(36, 44, 5, 10, 'lo'), P('M46 30 L52 20 L58 30 Z', 'hi'), onWave(54, 'ik', 1.6), onWave(26, 'gh', 1.4)],
+subtropics: () => [...nlPalm(14, 54, 36, 'lo'), ...ntApple(40, 42, 8, 'hi'), ...ntApple(50, 46, 6, 'hi'), C(48, 12, 6, 'hi'), nqBurst(48, 12, 8, 12, 10, 'hi', 1.6), S('M26 54 L58 54', 'bs', 2.4)],
+southern_hemisphere: () => [C(30, 30, 24, 'lo'), oqBand(30, 30, 24, 30, 54, 'hi'), mmEll(30, 30, 24, 24, 'ik', 1.8), S('M6 30 L54 30', 'ik', 1.8), mmEll(30, 30, 24, 6, 'ik', 1.1)],
+eastern_hemisphere: () => [C(30, 30, 24, 'lo'), P('M30 6 A24 24 0 0 1 30 54 Z', 'hi'), mmEll(30, 30, 24, 24, 'ik', 1.8), S('M30 6 L30 54', 'ik', 1.8), mmEll(30, 30, 8, 24, 'ik', 1.1)],
+western_hemisphere: () => [C(30, 30, 24, 'lo'), P('M30 6 A24 24 0 0 0 30 54 Z', 'hi'), mmEll(30, 30, 24, 24, 'ik', 1.8), S('M30 6 L30 54', 'ik', 1.8), mmEll(30, 30, 8, 24, 'ik', 1.1)],
+land_and_water_hemispheres: () => [C(16, 30, 14, 'bs'), P('M8 24 Q14 20 20 26 Q22 32 16 36 Q10 34 8 24 Z', 'gh'), ring('ik', 16, 30, 14, 1.6), C(44, 30, 14, 'hi'), ring('ik', 44, 30, 14, 1.6), S('M34 26 q3 -3 6 0 t6 0 M34 34 q3 -3 6 0 t6 0', 'ik', 1.4)],
+development_geography: () => [box(6, 38, 8, 16, 'bs'), box(18, 30, 8, 24, 'hi'), box(30, 20, 8, 34, 'bs'), ...opArrow(10, 30, 44, 8, 'ik', 2), P('M44 38 L52 30 L58 38 L58 54 L44 54 Z', 'hi'), S('M2 54 L58 54', 'ik', 1.8)],
+language_geography: () => [...oqLand('M6 20 Q22 10 40 14 Q56 20 54 38 Q40 50 22 46 Q8 40 6 20 Z', 'bs'), ...oqBubble(20, 26, 8, 5, 'hi'), ...oqBubble(40, 22, 7, 4.6, 'gh'), ...oqBubble(34, 40, 7, 4.4, 'hi')],
+health_geography: () => [...oqLand('M4 22 Q20 10 40 14 Q58 20 54 40 Q40 52 22 48 Q6 42 4 22 Z', 'bs'), P('M28 18 L34 18 L34 24 L40 24 L40 30 L34 30 L34 36 L28 36 L28 30 L22 30 L22 24 L28 24 Z', 'hi'), S('M6 52 L16 52 L20 46 L24 56 L28 50 L54 50', 'ik', 1.6)],
+place_identity: () => [...oqPin(30, 24, 1.5, 'hi'), P('M30 14 Q22 8 18 16 Q18 22 30 30 Q42 22 42 16 Q38 8 30 14 Z', 'bs'), S('M10 56 L50 56', 'ik', 2), P('M16 56 L16 46 L22 42 L28 46 L28 56 Z', 'lo')],
+new_world: () => [onWave(46, 'ik', 1.6), P('M6 40 L30 40 L26 48 L10 48 Z', 'bs'), S('M18 40 L18 12', 'ik', 2), P('M18 12 L34 34 L18 34 Z', 'hi'), P('M18 18 L8 34 L18 34 Z', 'gh'), P('M40 40 Q46 28 58 30 L58 48 L38 48 Z', 'bs'), ...ntConifer(50, 22, 14, 5, 'lo')],
+old_world: () => [box(6, 12, 8, 36, 'hi'), box(2, 8, 16, 5, 'bs'), box(2, 48, 16, 5, 'bs'), box(24, 12, 8, 36, 'hi'), box(20, 8, 16, 5, 'bs'), box(20, 48, 16, 5, 'bs'), P('M40 14 L58 14 L58 48 L40 48 Z', 'gh'), S('M40 14 Q38 12 40 10 L58 10', 'ik', 1.6), S('M44 22 L54 22 M44 30 L54 30 M44 38 L50 38', 'ik', 1.4)],
+anglosphere: () => [...oqGlobe(30, 34, 20, 'lo'), ...oqBubble(34, 14, 14, 8, 'hi'), S('M26 14 L30 8 L34 14 M27 12 L33 12 M38 14 L38 8 L42 8 Q44 8 42 11 L38 11 L43 14', 'ik', 1.4)],
+middle_east_north_africa: () => [...oqLand('M2 24 Q16 18 26 22 Q38 16 56 20 L52 36 Q40 40 36 52 L24 54 Q22 40 12 34 Q4 32 2 24 Z', 'bs'), P('M2 14 L56 14 L56 20 Q38 16 26 22 Q16 18 2 24 Z', 'hi'), S('M14 40 Q20 34 26 40 Q32 34 38 40', 'ik', 1.4), ooDrop(46, 30, 0.8, 'lo')],
+francophonie: () => [...oqBubble(26, 22, 18, 11, 'hi'), S('M20 24 Q26 18 32 24 M24 14 L30 10', 'ik', 2), S('M8 52 L52 38', 'bs', 7), S('M12 50 L16 46 M22 46 L26 42 M32 42 L36 38 M42 38 L46 34', 'ik', 1.2)],
+sinosphere: () => [P('M10 54 L50 54 L48 46 L12 46 Z', 'bs'), P('M14 46 L46 46 L44 38 L16 38 Z', 'hi'), P('M18 38 L42 38 L40 30 L20 30 Z', 'bs'), P('M22 30 L38 30 L36 22 L24 22 Z', 'hi'), S('M6 46 Q12 44 14 46 M46 46 Q48 44 54 46 M10 38 Q14 36 16 38 M44 38 Q46 36 50 38 M14 30 Q18 28 20 30 M40 30 Q42 28 46 30', 'ik', 1.8), S('M30 22 L30 8', 'ik', 2), C(30, 6, 2, 'hi')],
+greater_china: () => [...oqLand('M8 22 Q20 10 38 12 Q54 14 54 28 Q48 42 32 44 Q14 44 8 22 Z', 'bs'), E(50, 50, 4, 3, 'bs'), mmEll(50, 50, 4, 3, 'ik', 1.2), ring('ik', 30, 30, 26, 1.2)],
+quantitative_geography: () => [...oqLand('M4 18 Q18 8 36 10 Q54 14 54 30 Q40 46 20 42 Q6 36 4 18 Z', 'bs'), box(14, 28, 6, 14, 'hi'), box(23, 22, 6, 20, 'hi'), box(32, 30, 6, 12, 'hi'), S('M10 44 L42 44', 'ik', 1.6), ...nhDots([[48, 18], [44, 24]], 1.6, 'ik')],
+quantitative_revolution: () => [S('M6 10 L54 10 L54 50 L6 50 Z', 'ik', 2), S('M6 24 L54 24 M6 36 L54 36', 'ik', 1.6), ...[[14, 17], [20, 17], [38, 17], [44, 17], [22, 30], [30, 30], [40, 30], [16, 43], [34, 43], [46, 43], [50, 43]].map(([x, y]) => C(x, y, 3, 'hi'))],
+physical_geodesy: () => [C(30, 30, 12, 'lo'), mmEll(30, 30, 12, 12, 'ik', 1.6), S('M14 30 Q18 14 30 16 Q42 14 46 30 Q42 46 30 44 Q18 46 14 30 Z', 'ik', 1.2), ...opArrow(30, 4, 30, 12, 'hi', 1.8), ...opArrow(30, 56, 30, 48, 'hi', 1.8), ...opArrow(4, 30, 12, 30, 'hi', 1.8), ...opArrow(56, 30, 48, 30, 'hi', 1.8)],
+height_above_mean_sea_level: () => [...opMtn(36, 52, 20, 40, 'bs'), onWave(52, 'ik', 1.6), P('M2 52 L16 52 L16 58 L2 58 Z', 'hi'), ...opArrow(10, 50, 10, 12, 'ik', 1.8), S('M6 20 L14 20 M6 30 L14 30 M6 40 L14 40', 'ik', 1.4)],
+geocode: () => [...oqPin(30, 18, 1.2, 'hi'), ...[10, 14, 17, 22, 26, 29, 34, 38, 41, 46, 50].map((x, i) => S(`M${x} 42 L${x} 56`, 'ik', i % 3 ? 1.2 : 2.4))],
+geomatics: () => [box(24, 8, 12, 12, 'bs'), box(4, 11, 16, 6, 'hi'), box(40, 11, 16, 6, 'hi'), S('M20 14 L24 14 M36 14 L40 14', 'ik', 1.6), S('M26 26 Q30 34 34 26 M22 24 Q30 40 38 24', 'ik', 1.4), P('M2 60 Q30 36 58 60 Z', 'lo'), mmEll(30, 60, 28, 22, 'ik', 1.2)],
+geoinformatics: () => [box(6, 8, 48, 34, 'lo'), P('M14 22 L30 14 L46 22 L30 30 Z', 'hi'), P('M14 28 L30 20 L46 28 L30 36 Z', 'bs'), S('M30 42 L30 52 M18 52 L42 52', 'ik', 2), ...oqPin(30, 18, 0.5, 'ik').slice(1)],
+geostatistics: () => [...oqLand('M4 18 Q18 8 36 10 Q54 14 54 30 Q40 46 20 42 Q6 36 4 18 Z', 'bs'), ...nhDots([[14, 20], [22, 30], [30, 18], [36, 32], [44, 22], [26, 38], [18, 38], [40, 38], [48, 32]], 2.2, 'hi'), S('M6 54 Q20 44 34 50 T56 46', 'ik', 1.6)],
+statistical_geography: () => [...[0, 1, 2].flatMap(r => [0, 1, 2].map(c => box(6 + c * 16, 6 + r * 16, 15, 15, ['hi', 'bs', 'lo', 'gh', 'hi', 'bs', 'lo', 'gh', 'hi'][r * 3 + c]))), S('M6 6 L54 6 L54 54 L6 54 Z', 'ik', 1.6)],
+time_geography: () => [P('M6 40 L30 52 L54 40 L30 28 Z', 'bs'), S('M6 40 L6 14 L30 2 L54 14 L54 40', 'ik', 1.6), S('M30 28 L30 2 M30 52 L30 28', 'ik', 1.2), S('M14 40 Q22 30 28 36 Q40 22 46 12', 'hi', 2.6), C(14, 40, 2.4, 'hi'), C(46, 12, 2.4, 'hi'), S('M54 14 L54 40', 'ik', 1.6)],
+activity_space: () => [E(30, 32, 25, 16, 'gh'), mmEll(30, 32, 25, 16, 'ik', 1.4), S('M14 38 L30 22 L46 38 L14 38', 'ik', 1.4), P('M10 40 L14 34 L18 40 Z', 'hi'), box(26, 18, 8, 8, 'bs'), box(42, 34, 8, 8, 'lo')],
+azimuthal_equidistant_projection: () => [ring('ik', 30, 30, 26, 2), ring('ik', 30, 30, 17, 1.4), ring('ik', 30, 30, 8, 1.4), nqBurst(30, 30, 2, 26, 12, 'gh', 1.2), P('M24 14 Q34 10 38 20 Q30 24 24 14 Z', 'bs'), P('M36 38 Q46 36 46 44 Q38 46 36 38 Z', 'bs'), C(30, 30, 2.4, 'hi')],
+gall_peters_projection: () => [box(4, 8, 52, 44, 'hi'), S('M4 30 L56 30 M30 8 L30 52', 'ik', 1.2), P('M8 12 Q16 10 22 14 L22 30 Q14 34 8 30 Z', 'bs'), P('M32 12 Q42 10 50 14 L50 34 Q44 40 38 34 Z', 'bs'), P('M14 36 L22 36 L22 50 L14 50 Z', 'bs'), S('M4 8 L56 8 L56 52 L4 52 Z', 'ik', 1.6)],
+dot_distribution_map: () => [...oqLand('M4 20 Q16 8 34 10 Q54 12 56 30 Q46 50 24 46 Q8 40 4 20 Z', 'bs'), ...nhDots([[14, 22], [18, 28], [22, 20], [26, 26], [30, 18], [34, 24], [38, 30], [42, 22], [46, 28], [24, 34], [32, 38], [20, 36], [40, 38], [28, 28], [36, 16]], 1.8, 'hi')],
+flow_map: () => [...nhDots([[8, 46], [30, 12], [52, 42]], 3, 'bs'), S('M8 46 Q14 20 30 12', 'hi', 5), S('M30 12 Q48 18 52 42', 'hi', 2.6), S('M8 46 Q30 54 52 42', 'hi', 1.6), ...opArrow(24, 16, 30, 12, 'hi', 4), ...opArrow(46, 30, 52, 42, 'hi', 2)],
+proportional_symbol_map: () => [...oqLand('M4 20 Q16 8 34 10 Q54 12 56 30 Q46 50 24 46 Q8 40 4 20 Z', 'bs'), C(18, 24, 9, 'hi'), C(38, 20, 5, 'hi'), C(44, 36, 7, 'hi'), C(26, 38, 3.4, 'hi'), ring('ik', 18, 24, 9, 1.4), ring('ik', 38, 20, 5, 1.4), ring('ik', 44, 36, 7, 1.4)],
+north: () => [...opArrow(30, 52, 30, 6, 'hi', 5), S('M12 36 L48 36', 'ik', 2), ring('ik', 30, 36, 5, 1.6), S('M26 12 L26 22 L34 12 L34 22', 'ik', 1.6), S('M4 54 L56 54', 'ik', 1.2)],
+south: () => [...opArrow(30, 8, 30, 54, 'hi', 5), S('M12 24 L48 24', 'ik', 2), ring('ik', 30, 24, 5, 1.6), ohSnow(10, 52, 5), ohSnow(50, 50, 4)],
+east: () => [...opArrow(8, 36, 54, 36, 'hi', 5), S('M30 18 L30 54', 'ik', 2), C(52, 14, 6, 'hi'), nqBurst(52, 14, 8, 12, 10, 'hi', 1.6), P('M30 56 Q42 44 58 56 Z', 'bs')],
+west: () => [...opArrow(52, 36, 6, 36, 'hi', 5), S('M30 18 L30 54', 'ik', 2), P('M8 14 A6 6 0 0 1 20 14 Z', 'hi'), nqBurst(14, 14, 8, 12, 8, 'hi', 1.6), P('M2 56 Q18 44 30 56 Z', 'bs')],
+cartographic_generalization: () => [S('M4 8 L4 52 L26 52 L26 8 Z', 'ik', 1.6), S('M8 40 L10 34 L8 30 L13 28 L11 22 L17 20 L15 14 L22 12', 'hi', 2), S('M34 8 L34 52 L56 52 L56 8 Z', 'ik', 1.6), S('M38 40 Q44 28 52 12', 'hi', 3), ...opArrow(27, 30, 33, 30, 'ik', 1.6)],
+grade_slope: () => [P('M6 50 L54 50 L54 18 Z', 'bs'), S('M6 50 L54 18', 'ik', 2), S('M6 50 L54 50 L54 18', 'ik', 1.4), S('M18 50 A12 12 0 0 0 16 44', 'hi', 2), S('M54 18 L54 50', 'hi', 2), S('M10 56 L54 56', 'gh', 1.4)],
+terrain: () => [P('M2 46 Q14 30 30 28 Q46 30 58 46 L58 58 L2 58 Z', 'bs'), mmEll(30, 44, 26, 12, 'ik', 1.4), mmEll(30, 42, 18, 8, 'ik', 1.4), mmEll(30, 40, 10, 5, 'ik', 1.4), C(30, 39, 2, 'hi'), S('M2 46 Q14 30 30 28 Q46 30 58 46', 'ik', 1.8)],
+};
+for (const [id, fn] of Object.entries(MKoq)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 82: seas, gulfs, bays, sounds, harbours and ocean circulations, sourced, audited, hand-drawn ── */
+const orSea = (role = 'lo') => [P('M4 8 Q30 3 56 8 L56 52 Q30 57 4 52 Z', role), S('M4 8 Q30 3 56 8 L56 52 Q30 57 4 52 Z', 'ik', 1.6)];
+const orTop = (d, role = 'bs') => P(`M4 8 Q30 3 56 8 L56 ${d} Q42 ${d + 6} 30 ${d} Q18 ${d - 6} 4 ${d} Z`, role);
+const orBot = (d, role = 'bs') => P(`M4 ${d} Q18 ${d + 6} 30 ${d} Q42 ${d - 6} 56 ${d} L56 52 Q30 57 4 52 Z`, role);
+const orIsle = (cx, cy, rx, ry, role = 'bs') => [E(cx, cy, rx, ry, role), mmEll(cx, cy, rx, ry, 'ik', 1.2)];
+const orBoat = (cx, y, s = 1, role = 'hi') => [P(`M${n(cx - 8 * s)} ${y} L${n(cx + 8 * s)} ${y} L${n(cx + 5 * s)} ${n(y + 4 * s)} L${n(cx - 5 * s)} ${n(y + 4 * s)} Z`, 'ik'), S(`M${cx} ${y} L${cx} ${n(y - 13 * s)}`, 'ik', 1.4), P(`M${n(cx + 1 * s)} ${n(y - 12 * s)} L${n(cx + 8 * s)} ${n(y - 2 * s)} L${n(cx + 1 * s)} ${n(y - 2 * s)} Z`, role)];
+const orBay = (cx, cy, rx, ry, role = 'lo') => [P('M4 8 L56 8 L56 52 L4 52 Z', 'bs'), E(cx, cy, rx, ry, role), mmEll(cx, cy, rx, ry, 'ik', 1.6)];
+const MKor = {
+chukchi_sea: () => [...orSea('lo'), orTop(18), ...orIsle(20, 34, 7, 3, 'hi'), ...orIsle(40, 42, 6, 2.6, 'hi'), ...orIsle(34, 28, 4, 2, 'hi'), onWave(48, 'ik', 1.4)],
+east_siberian_sea: () => [...orSea('lo'), orTop(16), ...orIsle(14, 30, 4, 3), ...orIsle(22, 38, 3, 2.4), ...orIsle(16, 44, 3.4, 2.4), ohSnow(44, 36, 6), onWave(48, 'ik', 1.4)],
+james_bay: () => [...orBay(30, 32, 20, 16, 'lo'), ...orIsle(26, 32, 3, 2, 'bs'), ...orIsle(38, 38, 2.6, 2, 'bs'), onWave(30, 'ik', 1.2)],
+laptev_sea: () => [...orSea('lo'), orTop(14), P('M26 8 L34 8 L34 24 L30 30 L26 24 Z', 'bs'), ...orIsle(46, 32, 4, 2.6), ...orIsle(40, 42, 3, 2), ohSnow(16, 40, 6), onWave(46, 'ik', 1.4)],
+gulf_of_ob: () => [P('M4 8 L56 8 L56 52 L4 52 Z', 'bs'), S('M12 10 Q30 22 24 34 Q18 46 42 52', 'lo', 8), S('M12 10 Q30 22 24 34 Q18 46 42 52', 'ik', 1.2), P('M2 52 Q22 40 40 52 L2 52 Z', 'lo'), onWave(47, 'ik', 1.4)],
+atlantic_meridional_overturning_circulation: () => [...orSea('gh'), S('M14 40 Q10 18 36 16', 'hi', 3.4), ...opArrow(30, 16, 40, 16, 'hi', 3.4), S('M46 22 Q50 42 24 44', 'ik', 3.4), ...opArrow(30, 44, 20, 44, 'ik', 3.4), onWave(30, 'ik', 1.2)],
+gulf_of_bothnia: () => [P('M4 8 L56 8 L56 52 L4 52 Z', 'bs'), P('M24 8 L38 8 L40 28 L34 52 L26 52 L22 30 Z', 'lo'), S('M24 8 L22 30 L26 52 M38 8 L40 28 L34 52', 'ik', 1.4), S('M30 22 L30 38', 'ik', 1.2), onWave(34, 'ik', 1.2)],
+gulf_of_finland: () => [P('M4 8 L56 8 L56 52 L4 52 Z', 'bs'), P('M2 26 Q22 22 44 30 L50 30 L50 36 Q24 34 2 34 Z', 'lo'), S('M2 26 Q22 22 44 30 L50 30 L50 36 Q24 34 2 34', 'ik', 1.4), box(50, 24, 5, 12, 'hi'), box(46, 28, 4, 8, 'hi'), S('M2 18 L58 18', 'ik', 1)],
+bay_of_fundy: () => [...orBay(30, 34, 20, 14, 'lo'), ...opArrow(18, 40, 18, 22, 'hi', 2.6), ...opArrow(42, 22, 42, 40, 'hi', 2.6), onWave(34, 'ik', 1.2)],
+bermuda_triangle: () => [...orSea('lo'), P('M30 10 L52 46 L8 46 Z', 'gh'), S('M30 10 L52 46 L8 46 Z', 'hi', 2.4), ...orBoat(26, 42, 0.6, 'bs'), S('M32 24 q4 -4 4 0 q0 4 -3 5', 'ik', 2), C(33, 33, 1.2, 'ik')],
+celtic_sea: () => [...orSea('lo'), ...orIsle(14, 18, 9, 11), ...orIsle(48, 40, 7, 6), P('M40 8 L56 8 L56 22 Q48 18 40 8 Z', 'bs'), onWave(30, 'ik', 1.4), onWave(40, 'ik', 1.2)],
+chesapeake_bay: () => [...orBay(30, 22, 18, 12, 'lo'), E(30, 44, 10, 6, 'hi'), mmEll(30, 44, 10, 6, 'ik', 1.4), S('M20 40 L14 32 M40 40 L46 32 M22 49 L16 54 M38 49 L44 54', 'ik', 1.8), C(14, 31, 3, 'hi'), C(46, 31, 3, 'hi')],
+long_island_sound: () => [P('M4 8 L56 8 L56 52 L4 52 Z', 'bs'), P('M4 26 L56 24 L56 38 L4 40 Z', 'lo'), E(32, 46, 22, 5, 'bs'), mmEll(32, 46, 22, 5, 'ik', 1.4), S('M4 26 L56 24 M4 40 L56 38', 'ik', 1.4), onWave(32, 'ik', 1.2)],
+venetian_lagoon: () => [...orSea('hi'), E(30, 30, 20, 11, 'lo'), mmEll(30, 30, 20, 11, 'ik', 1.4), P('M8 44 Q30 40 52 44 L52 48 Q30 44 8 48 Z', 'bs'), ...orBoat(30, 32, 0.8, 'bs'), ...orIsle(40, 26, 3, 2)],
+alboran_sea: () => [P('M4 8 L56 8 L56 52 L4 52 Z', 'lo'), P('M4 8 L56 8 L56 22 Q34 24 30 20 Q18 24 4 18 Z', 'bs'), P('M4 46 Q20 36 36 40 Q48 36 56 42 L56 52 L4 52 Z', 'bs'), S('M4 18 Q18 24 30 20 Q34 24 56 22', 'ik', 1.4), S('M4 46 Q20 36 36 40 Q48 36 56 42', 'ik', 1.4), onWave(31, 'ik', 1.4)],
+ligurian_sea: () => [...orSea('lo'), P('M4 8 L56 8 L56 20 Q40 18 30 26 Q18 32 4 24 Z', 'bs'), S('M4 24 Q18 32 30 26 Q40 18 56 20', 'ik', 1.4), ...orBoat(32, 44, 1, 'hi'), onWave(34, 'ik', 1.2)],
+new_york_harbor: () => [...orSea('lo'), box(22, 34, 16, 18, 'bs'), P('M24 34 L30 14 L36 34 Z', 'hi'), S('M36 24 L44 14 L44 8', 'ik', 2.4), nqBurst(44, 7, 2, 6, 6, 'hi', 1.6), onWave(46, 'ik', 1.4)],
+german_bight: () => [P('M4 8 L56 8 L56 52 L4 52 Z', 'lo'), P('M4 8 L56 8 L56 40 L40 40 Q34 32 24 34 Q14 36 4 52 Z', 'bs'), S('M4 52 Q14 36 24 34 Q34 32 40 40 L56 40', 'ik', 1.4), ...nhDots([[16, 24], [24, 26]], 2, 'hi'), onWave(46, 'ik', 1.2)],
+wadden_sea: () => [...orSea('lo'), P('M6 24 Q18 20 30 24 T54 24 L54 34 Q42 38 30 34 T6 34 Z', 'bs'), S('M6 40 Q18 36 30 40 T54 40', 'ik', 1.4), ...orIsle(12, 16, 5, 2), ...orIsle(26, 14, 5, 2), ...orIsle(42, 15, 5, 2)],
+pamlico_sound: () => [...orSea('lo'), E(30, 28, 20, 10, 'gh'), mmEll(30, 28, 20, 10, 'ik', 1.4), S('M8 44 Q20 50 32 42 Q44 34 54 18', 'bs', 5), S('M8 44 Q20 50 32 42 Q44 34 54 18', 'ik', 1)],
+sognefjord: () => [P('M4 8 L56 8 L56 52 L4 52 Z', 'gh'), ...opMtn(12, 30, 10, 22, 'bs'), ...opMtn(46, 30, 12, 24, 'bs'), P('M4 30 L20 30 L26 8 L34 8 L40 30 L56 30 L56 52 L4 52 Z', 'lo'), S('M4 30 L20 30 L26 8 M34 8 L40 30 L56 30', 'ik', 1.4), ...orBoat(30, 42, 0.8, 'hi')],
+gulf_of_aqaba: () => [P('M4 8 L56 8 L56 52 L4 52 Z', 'bs'), P('M30 8 L40 52 L22 52 Z', 'lo'), S('M30 8 L40 52 M30 8 L22 52', 'ik', 1.4), ...nhDots([[12, 20], [48, 20], [48, 40], [12, 40]], 3, 'hi')],
+arafura_sea: () => [...orSea('lo'), orTop(16), orBot(40), onWave(28, 'ik', 1.4), onWave(33, 'ik', 1.2)],
+banda_sea: () => [...orSea('lo'), ...[[14, 14], [24, 10], [38, 10], [48, 16], [50, 30], [46, 42], [34, 48], [20, 46], [10, 38], [8, 26]].flatMap(([x, y]) => orIsle(x, y, 3.4, 2.4)), onWave(28, 'ik', 1.2), onWave(35, 'ik', 1.2)],
+bristol_bay: () => [...orBay(30, 28, 20, 16, 'lo'), E(30, 30, 9, 4.4, 'hi'), P('M39 30 L46 25 L46 35 Z', 'hi'), C(24, 29, 1.2, 'ik'), S('M24 30 L24 30', 'ik', 1)],
+ariake_sea: () => [...orBay(30, 30, 18, 16, 'lo'), S('M16 36 Q24 32 30 36 Q38 40 44 34', 'bs', 5), S('M16 24 Q24 20 30 24 Q38 28 44 22', 'ik', 1.2), onWave(42, 'ik', 1.2)],
+ironbottom_sound: () => [...orSea('lo'), onWave(14, 'hi', 2), P('M12 38 L34 38 L30 46 L16 46 Z', 'ik'), S('M22 38 L22 28 M22 28 L30 36', 'ik', 1.6), P('M38 44 L48 40 L50 46 L40 48 Z', 'ik'), S('M52 20 L52 32 M48 28 Q52 36 56 28', 'ik', 1.6)],
+java_sea: () => [...orSea('lo'), P('M4 8 L56 8 L56 14 Q40 20 30 14 Q16 20 4 14 Z', 'bs'), P('M4 46 Q18 40 30 46 Q44 40 56 46 L56 52 Q30 57 4 52 Z', 'bs'), ...orIsle(20, 30, 3, 2), ...orIsle(32, 34, 3, 2), ...orIsle(42, 28, 3, 2), onWave(24, 'ik', 1.2), onWave(40, 'ik', 1.2)],
+milford_sound: () => [P('M4 8 L56 8 L56 52 L4 52 Z', 'gh'), ...opMtn(14, 34, 14, 26, 'bs'), ...opMtn(46, 34, 14, 28, 'bs'), P('M4 34 L22 34 L28 20 L32 20 L38 34 L56 34 L56 52 L4 52 Z', 'lo'), S('M30 14 L30 34', 'hi', 3), S('M26 20 Q30 24 34 20', 'ik', 1.2), onWave(44, 'ik', 1.4)],
+gulf_of_panama: () => [P('M4 8 L56 8 L56 52 L4 52 Z', 'bs'), P('M4 52 Q10 22 30 20 Q50 22 56 52 Z', 'lo'), S('M4 52 Q10 22 30 20 Q50 22 56 52', 'ik', 1.4), ...orBoat(30, 40, 0.9, 'hi'), S('M30 8 L30 20', 'ik', 1.4)],
+sagami_bay: () => [...orBay(30, 34, 22, 16, 'lo'), P('M26 42 L36 42 L33 34 L29 34 Z', 'hi'), S('M26 42 L36 42', 'ik', 1.4), S('M32 34 Q30 28 34 22', 'ik', 1.4), onWave(30, 'ik', 1.2)],
+salish_sea: () => [...orSea('lo'), orTop(14), P('M26 30 L30 18 L34 30 Q30 28 26 30 Z', 'ik'), E(30, 34, 8, 3, 'ik'), ...orIsle(14, 36, 5, 3), ...orIsle(46, 24, 4, 2.6), ...orIsle(46, 40, 5, 3), onWave(46, 'ik', 1.4)],
+puget_sound: () => [P('M4 8 L56 8 L56 52 L4 52 Z', 'bs'), S('M30 8 L30 22 Q30 34 22 44 M30 22 Q36 32 42 44 M30 24 Q24 30 14 32', 'lo', 4.4), S('M30 8 L30 22 Q30 34 22 44 M30 22 Q36 32 42 44', 'ik', 1), ...orBoat(30, 26, 0.7, 'hi')],
+san_francisco_bay: () => [...orSea('lo'), S('M4 36 L56 36', 'ik', 2.4), S('M16 12 L16 36 M44 12 L44 36', 'hi', 3.6), S('M2 34 Q16 14 30 30 Q44 14 58 34', 'ik', 1.8), S('M24 30 L24 36 M36 30 L36 36', 'ik', 1.2), onWave(46, 'ik', 1.4)],
+gulf_of_tonkin: () => [P('M4 8 L56 8 L56 52 L4 52 Z', 'bs'), P('M56 8 L46 8 Q22 14 22 30 Q24 44 56 52 Z', 'lo'), S('M46 8 Q22 14 22 30 Q24 44 56 52', 'ik', 1.4), ...orBoat(38, 32, 0.9, 'hi')],
+victoria_harbour: () => [...orSea('lo'), box(6, 18, 7, 18, 'bs'), box(15, 10, 8, 26, 'bs'), box(25, 22, 6, 14, 'bs'), box(33, 14, 7, 22, 'bs'), box(42, 24, 6, 12, 'bs'), box(49, 16, 5, 20, 'bs'), S('M4 36 L56 36', 'ik', 1.6), ...orBoat(30, 46, 0.8, 'hi')],
+suruga_bay: () => [...orBay(30, 38, 20, 14, 'lo'), P('M18 30 L30 8 L42 30 Z', 'hi'), P('M26 16 L30 8 L34 16 L30 14 Z', 'bs'), S('M18 30 L30 8 L42 30', 'ik', 1.4), onWave(38, 'ik', 1.2)],
+port_jackson: () => [...orSea('lo'), S('M4 40 L56 40', 'ik', 2.6), S('M10 40 Q30 6 50 40', 'hi', 3), S('M20 40 L20 28 M30 40 L30 22 M40 40 L40 28', 'ik', 1.2), ...orBoat(14, 50, 0.7, 'hi'), onWave(48, 'ik', 1.2)],
+tokyo_bay: () => [...orSea('lo'), P('M26 40 L30 6 L34 40 Z', 'hi'), S('M24 28 L36 28 M25 34 L35 34', 'ik', 1.4), P('M4 40 L56 40 L56 46 L4 46 Z', 'bs'), onWave(50, 'ik', 1.4), box(8, 30, 6, 10, 'bs'), box(44, 28, 7, 12, 'bs')],
+bohai_sea: () => [P('M4 8 L56 8 L56 52 L4 52 Z', 'bs'), E(30, 30, 18, 15, 'lo'), mmEll(30, 30, 18, 15, 'ik', 1.6), P('M42 38 L52 46 L46 50 L38 42 Z', 'lo'), S('M42 38 L52 46', 'ik', 1.4), onWave(28, 'ik', 1.2)],
+amundsen_sea: () => [...orSea('lo'), P('M4 8 L56 8 L56 20 Q42 24 34 18 Q22 24 4 18 Z', 'hi'), S('M4 18 Q22 24 34 18 Q42 24 56 20', 'ik', 1.4), ...orIsle(18, 36, 6, 2.4, 'hi'), ...orIsle(40, 42, 5, 2.2, 'hi'), onWave(30, 'ik', 1.2)],
+bellingshausen_sea: () => [...orSea('lo'), P('M18 40 L26 20 L34 30 L40 14 L48 40 Z', 'hi'), S('M18 40 L26 20 L34 30 L40 14 L48 40', 'ik', 1.6), P('M10 40 L56 40 L56 46 L10 46 Z', 'gh'), onWave(46, 'ik', 1.4), onWave(52, 'ik', 1.2)],
+mcmurdo_sound: () => [...orSea('lo'), ...opMtn(40, 30, 12, 20, 'hi', true), S('M40 10 Q36 4 42 2', 'ik', 1.6), P('M4 30 L56 30 L56 36 L4 36 Z', 'gh'), onWave(42, 'ik', 1.4), E(16, 38, 4, 2.6, 'ik'), onWave(49, 'ik', 1.2)],
+southern_ocean_overturning_circulation: () => [C(30, 30, 24, 'lo'), ring('ik', 30, 30, 24, 1.8), C(30, 30, 8, 'hi'), ring('ik', 30, 30, 8, 1.2), S('M30 12 A18 18 0 0 1 48 30', 'hi', 3.4), ...opArrow(44, 24, 48, 30, 'hi', 3.4), S('M30 48 A18 18 0 0 1 12 30', 'ik', 3.4), ...opArrow(16, 36, 12, 30, 'ik', 3.4)],
+tyrrhenian_sea: () => [...orSea('lo'), P('M4 8 L22 8 L26 20 L20 34 L24 42 L18 52 L4 52 Z', 'bs'), S('M22 8 L26 20 L20 34 L24 42 L18 52', 'ik', 1.4), ...orIsle(38, 20, 3, 6), ...orIsle(40, 36, 5, 4), ...orIsle(30, 46, 5, 3.4), onWave(28, 'ik', 1.2)],
+molucca_sea: () => [...orSea('lo'), ...orIsle(14, 30, 6, 10), ...orIsle(48, 22, 5, 8), ...orIsle(38, 44, 6, 3), P('M42 22 L48 10 L54 22 Z', 'ik'), S('M48 8 Q46 4 50 2', 'hi', 1.6), onWave(32, 'ik', 1.2)],
+solomon_sea: () => [...orSea('lo'), orTop(14), ...orIsle(48, 40, 5, 3.4), ...orIsle(40, 46, 3, 2), P('M4 40 Q10 34 18 40 L18 52 L4 52 Z', 'bs'), ...orBoat(28, 36, 0.8, 'hi')],
+sulu_sea: () => [...orSea('lo'), orTop(14), ...orIsle(14, 36, 3, 8), ...[[34, 44], [40, 47], [46, 50], [28, 41], [22, 38]].flatMap(([x, y]) => orIsle(x, y, 2.6, 1.8)), onWave(26, 'ik', 1.4)],
+scotia_sea: () => [...orSea('lo'), S('M10 14 Q12 40 34 46 Q48 46 52 30', 'bs', 5), ...orIsle(10, 14, 3.4, 2.4), ...orIsle(52, 30, 3.4, 2.4), ...orIsle(34, 46, 3.4, 2.4), S('M16 22 L22 28 L18 30 L24 36', 'hi', 2), onWave(24, 'ik', 1.2)],
+bismarck_sea: () => [...orSea('lo'), orBot(38), ...opMtn(20, 38, 8, 12, 'ik', false), S('M20 24 Q18 18 22 14', 'hi', 1.6), ...orIsle(42, 22, 5, 3), E(40, 46, 3, 2, 'hi'), E(46, 48, 2.6, 1.8, 'hi')],
+celebes_sea: () => [...orSea('lo'), P('M4 8 L56 8 L56 14 Q40 18 30 12 Q16 18 4 14 Z', 'bs'), P('M40 52 L40 40 Q46 36 50 42 L50 52 Z', 'bs'), S('M40 52 L40 40 Q46 36 50 42 L50 52', 'ik', 1.4), ...orIsle(24, 26, 3, 3), ...orIsle(14, 32, 2.6, 2), onWave(34, 'ik', 1.2)],
+flores_sea: () => [...orSea('lo'), P('M18 8 L34 8 L32 20 L24 24 L20 18 Z', 'bs'), ...orIsle(14, 44, 8, 3), ...orIsle(32, 46, 7, 3), ...orIsle(48, 42, 5, 3), onWave(32, 'ik', 1.4)],
+};
+for (const [id, fn] of Object.entries(MKor)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 83: lakes, crater lakes, salt lakes, reservoirs and lochs, sourced, audited, hand-drawn ── */
+const osLand = () => P('M4 8 Q30 3 56 8 L56 52 Q30 57 4 52 Z', 'bs');
+const osFrame = () => S('M4 8 Q30 3 56 8 L56 52 Q30 57 4 52 Z', 'ik', 1.6);
+const osLake = (d, role = 'lo') => [P(d, role), S(d, 'ik', 1.6)];
+const osFlam = (x, y, s = 1) => [E(x, y, 5 * s, 3 * s, 'hi'), S(`M${n(x - 3 * s)} ${n(y - 1 * s)} Q${n(x - 8 * s)} ${n(y - 8 * s)} ${n(x - 5 * s)} ${n(y - 13 * s)}`, 'hi', 1.8), C(n(x - 5 * s), n(y - 13 * s), 1.6 * s, 'hi'), S(`M${x} ${n(y + 3 * s)} L${x} ${n(y + 11 * s)}`, 'ik', 1.2)];
+const osHump = (x, y) => P(`M${x} ${y} Q${n(x + 3)} ${n(y - 9)} ${n(x + 6)} ${y} Z`, 'ik');
+const MKos = {
+lake_edward: () => [osLand(), ...osLake('M16 18 Q30 10 42 20 Q48 32 38 44 Q26 48 18 38 Q12 28 16 18 Z'), S('M8 10 L14 30 L10 50', 'ik', 1.6), ...opMtn(50, 22, 5, 9, 'lo', false), osFrame()],
+lake_kivu: () => [osLand(), ...osLake('M12 26 Q22 12 40 16 Q50 26 42 42 Q28 50 14 40 Z'), ...nhDots([[22, 30], [30, 26], [34, 34], [26, 38], [38, 28]], 2, 'hi'), osFrame()],
+lake_assal: () => [osLand(), ...osLake('M16 22 Q30 14 44 22 Q48 34 36 42 Q22 44 14 34 Z', 'hi'), ...[[20, 46], [30, 49], [40, 46], [48, 38]].map(([x, y]) => P(`M${x - 3} ${y + 3} L${x} ${y - 3} L${x + 3} ${y + 3} Z`, 'hi')), ...opMtn(12, 16, 8, 8, 'lo', false), osFrame()],
+cahora_bassa: () => [osLand(), P('M4 18 Q30 12 56 18 L56 34 Q30 40 4 34 Z', 'lo'), box(40, 8, 8, 44, 'hi'), S('M40 8 L48 8 L48 52 L40 52 Z', 'ik', 1.6), S('M12 24 q4 -3 8 0 t8 0', 'ik', 1.2), S('M50 36 Q56 42 52 52', 'lo', 4), osFrame()],
+makgadikgadi_pan: () => [osLand(), E(30, 30, 22, 14, 'hi'), mmEll(30, 30, 22, 14, 'ik', 1.6), S('M14 26 L22 34 L30 26 L38 34 L46 26 M20 38 L30 32 L40 38', 'ik', 1.2), ...nhDots([[18, 18]], 5, 'hi'), nqBurst(18, 18, 7, 11, 8, 'hi', 1.4), osFrame()],
+lake_nasser: () => [osLand(), S('M30 8 Q22 22 32 32 Q40 42 30 52', 'lo', 9), S('M30 8 Q22 22 32 32 Q40 42 30 52', 'ik', 1.2), box(14, 44, 32, 5, 'hi'), P('M6 24 Q14 18 20 24 Z', 'hi'), P('M44 18 Q50 12 56 18 Z', 'hi'), osFrame()],
+lake_natron: () => [osLand(), ...osLake('M10 24 Q24 14 44 22 Q52 34 40 44 Q24 48 12 40 Z', 'hi'), ...osFlam(20, 30, 0.9), ...osFlam(32, 34, 1), ...osFlam(42, 30, 0.8), osFrame()],
+lake_nyos: () => [osLand(), P('M6 46 L20 22 L26 28 L34 28 L40 22 L54 46 Z', 'ik'), E(30, 29, 6, 2.4, 'lo'), C(26, 18, 4, 'hi'), C(32, 14, 5, 'hi'), C(38, 18, 4, 'hi'), C(33, 20, 4, 'hi'), osFrame()],
+lake_tritriva: () => [osLand(), C(30, 30, 20, 'gh'), ring('ik', 30, 30, 20, 2), C(30, 30, 13, 'lo'), ring('ik', 30, 30, 13, 1.4), S('M18 24 L24 28 M42 24 L36 28 M20 40 L26 36', 'ik', 1.2), osFrame()],
+north_aral_sea: () => [osLand(), E(30, 30, 20, 13, 'gh'), mmEll(30, 30, 20, 13, 'ik', 1.2), E(30, 30, 14, 9, 'lo'), mmEll(30, 30, 14, 9, 'ik', 1.2), E(30, 30, 8, 5, 'hi'), S('M4 18 Q14 22 20 28', 'lo', 3), osFrame()],
+south_aral_sea: () => [osLand(), E(44, 20, 10, 6, 'lo'), mmEll(44, 20, 10, 6, 'ik', 1.4), P('M6 46 L26 46 L22 52 L10 52 Z', 'ik'), S('M16 46 L16 32', 'ik', 1.6), P('M16 32 L24 42 L16 42 Z', 'hi'), S('M30 40 L50 34 M28 48 L52 44', 'ik', 1.2), osFrame()],
+lake_biwa: () => [osLand(), ...osLake('M24 10 Q30 8 34 14 Q34 26 40 34 Q46 44 36 48 Q24 50 22 40 Q20 26 24 10 Z'), ...opMtn(10, 26, 7, 12, 'lo', false), ...opMtn(50, 22, 6, 10, 'lo', false), osFrame()],
+garabogazkol: () => [osLand(), ...osLake('M20 18 Q36 12 48 24 Q46 38 30 40 Q16 38 14 28 Z', 'hi'), S('M4 40 Q16 42 24 40 L30 36', 'lo', 4), ...[[24, 26], [34, 24], [38, 32]].map(([x, y]) => P(`M${x - 2.4} ${y + 2.4} L${x} ${y - 2.4} L${x + 2.4} ${y + 2.4} Z`, 'bs')), osFrame()],
+dongting_lake: () => [osLand(), ...osLake('M14 22 Q30 12 46 24 Q48 40 30 44 Q12 42 14 22 Z'), S('M8 8 Q16 14 18 22 M52 10 Q48 18 44 26 M30 52 Q30 48 30 44', 'lo', 3), onWave(30, 'ik', 1.2), osFrame()],
+fuji_five_lakes: () => [osLand(), P('M12 34 L28 8 L44 34 Z', 'hi'), P('M22 18 L28 8 L34 18 L28 16 Z', 'bs'), S('M12 34 L28 8 L44 34', 'ik', 1.6), ...[[12, 42], [24, 44], [36, 42], [46, 44], [30, 50]].flatMap(([x, y]) => [E(x, y, 5, 2.6, 'lo'), mmEll(x, y, 5, 2.6, 'ik', 1)]), osFrame()],
+lake_khanka: () => [osLand(), ...osLake('M12 22 Q30 10 48 22 Q50 38 30 44 Q10 40 12 22 Z'), S('M30 6 L30 52', 'ik', 2), P('M6 16 L14 16 L14 24 L6 24 Z', 'hi'), P('M46 40 L54 40 L54 48 L46 48 Z', 'gh'), osFrame()],
+laguna_de_bay: () => [osLand(), ...osLake('M10 28 Q24 12 44 18 Q52 30 42 42 Q24 48 12 40 Z'), ...orBoat(24, 32, 0.8, 'hi'), E(40, 32, 5, 2.6, 'hi'), P('M45 32 L49 29 L49 35 Z', 'hi'), osFrame()],
+lake_lanao: () => [osLand(), ...opMtn(10, 20, 8, 10, 'lo', false), ...opMtn(48, 18, 9, 10, 'lo', false), ...osLake('M12 26 Q24 20 44 26 Q50 38 36 46 Q18 48 12 38 Z'), E(30, 34, 5, 3, 'bs'), mmEll(30, 34, 5, 3, 'ik', 1), osFrame()],
+lake_mashu: () => [osLand(), P('M4 38 Q8 22 30 20 Q52 22 56 38 L56 52 L4 52 Z', 'gh'), ...osLake('M14 40 Q30 28 46 40 Q40 48 30 48 Q20 48 14 40 Z'), S('M6 28 q6 -4 12 0 t12 0 t12 0 t12 0', 'ik', 1.2), osFrame()],
+namtso: () => [osLand(), ...opMtn(14, 32, 10, 20, 'hi'), ...opMtn(44, 32, 11, 24, 'hi'), P('M4 32 L56 32 L56 52 Q30 57 4 52 Z', 'lo'), S('M4 32 L56 32', 'ik', 1.4), C(30, 12, 5, 'hi'), nqBurst(30, 12, 7, 10, 8, 'hi', 1.4), osFrame()],
+sea_of_galilee: () => [osLand(), ...osLake('M18 12 Q36 10 42 22 Q44 38 32 48 Q22 46 18 34 Q14 22 18 12 Z'), ...orBoat(30, 32, 0.8, 'hi'), E(40, 20, 3, 1.6, 'hi'), osFrame()],
+lake_sevan: () => [osLand(), ...osLake('M10 24 Q26 12 48 22 Q54 36 40 44 Q20 48 12 38 Z'), E(30, 32, 6, 3, 'bs'), mmEll(30, 32, 6, 3, 'ik', 1), ...opMtn(44, 16, 8, 10, 'lo', false), osFrame()],
+sun_moon_lake: () => [osLand(), ...osLake('M10 26 Q30 20 50 26 Q52 42 30 46 Q10 44 10 26 Z'), C(20, 14, 6, 'hi'), nqBurst(20, 14, 8, 11, 8, 'hi', 1.4), P('M40 8 A7 7 0 1 0 46 20 A5.6 5.6 0 1 1 40 8 Z', 'hi'), osFrame()],
+tai_lake: () => [osLand(), ...osLake('M10 26 Q20 12 38 14 Q52 22 48 38 Q34 48 18 44 Q8 38 10 26 Z'), ...[[22, 28], [34, 24], [30, 36], [40, 34]].flatMap(([x, y]) => orIsle(x, y, 3, 2)), S('M44 50 Q50 46 56 48', 'lo', 3), osFrame()],
+lake_taymyr: () => [osLand(), ...opMtn(12, 20, 9, 10, 'hi'), ...opMtn(30, 20, 10, 12, 'hi'), ...opMtn(48, 20, 9, 9, 'hi'), ...osLake('M12 32 Q30 26 48 34 Q44 46 28 48 Q14 46 12 32 Z'), ohSnow(10, 46, 4), ohSnow(50, 48, 4), osFrame()],
+lake_toba: () => [osLand(), ...osLake('M14 24 Q26 12 42 18 Q54 30 44 44 Q28 52 14 42 Q8 32 14 24 Z'), ...orIsle(30, 32, 8, 6, 'hi'), P('M26 28 L30 22 L34 28 Z', 'ik'), osFrame()],
+tonle_sap: () => [osLand(), ...osLake('M10 26 Q26 14 46 22 Q50 36 34 42 Q14 44 10 26 Z'), S('M44 44 Q52 50 58 54', 'lo', 4), ...opArrow(48, 50, 56, 54, 'hi', 2.4), ...opArrow(54, 44, 46, 40, 'ik', 2), osFrame()],
+lake_balaton: () => [osLand(), ...osLake('M4 32 Q20 24 36 28 Q48 26 56 22 L56 28 Q44 36 30 36 Q16 38 4 36 Z'), C(46, 12, 5, 'hi'), nqBurst(46, 12, 7, 10, 8, 'hi', 1.4), ...orBoat(22, 36, 0.7, 'hi'), osFrame()],
+lake_constance: () => [osLand(), ...osLake('M6 26 Q14 14 24 20 Q26 32 14 36 Q4 36 6 26 Z'), ...osLake('M38 26 Q46 16 54 22 Q54 34 44 36 Q36 34 38 26 Z'), S('M24 28 L38 28', 'lo', 3), S('M24 28 L38 28', 'ik', 1), ...opMtn(30, 18, 8, 10, 'hi'), osFrame()],
+lake_garda: () => [osLand(), ...osLake('M24 8 Q36 8 40 18 Q38 30 34 38 Q32 46 28 50 Q22 44 22 30 Q20 18 24 8 Z'), box(36, 42, 8, 6, 'hi'), P('M36 42 L38 38 L40 42 M40 42 L42 38 L44 42', 'hi'), osFrame()],
+lake_geneva: () => [osLand(), ...osLake('M6 36 Q18 14 38 18 Q52 22 54 30 Q40 28 30 32 Q18 40 6 36 Z'), E(28, 28, 5, 2.4, 'hi'), S('M32 28 Q36 22 34 18', 'hi', 1.8), C(34, 18, 1.6, 'hi'), osFrame()],
+ijsselmeer: () => [osLand(), ...osLake('M14 24 Q30 14 46 24 Q44 38 30 42 Q16 38 14 24 Z'), box(8, 42, 44, 4, 'hi'), S('M8 42 L52 42', 'ik', 1.4), S('M12 12 Q22 16 24 26', 'lo', 3), osFrame()],
+lakes_of_killarney: () => [osLand(), ...opMtn(14, 22, 9, 12, 'lo', false), ...opMtn(40, 22, 10, 14, 'lo', false), ...[[16, 38, 8, 5], [34, 34, 6, 4], [44, 46, 8, 4]].flatMap(([x, y, a, b]) => [E(x, y, a, b, 'hi'), mmEll(x, y, a, b, 'ik', 1.2)]), osFrame()],
+konigssee: () => [osLand(), ...opMtn(10, 38, 14, 28, 'hi'), ...opMtn(50, 38, 14, 28, 'hi'), P('M18 8 L40 8 L38 52 L22 52 Z', 'lo'), S('M18 8 L22 52 M40 8 L38 52', 'ik', 1.4), ...orBoat(30, 34, 0.7, 'bs'), osFrame()],
+laacher_see: () => [osLand(), C(30, 30, 16, 'lo'), ring('ik', 30, 30, 16, 1.6), ...ntConifer(12, 20, 16, 6, 'lo'), ...ntConifer(48, 22, 16, 6, 'lo'), ...ntConifer(46, 50, 14, 5, 'lo'), P('M26 26 L30 20 L34 26 Z', 'ik'), osFrame()],
+loch_lomond: () => [osLand(), ...osLake('M8 40 Q14 26 26 24 Q30 12 38 10 Q44 14 40 26 Q44 38 32 44 Q18 52 8 40 Z'), ...orIsle(24, 34, 2.6, 1.8), ...orIsle(32, 30, 2.2, 1.6), S('M4 30 L56 22', 'ik', 1.4), osFrame()],
+lake_lucerne: () => [osLand(), ...osLake('M26 10 L34 10 L34 22 L50 22 L50 30 L36 30 L36 44 L28 44 L28 32 L12 32 L12 24 L26 24 Z'), ...opMtn(50, 14, 6, 8, 'lo', false), ...opMtn(10, 46, 6, 8, 'lo', false), osFrame()],
+lake_maggiore: () => [osLand(), ...osLake('M32 8 Q40 12 38 22 Q36 34 30 44 Q26 50 22 48 Q24 36 28 26 Q28 14 32 8 Z'), ...opMtn(12, 18, 8, 10, 'hi'), ...opMtn(50, 16, 8, 10, 'hi'), osFrame()],
+loch_morar: () => [osLand(), ...osLake('M6 22 Q30 14 54 24 Q52 38 30 40 Q8 38 6 22 Z'), S('M48 20 L48 38 M44 22 L52 22 M44 38 L52 38', 'ik', 1.4), S('M44 28 L52 28', 'ik', 1), ...opArrow(30, 24, 30, 38, 'hi', 2), osFrame()],
+loch_ness: () => [osLand(), ...osLake('M4 24 Q30 16 56 26 Q54 40 30 42 Q6 40 4 24 Z'), osHump(16, 30), osHump(24, 30), osHump(32, 30), S('M40 30 Q44 20 46 20', 'ik', 2.4), C(46, 19, 1.8, 'ik'), S('M8 34 q4 -3 8 0 t8 0 t8 0 t8 0', 'ik', 1.2), osFrame()],
+lake_peipus: () => [osLand(), ...osLake('M12 16 Q30 8 44 18 Q50 34 38 46 Q22 48 14 34 Q8 24 12 16 Z'), S('M10 30 L52 30', 'ik', 1.6), ...orBoat(32, 40, 0.7, 'hi'), osFrame()],
+saimaa: () => [osLand(), ...osLake('M6 26 Q18 16 30 22 Q42 12 52 22 Q50 34 38 36 Q30 46 18 40 Q6 38 6 26 Z'), ...[[16, 28], [26, 30], [36, 26], [44, 28], [24, 38], [34, 34]].flatMap(([x, y]) => orIsle(x, y, 2.6, 1.8)), osFrame()],
+vattern: () => [osLand(), ...osLake('M26 6 Q36 8 34 20 Q32 32 34 44 Q32 52 26 50 Q24 38 26 26 Q22 14 26 6 Z'), ...orBoat(30, 30, 0.7, 'hi'), osFrame()],
+lake_athabasca: () => [osLand(), ...osLake('M6 20 Q26 10 54 18 Q54 28 30 28 Q12 28 6 20 Z'), P('M4 42 Q16 34 28 44 Q40 34 56 44 L56 52 Q30 57 4 52 Z', 'hi'), S('M4 42 Q16 34 28 44 Q40 34 56 44', 'ik', 1.4), osFrame()],
+lake_bonneville: () => [osLand(), E(30, 30, 24, 16, 'gh'), mmEll(30, 30, 24, 16, 'ik', 1.4), E(30, 31, 18, 11, 'lo'), mmEll(30, 31, 18, 11, 'ik', 1.4), E(30, 32, 11, 6, 'hi'), mmEll(30, 32, 11, 6, 'ik', 1.4), osFrame()],
+lake_champlain: () => [osLand(), ...osLake('M24 6 Q34 8 32 20 Q36 32 30 44 Q26 50 22 48 Q24 36 22 26 Q20 14 24 6 Z'), ...orIsle(30, 18, 2.4, 1.6), ...orIsle(26, 34, 2.4, 1.6), S('M4 8 L10 52', 'ik', 1), osFrame()],
+lake_chapala: () => [osLand(), ...osLake('M6 30 Q22 18 52 24 Q54 36 30 42 Q8 42 6 30 Z'), E(24, 32, 5, 2.6, 'hi'), P('M29 32 L33 29 L33 35 Z', 'hi'), ...orBoat(44, 34, 0.6, 'hi'), osFrame()],
+crater_lake: () => [osLand(), P('M4 40 Q8 20 30 18 Q52 20 56 40 L56 52 L4 52 Z', 'gh'), ...osLake('M12 38 Q30 24 48 38 Q42 48 30 48 Q18 48 12 38 Z', 'lo'), P('M26 40 L30 32 L34 40 Z', 'bs'), ring('ik', 30, 36, 20, 1), osFrame()],
+finger_lakes: () => [osLand(), ...[10, 18, 26, 34, 42].flatMap((x, i) => osLake(`M${x} ${10 + i} Q${x + 5} ${12 + i} ${x + 4} ${24 + i} Q${x + 5} ${40 + i} ${x + 1} ${48 - i} Q${x - 4} ${40 + i} ${x - 3} ${24 + i} Q${x - 4} ${14 + i} ${x} ${10 + i} Z`)), osFrame()],
+great_salt_lake: () => [osLand(), ...osLake('M8 26 Q24 14 46 20 Q54 32 42 42 Q22 48 10 40 Z', 'hi'), ...orIsle(30, 32, 7, 4, 'bs'), ...[[16, 30], [40, 26]].map(([x, y]) => P(`M${x - 2.4} ${y + 2.4} L${x} ${y - 2.4} L${x + 2.4} ${y + 2.4} Z`, 'bs')), S('M44 12 q3 -3 6 0 q3 -3 6 0', 'ik', 1.4), osFrame()],
+lake_itasca: () => [osLand(), ...osLake('M10 14 Q22 8 30 16 Q34 26 24 30 Q12 28 10 14 Z'), S('M30 24 Q36 30 34 38 Q32 46 44 52', 'lo', 4), S('M30 24 Q36 30 34 38 Q32 46 44 52', 'ik', 1), ...opArrow(36, 40, 40, 48, 'hi', 2), ...ntConifer(48, 28, 18, 6, 'lo'), ...ntConifer(14, 50, 14, 5, 'lo'), osFrame()],
+};
+for (const [id, fn] of Object.entries(MKos)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 84: rivers of Africa, Siberia, East, Southeast and South Asia, sourced, audited, hand-drawn ── */
+const otPA = 'M8 8 Q30 18 22 30 Q14 42 50 52', otPB = 'M52 8 Q30 16 38 28 Q46 40 10 52', otPC = 'M4 30 Q18 12 30 30 T56 30', otPD = 'M30 6 Q44 20 26 32 Q12 44 30 54', otPE = 'M6 50 Q22 38 34 40 Q50 42 54 12', otPF = 'M8 10 L18 24 L30 28 L40 42 L52 52', otPG = 'M6 14 Q24 8 34 26 Q42 40 56 44', otPH = 'M54 14 Q36 18 30 30 Q24 42 6 46';
+const otRv = (d, w = 5) => [osLand(), S(d, 'lo', w), S(d, 'ik', 1), osFrame()];
+const otBase = () => osLand();
+const otDam = (x, y) => [box(x - 9, y, 18, 5, 'hi'), S(`M${x - 9} ${y} L${x + 9} ${y}`, 'ik', 1.2)];
+const otCity = (x, y) => [box(x, y - 8, 5, 8, 'hi'), box(x + 6, y - 13, 5, 13, 'hi'), box(x + 12, y - 6, 5, 6, 'hi')];
+const otBridge = (x, y) => [S(`M${x - 12} ${y} L${x + 12} ${y}`, 'ik', 2), S(`M${x - 12} ${y} Q${x} ${y - 12} ${x + 12} ${y}`, 'hi', 2)];
+const otFish = (x, y) => [E(x, y, 5, 2.6, 'hi'), P(`M${x + 4} ${y} L${x + 8} ${y - 3} L${x + 8} ${y + 3} Z`, 'hi')];
+const otDia = (x, y) => P(`M${x} ${y - 5} L${x + 5} ${y} L${x} ${y + 5} L${x - 5} ${y} Z`, 'hi');
+const otTemple = (x, y) => [box(x - 6, y - 3, 12, 6, 'hi'), P(`M${x - 8} ${y - 3} L${x} ${y - 10} L${x + 8} ${y - 3} Z`, 'ik')];
+const otRice = (x, y) => [0, 1, 2].map(i => S(`M${x + i * 5} ${y} L${x + i * 5 + 2} ${y - 8} M${x + i * 5} ${y} L${x + i * 5 - 2} ${y - 7}`, 'ik', 1.2));
+const otDeltaFan = (x, y) => [S(`M${x} ${y} L${x - 10} ${y + 8}`, 'lo', 3), S(`M${x} ${y} L${x} ${y + 10}`, 'lo', 3), S(`M${x} ${y} L${x + 10} ${y + 8}`, 'lo', 3)];
+const otSnow = (x, y) => opMtn(x, y, 8, 12, 'hi');
+const MKot = {
+kagera_river: () => [...otRv(otPA), C(8, 8, 3.4, 'hi'), ...opArrow(44, 48, 52, 52, 'hi', 2.4)],
+oum_er_rbia_river: () => [...otRv(otPB), ...opMtn(14, 22, 8, 10, 'hi'), ...otRice(44, 46)],
+gambia_river: () => [...otRv(otPC, 6), ...otBridge(44, 30).slice(0, 0), ...orBoat(30, 22, 0.7, 'hi'), P('M50 42 L56 42 L56 50 L50 50 Z', 'hi')],
+volta_river: () => [...otRv(otPD), ...otDam(26, 36)],
+benue_river: () => [...otRv(otPE), ...orBoat(24, 36, 0.7, 'hi'), ...otFish(46, 28)],
+ogooue_river: () => [...otRv(otPA), ...ntConifer(46, 32, 18, 7, 'lo'), ...ntConifer(12, 50, 14, 6, 'lo'), ...ntConifer(52, 52, 12, 5, 'lo')],
+chambeshi_river: () => [...otRv(otPG), C(6, 14, 3, 'hi'), ...opArrow(44, 42, 52, 46, 'hi', 2.4), onWave(52, 'ik', 1.2)],
+kasai_river: () => [...otRv(otPF), otDia(34, 16), otDia(14, 38), otDia(46, 44)],
+lualaba_river: () => [...otRv(otPH), ...opMtn(16, 28, 7, 10, 'ik', false), ...ntConifer(46, 44, 14, 6, 'lo')],
+uele_river: () => [...otRv(otPD), S('M14 28 Q22 30 26 32 M40 20 Q36 24 40 28', 'lo', 3), ...ntConifer(48, 44, 14, 6, 'lo')],
+great_fish_river: () => [...otRv(otPB), ...otFish(20, 22), ...otFish(34, 44), ...otDam(46, 20).slice(0, 0)],
+jubba_river: () => [...otRv(otPD), ...orBoat(34, 22, 0.7, 'hi'), P('M4 52 Q10 46 18 52 Z', 'hi')],
+chari_river: () => [...otRv(otPE, 5), E(52, 12, 5, 3, 'lo'), mmEll(52, 12, 5, 3, 'ik', 1), ...otFish(20, 44)],
+okavango_river: () => [...otRv(otPA), S('M22 30 Q30 44 40 46 M22 30 Q34 36 46 38', 'lo', 3), ...otFish(10, 44).slice(0, 0), E(46, 20, 5, 3.4, 'hi'), S('M42 22 L42 28 M50 22 L50 28 M46 12 Q42 16 40 20', 'ik', 1.4)],
+omo_river: () => [...otRv(otPG), E(54, 44, 5, 3, 'lo'), mmEll(54, 44, 5, 3, 'ik', 1), ...opMtn(14, 30, 8, 10, 'hi')],
+irtysh: () => [...otRv(otPC, 6), ...opMtn(10, 20, 8, 10, 'hi'), ...otBridge(46, 22).slice(0, 0), ...orBoat(40, 42, 0.7, 'hi')],
+angara: () => [...otRv(otPD), E(30, 10, 8, 4, 'lo'), mmEll(30, 10, 8, 4, 'ik', 1), ...otDam(26, 40)],
+selenga: () => [...otRv(otPB), E(10, 50, 8, 3.4, 'lo'), mmEll(10, 50, 8, 3.4, 'ik', 1), ...opMtn(46, 20, 8, 10, 'hi')],
+indigirka: () => [...otRv(otPH), ...ntConifer(16, 26, 16, 6, 'lo'), ...ntConifer(46, 40, 16, 6, 'lo'), ohSnow(48, 14, 5)],
+kolyma_river: () => [...otRv(otPE), ohSnow(14, 14, 6), C(30, 46, 2.4, 'hi'), C(40, 50, 2, 'hi'), C(20, 52, 1.8, 'hi'), ...[[44, 34], [48, 38]].map(([x, y]) => C(x, y, 2, 'hi'))],
+songhua_river: () => [...otRv(otPA), ohSnow(46, 16, 6), ...otBridge(26, 34), ...opMtn(10, 44, 7, 9, 'hi')],
+ussuri: () => [...otRv(otPD), ...ntConifer(46, 24, 18, 7, 'lo'), E(14, 44, 6, 3.4, 'hi'), S('M10 42 L18 46 M14 41 L14 47 M10 46 L18 42', 'ik', 1.2), P('M10 40 L12 36 L14 40 Z M16 40 L18 36 L20 40 Z', 'hi')],
+tumen_river: () => [...otRv(otPH), ...opMtn(14, 28, 8, 14, 'hi'), S('M30 8 L30 52', 'ik', 1)],
+han_river_korea: () => [...otRv(otPC, 6), ...otCity(36, 22), ...otBridge(18, 30)],
+yalu_river: () => [...otRv(otPD, 5), S('M26 6 L26 54', 'ik', 1.2), ...otBridge(26, 24), box(6, 40, 6, 8, 'hi')],
+li_river: () => [...otRv(otPG, 5), ...opMtn(12, 28, 5, 14, 'lo', false), ...opMtn(24, 22, 5, 16, 'lo', false), ...opMtn(44, 30, 5, 16, 'lo', false), ...orBoat(44, 46, 0.6, 'hi')],
+liao_river: () => [...otRv(otPA), ...otRice(36, 20), ...otRice(10, 50), ...otRice(40, 40)],
+hai_river: () => [...otRv(otPE), ...otCity(10, 28), E(52, 10, 5, 3.4, 'lo')],
+wei_river: () => [...otRv(otPB), ...otRice(8, 20), ...otRice(34, 48), S('M44 18 L52 18 M46 22 L54 22', 'ik', 1.2)],
+huai_river: () => [...otRv(otPG, 6), ...otRice(36, 20), ...otRice(10, 46), onWave(52, 'ik', 1.2)],
+han_river_hubei: () => [...otRv(otPA), ...opMtn(46, 22, 8, 12, 'hi'), ...otDam(30, 40)],
+jialing_river: () => [...otRv(otPF), ...otBridge(30, 22), ...otCity(40, 48)],
+min_river_sichuan: () => [...otRv(otPC, 5), S('M14 30 Q14 40 10 46 M30 30 Q30 42 34 48 M46 30 Q46 40 52 46', 'lo', 2.6), ...otDam(30, 20).slice(0, 0), box(26, 16, 8, 3, 'hi'), ...otRice(8, 52).slice(0, 0)],
+xiang_river: () => [...otRv(otPD), ...[[14, 22], [18, 28], [10, 30]].map(([x, y]) => C(x, y, 3, 'lo')), ...orBoat(40, 38, 0.7, 'hi')],
+dong_river_china: () => [...otRv(otPH), ...otDeltaFan(14, 42), ...otCity(40, 24)],
+red_river_asia: () => [...otRv(otPB, 6), ...otDeltaFan(10, 46), ...otRice(40, 22)],
+black_river_asia: () => [...otRv(otPA, 5), P('M4 8 L56 8 L56 14 L4 14 Z', 'ik'), ...opMtn(46, 26, 8, 12, 'ik', false), ...opMtn(12, 44, 8, 10, 'ik', false)],
+chao_phraya_river: () => [...otRv(otPD, 6), ...otTemple(44, 26), ...orBoat(24, 40, 0.7, 'hi')],
+kapuas_river: () => [...otRv(otPG, 6), ...ntConifer(14, 40, 16, 6, 'lo'), ...ntConifer(46, 22, 16, 6, 'lo'), ...orBoat(40, 48, 0.6, 'hi')],
+mahakam_river: () => [...otRv(otPE, 6), E(30, 28, 8, 3.4, 'hi'), P('M38 28 L42 23 L42 33 Z', 'hi'), S('M24 25 Q22 20 26 22', 'hi', 2), C(25, 27, 1, 'ik')],
+yarlung_tsangpo: () => [...otRv(otPH), ...otSnow(14, 24), ...otSnow(46, 26), ...otSnow(30, 20).slice(0, 0)],
+teesta_river: () => [...otRv(otPA), ...opMtn(46, 20, 8, 12, 'hi'), onWave(48, 'ik', 1.2)],
+padma_river: () => [...otRv(otPD, 6), ...otDeltaFan(26, 38), ...otFish(40, 22)],
+ghaghara: () => [...otRv(otPE, 6), ...opMtn(12, 26, 8, 12, 'hi'), onWave(54, 'ik', 1.2), onWave(10, 'ik', 1.2)],
+kaveri: () => [...otRv(otPG), ...otTemple(44, 22), ...otRice(10, 48)],
+narmada_river: () => [...otRv(otPC, 6), ...otDam(30, 36), ...otTemple(46, 20)],
+chenab_river: () => [...otRv(otPD), ...otRice(10, 30), ...otRice(40, 40), S('M38 18 L50 18 M38 22 L50 22', 'lo', 2)],
+jhelum_river: () => [...otRv(otPE), ...opMtn(10, 26, 8, 12, 'hi'), ...otBridge(28, 38)],
+kabul_river: () => [...otRv(otPG), ...opMtn(14, 30, 9, 14, 'hi'), ...opMtn(44, 20, 8, 12, 'hi')],
+ravi_river: () => [...otRv(otPB), ...otCity(8, 30), ...otBridge(36, 28)],
+shyok_river: () => [...otRv(otPH), ...otSnow(14, 28), ohSnow(46, 14, 5), ohSnow(10, 10, 4)],
+sutlej: () => [...otRv(otPA), ...otRice(36, 22), ...otDam(14, 40), ...otRice(40, 50).slice(0, 0)],
+beas_river: () => [...otRv(otPC, 5), ...otSnow(14, 22), ...otSnow(46, 22), ...[[20, 44], [30, 42], [40, 44]].map(([x, y]) => S(`M${x} ${y} l2 4 M${x + 3} ${y} l2 4`, 'ik', 1.4))],
+};
+for (const [id, fn] of Object.entries(MKot)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 85: rivers of Europe and eastern North America, sourced, audited, hand-drawn ── */
+const ouGrape = (x, y) => [...nhDots([[x, y], [x + 4, y], [x + 2, y + 4], [x - 2, y + 4], [x + 6, y + 4], [x, y + 8], [x + 4, y + 8]], 2.2, 'hi'), S(`M${x + 2} ${y - 3} L${x + 4} ${y - 8}`, 'ik', 1.2)];
+const ouCastle = (x, y) => [box(x - 7, y - 8, 14, 8, 'hi'), P(`M${x - 7} ${y - 8} L${x - 7} ${y - 12} L${x - 4} ${y - 12} L${x - 4} ${y - 8} M${x - 1} ${y - 8} L${x - 1} ${y - 12} L${x + 2} ${y - 12} L${x + 2} ${y - 8} M${x + 5} ${y - 8} L${x + 5} ${y - 12} L${x + 7} ${y - 12} L${x + 7} ${y - 8} Z`, 'hi')];
+const ouFall = (x, y) => [box(x - 6, y, 12, 3, 'hi'), S(`M${x - 3} ${y + 3} L${x - 3} ${y + 12} M${x} ${y + 3} L${x} ${y + 13} M${x + 3} ${y + 3} L${x + 3} ${y + 12}`, 'lo', 2)];
+const ouCanyon = (x, y) => [P(`M${x - 16} ${y} L${x - 8} ${y} L${x - 5} ${y + 10} L${x + 5} ${y + 10} L${x + 8} ${y} L${x + 16} ${y} L${x + 16} ${y + 14} L${x - 16} ${y + 14} Z`, 'ik')];
+const ouCoal = (x, y) => [P(`M${x - 6} ${y + 6} L${x - 3} ${y} L${x + 3} ${y - 2} L${x + 7} ${y + 6} Z`, 'ik'), C(x + 9, y - 6, 2, 'hi')];
+const ouFlood = (y) => [onWave(y, 'hi', 1.8), onWave(y + 6, 'ik', 1.2)];
+const MKou = {
+pechora_river: () => [...otRv(otPH), ohSnow(46, 14, 5), ...ntConifer(14, 40, 14, 6, 'lo'), S('M52 52 L56 52', 'ik', 1)],
+northern_dvina: () => [...otRv(otPD), ...orBoat(40, 40, 0.7, 'hi'), P('M4 52 Q18 44 30 54 L4 56 Z', 'lo')],
+daugava: () => [...otRv(otPG, 5), ...otDam(36, 34), P('M44 44 Q52 38 58 46 L58 52 L44 52 Z', 'lo')],
+neman: () => [...otRv(otPE), ...ouCastle(16, 30), ...ntConifer(46, 44, 14, 6, 'lo')],
+oder: () => [...otRv(otPA), S('M30 6 L30 54', 'ik', 1.2), ...orBoat(40, 24, 0.7, 'hi')],
+havel: () => [...otRv(otPD, 5), ...[[14, 20], [44, 24], [14, 44]].flatMap(([x, y]) => [E(x, y, 6, 3.4, 'lo'), mmEll(x, y, 6, 3.4, 'ik', 1)]), ...ouCastle(44, 48)],
+meuse: () => [...otRv(otPB), ...ouCastle(14, 28), ...orBoat(38, 24, 0.7, 'hi')],
+moselle: () => [...otRv(otPC, 5), ...ouGrape(10, 36), ...ouGrape(40, 38), ...ouCastle(26, 18)],
+minho_river: () => [...otRv(otPH), S('M30 6 L30 54', 'ik', 1.2), ...otBridge(30, 34), ...ouGrape(10, 14)],
+douro: () => [...otRv(otPC, 6), ...ouGrape(8, 14), ...ouGrape(36, 14), ...orBoat(30, 44, 0.8, 'hi')],
+rhone: () => [...otRv(otPD), ...otSnow(14, 16), P('M4 52 Q18 44 30 54 L4 56 Z', 'lo'), ...otDeltaFan(26, 44).slice(0, 0), ...otDam(36, 30)],
+ardeche_river: () => [...otRv(otPG, 4), ...ouCanyon(30, 14), ...otBridge(30, 44).slice(0, 0), ...orBoat(40, 40, 0.6, 'hi')],
+tiber: () => [...otRv(otPD, 5), ...otBridge(30, 32), P('M42 20 L46 14 L52 20 Z', 'hi'), box(42, 20, 10, 6, 'hi'), ...otCity(8, 48)],
+neretva: () => [...otRv(otPB), ...opMtn(14, 24, 8, 14, 'hi'), ...otDeltaFan(14, 44), ...otDam(40, 20)],
+black_drin: () => [osLand(), E(30, 12, 12, 5, 'lo'), mmEll(30, 12, 12, 5, 'ik', 1), S(otPD, 'lo', 5), S(otPD, 'ik', 1), osFrame()],
+iskar_river: () => [...otRv(otPA), ...otSnow(46, 18), ...otDam(30, 40)],
+morava_river: () => [...otRv(otPE, 5), ...otRice(10, 22), ...otRice(36, 22), ...otBridge(26, 40).slice(0, 0)],
+sava: () => [...otRv(otPG, 6), ...otCity(44, 40), ...otBridge(20, 22)],
+dniester: () => [...otRv(otPA), ...otRice(36, 20), ...otRice(10, 46)],
+kama_river: () => [...otRv(otPB, 6), ...otDam(26, 40), P('M44 14 L46 8 L48 14 L50 8 L52 14 Z', 'ik'), box(42, 14, 12, 8, 'ik')],
+belaya_kama: () => [...otRv(otPD), ...opMtn(14, 24, 8, 14, 'hi'), ...ntConifer(46, 44, 14, 6, 'lo')],
+oka_river: () => [...otRv(otPA, 5), ...otRice(36, 22), ...otCity(8, 50)],
+moskva_river: () => [...otRv(otPC, 6), ...otBridge(30, 28).slice(0, 0), P('M22 14 Q26 4 30 14 Z M30 14 Q34 4 38 14 Z', 'hi'), box(20, 14, 20, 6, 'hi'), ...otBridge(14, 40)],
+river_forth: () => [...otRv(otPB, 6), S('M6 30 L54 30', 'ik', 2), S('M10 30 L10 22 M30 30 L30 18 M50 30 L50 22 M10 24 L30 18 L50 24', 'hi', 1.8), ...ouCastle(46, 52).slice(0, 0)],
+river_shannon: () => [...otRv(otPA), ...[[16, 40], [42, 22]].flatMap(([x, y]) => [E(x, y, 6, 3.4, 'lo'), mmEll(x, y, 6, 3.4, 'ik', 1)]), ...ouCastle(46, 50)],
+river_tyne: () => [...otRv(otPC, 6), ...otBridge(30, 28), ...ouCoal(12, 44), ...orBoat(46, 44, 0.6, 'hi')],
+lerma_river: () => [...otRv(otPG), E(52, 44, 5, 3, 'lo'), mmEll(52, 44, 5, 3, 'ik', 1), ...opMtn(12, 26, 8, 12, 'hi'), ...otRice(30, 50).slice(0, 0)],
+usumacinta_river: () => [...otRv(otPD), ...ntConifer(46, 24, 18, 7, 'lo'), ...ntConifer(10, 44, 16, 6, 'lo'), P('M40 50 L44 42 L48 50 Z', 'hi')],
+pecos_river: () => [...otRv(otPE, 4), ...ouCanyon(30, 20), ...opMtn(12, 52, 8, 10, 'ik', false)],
+brazos_river: () => [...otRv(otPB, 5), ...[[14, 20], [44, 40], [18, 46]].flatMap(([x, y]) => [C(x, y, 3.4, 'hi'), C(x + 3, y - 2, 2.4, 'hi')])],
+arkansas_river: () => [...otRv(otPG), ...otSnow(10, 24), ...otRice(36, 22), ...otRice(44, 52).slice(0, 0)],
+canadian_river: () => [...otRv(otPE), ...ouCanyon(30, 16), P('M4 50 Q10 44 16 50 Z', 'hi')],
+atchafalaya_river: () => [...otRv(otPD, 6), ...otDeltaFan(28, 36), S('M10 46 L50 46', 'lo', 4), ...ntConifer(46, 22, 12, 5, 'lo')],
+red_river_of_the_south: () => [...otRv(otPA, 6), ...[[40, 24], [14, 40]].map(([x, y]) => C(x, y, 3, 'hi'))],
+platte_river: () => [...otRv(otPC, 5), ...otRice(8, 20), ...otRice(36, 46)],
+north_platte_river: () => [...otRv(otPH), ...otDam(34, 28), ...opMtn(12, 24, 8, 12, 'hi')],
+yellowstone_river: () => [...otRv(otPG), ...ouCanyon(30, 40).slice(0, 0), ...opMtn(12, 28, 8, 12, 'hi'), P('M40 50 Q44 40 48 44 Q50 38 54 50 Z', 'ik')],
+cumberland_river: () => [...otRv(otPE), ...otDam(30, 36), ...[[12, 18], [20, 22]].map(([x, y]) => S(`M${x} ${y} Q${x + 3} ${y - 6} ${x + 6} ${y}`, 'ik', 1.6))],
+tennessee_river: () => [...otRv(otPA), ...otDam(26, 30), box(40, 40, 12, 8, 'ik'), S('M44 40 L44 34 M48 40 L48 34', 'ik', 1.6)],
+white_river_arkansas: () => [...otRv(otPD), ...otFish(14, 22), ...otFish(42, 44), ...ntConifer(46, 18, 14, 5, 'lo')],
+james_river: () => [...otRv(otPE), ...orBoat(30, 34, 0.8, 'hi'), ...ouFlood(48).slice(0, 0), ...ntConifer(12, 22, 12, 5, 'lo')],
+potomac_river: () => [...otRv(otPG, 6), P('M40 10 Q44 4 48 10 Z', 'hi'), box(38, 10, 12, 4, 'hi'), ...otBridge(18, 34)],
+susquehanna_river: () => [...otRv(otPB, 5), ...ouCoal(12, 44), ...otBridge(36, 26)],
+delaware_river: () => [...otRv(otPD), ...otBridge(30, 22), ...orBoat(40, 44, 0.7, 'hi')],
+hudson_river: () => [...otRv(otPD, 6), ...otCity(42, 46), ...opMtn(12, 24, 8, 12, 'hi')],
+saint_john_river_bay_of_fundy: () => [...otRv(otPA, 5), ...ntConifer(46, 24, 14, 6, 'lo'), ...opArrow(40, 48, 52, 52, 'hi', 2.4), ...opArrow(52, 44, 44, 40, 'ik', 2)],
+niagara_river: () => [...otRv(otPD, 6), ...ouFall(30, 24), S('M20 40 L40 40', 'ik', 1)],
+ottawa_river: () => [...otRv(otPC, 6), ...orBoat(30, 22, 0.7, 'hi'), P('M40 44 Q46 40 54 44 Q46 48 40 44 Z', 'ik'), ...otCity(8, 46).slice(0, 0)],
+saguenay_river: () => [P('M4 8 L56 8 L56 52 L4 52 Z', 'bs'), P('M14 8 L22 8 L26 30 L46 40 L56 44 L56 50 L40 46 L22 36 L12 20 Z', 'lo'), S('M14 8 L12 20 L22 36 L40 46 L56 50', 'ik', 1.4), ...opMtn(40, 22, 8, 12, 'hi'), osFrame()],
+churchill_river_atlantic: () => [...otRv(otPD), ...ouFall(26, 28), ...otDam(10, 46).slice(0, 0)],
+nelson_river: () => [...otRv(otPG, 6), ...otDam(34, 34), E(10, 16, 7, 4, 'lo'), mmEll(10, 16, 7, 4, 'ik', 1)],
+red_river_of_the_north: () => [...otRv(otPE, 6), ...ouFlood(46), ...otRice(10, 24), ...otRice(36, 26)],
+connecticut_river: () => [...otRv(otPD), ...otDam(26, 40), ...otFish(40, 20), ...otRice(10, 22)],
+};
+for (const [id, fn] of Object.entries(MKou)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 86: rivers of western North America, Australia, Oceania and South America, and straits and channels, sourced, audited, hand-drawn ── */
+const ovStr = (role = 'lo') => [P('M4 8 Q30 3 56 8 L56 52 Q30 57 4 52 Z', role), P('M4 8 L22 8 Q27 30 21 52 L4 52 Z', 'bs'), P('M56 8 L38 8 Q33 30 39 52 L56 52 Z', 'bs'), S('M22 8 Q27 30 21 52 M38 8 Q33 30 39 52', 'ik', 1.4), osFrame()];
+const ovBerg = (x, y, s = 1) => [P(`M${x - 6 * s} ${y} L${x - 2 * s} ${y - 8 * s} L${x + 2 * s} ${y - 4 * s} L${x + 5 * s} ${y - 10 * s} L${x + 7 * s} ${y} Z`, 'hi'), S(`M${x - 8 * s} ${y} L${x + 9 * s} ${y}`, 'ik', 1.2)];
+const ovWhale = (x, y) => [E(x, y, 8, 3.6, 'ik'), P(`M${x + 7} ${y} L${x + 13} ${y - 4} L${x + 13} ${y + 4} Z`, 'ik'), S(`M${x - 3} ${y - 4} q1 -4 3 -5`, 'hi', 1.4)];
+const ovTun = (y) => [S(`M12 ${y} L48 ${y}`, 'ik', 6), S(`M12 ${y} L48 ${y}`, 'hi', 3)];
+const ovBr = (y) => [S(`M6 ${y} L54 ${y}`, 'ik', 2.4), S(`M22 ${y} L22 ${y - 10} M38 ${y} L38 ${y - 10} M22 ${y - 10} L38 ${y - 10}`, 'hi', 1.8)];
+const ovVol = (x, y) => [P(`M${x - 6} ${y} L${x} ${y - 11} L${x + 6} ${y} Z`, 'ik'), S(`M${x} ${y - 11} q-2 -4 2 -6`, 'hi', 1.6)];
+const ovRis = (x, y) => [E(x, y, 6, 3, 'hi'), mmEll(x, y, 6, 3, 'ik', 1)];
+const MKov = {
+saskatchewan_river: () => [...otRv(otPA, 5), ...otRice(36, 22), ...otRice(8, 46)],
+churchill_river_hudson_bay: () => [...otRv(otPB), ...orBoat(40, 36, 0.7, 'hi'), ...ntConifer(12, 40, 14, 6, 'lo')],
+slave_river: () => [...otRv(otPD), E(30, 50, 12, 4, 'lo'), mmEll(30, 50, 12, 4, 'ik', 1), ...ntConifer(46, 20, 14, 6, 'lo')],
+athabasca_river: () => [...otRv(otPH), ...otSnow(14, 24), ohSnow(48, 14, 5), E(12, 50, 6, 3, 'lo')],
+tanana_river: () => [...otRv(otPE, 6), ...otSnow(14, 22), ...[[40, 22], [46, 28]].map(([x, y]) => C(x, y, 2, 'hi'))],
+kuskokwim_river: () => [...otRv(otPG, 6), ...otFish(14, 44), ...otFish(44, 20), ...ntConifer(40, 50, 12, 5, 'lo')],
+fraser_river: () => [...otRv(otPA, 5), ...opMtn(46, 20, 8, 12, 'hi'), ...otCity(8, 50), ...otFish(34, 36)],
+gila_river: () => [...otRv(otPC, 4), ...opMtn(14, 24, 8, 12, 'ik', false), ...otRice(36, 44).slice(0, 0), S('M40 30 L40 20 M36 24 L40 22 M44 26 L40 24', 'ik', 1.4)],
+green_river_colorado: () => [...otRv(otPE, 4), ...ouCanyon(30, 16), ...otSnow(10, 40)],
+kootenay_river: () => [...otRv(otPD), E(12, 44, 7, 3.4, 'lo'), mmEll(12, 44, 7, 3.4, 'ik', 1), ...opMtn(46, 22, 8, 12, 'hi')],
+snake_river: () => [...otRv(otPG, 5), S('M6 14 Q24 8 34 26 Q42 40 56 44', 'ik', 1.2), ...ouCanyon(30, 40).slice(0, 0), ...ovVol(48, 22), ...otDam(30, 40)],
+willamette_river: () => [...otRv(otPB), ...ouGrape(10, 14), ...ouGrape(40, 40), ...otBridge(30, 28)],
+sacramento_river: () => [...otRv(otPD, 6), ...otRice(8, 42), ...[[44, 20], [48, 26]].map(([x, y]) => C(x, y, 2.2, 'hi')), ...opMtn(46, 46, 7, 10, 'hi')],
+san_joaquin_river: () => [...otRv(otPE), ...ouGrape(10, 18), ...otRice(36, 20), ...opMtn(46, 48, 7, 9, 'hi')],
+cooper_creek: () => [...otRv(otPC, 4), ...[[14, 40], [30, 42], [46, 38]].map(([x, y]) => S(`M${x - 4} ${y} Q${x} ${y - 3} ${x + 4} ${y}`, 'lo', 3)), S('M10 14 L10 24 M7 17 L10 20 M13 17 L10 22', 'ik', 1.4)],
+darling_river: () => [...otRv(otPA), ...otFish(40, 22), ...orIsle(14, 44, 6, 3).slice(0, 0), S('M44 44 L52 44 M46 48 L50 48', 'ik', 1.2)],
+paroo_river: () => [osLand(), ...[[14, 16], [30, 24], [18, 36], [42, 40], [34, 50]].flatMap(([x, y]) => [E(x, y, 6, 3, 'lo'), mmEll(x, y, 6, 3, 'ik', 1)]), S('M14 16 L30 24 L18 36 L42 40 L34 50', 'lo', 1.2), osFrame()],
+warrego_river: () => [...otRv(otPE, 4), ...otRice(10, 24), ...otRice(36, 22), S('M4 52 L56 52', 'ik', 0.1)].filter(s => s),
+murrumbidgee_river: () => [...otRv(otPG), ...otRice(10, 46), ...ouGrape(40, 14)],
+lachlan_river: () => [...otRv(otPB, 4), ...[[14, 22], [20, 28]].map(([x, y]) => C(x, y, 2.2, 'hi')), ...otRice(36, 48)],
+franklin_river: () => [...otRv(otPD), ...ntConifer(46, 26, 18, 7, 'lo'), ...ntConifer(10, 48, 14, 6, 'lo'), P('M26 44 Q32 38 38 44 Q32 48 26 44 Z', 'hi')],
+fly_river: () => [...otRv(otPG, 7), ...ntConifer(44, 18, 14, 6, 'lo'), ...ntConifer(10, 44, 14, 6, 'lo'), ...otDeltaFan(46, 42)],
+mamberamo_river: () => [...otRv(otPA, 6), ...opMtn(46, 22, 8, 14, 'hi'), ...ntConifer(10, 46, 14, 6, 'lo')],
+sepik: () => [...otRv(otPE, 6), E(20, 24, 7, 3, 'ik'), P('M26 24 L32 20 L32 28 Z', 'ik'), ...ntConifer(46, 44, 14, 6, 'lo')],
+waikato_river: () => [...otRv(otPD), ...ovVol(14, 20), E(40, 44, 8, 4, 'lo'), mmEll(40, 44, 8, 4, 'ik', 1)],
+casiquiare_canal: () => [osLand(), S('M4 14 Q20 18 30 30', 'lo', 5), S('M56 14 Q40 18 30 30', 'lo', 5), S('M30 30 L30 52', 'lo', 5), S('M4 14 Q20 18 30 30 L30 52 M56 14 Q40 18 30 30', 'ik', 1), osFrame()],
+japura_river: () => [...otRv(otPE, 6), ...ntConifer(44, 20, 16, 7, 'lo'), ...ntConifer(10, 46, 14, 6, 'lo'), ...opArrow(40, 46, 52, 40, 'hi', 2)],
+maranon_river: () => [...otRv(otPH, 5), ...opMtn(14, 24, 9, 16, 'hi'), ...opMtn(46, 22, 8, 12, 'hi'), ...otFish(30, 50).slice(0, 0)],
+purus_river: () => [...otRv(otPB, 6), ...otFish(14, 20), ...otFish(44, 46), ...ntConifer(46, 18, 12, 5, 'lo')],
+tapajos: () => [...otRv(otPD, 5), ...[[44, 20], [48, 28], [12, 44]].map(([x, y]) => C(x, y, 2.4, 'hi')), ...ntConifer(46, 48, 14, 6, 'lo')],
+tocantins_river: () => [...otRv(otPA), ...otDam(36, 36), P('M10 14 Q18 8 24 14 L18 20 Z', 'hi'), C(14, 14, 1.4, 'ik')],
+ucayali_river: () => [...otRv(otPG, 6), S('M30 36 Q36 32 40 36 Q44 40 50 36', 'ik', 2.4), C(51, 36, 1.6, 'ik'), ...ntConifer(12, 20, 14, 6, 'lo')],
+apurimac_river: () => [...otRv(otPD, 4), ...ouCanyon(30, 14), ...otSnow(10, 40), ...otSnow(48, 44)],
+xingu_river: () => [...otRv(otPB, 6), ...ntConifer(12, 22, 14, 6, 'lo'), ...ntConifer(44, 46, 14, 6, 'lo'), P('M26 14 L30 8 L34 14 Z', 'hi')],
+paraguay_river: () => [...otRv(otPD, 6), S('M4 30 L56 30', 'ik', 0.1), ...orBoat(30, 40, 0.7, 'hi'), ...otRice(8, 22), P('M44 20 L50 14 L56 20 Z', 'ik')].filter(s => s),
+peace_river: () => [...otRv(otPE), ...opMtn(12, 26, 8, 12, 'hi'), ...otRice(36, 22), ...otDam(30, 36).slice(0, 0)],
+bab_el_mandeb: () => [...ovStr('lo'), ...orBoat(30, 30, 0.8, 'hi'), P('M4 40 L12 36 L12 42 Z', 'hi')],
+bungo_channel: () => [...ovStr('lo'), ...orBoat(30, 32, 0.8, 'hi'), onWave(46, 'ik', 1.2)],
+davis_strait: () => [...ovStr('lo'), ...ovBerg(30, 22, 1), ...ovBerg(30, 44, 0.8), ohSnow(12, 20, 4)],
+straits_of_florida: () => [...ovStr('lo'), S('M26 14 Q36 28 26 46', 'hi', 3), ...opArrow(30, 40, 26, 46, 'hi', 3), ...orBoat(30, 30, 0.6, 'bs')],
+strait_of_georgia: () => [...ovStr('lo'), ...ovWhale(24, 30), ...orBoat(30, 46, 0.6, 'hi').slice(0, 0), ...ntConifer(12, 40, 14, 6, 'lo')],
+hudson_strait: () => [...ovStr('lo'), ...ovBerg(30, 20, 0.9), ...ovBerg(30, 42, 1), ohSnow(46, 20, 4)],
+strait_of_juan_de_fuca: () => [...ovStr('lo'), ...ovWhale(22, 28), onWave(44, 'ik', 1.2), ...opMtn(10, 30, 6, 10, 'hi')],
+kanmon_straits: () => [...ovStr('lo'), ...ovBr(28), ...orBoat(30, 46, 0.6, 'hi')],
+lombok_strait: () => [...ovStr('lo'), ...ovVol(48, 36), ...orIsle(30, 26, 3, 2), ...orBoat(30, 46, 0.6, 'hi')],
+strait_of_messina: () => [...ovStr('lo'), ...orBoat(30, 36, 0.8, 'hi'), ...ovVol(12, 24)],
+oresund: () => [...ovStr('lo'), ...ovBr(30), ...orBoat(30, 48, 0.5, 'hi').slice(0, 0)],
+strait_of_otranto: () => [...ovStr('lo'), ...orBoat(30, 32, 0.8, 'hi'), S('M30 38 L30 52', 'ik', 1)],
+la_perouse_strait: () => [...ovStr('lo'), ...ovBerg(30, 24, 0.8), ...ovWhale(24, 42)],
+qiongzhou_strait: () => [...ovStr('lo'), ...orBoat(30, 32, 0.8, 'hi'), ...otRice(8, 48), ...ntConifer(48, 30, 12, 5, 'lo')],
+singapore_strait: () => [...ovStr('lo'), ...orBoat(24, 24, 0.6, 'hi'), ...orBoat(36, 42, 0.6, 'hi'), ...otCity(6, 24)],
+sunda_strait: () => [...ovStr('lo'), ...ovVol(30, 36), S('M24 20 q4 -4 8 0 t8 0', 'ik', 1.2), S('M22 46 q4 -4 8 0 t8 0', 'ik', 1.2)],
+surigao_strait: () => [...ovStr('lo'), ...orBoat(30, 32, 0.8, 'hi'), ...ovRis(30, 46)],
+strait_of_tartary: () => [...ovStr('lo'), ...ovBerg(30, 22, 0.8), ...ntConifer(10, 40, 14, 6, 'lo'), ...ntConifer(50, 22, 14, 6, 'lo')],
+torres_strait: () => [...ovStr('lo'), ...[[30, 22], [30, 34], [30, 46]].flatMap(([x, y]) => ovRis(x, y))],
+tsugaru_strait: () => [...ovStr('lo'), ...ovTun(36), ...orBoat(30, 24, 0.6, 'hi')],
+uraga_channel: () => [...ovStr('lo'), ...orBoat(30, 30, 0.8, 'hi'), ...otCity(8, 24)],
+yucatan_channel: () => [...ovStr('lo'), ...opArrow(30, 12, 30, 44, 'hi', 3), ...otFish(30, 34).slice(0, 0), ...orBoat(30, 48, 0.5, 'hi').slice(0, 0)],
+};
+for (const [id, fn] of Object.entries(MKov)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 87: canals, ship channels, aquifers, geysers and hot springs, sourced, audited, hand-drawn ── */
+const owCan = (y0 = 24, y1 = 38) => [osLand(), P(`M4 ${y0} L56 ${y0} L56 ${y1} L4 ${y1} Z`, 'lo'), S(`M4 ${y0} L56 ${y0} M4 ${y1} L56 ${y1}`, 'ik', 1.6), osFrame()];
+const owBarge = (x, y, s = 1) => [P(`M${x - 9 * s} ${y} L${x + 9 * s} ${y} L${x + 6 * s} ${y + 4 * s} L${x - 6 * s} ${y + 4 * s} Z`, 'ik'), box(x - 6 * s, y - 5 * s, 5 * s, 5 * s, 'hi'), box(x, y - 5 * s, 5 * s, 5 * s, 'hi')];
+const owLock = (x, y0 = 24, y1 = 38) => [box(x - 2, y0 - 2, 4, y1 - y0 + 4, 'hi'), S(`M${x - 2} ${y0 - 2} L${x - 2} ${y1 + 2} M${x + 2} ${y0 - 2} L${x + 2} ${y1 + 2}`, 'ik', 1.2)];
+const owBr = (x, y0 = 24, y1 = 38) => [S(`M${x} ${y0 - 6} L${x} ${y1 + 6}`, 'ik', 4), S(`M${x} ${y0 - 6} L${x} ${y1 + 6}`, 'hi', 2)];
+const owCoal = (x, y) => [P(`M${x - 6} ${y + 6} L${x - 3} ${y} L${x + 3} ${y - 2} L${x + 7} ${y + 6} Z`, 'ik')];
+const owSalt = (x, y) => [P(`M${x - 3} ${y + 3} L${x} ${y - 3} L${x + 3} ${y + 3} Z`, 'hi')];
+const owGround = () => [osLand(), P('M4 8 L56 8 L56 18 L4 18 Z', 'bs'), P('M4 18 L56 18 L56 28 L4 28 Z', 'hi'), P('M4 28 L56 28 L56 40 L4 40 Z', 'lo'), P('M4 40 L56 40 L56 52 L4 52 Z', 'bs'), S('M4 18 L56 18 M4 28 L56 28 M4 40 L56 40', 'ik', 1.4), osFrame()];
+const owGey = (x, y, h = 24) => [P(`M${x - 9} ${y + 10} Q${x - 2} ${y} ${x - 2} ${y - 2} L${x + 2} ${y - 2} Q${x + 2} ${y} ${x + 9} ${y + 10} Z`, 'hi'), S(`M${x} ${y - 2} L${x} ${y - h}`, 'lo', 4), nqBurst(x, y - h, 2, 7, 8, 'hi', 1.4), S(`M${x - 6} ${y - h + 6} Q${x - 9} ${y - h + 12} ${x - 8} ${y - 6} M${x + 6} ${y - h + 6} Q${x + 9} ${y - h + 12} ${x + 8} ${y - 6}`, 'lo', 1.6)];
+const owPool = (x, y, rx = 8, ry = 3, role = 'lo') => [E(x, y, rx, ry, role), mmEll(x, y, rx, ry, 'ik', 1.2)];
+const MKow = {
+albert_canal: () => [...owCan(), ...owBarge(22, 26), ...owBr(44), ...otCity(6, 18).slice(0, 0)],
+amsterdam_rhine_canal: () => [...owCan(), ...owBarge(24, 26), ...otCity(40, 20), S('M4 44 Q30 40 56 46', 'lo', 3)],
+bridgewater_canal: () => [...owCan(26, 40), ...owBarge(22, 28), ...owCoal(46, 18), ...owCoal(12, 20)],
+bydgoszcz_canal: () => [...owCan(), ...owLock(30), ...owBarge(16, 26, 0.8)],
+caledonian_canal: () => [...owCan(), ...opMtn(14, 22, 8, 12, 'hi'), ...opMtn(46, 22, 8, 12, 'hi'), ...owLock(30), ...orBoat(46, 36, 0.5, 'hi').slice(0, 0)],
+cape_cod_canal: () => [...owCan(), ...owBr(30), ...orBoat(16, 36, 0.6, 'hi').slice(0, 0), onWave(48, 'ik', 1.2), onWave(12, 'ik', 1.2)],
+chambly_canal: () => [...owCan(), ...owLock(26), ...owLock(40), ...ntConifer(12, 20, 12, 5, 'lo'), ...ntConifer(50, 50, 12, 5, 'lo')],
+chesapeake_delaware_canal: () => [...owCan(), ...owBr(30), ...owBarge(16, 26, 0.8), E(52, 46, 4, 2, 'lo')],
+chesapeake_ohio_canal: () => [...owCan(), ...owBarge(24, 28, 0.9), S('M4 46 L56 46', 'ik', 2), S('M10 44 L10 48 M20 44 L20 48 M30 44 L30 48 M40 44 L40 48 M50 44 L50 48', 'ik', 1.4)],
+chicago_sanitary_ship_canal: () => [...owCan(), ...otCity(8, 20), ...owBarge(34, 28, 0.8), ...owBr(48)],
+corinth_canal: () => [osLand(), P('M4 8 L22 8 L24 52 L4 52 Z', 'bs'), P('M38 8 L56 8 L56 52 L36 52 Z', 'bs'), P('M24 8 L38 8 L36 52 L24 52 Z', 'lo'), S('M24 8 L24 52 M38 8 L36 52', 'ik', 2), S('M10 30 L22 30 M40 30 L52 30 M10 40 L22 40 M40 40 L52 40', 'ik', 1.2), ...owBr(30).slice(0, 0), S('M20 24 L40 24', 'ik', 2), osFrame()],
+danube_black_sea_canal: () => [...owCan(), ...owBarge(20, 26, 0.8), S('M30 24 L30 10 M30 38 L30 52', 'lo', 4), onWave(50, 'ik', 1.2)],
+dortmund_ems_canal: () => [...owCan(), ...owBarge(22, 26), ...owCoal(46, 18), ...owLock(36)],
+elbe_lubeck_canal: () => [...owCan(), ...owBarge(18, 26, 0.8), ...owLock(34), onWave(50, 'ik', 1.2), onWave(12, 'ik', 1.2)],
+gota_canal: () => [...owCan(), ...owLock(18), ...owLock(32), ...orBoat(46, 36, 0.6, 'hi').slice(0, 0), ...ntConifer(46, 20, 14, 6, 'lo'), ...ntConifer(12, 50, 12, 5, 'lo')],
+great_man_made_river: () => [osLand(), S('M6 30 L54 30', 'ik', 7), S('M6 30 L54 30', 'lo', 4), ...[16, 30, 44].map(x => S(`M${x} 30 L${x} 40`, 'ik', 1.6)), P('M4 44 L56 44 L56 52 L4 52 Z', 'hi'), ...ooDrop(46, 16, 0.8, 'lo').slice(0, 0), ooDrop(46, 18, 0.9, 'lo'), osFrame()],
+red_flag_canal: () => [...owCan(26, 34), ...opMtn(14, 20, 8, 12, 'hi'), ...opMtn(40, 20, 9, 14, 'hi'), S('M20 34 L20 46 M34 34 L34 48', 'lo', 2.4), P('M44 40 L44 28 L54 32 L44 36 Z', 'hi')],
+houston_ship_channel: () => [...owCan(), ...orBoat(24, 34, 0.8, 'hi'), P('M40 10 L44 10 L44 20 L40 20 Z M48 14 L52 14 L52 20 L48 20 Z', 'ik'), ...owCoal(14, 18).slice(0, 0)],
+karakum_canal: () => [osLand(), P('M4 40 Q16 32 28 40 Q40 32 56 40 L56 52 L4 52 Z', 'hi'), S('M4 28 L56 28', 'lo', 6), S('M4 28 L56 28', 'ik', 1), ...otRice(12, 22).slice(0, 0), ...nlPalm(46, 20, 14, 'lo'), osFrame()],
+khlong_saen_saep: () => [...owCan(), ...orBoat(30, 34, 0.9, 'hi'), ...otCity(8, 20), P('M40 10 L48 6 L56 10 Z', 'ik')],
+buckingham_canal: () => [osLand(), P('M30 8 L56 8 L56 52 L30 52 Z', 'lo'), S('M30 8 L30 52', 'ik', 1.6), S('M34 24 L34 40', 'hi', 3), ...nlPalm(14, 48, 30, 'lo'), ...otRice(8, 22).slice(0, 0), ...orBoat(44, 38, 0.7, 'hi'), osFrame()],
+leidsevaart: () => [...owCan(), ...[[14, 40], [22, 40], [30, 40]].map(([x, y]) => P(`M${x - 3} ${y} Q${x} ${y - 10} ${x + 3} ${y} Z`, 'hi')), S('M12 18 L12 8 M12 8 L6 14 M12 8 L18 14 M12 8 L6 4 M12 8 L18 4', 'ik', 1.6), ...owBr(48).slice(0, 0)],
+lingqu: () => [osLand(), S('M6 14 Q30 24 54 14', 'lo', 4), S('M6 46 Q30 36 54 46', 'lo', 4), S('M30 20 L30 40', 'lo', 4), P('M26 28 L34 28 L34 32 L26 32 Z', 'hi'), ...opMtn(12, 34, 8, 10, 'hi'), osFrame()],
+manchester_ship_canal: () => [...owCan(), ...orBoat(24, 34, 0.9, 'hi'), P('M40 12 L40 6 L44 6 L44 12 M48 12 L48 8 L52 8 L52 12 Z', 'ik'), box(38, 12, 16, 6, 'ik')],
+canal_du_midi: () => [...owCan(), ...ouGrape(10, 12), ...ouGrape(40, 44), ...owLock(26), ...ntConifer(48, 18, 10, 4, 'lo')],
+mittelland_canal: () => [...owCan(), ...owBarge(18, 26, 0.9), ...owBr(36), box(44, 10, 8, 10, 'ik')],
+moscow_canal: () => [...owCan(), ...owBarge(20, 26, 0.8), P('M38 12 Q42 4 46 12 Z', 'hi'), box(36, 12, 12, 6, 'hi'), ...owLock(30)],
+new_york_state_canal_system: () => [...owCan(), ...owLock(22), ...owLock(38), ...owBarge(46, 28, 0.6), S('M4 46 L56 46', 'ik', 1.4)],
+north_jiangsu_main_irrigation_canal: () => [...owCan(22, 32), ...otRice(8, 46), ...otRice(30, 48), S('M20 32 L20 44 M40 32 L40 44', 'lo', 2.4), ...otRice(40, 14).slice(0, 0)],
+rhine_main_danube_canal: () => [osLand(), ...opMtn(30, 30, 20, 20, 'hi'), P('M4 38 L56 38 L56 46 L4 46 Z', 'lo'), S('M4 38 L56 38 M4 46 L56 46', 'ik', 1.4), ...owBarge(18, 40, 0.5).slice(0, 0), S('M22 38 Q30 32 38 38', 'ik', 2), osFrame()],
+rideau_canal: () => [...owCan(), P('M4 24 L56 24 L56 38 L4 38 Z', 'hi'), S('M4 24 L56 24 M4 38 L56 38', 'ik', 1.6), S('M16 32 Q22 28 28 32 Q34 36 40 32', 'ik', 1.4), ohSnow(10, 14, 4), ohSnow(48, 46, 4)],
+stecknitz_canal: () => [...owCan(), ...owBarge(22, 26, 0.9), ...owSalt(44, 18), ...owSalt(50, 18), ...owSalt(10, 46)],
+trollhatte_canal: () => [osLand(), P('M4 24 L28 24 L28 38 L4 38 Z', 'lo'), ...ouFall(32, 24), P('M40 24 L56 24 L56 38 L40 38 Z', 'lo'), S('M4 24 L28 24 M4 38 L28 38 M40 24 L56 24 M40 38 L56 38', 'ik', 1.4), osFrame()],
+volga_don_canal: () => [...owCan(), ...owBarge(18, 26, 0.9), S('M4 44 Q16 40 28 46', 'lo', 3), S('M32 10 Q44 14 56 8', 'lo', 3), ...owLock(36)],
+welland_canal: () => [osLand(), P('M4 8 L20 8 L20 52 L4 52 Z', 'lo'), P('M20 24 L40 24 L40 38 L20 38 Z', 'lo'), P('M40 8 L56 8 L56 52 L40 52 Z', 'lo'), S('M20 8 L20 52 M40 8 L40 52', 'ik', 1.4), ...owLock(30), ...orBoat(30, 34, 0.5, 'hi'), osFrame()],
+guarani_aquifer: () => [...owGround(), ...owPool(30, 34, 12, 3, 'hi'), S('M20 8 L20 34 M22 8 L22 34', 'ik', 1.6), ...ooDrop(40, 16, 0.6, 'lo').slice(0, 0)],
+nubian_sandstone_aquifer_system: () => [...owGround(), P('M4 8 L56 8 L56 18 L4 18 Z', 'hi'), ...nlPalm(14, 18, 14, 'lo'), ooDrop(40, 34, 1.1, 'hi')],
+ogallala_aquifer: () => [...owGround(), S('M30 6 L30 34', 'ik', 2), P('M26 6 L34 6 L32 12 L28 12 Z', 'hi'), ooDrop(14, 36, 0.8, 'hi'), ooDrop(46, 36, 0.8, 'hi')],
+geysir: () => [osLand(), ...owGey(30, 44, 28), ...owPool(30, 48, 12, 3), S('M4 20 q6 -4 12 0 M44 18 q6 -4 12 0', 'ik', 1.2), osFrame()],
+old_faithful: () => [osLand(), ...owGey(30, 44, 24), ...[[10, 30], [50, 30]].flatMap(([x, y]) => ntConifer(x, y, 14, 6, 'lo')), osFrame()],
+steamboat_geyser: () => [osLand(), ...owGey(30, 46, 36), ...orBoat(48, 24, 0.6, 'hi').slice(0, 0), S('M4 52 Q30 46 56 52', 'ik', 1.4), osFrame()],
+strokkur: () => [osLand(), ...owGey(30, 44, 20), ...owPool(14, 48, 8, 3), ...owPool(46, 48, 8, 3), osFrame()],
+waiotapu: () => [osLand(), ...owPool(20, 40, 12, 5, 'hi'), ...owPool(42, 32, 9, 4, 'lo'), ...owPool(40, 46, 8, 3, 'hi'), S('M16 24 q3 -6 0 -12 M24 26 q3 -6 0 -10', 'lo', 1.6), osFrame()],
+whakarewarewa: () => [osLand(), ...owGey(22, 44, 22), ...owPool(44, 46, 9, 3), S('M40 38 q3 -8 0 -16 M48 38 q3 -6 0 -12', 'lo', 1.8), osFrame()],
+dallol_hydrothermal_system: () => [osLand(), P('M4 40 Q16 34 30 38 Q44 32 56 40 L56 52 L4 52 Z', 'hi'), ...owPool(20, 44, 8, 3, 'bs'), ...owPool(40, 46, 7, 2.6, 'bs'), ...ovVol(30, 34).slice(0, 2), ...[[14, 20], [46, 20]].map(([x, y]) => P(`M${x - 3} ${y + 3} L${x} ${y - 3} L${x + 3} ${y + 3} Z`, 'hi')), osFrame()],
+};
+for (const [id, fn] of Object.entries(MKow)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 88: glaciers, ice shelves, springs, deltas, mid-ocean ridges and trenches, sourced, audited, hand-drawn ── */
+const oxMts = (n_ = 3) => [P('M4 8 Q30 3 56 8 L56 52 Q30 57 4 52 Z', 'gh'), ...[[10, 26, 9, 18], [28, 22, 12, 22], [46, 26, 9, 16]].slice(0, n_).flatMap(([x, b, w, h]) => opMtn(x, b, w, h, 'bs'))];
+const oxTongue = (d, w = 7) => [S(d, 'hi', w), S(d, 'ik', 1)];
+const oxGl = (d, w = 7) => [...oxMts(), ...oxTongue(d, w), osFrame()];
+const oxSec = () => [P('M4 8 Q30 3 56 8 L56 52 Q30 57 4 52 Z', 'lo'), onWave(14, 'ik', 1.2), osFrame()];
+const oxRidge = () => [...oxSec(), P('M4 52 L4 42 Q16 40 22 34 L26 28 L30 36 L34 28 L38 34 Q44 40 56 42 L56 52 Q30 57 4 52 Z', 'bs'), S('M4 42 Q16 40 22 34 L26 28 L30 36 L34 28 L38 34 Q44 40 56 42', 'ik', 1.6), S('M30 36 L30 44', 'hi', 2)];
+const oxTrench = () => [...oxSec(), P('M4 52 L4 30 L20 30 L26 46 L34 46 L40 30 L56 30 L56 52 Q30 57 4 52 Z', 'bs'), S('M4 30 L20 30 L26 46 L34 46 L40 30 L56 30', 'ik', 1.6), S('M30 46 L30 52', 'hi', 2)];
+const oxFan = (x, y, s = 1) => [S(`M${x} ${y} L${x - 12 * s} ${y + 12 * s}`, 'lo', 3), S(`M${x} ${y} L${x - 4 * s} ${y + 14 * s}`, 'lo', 3), S(`M${x} ${y} L${x + 4 * s} ${y + 14 * s}`, 'lo', 3), S(`M${x} ${y} L${x + 12 * s} ${y + 12 * s}`, 'lo', 3)];
+const oxDelta = (d, extra = []) => [osLand(), P('M4 40 Q30 34 56 40 L56 52 Q30 57 4 52 Z', 'lo'), S(d, 'lo', 5), S(d, 'ik', 1), ...oxFan(30, 28), ...extra, osFrame()];
+const oxShelf = () => [P('M4 8 Q30 3 56 8 L56 52 Q30 57 4 52 Z', 'lo'), P('M4 8 Q30 3 56 8 L56 30 L4 30 Z', 'hi'), S('M4 30 L56 30', 'ik', 2), S('M12 12 L12 28 M26 10 L26 28 M40 10 L40 28', 'ik', 0.8), onWave(40, 'ik', 1.2), onWave(48, 'ik', 1.2), osFrame()];
+const MKox = {
+aletsch_glacier: () => [...oxGl('M30 24 Q24 34 30 42 Q36 48 30 54', 9)],
+filchner_ronne_ice_shelf: () => [...oxShelf(), ...ovBerg(14, 42, 0.8)],
+ross_ice_shelf: () => [...oxShelf(), ...ovBerg(44, 42, 0.8), P('M22 22 L26 14 L30 22 Z', 'ik')],
+arctic_ice_pack: () => [P('M4 8 Q30 3 56 8 L56 52 Q30 57 4 52 Z', 'lo'), ...[[14, 16, 8], [34, 14, 9], [46, 26, 7], [20, 32, 9], [40, 42, 9], [12, 46, 6]].flatMap(([x, y, r]) => [E(x, y, r, r * 0.55, 'hi'), mmEll(x, y, r, r * 0.55, 'ik', 1)]), osFrame()],
+columbia_icefield: () => [...oxMts(), P('M10 28 Q30 18 50 28 L50 36 Q30 30 10 36 Z', 'hi'), S('M20 36 Q20 44 24 50 M36 36 Q38 44 34 50', 'hi', 5), S('M10 28 Q30 18 50 28', 'ik', 1.4), S('M30 8 L30 18', 'ik', 1.6), osFrame()],
+vanch_yakh_glacier: () => [...oxGl('M12 22 Q22 30 30 34 Q40 40 46 50', 6)],
+franz_josef_glacier: () => [...oxMts(2), P('M4 40 L56 40 L56 52 Q30 57 4 52 Z', 'lo'), ...ntConifer(12, 44, 14, 6, 'lo'), ...ntConifer(48, 44, 14, 6, 'lo'), ...oxTongue('M30 22 Q26 32 30 42', 8), osFrame()],
+gangotri_glacier: () => [...oxGl('M30 22 Q24 32 32 40', 8), S('M32 40 Q36 46 44 52', 'lo', 4)],
+jostedal_glacier: () => [...oxMts(), P('M10 24 Q30 16 50 24 L50 30 Q30 24 10 30 Z', 'hi'), S('M16 30 Q14 40 18 48 M30 28 Q30 40 34 50 M44 30 Q46 38 42 46', 'hi', 5), osFrame()],
+malaspina_glacier: () => [...oxMts(2), S('M20 20 Q24 30 30 34 M40 20 Q36 30 30 34', 'hi', 5), P('M10 34 Q30 30 50 34 Q54 46 30 50 Q6 46 10 34 Z', 'hi'), S('M10 34 Q30 30 50 34 Q54 46 30 50 Q6 46 10 34', 'ik', 1.4), osFrame()],
+nabesna_glacier: () => [...oxMts(), ...oxTongue('M10 20 Q22 28 28 36 Q36 44 52 50', 7), ...ovVol(46, 24)],
+perito_moreno_glacier: () => [...oxMts(2), P('M4 40 L56 40 L56 52 Q30 57 4 52 Z', 'lo'), P('M18 22 L42 22 L46 40 L14 40 Z', 'hi'), S('M18 22 L14 40 M42 22 L46 40 M24 24 L22 40 M34 24 L36 40', 'ik', 1), osFrame()],
+siachen_glacier: () => [...oxGl('M30 20 Q22 28 30 36 Q38 44 30 52', 8), ohSnow(48, 14, 4), ohSnow(12, 16, 4)],
+tasman_glacier: () => [...oxMts(2), ...oxTongue('M30 22 Q30 32 30 40', 9), E(30, 46, 10, 4, 'lo'), mmEll(30, 46, 10, 4, 'ik', 1), ...ovBerg(30, 47, 0.5), osFrame()],
+vatnajokull: () => [...oxMts(1), P('M6 30 Q30 12 54 30 L54 42 L6 42 Z', 'hi'), S('M6 30 Q30 12 54 30', 'ik', 1.6), ...ovVol(30, 20), S('M14 42 L10 50 M30 42 L30 52 M46 42 L50 50', 'hi', 4), osFrame()],
+fontaine_de_vaucluse: () => [osLand(), P('M4 8 L56 8 L56 30 L4 30 Z', 'ik'), P('M18 30 Q30 18 42 30 Z', 'bs'), S('M30 30 Q26 40 18 46 M30 30 Q34 40 44 48', 'lo', 5), E(30, 30, 6, 3, 'lo'), mmEll(30, 30, 6, 3, 'ik', 1), osFrame()],
+gihon_spring: () => [osLand(), P('M4 8 L56 8 L56 20 Q30 26 4 20 Z', 'hi'), box(14, 10, 8, 8, 'bs'), box(26, 6, 8, 12, 'bs'), box(38, 12, 8, 6, 'bs'), S('M30 34 Q30 44 40 50', 'lo', 5), E(30, 32, 7, 3, 'lo'), mmEll(30, 32, 7, 3, 'ik', 1.2), osFrame()],
+amazon_delta: () => [...oxDelta('M30 8 L30 28', [...ntConifer(10, 28, 14, 6, 'lo'), ...ntConifer(52, 28, 14, 6, 'lo')])],
+ganges_delta: () => [...oxDelta('M30 8 L30 28', [P('M44 36 L50 34 L52 40 L46 42 Z', 'ik'), S('M44 38 L52 38', 'hi', 1.2)])],
+red_river_delta: () => [...oxDelta('M30 8 L30 28', [...otRice(8, 26), ...otRice(40, 26)])],
+mekong_delta: () => [...oxDelta('M30 8 L30 28', [...otFish(16, 44).slice(0, 0), ...orBoat(44, 40, 0.5, 'hi')])],
+mississippi_river_delta: () => [...oxDelta('M30 8 L30 28', [S('M30 40 L30 44 M26 40 L24 46 M34 40 L38 46', 'bs', 3)])],
+nile_delta: () => [...oxDelta('M30 8 L30 28', [P('M4 8 L22 8 L22 16 L4 16 Z M38 8 L56 8 L56 16 L38 16 Z', 'hi')])],
+volga_delta: () => [...oxDelta('M30 8 L30 28', [...otFish(14, 44), S('M44 24 q3 -3 6 0 q3 -3 6 0', 'ik', 1.4)])],
+belize_barrier_reef: () => [...oxSec(), S('M4 30 Q16 26 28 32 Q40 28 56 34', 'hi', 5), P('M4 40 L56 36 L56 52 Q30 57 4 52 Z', 'bs'), ...nhDots([[12, 28], [24, 32], [38, 30], [50, 34]], 2.6, 'hi'), ],
+central_indian_ridge: () => [...oxRidge(), onWave(22, 'ik', 1.2)],
+doggerland: () => [P('M4 8 Q30 3 56 8 L56 52 Q30 57 4 52 Z', 'lo'), P('M10 34 Q16 24 28 26 Q42 24 50 34 Q44 42 28 42 Q14 42 10 34 Z', 'bs'), S('M10 34 Q16 24 28 26 Q42 24 50 34 Q44 42 28 42 Q14 42 10 34', 'ik', 1.4), P('M24 34 L24 28 L28 34 Z', 'hi'), ...[[34, 34], [40, 36]].map(([x, y]) => C(x, y, 1.8, 'ik')), onWave(16, 'ik', 1.2), onWave(48, 'ik', 1.2), osFrame()],
+east_pacific_rise: () => [...oxRidge(), ...otFish(14, 24), S('M26 26 L34 26', 'ik', 1)],
+hawaiian_emperor_seamount_chain: () => [...oxSec(), P('M4 52 Q10 40 16 40 Q22 30 28 34 Q34 44 44 40 L56 52 Q30 57 4 52 Z', 'bs'), ...ovVol(14, 40).slice(0, 1), ...ovVol(30, 36).slice(0, 1), ...ovVol(46, 44).slice(0, 1), P('M24 36 L28 24 L34 36 Z', 'ik'), ...ovVol(28, 24).slice(1)],
+izu_bonin_mariana_arc: () => [...oxTrench(), ...ovVol(44, 30), ...ovVol(52, 30).slice(0, 0), onWave(22, 'ik', 1.2)],
+challenger_deep: () => [...oxTrench(), ...opArrow(30, 20, 30, 44, 'hi', 2.4), ...orBoat(30, 16, 0.6, 'hi')],
+nankai_trough: () => [...oxTrench(), S('M34 30 L40 30', 'ik', 3), ...orBoat(46, 20, 0.5, 'hi')],
+pacific_antarctic_ridge: () => [...oxRidge(), ...ovBerg(14, 14, 0.8), ...ovBerg(46, 14, 0.8)],
+peru_chile_trench: () => [...oxTrench(), P('M44 8 L56 8 L56 30 L40 30 Z', 'hi'), ...opMtn(48, 22, 6, 10, 'ik', false)],
+philippine_trench: () => [...oxTrench(), ...orIsle(48, 20, 5, 3), ...orBoat(16, 18, 0.5, 'hi')],
+southwest_indian_ridge: () => [...oxRidge(), ...ovWhale(14, 24)],
+};
+for (const [id, fn] of Object.entries(MKox)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 89: waterfalls, basins and plateaus, swamps, marshes and wetlands, sourced, audited, hand-drawn ── */
+const oyWF = (x = 30, w = 12, top = 20, bot = 44, extra = []) => [osLand(), P(`M4 8 L56 8 L56 ${top} L4 ${top} Z`, 'ik'), box(x - w / 2, top, w, bot - top, 'lo'), S(`M${x - w / 2 + 2} ${top} L${x - w / 2 + 2} ${bot} M${x} ${top} L${x} ${bot} M${x + w / 2 - 2} ${top} L${x + w / 2 - 2} ${bot}`, 'hi', 1.4), ...orIsle(x, bot + 4, w * 0.9, 3.4, 'lo'), ...nhDots([[x - w / 2 - 2, bot - 2], [x + w / 2 + 2, bot - 4]], 1.4, 'hi'), ...extra, osFrame()];
+const oyBowl = (extra = [], role = 'hi') => [osLand(), ...opMtn(10, 30, 10, 18, 'ik', false), ...opMtn(50, 30, 10, 18, 'ik', false), P('M4 30 Q30 46 56 30 L56 52 L4 52 Z', role), S('M4 30 Q30 46 56 30', 'ik', 1.6), ...extra, osFrame()];
+const oyReed = (x, y, h = 12) => [S(`M${x} ${y} L${x} ${y - h} M${x + 3} ${y} L${x + 4} ${y - h + 2} M${x - 3} ${y} L${x - 4} ${y - h + 3}`, 'ik', 1.4), E(x, y - h, 1.4, 3, 'ik')];
+const oyWet = (extra = []) => [osLand(), P('M4 28 Q30 22 56 28 L56 52 Q30 57 4 52 Z', 'lo'), S('M4 28 Q30 22 56 28', 'ik', 1.4), onWave(38, 'ik', 1.2), onWave(46, 'ik', 1.2), ...extra, osFrame()];
+const oyBird = (x, y) => S(`M${x - 5} ${y} q3 -4 5 0 q2 -4 5 0`, 'ik', 1.6);
+const MKoy = {
+augrabies_falls: () => oyWF(30, 14, 22, 46, [P('M4 8 L22 8 L22 22 L4 22 Z M38 8 L56 8 L56 22 L38 22 Z', 'bs')]),
+ban_gioc_detian_falls: () => [...oyWF(22, 10, 24, 46), box(34, 24, 10, 22, 'lo'), S('M36 24 L36 46 M42 24 L42 46', 'hi', 1.4)],
+celilo_falls: () => oyWF(30, 16, 24, 44, [...otFish(14, 34), S('M8 24 L14 14 M50 24 L44 14', 'ik', 1.8)]),
+dettifoss: () => oyWF(30, 18, 22, 46, [...otSnow(10, 20).slice(0, 0), ...opMtn(10, 20, 8, 10, 'hi'), ...opMtn(50, 20, 8, 10, 'hi')]),
+hammam_maskhoutine: () => [osLand(), P('M4 20 L56 20 L56 26 L4 26 Z', 'hi'), P('M10 26 L50 26 L46 34 L14 34 Z', 'bs'), P('M14 34 L46 34 L42 42 L18 42 Z', 'hi'), P('M18 42 L42 42 L38 50 L22 50 Z', 'bs'), S('M30 14 q3 -4 0 -8 M20 16 q3 -4 0 -6 M40 16 q3 -4 0 -6', 'lo', 1.6), osFrame()],
+helmcken_falls: () => oyWF(30, 8, 20, 48, [P('M4 8 L24 8 L24 20 L4 20 Z', 'bs'), P('M36 8 L56 8 L56 20 L36 20 Z', 'bs'), ohSnow(48, 16, 4)]),
+kaieteur_falls: () => oyWF(30, 14, 18, 46, [...ntConifer(10, 44, 16, 6, 'lo'), ...ntConifer(50, 44, 16, 6, 'lo'), S('M4 18 L56 18', 'ik', 1.4)]),
+khone_phapheng_falls: () => [...oyWF(30, 46, 28, 42), S('M12 28 L12 42 M22 28 L22 42 M38 28 L38 42 M48 28 L48 42', 'ik', 1), ...orBoat(20, 50, 0.5, 'hi').slice(0, 0)],
+lofoi_falls: () => oyWF(30, 10, 14, 48, [...ntConifer(12, 40, 14, 6, 'lo'), ...ntConifer(48, 40, 14, 6, 'lo'), S('M38 14 q4 -4 8 0', 'hi', 1.4)]),
+maletsunyane_falls: () => oyWF(30, 10, 22, 46, [P('M4 8 L56 8 L56 22 L4 22 Z', 'bs'), ohSnow(48, 14, 4), ...opMtn(12, 52, 8, 10, 'ik', false)]),
+mardalsfossen: () => oyWF(30, 8, 16, 46, [...opMtn(10, 16, 8, 8, 'hi'), ...opMtn(50, 16, 8, 8, 'hi'), box(22, 16, 16, 3, 'ik')]),
+multnomah_falls: () => oyWF(30, 8, 12, 46, [S('M20 30 L40 30', 'ik', 3), S('M20 30 L20 26 M40 30 L40 26', 'hi', 1.6), ...ntConifer(10, 44, 14, 6, 'lo'), ...ntConifer(50, 44, 14, 6, 'lo')]),
+saint_anthony_falls: () => oyWF(30, 22, 26, 44, [box(38, 12, 14, 12, 'hi'), P('M38 12 L45 6 L52 12 Z', 'ik'), S('M6 26 L54 26', 'ik', 1.8)]),
+shivanasamudra_falls: () => [...oyWF(18, 8, 24, 46), box(34, 30, 8, 16, 'lo'), S('M36 30 L36 46 M40 30 L40 46', 'hi', 1.4), ...otTemple(48, 18)],
+sutherland_falls: () => oyWF(30, 8, 14, 46, [...opMtn(10, 22, 9, 14, 'hi'), ...opMtn(50, 22, 9, 14, 'hi'), ...ntConifer(10, 48, 12, 5, 'lo')]),
+voringsfossen: () => oyWF(32, 8, 18, 48, [P('M4 8 L56 8 L56 18 L4 18 Z M4 18 L24 18 L24 52 L4 52 Z', 'bs'), S('M24 18 L24 52', 'ik', 1.6)]),
+yosemite_falls: () => oyWF(34, 7, 12, 44, [box(30, 28, 10, 3, 'ik'), P('M4 8 L26 8 L26 52 L4 52 Z', 'bs'), S('M26 8 L26 52', 'ik', 1.6), ohSnow(46, 16, 4)]),
+continental_divide_of_the_americas: () => [osLand(), ...opMtn(30, 40, 24, 28, 'hi'), S('M6 30 Q16 30 20 36 M54 30 Q44 30 40 36', 'lo', 3), ...opArrow(30, 34, 14, 44, 'ik', 2), ...opArrow(30, 34, 46, 44, 'ik', 2), osFrame()],
+chad_basin: () => oyBowl([E(30, 42, 10, 4, 'lo'), mmEll(30, 42, 10, 4, 'ik', 1.2), ...nlPalm(14, 50, 14, 'lo')].filter(Boolean)),
+great_basin: () => oyBowl([...opMtn(10, 30, 10, 18, 'hi'), E(30, 44, 9, 3.4, 'hi'), mmEll(30, 44, 9, 3.4, 'ik', 1.2), P('M24 42 L26 40 L28 42 Z', 'ik')]),
+junggar_basin: () => oyBowl([P('M24 40 L24 34 M20 40 L24 36 M28 40 L24 36', 'ik'), P('M36 46 L38 36 L40 46 Z', 'ik')]),
+ordos_plateau: () => [osLand(), P('M4 30 L12 22 L48 22 L56 30 L56 52 L4 52 Z', 'hi'), S('M4 30 L12 22 L48 22 L56 30', 'ik', 1.6), S('M6 40 Q30 34 54 40', 'lo', 3), onWave(46, 'ik', 1.2), S('M16 30 L16 36 M30 30 L30 34 M44 30 L44 36', 'ik', 1.4), osFrame()],
+sistan_basin: () => oyBowl([E(30, 44, 10, 3.4, 'lo'), mmEll(30, 44, 10, 3.4, 'ik', 1.2), S('M12 48 L20 46 M42 48 L50 46', 'ik', 1.2), C(48, 14, 5, 'hi')]),
+tarim_basin: () => oyBowl([...[[16, 44, 6], [30, 46, 8], [44, 44, 6]].map(([x, y, w]) => P(`M${x - w} ${y} Q${x} ${y - 6} ${x + w} ${y} Z`, 'bs')), ...nlPalm(30, 44, 12, 'lo')]),
+western_plateau: () => [osLand(), P('M4 24 L56 24 L56 52 L4 52 Z', 'hi'), S('M4 24 L56 24', 'ik', 1.6), P('M4 14 L16 14 L20 24 L4 24 Z M44 14 L56 14 L56 24 L40 24 Z', 'bs'), S('M10 40 Q30 34 50 40 M14 46 Q30 42 46 46', 'ik', 1.2), osFrame()],
+uvs_lake_basin: () => oyBowl([E(30, 42, 12, 4, 'lo'), mmEll(30, 42, 12, 4, 'ik', 1.2), ...owSalt(22, 38), ...owSalt(38, 38)].filter(Boolean), 'bs'),
+camargue: () => [...oyWet([E(16, 20, 5, 4, 'hi'), S('M16 24 L16 32', 'hi', 1.6), P('M40 34 Q46 28 52 34 Z', 'ik'), ...[[20, 44], [40, 46]].flatMap(([x, y]) => [E(x, y, 7, 3.4, 'ik'), S(`M${x - 4} ${y + 3} L${x - 4} ${y + 8} M${x + 4} ${y + 3} L${x + 4} ${y + 8}`, 'ik', 1.2)])])],
+darien_gap: () => [osLand(), ...[[10, 40], [24, 44], [38, 40], [50, 44], [16, 24], [32, 26], [46, 22]].flatMap(([x, y]) => ntConifer(x, y, 22, 8, 'lo')), S('M6 54 L54 54', 'ik', 1.2), osFrame()],
+great_dismal_swamp: () => oyWet([...ntConifer(14, 34, 16, 7, 'lo'), ...ntConifer(46, 34, 16, 7, 'lo'), S('M10 44 L50 44', 'hi', 2)]),
+kerala_backwaters: () => [osLand(), S('M6 40 Q20 24 34 34 Q46 42 54 26', 'lo', 8), S('M6 40 Q20 24 34 34 Q46 42 54 26', 'ik', 1), ...nlPalm(14, 28, 18, 'lo'), ...nlPalm(46, 52, 16, 'lo'), ...orBoat(26, 34, 0.7, 'hi'), osFrame()],
+pantanal: () => oyWet([E(34, 40, 6, 3, 'bs'), E(40, 38, 2.4, 2, 'bs'), ...oyReed(12, 36, 12), ...oyReed(48, 46, 12), oyBird(22, 18), oyBird(42, 14)]),
+sudd: () => oyWet([...oyReed(12, 40, 14), ...oyReed(24, 44, 14), ...oyReed(40, 40, 14), ...oyReed(50, 46, 12), S('M6 52 Q30 46 54 52', 'hi', 2)]),
+the_fens: () => [osLand(), P('M4 24 L56 24 L56 52 L4 52 Z', 'hi'), S('M4 24 L56 24', 'ik', 1.4), S('M4 36 L56 36 M4 46 L56 46', 'lo', 4), S('M4 36 L56 36 M4 46 L56 46', 'ik', 0.8), P('M42 8 L50 8 L50 24 L42 24 Z', 'ik'), P('M40 8 L46 2 L52 8 Z', 'ik'), S('M44 14 L48 14 M44 18 L48 18', 'ik', 0.8), osFrame()],
+vasyugan_swamp: () => oyWet([...ntConifer(10, 34, 14, 6, 'lo'), ...ntConifer(30, 34, 14, 6, 'lo'), ...ntConifer(48, 34, 14, 6, 'lo'), ...nhDots([[16, 18], [34, 14], [44, 20], [22, 22]], 1.4, 'ik'), S('M8 44 Q30 40 52 44', 'bs', 3)]),
+};
+for (const [id, fn] of Object.entries(MKoy)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 90: Atlantic, Indian Ocean and sub-Antarctic islands, sourced, audited, hand-drawn ── */
+const ozSea = (role = 'lo') => orSea(role);
+const ozLand = (cx, cy, rx, ry, role = 'bs') => orIsle(cx, cy, rx, ry, role);
+const ozPeng = (x, y, s = 1) => [E(x, y, 2.6 * s, 4 * s, 'ik'), E(x, y + 0.8 * s, 1.4 * s, 2.8 * s, 'hi'), C(x, y - 4.6 * s, 1.7 * s, 'ik')];
+const ozWing = (x, y, s = 1) => S(`M${x - 6 * s} ${y + 2 * s} Q${x - 3 * s} ${y - 2 * s} ${x} ${y} Q${x + 3 * s} ${y - 2 * s} ${x + 6 * s} ${y + 2 * s}`, 'ik', 1.6);
+const ozSeal = (x, y, s = 1) => [E(x, y, 7 * s, 3 * s, 'ik'), C(x + 7 * s, y - 1.5 * s, 2 * s, 'ik'), P(`M${x - 6 * s} ${y} L${x - 10 * s} ${y + 3 * s} L${x - 8 * s} ${y - 1 * s} Z`, 'ik')];
+const ozTurtle = (x, y, s = 1) => [E(x, y, 5 * s, 3.4 * s, 'ik'), E(x, y, 3 * s, 2 * s, 'hi'), C(x + 6 * s, y, 1.6 * s, 'ik'), S(`M${x - 3 * s} ${y + 3 * s} l-2 2 M${x + 3 * s} ${y + 3 * s} l2 2`, 'ik', 1.2)];
+const ozPlume = (x, y) => S(`M${x} ${y} q-3 -4 1 -7 q4 -3 0 -6`, 'hi', 1.8);
+const ozCone = (x, b, w, h, pl = true) => [...opMtn(x, b, w, h, 'bs', false), P(`M${x - w * 0.2} ${b - h * 0.85} L${x + w * 0.2} ${b - h * 0.85} L${x} ${b - h} Z`, 'ik'), ...(pl ? [ozPlume(x, b - h)] : [])];
+const ozDodo = (x, y) => [E(x, y, 5, 4, 'ik'), C(x + 5, y - 4, 2.4, 'ik'), P(`M${x + 7} ${y - 5} L${x + 11} ${y - 3} L${x + 7} ${y - 3} Z`, 'hi'), S(`M${x - 1} ${y + 4} l0 4 M${x + 2} ${y + 4} l0 4`, 'ik', 1.4)];
+const ozHut = (x, y, w = 5) => [box(x, y - 4, w, 4, 'hi'), P(`M${x - 1} ${y - 4} L${x + w / 2} ${y - 8} L${x + w + 1} ${y - 4} Z`, 'ik')];
+const ozAtoll = (cx, cy, r, w = 4) => [ring('bs', cx, cy, r, w), ring('ik', cx, cy, r + w / 2, 0.9)];
+const ozIce = (cx, cy, rx, ry) => [...ozLand(cx, cy, rx, ry, 'hi'), S(`M${cx - rx * 0.5} ${cy} Q${cx} ${cy - ry * 0.7} ${cx + rx * 0.5} ${cy}`, 'ik', 1.1)];
+const ozBerg = (x, y, s = 1) => ovBerg(x, y, s);
+const MKoz = {
+ascension_island: () => [...ozSea(), ...ozLand(28, 38, 18, 8), ...ozCone(26, 40, 10, 16), ...ozTurtle(46, 46, 0.9)],
+cameroon_line: () => [osLand(), ...ozCone(12, 46, 8, 12, false), ...ozCone(24, 46, 9, 16, false), ...ozCone(42, 46, 11, 26), ...ozCone(54, 46, 6, 9, false), onWave(52, 'ik', 1.4), osFrame()],
+bioko: () => [...ozSea(), ...ozLand(30, 36, 20, 12), ...ozCone(34, 38, 10, 16, false), ...nlPalm(16, 40, 12, 'lo'), E(46, 42, 3, 4.6, 'ik'), S('M46 38 L46 46', 'hi', 1)],
+fuerteventura: () => [...ozSea(), ...ozLand(30, 38, 22, 7), P('M14 38 Q20 30 26 38 Z', 'hi'), P('M28 38 Q36 28 44 38 Z', 'hi'), S('M6 16 L24 16 M14 22 L36 22 M30 12 L50 12', 'ik', 1.6)],
+gran_canaria: () => [...ozSea(), C(30, 32, 16, 'bs'), mmEll(30, 32, 16, 16, 'ik', 1.4), nqBurst(30, 32, 3, 13, 9, 'ik', 1.1), ...ozHut(44, 50, 6)],
+lanzarote: () => [...ozSea(), ...ozLand(30, 34, 22, 12, 'ik'), ...ozCone(20, 36, 7, 9, false), ...ozCone(36, 36, 8, 11, false), ...[[14, 42], [22, 44], [32, 45], [42, 42]].map(([x, y]) => S(`M${x - 3} ${y} A3 3 0 0 1 ${x + 3} ${y}`, 'hi', 1.4))],
+la_palma: () => [...ozSea(), P('M30 10 Q50 20 48 38 Q42 52 28 50 Q14 46 14 32 Q16 14 30 10 Z', 'bs'), S('M30 10 Q50 20 48 38 Q42 52 28 50 Q14 46 14 32 Q16 14 30 10 Z', 'ik', 1.3), ring('hi', 30, 28, 8, 3), S('M30 34 Q34 42 40 46', 'ik', 1.6)],
+tenerife: () => [...ozSea(), ...ozLand(30, 44, 24, 8), ...opMtn(30, 44, 14, 32, 'bs', true), ...opMtn(14, 44, 8, 12, 'bs', false), ...opMtn(48, 44, 7, 10, 'bs', false)],
+gough_island: () => [...ozSea(), P('M10 44 L16 26 L22 36 L28 20 L34 34 L42 24 L48 44 Z', 'bs'), S('M10 44 L16 26 L22 36 L28 20 L34 34 L42 24 L48 44', 'ik', 1.4), ozWing(16, 14, 1.2), ozWing(40, 12, 0.9)],
+saint_helena: () => [...ozSea(), ...ozLand(30, 44, 20, 8), ...opMtn(26, 44, 12, 14, 'bs', false), P('M16 20 Q30 8 44 20 Q30 24 16 20 Z', 'ik'), C(30, 15, 2, 'hi')],
+santiago_cape_verde: () => [...ozSea(), ...ozLand(30, 34, 22, 13), ...opMtn(20, 38, 9, 14, 'bs', false), ...opMtn(40, 38, 8, 10, 'bs', false), ...ozHut(26, 44, 6), ...nlPalm(46, 46, 12, 'lo')],
+santo_antao: () => [...ozSea(), ...ozLand(30, 44, 24, 8), ...opMtn(14, 44, 7, 28, 'bs', false), ...opMtn(30, 44, 9, 34, 'bs', false), ...opMtn(46, 44, 7, 26, 'bs', false), S('M22 44 Q30 36 38 44', 'lo', 3)],
+tristan_da_cunha: () => [...ozSea(), ...ozLand(30, 40, 18, 12), ...opMtn(30, 40, 14, 28, 'bs', true), ...ozHut(40, 46, 5), ...ozHut(46, 47, 4)],
+djerba: () => [osLand(), P('M4 8 Q30 3 56 8 L56 52 Q30 57 4 52 Z', 'lo'), P('M4 8 L18 8 L18 52 L4 52 Z', 'bs'), ...ozLand(38, 30, 14, 12), S('M18 30 L24 30', 'ik', 2.4), ...nlPalm(36, 34, 12, 'lo'), ...owSalt(44, 36), osFrame()],
+agalega: () => [...ozSea(), ...ozLand(18, 34, 11, 4.4), ...ozLand(42, 34, 11, 4.4), ...nlPalm(14, 34, 12, 'lo'), ...nlPalm(22, 34, 10, 'lo'), ...nlPalm(40, 34, 12, 'lo'), ...nlPalm(46, 34, 10, 'lo')],
+aldabra: () => [...ozSea(), ...ozAtoll(30, 30, 18, 5), E(30, 30, 12, 12, 'lo'), ...ozTurtle(30, 30, 1.4)],
+amirante_islands: () => [...ozSea(), ...[[10, 40, 4], [18, 34, 3], [27, 28, 4], [37, 24, 3], [46, 20, 4]].flatMap(([x, y, r]) => [C(x, y, r, 'bs'), ring('ik', x, y, r + 2, 0.9)]), S('M6 46 Q30 32 54 14', 'hi', 1.2)],
+comoro_islands: () => [...ozSea(), ...ozLand(14, 38, 8, 5), ...ozLand(30, 30, 10, 7), ...ozCone(30, 32, 7, 12), ...ozLand(46, 22, 7, 5), ...ozLand(46, 44, 6, 4)],
+island_of_mozambique: () => [osLand(), P('M4 8 Q30 3 56 8 L56 52 Q30 57 4 52 Z', 'lo'), P('M46 8 L56 8 L56 52 L46 52 Z', 'bs'), E(24, 32, 16, 4.6, 'bs'), mmEll(24, 32, 16, 4.6, 'ik', 1.2), S('M40 32 L47 32', 'ik', 1.4), box(14, 24, 12, 7, 'hi'), S('M14 24 l0 -3 M18 24 l0 -3 M22 24 l0 -3 M26 24 l0 -3', 'ik', 1.8), osFrame()],
+mascarene_islands: () => [...ozSea(), ...ozLand(14, 42, 9, 6), ...ozLand(30, 30, 11, 7), ...ozCone(30, 32, 7, 10), ...ozLand(46, 18, 7, 5), ...ozDodo(14, 40)],
+rodrigues: () => [...ozSea(), E(30, 32, 24, 15, 'hi'), mmEll(30, 32, 24, 15, 'ik', 1), ...ozLand(30, 32, 16, 8), ...opMtn(30, 32, 7, 8, 'bs', false), S('M10 20 l2 -2 M48 46 l2 2 M50 22 l2 -2', 'ik', 1.4)],
+tromelin_island: () => [...ozSea(), ...ozLand(30, 38, 20, 3.6, 'hi'), ...ozTurtle(22, 38, 0.8), S('M40 38 L44 24 M44 24 L52 28', 'ik', 1.6), P('M44 24 L52 28 L44 30 Z', 'hi'), onWave(46, 'ik', 1.2)],
+zanzibar_archipelago: () => [...ozSea(), ...ozLand(20, 36, 12, 7), ...ozLand(46, 28, 8, 5), ...orBoat(32, 50, 0.8, 'hi'), S('M16 34 L16 28 M20 34 L20 28 M24 34 L24 28', 'ik', 1.2), C(16, 27, 1.6, 'ik'), C(20, 27, 1.6, 'ik'), C(24, 27, 1.6, 'ik')],
+dahlak_archipelago: () => [...ozSea(), ...[[12, 18, 3], [26, 24, 4], [40, 16, 3], [50, 30, 4], [18, 38, 4], [34, 42, 3], [46, 46, 3], [8, 48, 3]].flatMap(([x, y, r]) => [C(x, y, r, 'bs'), ring('hi', x, y, r + 2, 0.9)])],
+bouvet_island: () => [...ozSea(), ...ozIce(30, 40, 20, 10), ...opMtn(30, 40, 14, 26, 'hi', true), S('M22 38 L20 42 M38 38 L40 42', 'ik', 1.2), ...ozBerg(10, 50, 0.8), ...ozBerg(50, 20, 0.8)],
+campbell_island: () => [...ozSea(), ...ozLand(30, 40, 22, 9), ...opMtn(22, 42, 9, 12, 'lo', false), ...opMtn(38, 42, 8, 9, 'lo', false), ozWing(18, 16, 1.2), ozWing(42, 12, 1), ...ozSeal(36, 46, 0.7)],
+crozet_islands: () => [...ozSea(), ...ozLand(14, 44, 10, 5), ...ozLand(36, 36, 14, 7), ...ozLand(52, 46, 6, 4), ...ozPeng(30, 28, 0.9), ...ozPeng(38, 28, 0.9), ...ozPeng(46, 30, 0.9)],
+ile_amsterdam: () => [...ozSea(), C(30, 32, 16, 'bs'), mmEll(30, 32, 16, 16, 'ik', 1.2), ring('lo', 30, 28, 6, 3), S('M14 32 L14 44 M46 32 L46 44', 'ik', 1.4), ...ozSeal(40, 50, 0.7)],
+kerguelen_islands: () => [...ozSea(), P('M8 30 L14 22 L18 28 L24 18 L30 26 L36 16 L44 24 L50 22 L52 34 L46 38 L48 44 L36 42 L30 48 L24 40 L14 44 L10 38 Z', 'bs'), S('M8 30 L14 22 L18 28 L24 18 L30 26 L36 16 L44 24 L50 22 L52 34 L46 38 L48 44 L36 42 L30 48 L24 40 L14 44 L10 38 Z', 'ik', 1.3), P('M24 18 L30 26 L36 16 L32 22 Z', 'hi'), S('M54 50 q-2 -6 0 -10', 'lo', 1.4)],
+heard_island: () => [...ozSea(), ...ozLand(28, 44, 20, 7, 'hi'), ...opMtn(28, 44, 14, 30, 'bs', true), ozPlume(28, 14), ...ozPeng(46, 42, 0.9)],
+james_ross_island: () => [...ozSea(), P('M10 46 L14 24 L46 24 L50 46 Z', 'hi'), S('M10 46 L14 24 L46 24 L50 46 Z', 'ik', 1.4), S('M18 30 L42 30 M16 38 L44 38', 'ik', 1), ...ozPeng(32, 50, 0.7)],
+peter_i_island: () => [...ozSea(), ...ozBerg(8, 50, 0.9), ...ozBerg(50, 50, 0.9), ...opMtn(30, 46, 12, 30, 'hi', true), S('M18 46 L42 46', 'ik', 1.4), ozPlume(30, 16)],
+prince_edward_islands: () => [...ozSea(), ...ozLand(20, 40, 12, 7), ...ozLand(46, 28, 8, 5), ...ozCone(20, 42, 8, 12), ...ozPeng(34, 46, 0.8), ozWing(40, 14, 1.2)],
+south_georgia: () => [...ozSea(), P('M4 42 L14 34 L20 20 L26 34 L34 18 L40 32 L50 28 L56 36 L46 46 L20 48 Z', 'hi'), S('M4 42 L14 34 L20 20 L26 34 L34 18 L40 32 L50 28 L56 36 L46 46 L20 48 Z', 'ik', 1.4), E(22, 50, 4.4, 2, 'ik'), S('M26 49 L28 46 M18 49 L16 46', 'ik', 1.2), ...ozPeng(46, 51, 0.5)],
+south_sandwich_islands: () => [...ozSea(), ...ozIce(12, 46, 8, 4), ...ozCone(18, 46, 7, 12), ...ozCone(32, 40, 8, 16), ...ozCone(46, 34, 7, 12), onWave(52, 'ik', 1.2)],
+south_orkney_islands: () => [...ozSea(), ...ozIce(18, 38, 12, 8), ...ozIce(42, 28, 10, 7), ...ozIce(44, 46, 6, 4), ...ozBerg(10, 18, 0.9), ...ozBerg(30, 52, 0.7)],
+south_shetland_islands: () => [...ozSea(), ...ozIce(12, 42, 9, 4), ...ozIce(26, 36, 9, 5), ...ozIce(42, 28, 11, 5), ...ovWhale(38, 48), ...ozPeng(10, 36, 0.7)],
+deception_island: () => [...ozSea(), C(30, 30, 18, 'bs'), mmEll(30, 30, 18, 18, 'ik', 1.2), E(30, 30, 10, 10, 'lo'), P('M26 38 L34 38 L34 50 L26 50 Z', 'lo'), S('M26 38 L26 50 M34 38 L34 50', 'ik', 1.2), ozPlume(40, 20)],
+livingston_island: () => [...ozSea(), ...ozIce(30, 38, 22, 9), ...opMtn(22, 38, 10, 14, 'hi', false), ...ozHut(34, 36, 6), S('M38 28 L38 20', 'ik', 1.2), P('M38 20 L44 22 L38 24 Z', 'ik'), ...ozPeng(48, 40, 0.8)],
+elephant_island: () => [...ozSea(), ...opMtn(22, 36, 16, 24, 'hi', true), ...opMtn(42, 36, 12, 16, 'hi', true), ...ozSeal(30, 44, 1.2), E(40, 44, 1.6, 2, 'ik')],
+thurston_island: () => [...ozSea(), ...ozLand(30, 34, 24, 13, 'hi'), S('M12 28 Q30 22 48 28 M10 34 Q30 28 50 34 M12 40 Q30 34 48 40', 'ik', 1.1), ohSnow(46, 16, 4)],
+diego_garcia: () => [...ozSea(), S('M12 14 Q16 40 30 46 Q44 40 48 14', 'bs', 6), S('M12 14 Q16 40 30 46 Q44 40 48 14', 'ik', 1), E(30, 28, 8, 9, 'hi'), S('M34 38 L42 24', 'ik', 1.4), ...nlPalm(18, 28, 10, 'lo')],
+lakshadweep: () => [...ozSea(), ...ozAtoll(18, 22, 8, 3), ...ozAtoll(42, 18, 6, 3), ...ozAtoll(32, 42, 9, 3), ...nlPalm(54, 50, 10, 'lo')],
+maldives_atolls: () => [...ozSea(), ...ozAtoll(18, 20, 9, 3), ...ozAtoll(42, 24, 8, 3), ...ozAtoll(26, 44, 8, 3), ...nhDots([[50, 44], [44, 50], [52, 36]], 1.6, 'bs')],
+andaman_islands: () => [...ozSea(), E(20, 18, 5, 12, 'bs'), E(34, 28, 5, 14, 'bs'), E(46, 40, 5, 10, 'bs'), ...ntConifer(20, 8, 14, 5, 'lo'), ...ntConifer(34, 18, 14, 5, 'lo'), ...ntConifer(46, 32, 12, 5, 'lo')],
+north_sentinel_island: () => [...ozSea(), ring('hi', 30, 32, 18, 1.4), ...ozLand(30, 32, 15, 14), ...ntConifer(24, 24, 16, 6, 'lo'), ...ntConifer(36, 28, 16, 6, 'lo'), ...opArrow(18, 46, 40, 38, 'ik', 1.8)],
+nicobar_islands: () => [...ozSea(), ...ozLand(16, 26, 10, 6), ...ozLand(40, 34, 14, 7), ...nlPalm(14, 26, 12, 'lo'), ...nlPalm(36, 34, 12, 'lo'), ...nlPalm(44, 34, 10, 'lo'), P('M10 50 Q20 54 30 50 L28 48 L12 48 Z', 'ik')],
+langkawi: () => [...ozSea(), ...ozLand(30, 40, 22, 8), P('M14 40 L18 18 L24 18 L26 40 Z', 'ik'), P('M30 40 L34 22 L40 22 L44 40 Z', 'ik'), S('M6 12 L34 24', 'ik', 1), box(30, 16, 5, 4, 'hi'), S('M8 46 q2 -4 4 0 M48 46 q2 -4 4 0', 'lo', 1.4)],
+};
+for (const [id, fn] of Object.entries(MKoz)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 91: Atlantic, Baltic and Mediterranean islands of Europe, sourced, audited, hand-drawn ── */
+const paLH = (x, y) => [P(`M${x - 2.5} ${y} L${x + 2.5} ${y} L${x + 1.5} ${y - 14} L${x - 1.5} ${y - 14} Z`, 'hi'), box(x - 2, y - 17, 4, 3, 'ik'), P(`M${x - 3} ${y - 17} L${x} ${y - 21} L${x + 3} ${y - 17} Z`, 'ik'), S(`M${x + 3} ${y - 16} L${x + 9} ${y - 18} M${x - 3} ${y - 16} L${x - 9} ${y - 18}`, 'hi', 1.2)];
+const paWind = (x, y) => [P(`M${x - 2} ${y} L${x + 2} ${y} L${x + 1.2} ${y - 9} L${x - 1.2} ${y - 9} Z`, 'hi'), S(`M${x - 6} ${y - 15} L${x + 6} ${y - 3} M${x + 6} ${y - 15} L${x - 6} ${y - 3}`, 'ik', 1.4)];
+const paCastle = (x, y, w = 14, h = 9) => [box(x, y - h, w, h, 'hi'), box(x - 2, y - h - 4, 4, h + 4, 'hi'), box(x + w - 2, y - h - 4, 4, h + 4, 'hi'), S(`M${x - 2} ${y - h - 4} L${x + 2} ${y - h - 4} M${x + w - 2} ${y - h - 4} L${x + w + 2} ${y - h - 4} M${x} ${y - h} L${x + w} ${y - h}`, 'ik', 1.4), P(`M${x + w / 2 - 2} ${y} L${x + w / 2 - 2} ${y - 4} Q${x + w / 2} ${y - 7} ${x + w / 2 + 2} ${y - 4} L${x + w / 2 + 2} ${y} Z`, 'ik')];
+const paTree = (x, y, r = 5) => [S(`M${x} ${y} L${x} ${y - r}`, 'ik', 2), C(x, y - r - r * 0.6, r, 'lo')];
+const paCow = (x, y, s = 1) => [E(x, y, 5 * s, 3 * s, 'hi'), C(x + 5.5 * s, y - 1 * s, 2 * s, 'hi'), S(`M${x - 3 * s} ${y + 2.5 * s} l0 3 M${x + 3 * s} ${y + 2.5 * s} l0 3`, 'ik', 1.2), mmEll(x, y, 5 * s, 3 * s, 'ik', 1)];
+const paPony = (x, y, s = 1) => [E(x, y, 5 * s, 3 * s, 'ik'), P(`M${x + 3 * s} ${y - 2 * s} L${x + 7 * s} ${y - 7 * s} L${x + 9 * s} ${y - 5 * s} L${x + 5 * s} ${y} Z`, 'ik'), S(`M${x - 3 * s} ${y + 2 * s} l0 5 M${x + 3 * s} ${y + 2 * s} l0 5 M${x - 5 * s} ${y - 1 * s} l-3 4`, 'ik', 1.4)];
+const paStones = (cx, cy, rx, ry) => [0, 1, 2, 3, 4, 5].map(i => { const a = i * Math.PI / 3; return box(+(cx + rx * Math.cos(a) - 1).toFixed(1), +(cy + ry * Math.sin(a) - 5).toFixed(1), 2.2, 5, 'ik'); });
+const paHouse = (x, y, w = 5) => [box(x, y - 4, w, 4, 'hi'), P(`M${x} ${y - 4} Q${x + w / 2} ${y - 8} ${x + w} ${y - 4} Z`, 'lo')];
+const paPuffin = (x, y) => [E(x, y, 2.6, 3.6, 'ik'), E(x, y + 0.6, 1.5, 2.4, 'hi'), C(x, y - 4, 1.9, 'ik'), P(`M${x + 1.6} ${y - 4} L${x + 4} ${y - 3.4} L${x + 1.6} ${y - 2.6} Z`, 'hi')];
+const paFlower = (x, y) => [S(`M${x} ${y} L${x} ${y - 6}`, 'ik', 1.2), C(x, y - 7, 2.2, 'hi'), C(x, y - 7, 0.8, 'ik')];
+const paTrilith = (x, y) => [box(x - 6, y - 8, 3, 8, 'ik'), box(x + 3, y - 8, 3, 8, 'ik'), box(x - 7, y - 11, 14, 3, 'ik')];
+const paSpan = (x0, x1, y) => [S(`M${x0} ${y} Q${(x0 + x1) / 2} ${y - 5} ${x1} ${y}`, 'ik', 2), S(`M${x0} ${y + 2} L${x1} ${y + 2}`, 'ik', 1.2)];
+const paBarrel = (x, y) => [E(x, y, 4, 5, 'bs'), S(`M${x - 4} ${y - 2} Q${x} ${y - 3} ${x + 4} ${y - 2} M${x - 4} ${y + 2} Q${x} ${y + 3} ${x + 4} ${y + 2}`, 'ik', 1.1), mmEll(x, y, 4, 5, 'ik', 1)];
+const paColumn = (x, y, h = 14) => [box(x - 2, y - h, 4, h, 'hi'), box(x - 3, y - h - 2, 6, 2, 'ik'), box(x - 3, y, 6, 2, 'ik')];
+const paMain = (side = 'r', w = 10) => side === 'r' ? P(`M${56 - w} 8 L56 8 L56 52 L${56 - w} 52 Q${52 - w} 30 ${56 - w} 8 Z`, 'bs') : P(`M4 8 L${4 + w} 8 Q${8 + w} 30 ${4 + w} 52 L4 52 Z`, 'bs');
+const paEye = (x, y) => S(`M${x - 4} ${y} Q${x} ${y - 4} ${x + 4} ${y}`, 'ik', 1.2);
+const MKpa = {
+santa_maria_azores: () => [...ozSea(), ...ozLand(30, 38, 20, 8), P('M12 40 Q30 48 48 40 L46 44 Q30 52 14 44 Z', 'hi'), box(24, 24, 3, 10, 'ik'), box(23, 22, 5, 2, 'hi'), box(34, 28, 3, 6, 'ik'), box(33, 26, 5, 2, 'hi'), C(46, 16, 5, 'hi')],
+sao_miguel: () => [...ozSea(), ...ozLand(30, 36, 24, 11), ...ozCone(14, 38, 7, 9, false), E(32, 36, 8, 4, 'lo'), mmEll(32, 36, 8, 4, 'ik', 1.2), ...ntConifer(46, 38, 12, 5, 'lo')],
+faial_island: () => [...ozSea(), ...ozLand(32, 38, 20, 9), ...ozCone(14, 40, 6, 8, false), ozPlume(14, 31), ...opMtn(34, 40, 9, 12, 'bs', false), ...paLH(10, 40)],
+pico_island: () => [...ozSea(), ...ozLand(30, 44, 22, 7), ...opMtn(30, 44, 14, 34, 'bs', true), S('M10 46 L18 46 M42 46 L50 46 M12 49 L20 49 M40 49 L48 49', 'hi', 1.6), ...ovWhale(46, 22)],
+sao_jorge: () => [...ozSea(), ...ozLand(30, 34, 26, 4.4), P('M18 8 L40 8 L46 22 L12 22 Z', 'hi'), ...[[20, 14], [30, 17], [36, 12], [27, 11]].map(([x, y]) => C(x, y, 1.5, 'ik')), S('M12 22 L46 22', 'ik', 1.4), S('M10 42 q3 3 6 0 M44 44 q3 3 6 0', 'ik', 1.2)],
+terceira: () => [...ozSea(), ...ozLand(30, 40, 22, 9), ...paCastle(14, 38, 12, 8), ...ozCone(42, 40, 8, 12, false)],
+flores_azores: () => [...ozSea(), ...ozLand(30, 40, 20, 8), ...paFlower(18, 40), ...paFlower(26, 42), ...paFlower(34, 40), ...paFlower(42, 42), S('M8 24 q5 -3 10 0 M42 18 q5 -3 10 0', 'ik', 1.2)],
+berlengas: () => [...ozSea(), ...ozLand(20, 38, 12, 6), ...ozLand(44, 30, 8, 4), ...paCastle(14, 36, 10, 6), ozWing(34, 16, 1.2), ozWing(44, 12, 0.9), ...paLH(44, 30)],
+heligoland: () => [...ozSea(), P('M14 44 L14 20 L38 20 L38 44 Z', 'bs'), S('M14 20 L38 20 M14 44 L14 20 M38 44 L38 20', 'ik', 1.4), P('M14 20 L38 20 L36 16 L16 16 Z', 'lo'), ...ozSeal(46, 46, 0.8), ozWing(46, 18, 1.1)],
+surtsey: () => [...ozSea(), ...ozLand(30, 44, 14, 5), ...ozCone(30, 44, 10, 18), S('M28 34 Q24 40 20 44 M32 34 Q36 40 40 44', 'ik', 1.8), ozPlume(24, 20), ozPlume(36, 22)],
+lofoten: () => [...ozSea(), ...opMtn(12, 44, 9, 26, 'bs', true), ...opMtn(28, 44, 10, 32, 'bs', true), ...opMtn(46, 44, 9, 22, 'bs', true), S('M8 48 L52 48', 'ik', 1.2), ...otFish(20, 50)],
+macaronesia: () => [...ozSea(), ...ozLand(14, 14, 7, 4), ...ozCone(14, 15, 5, 8, false), ...ozLand(46, 18, 7, 4), ...ozCone(46, 19, 5, 8, false), ...ozLand(18, 42, 8, 4), ...ozCone(18, 43, 5, 9, false), ...ozLand(46, 44, 8, 4), ...ozCone(46, 45, 5, 9, false)],
+anglesey: () => [...ozSea(), paMain('l', 12), ...ozLand(38, 32, 12, 8), ...paSpan(16, 28, 30), ...paLH(44, 40)],
+jersey: () => [...ozSea(), ...ozLand(30, 34, 15, 11), ...paCow(26, 36, 1.2), ...paTree(40, 36, 4), P('M4 8 L10 8 L8 52 L4 52 Z', 'bs')],
+guernsey: () => [...ozSea(), ...ozLand(30, 34, 16, 10), P('M14 34 L18 28 L22 34 Z M40 34 L44 28 L48 34 Z', 'hi'), ...paFlower(26, 36), ...paFlower(34, 36), S('M6 14 L12 14 M50 48 L56 48', 'ik', 1.2)],
+isle_of_wight: () => [...ozSea(), P('M16 34 L30 20 L46 28 L42 42 L22 44 Z', 'bs'), S('M16 34 L30 20 L46 28 L42 42 L22 44 Z', 'ik', 1.3), P('M10 40 L16 34 L22 44 L18 46 Z', 'hi'), P('M8 44 L12 38 L14 46 Z', 'hi'), paMain('r', 6), S('M44 8 L44 52', 'lo', 2), ...paLH(34, 30)],
+isles_of_scilly: () => [...ozSea(), ...ozLand(16, 32, 7, 4), ...ozLand(30, 24, 6, 4), ...ozLand(40, 38, 8, 4), ...ozLand(24, 44, 6, 3), ...ozLand(48, 22, 5, 3), ...paFlower(16, 32), ...paFlower(40, 38)],
+hebrides: () => [...ozSea(), ...[[12, 16, 6, 4], [24, 22, 7, 5], [36, 28, 7, 5], [46, 38, 6, 4], [20, 42, 6, 4]].flatMap(([x, y, rx, ry]) => ozLand(x, y, rx, ry)), E(36, 26, 3, 1.8, 'hi'), C(40, 25, 1.4, 'ik')],
+inner_hebrides: () => [...ozSea(), P('M44 8 L56 8 L56 52 L44 52 Q40 30 44 8 Z', 'bs'), ...ozLand(24, 20, 10, 6), ...ozLand(26, 42, 12, 6), ...paBarrel(24, 22), ...paBarrel(26, 44)],
+isle_of_skye: () => [...ozSea(), ...ozLand(30, 42, 24, 8), P('M10 42 L14 24 L18 34 L22 18 L26 32 L30 16 L34 32 L38 22 L42 34 L46 26 L50 42 Z', 'bs'), S('M10 42 L14 24 L18 34 L22 18 L26 32 L30 16 L34 32 L38 22 L42 34 L46 26 L50 42', 'ik', 1.4)],
+outer_hebrides: () => [...ozSea(), ...[[10, 46], [14, 38], [20, 30], [28, 24], [36, 18], [46, 12]].flatMap(([x, y], i) => ozLand(x, y, 6 + (i % 2) * 2, 3.4)), S('M50 52 L56 52', 'ik', 1)],
+lewis_and_harris: () => [...ozSea(), P('M8 34 Q14 14 36 14 L50 18 Q54 30 44 40 Q30 50 14 46 Z', 'bs'), S('M8 34 Q14 14 36 14 L50 18 Q54 30 44 40 Q30 50 14 46 Z', 'ik', 1.3), box(18, 30, 6, 4, 'ik'), box(26, 30, 6, 4, 'ik'), box(22, 26, 6, 4, 'ik'), E(38, 32, 3.4, 2.2, 'hi'), C(42, 31, 1.5, 'ik')],
+st_kilda: () => [...ozSea(), P('M10 48 L12 20 L18 20 L20 48 Z', 'bs'), P('M26 48 L28 14 L34 14 L36 48 Z', 'bs'), P('M42 48 L43 28 L48 28 L50 48 Z', 'bs'), ...paPuffin(15, 18), ...paPuffin(31, 12), ozWing(44, 22, 1)],
+northern_isles: () => [...ozSea(), ...ozLand(14, 16, 8, 4), ...ozLand(24, 22, 6, 3), ...ozLand(40, 12, 6, 4), ...ozLand(48, 22, 5, 3), ...orBoat(30, 46, 1, 'hi')],
+orkney: () => [...ozSea(), ...ozLand(30, 38, 22, 9), ...paStones(30, 36, 12, 4), E(30, 36, 4, 1.6, 'hi')],
+shetland: () => [...ozSea(), ...ozLand(30, 40, 22, 8), ...paPony(26, 36, 1.3), S('M6 14 L14 14 M44 20 L52 20', 'ik', 1.2)],
+islands_of_the_clyde: () => [...ozSea(), P('M4 8 L12 8 Q16 30 12 52 L4 52 Z', 'bs'), ...ozLand(30, 20, 9, 5), ...ozLand(38, 38, 10, 5), ...orBoat(26, 48, 0.9, 'hi')],
+islands_of_the_forth: () => [...ozSea(), ...ozLand(14, 38, 6, 3), ...ozLand(30, 42, 7, 3.4), ...ozLand(46, 36, 6, 3), S('M6 22 Q16 14 26 22 Q36 14 46 22 L54 22', 'ik', 2.4), S('M16 18 L16 26 M36 18 L36 26', 'ik', 2.4), ozWing(24, 12, 1)],
+achill_island: () => [...ozSea(), paMain('l', 10), ...ozLand(40, 34, 12, 10), P('M32 34 L36 22 L44 22 L48 34 Z', 'hi'), ...paSpan(14, 28, 36)],
+aran_islands: () => [...ozSea(), ...ozLand(14, 24, 9, 4), ...ozLand(30, 34, 10, 4.4), ...ozLand(46, 44, 8, 4), S('M8 24 l3 -3 l3 3 l3 -3 M24 34 l3 -3 l3 3 l3 -3 l3 3 M40 44 l3 -3 l3 3 l3 -3', 'ik', 1.2)],
+bornholm: () => [...ozSea(), ...ozLand(30, 34, 14, 14), E(30, 26, 4, 5, 'hi'), P('M26 22 L30 16 L34 22 Z', 'ik'), ...otFish(44, 48), onWave(12, 'ik', 1.2)],
+gotland: () => [...ozSea(), ...ozLand(30, 40, 22, 6), P('M22 38 L22 22 Q30 16 38 22 L38 38 Z', 'ik'), S('M26 34 Q26 28 30 28 Q34 28 34 32 Q34 36 30 34', 'hi', 1.4), ...orBoat(48, 18, 0.7, 'hi')],
+rugen: () => [...ozSea(), P('M8 46 L8 18 L34 18 L40 28 L44 46 Z', 'hi'), S('M8 46 L8 18 L34 18 L40 28 L44 46', 'ik', 1.4), P('M8 18 L34 18 L36 14 L10 14 Z', 'lo'), ...ntConifer(16, 14, 10, 5, 'lo'), ...ntConifer(28, 14, 10, 5, 'lo')],
+stockholm_archipelago: () => [...ozSea(), ...[[10, 18, 4, 2.6], [22, 14, 3, 2], [34, 20, 5, 3], [46, 14, 4, 2.6], [14, 34, 5, 3], [30, 36, 4, 2.6], [46, 32, 5, 3], [22, 48, 4, 2.4], [42, 46, 4, 2.4]].flatMap(([x, y, rx, ry]) => ozLand(x, y, rx, ry)), ...orBoat(30, 28, 0.6, 'hi')],
+ibiza: () => [...ozSea(), ...ozLand(30, 34, 22, 12), ...[[18, 38], [28, 40], [38, 38]].map(([x, y]) => box(x, y, 6, 3, 'hi')), C(44, 16, 5, 'hi'), S('M44 8 L44 10 M52 16 L50 16 M36 16 L38 16', 'hi', 1.4)],
+mallorca: () => [...ozSea(), ...ozLand(30, 38, 22, 11), P('M12 36 L20 22 L28 32 L36 20 L46 36 Z', 'bs'), ...paTree(18, 44, 4), ...paTree(30, 46, 4), ...paTree(42, 44, 4)],
+menorca: () => [...ozSea(), ...ozLand(30, 46, 22, 5), ...paLH(30, 46), ...paTree(12, 46, 3)],
+gozo: () => [...ozSea(), ...ozLand(30, 42, 20, 7), ...paTrilith(30, 36), ...orBoat(48, 22, 0.8, 'hi')],
+euboea: () => [...ozSea(), paMain('r', 8), P('M8 12 L40 8 L46 16 L22 50 L10 50 L6 30 Z', 'bs'), S('M8 12 L40 8 L46 16 L22 50 L10 50 L6 30 Z', 'ik', 1.3), ...paSpan(40, 49, 22)],
+cyclades: () => [...ozSea(), ...ozLand(16, 20, 9, 5), ...ozLand(40, 16, 8, 4), ...ozLand(30, 34, 9, 5), ...ozLand(14, 46, 7, 4), ...ozLand(46, 42, 8, 5), ...paHouse(14, 20), ...paHouse(38, 16), ...paHouse(28, 34), ...paHouse(44, 42)],
+mykonos: () => [...ozSea(), ...ozLand(30, 44, 22, 7), ...paWind(16, 42), ...paWind(30, 42), ...paWind(44, 42)],
+naxos: () => [...ozSea(), ...ozLand(30, 44, 14, 5), ...paTrilith(30, 42), onWave(50, 'ik', 1.2)],
+dodecanese: () => [...ozSea(), paMain('r', 8), ...[[12, 12], [18, 20], [24, 28], [30, 36], [36, 44], [14, 40], [26, 14]].flatMap(([x, y], i) => ozLand(x, y, 4 + (i % 3), 2.6))],
+karpathos: () => [...ozSea(), ...ozLand(34, 36, 18, 10), P('M24 36 L32 22 L40 36 Z', 'bs'), S('M6 14 L26 14 M10 20 L30 20 M4 26 L20 26', 'ik', 1.6)],
+kos: () => [...ozSea(), paMain('r', 10), ...ozLand(24, 36, 16, 8), ...paTree(24, 36, 7)],
+rhodes: () => [...ozSea(), ...ozLand(30, 44, 22, 7), ...paCastle(20, 40, 18, 10)],
+ionian_islands: () => [...ozSea(), paMain('l', 8), ...[[22, 12], [30, 20], [24, 28], [34, 34], [26, 42], [38, 46], [44, 24]].flatMap(([x, y], i) => ozLand(x, y, 4 + (i % 3), 3))],
+cephalonia: () => [...ozSea(), ...ozLand(30, 40, 22, 10), ...opMtn(30, 40, 14, 28, 'bs', true), P('M20 40 Q24 32 28 40 Z', 'ik')],
+corfu: () => [...ozSea(), paMain('r', 8), ...ozLand(22, 38, 14, 9), ...paCastle(16, 36, 12, 8)],
+lefkada: () => [...ozSea(), paMain('l', 10), ...ozLand(40, 30, 12, 14), S('M14 30 L28 30', 'ik', 2.4), ...[[18, 30], [22, 30], [26, 30]].map(([x, y]) => box(x - 1.5, y, 3, 3, 'hi'))],
+zakynthos: () => [...ozSea(), ...ozLand(30, 18, 22, 6), P('M10 20 Q30 30 50 20 L48 24 Q30 34 12 24 Z', 'hi'), ...ozTurtle(30, 42, 2.4)],
+chios: () => [...ozSea(), paMain('l', 8), ...ozLand(40, 34, 12, 14), ...paTree(40, 38, 6), ...[[34, 40], [46, 40], [40, 46]].map(([x, y]) => C(x, y, 1.4, 'hi'))],
+lemnos: () => [...ozSea(), ...ozLand(30, 38, 22, 8, 'bs'), ...ozCone(18, 40, 6, 7, false), P('M26 38 Q34 30 44 38 Z', 'hi'), P('M8 38 Q14 34 20 38 Z', 'hi')],
+lesbos: () => [...ozSea(), ...ozLand(30, 34, 22, 13), ...paTree(16, 36, 4), ...paTree(28, 38, 4), ...paTree(40, 36, 4)],
+samos: () => [...ozSea(), paMain('r', 8), ...ozLand(26, 38, 18, 9), ...paColumn(26, 38, 16)],
+saronic_islands: () => [...ozSea(), paMain('r', 10), ...ozLand(24, 16, 8, 4), ...ozLand(22, 34, 10, 5), ...ozLand(30, 46, 7, 3.4), ...orBoat(40, 30, 0.8, 'hi')],
+salamis_island: () => [...ozSea(), ...ozLand(16, 28, 12, 14), paMain('r', 12), ...orBoat(40, 34, 1.4, 'hi'), S('M30 38 L50 38', 'ik', 1.2)],
+skiathos: () => [...ozSea(), ...ozLand(30, 34, 22, 10), ...ntConifer(16, 18, 18, 6, 'lo'), ...ntConifer(28, 18, 18, 6, 'lo'), ...ntConifer(40, 18, 18, 6, 'lo'), P('M14 40 Q30 48 46 40 L44 44 Q30 52 16 44 Z', 'hi')],
+santorini: () => [...ozSea(), P('M30 6 Q8 8 8 30 Q8 50 30 54 Q18 46 18 30 Q18 14 30 6 Z', 'bs'), S('M30 6 Q8 8 8 30 Q8 50 30 54 Q18 46 18 30 Q18 14 30 6 Z', 'ik', 1.3), ...ozCone(40, 38, 8, 8), ...paHouse(11, 26, 3), ...paHouse(10, 34, 3), ...paHouse(14, 42, 3)],
+};
+for (const [id, fn] of Object.entries(MKpa)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 92: North American, Pacific and Caribbean islands, sourced, audited, hand-drawn ── */
+const pbFlam = (x, y) => [E(x, y - 8, 4, 2.6, 'hi'), S(`M${x + 3} ${y - 8} Q${x + 7} ${y - 12} ${x + 4} ${y - 15}`, 'hi', 1.6), C(x + 4, y - 15.5, 1.4, 'hi'), P(`M${x + 5} ${y - 15.5} L${x + 8} ${y - 14.5} L${x + 5} ${y - 14.6} Z`, 'ik'), S(`M${x} ${y - 6} L${x} ${y}`, 'ik', 1.2)];
+const pbFin = (x, y, s = 1) => [P(`M${x - 3 * s} ${y} Q${x} ${y - 8 * s} ${x + 3 * s} ${y} Z`, 'ik'), S(`M${x - 6 * s} ${y} L${x + 6 * s} ${y}`, 'ik', 1.2)];
+const pbBear = (x, y, s = 1) => [E(x, y, 6 * s, 4 * s, 'ik'), C(x + 6.5 * s, y - 2 * s, 2.8 * s, 'ik'), C(x + 8 * s, y - 4.5 * s, 1.1 * s, 'ik'), S(`M${x - 4 * s} ${y + 3 * s} l0 4 M${x + 3 * s} ${y + 3 * s} l0 4`, 'ik', 1.8)];
+const pbTotem = (x, y) => [box(x - 3, y - 22, 6, 22, 'ik'), box(x - 3.5, y - 22, 7, 6, 'hi'), P(`M${x - 8} ${y - 17} L${x - 3} ${y - 17} L${x - 3} ${y - 14} L${x - 8} ${y - 14} Z`, 'ik'), P(`M${x + 3} ${y - 17} L${x + 8} ${y - 17} L${x + 8} ${y - 14} L${x + 3} ${y - 14} Z`, 'ik'), S(`M${x - 3} ${y - 10} L${x + 3} ${y - 10} M${x - 3} ${y - 5} L${x + 3} ${y - 5}`, 'hi', 1.2)];
+const pbChest = (x, y) => [box(x - 5, y - 4, 10, 5, 'ik'), P(`M${x - 5} ${y - 4} Q${x} ${y - 10} ${x + 5} ${y - 4} Z`, 'hi'), box(x - 1, y - 4, 2, 2.4, 'hi')];
+const pbDerrick = (x, y) => [P(`M${x - 4} ${y} L${x} ${y - 14} L${x + 4} ${y} Z`, 'ik'), S(`M${x - 2.5} ${y - 4} L${x + 2.5} ${y - 4} M${x - 1.5} ${y - 8} L${x + 1.5} ${y - 8}`, 'hi', 1.2)];
+const pbDrum = (x, y) => [box(x - 5, y, 10, 6, 'hi'), E(x, y + 6, 5, 3, 'hi'), E(x, y, 5, 3, 'bs'), mmEll(x, y, 5, 3, 'ik', 1.1), S(`M${x - 5} ${y} L${x - 5} ${y + 6} M${x + 5} ${y} L${x + 5} ${y + 6}`, 'ik', 1.1)];
+const pbTower = (x, y) => [P(`M${x - 3} ${y} L${x + 3} ${y} L${x + 2} ${y - 12} L${x - 2} ${y - 12} Z`, 'hi'), P(`M${x - 3} ${y - 12} L${x} ${y - 16} L${x + 3} ${y - 12} Z`, 'ik')];
+const pbCloud = (x, y) => [E(x, y, 6, 2.6, 'hi'), E(x - 3, y - 1.5, 3.4, 2.2, 'hi'), E(x + 3, y - 1.5, 3.6, 2.4, 'hi')];
+const pbChain = (pts, rx = 5, ry = 3) => pts.flatMap(([x, y], i) => ozLand(x, y, rx + (i % 2), ry));
+const MKpb = {
+cape_breton_island: () => [...ozSea(), ...ozLand(30, 38, 22, 10), P('M12 38 L18 24 L24 34 L32 20 L40 34 L46 28 L50 38 Z', 'bs'), S('M12 38 L18 24 L24 34 L32 20 L40 34 L46 28 L50 38', 'ik', 1.3), ...paLH(48, 40)],
+ellis_island: () => [...ozSea(), ...ozLand(30, 40, 20, 7), ...paCastle(20, 38, 20, 10), ...orBoat(48, 22, 0.9, 'hi'), S('M8 22 L16 22 M10 28 L20 28', 'ik', 1.2)],
+florida_keys: () => [...ozSea(), ...pbChain([[10, 14], [18, 22], [26, 28], [34, 34], [44, 40], [52, 46]], 4, 2.4), S('M10 14 L18 22 L26 28 L34 34 L44 40 L52 46', 'ik', 1.4), ...nlPalm(26, 28, 9, 'lo')],
+key_largo: () => [...ozSea(), P('M6 36 Q20 26 40 28 Q52 30 54 36 Q34 42 6 38 Z', 'bs'), S('M6 36 Q20 26 40 28 Q52 30 54 36 Q34 42 6 38 Z', 'ik', 1.3), ...paTree(18, 34, 4), ...paTree(30, 34, 4), ...otFish(44, 48), onWave(16, 'ik', 1.2)],
+key_west: () => [...ozSea(), ...ozLand(30, 44, 20, 6), ...paLH(22, 42), box(34, 32, 6, 10, 'hi'), S('M34 36 L40 36 M34 39 L40 39', 'ik', 1.2), ...nlPalm(46, 44, 11, 'lo')],
+long_island: () => [...ozSea(), P('M4 24 L36 20 L50 24 L56 32 L48 30 L38 34 L8 32 Z', 'bs'), S('M4 24 L36 20 L50 24 L56 32 L48 30 L38 34 L8 32 Z', 'ik', 1.3), S('M10 44 L54 44', 'hi', 2)],
+outer_banks: () => [...ozSea(), P('M6 8 L16 8 Q26 24 24 38 Q26 48 40 52 L22 52 Q8 40 10 24 Z', 'bs'), S('M6 8 L16 8 Q26 24 24 38 Q26 48 40 52', 'ik', 1.3), ...paLH(18, 34), S('M12 36 q3 -4 6 0 M36 20 l6 -3', 'hi', 1.4), onWave(18, 'ik', 1.2)],
+roanoke_island: () => [...ozSea(), ...ozLand(30, 40, 20, 8), ...paTree(30, 38, 8), S('M28 30 L32 30 M28 33 L32 33', 'hi', 1.4), ...orBoat(46, 20, 0.9, 'hi')],
+saint_pierre_miquelon: () => [...ozSea(), P('M40 8 L56 8 L56 52 L44 52 Q38 30 40 8 Z', 'bs'), ...ozLand(16, 22, 8, 5), ...ozLand(20, 42, 10, 5), ...otFish(30, 30)],
+texas_barrier_islands: () => [...ozSea(), paMain('l', 10), E(30, 18, 3, 12, 'bs'), E(30, 42, 3, 12, 'bs'), ...[[30, 14], [30, 22], [30, 38], [30, 46]].map(([x, y]) => P(`M${x - 4} ${y} Q${x} ${y - 5} ${x + 4} ${y} Z`, 'hi')), ...otFish(46, 30)],
+alcatraz_island: () => [...ozSea(), ...ozLand(26, 42, 16, 7), box(16, 28, 20, 12, 'hi'), S('M20 28 L20 40 M24 28 L24 40 M28 28 L28 40 M32 28 L32 40', 'ik', 1), S('M42 20 L42 40 M54 20 L54 40 M42 24 Q48 32 54 24', 'ik', 2.2)],
+attu_island: () => [...ozSea(), ...ozLand(30, 40, 24, 6), P('M10 40 Q20 32 30 38 Q40 30 50 40 Z', 'hi'), S('M6 18 L26 18 M12 24 L34 24', 'ik', 1.6), ozWing(44, 16, 1.2)],
+alexander_archipelago: () => [...ozSea(), ...[[12, 18], [24, 28], [38, 20], [48, 36], [16, 42], [34, 44]].flatMap(([x, y], i) => [...ozLand(x, y, 7, 4), ...ntConifer(x, y - 2, 12, 5, 'lo')]), S('M6 50 L54 50', 'ik', 1)],
+prince_of_wales_island_alaska: () => [...ozSea(), ...ozLand(30, 36, 22, 13), ...ntConifer(18, 24, 18, 7, 'lo'), ...ntConifer(30, 22, 20, 8, 'lo'), ...ntConifer(42, 24, 18, 7, 'lo'), S('M24 42 Q30 38 36 44', 'lo', 3), ...otFish(34, 46)],
+clipperton_island: () => [...ozSea(), ...ozAtoll(30, 34, 14, 5), E(30, 34, 9, 9, 'lo'), P('M26 22 L28 12 L31 22 Z', 'ik'), ozWing(14, 14, 1), ozWing(46, 16, 1)],
+cocos_island: () => [...ozSea(), ...ozLand(28, 40, 20, 9), ...opMtn(24, 40, 12, 18, 'lo', false), ...pbChest(42, 44), ...nlPalm(38, 40, 10, 'lo')],
+guadalupe_island: () => [...ozSea(), ...ozLand(18, 28, 12, 9), ...ozCone(16, 30, 7, 10, false), ...pbFin(40, 40, 1.4), ...ozSeal(44, 18, 0.7)],
+gulf_islands: () => [...ozSea(), ...ozLand(14, 24, 9, 5), ...ozLand(34, 18, 8, 4), ...ozLand(24, 42, 10, 5), ...ntConifer(14, 22, 10, 5, 'lo'), ...ntConifer(24, 40, 10, 5, 'lo'), ...orBoat(46, 36, 0.9, 'hi')],
+haida_gwaii: () => [...ozSea(), ...ozLand(30, 44, 22, 7), ...pbTotem(30, 44), ...ntConifer(12, 44, 14, 6, 'lo'), ...ntConifer(48, 44, 14, 6, 'lo')],
+kodiak_island: () => [...ozSea(), ...ozLand(30, 38, 22, 11), ...pbBear(26, 34, 1.4), ...otFish(46, 46)],
+malpelo_island: () => [...ozSea(), P('M16 48 L22 20 L26 28 L32 12 L38 28 L42 22 L46 48 Z', 'bs'), S('M16 48 L22 20 L26 28 L32 12 L38 28 L42 22 L46 48', 'ik', 1.4), ...pbFin(50, 46, 1)],
+revillagigedo_islands: () => [...ozSea(), ...ozLand(14, 14, 7, 4), ...ozCone(14, 16, 5, 8, false), ...ozLand(46, 14, 7, 4), ...ozCone(46, 16, 5, 8, false), ...ozLand(14, 42, 7, 4), ...ozCone(14, 44, 5, 8, false), ...ozLand(46, 42, 7, 4), ...ozCone(46, 44, 5, 8, false), P('M30 26 L38 30 L30 34 L22 30 Z', 'ik')],
+san_juan_islands: () => [...ozSea(), ...ozLand(14, 16, 8, 4), ...ozLand(36, 14, 9, 4), ...ozLand(20, 44, 10, 5), ...ovWhale(34, 32), P('M30 28 L32 22 L34 28 Z', 'ik'), ...orBoat(48, 46, 0.8, 'hi')],
+vancouver_island: () => [...ozSea(), P('M6 44 L20 30 L36 20 L52 12 L54 18 L40 30 L24 46 L10 50 Z', 'bs'), S('M6 44 L20 30 L36 20 L52 12 L54 18 L40 30 L24 46 L10 50 Z', 'ik', 1.3), ...ntConifer(24, 30, 12, 5, 'lo'), ...ntConifer(36, 24, 12, 5, 'lo'), ...ovWhale(44, 44)],
+navassa_island: () => [...ozSea(), ...ozLand(30, 38, 16, 7, 'bs'), ...paLH(30, 38), S('M8 24 L12 24 M16 24 L20 24 M24 24 L28 24 M32 24 L36 24 M40 24 L44 24', 'ik', 1.4)],
+leeward_antilles: () => [...ozSea(), P('M4 8 L56 8 L56 18 Q30 22 4 18 Z', 'bs'), ...ozLand(14, 40, 8, 4), ...ozLand(32, 44, 8, 4), ...ozLand(48, 38, 7, 4), ...pbFlam(30, 36)],
+aruba: () => [...ozSea(), ...ozLand(30, 40, 22, 8), P('M22 40 Q28 30 36 34 L38 40 Z', 'lo'), S('M32 40 Q36 30 40 28', 'ik', 2.4), ...paWind(46, 38), P('M10 42 Q30 50 50 42 L48 46 Q30 54 12 46 Z', 'hi')],
+bonaire: () => [...ozSea(), ...ozLand(30, 38, 20, 8), ...pbFlam(16, 38), ...pbFlam(26, 40), ...owSalt(40, 38), ...owSalt(46, 38), ...ozTurtle(30, 50, 0.8)],
+curacao: () => [...ozSea(), ...ozLand(30, 38, 22, 7), ...[[10, 6, 8], [20, 8, 9], [31, 6, 10], [42, 9, 8]].map(([x, w, h], i) => P(`M${x} 40 L${x} ${40 - h} L${x + w / 2} ${40 - h - 3} L${x + w} ${40 - h} L${x + w} 40 Z`, i % 2 ? 'hi' : 'bs')), S('M6 46 L54 46', 'ik', 2.4)],
+leeward_islands: () => [...ozSea(), ...pbChain([[10, 40], [18, 32], [28, 26], [38, 24], [48, 26]], 5, 3), S('M6 16 L26 16 M10 11 L30 11', 'ik', 1.6)],
+anguilla: () => [...ozSea(), ...ozLand(30, 38, 24, 4), P('M8 38 Q30 46 52 38 L50 41 Q30 49 10 41 Z', 'hi'), ...orBoat(30, 24, 1, 'hi')],
+antigua: () => [...ozSea(), ...ozLand(30, 40, 22, 8), ...pbTower(22, 40), ...opMtn(40, 40, 8, 10, 'bs', false), ...orBoat(46, 18, 0.9, 'hi')],
+montserrat: () => [...ozSea(), ...ozLand(30, 42, 20, 6), ...opMtn(30, 42, 14, 30, 'bs', true), ozPlume(30, 12), ozPlume(36, 14), S('M12 46 L18 46 M42 46 L48 46', 'ik', 1.4)],
+nevis: () => [...ozSea(), ...ozLand(30, 44, 18, 6), ...opMtn(30, 44, 12, 28, 'bs', false), ...pbCloud(30, 14)],
+saba_island: () => [...ozSea(), ...ozLand(30, 46, 12, 4.4), P('M20 46 L28 12 L32 12 L40 46 Z', 'bs'), S('M20 46 L28 12 L32 12 L40 46', 'ik', 1.4), ...ozHut(30, 32, 4)],
+saint_barthelemy: () => [...ozSea(), ...ozLand(30, 38, 16, 9), ...opMtn(26, 38, 9, 10, 'bs', false), ...orBoat(12, 20, 0.8, 'hi'), ...orBoat(48, 22, 0.8, 'hi'), ...nlPalm(40, 38, 10, 'lo')],
+saint_kitts: () => [...ozSea(), ...ozLand(30, 40, 22, 8), ...opMtn(34, 40, 9, 12, 'bs', false), S('M10 40 L10 28 M14 40 L14 26 M18 40 L18 28 M22 40 L22 26', 'lo', 2), E(10, 27, 1.2, 2, 'lo'), E(14, 25, 1.2, 2, 'lo'), E(18, 27, 1.2, 2, 'lo'), E(22, 25, 1.2, 2, 'lo')],
+saint_martin_island: () => [...ozSea(), ...ozLand(30, 34, 20, 12), P('M30 22 L50 34 Q40 46 30 46 Z', 'hi'), S('M30 22 L30 46', 'ik', 1.4), ...nlPalm(20, 38, 10, 'lo'), ...paWind(42, 40)],
+sint_eustatius: () => [...ozSea(), ...ozLand(30, 44, 18, 6), ...opMtn(24, 44, 10, 18, 'bs', false), ...ozCone(40, 44, 6, 8, false), ...orBoat(46, 20, 0.9, 'hi')],
+virgin_islands: () => [...ozSea(), ...pbChain([[10, 18], [20, 28], [32, 20], [42, 32], [28, 42], [48, 44]], 5, 3), ...ozTurtle(14, 44, 0.9)],
+british_virgin_islands: () => [...ozSea(), ...pbChain([[12, 20], [24, 30], [36, 22], [46, 34], [20, 44]], 6, 3), ...orBoat(34, 44, 0.8, 'hi'), ...orBoat(48, 18, 0.7, 'hi')],
+spanish_virgin_islands: () => [...ozSea(), ...ozLand(20, 30, 14, 8), ...ozLand(46, 18, 7, 4), ...nlPalm(18, 30, 10, 'lo'), ...nhDots([[30, 44], [36, 48], [42, 44], [48, 48], [34, 40]], 1.2, 'hi')],
+windward_islands: () => [...ozSea(), ...ozCone(12, 44, 6, 10, false), ...ozLand(12, 44, 8, 3.4), ...ozCone(26, 38, 6, 10, false), ...ozLand(26, 38, 8, 3.4), ...ozCone(38, 30, 6, 10, false), ...ozLand(38, 30, 8, 3.4), ...ozCone(48, 20, 5, 9, false), S('M6 14 L22 14 M8 8 L26 8', 'ik', 1.6)],
+saint_vincent_island: () => [...ozSea(), ...ozLand(30, 44, 18, 6), ...ozCone(30, 44, 12, 26), ...nlPalm(14, 44, 9, 'lo')],
+tobago: () => [...ozSea(), ...ozLand(30, 36, 22, 8), ...ntConifer(18, 34, 12, 5, 'lo'), ozWing(40, 16, 1.2), ozWing(48, 12, 0.9), ring('hi', 30, 36, 24, 1.2)],
+trinidad: () => [...ozSea(), ...ozLand(30, 40, 22, 9), ...pbDerrick(18, 38), ...pbDrum(40, 28)],
+lucayan_archipelago: () => [...ozSea(), E(30, 30, 25, 16, 'hi'), ...[[10, 22], [20, 34], [30, 24], [40, 36], [48, 24], [16, 44], [36, 46]].flatMap(([x, y]) => ozLand(x, y, 3.4, 2)), ...pbFlam(26, 30)],
+andros_bahamas: () => [...ozSea(), ...ozLand(30, 34, 22, 14), S('M12 32 Q20 28 28 34 Q36 40 46 34', 'lo', 3), ...ntConifer(18, 24, 10, 4, 'lo'), ...ntConifer(40, 26, 10, 4, 'lo'), ring('ik', 22, 40, 3, 1.4)],
+grand_bahama: () => [...ozSea(), ...ozLand(30, 34, 24, 6), ...ntConifer(16, 32, 14, 5, 'lo'), ...ntConifer(26, 32, 14, 5, 'lo'), ...ntConifer(38, 32, 14, 5, 'lo'), S('M6 12 L30 12 M10 18 L40 18', 'ik', 1.6)],
+new_providence: () => [...ozSea(), ...ozLand(26, 36, 16, 8), ...[[16, 30, 5, 6], [22, 28, 5, 8], [28, 30, 5, 6]].map(([x, y, w, h]) => box(x, y, w, h, 'hi')), ...paSpan(40, 52, 30), ...ozLand(48, 34, 6, 3), ...orBoat(40, 48, 0.9, 'hi')],
+turks_and_caicos_islands: () => [...ozSea(), E(30, 30, 24, 14, 'hi'), ...ozLand(16, 30, 7, 5), ...ozLand(34, 24, 8, 4), ...ozLand(44, 38, 6, 4), box(14, 38, 6, 3, 'ik'), box(22, 40, 6, 3, 'ik'), ...owSalt(16, 30), ...owSalt(34, 24)],
+};
+for (const [id, fn] of Object.entries(MKpb)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 93: Australian, Melanesian, Micronesian and New Zealand islands, sourced, audited, hand-drawn ── */
+const pcCrab = (x, y, s = 1) => [E(x, y, 4 * s, 3 * s, 'ik'), S(`M${x - 4 * s} ${y - 1 * s} L${x - 7 * s} ${y - 5 * s} M${x + 4 * s} ${y - 1 * s} L${x + 7 * s} ${y - 5 * s} M${x - 3 * s} ${y + 2 * s} L${x - 6 * s} ${y + 4 * s} M${x + 3 * s} ${y + 2 * s} L${x + 6 * s} ${y + 4 * s}`, 'ik', 1.4), C(x - 7 * s, y - 5.5 * s, 1.4 * s, 'hi'), C(x + 7 * s, y - 5.5 * s, 1.4 * s, 'hi')];
+const pcKiwi = (x, y, s = 1) => [E(x, y, 6 * s, 4.4 * s, 'ik'), S(`M${x + 5 * s} ${y - 2 * s} L${x + 12 * s} ${y + 1 * s}`, 'ik', 1.4), C(x + 5.4 * s, y - 2.4 * s, 1.8 * s, 'ik'), S(`M${x - 2 * s} ${y + 4 * s} l-1 3 M${x + 2 * s} ${y + 4 * s} l1 3`, 'ik', 1.4)];
+const pcPole = (x, y, h = 20) => [box(x - 2, y - h, 4, h, 'ik'), S(`M${x - 2} ${y - h + 4} L${x + 2} ${y - h + 4} M${x - 2} ${y - h + 9} L${x + 2} ${y - h + 9} M${x - 2} ${y - h + 14} L${x + 2} ${y - h + 14}`, 'hi', 1.2)];
+const pcDish = (x, y) => [S(`M${x} ${y} L${x} ${y - 8}`, 'ik', 2), P(`M${x - 7} ${y - 12} Q${x} ${y - 4} ${x + 7} ${y - 12} Z`, 'hi'), S(`M${x - 7} ${y - 12} Q${x} ${y - 4} ${x + 7} ${y - 12}`, 'ik', 1.2)];
+const pcMush = (x, y) => [P(`M${x - 2} ${y} L${x - 2} ${y - 12} L${x + 2} ${y - 12} L${x + 2} ${y} Z`, 'hi'), E(x, y - 14, 8, 4, 'hi'), mmEll(x, y - 14, 8, 4, 'ik', 1.1)];
+const pcWreck = (x, y) => [P(`M${x - 9} ${y} L${x + 9} ${y - 3} L${x + 7} ${y + 3} L${x - 7} ${y + 4} Z`, 'ik'), box(x - 2, y - 9, 4, 6, 'hi'), S(`M${x - 1} ${y - 9} L${x - 1} ${y - 12}`, 'ik', 1.2)];
+const pcRingChain = (pts, r = 4, w = 2.4) => pts.flatMap(([x, y]) => ozAtoll(x, y, r, w));
+const MKpc = {
+ashmore_cartier: () => [...ozSea(), ...ozAtoll(18, 24, 8, 3), ...ozAtoll(42, 38, 8, 3), E(18, 24, 5, 5, 'hi'), E(42, 38, 5, 5, 'hi'), ozWing(40, 16, 1)],
+bathurst_island: () => [...ozSea(), ...ozLand(30, 42, 22, 7), ...pcPole(18, 42, 22), ...pcPole(30, 42, 26), ...pcPole(42, 42, 20)],
+christmas_island: () => [...ozSea(), P('M10 46 L10 28 L46 28 L50 46 Z', 'bs'), S('M10 46 L10 28 L46 28 L50 46', 'ik', 1.4), ...ntConifer(20, 28, 12, 6, 'lo'), ...pcCrab(30, 40, 1.4)],
+cocos_keeling: () => [...ozSea(), ...ozAtoll(30, 34, 16, 5), ...nlPalm(16, 32, 12, 'lo'), ...nlPalm(44, 32, 12, 'lo'), ...nlPalm(30, 50, 10, 'lo')],
+coral_sea_islands: () => [...ozSea(), ...[[12, 16], [26, 28], [40, 18], [50, 34], [20, 44], [36, 46]].flatMap(([x, y]) => [...ozLand(x, y, 3, 1.8), ring('hi', x, y, 6, 1)]), ...otFish(46, 48)],
+kgari: () => [...ozSea(), P('M16 10 L36 8 L46 24 L40 48 L22 50 L14 30 Z', 'hi'), S('M16 10 L36 8 L46 24 L40 48 L22 50 L14 30 Z', 'ik', 1.3), E(30, 28, 5, 4, 'lo'), mmEll(30, 28, 5, 4, 'ik', 1), P('M18 44 Q24 36 30 44 Z M32 18 Q38 10 44 18 Z', 'bs'), ...paTree(24, 22, 3)],
+lord_howe_island: () => [...ozSea(), P('M16 20 Q30 6 44 20 Q38 34 30 50 Q24 34 16 20 Z', 'bs'), S('M16 20 Q30 6 44 20 Q38 34 30 50 Q24 34 16 20 Z', 'ik', 1.3), ...opMtn(26, 46, 5, 24, 'ik', true), ...opMtn(34, 46, 5, 18, 'ik', true), E(44, 32, 5, 4, 'lo')],
+macquarie_island: () => [...ozSea(), ...ozLand(30, 40, 22, 7), ...ozPeng(20, 34, 1.1), ...ozPeng(30, 34, 1.1), ...ozPeng(40, 34, 1.1), ...ozSeal(46, 48, 0.7)],
+norfolk_island: () => [...ozSea(), ...ozLand(30, 40, 20, 8), ...ntConifer(16, 20, 22, 6, 'lo'), ...ntConifer(30, 16, 26, 7, 'lo'), ...ntConifer(44, 20, 22, 6, 'lo'), S('M6 46 L12 42 M48 42 L54 46', 'ik', 1.6)],
+torres_strait_islands: () => [...ozSea(), P('M4 8 L56 8 L56 16 L40 14 L24 18 L4 14 Z', 'bs'), P('M4 52 L56 52 L56 44 L36 48 L20 44 L4 46 Z', 'bs'), ...[[14, 30], [26, 26], [38, 32], [48, 28]].flatMap(([x, y]) => ozLand(x, y, 4, 2.6)), ...orBoat(30, 38, 0.8, 'hi')],
+bismarck_archipelago: () => [...ozSea(), P('M4 8 L18 8 L14 52 L4 52 Z', 'bs'), ...ozLand(30, 20, 9, 4), ...ozLand(36, 34, 10, 5), ...ozCone(36, 36, 6, 9, false), ...ozLand(46, 46, 6, 3)],
+admiralty_islands: () => [...ozSea(), ...ozLand(24, 30, 13, 8), ...nhDots([[42, 14], [46, 20], [40, 22], [48, 28], [44, 34], [50, 38], [40, 40], [34, 46], [28, 48], [46, 46], [14, 46], [12, 14], [20, 16]], 1.8, 'bs')],
+new_ireland_island: () => [...ozSea(), P('M6 44 L14 36 L26 28 L40 20 L52 12 L54 16 L42 26 L28 36 L16 46 L8 48 Z', 'bs'), S('M6 44 L14 36 L26 28 L40 20 L52 12 L54 16 L42 26 L28 36 L16 46 L8 48 Z', 'ik', 1.3), ...nlPalm(24, 36, 8, 'lo'), ...nlPalm(40, 24, 8, 'lo')],
+banks_islands: () => [...ozSea(), ...ozLand(30, 32, 12, 9), ...ozCone(30, 34, 8, 14), ...ozLand(12, 16, 5, 3), ...ozLand(48, 14, 5, 3), ...ozLand(14, 46, 5, 3), ...ozLand(48, 46, 5, 3)],
+efate: () => [...ozSea(), ...ozLand(30, 36, 22, 13), P('M24 50 L26 40 L34 40 L36 50 Z', 'lo'), S('M26 42 L34 42', 'ik', 1.2), ...orBoat(30, 48, 0.7, 'hi'), ...opMtn(40, 36, 8, 10, 'bs', false), ...paHouse(14, 36, 4)],
+espiritu_santo: () => [...ozSea(), ...ozLand(28, 30, 20, 14), ...ntConifer(18, 24, 14, 6, 'lo'), ...ntConifer(30, 22, 16, 7, 'lo'), ...opMtn(42, 34, 8, 12, 'bs', false), ...pcWreck(40, 48)],
+rotuma: () => [...ozSea(), ...ozLand(26, 34, 14, 9), ...ozCone(20, 36, 5, 7, false), ...ozCone(34, 36, 5, 8, false), ...ozLand(46, 18, 5, 3), ...ozLand(48, 46, 4, 2.4)],
+bougainville_island: () => [...ozSea(), ...ozLand(30, 38, 22, 11), ...opMtn(22, 40, 10, 16, 'bs', false), P('M36 36 L50 36 L46 44 L40 44 Z', 'ik'), P('M16 22 L22 18 L26 24 L20 26 Z', 'hi')],
+guadalcanal: () => [...ozSea(), ...ozLand(30, 34, 24, 12), ...opMtn(22, 38, 10, 14, 'bs', false), ...ntConifer(40, 30, 12, 5, 'lo'), box(8, 38, 20, 3, 'ik')],
+malaita: () => [...ozSea(), ...ozLand(30, 20, 22, 8), E(30, 38, 20, 10, 'hi'), ...[[20, 36], [28, 40], [36, 36], [42, 42]].flatMap(([x, y]) => [C(x, y, 2.4, 'bs'), ring('ik', x, y, 3.6, 0.9)]), ...orBoat(30, 50, 0.7, 'hi')],
+ontong_java_atoll: () => [...ozSea(), ...ozAtoll(30, 30, 21, 3), E(30, 30, 18, 18, 'lo'), ...nhDots([[12, 30], [30, 9], [49, 30], [30, 51]], 2, 'bs'), ...orBoat(30, 32, 0.8, 'hi')],
+tanna_island: () => [...ozSea(), ...ozLand(30, 44, 22, 7), ...ozCone(26, 44, 12, 24), ...nhDots([[20, 14], [34, 10], [38, 18], [30, 8]], 1.6, 'hi'), E(46, 36, 3.6, 2, 'hi'), mmEll(46, 36, 3.6, 2, 'ik', 1)],
+vanua_levu: () => [...ozSea(), ...ozLand(30, 32, 24, 12), ...opMtn(22, 36, 10, 14, 'bs', false), ...paTree(40, 34, 6)],
+viti_levu: () => [...ozSea(), ...ozLand(30, 32, 22, 15), ...opMtn(20, 34, 10, 14, 'bs', false), ...[[34, 38, 4, 8], [39, 36, 4, 10], [44, 38, 4, 6]].map(([x, y, w, h]) => box(x, y, w, h, 'hi')), S('M26 20 Q30 28 28 36', 'lo', 1.6)],
+caroline_islands: () => [...ozSea(), ...nhDots([[10, 14], [24, 12], [38, 16], [50, 12], [14, 28], [30, 30], [44, 32], [52, 28], [10, 44], [26, 46], [40, 46], [52, 46], [20, 38], [46, 22]], 1.6, 'bs'), ...ozAtoll(30, 22, 5, 2), ...ozAtoll(14, 36, 4, 2)],
+chuuk_lagoon: () => [...ozSea(), ...ozAtoll(30, 30, 18, 4), E(30, 30, 14, 14, 'lo'), ...pcWreck(30, 32), onWave(26, 'ik', 1.2)],
+pohnpei: () => [...ozSea(), ...ozLand(26, 34, 18, 12), ...opMtn(24, 36, 10, 22, 'bs', true), S('M20 20 L20 32', 'hi', 2), ...[[44, 14], [50, 14], [44, 20], [50, 20], [44, 26], [50, 26]].map(([x, y]) => box(x - 2, y - 2, 4, 4, 'ik'))],
+yap: () => [...ozSea(), ...ozLand(30, 44, 22, 6), E(30, 26, 14, 14, 'hi'), mmEll(30, 26, 14, 14, 'ik', 1.4), C(30, 26, 3.4, 'lo'), mmEll(30, 26, 3.4, 3.4, 'ik', 1.4), ...nlPalm(10, 44, 10, 'lo')],
+gilbert_islands: () => [...ozSea(), ...pcRingChain([[14, 14], [26, 24], [38, 34], [48, 44]], 7, 3), ...nlPalm(26, 24, 8, 'lo')],
+tarawa: () => [...ozSea(), P('M8 12 L30 36 L50 12 L52 16 L30 42 L6 16 Z', 'bs'), S('M8 12 L30 36 L50 12', 'ik', 1.3), E(30, 22, 8, 7, 'lo'), S('M30 36 L30 46', 'ik', 2.4), ...nlPalm(40, 20, 8, 'lo')],
+mariana_islands: () => [...ozSea(), ...ozLand(12, 38, 6, 3), ...ozCone(12, 40, 5, 8, false), ...ozLand(22, 26, 6, 3), ...ozCone(22, 28, 5, 9, false), ...ozLand(36, 20, 6, 3), ...ozCone(36, 22, 5, 9, false), ...ozLand(48, 16, 5, 3), ...ozCone(48, 18, 4, 7, false), P('M4 46 Q30 40 56 46 L56 52 L4 52 Z', 'ik')],
+saipan: () => [...ozSea(), ...ozLand(30, 34, 14, 16), P('M16 30 L18 22 L22 30 Z', 'hi'), ...opMtn(32, 36, 8, 14, 'bs', false), P('M14 40 Q30 50 46 40 L44 44 Q30 54 16 44 Z', 'hi')],
+wake_island: () => [...ozSea(), S('M14 16 Q16 38 30 44 Q44 38 46 16', 'bs', 6), S('M14 16 Q16 38 30 44 Q44 38 46 16', 'ik', 1), E(30, 28, 8, 9, 'lo'), ozWing(30, 14, 1.2)],
+enewetak_atoll: () => [...ozSea(), ...ozAtoll(26, 40, 15, 4), E(26, 40, 11, 11, 'lo'), ...pcMush(46, 24)],
+kwajalein_atoll: () => [...ozSea(), P('M8 30 Q24 22 52 32 Q36 36 8 34 Z', 'bs'), S('M8 30 Q24 22 52 32', 'ik', 1.3), E(30, 31, 14, 2, 'lo'), ...pcDish(36, 28), ...orBoat(16, 46, 0.7, 'hi')],
+auckland_islands: () => [...ozSea(), ...ozLand(24, 36, 14, 9), ...ntConifer(18, 32, 12, 5, 'lo'), ...ozSeal(40, 40, 0.9), ozWing(34, 16, 1.2), ...ozLand(46, 18, 5, 3)],
+antipodes_islands: () => [...ozSea(), ...ozLand(22, 38, 12, 7), ...ozCone(22, 40, 7, 10, false), ...ozLand(44, 26, 8, 5), ...ozPeng(44, 22, 0.9), S('M6 14 L24 14 M8 20 L28 20', 'ik', 1.6)],
+bounty_islands: () => [...ozSea(), ...[[12, 44, 5, 14], [24, 46, 6, 20], [36, 44, 5, 12], [46, 46, 6, 16]].flatMap(([x, b, w, h]) => opMtn(x, b, w, h, 'bs', false)), ...ozSeal(30, 50, 0.7), ...ozPeng(46, 30, 0.8)],
+chatham_islands: () => [...ozSea(), ...ozLand(30, 36, 22, 11), E(32, 34, 8, 4, 'lo'), mmEll(32, 34, 8, 4, 'ik', 1), E(16, 38, 3.4, 2.4, 'hi'), C(20, 37.4, 1.4, 'ik'), ...pbCloud(30, 14)],
+kermadec_islands: () => [...ozSea(), ...ozLand(14, 44, 7, 3.4), ...ozCone(14, 46, 5, 9), ...ozLand(30, 32, 7, 3.4), ...ozCone(30, 34, 5, 10), ...ozLand(46, 20, 7, 3.4), ...ozCone(46, 22, 5, 9)],
+raoul_island: () => [...ozSea(), ...ozLand(30, 38, 18, 10), ...ozCone(30, 38, 10, 14, false), E(24, 30, 4, 2.4, 'lo'), E(36, 30, 4, 2.4, 'lo'), ...nlPalm(14, 38, 9, 'lo')],
+stewart_island: () => [...ozSea(), P('M30 10 L50 38 L30 48 L10 38 Z', 'bs'), S('M30 10 L50 38 L30 48 L10 38 Z', 'ik', 1.3), ...ntConifer(24, 30, 10, 5, 'lo'), ...pcKiwi(36, 38, 0.9)],
+johnston_atoll: () => [...ozSea(), P('M12 28 L44 28 L48 34 L12 34 Z', 'bs'), S('M12 28 L44 28 L48 34 L12 34 Z', 'ik', 1.3), ...ozLand(20, 44, 5, 3), ...ozLand(36, 44, 5, 3), ...ozLand(46, 18, 5, 3), ozWing(24, 16, 1.2)],
+kingman_reef: () => [...ozSea(), P('M12 42 L48 42 L30 14 Z', 'hi'), S('M12 42 L48 42 L30 14 Z', 'ik', 1.6), ...nhDots([[24, 38], [30, 36], [38, 40], [30, 24]], 1.4, 'bs'), onWave(46, 'ik', 1.2)],
+line_islands: () => [...ozSea(), ...pcRingChain([[8, 44], [14, 38], [20, 33], [26, 28], [32, 24], [38, 20], [44, 17], [50, 14]], 3.2, 2)],
+kiritimati: () => [...ozSea(), P('M10 28 Q14 14 32 14 Q50 16 52 30 Q50 46 34 46 Q16 46 10 28 Z', 'bs'), S('M10 28 Q14 14 32 14 Q50 16 52 30 Q50 46 34 46 Q16 46 10 28 Z', 'ik', 1.3), E(32, 30, 14, 9, 'lo'), ...nlPalm(14, 36, 8, 'lo'), ...otFish(30, 30)],
+jarvis_island: () => [...ozSea(), ...ozLand(30, 38, 14, 4.4, 'hi'), ozWing(18, 18, 1.1), ozWing(34, 14, 1.1), ozWing(46, 22, 0.9), C(46, 12, 4, 'hi')],
+};
+for (const [id, fn] of Object.entries(MKpc)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 94: Polynesian, Hawaiian, South Atlantic and Chilean islands, sourced, audited, hand-drawn ── */
+const pdPine = (x, y) => [E(x, y, 4.4, 5.6, 'hi'), mmEll(x, y, 4.4, 5.6, 'ik', 1.1), S(`M${x - 3} ${y - 3} L${x + 3} ${y + 3} M${x + 3} ${y - 3} L${x - 3} ${y + 3}`, 'ik', 0.9), P(`M${x - 4} ${y - 5} L${x - 2} ${y - 11} L${x} ${y - 6} L${x + 2} ${y - 11} L${x + 4} ${y - 5} Z`, 'lo')];
+const pdMoai = (x, y) => [P(`M${x - 4} ${y} L${x - 3} ${y - 14} L${x + 3} ${y - 14} L${x + 4} ${y} Z`, 'ik'), box(x - 3.4, y - 11, 6.8, 2, 'bs'), S(`M${x} ${y - 10} L${x} ${y - 5}`, 'hi', 1.2)];
+const pdEquator = (y) => S(`M6 ${y} L14 ${y} M20 ${y} L28 ${y} M34 ${y} L42 ${y} M48 ${y} L54 ${y}`, 'ik', 1.2);
+const pdBars = (x, y, w, h) => [box(x, y, w, h, 'hi'), S(`M${x + w * 0.25} ${y} L${x + w * 0.25} ${y + h} M${x + w * 0.5} ${y} L${x + w * 0.5} ${y + h} M${x + w * 0.75} ${y} L${x + w * 0.75} ${y + h}`, 'ik', 1)];
+const pdSpire = (x, y) => [box(x - 3, y - 6, 6, 6, 'hi'), P(`M${x - 3} ${y - 6} L${x} ${y - 15} L${x + 3} ${y - 6} Z`, 'ik')];
+const pdStilt = (x, y) => [box(x, y - 5, 6, 4, 'hi'), S(`M${x + 1} ${y - 1} L${x + 1} ${y + 3} M${x + 5} ${y - 1} L${x + 5} ${y + 3}`, 'ik', 1.2), P(`M${x - 1} ${y - 5} L${x + 3} ${y - 8} L${x + 7} ${y - 5} Z`, 'ik')];
+const MKpd = {
+malden_island: () => [...ozSea(), ...ozLand(30, 40, 20, 5, 'hi'), S('M16 40 l4 -2 M26 42 l4 -2 M38 40 l4 -2', 'ik', 1.2), C(44, 18, 6, 'hi'), ozWing(18, 20, 1)],
+starbuck_island: () => [...ozSea(), ring('hi', 30, 32, 19, 1.4), ...ozLand(30, 32, 14, 9), ozWing(18, 16, 1), ozWing(42, 14, 1)],
+mangaia: () => [...ozSea(), C(30, 32, 18, 'bs'), mmEll(30, 32, 18, 18, 'ik', 1.4), mmEll(30, 32, 13, 13, 'ik', 1.2), mmEll(30, 32, 8, 8, 'ik', 1.2), C(30, 32, 3, 'hi')],
+phoenix_islands: () => [...ozSea(), ...[[12, 14], [28, 12], [46, 14], [10, 32], [30, 30], [48, 32], [18, 48], [40, 48]].flatMap(([x, y]) => ozAtoll(x, y, 4.4, 2)), S('M20 38 L24 38 M52 42 L56 42', 'hi', 1.2)],
+baker_island: () => [...ozSea(), ...ozAtoll(30, 28, 9, 3), E(30, 28, 5, 5, 'lo'), pdEquator(46), ozWing(14, 14, 1), ozWing(46, 14, 1)],
+howland_island: () => [...ozSea(), ...ozLand(30, 38, 16, 5), ...paLH(30, 38), pdEquator(50)],
+canton_island: () => [...ozSea(), ...ozAtoll(30, 30, 17, 4), E(30, 30, 12, 12, 'lo'), box(16, 28, 28, 2.4, 'ik')],
+pitcairn_islands: () => [...ozSea(), ...ozLand(14, 38, 8, 5), ...ozCone(14, 40, 6, 10, false), ...ozLand(34, 20, 5, 3), ...ozLand(48, 34, 5, 3), ...ozLand(30, 46, 4, 2.4), ...orBoat(44, 48, 0.8, 'hi')],
+rarotonga: () => [...ozSea(), ring('hi', 30, 32, 21, 1.2), ...ozLand(30, 32, 16, 14), ...opMtn(24, 34, 8, 16, 'bs', false), ...opMtn(36, 34, 8, 12, 'bs', false), mmEll(30, 32, 14, 12, 'ik', 1)],
+samoan_islands: () => [...ozSea(), ...ozLand(16, 26, 11, 7), ...ozLand(38, 24, 11, 7), ...ozLand(46, 40, 5, 3), ...ozLand(22, 44, 4, 2.4), ...ozLand(32, 48, 3, 2), ...orBoat(30, 36, 0.7, 'hi')],
+tokelau: () => [...ozSea(), ...ozAtoll(30, 16, 8, 3), ...ozAtoll(16, 40, 8, 3), ...ozAtoll(44, 40, 8, 3), ...nlPalm(30, 16, 8, 'lo')],
+fakaofo: () => [...ozSea(), ...ozAtoll(30, 30, 18, 3), E(30, 30, 15, 15, 'lo'), ...nhDots([[12, 30], [18, 18], [30, 12], [44, 20], [48, 32], [38, 46], [20, 44]], 2.2, 'bs'), ...orBoat(30, 32, 0.8, 'hi')],
+wallis_and_futuna: () => [...ozSea(), ...ozAtoll(16, 28, 10, 3), E(16, 28, 7, 7, 'lo'), ...ozLand(40, 22, 7, 5), ...ozCone(40, 24, 5, 9, false), ...ozLand(46, 42, 5, 3.4), ...ozCone(46, 44, 4, 7, false)],
+hoorn_islands: () => [...ozSea(), ...ozLand(20, 34, 12, 10), ...ozCone(20, 36, 8, 14, false), ...ozLand(44, 32, 8, 7), ...ozCone(44, 34, 6, 11, false), S('M30 10 L30 52', 'ik', 1)],
+acteon_group: () => [...ozSea(), ...ozAtoll(24, 24, 7, 3), ...ozAtoll(40, 30, 6, 3), ...ozAtoll(26, 42, 6, 3), ...ozAtoll(46, 46, 4, 2)],
+austral_islands: () => [...ozSea(), ...ozLand(12, 40, 6, 3.4), ...ozCone(12, 42, 5, 9, false), ...ozLand(26, 34, 6, 3.4), ...ozCone(26, 36, 5, 10, false), ...ozLand(40, 28, 6, 3.4), ...ozCone(40, 30, 5, 11, false), ...ozLand(52, 22, 5, 3), S('M6 14 L30 14 M10 20 L34 20', 'ik', 1.4)],
+gambier_islands: () => [...ozSea(), ...ozAtoll(30, 32, 19, 3), E(30, 32, 16, 16, 'lo'), ...ozCone(24, 34, 6, 10, false), ...ozCone(36, 36, 5, 8, false), C(46, 14, 2.4, 'hi')],
+marquesas_islands: () => [...ozSea(), ...ozLand(30, 42, 22, 7), P('M10 42 L14 20 L18 30 L22 14 L26 32 L32 18 L36 34 L42 22 L46 42 Z', 'bs'), S('M10 42 L14 20 L18 30 L22 14 L26 32 L32 18 L36 34 L42 22 L46 42', 'ik', 1.4), S('M32 20 L32 36', 'hi', 2)],
+society_islands: () => [...ozSea(), ...ozLand(14, 34, 8, 6), ...ozCone(14, 36, 6, 9, false), ...ozAtoll(32, 26, 7, 3), ...ozLand(46, 38, 6, 4), ...orBoat(30, 48, 0.8, 'hi')],
+bora_bora: () => [...ozSea(), ...ozAtoll(30, 32, 20, 3), ...ozLand(30, 32, 8, 6), ...opMtn(30, 34, 6, 16, 'ik', false), ...nhDots([[12, 32], [22, 16], [38, 14], [48, 26], [46, 44], [30, 50]], 2, 'bs'), S('M40 34 L48 34', 'ik', 1.6)],
+moorea: () => [...ozSea(), ...ozLand(30, 34, 20, 14), P('M14 34 L20 20 L26 30 L32 16 L40 30 L46 34 Z', 'ik'), E(24, 48, 4, 3, 'lo'), E(38, 48, 4, 3, 'lo')],
+tuamotus: () => [...ozSea(), ...[[10, 14], [24, 12], [38, 14], [50, 18], [14, 30], [28, 28], [42, 32], [52, 38], [10, 46], [24, 44], [38, 46]].flatMap(([x, y]) => ozAtoll(x, y, 4.2, 1.8))],
+moruroa: () => [...ozSea(), ...ozAtoll(22, 38, 14, 3), E(22, 38, 11, 11, 'lo'), ...pcMush(46, 30)],
+hawaiian_islands: () => [...ozSea(), ...ozLand(12, 46, 4, 2.4), ...ozLand(20, 40, 5, 3), ...ozLand(28, 34, 5, 3), ...ozLand(34, 28, 5, 3), ...ozLand(40, 22, 6, 4), ...ozCone(46, 18, 7, 10), ...ozLand(46, 18, 9, 5), ...paFlower(22, 20)],
+kauai: () => [...ozSea(), C(30, 34, 16, 'bs'), mmEll(30, 34, 16, 16, 'ik', 1.3), S('M30 22 L30 40', 'lo', 2.4), S('M30 22 L30 40', 'hi', 0.9), ...pbCloud(30, 14)],
+lanai: () => [...ozSea(), ...ozLand(30, 44, 22, 6), ...pdPine(30, 30)],
+midway_atoll: () => [...ozSea(), ...ozAtoll(30, 38, 12, 3), E(30, 38, 9, 9, 'lo'), ozWing(14, 14, 1.4), ozWing(34, 10, 1.4), ozWing(48, 18, 1.2), ozWing(22, 22, 1)],
+molokai: () => [...ozSea(), P('M6 34 L18 30 L40 28 L54 32 L50 40 L34 42 L16 42 Z', 'bs'), S('M6 34 L18 30 L40 28 L54 32 L50 40 L34 42 L16 42 Z', 'ik', 1.3), P('M18 30 L22 18 L34 18 L40 28 Z', 'ik'), ...ovWhale(30, 50)],
+oahu: () => [...ozSea(), ...ozLand(30, 38, 20, 10), ...ozCone(14, 40, 6, 8, false), ...[[26, 34, 4, 8], [31, 32, 4, 10], [36, 34, 4, 6]].map(([x, y, w, h]) => box(x, y, w, h, 'hi')), S('M6 50 Q14 42 22 50', 'ik', 2)],
+devils_island: () => [...ozSea(), ...ozLand(26, 40, 16, 7), ...pdBars(14, 28, 14, 12), ...nlPalm(36, 40, 10, 'lo'), ...pbFin(46, 48, 1)],
+trindade_martim_vaz: () => [...ozSea(), P('M12 46 L16 24 L22 36 L26 14 L32 34 L38 22 L44 46 Z', 'bs'), S('M12 46 L16 24 L22 36 L26 14 L32 34 L38 22 L44 46', 'ik', 1.4), ...ozTurtle(48, 48, 0.7), ozWing(42, 14, 1)],
+chiloe_archipelago: () => [...ozSea(), P('M6 16 L26 10 L34 24 L28 50 L12 50 L8 34 Z', 'bs'), S('M6 16 L26 10 L34 24 L28 50 L12 50 L8 34 Z', 'ik', 1.3), ...ozLand(44, 18, 6, 3), ...ozLand(46, 36, 6, 3), ...pdSpire(20, 36), ...pbCloud(46, 10)],
+chiloe_island: () => [...ozSea(), ...ozLand(30, 34, 22, 13), ...ntConifer(16, 26, 14, 6, 'lo'), ...pdStilt(30, 40), ...pdStilt(40, 40), S('M24 44 L46 44', 'ik', 1.2)],
+desventuradas: () => [...ozSea(), ...ozLand(16, 22, 8, 5), ...ozLand(40, 16, 6, 4), ...ozLand(24, 44, 6, 4), ...ozLand(48, 40, 4, 3), ...ozSeal(30, 32, 0.8), ozWing(46, 26, 1)],
+salas_y_gomez: () => [...ozSea(), ...ozLand(30, 44, 18, 5), ...pdMoai(30, 44), ozWing(14, 20, 1), ozWing(46, 18, 1)],
+juan_fernandez: () => [...ozSea(), P('M10 44 L16 24 L22 34 L30 14 L38 32 L46 24 L52 44 Z', 'bs'), S('M10 44 L16 24 L22 34 L30 14 L38 32 L46 24 L52 44', 'ik', 1.4), ...ozHut(38, 46, 6), ...ozSeal(18, 50, 0.7)],
+};
+for (const [id, fn] of Object.entries(MKpd)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 95: islands of China, Japan, South-East Asia and Indonesia, sourced, audited, hand-drawn ── */
+const peRabbit = (x, y, s = 1) => [E(x, y, 4 * s, 3 * s, 'ik'), C(x + 4 * s, y - 2 * s, 2 * s, 'ik'), E(x + 3.4 * s, y - 6 * s, 0.9 * s, 2.6 * s, 'ik'), E(x + 5.4 * s, y - 6 * s, 0.9 * s, 2.6 * s, 'ik')];
+const peDragon = (x, y, s = 1) => [E(x, y, 6 * s, 2.4 * s, 'ik'), C(x + 7 * s, y - 0.6 * s, 2 * s, 'ik'), S(`M${x - 6 * s} ${y} Q${x - 10 * s} ${y + 2 * s} ${x - 13 * s} ${y - 1 * s}`, 'ik', 1.6), S(`M${x - 3 * s} ${y + 2 * s} l-1 3 M${x + 3 * s} ${y + 2 * s} l1 3`, 'ik', 1.4)];
+const peTank = (x, y, w = 6, h = 7) => [box(x, y - h, w, h, 'hi'), E(x + w / 2, y - h, w / 2, 1.6, 'hi'), mmEll(x + w / 2, y - h, w / 2, 1.6, 'ik', 0.9)];
+const peRocket = (x, y) => [P(`M${x - 2.4} ${y} L${x - 2.4} ${y - 16} L${x} ${y - 22} L${x + 2.4} ${y - 16} L${x + 2.4} ${y} Z`, 'hi'), S(`M${x - 2.4} ${y - 4} L${x - 5} ${y} M${x + 2.4} ${y - 4} L${x + 5} ${y}`, 'ik', 1.4), S(`M${x - 6} ${y} L${x + 6} ${y}`, 'ik', 1.6)];
+const pePagoda = (x, y) => [box(x - 5, y - 5, 10, 5, 'hi'), P(`M${x - 7} ${y - 5} L${x} ${y - 9} L${x + 7} ${y - 5} Z`, 'ik'), box(x - 3.4, y - 11, 6.8, 2.6, 'hi'), P(`M${x - 5} ${y - 11} L${x} ${y - 14} L${x + 5} ${y - 11} Z`, 'ik')];
+const peTorii = (x, y) => [box(x - 7, y - 11, 14, 2.4, 'ik'), box(x - 5, y - 8, 2, 8, 'ik'), box(x + 3, y - 8, 2, 8, 'ik'), S(`M${x - 5} ${y - 6} L${x + 5} ${y - 6}`, 'ik', 1.2)];
+const peBuilds = (x, y) => [[0, 4, 8], [5, 4, 11], [10, 4, 6]].map(([dx, w, h]) => box(x + dx, y - h, w, h, 'hi'));
+const peLine = (y) => S(`M6 ${y} L14 ${y} M20 ${y} L28 ${y} M34 ${y} L42 ${y} M48 ${y} L54 ${y}`, 'ik', 1.2);
+const peDots = (pts, rx = 3.4, ry = 2) => pts.flatMap(([x, y]) => ozLand(x, y, rx, ry));
+const MKpe = {
+chongming_island: () => [...ozSea(), S('M4 14 Q30 20 56 14 M4 44 Q30 38 56 44', 'hi', 2), ...ozLand(30, 30, 20, 7), S('M12 30 Q30 26 48 30', 'lo', 2), ...nhDots([[18, 28], [30, 27], [42, 28]], 1.2, 'ik')],
+gulangyu: () => [...ozSea(), ...ozLand(26, 36, 16, 9), ...paHouse(20, 34, 8), ...nlPalm(36, 36, 10, 'lo'), P('M42 12 L56 12 L56 22 L42 22 Z', 'bs'), ...orBoat(40, 48, 0.8, 'hi')],
+senkaku_islands: () => [...ozSea(), P('M14 40 L18 24 L22 28 L26 40 Z', 'bs'), P('M32 40 L36 30 L42 40 Z', 'bs'), P('M46 40 L48 32 L52 40 Z', 'bs'), S('M14 40 L18 24 L22 28 L26 40 M32 40 L36 30 L42 40', 'ik', 1.2), ozWing(24, 16, 1), ozWing(40, 14, 1), onWave(46, 'ik', 1.2)],
+xiamen_island: () => [...ozSea(), P('M44 8 L56 8 L56 52 L44 52 Q40 30 44 8 Z', 'bs'), ...ozLand(22, 34, 14, 9), ...paSpan(36, 46, 30), ...peBuilds(16, 34)],
+yeonpyeongdo: () => [...ozSea(), ...peDots([[14, 20], [26, 30], [38, 22], [44, 38]], 7, 4), ...pcCrab(16, 44, 0.8), ...orBoat(40, 50, 0.7, 'hi')],
+zhoushan: () => [...ozSea(), paMain('l', 10), ...peDots([[24, 14], [34, 22], [28, 32], [42, 30], [36, 42], [48, 16], [24, 46]], 4.6, 3), ...orBoat(46, 50, 0.7, 'hi')],
+coloane: () => [...ozSea(), ...ozLand(30, 40, 22, 8), ...opMtn(40, 40, 10, 12, 'bs', false), ...pdSpire(20, 40), P('M10 44 Q30 52 50 44 L48 47 Q30 55 12 47 Z', 'hi')],
+ko_samui: () => [...ozSea(), ...ozLand(30, 38, 20, 11), ...nlPalm(20, 38, 12, 'lo'), ...nlPalm(32, 38, 14, 'lo'), ...nlPalm(42, 38, 11, 'lo'), P('M10 44 Q30 54 50 44 L48 47 Q30 57 12 47 Z', 'hi')],
+lantau_island: () => [...ozSea(), ...ozLand(30, 38, 24, 12), ...opMtn(22, 40, 10, 18, 'bs', false), box(36, 40, 16, 2.4, 'ik'), S('M26 16 L48 30', 'ik', 1.2), box(36, 28, 4, 3, 'hi')],
+paracel_islands: () => [...ozSea(), ...[[12, 18], [24, 30], [38, 20], [48, 34], [30, 46], [14, 44]].flatMap(([x, y]) => [...ozLand(x, y, 3.4, 2), ring('hi', x, y, 6, 1)])],
+pratas_island: () => [...ozSea(), ...ozAtoll(30, 30, 18, 3), E(30, 30, 14, 14, 'lo'), ...ozLand(24, 30, 5, 3), ...ozTurtle(38, 34, 1)],
+phu_quoc: () => [...ozSea(), ...ozLand(30, 34, 20, 13), ...ntConifer(22, 28, 12, 5, 'lo'), E(40, 36, 4.4, 3.4, 'hi'), C(40, 36, 1.6, 'ik'), P('M12 44 Q30 52 48 44 L46 47 Q30 55 14 47 Z', 'hi')],
+scarborough_shoal: () => [...ozSea(), P('M14 40 L46 40 L30 14 Z', 'hi'), S('M14 40 L46 40 L30 14 Z', 'ik', 1.4), P('M26 30 L30 26 L34 30 Z', 'bs'), ...otFish(20, 48), ...otFish(42, 48)],
+spratly_islands: () => [...ozSea(), ...[[12, 16], [24, 24], [36, 18], [48, 28], [18, 38], [32, 40], [46, 46]].flatMap(([x, y]) => [C(x, y, 2.4, 'bs'), ring('hi', x, y, 5, 1)]), box(28, 38.6, 10, 2.2, 'ik')],
+taipa: () => [...ozSea(), ...ozLand(18, 34, 11, 8), ...ozLand(42, 34, 11, 8), P('M28 30 L32 30 L32 38 L28 38 Z', 'bs'), ...peBuilds(12, 32)],
+wanshan_archipelago: () => [...ozSea(), ...peDots([[10, 16], [20, 12], [32, 18], [44, 14], [14, 30], [26, 28], [38, 32], [50, 28], [10, 44], [24, 46], [40, 44], [52, 46], [32, 38]], 3.4, 2.2)],
+liancourt_rocks: () => [...ozSea(), P('M12 46 L18 18 L26 46 Z', 'bs'), P('M32 46 L38 26 L50 46 Z', 'bs'), S('M12 46 L18 18 L26 46 M32 46 L38 26 L50 46', 'ik', 1.3), ozWing(30, 14, 1.2), ozWing(44, 14, 1), onWave(48, 'ik', 1.2)],
+japanese_archipelago: () => [...ozSea(), P('M8 14 Q16 10 24 18 Q36 28 40 40 Q46 46 52 44 Q44 54 36 46 Q24 40 18 26 Q10 22 8 14 Z', 'bs'), S('M8 14 Q16 10 24 18 Q36 28 40 40 Q46 46 52 44 Q44 54 36 46 Q24 40 18 26 Q10 22 8 14 Z', 'ik', 1.2), ...opMtn(30, 34, 4, 8, 'ik', true), C(48, 14, 5, 'hi')],
+amakusa: () => [...ozSea(), P('M4 8 L24 8 L18 52 L4 52 Z', 'bs'), ...peDots([[30, 20], [40, 30], [34, 40], [46, 18]], 5, 3), ...ovWhale(44, 46)],
+awaji_island: () => [...ozSea(), P('M4 8 L12 8 L12 52 L4 52 Z', 'bs'), P('M48 8 L56 8 L56 52 L48 52 Z', 'bs'), ...ozLand(30, 32, 10, 15), ...paSpan(12, 20, 20), ...paSpan(40, 48, 20)],
+goto_islands: () => [...ozSea(), ...peDots([[14, 34], [26, 24], [38, 36], [48, 22], [26, 46]], 6, 3.6), ...pdSpire(26, 24), ...pdSpire(38, 36)],
+itsukushima: () => [...ozSea(), ...ozLand(30, 20, 24, 8), ...pePagoda(40, 20), ...peTorii(22, 42), onWave(48, 'ik', 1.2), E(46, 18, 3, 2, 'ik')],
+izu_islands: () => [...ozSea(), P('M4 8 L56 8 L56 18 Q30 22 4 18 Z', 'bs'), ...ozLand(14, 32, 6, 3.4), ...ozCone(14, 34, 5, 9), ...ozLand(30, 40, 6, 3.4), ...ozCone(30, 42, 5, 10), ...ozLand(46, 48, 6, 3), ...ozCone(46, 50, 5, 8, false)],
+matsushima: () => [...ozSea(), ...[[10, 18], [22, 24], [36, 16], [48, 24], [14, 38], [28, 42], [42, 38], [52, 46]].flatMap(([x, y]) => [...ozLand(x, y, 5, 2.6), ...ntConifer(x, y - 1, 7, 3.4, 'lo')])],
+sado_island: () => [...ozSea(), ...ozLand(30, 38, 22, 9), P('M20 38 L20 30 Q24 24 28 30 L28 38 Z', 'ik'), C(40, 34, 2.4, 'hi'), C(44, 37, 1.8, 'hi'), C(37, 38, 1.8, 'hi')],
+tsushima_island: () => [...ozSea(), P('M4 8 L10 8 L10 52 L4 52 Z', 'bs'), P('M50 8 L56 8 L56 52 L50 52 Z', 'bs'), P('M24 16 L36 12 L40 30 L34 48 L26 44 L22 28 Z', 'bs'), S('M24 16 L36 12 L40 30 L34 48 L26 44 L22 28 Z', 'ik', 1.3)],
+bonin_islands: () => [...ozSea(), ...peDots([[12, 20], [22, 28], [34, 20], [44, 30]], 6, 3.4), ...ovWhale(34, 46), ...ozTurtle(14, 44, 0.9)],
+volcano_islands: () => [...ozSea(), ...ozLand(14, 40, 7, 3.4), ...ozCone(14, 42, 5, 10), ...ozLand(30, 30, 7, 3.4), ...ozCone(30, 32, 5, 12), ...ozLand(46, 40, 7, 3.4), ...ozCone(46, 42, 5, 9)],
+amami_islands: () => [...ozSea(), ...peDots([[10, 40], [20, 32], [32, 26], [44, 20]], 7, 3.4), ...ntConifer(20, 31, 9, 4, 'lo'), ...ntConifer(32, 25, 9, 4, 'lo'), ...nlPalm(44, 20, 8, 'lo')],
+amami_oshima: () => [...ozSea(), ...ozLand(30, 34, 22, 14), ...ntConifer(16, 30, 14, 5, 'lo'), ...ntConifer(26, 28, 16, 6, 'lo'), ...peRabbit(40, 40, 1.2)],
+okinawa_island: () => [...ozSea(), P('M6 44 L16 36 L30 26 L44 16 L50 20 L38 32 L24 44 L12 50 Z', 'bs'), S('M6 44 L16 36 L30 26 L44 16 L50 20 L38 32 L24 44 L12 50 Z', 'ik', 1.2), ...paCastle(22, 36, 10, 6), S('M10 22 L22 22 M30 14 L38 14', 'ik', 1.4)],
+tanegashima: () => [...ozSea(), ...ozLand(30, 44, 22, 6), ...peRocket(30, 44), S('M26 46 L34 46', 'hi', 2)],
+tokara_islands: () => [...ozSea(), ...peDots([[8, 44], [14, 40], [20, 36], [26, 32], [32, 30], [38, 26], [44, 24], [50, 22]], 3, 1.8), ...ozCone(32, 30, 3, 6), ozPlume(32, 22)],
+yaeyama_islands: () => [...ozSea(), ...ozLand(18, 28, 9, 6), ...ozLand(40, 22, 8, 5), ...ozLand(32, 44, 10, 5), ring('hi', 18, 28, 12, 1), ring('hi', 40, 22, 11, 1), ring('hi', 32, 44, 13, 1), ...nlPalm(18, 28, 8, 'lo')],
+yakushima: () => [...ozSea(), ...ozLand(30, 46, 22, 5), ...opMtn(12, 46, 8, 16, 'bs', false), ...opMtn(48, 46, 8, 14, 'bs', false), P('M26 46 L26 22 L34 22 L34 46 Z', 'ik'), C(30, 18, 11, 'lo'), S('M10 12 l2 4 M20 8 l2 4 M44 10 l2 4 M52 18 l2 4', 'hi', 1.2)],
+aru_islands: () => [...ozSea(), ...peDots([[12, 20], [22, 32], [32, 22], [42, 34], [50, 22], [20, 44], [38, 46]], 4.6, 2.6), ozWing(14, 12, 1), ozWing(36, 10, 1)],
+buru: () => [...ozSea(), ...ozLand(30, 34, 22, 14), ...opMtn(26, 36, 10, 14, 'bs', false), ...nhDots([[40, 30], [44, 34], [38, 36], [46, 28]], 1.6, 'ik'), S('M14 18 L20 18 M44 46 L52 46', 'ik', 1.2)],
+halmahera: () => [...ozSea(), P('M22 10 L30 14 L32 24 L42 22 L48 28 L40 32 L34 38 L36 48 L28 44 L28 34 L20 30 L14 20 Z', 'bs'), S('M22 10 L30 14 L32 24 L42 22 L48 28 L40 32 L34 38 L36 48 L28 44 L28 34 L20 30 L14 20 Z', 'ik', 1.2), ...ozCone(22, 24, 4, 7, false)],
+seram_island: () => [...ozSea(), P('M6 36 L14 28 L30 28 L44 24 L54 30 L46 36 L30 38 L14 42 Z', 'bs'), S('M6 36 L14 28 L30 28 L44 24 L54 30 L46 36 L30 38 L14 42 Z', 'ik', 1.2), ...opMtn(28, 34, 8, 12, 'ik', false), ozWing(40, 16, 1.2), ozWing(48, 12, 0.9)],
+tidore: () => [...ozSea(), ...ozLand(26, 40, 14, 6), ...ozCone(26, 40, 9, 22), ...ozLand(48, 20, 5, 3), S('M46 38 L52 34 M46 38 L52 40 M46 38 L46 32', 'ik', 1.4), nqBurst(52, 34, 0.5, 1.5, 6, 'hi', 1)],
+sunda_islands: () => [...ozSea(), ...[[8, 14, 6, 3], [18, 20, 6, 3], [28, 26, 6, 3], [38, 32, 6, 3], [46, 38, 5, 3], [52, 46, 4, 2.4], [34, 46, 5, 2.6], [20, 40, 5, 2.6]].flatMap(([x, y, rx, ry]) => ozLand(x, y, rx, ry))],
+greater_sunda_islands: () => [...ozSea(), P('M6 38 L12 30 L22 20 L26 22 L16 34 L10 42 Z', 'bs'), P('M24 44 L44 42 L46 46 L28 48 Z', 'bs'), P('M28 18 Q38 10 48 18 Q50 30 42 34 Q30 34 26 26 Z', 'bs'), P('M50 20 L54 22 L52 30 L56 36 L52 38 L50 28 Z', 'bs'), S('M24 44 L44 42 L46 46 L28 48 Z M28 18 Q38 10 48 18 Q50 30 42 34 Q30 34 26 26 Z', 'ik', 1.1)],
+madura: () => [...ozSea(), P('M4 40 L56 40 L56 52 L4 52 Z', 'bs'), ...ozLand(32, 26, 18, 6), ...owSalt(26, 26), ...owSalt(34, 26)],
+flores_indonesia: () => [...ozSea(), ...ozLand(30, 38, 24, 8), ...ozCone(14, 40, 5, 10, false), ...peDragon(32, 36, 1.1)],
+lombok: () => [...ozSea(), ...ozLand(30, 40, 20, 8), ...opMtn(30, 40, 12, 24, 'bs', true), E(30, 22, 4, 1.6, 'lo'), S('M6 20 L14 20 M46 20 L54 20 M6 26 L14 26', 'ik', 1.4)],
+sumba: () => [...ozSea(), ...ozLand(30, 40, 22, 8), ...paPony(22, 36, 1.2), box(36, 32, 10, 4, 'ik'), box(38, 28, 6, 4, 'hi')],
+sumbawa: () => [...ozSea(), ...ozLand(30, 40, 22, 8), ring('hi', 30, 30, 12, 3), E(30, 30, 9, 9, 'lo')],
+riau_archipelago: () => [...ozSea(), P('M4 8 L56 8 L56 16 L30 18 L4 16 Z', 'bs'), ...peDots([[12, 30], [22, 38], [32, 30], [42, 40], [50, 32], [26, 48]], 4.6, 2.6), ...orBoat(46, 24, 0.7, 'hi')],
+lingga: () => [...ozSea(), peLine(30), ...peDots([[8, 18], [16, 24], [24, 20], [32, 26], [40, 22], [48, 28], [12, 38], [22, 42], [30, 36], [38, 44], [46, 38], [54, 44], [28, 14], [44, 14]], 2.8, 1.8)],
+natuna: () => [...ozSea(), ...peDots([[14, 20], [28, 28], [42, 18], [46, 36]], 6, 3.4), ...pbDerrick(28, 36), ...otFish(18, 46)],
+penang_island: () => [...ozSea(), P('M44 8 L56 8 L56 52 L44 52 Q40 30 44 8 Z', 'bs'), ...ozLand(22, 32, 14, 12), ...paSpan(36, 46, 28), ...pePagoda(20, 34)],
+jurong_island: () => [...ozSea(), ...ozLand(30, 38, 22, 8), ...peTank(14, 36), ...peTank(22, 36, 6, 9), ...peTank(30, 36), ...pbDerrick(44, 36), S('M44 22 q-2 -3 0 -5', 'hi', 1.6)],
+sentosa: () => [...ozSea(), P('M4 8 L56 8 L56 14 L4 14 Z', 'bs'), ...ozLand(30, 38, 20, 8), ...nlPalm(18, 38, 12, 'lo'), ...nlPalm(40, 38, 10, 'lo'), S('M10 20 L48 34', 'ik', 1.2), box(26, 25, 5, 4, 'hi'), P('M10 44 Q30 54 50 44 L48 47 Q30 57 12 47 Z', 'hi')],
+samosir: () => [...ozSea(), E(30, 30, 24, 17, 'lo'), mmEll(30, 30, 24, 17, 'ik', 1.4), ...ozLand(30, 30, 12, 8), ...ozCone(30, 32, 7, 9, false)],
+};
+for (const [id, fn] of Object.entries(MKpe)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 96: islands of the Gulf, the Caspian, the Philippines and the far south, sourced, audited, hand-drawn */
+const pfPod = (x, y, s = 1) => [E(x, y, 3 * s, 5 * s, 'bs'), mmEll(x, y, 3 * s, 5 * s, 'ik', 1), S(`M${x} ${y - 5 * s} L${x} ${y + 5 * s} M${x - 1.5 * s} ${y - 4 * s} L${x - 1.5 * s} ${y + 4 * s} M${x + 1.5 * s} ${y - 4 * s} L${x + 1.5 * s} ${y + 4 * s}`, 'ik', 0.8)];
+const pfTarsier = (x, y, s = 1) => [E(x, y, 5 * s, 5.4 * s, 'ik'), C(x - 2.2 * s, y - 0.6 * s, 2.4 * s, 'hi'), C(x + 2.2 * s, y - 0.6 * s, 2.4 * s, 'hi'), C(x - 2.2 * s, y - 0.6 * s, 1.1 * s, 'ik'), C(x + 2.2 * s, y - 0.6 * s, 1.1 * s, 'ik'), S(`M${x - 4 * s} ${y - 5 * s} L${x - 5 * s} ${y - 8 * s} M${x + 4 * s} ${y - 5 * s} L${x + 5 * s} ${y - 8 * s}`, 'ik', 1.6)];
+const pfShark = (x, y, s = 1) => [E(x, y, 9 * s, 2.8 * s, 'ik'), P(`M${x + 8 * s} ${y} L${x + 13 * s} ${y - 4 * s} L${x + 13 * s} ${y + 4 * s} Z`, 'ik'), ...nhDots([[x - 4 * s, y - 0.4 * s], [x, y + 0.6 * s], [x + 4 * s, y - 0.6 * s]], 0.7 * s, 'hi')];
+const pfDeck = (x, y) => [box(x, y - 3, 14, 3, 'ik'), S(`M${x + 2} ${y} L${x + 2} ${y + 8} M${x + 12} ${y} L${x + 12} ${y + 8}`, 'ik', 1.6), ...pbDerrick(x + 7, y - 3)];
+const pfHump = (x, y, w, h) => P(`M${x - w} ${y} Q${x} ${y - h * 2} ${x + w} ${y} Z`, 'bs');
+const MKpf = {
+abu_musa: () => [...ozSea(), ...ozLand(30, 38, 18, 8), P('M22 38 L26 26 L36 26 L40 38 Z', 'hi'), S('M24 34 L38 34 M23 30 L37 30', 'ik', 1.2), S('M6 18 L22 18 M10 24 L28 24', 'ik', 1.4)],
+bahrain_island: () => [...ozSea(), ...ozLand(30, 38, 22, 11), ...pbDerrick(14, 38), ...nlPalm(44, 38, 10, 'lo'), E(28, 38, 5, 3.6, 'hi'), C(28, 38, 1.8, 'ik'), ...peBuilds(34, 36).slice(0, 2)],
+bubiyan_island: () => [...ozSea(), paMain('r', 8), ...ozLand(24, 36, 17, 8), ...paSpan(40, 50, 32), S('M8 46 L40 46 M10 50 L36 50', 'lo', 1.4), ...paTree(16, 34, 3)],
+failaka_island: () => [...ozSea(), ...ozLand(30, 40, 20, 8), ...paCastle(16, 38, 14, 8), ...paColumn(40, 38, 10), ...orBoat(48, 22, 0.8, 'hi')],
+tunbs: () => [...ozSea(), ...ozLand(16, 30, 7, 4), ...ozLand(44, 30, 5, 3), S('M4 44 L56 44', 'ik', 1.2), ...orBoat(30, 24, 0.9, 'hi')],
+hawar_islands: () => [...ozSea(), ...ozLand(20, 38, 14, 7, 'hi'), ...ozLand(44, 26, 8, 4, 'hi'), P('M10 38 Q16 30 22 38 Z M26 36 Q32 30 36 36 Z', 'bs'), ...pbFlam(40, 30)],
+pearl_island_qatar: () => [...ozSea(), P('M10 34 Q10 20 30 20 Q50 20 50 34 Q50 46 30 46 Q10 46 10 34 Z', 'bs'), S('M10 34 Q10 20 30 20 Q50 20 50 34 Q50 46 30 46 Q10 46 10 34 Z', 'ik', 1.3), ...peBuilds(22, 36), ...peBuilds(34, 34), C(44, 24, 2.4, 'hi')],
+palm_islands: () => [...ozSea(), S('M30 46 L30 22', 'bs', 3), S('M30 40 L18 34 M30 34 L16 26 M30 28 L20 20 M30 40 L42 34 M30 34 L44 26 M30 28 L40 20', 'bs', 2.4), S('M8 48 Q30 8 52 48', 'bs', 2.4)],
+telegraph_island: () => [...ozSea(), P('M4 8 L18 8 L22 52 L4 52 Z', 'bs'), P('M42 8 L56 8 L56 52 L40 52 Z', 'bs'), ...ozLand(30, 34, 5, 3.4), S('M4 22 Q30 28 56 22', 'ik', 1.4)],
+hormuz_island: () => [...ozSea(), ...ozLand(30, 38, 20, 9), P('M18 38 L24 24 L30 32 L36 22 L42 38 Z', 'hi'), S('M18 38 L24 24 L30 32 L36 22 L42 38', 'ik', 1.3), ...owSalt(22, 40), ...owSalt(38, 40)],
+kharg_island: () => [...ozSea(), ...ozLand(24, 38, 16, 7), ...peTank(14, 38), ...peTank(22, 38, 6, 9), S('M30 40 L50 40', 'ik', 2), ...orBoat(46, 46, 1.1, 'hi'), S('M20 24 q-2 -3 0 -5', 'hi', 1.6)],
+kish_island: () => [...ozSea(), ...ozLand(30, 40, 20, 8), P('M14 32 Q22 22 30 32 Z', 'hi'), S('M22 32 L22 40', 'ik', 1.6), ...nlPalm(40, 40, 11, 'lo'), ...ovWhale(44, 18)],
+qeshm_island: () => [...ozSea(), P('M6 38 L16 28 L32 26 L50 30 L54 38 L40 42 L20 44 Z', 'bs'), S('M6 38 L16 28 L32 26 L50 30 L54 38 L40 42 L20 44 Z', 'ik', 1.3), ...paTree(18, 38, 3), ...paTree(26, 40, 3), P('M36 36 Q40 30 44 36 Z', 'ik')],
+baku_archipelago: () => [...ozSea(), ...ozLand(14, 38, 8, 4), ...ozLand(32, 30, 8, 4), ...ozLand(48, 42, 7, 3.6), ...pbDerrick(14, 36), ...pbDerrick(32, 28), S('M48 30 q-2 -3 0 -5', 'hi', 1.6)],
+ashuradeh: () => [...ozSea(), P('M6 34 Q30 26 56 30 L56 34 Q30 32 6 38 Z', 'hi'), S('M6 34 Q30 26 56 30', 'ik', 1.3), ...pbFlam(20, 34), ...pbFlam(34, 32), onWave(46, 'ik', 1.2)],
+chilov: () => [...ozSea(), ...ozLand(24, 36, 14, 7), ...paSpan(36, 56, 34), ...pfDeck(40, 40), ...pbDerrick(20, 36)],
+tyuleny: () => [...ozSea(), ...ozLand(14, 24, 9, 4), ...ozLand(42, 20, 8, 4), ...ozLand(28, 42, 10, 4), ...ozSeal(14, 22, 0.8), ...ozSeal(40, 18, 0.7), ...ozSeal(28, 40, 0.8)],
+babuyan_islands: () => [...ozSea(), ...ozLand(14, 38, 8, 4), ...ozCone(14, 40, 6, 11), ...ozLand(32, 30, 8, 4), ...ozCone(32, 32, 6, 12, false), ...ozLand(48, 42, 6, 3), S('M6 14 Q14 8 22 14 M30 14 Q38 8 46 14', 'ik', 1.4)],
+batanes: () => [...ozSea(), P('M6 44 Q12 28 22 34 Q30 22 40 32 Q48 28 54 44 Z', 'bs'), S('M6 44 Q12 28 22 34 Q30 22 40 32 Q48 28 54 44', 'ik', 1.3), ...ozHut(28, 44, 6), S('M6 14 L24 14 M10 20 L30 20', 'ik', 1.4)],
+calamian_islands: () => [...ozSea(), ...ozLand(14, 32, 8, 7), ...ozLand(40, 26, 10, 7), P('M8 32 L10 22 L14 26 L16 32 Z', 'ik'), E(40, 26, 4, 3, 'lo'), ...pcWreck(30, 46)],
+catanduanes: () => [...ozSea(), ...ozLand(30, 40, 20, 8), ...nlPalm(20, 40, 11, 'lo'), S('M6 20 Q16 8 28 18 Q22 20 20 28', 'hi', 2.4), S('M6 20 Q16 8 28 18', 'ik', 1.2)],
+marinduque: () => [...ozSea(), C(30, 32, 16, 'bs'), mmEll(30, 32, 16, 16, 'ik', 1.3), P('M24 28 L36 28 L34 38 L26 38 Z', 'ik'), S('M25 31 L35 31 M26 34 L34 34', 'hi', 1), ...orBoat(48, 48, 0.7, 'hi')],
+masbate: () => [...ozSea(), ...ozLand(30, 38, 22, 9), ...paPony(22, 34, 1.2), ...opMtn(40, 38, 8, 12, 'bs', false)],
+mindoro: () => [...ozSea(), ...ozLand(30, 34, 20, 15), ...ntConifer(18, 24, 18, 6, 'lo'), ...ntConifer(30, 22, 20, 7, 'lo'), ...ntConifer(42, 24, 18, 6, 'lo'), S('M30 42 Q34 36 38 44', 'hi', 2.4)],
+palawan_island: () => [...ozSea(), P('M10 14 L20 10 L34 28 L46 40 L52 48 L46 50 L32 38 L18 22 Z', 'bs'), S('M10 14 L20 10 L34 28 L46 40 L52 48 L46 50 L32 38 L18 22 Z', 'ik', 1.2), P('M22 26 Q26 18 30 28 Z', 'ik'), ...ozTurtle(44, 24, 0.9)],
+sulu_archipelago: () => [...ozSea(), ...[[10, 40], [16, 36], [22, 32], [28, 30], [34, 28], [40, 26], [46, 24], [52, 22], [24, 44], [38, 40]].flatMap(([x, y], i) => ozLand(x, y, 3 + (i % 3), 1.8)), C(44, 44, 2, 'hi')],
+basilan: () => [...ozSea(), ...ozLand(30, 36, 16, 11), ...nlPalm(24, 36, 12, 'lo'), ...nlPalm(36, 36, 10, 'lo'), S('M10 12 l2 4 M22 8 l2 4 M44 10 l2 4', 'hi', 1.2)],
+jolo: () => [...ozSea(), ...ozLand(30, 42, 16, 7), ...ozCone(30, 42, 10, 18, false), ...orBoat(48, 22, 0.8, 'hi'), ...paHouse(14, 42, 4)],
+tawi_tawi: () => [...ozSea(), ...ozLand(14, 22, 8, 4), E(14, 22, 5, 2, 'lo'), ...ozLand(34, 32, 12, 5), E(34, 32, 7, 2.4, 'lo'), ...ozLand(48, 46, 6, 3), ...orBoat(24, 48, 0.7, 'hi')],
+bohol: () => [...ozSea(), ...ozLand(30, 38, 22, 11), pfHump(14, 36, 5, 5), pfHump(22, 36, 5, 6), pfHump(40, 36, 5, 6), pfHump(48, 36, 5, 5), ...pfTarsier(30, 28, 0.9)],
+cebu_island: () => [...ozSea(), P('M32 8 Q40 20 38 32 Q34 44 30 52 Q26 40 28 28 Q30 16 32 8 Z', 'bs'), S('M32 8 Q40 20 38 32 Q34 44 30 52 Q26 40 28 28 Q30 16 32 8', 'ik', 1.3), ...peBuilds(33, 30), ...pfShark(14, 40, 1)],
+leyte: () => [...ozSea(), ...ozLand(30, 32, 20, 13), ...orBoat(12, 50, 0.7, 'hi'), ...orBoat(30, 52, 0.7, 'hi'), ...orBoat(48, 50, 0.7, 'hi'), S('M20 34 Q26 28 32 36', 'lo', 2)],
+negros: () => [...ozSea(), P('M32 8 L42 14 L40 28 L34 40 L26 50 L20 46 L26 30 L24 16 Z', 'bs'), S('M32 8 L42 14 L40 28 L34 40 L26 50 L20 46 L26 30 L24 16 Z', 'ik', 1.3), ...ozCone(32, 24, 5, 8, false), S('M44 44 L44 34 M48 44 L48 32 M52 44 L52 34', 'lo', 2)],
+panay: () => [...ozSea(), P('M30 10 L52 40 L12 40 Z', 'bs'), S('M30 10 L52 40 L12 40 Z', 'ik', 1.3), S('M22 34 L38 34 M26 28 L34 28 M30 22 L30 22', 'ik', 1.2), S('M30 14 Q26 26 30 40', 'lo', 1.8)],
+samar: () => [...ozSea(), ...ozLand(20, 34, 16, 14), P('M46 8 L56 8 L56 52 L46 52 Q42 30 46 8 Z', 'bs'), ...paSpan(34, 48, 30)],
+adelaide_island: () => [...ozSea(), ...ozIce(30, 38, 22, 10), ...opMtn(22, 38, 10, 14, 'hi', true), ...opMtn(38, 38, 8, 10, 'hi', true), ...ozPeng(48, 44, 0.8)],
+anvers_island: () => [...ozSea(), ...ozLand(30, 46, 24, 6, 'hi'), ...opMtn(30, 46, 16, 36, 'bs', true), ...opMtn(14, 46, 8, 16, 'bs', true), ...ozHut(46, 46, 5)],
+berkner_island: () => [...ozSea(), P('M6 44 Q30 8 54 44 Z', 'hi'), S('M6 44 Q30 8 54 44', 'ik', 1.4), S('M14 40 Q30 22 46 40 M22 40 Q30 30 38 40', 'ik', 1), ...ozBerg(10, 50, 0.7)],
+ile_saint_paul: () => [...ozSea(), P('M12 36 Q12 14 30 14 Q48 14 48 36 L42 36 Q42 22 30 22 Q18 22 18 36 Z', 'bs'), S('M12 36 Q12 14 30 14 Q48 14 48 36 L42 36 Q42 22 30 22 Q18 22 18 36 Z', 'ik', 1.3), E(30, 38, 10, 7, 'lo'), ...otFish(30, 40)],
+mcdonald_islands: () => [...ozSea(), ...ozLand(30, 44, 16, 5, 'hi'), ...ozCone(30, 44, 10, 24), ...ozSeal(46, 50, 0.7)],
+french_southern_antarctic_lands: () => [...ozSea(), P('M8 8 L30 8 L30 28 Z', 'hi'), S('M8 8 L30 8 L30 28 Z', 'ik', 1.4), ...ozLand(20, 38, 8, 4), ...ozLand(38, 44, 7, 3.4), ...ozLand(50, 32, 5, 3), ...ozPeng(44, 18, 0.9)],
+seenu_atoll: () => [...ozSea(), ...ozAtoll(30, 30, 18, 4), E(30, 30, 14, 14, 'lo'), box(14, 28, 30, 2.4, 'ik'), S('M44 30 L52 30', 'ik', 1.6)],
+sao_tome_island: () => [...ozSea(), ...ozLand(30, 44, 20, 7), P('M30 44 L28 14 L34 14 L32 44 Z', 'ik'), ...pfPod(14, 38, 1), ...pfPod(46, 36, 1), ...nlPalm(40, 44, 10, 'lo')],
+};
+for (const [id, fn] of Object.entries(MKpf)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 97: Arctic, Siberian and Canadian islands, sourced, audited, hand-drawn ── */
+const pgMusk = (x, y, s = 1) => [E(x, y, 5.5 * s, 3.4 * s, 'ik'), C(x + 6 * s, y - 0.4 * s, 2.2 * s, 'ik'), S(`M${x - 3 * s} ${y + 3 * s} L${x - 3 * s} ${y + 6 * s} M${x + 3 * s} ${y + 3 * s} L${x + 3 * s} ${y + 6 * s}`, 'ik', 1.2), S(`M${x + 7 * s} ${y - 2 * s} Q${x + 9 * s} ${y - 4 * s} ${x + 9 * s} ${y - 1 * s}`, 'ik', 1)];
+const pgDeer = (x, y, s = 1) => [E(x, y, 4.6 * s, 2.6 * s, 'ik'), C(x + 5 * s, y - 2.4 * s, 1.6 * s, 'ik'), S(`M${x - 2.5 * s} ${y + 2 * s} L${x - 2.5 * s} ${y + 6 * s} M${x + 2.5 * s} ${y + 2 * s} L${x + 2.5 * s} ${y + 6 * s}`, 'ik', 1.2), S(`M${x + 5 * s} ${y - 4 * s} L${x + 3.4 * s} ${y - 8 * s} M${x + 4.4 * s} ${y - 6 * s} L${x + 7 * s} ${y - 8 * s}`, 'ik', 1)];
+const pgOwl = (x, y, s = 1) => [E(x, y, 3 * s, 4 * s, 'hi'), C(x - 1.1 * s, y - 2 * s, 0.9 * s, 'ik'), C(x + 1.1 * s, y - 2 * s, 0.9 * s, 'ik'), P(`M${x - 0.6 * s} ${y - 1 * s} L${x + 0.6 * s} ${y - 1 * s} L${x} ${y + 0.4 * s} Z`, 'ik')];
+const pgFox = (x, y, s = 1) => [E(x, y, 4.4 * s, 2.4 * s, 'hi'), C(x + 5 * s, y - 1.4 * s, 1.8 * s, 'hi'), P(`M${x + 4 * s} ${y - 3 * s} L${x + 4.6 * s} ${y - 5.4 * s} L${x + 5.6 * s} ${y - 3 * s} Z`, 'ik'), S(`M${x - 4 * s} ${y} Q${x - 8 * s} ${y - 2 * s} ${x - 8 * s} ${y + 2 * s}`, 'hi', 2), S(`M${x - 2 * s} ${y + 2 * s} L${x - 2 * s} ${y + 5 * s} M${x + 2 * s} ${y + 2 * s} L${x + 2 * s} ${y + 5 * s}`, 'ik', 1.1)];
+const pgTrees = (x0, x1, y) => { const out = []; for (let x = x0; x <= x1; x += 6) out.push(...ntConifer(x, y - 14, 14, 5, 'lo')); return out; };
+const pgPlateau = (x0, x1, y, h) => [P(`M${x0} ${y} L${x0 + 4} ${y - h} L${x1 - 4} ${y - h} L${x1} ${y} Z`, 'bs'), S(`M${x0 + 4} ${y - h} L${x1 - 4} ${y - h}`, 'ik', 1.4), S(`M${x0 + 8} ${y - h * 0.5} L${x1 - 8} ${y - h * 0.5}`, 'ik', 1)];
+const pgBeacon = (x, y) => [S(`M${x} ${y} L${x} ${y - 12}`, 'ik', 2), P(`M${x} ${y - 12} L${x + 7} ${y - 10} L${x} ${y - 8} Z`, 'hi')];
+const pgBridge = (x0, x1, y) => [S(`M${x0} ${y} L${x1} ${y}`, 'ik', 2.2), S(`M${x0 + 4} ${y} L${x0 + 4} ${y + 6} M${(x0 + x1) / 2} ${y} L${(x0 + x1) / 2} ${y + 6} M${x1 - 4} ${y} L${x1 - 4} ${y + 6}`, 'ik', 1.6)];
+const MKpg = {
+new_siberian_islands: () => [...ozSea(), ...[[12, 34], [22, 26], [32, 36], [42, 28], [50, 38], [28, 46]].flatMap(([x, y], i) => ozIce(x, y, 5 + (i % 3), 2.8)), ...ozBerg(48, 16, 0.8)],
+kotelny_island: () => [...ozSea(), ...ozIce(30, 38, 20, 9), ...pgDeer(24, 34, 0.9), ...pgTrees(36, 44, 38).slice(0, 3), S('M6 14 L20 14 M26 10 L44 10', 'ik', 1.4)],
+lyakhovsky_islands: () => [...ozSea(), ...ozIce(18, 36, 9, 5), ...ozIce(40, 30, 11, 6), ...ozIce(46, 46, 6, 3), ...ozBerg(10, 18, 0.7), onWave(52, 'ik', 1.2)],
+new_siberia_island: () => [...ozSea(), ...ozIce(30, 38, 22, 10), ...ozSeal(20, 36, 0.8), ...ozLand(44, 22, 6, 3, 'hi'), S('M10 14 q6 -4 12 0', 'ik', 1.2), ...pgFox(36, 34, 0.7)],
+severnaya_zemlya: () => [...ozSea(), P('M4 40 Q14 14 28 24 Q36 10 52 22 L56 40 Q30 48 4 40 Z', 'hi'), S('M4 40 Q14 14 28 24 Q36 10 52 22 L56 40', 'ik', 1.3), S('M14 38 Q20 30 26 38 M32 36 Q40 26 48 36', 'ik', 1)],
+bolshevik_island: () => [...ozSea(), ...ozIce(30, 38, 22, 11), P('M16 34 L24 22 L30 30 L38 20 L46 34 Z', 'hi'), S('M16 34 L24 22 L30 30 L38 20 L46 34', 'ik', 1.3), ...pgBeacon(14, 40)],
+komsomolets_island: () => [...ozSea(), ...ozIce(30, 42, 22, 8), ...opMtn(22, 42, 12, 22, 'hi', true), ...opMtn(40, 42, 10, 15, 'hi', true)],
+october_revolution_island: () => [...ozSea(), ...ozIce(30, 36, 24, 14), S('M14 34 Q22 22 30 34 Q38 22 46 34', 'ik', 1.3), C(30, 36, 3, 'ik'), ...ozSeal(46, 50, 0.7)],
+wrangel_island: () => [...ozSea(), ...ozIce(26, 40, 18, 8), ...pbBear(22, 34, 1.1), ...pgOwl(38, 30, 1), ...ozBerg(48, 22, 0.8)],
+commander_islands: () => [...ozSea(), ...ozLand(18, 36, 10, 5), ...ozLand(44, 28, 8, 4), ...ozSeal(18, 33, 0.8), ...ozSeal(44, 25, 0.7), ...ovWhale(34, 48), onWave(14, 'ik', 1.2)],
+eugenie_archipelago: () => [...ozSea(), ...[[14, 38], [24, 28], [36, 36], [46, 26], [48, 44]].flatMap(([x, y], i) => ozLand(x, y, 5 + (i % 2) * 2, 3)), ...ntConifer(24, 14, 14, 5, 'lo'), ...orBoat(30, 50, 0.7, 'hi')],
+bolshoy_ussuriysky_island: () => [...ozSea('lo'), P('M4 28 Q30 20 56 28 L56 34 Q30 26 4 34 Z', 'lo'), ...ozLand(30, 38, 18, 9), S('M30 22 L30 50', 'ik', 1.8), P('M22 36 L30 30 L38 36 Z', 'hi')],
+zhenbao_island: () => [...ozSea(), P('M4 14 L56 14 L56 22 L4 22 Z', 'bs'), P('M4 46 L56 46 L56 52 L4 52 Z', 'bs'), ...ozLand(30, 34, 11, 5), ...pgBeacon(26, 34), S('M34 34 L34 22 L42 24 L34 26', 'hi', 1.4)],
+franz_josef_land: () => [...ozSea(), ...[[12, 34], [24, 26], [34, 36], [44, 24], [48, 40], [20, 46]].flatMap(([x, y], i) => ozIce(x, y, 6 + (i % 2) * 2, 3.6)), ...pbBear(40, 18, 0.7)],
+jan_mayen: () => [...ozSea(), ...ozLand(30, 44, 22, 6), ...opMtn(34, 44, 12, 30, 'bs', true), P('M30 22 L34 14 L38 22 Z', 'hi'), S('M34 14 q-3 -4 0 -7', 'hi', 1.6), ...ozBerg(10, 24, 0.7)],
+severny_island: () => [...ozSea(), P('M26 6 L40 14 L38 30 L30 46 L22 52 L22 40 L26 26 Z', 'hi'), S('M26 6 L40 14 L38 30 L30 46 L22 52 L22 40 L26 26 Z', 'ik', 1.3), ...pgDeer(46, 42, 0.8)],
+yuzhny_island: () => [...ozSea(), P('M16 10 L30 8 L44 20 L50 34 L40 46 L24 50 L18 36 Z', 'bs'), S('M16 10 L30 8 L44 20 L50 34 L40 46 L24 50 L18 36 Z', 'ik', 1.3), ...ozPeng(26, 28, 1), ...ozPeng(34, 32, 0.9), P('M22 38 L28 30 L34 40 Z', 'hi')],
+spitsbergen: () => [...ozSea(), ...ozLand(30, 38, 22, 10, 'hi'), ...opMtn(20, 38, 10, 18, 'bs', true), ...opMtn(36, 38, 12, 24, 'bs', true), ...pbBear(46, 42, 0.8)],
+disko_island: () => [...ozSea(), ...ozLand(34, 38, 18, 10), P('M24 38 L28 24 L36 22 L44 38 Z', 'ik'), ...ozBerg(10, 26, 0.9), ...ozBerg(10, 44, 0.7), ...ovWhale(46, 14)],
+banks_island: () => [...ozSea(), ...ozLand(30, 38, 22, 11), ...pgMusk(22, 34, 1), ...pgMusk(36, 38, 0.9), S('M6 14 L22 14 M30 10 L50 10', 'ik', 1.2)],
+king_william_island: () => [...ozSea(), ...ozLand(30, 38, 20, 12), ...ozHut(22, 36, 5), ...ozHut(32, 38, 5), S('M10 14 L50 14', 'ik', 1.2), ...ozBerg(48, 22, 0.8)],
+queen_elizabeth_islands: () => [...ozSea(), ...[[12, 36], [22, 26], [32, 36], [42, 26], [50, 40], [28, 48]].flatMap(([x, y], i) => ozIce(x, y, 6 + (i % 2) * 2, 3.4)), C(46, 12, 3, 'hi'), S('M46 5 L46 7 M46 17 L46 19 M39 12 L41 12 M51 12 L53 12', 'hi', 1.2)],
+axel_heiberg_island: () => [...ozSea(), P('M6 44 L16 22 L24 32 L34 16 L46 34 L54 44 Z', 'hi'), S('M6 44 L16 22 L24 32 L34 16 L46 34 L54 44', 'ik', 1.4), S('M18 44 L22 36 M30 44 L34 34 M42 44 L42 38', 'ik', 1)],
+devon_island: () => [...ozSea(), ...ozLand(30, 38, 22, 11), E(30, 36, 8, 5, 'ik'), E(30, 36, 4.4, 2.6, 'bs'), P('M10 38 L16 30 L22 38 Z', 'hi'), ...pcDish(46, 38, 0.7)],
+melville_island_canada: () => [...ozSea(), ...ozLand(30, 36, 24, 11), ...pgMusk(24, 32, 0.9), ...pgFox(40, 36, 0.8), ...ozSeal(14, 50, 0.7)],
+southampton_island: () => [...ozSea(), ...ozLand(30, 36, 20, 13), ...pgOwl(22, 30, 1), ...pgDeer(38, 38, 0.9), S('M6 16 q6 -4 12 0 M40 14 q6 -4 12 0', 'ik', 1.2)],
+victoria_island: () => [...ozSea(), P('M6 30 Q16 14 30 20 Q44 12 54 28 Q50 44 34 46 Q18 50 6 30 Z', 'bs'), S('M6 30 Q16 14 30 20 Q44 12 54 28 Q50 44 34 46 Q18 50 6 30 Z', 'ik', 1.3), E(22, 32, 4, 2.4, 'lo'), E(40, 36, 5, 2.8, 'lo'), E(34, 26, 3, 2, 'lo')],
+manitoulin_island: () => [...ozSea(), P('M4 14 L56 14 L56 22 L4 22 Z', 'bs'), ...ozLand(30, 34, 22, 8), ...paTree(18, 34, 3), ...paTree(30, 33, 3), ...paTree(42, 34, 3), ...paHouse(24, 46, 5), onWave(48, 'ik', 1.2)],
+island_of_montreal: () => [...ozSea(), P('M4 22 Q30 16 56 22 L56 28 Q30 22 4 28 Z', 'lo'), P('M4 40 Q30 34 56 40 L56 46 Q30 40 4 46 Z', 'lo'), ...ozLand(30, 34, 20, 7), ...peBuilds(22, 36), ...peBuilds(34, 36), ...pgBridge(4, 56, 24)],
+central_siberian_plateau: () => [...pgPlateau(6, 54, 46, 18), ...pgPlateau(16, 46, 28, 10), ...pgTrees(10, 48, 48).slice(0, 4), S('M14 20 L46 20', 'ik', 1)],
+east_siberian_taiga: () => [...pgTrees(6, 54, 46), ...pgTrees(10, 50, 36), ...pgTrees(6, 54, 26)],
+};
+for (const [id, fn] of Object.entries(MKpg)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 98: peninsulas, capes and isthmuses, sourced, audited, hand-drawn ── */
+const piTongue = (bx, by, tx, ty, w, role = 'bs') => { const dx = tx - bx, dy = ty - by, L = Math.hypot(dx, dy) || 1, nx = -dy / L * w, ny = dx / L * w; const d = `M${n(bx - nx)} ${n(by - ny)} L${n(tx - nx * 0.35)} ${n(ty - ny * 0.35)} L${tx} ${ty} L${n(tx + nx * 0.35)} ${n(ty + ny * 0.35)} L${n(bx + nx)} ${n(by + ny)} Z`; return [P(d, role), S(d, 'ik', 1.2)]; };
+const piMass = (y0) => [P(`M0 ${y0} Q15 ${y0 - 3} 30 ${y0} Q45 ${y0 + 3} 60 ${y0} L60 60 L0 60 Z`, 'bs'), S(`M0 ${y0} Q15 ${y0 - 3} 30 ${y0} Q45 ${y0 + 3} 60 ${y0}`, 'ik', 1.3)];
+const piStar = (x, y) => [S(`M${x} ${y - 3} L${x} ${y + 3} M${x - 3} ${y} L${x + 3} ${y}`, 'hi', 1.2)];
+const piCliff = (x, y, w, h) => [P(`M${x} ${y} L${x} ${y - h} L${x + w} ${y - h} L${x + w} ${y} Z`, 'bs'), S(`M${x} ${y - h} L${x + w} ${y - h}`, 'ik', 1.4), S(`M${x + w * 0.3} ${y - h} L${x + w * 0.3} ${y} M${x + w * 0.65} ${y - h} L${x + w * 0.65} ${y}`, 'ik', 0.9)];
+const piGrape = (x, y) => [C(x, y, 1.6, 'ik'), C(x + 3, y, 1.6, 'ik'), C(x + 1.5, y + 2.6, 1.6, 'ik'), S(`M${x + 1.5} ${y - 1.4} q1 -3 3 -3`, 'ik', 1)];
+const MKpi = {
+alaska_peninsula: () => [...ozSea(), ...piTongue(54, 12, 8, 40, 6), ...ozCone(36, 28, 5, 12), ...ozCone(24, 34, 4, 9, false), ...ozLand(6, 46, 3, 2)],
+cape_cod: () => [...ozSea(), ...piTongue(10, 28, 46, 20, 5), P('M46 20 Q54 20 52 30 Q50 36 44 36 L44 30 Q48 28 46 20 Z', 'bs'), ...paLH(30, 28), S('M14 40 L34 36 M16 46 L40 42', 'ik', 1.2)],
+delmarva_peninsula: () => [...ozSea(), ...piTongue(30, 8, 30, 50, 8), E(44, 28, 5, 14, 'lo'), mmEll(44, 28, 5, 14, 'ik', 1.2), ...pcCrab(18, 40, 0.9), ...paSpan(36, 54, 18)],
+labrador_peninsula: () => [...ozSea(), P('M8 14 L24 8 L46 12 L52 30 L40 50 L22 52 L12 36 Z', 'bs'), S('M8 14 L24 8 L46 12 L52 30 L40 50 L22 52 L12 36 Z', 'ik', 1.3), ...ntConifer(20, 20, 14, 5, 'lo'), ...ntConifer(30, 26, 14, 5, 'lo'), ...ntConifer(26, 34, 12, 4, 'lo'), ...pgDeer(38, 40, 0.8)],
+ungava_peninsula: () => [...ozSea(), P('M6 20 L34 6 L52 18 L46 46 L20 54 Z', 'bs'), S('M6 20 L34 6 L52 18 L46 46 L20 54 Z', 'ik', 1.3), ...pgFox(24, 28, 0.9), S('M16 40 L40 40 M20 46 L34 46', 'hi', 1.2), ...ozBerg(52, 40, 0.5)],
+olympic_peninsula: () => [...ozSea(), P('M12 12 L40 10 L48 30 L40 52 L12 50 Z', 'bs'), S('M12 12 L40 10 L48 30 L40 52 L12 50 Z', 'ik', 1.3), ...opMtn(30, 34, 11, 18, 'hi', true), ...ntConifer(16, 22, 16, 6, 'lo'), ...ntConifer(40, 26, 16, 6, 'lo'), S('M22 16 q-1 4 0 6 M30 12 q-1 4 0 6', 'hi', 1)],
+seward_peninsula: () => [...ozSea(), ...piTongue(56, 30, 10, 28, 9), ...ovWhale(14, 44), ...ozSeal(44, 46, 0.7), P('M20 24 L24 20 L28 24 L24 28 Z', 'hi')],
+absheron_peninsula: () => [...ozSea(), ...piTongue(4, 36, 54, 30, 9), ...pbDerrick(20, 34), ...pbDerrick(34, 32), ...pbTower(46, 32), S('M6 52 L54 48', 'ik', 1.2)],
+al_faw_peninsula: () => [...ozSea(), P('M4 6 L56 6 L56 24 Q44 22 40 30 Q30 44 20 36 Q10 24 4 24 Z', 'bs'), S('M4 24 Q10 24 20 36 Q30 44 40 30 Q44 22 56 24', 'ik', 1.3), S('M16 12 Q24 16 30 10 Q38 16 46 10', 'lo', 2.2), ...orBoat(34, 48, 1, 'hi')],
+boso_peninsula: () => [...ozSea(), ...piTongue(40, 8, 24, 48, 9), ...peBuilds(36, 22), ...peBuilds(38, 34), ...opMtn(54, 14, 5, 10, 'hi', true), onWave(52, 'ik', 1.2)],
+chukchi_peninsula: () => [...ozSea(), ...piTongue(4, 34, 54, 30, 9), P('M50 30 L56 26 L56 34 Z', 'hi'), ...ozLand(30, 48, 12, 2.5, 'hi'), ...ozSeal(30, 46, 0.5)],
+gyda_peninsula: () => [P('M0 0 L60 0 L60 14 L0 14 Z', 'bs'), ...piTongue(30, 14, 30, 50, 9, 'hi'), S('M24 20 L24 40 M36 20 L36 44', 'ik', 1), ...piStar(48, 30), ...piStar(14, 36)],
+izu_peninsula: () => [...ozSea(), ...piTongue(48, 12, 14, 46, 9), ...opMtn(34, 34, 8, 14, 'hi', true), S('M30 24 q-2 -3 0 -5 M36 22 q-2 -3 0 -5', 'hi', 1.4), ...paTree(24, 42, 3)],
+kii_peninsula: () => [...ozSea(), P('M16 12 L44 10 L54 28 L42 50 L26 54 L14 36 Z', 'bs'), S('M16 12 L44 10 L54 28 L42 50 L26 54 L14 36 Z', 'ik', 1.3), ...pePagoda(30, 36), ...ntConifer(40, 22, 14, 5, 'lo'), ...ntConifer(22, 22, 14, 5, 'lo')],
+noto_peninsula: () => [...ozSea(), ...piTongue(26, 52, 36, 10, 8), ...orBoat(12, 28, 0.8, 'hi'), S('M10 40 L20 40 M8 44 L20 44', 'ik', 1.4), ...piStar(48, 44)],
+oga_peninsula: () => [...ozSea(), ...piTongue(54, 30, 12, 30, 12), ...piCliff(8, 34, 10, 8), onWave(48, 'ik', 1.4), S('M24 22 L24 34 M30 22 L30 34', 'ik', 1)],
+oshima_peninsula: () => [...ozSea(), ...piTongue(30, 6, 30, 46, 8), P('M12 46 L30 36 L48 46 L30 54 Z', 'lo'), S('M12 46 L30 36 L48 46', 'ik', 1.2), ...ozCone(30, 28, 6, 12, false)],
+leizhou_peninsula: () => [...ozSea(), P('M4 10 L56 10 L56 26 L40 30 L22 46 L14 34 L4 26 Z', 'bs'), S('M4 26 L14 34 L22 46 L40 30 L56 26', 'ik', 1.3), C(40, 40, 3, 'hi'), C(46, 46, 2, 'hi'), ...paTree(24, 24, 3)],
+liaodong_peninsula: () => [...ozSea(), ...piTongue(30, 8, 36, 50, 10), ...pbDerrick(26, 28), S('M10 22 L50 22', 'ik', 1.6), P('M24 40 L30 34 L36 40 Z', 'ik'), ...orBoat(48, 48, 0.8, 'hi')],
+shandong_peninsula: () => [...ozSea(), ...piTongue(4, 30, 54, 24, 10), ...paSpan(10, 24, 40), ...piStar(40, 42), S('M30 22 L30 14 M34 22 L34 16', 'ik', 1.4)],
+shimokita_peninsula: () => [...ozSea(), P('M14 54 L16 30 Q14 14 28 10 L46 8 L50 16 L40 18 L32 28 L30 54 Z', 'bs'), S('M14 54 L16 30 Q14 14 28 10 L46 8 L50 16 L40 18 L32 28 L30 54', 'ik', 1.3), ...paTree(22, 26, 3), ...ozCone(34, 20, 4, 6, false)],
+shiretoko_peninsula: () => [...ozSea(), ...piTongue(8, 40, 52, 22, 8), ...ozBerg(44, 44, 0.8), ...ozSeal(30, 46, 0.7), ...opMtn(30, 34, 8, 12, 'hi', true)],
+taymyr_peninsula: () => [...ozSea(), P('M0 0 L60 0 L60 10 L0 10 Z', 'lo'), P('M6 14 L26 8 L54 14 L48 34 L34 52 L18 50 L10 30 Z', 'hi'), S('M6 14 L26 8 L54 14 L48 34 L34 52 L18 50 L10 30 Z', 'ik', 1.3), ...pgFox(32, 28, 0.9), ...pgDeer(24, 38, 0.7)],
+yamal_peninsula: () => [...ozSea(), ...piTongue(30, 54, 30, 8, 9), ...pbDerrick(26, 34), ...pgDeer(34, 28, 0.8), ...pbDerrick(34, 44), S('M12 20 L22 20 M40 20 L50 20', 'ik', 1.2)],
+kola_peninsula: () => [...ozSea(), P('M6 20 L26 10 L52 16 L46 38 L26 46 L12 40 Z', 'bs'), S('M6 20 L26 10 L52 16 L46 38 L26 46 L12 40 Z', 'ik', 1.3), ...opMtn(26, 36, 10, 14, 'hi', true), E(40, 30, 4, 3, 'lo'), E(16, 30, 3, 2, 'lo'), S('M6 50 q12 -4 24 0', 'hi', 1.4)],
+italian_peninsula: () => [P('M6 6 L54 6 L54 14 L40 18 L36 30 L42 42 L50 56 L40 54 L28 42 L22 28 L12 18 Z', 'bs'), S('M12 18 L22 28 L28 42 L40 54 L50 56 L42 42 L36 30 L40 18', 'ik', 1.3), S('M6 10 L54 10', 'hi', 1.4), ...ozLand(10, 50, 5, 3, 'bs'), ...ozLand(50, 28, 3, 6, 'bs')],
+scandinavian_peninsula: () => [...ozSea(), P('M10 54 L18 14 L32 6 L50 8 L52 18 L40 26 L38 46 L30 54 Z', 'bs'), S('M10 54 L18 14 L32 6 L50 8 L52 18 L40 26 L38 46 L30 54', 'ik', 1.3), ...opMtn(26, 38, 9, 16, 'hi', true), ...ntConifer(34, 28, 14, 5, 'lo')],
+birds_head_peninsula: () => [...ozSea(), P('M6 14 Q16 8 26 14 Q34 6 44 10 L52 22 L42 28 L40 36 L36 56 L30 40 L24 32 L12 28 Z', 'bs'), S('M6 14 Q16 8 26 14 Q34 6 44 10 L52 22 L42 28 L40 36 L36 56 L30 40 L24 32 L12 28 Z', 'ik', 1.2), C(18, 18, 2.2, 'ik'), P('M10 18 L6 20 L10 22 Z', 'hi')],
+cape_york_peninsula: () => [...ozSea(), ...piTongue(30, 54, 30, 8, 8), ...pgTrees(26, 34, 40).slice(0, 2), ...ozTurtle(48, 34, 0.9), ...ozLand(48, 14, 5, 2.6)],
+northland_peninsula: () => [...ozSea(), ...piTongue(44, 54, 16, 10, 8), ...pcKiwi(36, 34, 0.9), ...ntConifer(28, 24, 12, 4, 'lo'), onWave(48, 'ik', 1.2)],
+papuan_peninsula: () => [...ozSea(), ...piTongue(6, 10, 54, 40, 7), ...ozCone(34, 30, 6, 12, false), ...paFlower(18, 28), S('M40 20 q5 -3 8 2', 'ik', 1.4)],
+tasman_peninsula: () => [...ozSea(), P('M10 8 L50 8 L50 26 L38 34 L32 50 L26 40 L14 32 L10 22 Z', 'bs'), S('M10 22 L14 32 L26 40 L32 50 L38 34 L50 26', 'ik', 1.3), ...piCliff(36, 40, 8, 6), ...paCow(24, 20, 0.9), ...paPony(40, 20, 0.7)],
+cape_agulhas: () => [...ozSea(), P('M0 0 L60 0 L60 6 L0 6 Z', 'bs'), P('M6 6 L54 6 L52 30 L40 40 L30 52 L26 40 L10 34 Z', 'bs'), S('M6 6 L10 34 L26 40 L30 52 L40 40 L52 30', 'ik', 1.3), ...paLH(30, 34), onWave(50, 'ik', 1.2)],
+cape_canaveral: () => [...ozSea(), ...piMass(44), ...peRocket(24, 44), ...peRocket(38, 44).slice(0, 2), S('M8 34 L12 34 M46 30 L50 30', 'hi', 1.4), ...piStar(48, 14)],
+cape_fear_headland: () => [...ozSea(), ...piTongue(10, 12, 48, 44, 10), ...ozLand(46, 22, 5, 3), E(48, 22, 2, 1, 'lo'), S('M6 52 Q14 46 22 50 Q30 54 38 50', 'ik', 1.2), C(18, 36, 1, 'ik')],
+cape_hatteras: () => [...ozSea(), P('M6 8 L12 8 Q10 30 22 40 Q34 50 54 50 L54 56 L6 56 Z', 'bs'), ...paLH(18, 30), onWave(20, 'ik', 1.2), S('M8 8 Q10 30 22 40 Q34 50 54 50', 'ik', 1.3), S('M40 24 q4 -4 8 0 q-4 -2 -8 4', 'ik', 1.2)],
+cape_reinga: () => [...ozSea(), ...piTongue(30, 56, 30, 14, 9), ...paLH(30, 20), S('M6 30 L18 30 M42 30 L54 30', 'ik', 1.2), P('M10 44 L16 40 L22 44 Z', 'lo')],
+cape_leeuwin: () => [...ozSea(), P('M0 8 L10 8 Q14 30 30 40 Q46 46 60 46 L60 60 L0 60 Z', 'bs'), S('M10 8 Q14 30 30 40 Q46 46 60 46', 'ik', 1.3), ...paLH(14, 26), ...ovWhale(44, 20)],
+lands_end: () => [...ozSea(), P('M0 28 L34 28 L38 34 L34 40 L40 46 L0 46 Z', 'bs'), S('M0 28 L34 28 L38 34 L34 40 L40 46', 'ik', 1.3), ...paPuffin(24, 26), ...paLH(10, 28), onWave(52, 'ik', 1.3), S('M42 34 L56 34', 'ik', 1.2)],
+north_cape_norway: () => [...ozSea(), ...piCliff(18, 36, 24, 18), E(44, 16, 5, 5, 'hi'), S('M44 6 L44 8 M44 24 L44 26 M35 16 L37 16 M51 16 L53 16', 'hi', 1.2), ...pgDeer(30, 22, 0.8), onWave(48, 'ik', 1.2)],
+cape_soya: () => [...ozSea(), P('M4 48 L4 30 Q16 14 34 10 L50 10 L50 20 L36 24 Q22 34 22 48 Z', 'bs'), S('M4 30 Q16 14 34 10 L50 10 L50 20 L36 24 Q22 34 22 48', 'ik', 1.3), ...paLH(46, 24), S('M30 46 L56 46', 'ik', 1.2)],
+karelian_isthmus: () => [P('M0 0 L60 0 L60 14 Q30 10 0 14 Z', 'lo'), P('M0 46 L60 46 L60 60 L0 60 Z', 'lo'), P('M0 14 Q30 10 60 14 L60 46 L0 46 Z', 'bs'), S('M0 14 Q30 10 60 14 M0 46 L60 46', 'ik', 1.3), ...ntConifer(12, 20, 14, 5, 'lo'), ...ntConifer(28, 20, 14, 5, 'lo'), ...ntConifer(44, 20, 14, 5, 'lo'), S('M6 34 L54 34', 'ik', 1.2)],
+kra_isthmus: () => [P('M0 0 L60 0 L60 16 L36 22 L32 38 L36 60 L0 60 Z', 'bs'), P('M36 22 Q44 28 60 22 L60 60 L36 60 Q40 40 36 22 Z', 'lo'), S('M36 22 L32 38 L36 60', 'ik', 1.3), S('M8 16 Q18 10 28 16', 'ik', 1.2), ...paTree(14, 36, 3)],
+isthmus_of_corinth: () => [...ozSea(), P('M0 0 L26 0 L26 20 L34 20 L34 0 L60 0 L60 28 L0 28 Z', 'bs'), P('M0 40 L60 40 L60 60 L0 60 Z', 'bs'), P('M26 20 L34 20 L34 40 L26 40 Z', 'bs'), S('M26 20 L26 40 M34 20 L34 40', 'ik', 1.2), ...paColumn(14, 26, 10)],
+isthmus_of_suez: () => [P('M0 0 L26 0 L24 26 L26 60 L0 60 Z', 'bs'), P('M34 0 L60 0 L60 60 L34 60 L36 30 Z', 'bs'), P('M26 0 L34 0 L36 30 L34 60 L26 60 L24 26 Z', 'lo'), S('M26 0 L24 26 L26 60 M34 0 L36 30 L34 60', 'ik', 1.2), ...orBoat(30, 24, 0.7, 'hi'), ...orBoat(30, 44, 0.7, 'hi')],
+isthmus_of_tehuantepec: () => [P('M0 0 L60 0 L60 20 L38 24 L38 38 L60 42 L60 60 L0 60 Z', 'lo'), P('M10 10 Q30 18 50 10 L50 50 Q30 42 10 50 Z', 'bs'), S('M10 10 Q30 18 50 10 M10 50 Q30 42 50 50', 'ik', 1.3), ...paWind(24, 36), ...paWind(36, 34)],
+niagara_peninsula: () => [P('M0 0 L60 0 L60 14 L0 14 Z', 'lo'), P('M0 46 L60 46 L60 60 L0 60 Z', 'lo'), P('M0 14 L60 14 L60 46 L0 46 Z', 'bs'), S('M0 14 L60 14 M0 46 L60 46', 'ik', 1.3), ...piGrape(10, 26), ...piGrape(22, 30), ...piGrape(34, 26), S('M30 14 L30 20 L26 32', 'hi', 2.2), S('M42 30 L56 30', 'ik', 1.2)],
+};
+for (const [id, fn] of Object.entries(MKpi)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 99: gulfs, lakes, rivers and sea routes, sourced, audited, hand-drawn ── */
+const pjLake = (cx, cy, rx, ry) => [E(cx, cy, rx + 3, ry + 3, 'bs'), E(cx, cy, rx, ry, 'lo'), mmEll(cx, cy, rx, ry, 'ik', 1.3), S(`M${cx - rx * 0.5} ${cy} q${rx * 0.25} -2 ${rx * 0.5} 0 t${rx * 0.5} 0`, 'hi', 1.2)];
+const pjRiver = (d, w = 4) => [S(d, 'lo', w + 2), S(d, 'hi', w)];
+const pjBanks = () => [P('M0 0 L60 0 L60 14 L0 14 Z', 'bs'), P('M0 46 L60 46 L60 60 L0 60 Z', 'bs'), S('M0 14 L60 14 M0 46 L60 46', 'ik', 1.2)];
+const pjShip = (x, y, s = 1) => [P(`M${x - 8 * s} ${y} L${x + 8 * s} ${y} L${x + 5 * s} ${y + 4 * s} L${x - 5 * s} ${y + 4 * s} Z`, 'ik'), S(`M${x} ${y} L${x} ${y - 10 * s}`, 'ik', 1.4), P(`M${x} ${y - 10 * s} L${x + 6 * s} ${y - 3 * s} L${x} ${y - 3 * s} Z`, 'hi')];
+const pjDots = (pts) => pts.map(([x, y]) => C(x, y, 1.3, 'hi'));
+const pjDashed = (d) => S(d, 'hi', 1.6);
+const pjLongLine = (x0, y0, x1, y1, bow = 8) => S(`M${x0} ${y0} Q${(x0 + x1) / 2} ${(y0 + y1) / 2 - bow} ${x1} ${y1}`, 'hi', 1.8);
+const MKpj = {
+gulf_of_maine: () => [...ozSea(), P('M0 0 L60 0 L60 22 Q44 24 38 36 L26 40 L10 52 L0 52 Z', 'bs'), S('M60 22 Q44 24 38 36 L26 40 L10 52', 'ik', 1.3), ...pcCrab(44, 46, 0.9), ...ovWhale(20, 20)],
+massachusetts_bay: () => [...ozSea(), P('M0 6 L18 6 Q30 14 30 28 Q30 40 18 48 L0 50 Z', 'bs'), S('M18 6 Q30 14 30 28 Q30 40 18 48', 'ik', 1.3), ...paLH(10, 34), ...pjShip(44, 30, 0.8), ...pjShip(48, 46, 0.6)],
+manicouagan_reservoir: () => [...pjLake(30, 30, 19, 19), E(30, 30, 8, 8, 'bs'), mmEll(30, 30, 8, 8, 'ik', 1.2), ...opMtn(30, 34, 5, 8, 'bs', true), S('M30 6 L30 11', 'ik', 2)],
+lake_manitoba: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), P('M14 10 Q40 4 44 24 Q48 46 28 52 Q14 54 12 36 Q10 20 14 10 Z', 'lo'), S('M14 10 Q40 4 44 24 Q48 46 28 52 Q14 54 12 36 Q10 20 14 10', 'ik', 1.3), ...otFish(26, 30), ...otFish(34, 40)],
+lake_mead: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), P('M6 40 Q18 28 30 32 Q44 36 54 24 L54 34 Q44 46 30 44 Q16 42 6 50 Z', 'lo'), P('M4 14 L16 14 L18 52 L4 52 Z', 'ik'), box(14, 14, 3, 40, 'hi'), S('M4 14 L18 14', 'ik', 1.6), ...pbTower(40, 20).slice(0, 2)],
+glacial_lake_missoula: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), P('M6 12 Q22 6 34 14 Q44 20 54 30 L54 44 Q38 40 26 46 Q10 42 6 30 Z', 'lo'), S('M6 12 Q22 6 34 14 Q44 20 54 30', 'ik', 1.2), ...ozBerg(16, 24, 0.9), ...ozBerg(32, 32, 0.7), ...ozBerg(24, 40, 0.6)],
+nettilling_lake: () => [...ozSea(), ...ozLand(30, 32, 24, 18, 'hi'), E(30, 32, 13, 7, 'lo'), mmEll(30, 32, 13, 7, 'ik', 1.2), S('M22 32 q4 -2 8 0 t8 0', 'hi', 1)],
+lake_of_the_woods: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), E(30, 32, 22, 18, 'lo'), mmEll(30, 32, 22, 18, 'ik', 1.2), ...[[16, 28], [24, 24], [34, 30], [42, 36], [28, 40], [20, 36], [38, 24], [46, 28]].flatMap(([x, y]) => [C(x, y, 2.4, 'bs'), ...ntConifer(x, y - 8, 7, 3, 'lo')])],
+lake_okeechobee: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), E(30, 34, 20, 13, 'lo'), mmEll(30, 34, 20, 13, 'ik', 1.2), ...paFlower(10, 16), ...paFlower(48, 16), S('M10 48 q4 -2 8 0 t8 0 t8 0 t8 0', 'lo', 1.6)],
+lake_patzcuaro: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), E(30, 34, 22, 14, 'lo'), mmEll(30, 34, 22, 14, 'ik', 1.2), ...ozLand(30, 34, 5, 3), ...opMtn(12, 20, 8, 12, 'ik', false), ...orBoat(44, 38, 0.7, 'hi'), ...orBoat(16, 42, 0.6, 'hi')],
+lake_pontchartrain: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), E(30, 28, 24, 14, 'lo'), mmEll(30, 28, 24, 14, 'ik', 1.2), ...pgBridge(4, 56, 48), S('M4 46 L56 46', 'ik', 1.2)],
+pyramid_lake_nevada: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), E(30, 38, 24, 14, 'lo'), mmEll(30, 38, 24, 14, 'ik', 1.2), P('M22 34 L30 18 L38 34 Z', 'hi'), S('M22 34 L30 18 L38 34 Z', 'ik', 1.4), S('M30 18 L30 34', 'ik', 1)],
+smallwood_reservoir: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), P('M6 30 Q14 12 26 18 Q32 30 44 22 Q54 30 48 44 Q40 52 28 44 Q18 52 10 44 Z', 'lo'), S('M6 30 Q14 12 26 18 Q32 30 44 22 Q54 30 48 44 Q40 52 28 44 Q18 52 10 44 Z', 'ik', 1.3), S('M20 16 L20 6 M16 10 L24 10 M20 8 L26 4', 'ik', 1.6), ...ntConifer(48, 8, 14, 5, 'lo')],
+lake_tahoe: () => [...opMtn(10, 26, 14, 18, 'bs', true), ...opMtn(50, 26, 14, 18, 'bs', true), P('M0 26 L60 26 L60 60 L0 60 Z', 'bs'), E(30, 42, 22, 12, 'lo'), mmEll(30, 42, 22, 12, 'ik', 1.2), ...ntConifer(10, 12, 14, 5, 'lo'), ...ntConifer(50, 12, 14, 5, 'lo'), S('M16 42 q4 -2 8 0 t8 0 t8 0', 'hi', 1.2)],
+lake_winnipegosis: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), P('M42 6 Q54 20 46 38 Q38 54 22 54 Q14 44 22 34 Q34 26 34 14 Z', 'lo'), S('M42 6 Q54 20 46 38 Q38 54 22 54 Q14 44 22 34 Q34 26 34 14 Z', 'ik', 1.3), ...ntConifer(12, 14, 14, 5, 'lo'), ...otFish(40, 36)],
+salton_sea: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), P('M10 14 L50 14 L50 44 L10 44 Z', 'lo'), S('M10 14 L50 14 L50 44 L10 44 Z', 'ik', 1.3), S('M14 20 L46 20 M14 26 L46 26', 'hi', 1), ...piStar(18, 34), ...piStar(32, 38), ...piStar(44, 32), S('M4 52 L56 52', 'ik', 1.6), S('M4 52 L10 48 L16 52 L22 48 L28 52', 'ik', 1.2)],
+lake_argyle: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), P('M6 22 Q16 12 28 20 Q40 28 52 16 L54 34 Q42 46 28 38 Q16 32 8 44 Z', 'lo'), S('M6 22 Q16 12 28 20 Q40 28 52 16', 'ik', 1.3), P('M44 8 L52 8 L52 22 L44 22 Z', 'ik'), ...ozLand(24, 30, 4, 2.4)],
+lake_mackay: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), E(30, 32, 24, 16, 'hi'), mmEll(30, 32, 24, 16, 'ik', 1.2), S('M14 28 L26 24 M30 34 L44 30 M18 38 L30 40', 'ik', 1), ...piStar(36, 24), S('M0 52 q8 -6 16 0 t16 0 t16 0 t16 0', 'ik', 1.4)],
+lake_taupo: () => [...pjLake(30, 36, 22, 14), ...ozCone(30, 20, 9, 14), S('M30 6 q-3 -3 0 -5', 'hi', 1.4), S('M16 34 q4 -2 8 0 t8 0 t8 0', 'hi', 1.2)],
+todos_los_santos_lake: () => [...opMtn(30, 30, 18, 24, 'hi', true), P('M0 30 L60 30 L60 60 L0 60 Z', 'bs'), E(30, 44, 22, 10, 'lo'), mmEll(30, 44, 22, 10, 'ik', 1.2), ...ntConifer(8, 22, 14, 5, 'lo'), ...ntConifer(52, 22, 14, 5, 'lo')],
+shatt_al_arab: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), ...pjRiver('M6 4 Q16 20 30 26 Q38 40 30 56', 4), ...pjRiver('M54 4 Q44 20 30 26', 4), ...nlPalm(14, 40, 12, 'lo'), ...nlPalm(46, 36, 12, 'lo')],
+orontes_river: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), ...pjRiver('M10 6 Q30 14 20 30 Q10 44 46 54', 3.6), ...opMtn(46, 20, 8, 10, 'ik', false), ...paTree(14, 52, 3), P('M50 50 Q60 46 60 60 L48 60 Z', 'lo')],
+kura_river: () => [...opMtn(14, 28, 13, 20, 'hi', true), ...opMtn(44, 28, 13, 20, 'hi', true), P('M0 28 L60 28 L60 60 L0 60 Z', 'bs'), ...pjRiver('M30 28 Q40 38 28 44 Q22 52 34 58', 3.6), ...otFish(20, 52)],
+aras_river: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), ...pjRiver('M4 14 Q20 6 30 24 Q40 42 56 40', 4), S('M30 4 L30 56', 'ik', 1.2), P('M24 8 L30 4 L36 8 Z', 'hi'), P('M24 52 L30 56 L36 52 Z', 'hi')],
+tarim_river: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), P('M6 30 Q16 16 30 24 Q44 32 54 20 L54 40 Q40 48 28 42 Q14 38 6 46 Z', 'hi'), ...pjRiver('M4 26 Q22 20 34 32 Q46 42 56 36', 3.4), S('M8 52 q6 -6 12 0 t12 0 t12 0', 'ik', 1.4)],
+maritime_silk_road: () => [...ozSea(), ...pjShip(18, 28, 1), ...pjShip(44, 38, 0.8), pjDashed('M6 46 Q30 32 56 20'), P('M46 8 L56 8 L56 14 L46 14 Z', 'hi'), S('M10 14 L24 14', 'ik', 1.2)],
+northeast_passage: () => [...ozSea(), P('M0 0 L60 0 L60 14 Q40 10 20 16 L0 14 Z', 'hi'), ...ozBerg(14, 36, 0.8), ...pjShip(34, 34, 0.9), pjDashed('M4 28 Q30 20 56 30'), ...ozIce(48, 46, 8, 3)],
+northern_sea_route: () => [...ozSea(), P('M0 0 L60 0 L60 12 L0 12 Z', 'hi'), P('M0 40 L60 40 L60 60 L0 60 Z', 'bs'), ...pjShip(24, 30, 0.9), ...ozBerg(46, 22, 0.8), pjDashed('M2 26 L58 26')],
+northwest_passage: () => [...ozSea(), ...ozIce(12, 14, 9, 4), ...ozIce(34, 10, 10, 4), ...ozIce(50, 22, 8, 4), ...ozIce(18, 44, 10, 4), ...ozIce(44, 46, 11, 4), ...pjShip(30, 30, 0.9), pjDashed('M2 34 Q20 24 36 34 Q48 40 58 28')],
+indian_ocean_trade: () => [...ozSea(), ...ozLand(8, 28, 8, 12), ...ozLand(52, 24, 8, 12), ...pjShip(28, 28, 1), pjLongLine(10, 40, 50, 36, 6), E(30, 46, 3, 3, 'hi')],
+inside_passage: () => [P('M0 0 L26 0 L24 26 L10 60 L0 60 Z', 'bs'), P('M34 0 L60 0 L60 40 L48 60 L38 60 L36 30 Z', 'bs'), ...ntConifer(8, 10, 14, 5, 'lo'), ...ntConifer(50, 8, 14, 5, 'lo'), ...pjShip(30, 34, 0.9), S('M8 42 L22 42', 'ik', 1)],
+intracoastal_waterway: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), P('M40 0 L60 0 L60 60 L40 60 Z', 'lo'), ...pjRiver('M30 4 L30 56', 5), ...pjShip(30, 28, 0.7), ...nlPalm(14, 50, 12, 'lo'), ...nlPalm(22, 54, 10, 'lo'), S('M40 4 L40 56', 'ik', 1.2)],
+yonaguni_monument: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'lo'), P('M10 52 L10 40 L24 40 L24 30 L36 30 L36 20 L48 20 L48 52 Z', 'bs'), S('M10 40 L24 40 L24 30 L36 30 L36 20 L48 20', 'ik', 1.4), S('M0 10 q8 -4 16 0 t16 0 t16 0 t16 0', 'hi', 1.4), ...otFish(14, 22)],
+isla_grande_tierra_del_fuego: () => [...ozSea(), P('M10 14 L28 10 L52 20 L50 44 L20 52 L12 34 Z', 'bs'), S('M10 14 L28 10 L52 20 L50 44 L20 52 L12 34 Z', 'ik', 1.3), P('M0 22 L10 20 L10 30 L0 32 Z', 'hi'), ...paCow(30, 32, 0.8), ...ozCone(44, 30, 4, 7, true)],
+northern_neck: () => [...ozSea(), P('M6 0 L54 0 L54 60 L6 60 Z', 'bs'), ...pjRiver('M6 0 L6 60', 8), P('M50 0 L60 0 L60 60 L50 60 Z', 'lo'), ...pjRiver('M12 14 L40 22', 4), ...pcCrab(30, 44, 0.8), S('M18 30 L40 36', 'ik', 1)],
+adams_bridge: () => [...ozSea(), ...ozLand(8, 30, 8, 8), ...ozLand(52, 30, 8, 8), ...[16, 22, 28, 34, 40, 46].map((x, i) => E(x, 30 + (i % 2) * 2, 3, 2.4, 'bs')), S('M14 30 L46 30', 'ik', 1.2)],
+salento: () => [...ozSea(), P('M26 0 L46 0 L42 24 L34 48 L24 40 L28 20 Z', 'bs'), S('M26 0 L28 20 L24 40 L34 48 L42 24 L46 0', 'ik', 1.3), ...paTree(32, 26, 3), ...paTree(38, 18, 3), ...paHouse(30, 42, 5)],
+jutland: () => [...ozSea(), P('M18 8 L40 4 L38 24 L44 34 L40 54 L8 54 L12 30 Z', 'bs'), S('M18 8 L40 4 L38 24 L44 34 L40 54', 'ik', 1.3), P('M38 4 L44 0 L40 8 Z', 'hi'), ...paWind(22, 40), ...paCow(26, 24, 0.8)],
+punta_parinas: () => [...ozSea(), P('M54 0 L60 0 L60 60 L48 60 L34 40 L18 36 L14 28 L22 20 L40 14 Z', 'bs'), S('M54 0 L40 14 L22 20 L14 28 L18 36 L34 40 L48 60', 'ik', 1.3), ...paLH(24, 26), onWave(48, 'ik', 1.2)],
+cabo_da_roca: () => [...ozSea(), ...piCliff(30, 38, 26, 18), ...paLH(44, 20), onWave(46, 'ik', 1.4), onWave(54, 'ik', 1.2)],
+south_east_cape: () => [...ozSea(), P('M30 0 L60 0 L60 40 L40 54 L34 40 L30 20 Z', 'bs'), S('M30 0 L30 20 L34 40 L40 54 L60 40', 'ik', 1.3), ...ntConifer(46, 8, 14, 5, 'lo'), ...ozSeal(14, 44, 0.8), onWave(52, 'ik', 1.3)],
+alpide_belt: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'lo'), ...[[8, 38, 6, 12], [18, 34, 7, 16], [28, 30, 8, 20], [40, 28, 9, 24], [52, 32, 7, 16]].flatMap(([x, y, w, h]) => opMtn(x, y + 12, w, h, 'bs', true)), S('M4 12 L12 12 M16 10 L24 10 M30 14 L36 14 M44 8 L50 8', 'hi', 1.4)],
+mediterranean_basin: () => [...ozSea(), P('M0 0 L60 0 L60 16 L44 20 L34 16 L20 18 L6 16 L0 20 Z', 'bs'), P('M0 46 L12 42 L30 46 L50 42 L60 44 L60 60 L0 60 Z', 'bs'), ...paTree(14, 14, 3), ...paTree(38, 14, 3), ...paTree(22, 54, 3), ...paTree(46, 54, 3), C(30, 33, 4, 'hi')],
+emba_river: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), ...pjRiver('M4 12 Q22 22 34 32 Q46 40 56 50', 3.6), P('M46 40 L60 38 L60 60 L44 60 Z', 'lo'), ...pbDerrick(14, 40), ...pbDerrick(24, 52).slice(0, 2)],
+ili_river: () => [...opMtn(10, 24, 12, 18, 'hi', true), P('M0 24 L60 24 L60 60 L0 60 Z', 'bs'), ...pjRiver('M10 28 Q24 36 36 40 Q46 48 54 56', 3.6), E(48, 54, 6, 4, 'lo'), ...pgDeer(18, 50, 0.7)],
+};
+for (const [id, fn] of Object.entries(MKpj)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 100: ranges, plateaus, valleys and canyons of North America, sourced, audited, hand-drawn ── */
+const pkGround = (y) => P(`M0 ${y} L60 ${y} L60 60 L0 60 Z`, 'bs');
+const pkRange = (xs, base, h, cap = true) => xs.flatMap((x, i) => opMtn(x, base, 9 + (i % 2) * 2, h - (i % 3) * 5, 'bs', cap));
+const pkBison = (x, y, s = 1) => [E(x, y, 5.6 * s, 3.8 * s, 'ik'), C(x + 6 * s, y + 0.8 * s, 2.2 * s, 'ik'), E(x + 2.6 * s, y - 2 * s, 3 * s, 2.2 * s, 'ik'), S(`M${x - 3 * s} ${y + 3 * s} L${x - 3 * s} ${y + 7 * s} M${x + 3 * s} ${y + 3 * s} L${x + 3 * s} ${y + 7 * s}`, 'ik', 1.3)];
+const pkButte = (x, y, w, h) => [P(`M${x} ${y} L${x + 1.5} ${y - h} L${x + w - 1.5} ${y - h} L${x + w} ${y} Z`, 'bs'), S(`M${x + 1.5} ${y - h} L${x + w - 1.5} ${y - h}`, 'ik', 1.4), S(`M${x + w * 0.35} ${y - h} L${x + w * 0.3} ${y} M${x + w * 0.65} ${y - h} L${x + w * 0.7} ${y}`, 'ik', 0.9)];
+const pkCanyon = (x0, x1, top, bot) => [P(`M0 ${top} L${x0} ${top} L${x0 + 5} ${bot} L${x1 - 5} ${bot} L${x1} ${top} L60 ${top} L60 60 L0 60 Z`, 'bs'), S(`M${x0} ${top} L${x0 + 5} ${bot} L${x1 - 5} ${bot} L${x1} ${top}`, 'ik', 1.4), S(`M${x0 + 5} ${bot} L${x1 - 5} ${bot}`, 'hi', 2)];
+const pkDome = (cx, base, w, h) => [P(`M${cx - w} ${base} Q${cx - w} ${base - h} ${cx} ${base - h} Q${cx + w} ${base - h} ${cx + w} ${base} Z`, 'bs'), S(`M${cx - w} ${base} Q${cx - w} ${base - h} ${cx} ${base - h} Q${cx + w} ${base - h} ${cx + w} ${base}`, 'ik', 1.3)];
+const pkSun = (x, y) => [C(x, y, 3.4, 'hi'), S(`M${x} ${y - 6} L${x} ${y - 4.6} M${x - 6} ${y} L${x - 4.6} ${y} M${x + 6} ${y} L${x + 4.6} ${y}`, 'hi', 1.2)];
+const pkCactus = (x, y) => [S(`M${x} ${y} L${x} ${y - 9} M${x} ${y - 4} L${x - 3} ${y - 4} L${x - 3} ${y - 7} M${x} ${y - 5} L${x + 3} ${y - 5} L${x + 3} ${y - 8}`, 'ik', 1.8)];
+const pkFurrow = (y) => S(`M0 ${y} Q15 ${y - 2} 30 ${y} T60 ${y}`, 'ik', 1);
+const MKpk = {
+adirondack_mountains: () => [pkGround(46), ...pkDome(30, 46, 20, 22), ...pkDome(12, 46, 10, 10), ...pkDome(50, 46, 10, 12), ...pgTrees(8, 52, 46).slice(0, 5), ...pjLake(22, 52, 8, 3)],
+blue_ridge_mountains: () => [P('M0 46 Q12 30 24 38 Q36 24 48 34 Q54 32 60 36 L60 60 L0 60 Z', 'hi'), P('M0 52 Q14 38 28 46 Q42 34 60 44 L60 60 L0 60 Z', 'bs'), S('M0 46 Q12 30 24 38 Q36 24 48 34 Q54 32 60 36', 'ik', 1.2), S('M6 30 q8 -3 14 0 M34 20 q8 -3 14 0', 'hi', 1.2)],
+great_smoky_mountains: () => [...pkRange([12, 30, 48], 42, 26), pkGround(42), S('M4 28 q10 -4 20 0 t20 0 t12 0', 'hi', 1.4), ...pbBear(22, 50, 0.9), ...ntConifer(46, 36, 14, 5, 'lo')],
+atlantic_plain: () => [pkGround(34), S('M0 34 Q15 32 30 34 T60 34', 'ik', 1.3), S('M6 42 L54 42 M10 48 L50 48 M14 54 L46 54', 'ik', 1), ...paTree(14, 34, 4), ...paTree(30, 34, 4), ...paTree(46, 34, 4)],
+basin_and_range_province: () => [pkGround(40), ...opMtn(10, 40, 7, 16, 'bs', false), ...opMtn(30, 40, 8, 20, 'bs', false), ...opMtn(50, 40, 7, 16, 'bs', false), E(20, 46, 6, 2.4, 'hi'), E(40, 46, 6, 2.4, 'hi'), ...pkCactus(30, 54)],
+black_hills: () => [pkGround(44), ...pkDome(16, 44, 14, 14), ...pkDome(38, 44, 16, 20), ...pkDome(54, 44, 8, 10), ...ntConifer(14, 24, 14, 5, 'lo'), ...ntConifer(36, 20, 14, 5, 'lo'), ...pkBison(18, 54, 0.8)],
+devils_tower: () => [pkGround(46), ...pkButte(22, 46, 16, 32), S('M26 14 L26 46 M30 14 L30 46 M34 14 L34 46', 'ik', 1), ...ntConifer(8, 30, 14, 5, 'lo'), ...ntConifer(50, 30, 14, 5, 'lo')],
+blue_mountains_pacific_northwest: () => [pkGround(42), ...pkRange([14, 32, 48], 42, 22, false), ...pgTrees(8, 54, 42).slice(0, 6), ...pgDeer(40, 52, 0.8)],
+brooks_range: () => [P('M0 38 L60 38 L60 60 L0 60 Z', 'hi'), ...pkRange([12, 28, 44], 38, 26, true), S('M0 38 L60 38', 'ik', 1.3), ...pgFox(20, 50, 0.8), S('M34 48 L54 48', 'ik', 1)],
+cascade_range: () => [pkGround(46), ...ozCone(14, 46, 10, 22, false), ...ozCone(32, 46, 12, 30, true), ...ozCone(50, 46, 9, 18, false), ...ntConifer(22, 30, 16, 5, 'lo'), ...ntConifer(42, 30, 16, 5, 'lo')],
+cascade_volcanoes: () => [pkGround(46), ...ozCone(18, 46, 12, 26, true), ...ozCone(42, 46, 12, 30, true), S('M18 20 q-3 -4 0 -7 M42 16 q-3 -4 0 -7', 'hi', 1.6), S('M10 54 L26 54 M34 54 L52 54', 'hi', 1.6)],
+columbia_river_gorge: () => [...pkCanyon(14, 46, 14, 40), ...pjRiver('M30 40 L30 58', 5), P('M22 22 L24 30 L26 22 Z', 'hi'), S('M24 14 L24 30', 'hi', 2.2), S('M6 8 q8 -3 16 0 M38 8 q8 -3 16 0', 'ik', 1.2)],
+north_cascades: () => [P('M0 40 L60 40 L60 60 L0 60 Z', 'bs'), ...opMtn(14, 40, 12, 28, 'hi', true), ...opMtn(34, 40, 14, 34, 'hi', true), ...opMtn(52, 40, 10, 22, 'hi', true), ...ntConifer(8, 40, 12, 5, 'lo'), ...ntConifer(46, 42, 12, 5, 'lo'), S('M14 52 L48 52', 'lo', 2)],
+central_valley_california: () => [P('M0 0 L14 0 L12 60 L0 60 Z', 'bs'), P('M46 0 L60 0 L60 60 L48 60 Z', 'bs'), ...paTree(26, 18, 3), ...paTree(34, 18, 3), ...paTree(26, 36, 3), ...paTree(34, 36, 3), ...paTree(26, 54, 3), ...paTree(34, 54, 3), S('M18 2 L18 58 M42 2 L42 58', 'ik', 1)],
+channeled_scablands: () => [pkGround(24), S('M0 24 L60 24', 'ik', 1.2), P('M6 24 L14 34 L20 24 Z M24 24 L32 38 L40 24 Z M44 24 L50 32 L58 24 Z', 'ik'), S('M10 40 Q30 34 50 42 M6 50 Q30 44 54 52', 'lo', 2.4)],
+chimney_rock: () => [pkGround(46), P('M16 46 L24 32 L28 32 L28 6 L33 6 L33 32 L37 32 L46 46 Z', 'bs'), S('M16 46 L24 32 L28 32 L28 6 L33 6 L33 32 L37 32 L46 46', 'ik', 1.3), ...pjRiver('M0 52 Q30 48 60 54', 3)],
+colorado_plateau: () => [...pgPlateau(4, 56, 50, 18), ...pgPlateau(14, 46, 32, 10), ...pkCactus(10, 56), S('M14 38 L46 38', 'ik', 1), ...pkSun(48, 10)],
+monument_valley: () => [pkGround(50), ...pkButte(8, 50, 10, 24), ...pkButte(26, 50, 12, 34), ...pkButte(46, 50, 8, 18), ...pkCactus(18, 58).slice(0, 1), ...pkSun(52, 8), ...paPony(16, 56, 0.7)],
+columbia_plateau: () => [...pgPlateau(2, 58, 34, 14), P('M0 34 L60 34 L60 60 L0 60 Z', 'bs'), ...pjRiver('M30 34 Q22 44 32 52 Q38 58 30 60', 3.6), S('M4 46 L18 46 M42 46 L56 46', 'ik', 1), S('M6 12 q4 -4 8 0 M44 14 q4 -4 8 0', 'ik', 1.2)],
+copper_canyon: () => [...pkCanyon(8, 52, 14, 46), ...pkCanyon(18, 42, 20, 46).slice(0, 2), S('M0 14 L8 14 M52 14 L60 14', 'ik', 1.4), ...paTree(6, 14, 3), ...paTree(54, 14, 3), ...pjRiver('M30 46 L30 58', 4)],
+glenwood_canyon: () => [...pkCanyon(12, 48, 18, 42), S('M16 22 L20 40 M44 22 L40 40', 'ik', 1), S('M24 38 L36 38 M22 42 L38 42', 'ik', 1.4), ...pjRiver('M30 42 L30 58', 4), ...paTree(6, 18, 3)],
+hells_canyon: () => [...pkCanyon(10, 50, 12, 44), P('M18 30 L22 24 L24 30 Z', 'hi'), S('M0 12 L10 12 M50 12 L60 12', 'ik', 1.4), ...pjRiver('M30 44 L30 58', 4), S('M14 20 L18 24', 'ik', 1)],
+hudson_bay_lowlands: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), ...[[10, 14], [24, 22], [38, 12], [46, 30], [16, 38], [32, 44], [50, 48], [8, 52]].flatMap(([x, y]) => [E(x, y, 5, 2.6, 'lo'), mmEll(x, y, 5, 2.6, 'ik', 0.9)]), S('M4 28 q6 -3 12 0', 'hi', 1)],
+high_plains_us: () => [pkGround(30), ...pkBison(18, 40, 0.9), ...pkBison(40, 48, 0.8), S('M0 30 L60 30', 'ik', 1.3), S('M6 52 L20 52 M30 56 L52 56', 'ik', 1), S('M4 14 q8 -3 14 0 M34 12 q8 -3 14 0', 'ik', 1.2)],
+laurentian_mountains: () => [pkGround(46), ...pkDome(14, 46, 12, 12), ...pkDome(32, 46, 14, 18), ...pkDome(50, 46, 10, 10), ...ntConifer(10, 32, 12, 4, 'lo'), ...ntConifer(46, 34, 12, 4, 'lo'), ...pjLake(30, 54, 12, 3)],
+mexican_plateau: () => [...pgPlateau(2, 58, 40, 16), pkGround(40), ...pkCactus(14, 56), ...pkCactus(44, 54), S('M20 44 L30 44 M30 50 L40 50', 'ik', 1), ...pkSun(48, 12)],
+mount_edziza: () => [pkGround(48), ...ozCone(30, 48, 18, 28, true), P('M14 48 L22 40 L30 48 Z', 'ik'), S('M30 22 q-3 -4 0 -7', 'hi', 1.6), S('M32 30 Q40 40 46 48', 'hi', 2), S('M4 54 L56 54', 'ik', 1)],
+ozarks: () => [pkGround(46), ...pkDome(14, 46, 12, 10), ...pkDome(34, 46, 14, 14), ...pkDome(52, 46, 8, 8), P('M26 46 Q30 38 34 46 Z', 'ik'), ...ntConifer(10, 28, 14, 5, 'lo'), ...pgDeer(46, 56, 0.7), S('M6 54 L22 54', 'lo', 2)],
+coast_mountains: () => [P('M0 40 L60 40 L60 60 L0 60 Z', 'lo'), ...pkRange([12, 28, 46], 40, 28, true), S('M0 40 L60 40', 'ik', 1.2), ...ozBerg(48, 52, 0.7), ...otFish(14, 52)],
+olympic_mountains: () => [pkGround(46), ...opMtn(30, 46, 16, 30, 'hi', true), ...opMtn(12, 46, 9, 16, 'bs', false), ...opMtn(50, 46, 9, 18, 'bs', false), ...ntConifer(10, 30, 16, 5, 'lo'), ...ntConifer(50, 30, 16, 5, 'lo'), S('M4 10 q6 4 6 8 M12 8 q6 4 6 8 M48 10 q6 4 6 8', 'lo', 1.2)],
+piedmont_plateau: () => [...pgPlateau(2, 58, 32, 8), pkGround(32), E(30, 46, 10, 5, 'ik'), S('M22 46 L38 46', 'hi', 1), ...ntConifer(10, 36, 14, 5, 'lo'), ...ntConifer(48, 36, 14, 5, 'lo'), ...pjRiver('M2 58 Q20 52 40 56 T58 54', 2.4)],
+front_range: () => [pkGround(46), ...opMtn(14, 46, 12, 30, 'hi', true), ...opMtn(32, 46, 12, 36, 'hi', true), P('M0 46 Q8 42 18 48 L18 60 L0 60 Z', 'bs'), ...pkBison(46, 54, 0.8), S('M36 50 L60 50', 'ik', 1)],
+teton_range: () => [pkGround(46), P('M4 46 L12 20 L18 32 L26 6 L34 30 L40 16 L50 46 Z', 'bs'), S('M4 46 L12 20 L18 32 L26 6 L34 30 L40 16 L50 46', 'ik', 1.4), P('M22 14 L26 6 L30 14 Z', 'hi'), ...pjLake(30, 54, 14, 3), ...pgDeer(52, 52, 0.6)],
+sawatch_range: () => [pkGround(48), ...opMtn(12, 48, 11, 26, 'bs', true), ...opMtn(30, 48, 12, 34, 'bs', true), ...opMtn(48, 48, 10, 24, 'bs', true), C(8, 10, 3.4, 'hi'), ...ntConifer(40, 36, 14, 4, 'lo')],
+uinta_mountains: () => [pkGround(46), P('M2 46 L14 24 L26 22 L40 22 L52 46 Z', 'bs'), S('M2 46 L14 24 L26 22 L40 22 L52 46', 'ik', 1.4), ...pjLake(22, 36, 5, 2.4), ...pjLake(38, 38, 5, 2.4), ...paFlower(56, 56)],
+wasatch_range: () => [pkGround(48), ...opMtn(14, 48, 12, 30, 'hi', true), ...opMtn(32, 48, 12, 38, 'hi', true), ...opMtn(50, 48, 10, 26, 'hi', true), S('M0 48 Q12 54 22 52 Q32 56 44 52 Q52 54 60 52', 'ik', 1.2), ...pjLake(30, 56, 10, 2.4)],
+great_lakes_st_lawrence_lowlands: () => [pkGround(24), P('M0 0 L60 0 L60 24 Q40 20 30 26 L0 22 Z', 'lo'), S('M0 22 L30 26 Q40 20 60 24', 'ik', 1.3), ...pjRiver('M40 26 Q46 40 52 58', 4), ...paTree(12, 40, 3), ...paTree(22, 46, 3), ...paHouse(12, 56, 5)],
+sierra_madre_occidental: () => [pkGround(46), ...pkRange([14, 32, 50], 46, 30, false), S('M6 20 L16 20 M24 14 L34 14', 'ik', 1.2), ...pkCactus(8, 56), S('M16 52 L52 52', 'ik', 1)],
+sierra_madre_oriental: () => [pkGround(46), ...pkRange([12, 30, 48], 46, 28, false), P('M26 46 Q30 38 34 46 Z', 'ik'), ...pgDeer(48, 56, 0.7), S('M4 52 L30 52', 'lo', 2)],
+sierra_madre_de_chiapas: () => [pkGround(46), ...opMtn(30, 46, 20, 34, 'bs', false), ...ntConifer(12, 30, 16, 6, 'lo'), ...ntConifer(48, 30, 16, 6, 'lo'), S('M24 16 q6 4 12 0 M20 24 q10 4 20 0', 'hi', 1.4), ...paTree(30, 54, 4)],
+sierra_madre_de_oaxaca: () => [pkGround(46), ...pkRange([14, 34, 50], 46, 26, false), S('M8 52 L14 52 M12 56 L18 56 M26 52 L32 52', 'lo', 2), ...paFlower(44, 58), ...paFlower(52, 58)],
+sierra_madre_del_sur: () => [pkGround(44), ...pkRange([12, 30, 48], 44, 30, false), S('M2 12 q8 4 8 10 M14 10 q8 4 8 10 M44 10 q8 4 8 10', 'lo', 1.2), ...pjRiver('M30 44 Q24 52 34 60', 3), ...paTree(14, 56, 3)],
+trans_mexican_volcanic_belt: () => [pkGround(46), ...ozCone(12, 46, 9, 20, true), ...ozCone(30, 46, 12, 30, true), ...ozCone(48, 46, 10, 22, true), S('M30 14 q-3 -4 0 -7', 'hi', 1.6), ...pkCactus(20, 58)],
+stone_mountain: () => [pkGround(48), ...pkDome(30, 48, 24, 26), S('M14 36 q10 -4 20 0 M18 28 q8 -3 14 0', 'ik', 1), ...paTree(8, 48, 4), ...paTree(52, 48, 4), box(46, 40, 4, 6, 'ik')],
+willamette_valley: () => [P('M0 0 L16 0 L14 60 L0 60 Z', 'bs'), P('M44 0 L60 0 L60 60 L46 60 Z', 'bs'), ...pjRiver('M30 2 Q26 20 32 34 Q36 48 30 58', 3.6), ...piGrape(20, 18), ...piGrape(36, 24), ...piGrape(20, 40), ...piGrape(38, 48), ...ntConifer(4, 14, 14, 5, 'lo')],
+american_cordillera: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'lo'), P('M8 4 L22 4 L26 14 L22 24 L28 36 L22 46 L30 56 L22 60 L8 60 Z', 'bs'), S('M22 4 L26 14 L22 24 L28 36 L22 46 L30 56 L22 60', 'ik', 1.3), ...opMtn(14, 14, 5, 8, 'hi', true), ...opMtn(14, 30, 6, 10, 'hi', true), ...opMtn(16, 50, 6, 10, 'hi', true)],
+};
+for (const [id, fn] of Object.entries(MKpk)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 101: ranges, basins, valleys and gorges of South America, the Middle East and East Asia, sourced, audited, hand-drawn ── */
+const plMeteor = (x, y, s = 1) => [C(x, y, 2.2 * s, 'ik'), S(`M${x - 2 * s} ${y - 2 * s} L${x - 7 * s} ${y - 7 * s}`, 'hi', 1.6)];
+const plRibs = (x0, x1, y, n = 4) => S(Array.from({ length: n }, (_, i) => `M${x0 + (x1 - x0) * i / (n - 1)} ${y} L${x0 + (x1 - x0) * i / (n - 1)} ${y + 8}`).join(' '), 'ik', 1.2);
+const plSpire = (x, base, w, h) => [P(`M${x - w} ${base} L${x - w * 0.5} ${base - h} L${x + w * 0.5} ${base - h * 0.85} L${x + w} ${base} Z`, 'bs'), S(`M${x - w * 0.5} ${base - h} L${x + w * 0.5} ${base - h * 0.85}`, 'ik', 1.2)];
+const plWater = (y) => [P(`M0 ${y} L60 ${y} L60 60 L0 60 Z`, 'lo'), S(`M0 ${y} L60 ${y}`, 'ik', 1.2), S(`M8 ${y + 6} q4 -3 8 0 t8 0 t8 0 t8 0`, 'hi', 1.2)];
+const plBasin = (cx, top, w, bot) => [P(`M0 ${top} L${cx - w} ${top} Q${cx} ${bot} ${cx + w} ${top} L60 ${top} L60 60 L0 60 Z`, 'bs'), S(`M${cx - w} ${top} Q${cx} ${bot} ${cx + w} ${top}`, 'ik', 1.4)];
+const plTorii = (x, y) => peTorii(x, y);
+const MKpl = {
+cordillera_blanca: () => [pkGround(48), ...opMtn(14, 48, 12, 30, 'hi', true), ...opMtn(32, 48, 13, 38, 'hi', true), ...opMtn(50, 48, 10, 26, 'hi', true), ...ntConifer(4, 44, 8, 3, 'lo'), ...pjLake(30, 56, 12, 2.4)],
+caldera_basin: () => [...plBasin(30, 22, 24, 50), ...pjLake(30, 52, 8, 2), S('M6 30 L16 30 M44 36 L54 36', 'ik', 1), C(46, 12, 3.4, 'hi')],
+campos_basin: () => [...plWater(26), ...pbDerrick(14, 28), ...pbDerrick(32, 30), ...orBoat(48, 28, 1, 'hi'), P('M0 12 L60 12 L60 4 L0 4 Z', 'bs'), S('M0 12 L60 12', 'ik', 1.2)],
+campo_del_cielo: () => [pkGround(34), ...plMeteor(14, 40), ...plMeteor(32, 46, 1.3), ...plMeteor(48, 40), ...plMeteor(22, 52, 0.9), S('M0 34 L60 34', 'ik', 1.3), S('M36 8 L26 22', 'hi', 2), C(37, 7, 2.6, 'hi')],
+sierra_nevada_de_santa_marta: () => [pkGround(42), ...opMtn(20, 42, 14, 34, 'hi', true), ...opMtn(42, 42, 12, 26, 'hi', true), P('M0 42 L8 38 L18 42 Z', 'lo'), ...paTree(8, 52, 4), ...paTree(52, 52, 4), S('M22 52 L38 52', 'lo', 2)],
+valle_de_la_luna_bolivia: () => [pkGround(50), ...plSpire(10, 50, 5, 20), ...plSpire(22, 50, 6, 28), ...plSpire(34, 50, 5, 16), ...plSpire(46, 50, 6, 24), C(52, 10, 5, 'hi'), C(54, 9, 4, 'lo')],
+gamburtsev_mountain_range: () => [P('M0 0 L60 0 L60 28 L0 28 Z', 'hi'), S('M0 28 L60 28', 'ik', 1.3), P('M0 28 L60 28 L60 60 L0 60 Z', 'bs'), ...opMtn(14, 60, 12, 24, 'ik', false), ...opMtn(32, 60, 14, 26, 'ik', false), ...opMtn(50, 60, 10, 20, 'ik', false), S('M6 14 L54 14 M12 20 L48 20', 'ik', 1)],
+eastern_ghats: () => [P('M0 0 L14 0 L12 60 L0 60 Z', 'lo'), pkGround(50), ...pkRange([26, 44], 50, 28, false), ...pgTrees(20, 54, 50).slice(0, 4), ...pgDeer(40, 56, 0.6)].filter(Boolean),
+kashmir_valley: () => [...opMtn(8, 30, 12, 20, 'hi', true), ...opMtn(52, 30, 12, 20, 'hi', true), ...opMtn(30, 22, 10, 14, 'hi', true), pkGround(30), ...pjLake(30, 42, 14, 5), ...orBoat(30, 42, 0.6, 'hi'), ...paTree(10, 54, 3), ...paTree(50, 54, 3)],
+nilgiri_mountains: () => [pkGround(46), ...pkDome(14, 46, 12, 16), ...pkDome(34, 46, 14, 22), ...pkDome(52, 46, 8, 12), S('M4 20 q8 -3 16 0 M30 14 q8 -3 16 0', 'hi', 1.4), S('M10 34 L18 34 M26 30 L40 30', 'ik', 1), ...paFlower(10, 58)],
+aladagh_mountains: () => [pkGround(46), ...pkRange([14, 32, 50], 46, 24, false), ...pgDeer(18, 56, 0.7), S('M30 54 L54 54', 'ik', 1)],
+alborz: () => [...plWater(44), ...pkRange([14, 32, 50], 44, 30, true), ...ntConifer(6, 30, 14, 5, 'lo'), S('M0 44 L60 44', 'ik', 1.3)],
+armenian_highlands: () => [...pgPlateau(4, 56, 46, 22), ...opMtn(40, 24, 8, 14, 'hi', true), ...ozCone(18, 24, 6, 8, false), ...pjLake(30, 54, 10, 2.4)],
+jordan_valley: () => [P('M0 0 L18 0 L24 60 L0 60 Z', 'bs'), P('M42 0 L60 0 L60 60 L36 60 Z', 'bs'), ...pjRiver('M30 0 Q26 20 32 36 Q36 48 30 60', 3.6), ...paTree(8, 22, 3), ...paTree(52, 40, 3), S('M18 0 L24 60 M42 0 L36 60', 'ik', 1.3)],
+judaean_mountains: () => [pkGround(46), ...pkDome(14, 46, 12, 12), ...pkDome(34, 46, 14, 18), ...pkDome(52, 46, 8, 10), ...paHouse(30, 28, 5), ...paHouse(36, 30, 4), ...paTree(14, 36, 3)],
+kopet_dag: () => [pkGround(44), ...pkRange([14, 30, 48], 44, 22, false), P('M0 44 L60 44 L60 50 L0 50 Z', 'hi'), S('M4 56 q8 -4 16 0 t16 0 t16 0', 'ik', 1.2)],
+mount_lebanon: () => [pkGround(46), ...opMtn(30, 46, 18, 32, 'hi', true), ...ntConifer(8, 30, 16, 6, 'lo'), ...ntConifer(50, 30, 16, 6, 'lo'), ...ntConifer(18, 34, 12, 5, 'lo'), S('M4 54 L56 54', 'lo', 2)],
+pontic_mountains: () => [...plWater(46), ...pkRange([12, 30, 48], 46, 26, false), ...pgTrees(8, 52, 46).slice(0, 5), S('M0 46 L60 46', 'ik', 1.3)],
+safed_koh: () => [pkGround(46), ...opMtn(14, 46, 12, 30, 'hi', true), ...opMtn(34, 46, 14, 36, 'hi', true), S('M30 6 L30 56', 'hi', 1.6), P('M24 12 L30 6 L36 12 Z', 'ik'), P('M24 50 L30 56 L36 50 Z', 'ik')],
+taurus_mountains: () => [...plWater(48), ...pkRange([14, 32, 50], 48, 32, true), ...ntConifer(22, 30, 16, 6, 'lo'), P('M20 48 Q24 40 28 48 Z', 'ik')],
+amanohashidate: () => [...plWater(34), P('M4 34 Q30 20 56 34 L56 40 Q30 28 4 40 Z', 'bs'), S('M4 34 Q30 20 56 34', 'ik', 1.3), ...[10, 18, 26, 34, 42, 50].flatMap((x) => [S(`M${x} ${34 - Math.sin((x - 4) / 52 * Math.PI) * 9} L${x} ${28 - Math.sin((x - 4) / 52 * Math.PI) * 9}`, 'ik', 1.3), C(x, 26 - Math.sin((x - 4) / 52 * Math.PI) * 9, 2.2, 'lo')])],
+central_mountain_range: () => [...plWater(50), P('M4 50 L10 30 L16 36 L22 12 L28 28 L34 20 L44 36 L52 50 Z', 'bs'), S('M4 50 L10 30 L16 36 L22 12 L28 28 L34 20 L44 36 L52 50', 'ik', 1.3), ...pgTrees(6, 46, 50).slice(0, 5), S('M4 10 q8 -3 16 0 M34 8 q8 -3 16 0', 'hi', 1.2)],
+changbai_mountains: () => [pkGround(46), ...ozCone(14, 46, 10, 18, false), ...ozCone(32, 46, 12, 28, true), ...pjLake(32, 22, 8, 2.4), ...ozCone(50, 46, 8, 14, false), ...ntConifer(4, 30, 14, 4, 'lo'), S('M0 54 L60 54', 'ik', 1)],
+daisetsuzan_volcanic_group: () => [pkGround(46), E(30, 24, 12, 5, 'lo'), mmEll(30, 24, 12, 5, 'ik', 1.2), ...ozCone(10, 46, 9, 22, true), ...ozCone(50, 46, 9, 20, true), ...opMtn(30, 46, 10, 16, 'bs', true), S('M10 24 q-3 -4 0 -7', 'hi', 1.6), ...pbBear(30, 54, 0.8)],
+fossa_magna: () => [P('M0 0 L20 0 L24 60 L0 60 Z', 'bs'), P('M40 0 L60 0 L60 60 L36 60 Z', 'bs'), P('M20 0 L40 0 L36 60 L24 60 Z', 'hi'), S('M20 0 L24 60 M40 0 L36 60', 'ik', 1.4), ...opMtn(10, 24, 7, 12, 'ik', false), ...opMtn(50, 24, 7, 12, 'ik', false), S('M30 8 L28 26 L32 34 L30 52', 'ik', 1.2)],
+greater_khingan: () => [pkGround(46), ...pkRange([12, 32, 50], 46, 20, false), ...pgTrees(4, 56, 38).slice(0, 8), ...pgDeer(20, 56, 0.6), ...pgTrees(8, 52, 30).slice(0, 6)],
+hengduan_mountains: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), P('M12 0 L18 0 L20 60 L14 60 Z', 'lo'), P('M30 0 L36 0 L36 60 L30 60 Z', 'lo'), P('M46 0 L52 0 L50 60 L46 60 Z', 'lo'), ...opMtn(8, 30, 6, 14, 'hi', true), ...opMtn(24, 34, 6, 18, 'hi', true), ...opMtn(42, 30, 6, 14, 'hi', true), S('M0 0 L60 0', 'ik', 1)],
+japan_median_tectonic_line: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), P('M0 0 L34 0 L22 60 L0 60 Z', 'hi'), S('M34 0 L22 60', 'ik', 2.4), S('M30 20 L38 20 M18 40 L26 40', 'ik', 1.4), S('M28 18 l4 2 l-4 2 M24 38 l-4 2 l4 2', 'ik', 1), ...opMtn(10, 20, 6, 10, 'bs', false)],
+japanese_alps: () => [pkGround(46), ...opMtn(12, 46, 10, 24, 'hi', true), ...opMtn(26, 46, 12, 34, 'hi', true), ...opMtn(42, 46, 12, 30, 'hi', true), ...opMtn(54, 46, 8, 18, 'hi', true), ...paTree(6, 54, 3), S('M18 54 L48 54', 'lo', 2)],
+kanto_plain: () => [pkGround(30), P('M0 0 L60 0 L60 6 L0 6 Z', 'lo'), ...opMtn(10, 30, 9, 14, 'bs', true), S('M0 30 L60 30', 'ik', 1.3), ...peBuilds(34, 44), ...peBuilds(42, 42), S('M4 40 L28 40 M6 48 L28 48 M4 56 L26 56', 'ik', 1), ...pbTower(20, 28)],
+mongolian_plateau: () => [pkGround(34), S('M0 34 L60 34', 'ik', 1.3), ...pgDeer(16, 46, 0.9), ...paPony(40, 46, 0.9), E(30, 22, 8, 4, 'hi'), mmEll(30, 22, 8, 4, 'ik', 1.2), S('M22 22 L38 22', 'ik', 1)],
+mount_aso: () => [pkGround(46), ...opMtn(30, 46, 24, 14, 'bs', false), E(30, 32, 10, 3, 'lo'), ...ozCone(30, 32, 6, 14, true), S('M30 18 q-3 -4 0 -7', 'hi', 1.6), ...paCow(12, 54, 0.8), ...paPony(42, 54, 0.7)],
+mount_unzen: () => [pkGround(46), ...ozCone(24, 46, 14, 26, true), ...ozCone(42, 46, 10, 16, false), P('M30 20 Q40 28 50 46 L38 46 Z', 'ik'), S('M24 20 q-3 -4 0 -7', 'hi', 1.6), ...orBoat(10, 54, 0.8, 'hi')],
+nanling_mountains: () => [pkGround(46), ...pkDome(14, 46, 12, 14), ...pkDome(32, 46, 14, 18), ...pkDome(50, 46, 10, 12), ...pgTrees(4, 54, 46).slice(0, 8), S('M0 12 L18 12 M32 8 L52 8', 'hi', 1.2)],
+northeast_china_plain: () => [pkGround(26), ...opMtn(8, 26, 8, 12, 'hi', false), ...opMtn(52, 26, 8, 12, 'hi', false), S('M6 36 L54 36 M6 44 L54 44 M6 52 L54 52', 'ik', 1.2), S('M12 36 L12 52 M24 36 L24 52 M36 36 L36 52 M48 36 L48 52', 'ik', 0.9), S('M0 26 L60 26', 'ik', 1.2)],
+nyenchen_tanglha_mountains: () => [pkGround(46), ...opMtn(14, 46, 12, 28, 'hi', true), ...opMtn(32, 46, 14, 36, 'hi', true), ...opMtn(50, 46, 10, 24, 'hi', true), ...pjLake(24, 54, 10, 2.4), ...pkSun(8, 12), ...pgMusk(46, 54, 0.7)],
+qinling: () => [P('M0 0 L60 0 L60 22 L0 22 Z', 'lo'), P('M0 38 L60 38 L60 60 L0 60 Z', 'lo'), P('M0 22 L60 22 L60 38 L0 38 Z', 'bs'), S('M0 22 L60 22 M0 38 L60 38', 'ik', 1.2), ...opMtn(14, 38, 10, 22, 'bs', false), ...opMtn(34, 38, 12, 28, 'bs', false), ...opMtn(50, 38, 8, 16, 'bs', false)],
+sanriku_coast: () => [...plWater(26), P('M0 0 L60 0 L60 26 Q50 20 44 28 L40 24 L34 30 L28 24 L22 28 L0 24 Z', 'bs'), S('M0 24 L22 28 L28 24 L34 30 L40 24 L44 28 Q50 20 60 26', 'ik', 1.3), ...orBoat(30, 44, 0.8, 'hi')],
+sichuan_basin: () => [pkGround(30), ...opMtn(6, 30, 8, 16, 'hi', false), ...opMtn(54, 30, 8, 16, 'hi', false), E(30, 42, 22, 9, 'lo'), mmEll(30, 42, 22, 9, 'ik', 1.2), S('M14 42 L46 42', 'hi', 1), S('M0 30 L60 30', 'ik', 1.2)],
+stone_forest: () => [pkGround(52), ...[8, 16, 24, 32, 40, 48].flatMap((x, i) => plSpire(x, 52, 4, 16 + ((i * 7) % 14)))],
+taebaek_mountains: () => [pkGround(46), ...pkRange([12, 30, 48], 46, 26, false), ...ntConifer(8, 34, 12, 4, 'lo'), ...ntConifer(50, 34, 12, 4, 'lo'), ...pePagoda(32, 56)],
+taihang_mountains: () => [pkGround(46), P('M0 46 L6 14 L16 14 L18 46 Z', 'bs'), P('M24 46 L28 10 L40 10 L44 46 Z', 'bs'), S('M6 14 L16 14 M28 10 L40 10', 'ik', 1.4), S('M10 14 L10 46 M34 10 L34 46', 'ik', 1), ...pgTrees(46, 58, 46).slice(0, 2)],
+three_gorges: () => [P('M0 0 L18 0 L24 60 L0 60 Z', 'bs'), P('M42 0 L60 0 L60 60 L36 60 Z', 'bs'), ...pjRiver('M30 0 Q28 20 32 36 Q34 50 30 60', 4), ...orBoat(30, 30, 0.7, 'hi'), ...ntConifer(6, 12, 12, 4, 'lo'), ...ntConifer(52, 20, 12, 4, 'lo'), S('M18 0 L24 60 M42 0 L36 60', 'ik', 1.3)],
+xiling_gorge: () => [...pkCanyon(10, 50, 14, 46), ...pjRiver('M30 46 L30 60', 5), ...orBoat(30, 52, 0.7, 'hi'), S('M0 14 L10 14 M50 14 L60 14', 'ik', 1.4), ...ntConifer(4, 14, 12, 4, 'lo')],
+turpan_depression: () => [...plBasin(30, 20, 26, 54), ...pkSun(48, 8), S('M14 36 L46 36', 'ik', 1), ...paSpan(24, 36, 44)].filter(Boolean),
+wudang_mountains: () => [...opMtn(30, 46, 20, 34, 'bs', false), ...pePagoda(30, 32), ...pePagoda(20, 40).slice(0, 4), ...pePagoda(40, 40).slice(0, 4), S('M4 14 q8 -3 16 0 M38 18 q8 -3 16 0', 'hi', 1.4), pkGround(46), S('M0 46 L60 46', 'ik', 1.2)],
+yangtze_plain: () => [pkGround(20), ...pjRiver('M0 34 Q16 28 30 36 Q46 44 60 36', 5), E(46, 52, 8, 3.6, 'lo'), ...orBoat(16, 34, 0.7, 'hi'), S('M4 12 L56 12', 'ik', 1), S('M6 48 L24 48 M6 54 L24 54', 'ik', 1), S('M0 20 L60 20', 'ik', 1.2)],
+};
+for (const [id, fn] of Object.entries(MKpl)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 102: ranges, passes, plains and rock formations of Russia, Asia, Europe and Australia, sourced, audited, hand-drawn ── */
+const pmHoodoo = (x, base, h) => [P(`M${x - 3} ${base} L${x - 2} ${base - h * 0.7} L${x - 3.4} ${base - h * 0.7} L${x} ${base - h} L${x + 3.4} ${base - h * 0.7} L${x + 2} ${base - h * 0.7} L${x + 3} ${base} Z`, 'bs'), S(`M${x - 2} ${base - h * 0.7} L${x + 2} ${base - h * 0.7}`, 'ik', 1)];
+const pmDome = (x, base, w, h) => pkDome(x, base, w, h);
+const pmWall = (x0, x1, y) => [S(`M${x0} ${y} L${x1} ${y}`, 'ik', 2.2), ...[x0 + 2, (x0 + x1) / 2, x1 - 2].flatMap((x) => [S(`M${x} ${y} L${x} ${y - 4}`, 'ik', 2)])];
+const pmPass = (y) => [P(`M0 ${y} L22 ${y} L30 ${y + 8} L38 ${y} L60 ${y} L60 60 L0 60 Z`, 'bs'), S(`M0 ${y} L22 ${y} L30 ${y + 8} L38 ${y} L60 ${y}`, 'ik', 1.4), S(`M30 ${y + 8} L30 60`, 'hi', 2.4)];
+const pmGrid = () => [S('M6 40 L54 40 M6 46 L54 46 M6 52 L54 52 M6 58 L54 58', 'ik', 1), S('M14 36 L14 60 M26 36 L26 60 M38 36 L38 60 M50 36 L50 60', 'ik', 0.8)];
+const pmCrater = (cx, cy, rx, ry) => [E(cx, cy, rx, ry, 'lo'), mmEll(cx, cy, rx, ry, 'ik', 1.2)];
+const pmGlen = () => [P('M0 0 L22 0 L30 60 L0 60 Z', 'bs'), P('M60 0 L38 0 L30 60 L60 60 Z', 'bs'), P('M22 0 L38 0 L30 60 Z', 'lo'), S('M22 0 L30 60 M38 0 L30 60', 'ik', 1.3)];
+const MKpm = {
+anadyr_highlands: () => [pkGround(46), ...pkRange([14, 32, 50], 46, 22, false), ...pgDeer(20, 56, 0.8), S('M30 54 L54 54', 'ik', 1), ...pkSun(8, 10)],
+byrranga_mountains: () => [P('M0 38 L60 38 L60 60 L0 60 Z', 'hi'), ...pkRange([12, 30, 48], 38, 24, true), S('M0 38 L60 38', 'ik', 1.3), ...pgFox(24, 52, 0.8), ...piStar(50, 52)],
+chersky_range: () => [pkGround(46), ...opMtn(12, 46, 10, 20, 'hi', true), ...opMtn(28, 46, 12, 32, 'hi', true), ...opMtn(46, 46, 11, 26, 'hi', true), ...pjRiver('M0 54 L26 54', 2), ...pjRiver('M34 56 L60 56', 2), ...ntConifer(52, 38, 12, 4, 'lo')],
+dzhugdzhur: () => [...plWater(48), ...pkRange([14, 32, 50], 48, 28, false), ...ntConifer(8, 32, 14, 5, 'lo'), P('M26 22 L28 16 L30 22 Z', 'hi'), S('M0 48 L60 48', 'ik', 1.3)],
+dzungaria: () => [pkGround(30), ...opMtn(10, 30, 10, 14, 'hi', true), ...opMtn(50, 30, 10, 14, 'hi', true), S('M0 30 L60 30', 'ik', 1.3), ...paPony(20, 46, 0.9), ...paPony(40, 52, 0.8), S('M8 38 L52 38', 'ik', 1)],
+fergana_valley: () => [P('M0 0 L16 0 L12 60 L0 60 Z', 'bs'), P('M44 0 L60 0 L60 60 L48 60 Z', 'bs'), ...[18, 30, 42].flatMap((y) => [...paTree(26, y, 3), ...paTree(36, y, 3)]), ...pjRiver('M30 0 Q34 30 30 60', 2.4), S('M16 0 L12 60 M44 0 L48 60', 'ik', 1.2)],
+khangai_mountains: () => [pkGround(46), ...pkDome(14, 46, 12, 14), ...pkDome(32, 46, 14, 20), ...pkDome(50, 46, 10, 12), ...pgTrees(26, 44, 46).slice(0, 3), ...pgMusk(30, 56, 0.7)],
+khyber_pass: () => [...pmPass(30), ...opMtn(10, 30, 10, 20, 'hi', true), ...opMtn(50, 30, 10, 20, 'hi', true), ...paCastle(22, 30, 8, 5).slice(0, 3)],
+kolyma_mountains: () => [pkGround(46), ...pkRange([12, 30, 48], 46, 26, true), S('M8 54 L24 54 M30 56 L52 56', 'ik', 1), P('M26 40 L30 34 L34 40 Z', 'hi'), ...ntConifer(52, 34, 12, 4, 'lo')],
+pamir_mountains: () => [pkGround(48), ...opMtn(10, 48, 10, 24, 'hi', true), ...opMtn(24, 48, 12, 36, 'hi', true), ...opMtn(40, 48, 12, 34, 'hi', true), ...opMtn(54, 48, 8, 22, 'hi', true), ...pgMusk(30, 56, 0.6)],
+putorana_plateau: () => [...pgPlateau(4, 56, 44, 16), P('M22 28 L34 28 L34 44 L22 44 Z', 'lo'), S('M28 28 L28 44', 'hi', 2), ...pjLake(30, 54, 12, 2.4), ...ntConifer(8, 40, 10, 4, 'lo')],
+sayan_mountains: () => [pkGround(46), ...pkRange([14, 32, 50], 46, 26, false), ...pgTrees(4, 56, 46).slice(0, 8), S('M4 12 L24 12 M32 8 L52 8', 'hi', 1.2)],
+sikhote_alin: () => [...plWater(48), ...pkRange([14, 32, 50], 48, 24, false), ...ntConifer(8, 30, 14, 5, 'lo'), ...ntConifer(44, 30, 14, 5, 'lo'), S('M0 48 L60 48', 'ik', 1.2), S('M20 28 L22 30 M30 24 L32 26', 'ik', 1.4)],
+tang_e_gharu: () => [...pkCanyon(14, 46, 12, 46), ...pjRiver('M30 46 L30 60', 4), ...opMtn(6, 12, 6, 10, 'hi', true), ...opMtn(54, 12, 6, 10, 'hi', true), P('M26 28 L30 22 L34 28 Z', 'ik')],
+turan_depression: () => [...plBasin(30, 18, 28, 54), S('M12 40 L48 40', 'ik', 1), ...pkCactus(20, 52), ...pkSun(48, 8)],
+verkhoyansk_range: () => [P('M0 40 L60 40 L60 60 L0 60 Z', 'hi'), ...pkRange([12, 30, 48], 40, 28, true), S('M0 40 L60 40', 'ik', 1.3), S('M30 4 L30 14 M26 6 L34 12 M34 6 L26 12', 'hi', 1.6), ...pgFox(18, 52, 0.7)],
+wakhan_corridor: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'lo'), P('M0 22 L60 22 L60 38 L0 38 Z', 'bs'), S('M0 22 L60 22 M0 38 L60 38', 'ik', 1.3), ...opMtn(8, 22, 8, 14, 'hi', true), ...opMtn(30, 22, 9, 18, 'hi', true), ...opMtn(52, 22, 7, 12, 'hi', true), ...pgMusk(20, 34, 0.5), S('M6 30 L54 30', 'hi', 1.2)],
+yablonovy_mountains: () => [pkGround(46), ...pkRange([12, 28, 44], 46, 22, false), ...pjRiver('M0 52 L30 52', 2.2), ...pjRiver('M30 56 L60 56', 2.2), S('M30 8 L30 18 M24 12 L36 12', 'hi', 1.4)],
+annamite_range: () => [pkGround(46), ...pkRange([12, 30, 48], 46, 26, false), ...pgTrees(4, 56, 46).slice(0, 8), S('M8 14 q8 -3 16 0 M34 12 q8 -3 16 0', 'hi', 1.2)],
+arakan_mountains: () => [...plWater(48), ...pkRange([14, 32, 50], 48, 28, false), ...ntConifer(8, 32, 14, 5, 'lo'), ...ntConifer(44, 32, 14, 5, 'lo'), S('M6 10 l2 4 M20 8 l2 4 M44 10 l2 4', 'lo', 1.2)],
+chocolate_hills: () => [pkGround(34), ...[8, 20, 32, 44, 54].flatMap((x, i) => pkDome(x, 34 + (i % 2) * 8, 6, 8 + (i % 3) * 2)), ...[14, 26, 38, 50].flatMap((x, i) => pkDome(x, 52, 6, 8)), S('M0 34 L60 34', 'ik', 1.2)],
+dieng_plateau: () => [...pgPlateau(4, 56, 46, 16), ...pmCrater(18, 36, 8, 3), ...pmCrater(40, 40, 6, 2.4), S('M18 30 q-3 -4 0 -7 M40 34 q-3 -4 0 -7', 'hi', 1.6), ...pePagoda(46, 28).slice(0, 2)],
+shan_hills: () => [pkGround(44), ...pkDome(12, 44, 10, 12), ...pkDome(28, 44, 12, 18), ...pkDome(46, 44, 10, 12), ...pjLake(34, 54, 12, 2.4), ...paTree(8, 54, 3)],
+taal_volcano: () => [...pjLake(30, 36, 26, 16), ...ozLand(30, 38, 10, 5), ...ozCone(30, 38, 8, 14, true), S('M30 24 q-3 -4 0 -7', 'hi', 1.6), S('M4 8 L22 8 M38 8 L56 8', 'ik', 1.2)],
+tenasserim_hills: () => [pkGround(46), ...pkRange([12, 30, 48], 46, 24, false), ...pgTrees(4, 56, 46).slice(0, 8), ...pgTrees(6, 54, 38).slice(0, 5)],
+aare_gorge: () => [...pkCanyon(18, 42, 12, 50), ...pjRiver('M30 50 L30 60', 4), S('M0 12 L18 12 M42 12 L60 12', 'ik', 1.4), ...paTree(8, 12, 3), ...paTree(52, 12, 3), S('M24 24 L36 24 M24 34 L36 34', 'ik', 1)],
+apuan_alps: () => [pkGround(46), ...opMtn(12, 46, 10, 26, 'hi', true), ...opMtn(28, 46, 12, 34, 'hi', true), ...opMtn(46, 46, 11, 28, 'hi', true), box(22, 52, 10, 4, 'hi'), S('M22 52 L32 52', 'ik', 1.4)],
+apuseni_mountains: () => [pkGround(46), ...pkDome(14, 46, 12, 14), ...pkDome(32, 46, 14, 22), ...pkDome(50, 46, 10, 12), ...ntConifer(10, 34, 12, 4, 'lo'), ...ntConifer(48, 34, 12, 4, 'lo'), P('M28 46 Q32 40 36 46 Z', 'ik')],
+belogradchik_rocks: () => [pkGround(50), ...[10, 20, 30, 40, 50].flatMap((x, i) => pmHoodoo(x, 50, 18 + (i * 5) % 14)), ...paCastle(24, 50, 8, 5), S('M0 50 L60 50', 'ik', 1.2)],
+bucegi_mountains: () => [pkGround(46), ...pgPlateau(8, 52, 46, 14), ...opMtn(14, 32, 8, 12, 'hi', true), ...pbBear(40, 54, 0.8), ...ntConifer(52, 36, 12, 4, 'lo')],
+ciudad_encantada: () => [pkGround(50), ...[8, 18, 28, 38, 48].flatMap((x, i) => pmDome(x, 50, 5, 14 + (i * 7) % 12)), S('M0 50 L60 50', 'ik', 1.2), ...paTree(54, 50, 4)],
+dinaric_alps: () => [P('M0 0 L60 0 L60 22 L0 22 Z', 'lo'), pkGround(22), ...pkRange([12, 28, 44], 46, 22, false), P('M0 46 L60 46 L60 60 L0 60 Z', 'bs'), S('M0 22 L60 22', 'ik', 1.2), ...ntConifer(52, 30, 14, 5, 'lo')],
+externsteine: () => [pkGround(50), P('M12 50 L14 22 L22 22 L24 50 Z', 'bs'), P('M28 50 L30 12 L38 12 L40 50 Z', 'bs'), P('M44 50 L46 28 L52 28 L54 50 Z', 'bs'), S('M14 22 L22 22 M30 12 L38 12 M46 28 L52 28', 'ik', 1.4), ...ntConifer(2, 34, 14, 5, 'lo'), S('M24 30 L30 30', 'ik', 2)],
+north_european_plain: () => [pkGround(30), P('M0 0 L60 0 L60 8 L0 8 Z', 'lo'), S('M0 30 L60 30', 'ik', 1.3), ...pmGrid(), ...paTree(10, 30, 4), ...paTree(30, 30, 4), ...paTree(50, 30, 4)],
+finnish_lakeland: () => [pkGround(60), ...[[16, 20, 10, 6], [40, 16, 9, 5], [30, 32, 12, 6], [14, 44, 8, 4], [46, 44, 10, 5]].flatMap(([x, y, rx, ry]) => [E(x, y, rx, ry, 'lo'), mmEll(x, y, rx, ry, 'ik', 1)]), ...ntConifer(6, 28, 10, 4, 'lo'), ...ntConifer(52, 28, 10, 4, 'lo')],
+fulda_gap: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), P('M0 20 L60 20 L60 36 L0 36 Z', 'hi'), S('M0 20 L60 20 M0 36 L60 36', 'ik', 1.3), S('M30 4 L30 56', 'ik', 1.2), ...opMtn(8, 20, 8, 12, 'ik', false), ...opMtn(52, 20, 8, 12, 'ik', false), S('M6 28 L54 28', 'ik', 1)],
+great_glen: () => [...pmGlen(), ...pjLake(30, 34, 5, 14), ...paCastle(40, 54, 8, 6).slice(0, 3), ...ntConifer(6, 28, 12, 4, 'lo'), ...ntConifer(48, 24, 12, 4, 'lo')],
+harz: () => [pkGround(46), ...pkDome(14, 46, 12, 12), ...pkDome(32, 46, 14, 20), ...pkDome(50, 46, 10, 12), ...ntConifer(8, 32, 14, 5, 'lo'), ...ntConifer(28, 24, 14, 5, 'lo'), S('M4 54 L56 54', 'ik', 1)],
+langkofel_group: () => [pkGround(50), P('M8 50 L14 22 L20 30 L26 10 L34 28 L42 14 L50 50 Z', 'hi'), S('M8 50 L14 22 L20 30 L26 10 L34 28 L42 14 L50 50', 'ik', 1.4), S('M26 10 L26 50 M34 28 L34 50', 'ik', 0.9), ...ntConifer(52, 36, 14, 4, 'lo')],
+melnik_earth_pyramids: () => [pkGround(50), ...[8, 18, 28, 38, 48].flatMap((x, i) => [P(`M${x - 4} 50 L${x - 2} ${50 - 14 - (i * 6) % 12} L${x + 2} ${50 - 14 - (i * 6) % 12} L${x + 4} 50 Z`, 'bs'), S(`M${x - 2} ${50 - 14 - (i * 6) % 12} L${x + 2} ${50 - 14 - (i * 6) % 12}`, 'ik', 1.4)]), ...piGrape(50, 56)],
+ordesa_valley: () => [P('M0 0 L18 0 L24 60 L0 60 Z', 'bs'), P('M60 0 L42 0 L36 60 L60 60 Z', 'bs'), P('M18 0 L42 0 L36 60 L24 60 Z', 'hi'), S('M18 0 L24 60 M42 0 L36 60', 'ik', 1.4), S('M30 4 L30 30', 'lo', 3), ...ntConifer(4, 26, 12, 4, 'lo'), ...ntConifer(50, 30, 12, 4, 'lo')],
+pindus: () => [pkGround(46), ...pkRange([12, 30, 48], 46, 28, true), ...pgTrees(4, 56, 46).slice(0, 6), ...pbBear(34, 56, 0.6)],
+mallos_de_riglos: () => [pkGround(50), ...[10, 24, 38, 50].flatMap((x, i) => [P(`M${x - 5} 50 L${x - 4} ${50 - 24 - (i * 5) % 8} L${x + 4} ${50 - 24 - (i * 5) % 8} L${x + 6} 50 Z`, 'bs'), S(`M${x - 4} ${50 - 24 - (i * 5) % 8} L${x + 4} ${50 - 24 - (i * 5) % 8}`, 'ik', 1.4)]), ...pjRiver('M0 56 L60 56', 2.4), C(52, 10, 2, 'ik')],
+salzkammergut: () => [pkGround(34), ...opMtn(10, 34, 10, 18, 'hi', true), ...opMtn(30, 34, 12, 26, 'hi', true), ...opMtn(50, 34, 10, 18, 'hi', true), ...pjLake(18, 48, 10, 4), ...pjLake(42, 50, 10, 4), ...paTree(6, 36, 3)],
+santorini_caldera: () => [...plWater(26), P('M0 0 L60 0 L60 26 Q48 16 40 26 Q30 36 20 26 Q12 16 0 26 Z', 'bs'), S('M0 26 Q12 16 20 26 Q30 36 40 26 Q48 16 60 26', 'ik', 1.4), ...paHouse(10, 22, 5), ...paHouse(18, 24, 4), ...paHouse(48, 22, 5), ...ozLand(30, 46, 7, 3), ...ozCone(30, 46, 5, 8, true)],
+slovak_paradise: () => [pkGround(46), ...pkDome(14, 46, 12, 12), ...pkDome(48, 46, 12, 14), P('M22 30 L38 30 L36 46 L24 46 Z', 'lo'), S('M30 30 L30 46', 'hi', 2.4), ...ntConifer(6, 30, 12, 4, 'lo'), ...ntConifer(52, 30, 12, 4, 'lo')],
+suwalki_gap: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), P('M0 0 L18 0 L18 60 L0 60 Z', 'hi'), P('M42 0 L60 0 L60 60 L42 60 Z', 'hi'), S('M18 0 L18 60 M42 0 L42 60', 'ik', 1.4), ...pjLake(30, 18, 5, 3), ...pjLake(30, 42, 5, 3), S('M30 24 L30 36', 'ik', 1.2), ...ntConifer(4, 26, 12, 4, 'lo'), ...ntConifer(50, 26, 12, 4, 'lo')],
+verdon_gorge: () => [...pkCanyon(14, 46, 12, 46), P('M20 46 L40 46 L40 60 L20 60 Z', 'lo'), S('M20 52 q4 -3 8 0 t8 0 t8 0', 'hi', 1.2), ...ntConifer(4, 12, 12, 4, 'lo'), ...ntConifer(52, 12, 12, 4, 'lo'), S('M0 12 L14 12 M46 12 L60 12', 'ik', 1.4)],
+kata_tjuta: () => [pkGround(46), ...[8, 20, 30, 42, 52].flatMap((x, i) => pkDome(x, 46, 7, 12 + (i * 5) % 12)), ...pkSun(50, 10), ...pkCactus(10, 56).slice(0, 1)],
+macdonnell_ranges: () => [pkGround(44), P('M0 44 L10 26 L22 36 L34 20 L46 34 L60 44 Z', 'bs'), S('M0 44 L10 26 L22 36 L34 20 L46 34 L60 44', 'ik', 1.3), S('M6 40 L54 40 M10 36 L50 36', 'ik', 0.9), ...paFlower(20, 56), ...pkSun(52, 10)],
+musgrave_ranges: () => [pkGround(46), ...pkDome(14, 46, 12, 10), ...pkDome(32, 46, 14, 16), ...pkDome(50, 46, 10, 10), ...pkCactus(8, 56).slice(0, 1), ...pgFox(36, 56, 0.6)],
+new_guinea_highlands: () => [pkGround(46), ...opMtn(12, 46, 10, 20, 'bs', false), ...opMtn(28, 46, 12, 30, 'hi', true), ...opMtn(46, 46, 10, 18, 'bs', false), ...pgTrees(4, 56, 46).slice(0, 6), ...paFlower(30, 58)],
+nullarbor_plain: () => [pkGround(26), S('M0 26 L60 26', 'ik', 1.3), P('M0 40 L24 40 L26 52 L60 52 L60 60 L0 60 Z', 'hi'), S('M0 40 L24 40', 'ik', 1.2), S('M6 32 L54 32 M10 36 L50 36', 'ik', 0.9), ...pkSun(48, 10), ...pkCactus(40, 46).slice(0, 1)],
+};
+for (const [id, fn] of Object.entries(MKpm)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 103: African, Antarctic and Asian peaks, volcanoes and gorges, sourced, audited, hand-drawn ── */
+const pnVolc = (x, base, w, h, plume = true) => [...ozCone(x, base, w, h, plume), S(`M${x - 1} ${base - h + 4} Q${x} ${base - h * 0.5} ${x + 2} ${base}`, 'hi', 1.2)];
+const pnCrater = (cx, y, w) => [E(cx, y, w, w * 0.38, 'lo'), mmEll(cx, y, w, w * 0.38, 'ik', 1)];
+const pnRock = (x, y, w, h) => [E(x, y, w, h, 'bs'), mmEll(x, y, w, h, 'ik', 1.2)];
+const pnBalance = (x, y) => [...pnRock(x, y, 6, 3), ...pnRock(x, y - 5, 4.4, 2.6), ...pnRock(x, y - 9.5, 3, 2)];
+const pnPeak = (x, base, w, h) => [...opMtn(x, base, w, h, 'hi', true), S(`M${x} ${base - h} L${x} ${base - h - 3}`, 'ik', 1.4), P(`M${x} ${base - h - 3} L${x + 5} ${base - h - 2} L${x} ${base - h - 1} Z`, 'hi')];
+const pnSnowCap = (x, base, w, h) => opMtn(x, base, w, h, 'bs', true);
+const pnPagoda = (x, y) => [...pePagoda(x, y)];
+const pnSteps = (x, y, n = 4) => Array.from({ length: n }, (_, i) => box(x + i * 3, y - i * 2, 3, 2 + i * 2, 'ik'));
+const pnCloud = (x, y) => [E(x, y, 6, 2.4, 'hi'), E(x + 4, y - 1.4, 4, 2, 'hi'), E(x - 3, y - 1.2, 3.4, 1.8, 'hi')];
+const MKpn = {
+abiod_valley: () => [...pkCanyon(16, 44, 14, 46), ...pjRiver('M30 46 L30 60', 3), ...opMtn(6, 14, 6, 10, 'bs', false), ...opMtn(54, 14, 6, 10, 'bs', false), ...paTree(8, 14, 3), S('M20 28 L24 36 M40 28 L36 36', 'ik', 1)],
+amojjar_pass: () => [...pmPass(28), ...opMtn(10, 28, 10, 18, 'bs', false), ...opMtn(50, 28, 10, 18, 'bs', false), ...pkSun(30, 10), S('M24 46 L36 46', 'ik', 1), S('M8 40 q4 -3 8 0', 'ik', 1)],
+andringitra_massif: () => [pkGround(46), ...pkDome(14, 46, 10, 16), ...pkDome(32, 46, 14, 26), ...pkDome(50, 46, 8, 14), S('M24 30 L28 36 M34 24 L38 30', 'ik', 1), ...pnCloud(10, 14), ...pnCloud(44, 10)],
+ankarana_special_reserve: () => [...pgPlateau(4, 56, 46, 14), P('M24 46 L36 46 L36 56 L24 56 Z', 'ik'), S('M28 46 L28 56 M32 46 L32 56', 'hi', 1), ...pgTrees(6, 20, 32).slice(0, 2), ...pkSun(48, 10)],
+high_atlas: () => [pkGround(46), ...opMtn(10, 46, 10, 22, 'hi', true), ...opMtn(26, 46, 12, 32, 'hi', true), ...opMtn(44, 46, 12, 28, 'hi', true), ...ntConifer(50, 34, 12, 4, 'lo')],
+balancing_rocks_of_zimbabwe: () => [pkGround(50), ...pnBalance(14, 48), ...pnBalance(32, 48), ...pnRock(48, 47, 6, 3), ...pnRock(48, 42, 4, 2.4), ...pkSun(50, 12)],
+dades_gorges: () => [...pkCanyon(14, 46, 14, 46), ...pjRiver('M30 46 L30 60', 3), ...ntConifer(4, 14, 12, 4, 'lo'), S('M18 24 L22 36 M42 24 L38 36', 'ik', 1), ...pkSun(30, 6)],
+el_kantara: () => [pkGround(34), ...paHouse(10, 34, 6), ...paHouse(20, 34, 5), ...paHouse(30, 34, 6), ...paHouse(42, 34, 5), ...pgBridge(4, 56, 50), ...nlPalm(14, 34, 12, 'lo'), ...nlPalm(50, 34, 12, 'lo')],
+fouta_djallon: () => [...pgPlateau(4, 56, 44, 20), ...pjRiver('M28 24 Q22 34 30 44', 2.4), ...pjRiver('M40 24 Q46 36 40 46', 2.4), ...ntConifer(10, 36, 10, 4, 'lo'), S('M12 14 q4 -3 8 0 M40 12 q4 -3 8 0', 'ik', 1.2)],
+great_escarpment_southern_africa: () => [P('M0 0 L60 0 L60 24 L34 24 L30 44 L0 44 Z', 'bs'), S('M34 24 L30 44 M34 24 L60 24', 'ik', 1.3), S('M34 28 L32 40 M40 24 L38 36', 'ik', 1), P('M0 44 L30 44 L60 60 L0 60 Z', 'lo'), S('M6 52 q6 -3 12 0 t12 0', 'hi', 1.2), ...pkCactus(10, 44)],
+highveld: () => [pkGround(34), S('M0 34 L60 34', 'ik', 1.3), ...paPony(18, 46, 0.9), ...pbTower(46, 52).slice(0, 2), S('M6 42 L54 42 M10 56 L50 56', 'ik', 1), ...pkSun(46, 12)],
+hoggar_mountains: () => [pkGround(46), P('M2 46 L8 20 L12 30 L18 8 L24 28 L30 14 L40 46 Z', 'bs'), S('M2 46 L8 20 L12 30 L18 8 L24 28 L30 14 L40 46', 'ik', 1.3), ...pkSun(50, 14), ...pkCactus(48, 56).slice(0, 1)],
+jugurtha_tableland: () => [pkGround(46), ...pkButte(14, 46, 32, 28), S('M18 30 L18 46 M42 30 L42 46', 'ik', 1), ...nlPalm(8, 46, 10, 'lo'), ...nlPalm(52, 46, 10, 'lo')],
+mandara_mountains: () => [pkGround(46), ...ozCone(14, 46, 8, 16, false), ...ozCone(30, 46, 10, 26, true), ...ozCone(46, 46, 8, 18, false), S('M0 54 L60 54', 'ik', 1)],
+jebel_marra: () => [pkGround(48), ...ozCone(30, 48, 18, 26, true), ...pjLake(30, 22, 6, 2.4), ...opMtn(8, 48, 7, 10, 'bs', false), ...opMtn(52, 48, 7, 10, 'bs', false)],
+rwenzori_mountains: () => [pkGround(48), ...pnPeak(14, 48, 10, 26), ...pnPeak(30, 48, 12, 34), ...pnPeak(46, 48, 10, 24), ...pnCloud(8, 14), ...pnCloud(52, 14)],
+tibesti_mountains: () => [pkGround(46), ...opMtn(14, 46, 12, 22, 'bs', false), ...pnCrater(14, 28, 4), ...opMtn(34, 46, 14, 30, 'bs', false), ...pnCrater(34, 20, 5), ...pkSun(52, 12), S('M44 56 L58 56', 'ik', 1)],
+todgha_gorge: () => [...pkCanyon(16, 44, 12, 48), ...pjRiver('M30 48 L30 60', 3), S('M20 20 L24 40 M40 20 L36 40', 'ik', 1), ...paTree(8, 12, 3), ...paTree(50, 12, 3)],
+emi_koussi: () => [pkGround(48), ...pnVolc(30, 48, 22, 28, false), ...pnCrater(30, 22, 5), ...pkSun(52, 10), ...pkCactus(8, 56).slice(0, 1)],
+menengai: () => [pkGround(46), P('M2 46 L14 22 L24 30 L36 30 L46 22 L58 46 Z', 'bs'), S('M2 46 L14 22 L24 30 L36 30 L46 22 L58 46', 'ik', 1.3), ...pnCrater(30, 34, 8), ...paTree(8, 54, 3), S('M4 54 L56 54', 'ik', 1)],
+mount_nyiragongo: () => [pkGround(48), ...pnVolc(30, 48, 16, 30, true), S('M30 18 L30 24', 'hi', 2.4), S('M26 28 Q30 40 34 28', 'hi', 1.6), ...paTree(10, 48, 4), ...paTree(52, 48, 4)],
+ras_dashen: () => [pkGround(46), ...pnPeak(30, 46, 18, 34), ...opMtn(10, 46, 8, 14, 'bs', false), ...opMtn(52, 46, 8, 12, 'bs', false)],
+mount_stanley: () => [pkGround(48), ...pnPeak(24, 48, 14, 32), ...pnPeak(42, 48, 10, 26), P('M20 40 L24 34 L28 40 Z', 'ik'), ...pnCloud(10, 14), ...pnCloud(48, 8)],
+teide: () => [...plWater(46), ...pnVolc(30, 46, 20, 34, false), P('M24 24 L36 24 L30 14 Z', 'hi'), S('M30 12 q-3 -4 0 -7', 'hi', 1.4), ...ozLand(30, 46, 24, 4)],
+toubkal: () => [pkGround(46), ...pnPeak(30, 46, 20, 38), ...opMtn(8, 46, 8, 14, 'bs', true), ...opMtn(52, 46, 8, 14, 'bs', true), ...pjLake(30, 54, 10, 2.4)],
+trou_aux_cerfs: () => [pkGround(46), ...opMtn(30, 46, 18, 18, 'bs', false), ...pnCrater(30, 32, 7), ...ntConifer(6, 36, 12, 4, 'lo'), ...ntConifer(50, 36, 12, 4, 'lo'), ...ozLand(30, 54, 10, 2.4)],
+mount_erebus: () => [P('M0 40 L60 40 L60 60 L0 60 Z', 'hi'), ...pnVolc(30, 40, 18, 28, true), S('M30 14 L30 22', 'hi', 2.4), ...ozPeng(10, 50, 1), ...ozPeng(48, 50, 1), S('M0 40 L60 40', 'ik', 1.3)],
+mount_sidley: () => [P('M0 40 L60 40 L60 60 L0 60 Z', 'hi'), P('M4 40 Q30 8 56 40 Z', 'hi'), S('M4 40 Q30 8 56 40', 'ik', 1.5), S('M14 38 Q30 20 46 38', 'ik', 1), ...ozBerg(48, 54, 0.6)],
+mount_ararat: () => [pkGround(46), ...pnPeak(42, 46, 14, 36), ...opMtn(20, 46, 8, 16, 'hi', true), ...pjLake(10, 54, 6, 2), S('M18 34 L30 34', 'ik', 1)],
+avachinsky: () => [pkGround(46), ...pnVolc(24, 46, 16, 28, true), ...opMtn(46, 46, 10, 14, 'hi', true), ...pbBear(44, 56, 0.6), ...ntConifer(4, 36, 12, 4, 'lo')],
+mount_bromo: () => [P('M0 40 L60 40 L60 60 L0 60 Z', 'hi'), ...opMtn(14, 40, 14, 16, 'bs', false), ...pnVolc(38, 40, 10, 24, true), ...paPony(22, 52, 0.7), S('M0 40 L60 40', 'ik', 1.3)],
+mount_damavand: () => [pkGround(48), ...pnVolc(30, 48, 18, 38, true), P('M24 24 L36 24 L30 12 Z', 'hi'), ...ntConifer(6, 36, 12, 4, 'lo')],
+hallasan: () => [...plWater(44), ...ozLand(30, 44, 26, 8), P('M10 44 Q30 12 50 44 Z', 'bs'), S('M10 44 Q30 12 50 44', 'ik', 1.4), ...pnCrater(30, 22, 4), ...paPony(10, 52, 0.7)],
+ismoil_somoni_peak: () => [pkGround(48), ...pnPeak(30, 48, 18, 38), ...opMtn(10, 48, 8, 18, 'hi', true), ...opMtn(52, 48, 8, 16, 'hi', true), ...pjLake(30, 54, 10, 2)],
+mount_kinabalu: () => [pkGround(46), P('M12 46 L18 22 L24 30 L30 12 L36 28 L44 20 L50 46 Z', 'bs'), S('M12 46 L18 22 L24 30 L30 12 L36 28 L44 20 L50 46', 'ik', 1.3), ...pgTrees(2, 58, 46).slice(0, 8), ...pnCloud(46, 10)],
+klyuchevskaya_sopka: () => [pkGround(48), ...pnVolc(30, 48, 24, 40, true), P('M22 24 L38 24 L30 12 Z', 'hi'), S('M30 10 q-3 -4 0 -7', 'hi', 1.6)],
+koryaksky: () => [pkGround(48), ...pnVolc(32, 48, 18, 30, true), ...opMtn(10, 48, 8, 14, 'hi', true), ...peBuilds(46, 54).slice(0, 2), ...ntConifer(6, 36, 12, 4, 'lo')],
+mayon: () => [pkGround(48), P('M6 48 Q18 40 30 10 Q42 40 54 48 Z', 'bs'), S('M6 48 Q18 40 30 10 Q42 40 54 48', 'ik', 1.4), S('M30 10 q-3 -4 0 -7', 'hi', 1.6), S('M20 44 L30 14 L40 44', 'ik', 0.9), ...paTree(8, 54, 3), ...pnCloud(48, 14)],
+mount_merapi: () => [pkGround(46), ...pnVolc(30, 46, 18, 32, true), S('M30 18 L30 24', 'hi', 2.4), S('M22 54 L38 54 M20 58 L40 58', 'lo', 1.6), ...pnPagoda(52, 52).slice(0, 2)],
+mount_paektu: () => [pkGround(46), P('M4 46 L16 22 L26 24 L34 24 L44 22 L56 46 Z', 'hi'), S('M4 46 L16 22 L26 24 L34 24 L44 22 L56 46', 'ik', 1.4), ...pjLake(30, 30, 8, 2.8), ...ntConifer(4, 34, 12, 4, 'lo')],
+mount_papandayan: () => [pkGround(46), ...opMtn(30, 46, 18, 24, 'bs', false), S('M22 34 q-2 -3 0 -5 M30 30 q-2 -3 0 -5 M38 34 q-2 -3 0 -5', 'hi', 1.6), ...pjRiver('M10 54 Q30 48 50 54', 2), ...ntConifer(6, 32, 12, 4, 'lo')],
+sahand: () => [pkGround(46), P('M6 46 Q16 40 22 22 Q30 12 38 22 Q44 40 54 46 Z', 'bs'), S('M6 46 Q16 40 22 22 Q30 12 38 22 Q44 40 54 46', 'ik', 1.4), P('M24 22 Q30 12 36 22 Z', 'hi'), ...pjLake(30, 54, 12, 2.4), S('M10 34 L20 34', 'ik', 1)],
+mount_tambora: () => [pkGround(46), P('M2 46 L12 22 L22 28 L38 28 L48 22 L58 46 Z', 'bs'), S('M2 46 L12 22 L22 28 L38 28 L48 22 L58 46', 'ik', 1.3), ...pnCrater(30, 32, 9), S('M10 10 q8 -4 16 0 M34 8 q8 -4 16 0', 'ik', 1.4)],
+yushan_mountain: () => [...plWater(50), ...pnPeak(30, 50, 22, 40), ...pgTrees(4, 18, 50).slice(0, 3), ...pgTrees(40, 56, 50).slice(0, 3)],
+mount_emei: () => [pkGround(46), ...opMtn(30, 46, 20, 36, 'bs', false), ...pnPagoda(30, 22), ...pnCloud(12, 20), ...pnCloud(48, 30), ...ntConifer(8, 34, 12, 4, 'lo')],
+fanjingshan: () => [pkGround(50), P('M22 50 L24 28 L22 28 L30 10 L38 28 L36 28 L38 50 Z', 'bs'), S('M22 50 L24 28 L22 28 L30 10 L38 28 L36 28 L38 50', 'ik', 1.3), ...pnCloud(12, 26), ...pnCloud(48, 36), ...pgTrees(2, 58, 50).slice(0, 4)],
+mount_heng_hunan: () => [pkGround(46), ...opMtn(30, 46, 22, 30, 'bs', false), ...pnPagoda(30, 22), ...ntConifer(6, 34, 12, 4, 'lo'), ...ntConifer(50, 34, 12, 4, 'lo'), ...pjRiver('M0 56 L60 56', 2)],
+mount_heng_shanxi: () => [pkGround(46), P('M14 46 L16 20 L28 14 L44 20 L46 46 Z', 'bs'), S('M14 46 L16 20 L28 14 L44 20 L46 46', 'ik', 1.4), ...pnPagoda(30, 26), S('M20 34 L40 34 M20 40 L40 40', 'ik', 1), ...ntConifer(4, 36, 12, 4, 'lo')],
+};
+for (const [id, fn] of Object.entries(MKpn)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 104: Chinese, Himalayan, Japanese and European peaks, capes, isthmuses and far islands, sourced, audited, hand-drawn ── */
+const poSheer = (x, base, w, h) => [P(`M${x - w} ${base} L${x - w * 0.5} ${base - h} L${x + w * 0.2} ${base - h - 3} L${x + w} ${base} Z`, 'bs'), S(`M${x - w * 0.5} ${base - h} L${x - w * 0.3} ${base} M${x + w * 0.2} ${base - h - 3} L${x + w * 0.3} ${base}`, 'ik', 1.1)];
+const poMist = (y) => [S(`M4 ${y} q8 -3 16 0 t16 0 t16 0`, 'hi', 1.6), S(`M10 ${y + 4} q8 -3 16 0 t16 0`, 'hi', 1.2)];
+const poPine = (x, y, h = 10) => ntConifer(x, y, h, 4, 'lo');
+const poCape = (tipx, tipy) => [...plWater(0), P(`M0 0 L60 0 L60 20 L${tipx + 8} 24 L${tipx} ${tipy} L${tipx - 8} 24 L0 20 Z`, 'bs'), S(`M0 20 L${tipx - 8} 24 L${tipx} ${tipy} L${tipx + 8} 24 L60 20`, 'ik', 1.3)];
+const MKpo = {
+mount_hua: () => [pkGround(50), ...poSheer(30, 50, 14, 40), S('M24 20 L28 30 M34 16 L36 28', 'hi', 1.2), ...pePagoda(46, 50).slice(0, 4), ...poPine(10, 34, 14)],
+huangshan: () => [pkGround(52), ...poSheer(16, 52, 8, 28), ...poSheer(36, 52, 10, 38), ...poSheer(52, 52, 6, 22), ...poMist(40), ...poPine(26, 30, 10)],
+mount_jiuhua: () => [pkGround(50), ...opMtn(30, 50, 22, 32, 'bs', false), ...pePagoda(30, 26), ...pePagoda(14, 50).slice(0, 4), ...pnCloud(48, 12), ...poPine(48, 34, 12)],
+mount_lu: () => [pkGround(46), ...opMtn(30, 46, 20, 26, 'bs', false), S('M32 22 L32 46', 'lo', 4), S('M32 22 L32 46', 'hi', 1.6), ...pjLake(14, 54, 12, 2.6), ...poMist(12), ...poPine(52, 34, 12)],
+mount_putuo: () => [...plWater(34), ...ozLand(30, 34, 22, 6, 'bs'), ...opMtn(30, 32, 12, 14, 'bs', false), ...pePagoda(30, 20).slice(0, 4), ...orBoat(48, 46, 0.7), ...poPine(18, 30, 8)],
+mount_song: () => [pkGround(46), ...opMtn(10, 46, 10, 18, 'bs', false), ...opMtn(26, 46, 12, 26, 'bs', false), ...opMtn(44, 46, 10, 20, 'bs', false), ...pePagoda(52, 52).slice(0, 4), S('M2 54 q8 -3 16 0 t16 0', 'lo', 2)],
+mount_wutai: () => [pkGround(46), ...pgPlateau(4, 18, 46, 14), ...pgPlateau(20, 34, 46, 18), ...pgPlateau(36, 50, 46, 14), ...pePagoda(28, 28).slice(0, 4), ...pkSun(52, 10)],
+annapurna: () => [pkGround(50), ...pnPeak(30, 50, 22, 40), ...opMtn(8, 50, 9, 16, 'bs', true), ...opMtn(52, 50, 8, 14, 'bs', true), S('M30 14 L24 30 M30 14 L36 28', 'ik', 1), ...pnCloud(46, 12)],
+broad_peak: () => [pkGround(50), P('M2 50 L16 24 L30 22 L44 28 L58 50 Z', 'bs'), S('M2 50 L16 24 L30 22 L44 28 L58 50', 'ik', 1.4), P('M16 24 L30 22 L44 28 L30 30 Z', 'hi'), ...pnCloud(46, 12), ...pkSun(10, 12)],
+cho_oyu: () => [pkGround(50), ...pnPeak(24, 50, 18, 36), ...opMtn(46, 50, 12, 22, 'bs', true), P('M0 50 L60 50 L60 56 L0 56 Z', 'hi'), S('M6 53 L54 53', 'ik', 0.9), ...pnCloud(48, 10)],
+dhaulagiri: () => [pkGround(50), ...pnPeak(28, 50, 22, 42), ...pjRiver('M10 50 Q6 56 16 60', 3), ...opMtn(52, 50, 8, 14, 'bs', true), ...pnCloud(10, 14), S('M20 34 L28 28 L36 34', 'ik', 1)],
+gasherbrum_i: () => [pkGround(50), ...opMtn(20, 50, 12, 24, 'bs', true), ...pnPeak(38, 50, 16, 38), S('M38 12 L34 26 M38 12 L42 24', 'ik', 1), ...pnCloud(10, 12), ...pkSun(54, 8)],
+gasherbrum_ii: () => [pkGround(50), ...opMtn(14, 50, 10, 22, 'bs', true), ...opMtn(30, 50, 12, 30, 'bs', true), ...pnPeak(46, 50, 12, 36), ...pnCloud(30, 10), S('M4 54 L56 54', 'ik', 1)],
+lhotse: () => [pkGround(50), ...pnPeak(30, 50, 20, 40), S('M30 14 L30 36', 'ik', 1.2), P('M30 14 L38 40 L30 36 Z', 'bs'), ...opMtn(8, 50, 8, 14, 'bs', true), ...pnCloud(50, 12)],
+kangchenjunga: () => [pkGround(50), ...opMtn(12, 50, 10, 24, 'bs', true), ...pnPeak(28, 50, 14, 40), ...opMtn(44, 50, 10, 30, 'bs', true), ...opMtn(56, 50, 6, 18, 'bs', true), ...pnCloud(18, 10)],
+makalu: () => [pkGround(50), P('M6 50 L28 12 L34 12 L54 50 Z', 'bs'), S('M6 50 L28 12 L34 12 L54 50', 'ik', 1.5), P('M24 20 L28 12 L34 12 L38 22 L31 25 Z', 'hi'), ...pnCloud(48, 10), ...poPine(8, 36, 10)],
+manaslu: () => [pkGround(50), ...opMtn(14, 50, 12, 20, 'bs', true), ...pnPeak(34, 50, 18, 38), ...pjLake(50, 56, 8, 1.8), ...pnCloud(12, 10), ...poPine(54, 36, 10)],
+nanga_parbat: () => [pkGround(50), ...poSheer(30, 50, 22, 38), P('M30 12 L36 20 L28 22 Z', 'hi'), ...pjRiver('M6 50 Q14 56 24 60', 3), ...pnCloud(48, 10), ...pnCloud(12, 14)],
+shishapangma: () => [pkGround(50), ...opMtn(30, 50, 22, 28, 'bs', true), S('M4 38 L56 38', 'ik', 1), ...pkSun(10, 12), ...pnCloud(48, 12), ...pgFox(44, 56, 0.5).slice(0, 2)],
+mount_asama: () => [pkGround(48), ...pnVolc(30, 48, 20, 30, true), ...pnCrater(30, 20, 4), ...pnCloud(10, 10), ...pnCloud(50, 12), ...paHouse(6, 52, 5)],
+mount_hotakadake: () => [pkGround(50), ...poSheer(22, 50, 12, 36), ...poSheer(40, 50, 12, 28), S('M20 18 L24 30 M40 24 L42 34', 'hi', 1.2), ...pgTrees(4, 56, 56).slice(0, 4)],
+mount_kita: () => [pkGround(50), ...opMtn(30, 50, 22, 34, 'bs', true), ...opMtn(8, 50, 8, 14, 'bs', true), ...opMtn(52, 50, 8, 18, 'bs', true), S('M2 42 L18 38 M42 38 L58 42', 'hi', 1.2), ...pkSun(50, 10)],
+sakurajima: () => [...plWater(44), ...pnVolc(28, 44, 20, 28, true), S('M48 44 L60 44', 'bs', 4), ...ozLand(44, 44, 10, 2, 'bs'), ...orBoat(48, 54, 0.6), ...pnCloud(10, 10)],
+mount_athos: () => [...plWater(40), P('M0 40 L10 40 L24 14 L40 46 L60 46 L60 40 L0 40 Z', 'bs'), S('M10 40 L24 14 L40 46', 'ik', 1.4), ...paHouse(30, 44, 5), ...paColumn(44, 44, 8), ...orBoat(48, 56, 0.6)],
+ben_nevis: () => [pkGround(48), P('M0 48 L12 32 L22 20 L32 14 L44 26 L60 48 Z', 'bs'), S('M0 48 L12 32 L22 20 L32 14 L44 26 L60 48', 'ik', 1.4), P('M22 20 L32 14 L38 20 L30 24 Z', 'hi'), ...pnCloud(46, 10), ...pjLake(14, 54, 10, 2.4)],
+benbulbin: () => [pkGround(46), ...pgPlateau(8, 52, 46, 22), P('M14 36 L46 36 L46 46 L14 46 Z', 'lo'), S('M14 36 L46 36', 'ik', 1), ...paCow(14, 56, 0.6), ...paFlower(40, 58)],
+eiger: () => [pkGround(52), ...poSheer(32, 52, 20, 42), P('M22 14 L36 10 L40 18 L28 20 Z', 'hi'), S('M24 26 L28 40 M34 22 L36 38', 'ik', 1), ...paHouse(8, 56, 5), ...paHouse(48, 56, 5)],
+grossglockner: () => [pkGround(50), ...pnPeak(30, 50, 22, 40), ...poPine(8, 34, 14), ...poPine(52, 34, 14), P('M0 56 L60 56 L60 60 L0 60 Z', 'ik'), S('M4 52 q10 -4 20 0 t20 0', 'hi', 1.3)],
+hekla: () => [pkGround(48), ...pnVolc(30, 48, 22, 26, true), S('M16 36 L44 36', 'hi', 1.4), ...paCow(12, 56, 0.6), ...pnCloud(10, 10), ...pnCloud(50, 12)],
+jungfrau: () => [pkGround(52), ...pnPeak(30, 52, 22, 42), S('M18 34 L30 20 L42 34', 'ik', 1), ...opMtn(8, 52, 8, 14, 'bs', true), ...opMtn(52, 52, 8, 16, 'bs', true), ...pnCloud(48, 10)],
+kinnekulle: () => [pkGround(46), ...pgPlateau(8, 52, 46, 14), ...pgTrees(12, 46, 34), ...pjLake(30, 54, 18, 2.4), ...paHouse(48, 32, 4)],
+monch: () => [pkGround(52), P('M8 52 L22 24 L34 12 L44 26 L54 52 Z', 'bs'), S('M8 52 L22 24 L34 12 L44 26 L54 52', 'ik', 1.4), P('M26 20 L34 12 L40 20 L32 24 Z', 'hi'), ...pnCloud(48, 10), ...paHouse(10, 58, 4)],
+mount_parnassus: () => [pkGround(48), ...opMtn(22, 48, 16, 30, 'bs', true), ...opMtn(44, 48, 12, 22, 'bs', true), ...paColumn(10, 56, 10), ...paColumn(18, 56, 10), P('M6 44 L22 44 L14 38 Z', 'ik'), ...pkSun(52, 10)],
+stromboli: () => [...plWater(42), ...pnVolc(30, 42, 18, 30, true), ...ozLand(30, 42, 24, 4, 'bs'), S('M34 14 L40 28', 'hi', 1.6), ...orBoat(12, 52, 0.6)],
+zugspitze: () => [pkGround(50), P('M2 50 L16 30 L30 14 L42 30 L58 50 Z', 'bs'), S('M2 50 L16 30 L30 14 L42 30 L58 50', 'ik', 1.4), P('M26 20 L30 14 L36 22 L30 24 Z', 'hi'), S('M30 14 L30 6', 'ik', 1.4), P('M30 6 L36 8 L30 10 Z', 'hi'), ...pnCloud(10, 12)],
+cape_farewell_greenland: () => [...poCape(30, 44), ...ozIce(14, 12, 10, 4), ...ozIce(46, 12, 10, 4), ...ozBerg(10, 46, 0.8), ...orBoat(46, 54, 0.7)],
+cape_crillon: () => [...poCape(30, 46), ...paLH(30, 28), ...pgTrees(6, 22, 20).slice(0, 2), S('M4 54 q8 -3 16 0 t16 0', 'hi', 1.3)],
+cape_eluanbi: () => [...poCape(30, 46), ...paLH(30, 28), ...nlPalm(12, 20, 12, 'lo'), ...nlPalm(48, 20, 12, 'lo'), S('M4 54 q8 -3 16 0 t16 0', 'hi', 1.3)],
+cape_lopatka: () => [...poCape(30, 46), ...opMtn(16, 20, 8, 14, 'bs', true), ...ozSeal(46, 54, 0.8), ...pgTrees(40, 52, 20).slice(0, 2), S('M4 56 q8 -3 16 0 t16 0', 'hi', 1.3)],
+cape_zhelaniya: () => [...poCape(30, 44), ...ozIce(12, 10, 8, 3), ...ozIce(48, 10, 8, 3), ...pgDeer(30, 26, 0.7), ...ozBerg(48, 50, 0.8), S('M4 56 q8 -3 16 0 t16 0', 'hi', 1.3)],
+isthmus_of_chignecto: () => [...plWater(0), P('M0 0 L60 0 L60 18 L36 20 L35 40 L60 42 L60 60 L0 60 L0 42 L25 40 L24 20 L0 18 Z', 'bs'), S('M0 18 L24 20 L25 40 L0 42 M60 18 L36 20 L35 40 L60 42', 'ik', 1.3), S('M30 22 L30 38', 'ik', 1), ...paHouse(8, 12, 4), ...paHouse(46, 54, 4), ...poPine(48, 4, 8)],
+isthmus_of_perekop: () => [...plWater(0), P('M0 0 L60 0 L60 22 L36 24 L33 38 L27 38 L24 24 L0 22 Z', 'bs'), S('M0 22 L24 24 L27 38 M60 22 L36 24 L33 38', 'ik', 1.3), S('M30 26 L30 38', 'ik', 1.2), ...paHouse(6, 14, 4), ...paHouse(46, 14, 4), ...paFlower(30, 56)],
+south_georgia_and_the_south_sandwich_islands: () => [...plWater(34), ...opMtn(20, 34, 16, 22, 'bs', true), ...opMtn(40, 34, 10, 14, 'bs', true), ...ozPeng(12, 46, 1), ...ozPeng(24, 48, 1), ...ozSeal(46, 52, 0.8)],
+de_long_islands: () => [...plWater(30), ...ozLand(14, 30, 8, 3, 'hi'), ...ozLand(32, 28, 6, 2.4, 'hi'), ...ozLand(48, 31, 8, 3, 'hi'), ...ozBerg(10, 46, 0.8), ...ozBerg(50, 48, 0.7), ...ozSeal(30, 54, 0.7)],
+};
+for (const [id, fn] of Object.entries(MKpo)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 105: peaks and volcanoes of North America, Oceania and South America, sourced, audited, hand-drawn ── */
+const ppTongue = (x, y0, y1, w = 5) => [P(`M${x - w} ${y0} L${x + w} ${y0} L${x + w * 0.5} ${y1} L${x - w * 0.5} ${y1} Z`, 'hi'), S(`M${x - w} ${y0} L${x - w * 0.5} ${y1} M${x + w} ${y0} L${x + w * 0.5} ${y1}`, 'ik', 1)];
+const ppSpire = (x, base, h, w = 4) => [P(`M${x - w} ${base} L${x - w * 0.4} ${base - h * 0.7} L${x} ${base - h} L${x + w * 0.4} ${base - h * 0.7} L${x + w} ${base} Z`, 'bs'), S(`M${x - w} ${base} L${x - w * 0.4} ${base - h * 0.7} L${x} ${base - h} L${x + w * 0.4} ${base - h * 0.7} L${x + w} ${base}`, 'ik', 1.2), S(`M${x} ${base - h} L${x} ${base - h * 0.6}`, 'hi', 1)];
+const ppTable = (x0, x1, base, h) => [P(`M${x0} ${base} L${x0 + 2} ${base - h} L${x1 - 2} ${base - h} L${x1} ${base} Z`, 'bs'), S(`M${x0 + 2} ${base - h} L${x1 - 2} ${base - h}`, 'ik', 1.4), S(`M${x0 + 4} ${base - h} L${x0 + 5} ${base} M${x1 - 6} ${base - h} L${x1 - 5} ${base}`, 'ik', 1), S(`M${x0 + 4} ${base - h - 2} q4 -3 8 0 t8 0`, 'hi', 1.3)];
+const ppRail = (x0, y0, x1, y1) => [S(`M${x0} ${y0} L${x1} ${y1}`, 'ik', 1.6), S(`M${x0} ${y0 + 3} L${x1} ${y1 + 3}`, 'ik', 0.8)];
+const ppTower = (x, y) => [S(`M${x} ${y} L${x} ${y - 10}`, 'ik', 1.4), E(x, y - 10, 3, 1.6, 'hi')];
+const ppIsland = (cx, y, rx, ry) => [P(`M${cx - rx} ${y} Q${cx - rx * 0.4} ${y - ry} ${cx} ${y - ry} Q${cx + rx * 0.4} ${y - ry} ${cx + rx} ${y} Z`, 'bs'), S(`M${cx - rx} ${y} Q${cx - rx * 0.4} ${y - ry} ${cx} ${y - ry} Q${cx + rx * 0.4} ${y - ry} ${cx + rx} ${y}`, 'ik', 1.3)];
+const MKpp = {
+mount_caubvick: () => [pkGround(50), ...opMtn(30, 50, 22, 30, 'bs', true), ...opMtn(10, 50, 8, 14, 'bs', true), ...ppTongue(46, 38, 50, 5), ...pjLake(52, 56, 6, 1.6), ...pnCloud(46, 12)],
+fairweather_mountain: () => [P('M0 40 L60 40 L60 60 L0 60 Z', 'lo'), S('M0 40 L60 40', 'ik', 1.2), ...pnPeak(30, 40, 20, 34), ...opMtn(8, 40, 8, 12, 'bs', true), ...opMtn(52, 40, 8, 12, 'bs', true), S('M6 52 q8 -3 16 0 t16 0', 'hi', 1.3)],
+mount_logan: () => [pkGround(50), P('M2 50 L16 30 L26 22 L36 18 L46 28 L58 50 Z', 'bs'), S('M2 50 L16 30 L26 22 L36 18 L46 28 L58 50', 'ik', 1.4), P('M26 22 L36 18 L46 28 L36 30 Z', 'hi'), ...ppTongue(14, 40, 54, 4), ...pnCloud(10, 12), ...pnCloud(48, 10)],
+mount_saint_elias: () => [P('M0 42 L60 42 L60 60 L0 60 Z', 'lo'), S('M0 42 L60 42', 'ik', 1.2), ...pnPeak(30, 42, 22, 36), ...ppTongue(44, 36, 44, 4), ...pnCloud(10, 12), S('M6 52 q8 -3 16 0 t16 0', 'hi', 1.3)],
+volcan_de_agua: () => [pkGround(46), ...pnVolc(30, 46, 20, 30, false), ...pnCrater(30, 18, 4), ...paHouse(8, 54, 5), ...paHouse(16, 54, 5), ...paHouse(44, 54, 5), ...pnCloud(10, 10)],
+irazu_volcano: () => [pkGround(48), ...pnVolc(30, 48, 22, 24, true), ...pnCrater(30, 26, 6), ...paTree(8, 54, 4), ...paTree(52, 54, 4), ...pnCloud(10, 10)],
+santa_maria_volcano: () => [pkGround(48), ...pnVolc(30, 48, 20, 32, true), ...opMtn(8, 48, 8, 12, 'bs', false), ...opMtn(54, 48, 8, 12, 'bs', false), ...paHouse(24, 56, 5), ...paHouse(32, 56, 5)],
+nevado_de_toluca: () => [pkGround(48), P('M4 48 L16 22 L24 28 L36 28 L44 22 L56 48 Z', 'bs'), S('M4 48 L16 22 L24 28 L36 28 L44 22 L56 48', 'ik', 1.4), ...pjLake(30, 32, 5, 1.8), ...pnCloud(10, 10), ...poPine(10, 36, 12), ...paHouse(48, 54, 5)],
+paricutin: () => [pkGround(46), ...pnVolc(30, 46, 14, 24, true), P('M0 46 L60 46 L60 52 L0 52 Z', 'lo'), S('M4 56 L56 56 M8 52 L8 60 M20 52 L20 60 M32 52 L32 60 M44 52 L44 60', 'ik', 1), ...paFlower(52, 46).slice(0, 1)],
+pico_de_orizaba: () => [pkGround(50), ...pnPeak(30, 50, 22, 42), ...pnCrater(30, 14, 3), ...opMtn(8, 50, 8, 12, 'bs', false), ...pnCloud(10, 12), ...pnCloud(50, 20)],
+popocatepetl: () => [pkGround(48), ...pnVolc(24, 48, 18, 34, true), ...pnVolc(46, 48, 10, 18, false), ...pnCloud(10, 10), ...paHouse(8, 56, 5), ...paHouse(48, 56, 5)],
+volcan_de_colima: () => [pkGround(48), ...pnVolc(30, 48, 16, 30, true), ...opMtn(10, 48, 8, 14, 'bs', true), S('M30 18 L28 30 M30 22 L33 34', 'hi', 1.3), ...poPine(50, 36, 12), ...paHouse(24, 56, 5)],
+mount_adams_washington: () => [pkGround(50), ...pnVolc(30, 50, 22, 34, false), P('M24 30 L36 30 L30 16 Z', 'hi'), ...ppTongue(44, 40, 52, 4), ...poPine(8, 36, 14), ...poPine(52, 36, 14), ...pjLake(30, 56, 8, 1.6)],
+mount_baker: () => [pkGround(50), ...pnVolc(30, 50, 22, 34, false), P('M22 34 L38 34 L30 16 Z', 'hi'), ...ppTongue(16, 40, 52, 4), ...ppTongue(44, 40, 52, 4), ...poPine(6, 36, 14)],
+mount_blackburn: () => [pkGround(50), ...pnPeak(30, 50, 22, 40), ...opMtn(8, 50, 8, 14, 'bs', true), ...opMtn(52, 50, 8, 16, 'bs', true), ...ppTongue(42, 38, 52, 5), ...pnCloud(10, 10)],
+black_elk_peak: () => [pkGround(50), ...pgPlateau(10, 50, 50, 10), ...pnRock(26, 38, 8, 5), ...pnRock(36, 36, 6, 4), ...poPine(8, 36, 14), ...poPine(52, 36, 14), ...pkBison(30, 56, 0.5)],
+borah_peak: () => [pkGround(50), ...poSheer(30, 50, 18, 38), P('M24 18 L30 12 L36 18 Z', 'hi'), ...paFlower(10, 56), ...paFlower(50, 56), ...pnCloud(48, 10)],
+mount_elbert: () => [pkGround(50), ...pnPeak(30, 50, 22, 40), ...pjLake(14, 56, 8, 1.8), ...poPine(8, 36, 12), ...poPine(52, 36, 12), ...pnCloud(46, 12)],
+mount_gannett: () => [pkGround(50), ...opMtn(30, 50, 20, 30, 'bs', true), ...ppTongue(20, 40, 54, 5), ...ppTongue(42, 40, 54, 5), ...pnCloud(12, 10), S('M30 20 L30 40', 'ik', 1)],
+glacier_peak: () => [pkGround(50), ...pnVolc(30, 50, 20, 32, false), P('M24 30 L36 30 L30 18 Z', 'hi'), ...ppTongue(20, 40, 52, 5), ...ppTongue(40, 40, 52, 5), ...poPine(6, 36, 12)],
+mount_graham: () => [pkGround(50), ...opMtn(30, 50, 22, 28, 'bs', false), ...ppTower(30, 22), ...pcDish(46, 52), ...pkCactus(10, 56), ...pnCloud(48, 10)],
+grand_teton: () => [pkGround(50), ...ppSpire(30, 50, 40, 8), ...opMtn(12, 50, 8, 16, 'bs', true), ...opMtn(50, 50, 8, 14, 'bs', true), ...pjLake(30, 56, 12, 1.8), ...pnCloud(48, 10)],
+mount_hood: () => [pkGround(50), ...pnVolc(30, 50, 20, 38, false), P('M24 28 L36 28 L30 14 Z', 'hi'), ...poPine(8, 38, 12), ...poPine(14, 40, 10), ...poPine(48, 38, 12), ...poPine(54, 40, 10)],
+mount_mitchell: () => [pkGround(50), P('M2 50 L18 30 L30 20 L44 32 L58 50 Z', 'bs'), S('M2 50 L18 30 L30 20 L44 32 L58 50', 'ik', 1.4), ...poPine(14, 40, 12), ...poPine(44, 40, 12), ...poMist(34), ...pnCloud(48, 10)],
+pikes_peak: () => [pkGround(50), ...pnPeak(30, 50, 22, 38), ...ppRail(6, 52, 30, 28), ...paFlower(48, 56), ...pkSun(50, 10)],
+mount_rainier: () => [pkGround(50), ...pnVolc(30, 50, 24, 40, false), P('M22 30 L38 30 L30 12 Z', 'hi'), ...ppTongue(18, 40, 52, 4), ...ppTongue(42, 40, 52, 4), ...poPine(6, 38, 12), ...poPine(54, 38, 12)],
+mount_shasta: () => [pkGround(50), ...pnVolc(30, 50, 22, 38, false), P('M23 28 L37 28 L30 12 Z', 'hi'), ...pnVolc(50, 50, 6, 10, false), ...poPine(8, 38, 14), ...pnCloud(46, 10)],
+mount_washington_new_hampshire: () => [pkGround(50), P('M2 50 L18 28 L30 14 L44 30 L58 50 Z', 'bs'), S('M2 50 L18 28 L30 14 L44 30 L58 50', 'ik', 1.4), ...ppTower(30, 14), ...ppRail(6, 52, 28, 22), ...pnCloud(48, 10)],
+wheeler_peak_nevada: () => [pkGround(50), ...opMtn(30, 50, 20, 28, 'bs', true), ...poPine(12, 38, 12), ...poPine(48, 38, 12), P('M26 40 L34 40 L34 50 L26 50 Z', 'ik'), S('M2 50 L58 50', 'ik', 1)],
+mount_whitney: () => [pkGround(50), ...poSheer(30, 50, 16, 36), P('M22 18 L28 14 L34 16 L38 20 L28 22 Z', 'hi'), ...pjLake(30, 56, 12, 1.8), ...poPine(8, 38, 12), ...poPine(52, 38, 12)],
+mount_williamson: () => [pkGround(50), P('M4 50 L18 22 L30 12 L42 22 L56 50 Z', 'bs'), S('M4 50 L18 22 L30 12 L42 22 L56 50', 'ik', 1.4), ...ppTongue(30, 24, 52, 5), ...poPine(8, 38, 12), ...pnCloud(48, 10)],
+aoraki_mount_cook: () => [pkGround(50), ...pnPeak(30, 50, 22, 40), ...ppTongue(18, 40, 52, 5), ...pjLake(46, 56, 8, 1.8), ...opMtn(52, 50, 6, 14, 'bs', true), ...pnCloud(10, 10)],
+haleakala: () => [...plWater(46), ...ozLand(30, 46, 28, 6, 'bs'), P('M6 46 Q30 8 54 46 Z', 'bs'), S('M6 46 Q30 8 54 46', 'ik', 1.4), ...pnCrater(30, 26, 6), ...pkSun(8, 10), ...pnCloud(48, 14)],
+mount_ruapehu: () => [pkGround(50), ...pnVolc(30, 50, 22, 36, true), ...pjLake(30, 22, 4, 1.4), P('M24 30 L36 30 L30 18 Z', 'hi'), ...poPine(8, 38, 12), ...poPine(52, 38, 12), S('M6 56 L54 56', 'ik', 1)],
+ulawun: () => [...plWater(46), ...ozLand(30, 46, 26, 5, 'bs'), ...pnVolc(30, 46, 16, 34, true), ...nlPalm(8, 46, 12, 'lo'), ...nlPalm(52, 46, 12, 'lo')],
+whakaari_white_island: () => [...plWater(42), ...ppIsland(30, 42, 22, 22), ...pnCrater(30, 28, 5), S('M30 22 Q26 14 30 8', 'hi', 2), ...orBoat(48, 52, 0.7)],
+cerro_sarisarinama: () => [pkGround(52), ...ppTable(12, 48, 52, 32), ...pnCloud(10, 14), ...pnCloud(48, 10), ...pgTrees(2, 12, 56).slice(0, 1), ...pgTrees(50, 58, 56).slice(0, 1)],
+chimborazo: () => [pkGround(50), ...pnPeak(30, 50, 22, 42), ...ppTongue(20, 38, 52, 4), ...opMtn(8, 50, 8, 14, 'bs', true), ...pnCloud(48, 12)],
+cotopaxi: () => [pkGround(50), ...pnVolc(30, 50, 20, 40, true), P('M24 28 L36 28 L30 16 Z', 'hi'), ...opMtn(8, 50, 8, 12, 'bs', false), ...opMtn(54, 50, 8, 12, 'bs', false), ...pjLake(16, 56, 6, 1.4)],
+fitz_roy: () => [pkGround(52), ...ppSpire(20, 52, 30, 5), ...ppSpire(32, 52, 42, 6), ...ppSpire(44, 52, 28, 5), ...ppTongue(30, 44, 54, 5), ...pnCloud(48, 10)],
+galeras: () => [pkGround(48), ...pnVolc(30, 48, 18, 28, true), ...paHouse(8, 56, 5), ...paHouse(16, 56, 5), ...paHouse(44, 56, 5), ...paHouse(52, 56, 5), ...pnCloud(10, 10)],
+illimani: () => [pkGround(50), P('M6 50 L18 22 L24 30 L32 14 L40 26 L54 50 Z', 'bs'), S('M6 50 L18 22 L24 30 L32 14 L40 26 L54 50', 'ik', 1.4), P('M26 24 L32 14 L38 24 L32 28 Z', 'hi'), ...ppTongue(18, 38, 52, 4), ...pnCloud(48, 10)],
+llullaillaco: () => [pkGround(50), ...pnVolc(30, 50, 22, 36, false), ...pnCrater(30, 18, 4), S('M2 56 L58 56', 'ik', 1), ...pkCactus(8, 56), ...pkSun(52, 10)],
+misti: () => [pkGround(50), ...pnVolc(30, 50, 20, 34, true), ...pnCrater(30, 20, 4), ...paHouse(6, 56, 5), ...paHouse(14, 56, 5), ...paHouse(46, 56, 5), ...paHouse(52, 56, 5)],
+nevado_sajama: () => [pkGround(50), ...pnPeak(30, 50, 20, 42), ...paFlower(10, 56), ...pjLake(48, 56, 8, 1.6), ...pnCloud(10, 12), ...pkSun(52, 10)],
+pico_bolivar: () => [pkGround(50), ...pnPeak(30, 50, 20, 40), ...opMtn(10, 50, 8, 16, 'bs', false), ...poPine(52, 38, 12), ...pnCloud(46, 12), ...ppTongue(40, 34, 50, 3)],
+pico_da_neblina: () => [pkGround(50), ...opMtn(30, 50, 22, 32, 'bs', false), ...poMist(24), ...poMist(36), ...poPine(8, 36, 14), ...poPine(52, 36, 14)],
+sugarloaf_mountain: () => [...plWater(48), P('M0 48 L60 48 L60 50 L0 50 Z', 'bs'), ...pkDome(30, 48, 14, 34), S('M30 14 L30 4', 'ik', 1), ppRail(10, 54, 30, 20)[0], ...orBoat(48, 54, 0.6)].filter(Boolean),
+ojos_del_salado: () => [pkGround(50), ...pnVolc(30, 50, 22, 40, false), ...pnCrater(30, 14, 4), P('M24 30 L36 30 L30 16 Z', 'hi'), ...pjLake(48, 56, 6, 1.4), ...pkSun(8, 10)],
+tronador: () => [pkGround(50), ...pnVolc(30, 50, 20, 38, false), P('M23 30 L37 30 L30 14 Z', 'hi'), S('M46 8 L42 14 L46 14 L42 20', 'hi', 1.6), ...pjLake(30, 56, 14, 1.8), ...poPine(8, 38, 12), ...poPine(52, 38, 12)],
+};
+for (const [id, fn] of Object.entries(MKpp)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 106: caves, beaches, arches, sea stacks, impact craters and salt pans, sourced, audited, hand-drawn ── */
+const pqCave = (extra = []) => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), P('M4 52 L6 22 Q8 8 30 8 Q52 8 54 22 L56 52 Z', 'lo'), S('M4 52 L6 22 Q8 8 30 8 Q52 8 54 22 L56 52', 'ik', 1.4), ...extra];
+const pqTites = (xs, y0, len) => xs.map((x, i) => P(`M${x - 2} ${y0 + (i % 2) * 1} L${x} ${y0 + len - (i % 3) * 3} L${x + 2} ${y0 + (i % 2) * 1} Z`, 'ik'));
+const pqMites = (xs, y1, h) => xs.map((x, i) => P(`M${x - 2.4} ${y1} L${x} ${y1 - h + (i % 3) * 2} L${x + 2.4} ${y1} Z`, 'ik'));
+const pqFloor = () => [S('M4 52 L56 52', 'ik', 1.4)];
+const pqArch = (cx, base, w, h) => [P(`M${cx - w} ${base} L${cx - w} ${base - h * 0.55} Q${cx - w} ${base - h} ${cx} ${base - h} Q${cx + w} ${base - h} ${cx + w} ${base - h * 0.55} L${cx + w} ${base} L${cx + w * 0.62} ${base} L${cx + w * 0.62} ${base - h * 0.5} Q${cx} ${base - h * 0.78} ${cx - w * 0.62} ${base - h * 0.5} L${cx - w * 0.62} ${base} Z`, 'bs'), S(`M${cx - w * 0.62} ${base} L${cx - w * 0.62} ${base - h * 0.5} Q${cx} ${base - h * 0.78} ${cx + w * 0.62} ${base - h * 0.5} L${cx + w * 0.62} ${base}`, 'ik', 1.3), S(`M${cx - w} ${base} L${cx - w} ${base - h * 0.55} Q${cx - w} ${base - h} ${cx} ${base - h} Q${cx + w} ${base - h} ${cx + w} ${base - h * 0.55} L${cx + w} ${base}`, 'ik', 1.3)];
+const pqStack = (x, base, w, h) => [P(`M${x - w} ${base} L${x - w * 0.8} ${base - h} L${x + w * 0.8} ${base - h} L${x + w} ${base} Z`, 'bs'), S(`M${x - w} ${base} L${x - w * 0.8} ${base - h} L${x + w * 0.8} ${base - h} L${x + w} ${base}`, 'ik', 1.3), S(`M${x - w * 0.2} ${base - h} L${x - w * 0.3} ${base}`, 'ik', 1)];
+const pqSeaCliff = (x0, y) => [P(`M${x0} ${y} L60 ${y} L60 0 L${x0} 0 Z`, 'bs'), S(`M${x0} 0 L${x0} ${y}`, 'ik', 1.4), S(`M${x0 + 4} 10 L${x0 + 4} ${y - 6} M${x0 + 9} 6 L${x0 + 9} ${y - 10}`, 'hi', 1)];
+const pqPit = (cx, cy, rx, ry) => [E(cx, cy, rx + 3, ry + 2, 'hi'), E(cx, cy, rx, ry, 'lo'), mmEll(cx, cy, rx, ry, 'ik', 1.4)];
+const pqCracks = (y) => [S(`M4 ${y + 4} L20 ${y + 6} L30 ${y + 3} L44 ${y + 6} L56 ${y + 4} M20 ${y + 6} L18 ${y + 12} M44 ${y + 6} L46 ${y + 12} M30 ${y + 3} L32 ${y + 10}`, 'ik', 1)];
+const pqDune = (x0, x1, y, h) => [P(`M${x0} ${y} Q${(x0 + x1) / 2} ${y - h * 1.6} ${x1} ${y} Z`, 'bs'), S(`M${x0} ${y} Q${(x0 + x1) / 2} ${y - h * 1.6} ${x1} ${y}`, 'ik', 1.3)];
+const MKpq = {
+bondi_beach: () => [...plWater(26), P('M0 44 L60 44 L60 60 L0 60 Z', 'bs'), S('M0 44 Q30 40 60 44', 'ik', 1.3), ...pkSun(50, 10), ...paHouse(6, 44, 5), ...paHouse(14, 44, 5), S('M20 52 l8 -6 l8 6 Z', 'ik', 1)],
+copacabana_rio: () => [...plWater(28), P('M0 46 L60 46 L60 60 L0 60 Z', 'bs'), S('M0 46 Q30 40 60 46', 'ik', 1.3), P('M2 46 L2 22 L8 22 L8 46 Z M12 46 L12 14 L20 14 L20 46 Z M24 46 L24 24 L30 24 L30 46 Z', 'ik'), ...pkSun(50, 10), ...nlPalm(46, 46, 14, 'lo')],
+caves_of_aggtelek_karst_and_slovak_karst: () => pqCave([...pqTites([16, 28, 40, 24, 34], 8, 10), ...pqMites([14, 26, 44], 52, 10), ...pqFloor()]),
+aven_armand: () => pqCave([...pqTites([14, 46, 24, 38], 8, 8), P('M28 52 L30 12 L32 52 Z', 'ik'), ...pqMites([14, 46], 52, 8), ...pqFloor()]),
+big_hole: () => [pkGround(18), P('M0 18 L60 18 L52 54 L8 54 Z', 'lo'), S('M0 18 L8 54 L52 54 L60 18', 'ik', 1.4), S('M12 26 L50 26 M16 34 L46 34 M20 42 L42 42', 'bs', 1.2), E(30, 54, 8, 2, 'hi'), ...pcDish(52, 18).slice(0, 2)],
+cango_caves: () => pqCave([...pqTites([12, 24, 36, 46], 8, 12), ...pqMites([18, 32, 42], 52, 12), P('M26 52 L30 20 L34 52 Z', 'hi'), ...pqFloor()]),
+candelaria_caves: () => pqCave([...pqTites([18, 32, 44], 8, 8), S('M6 46 Q20 40 30 48 T54 44', 'hi', 3), ...pqMites([14, 46], 40, 6), ...pqFloor()]),
+cave_of_swallows: () => [pkGround(20), P('M10 20 L50 20 L50 60 L10 60 Z', 'lo'), mmEll(30, 20, 20, 4, 'ik', 1.4), S('M10 20 L10 60 M50 20 L50 60', 'ik', 1.4), ...[16, 24, 36, 44].map((x, i) => S(`M${x} ${30 + i * 4} q2 -4 4 0`, 'hi', 1.3)), ...paTree(6, 20, 3)],
+chinhoyi_caves: () => pqCave([E(30, 40, 16, 4, 'hi'), ...pqTites([14, 24, 36, 46], 8, 8), mmEll(30, 40, 16, 4, 'ik', 1.2), ...pqFloor()]),
+eisriesenwelt: () => pqCave([P('M8 52 L12 36 L24 42 L36 30 L48 40 L52 52 Z', 'hi'), S('M8 52 L12 36 L24 42 L36 30 L48 40 L52 52', 'ik', 1.2), ...pqTites([16, 30, 44], 8, 10), ...pqFloor()]),
+fingals_cave: () => [...plWater(44), ...[4, 12, 20, 28, 36, 44, 52].flatMap((x, i) => [P(`M${x} 46 L${x} ${10 + (i % 3) * 4} L${x + 8} ${10 + (i % 3) * 4} L${x + 8} 46 Z`, 'bs'), S(`M${x} 46 L${x} ${10 + (i % 3) * 4} L${x + 8} ${10 + (i % 3) * 4} L${x + 8} 46`, 'ik', 1)]), P('M22 46 L22 36 Q30 24 38 36 L38 46 Z', 'lo'), S('M4 54 q8 -3 16 0 t16 0 t16 0', 'hi', 1.3)],
+frasassi_caves: () => pqCave([...pqTites([12, 22, 32, 42, 50], 8, 14), ...pqMites([16, 28, 40], 52, 14), P('M24 20 L36 20 L34 36 L26 36 Z', 'hi'), ...pqFloor()]),
+han_sur_lesse_caves: () => pqCave([...pqTites([14, 26, 40], 8, 8), P('M4 42 L56 42 L56 52 L4 52 Z', 'hi'), S('M6 46 q8 -3 16 0 t16 0 t16 0', 'ik', 1), ...orBoat(30, 38, 0.5), ...pqFloor()]),
+hang_son_doong: () => pqCave([P('M30 8 L44 8 L40 30 L34 30 Z', 'hi'), S('M6 46 Q20 40 30 46 T54 44', 'hi', 3), ...pqMites([14, 24, 46], 52, 14), ...paTree(12, 52, 3), ...pqFloor()]),
+holloch_cave: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), S('M10 4 L10 20 L22 20 L22 34 L14 34 L14 48 L32 48 L32 56 L50 56', 'lo', 4), S('M10 4 L10 20 L22 20 L22 34 L14 34 L14 48 L32 48 L32 56 L50 56', 'ik', 1), S('M48 6 L48 30 L38 30', 'lo', 3)],
+jeita_grotto: () => pqCave([P('M4 42 L56 42 L56 52 L4 52 Z', 'hi'), ...pqTites([14, 26, 38, 48], 8, 12), ...orBoat(24, 40, 0.5), S('M6 46 q8 -3 16 0 t16 0 t16 0', 'ik', 1), ...pqFloor()]),
+jenolan_caves: () => pqCave([...pqTites([12, 20, 30, 40, 48], 8, 12), ...pqMites([12, 24, 36, 46], 52, 10), P('M28 20 L32 20 L32 52 L28 52 Z', 'hi'), ...pqFloor()]),
+jewel_cave_national_monument: () => pqCave([...pqTites([16, 30, 44], 8, 8), ...[16, 26, 36, 46].map((x, i) => P(`M${x - 3} 52 L${x} ${40 - (i % 2) * 5} L${x + 3} 52 Z`, 'hi')), ...pqFloor()]),
+la_verna_cave: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), S('M0 52 L16 52', 'lo', 5), P('M16 34 Q16 12 34 12 Q54 12 54 34 L54 52 L16 52 Z', 'lo'), S('M16 52 L16 34 Q16 12 34 12 Q54 12 54 34 L54 52', 'ik', 1.4), ...pqTites([26, 36, 46], 12, 8), ...pqFloor()],
+lechuguilla_cave: () => pqCave([...[14, 24, 34, 44].map((x, i) => P(`M${x - 3} 52 L${x} ${38 - (i % 2) * 6} L${x + 3} 52 Z`, 'hi')), ...pqTites([18, 30, 42], 8, 12), S('M10 20 L22 24 M40 22 L50 18', 'hi', 1.2), ...pqFloor()]),
+ledenika: () => pqCave([P('M10 52 L16 40 L28 44 L40 38 L50 52 Z', 'hi'), ...pqTites([16, 28, 38, 46], 8, 12), ...pqFloor()]),
+leviathan_cave: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), S('M2 28 Q18 20 30 30 T58 26', 'lo', 12), S('M2 28 Q18 20 30 30 T58 26', 'ik', 1), S('M2 22 Q18 14 30 24 T58 20 M2 34 Q18 26 30 36 T58 32', 'ik', 1)],
+lurgrotte: () => pqCave([...pqTites([14, 26, 38, 48], 8, 10), P('M4 44 L56 44 L56 52 L4 52 Z', 'hi'), S('M6 48 q8 -3 16 0 t16 0', 'ik', 1), ...pqFloor()]),
+neptunes_grotto: () => [...plWater(34), P('M0 0 L60 0 L60 34 L40 34 L40 20 Q30 8 20 20 L20 34 L0 34 Z', 'bs'), S('M20 34 L20 20 Q30 8 40 20 L40 34', 'ik', 1.4), ...pqTites([24, 30, 36], 16, 8), ...orBoat(30, 46, 0.7)],
+optymistychna_cave: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), S('M6 10 L6 24 L22 24 L22 36 L40 36 L40 48 L54 48 M6 24 L6 40 L14 40 M40 36 L50 28', 'lo', 4), P('M22 10 L28 6 L34 10 L28 14 Z', 'hi'), P('M44 12 L50 8 L56 12 L50 16 Z', 'hi')],
+pinargozu_cave: () => pqCave([P('M4 40 L56 40 L56 52 L4 52 Z', 'hi'), S('M6 44 q8 -3 16 0 t16 0 t16 0', 'ik', 1.2), ...pqTites([14, 26, 38, 48], 8, 10), E(44, 24, 2, 2, 'hi'), ...pqFloor()]),
+postojna_cave: () => pqCave([...pqTites([12, 22, 32, 42, 50], 8, 12), ...pqMites([16, 28, 44], 52, 12), S('M0 52 L60 52', 'ik', 1.4), S('M6 56 L54 56', 'hi', 2)]),
+scarisoara_cave: () => pqCave([P('M6 52 L8 30 L24 36 L30 24 L44 34 L54 52 Z', 'hi'), S('M6 52 L8 30 L24 36 L30 24 L44 34 L54 52', 'ik', 1.2), ...pqTites([18, 30, 42], 8, 12), ...pqFloor()]),
+sof_omar_caves: () => pqCave([S('M6 44 Q20 38 30 44 T54 42', 'hi', 3), P('M20 52 L20 30 L26 30 L26 52 Z M34 52 L34 26 L40 26 L40 52 Z', 'ik'), ...pqTites([14, 30, 48], 8, 8), ...pqFloor()]),
+thien_duong_cave: () => pqCave([...pqTites([10, 20, 30, 40, 50], 8, 16), ...pqMites([14, 26, 38, 48], 52, 16), P('M28 52 L30 14 L32 52 Z', 'hi'), ...pqFloor()]),
+veryovkina_cave: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), P('M22 0 L38 0 L36 20 L40 34 L34 50 L34 60 L26 60 L26 50 L22 34 L26 20 Z', 'lo'), S('M22 0 L26 20 L22 34 L26 50 L26 60 M38 0 L36 20 L40 34 L34 50 L34 60', 'ik', 1.3), S('M30 4 L30 56', 'hi', 1)],
+etretat: () => [...plWater(34), P('M0 0 L14 0 L16 34 L0 34 Z', 'bs'), ...pqArch(34, 34, 14, 24), P('M48 0 L60 0 L60 34 L48 34 Z', 'bs'), S('M16 34 L14 0 M48 0 L48 34', 'ik', 1.3), S('M6 50 q8 -3 16 0 t16 0 t16 0', 'hi', 1.3)],
+cap_de_formentor: () => [...plWater(0), P('M0 0 L40 0 L36 14 L44 26 L34 40 L24 60 L0 60 Z', 'bs'), S('M40 0 L36 14 L44 26 L34 40 L24 60', 'ik', 1.4), ...paLH(14, 40), ...pgTrees(2, 12, 58).slice(0, 2), S('M44 56 q4 -3 8 0', 'hi', 1.3)],
+delicate_arch: () => [pkGround(52), ...pqArch(30, 52, 18, 40), ...pkSun(50, 8), ...pkCactus(8, 56), P('M26 54 L28 50 L30 54 Z', 'ik')],
+mons_klint: () => [...plWater(0), P('M0 0 L34 0 L34 20 L30 30 L34 40 L30 60 L0 60 Z', 'hi'), S('M34 0 L34 20 L30 30 L34 40 L30 60', 'ik', 1.4), S('M8 8 L8 50 M16 4 L16 56 M24 10 L24 48', 'bs', 1), ...pgTrees(2, 28, 12).slice(0, 3), S('M38 50 q4 -3 8 0 t8 0', 'hi', 1.3)],
+old_man_of_hoy: () => [...plWater(48), ...pqStack(30, 48, 6, 38), P('M28 10 L32 10 L32 14 L28 14 Z', 'ik'), ...ozLand(14, 48, 12, 3, 'bs'), ...ozLand(50, 48, 10, 3, 'bs'), S('M6 56 q8 -3 16 0 t16 0 t16 0', 'hi', 1.3)],
+perce_rock: () => [...plWater(46), P('M4 46 L8 22 L16 18 L44 20 L52 26 L56 46 Z', 'bs'), S('M4 46 L8 22 L16 18 L44 20 L52 26 L56 46', 'ik', 1.4), P('M22 46 Q22 34 28 34 Q34 34 34 46 Z', 'lo'), ...orBoat(48, 54, 0.5), S('M4 54 q8 -3 16 0 t16 0', 'hi', 1.3)],
+la_portada: () => [...plWater(46), P('M0 46 L10 46 L12 14 L48 14 L50 46 L60 46 L60 60 L0 60 Z', 'bs'), P('M18 46 L18 28 Q30 14 42 28 L42 46 Z', 'lo'), S('M10 46 L12 14 L48 14 L50 46 M18 46 L18 28 Q30 14 42 28 L42 46', 'ik', 1.3), S('M4 54 q8 -3 16 0 t16 0 t16 0', 'hi', 1.3)],
+puente_del_inca: () => [pkGround(30), ...pjRiver('M0 46 Q30 40 60 46', 5), P('M6 30 Q30 8 54 30 L54 38 Q30 18 6 38 Z', 'bs'), S('M6 30 Q30 8 54 30 M6 38 Q30 18 54 38', 'ik', 1.3), ...opMtn(10, 30, 8, 14, 'bs', true), ...opMtn(52, 30, 8, 16, 'bs', true), S('M16 30 L16 46 M44 30 L44 46', 'ik', 1)],
+rainbow_bridge_national_monument: () => [pkGround(52), ...pqArch(30, 52, 24, 40), S('M28 30 Q30 28 32 30', 'ik', 1), ...pjRiver('M0 54 Q30 50 60 54', 3), ...pkSun(8, 8)],
+meteor_crater: () => [pkGround(34), ...pqPit(30, 44, 22, 8), S('M10 40 L20 36 M44 36 L52 40', 'ik', 1), ...pkSun(50, 10), ...pkCactus(8, 32)],
+popigai_impact_structure: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'hi'), ...pqPit(30, 32, 22, 16), E(30, 32, 8, 5, 'bs'), mmEll(30, 32, 8, 5, 'ik', 1), S('M4 12 L16 8 M44 52 L56 48', 'ik', 1)],
+sudbury_basin: () => [pkGround(20), ...pqPit(30, 40, 24, 12), ...pjLake(30, 40, 12, 4), ...ntConifer(8, 14, 12, 4, 'lo'), ...ntConifer(52, 14, 12, 4, 'lo')],
+vredefort_impact_structure: () => [pkGround(20), ...pqPit(30, 38, 24, 14), mmEll(30, 38, 12, 7, 'ik', 1.2), mmEll(30, 38, 4, 2, 'ik', 1.2), ...pkSun(8, 10)],
+bonneville_salt_flats: () => [P('M0 0 L60 0 L60 30 L0 30 Z', 'lo'), P('M0 30 L60 30 L60 60 L0 60 Z', 'hi'), S('M0 30 L60 30', 'ik', 1.4), ...pqCracks(36), ...opMtn(10, 30, 10, 12, 'bs', false), ...opMtn(50, 30, 8, 10, 'bs', false), ...pkSun(30, 10)],
+chott_el_djerid: () => [pkGround(28), P('M0 28 L60 28 L60 44 L0 44 Z', 'hi'), S('M0 28 L60 28 M0 44 L60 44', 'ik', 1.3), S('M6 36 q8 -3 16 0 t16 0 t16 0', 'ik', 1), ...nlPalm(8, 28, 12, 'lo'), ...nlPalm(52, 28, 12, 'lo'), ...pqCracks(48)],
+etosha_pan: () => [pkGround(30), P('M4 30 L56 30 L52 44 L8 44 Z', 'hi'), S('M4 30 L8 44 L52 44 L56 30', 'ik', 1.3), ...pgTrees(6, 14, 30).slice(0, 1), ...pkSun(48, 10), ...pqCracks(44)],
+dune_of_pilat: () => [...plWater(44), ...pqDune(4, 56, 44, 20), P('M0 44 L60 44 L60 50 L0 50 Z', 'bs'), S('M0 44 L60 44', 'ik', 1.3), ...pgTrees(2, 8, 44).slice(0, 1), ...pgTrees(52, 58, 44).slice(0, 1), S('M8 56 q8 -3 16 0 t16 0', 'hi', 1.3)],
+};
+for (const [id, fn] of Object.entries(MKpq)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 107: deserts, oases, savannas, forests and protected areas, sourced, audited, hand-drawn ── */
+const prDunes = (y, hs = [8, 14, 10]) => hs.flatMap((h, i) => { const x0 = -6 + i * 22, x1 = x0 + 34; return [P(`M${x0} ${y} Q${(x0 + x1) / 2} ${y - h * 1.6} ${x1} ${y} Z`, i % 2 ? 'hi' : 'bs'), S(`M${x0} ${y} Q${(x0 + x1) / 2} ${y - h * 1.6} ${x1} ${y}`, 'ik', 1.2)]; });
+const prSand = (y) => [P(`M0 ${y} L60 ${y} L60 60 L0 60 Z`, 'bs'), S(`M0 ${y} L60 ${y}`, 'ik', 1.2)];
+const prAcacia = (x, y, h = 12) => [S(`M${x} ${y} L${x} ${y - h}`, 'ik', 1.8), E(x, y - h, 8, 2.6, 'lo'), S(`M${x - 8} ${y - h} Q${x} ${y - h - 3} ${x + 8} ${y - h}`, 'ik', 1)];
+const prOasis = (cx, y) => [E(cx, y + 2, 10, 2.6, 'lo'), mmEll(cx, y + 2, 10, 2.6, 'ik', 1.2), ...nlPalm(cx - 8, y, 14, 'lo'), ...nlPalm(cx + 8, y, 12, 'lo')];
+const prBands = (y0, y1) => ['bs', 'hi', 'lo', 'ik', 'bs', 'hi', 'lo'].map((r, i, a) => P(`M0 ${y0 + (y1 - y0) * i / a.length} L60 ${y0 + (y1 - y0) * i / a.length} L60 ${y0 + (y1 - y0) * (i + 1) / a.length} L0 ${y0 + (y1 - y0) * (i + 1) / a.length} Z`, r));
+const prCanopy = (x, y, r, role = 'lo') => [S(`M${x} ${y + r} L${x} ${y + r + 12}`, 'ik', 2), C(x, y, r, role), mmEll(x, y, r, r, 'ik', 1)];
+const prFence = () => [S('M4 4 L56 4 L56 56 L4 56 Z', 'ik', 1.2), S('M4 4 L56 4 L56 56 L4 56 Z', 'bs', 0.6)];
+const prSteppe = (y) => [P(`M0 ${y} L60 ${y} L60 60 L0 60 Z`, 'bs'), S(`M4 ${y + 6} l2 -4 l2 4 M20 ${y + 10} l2 -4 l2 4 M40 ${y + 8} l2 -4 l2 4 M52 ${y + 12} l2 -4 l2 4`, 'ik', 1)];
+const MKpr = {
+badain_jaran_desert: () => [...prSand(50), ...prDunes(50, [20, 28, 22]), ...pjLake(30, 52, 8, 1.6), ...pkSun(50, 8)],
+great_salt_desert: () => [...prSand(40), P('M0 40 L60 40 L60 54 L0 54 Z', 'hi'), S('M4 44 L20 46 L30 43 L44 46 L56 44', 'ik', 1), ...prDunes(40, [6, 10, 6]), ...pkSun(48, 10)],
+lut_desert: () => [...prSand(48), ...prDunes(48, [14, 22, 16]), P('M4 48 L14 40 L22 44 L26 48 Z', 'ik'), ...pkSun(50, 10)],
+great_basin_desert: () => [...prSand(44), ...opMtn(10, 44, 10, 18, 'bs', true), ...opMtn(50, 44, 10, 16, 'bs', true), ...pkCactus(30, 56), S('M18 50 L40 50', 'ik', 1), ...pkSun(30, 10)],
+great_sandy_desert: () => [...prSand(48), ...prDunes(48, [10, 16, 10]), S('M6 54 L54 54', 'ik', 1), ...pkSun(48, 10), ...pkCactus(8, 46).slice(0, 1)],
+karoo: () => [...prSand(40), ...pgPlateau(6, 30, 40, 14), ...pgPlateau(34, 56, 40, 10), ...pgFox(30, 56, 0.6).slice(0, 2), ...pkSun(50, 8)],
+kyzylkum_desert: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), ...prDunes(50, [18, 26, 18]), P('M0 50 L60 50 L60 60 L0 60 Z', 'ik'), ...pkSun(50, 10)],
+loess_plateau: () => [P('M0 30 L8 22 L18 22 L24 30 L34 30 L42 20 L56 20 L60 30 L60 60 L0 60 Z', 'bs'), S('M0 30 L8 22 L18 22 L24 30 L34 30 L42 20 L56 20 L60 30', 'ik', 1.4), S('M6 40 L54 40 M10 48 L50 48 M14 54 L46 54', 'ik', 1), S('M4 12 q8 -3 16 0 t16 0 t16 0', 'hi', 1.3)],
+libyan_desert: () => [...prSand(46), ...prDunes(46, [12, 20, 14]), ...pkSun(48, 10), S('M6 54 L54 54', 'ik', 1)],
+death_valley: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'hi'), P('M0 20 L12 8 L20 20 L40 20 L50 8 L60 20 L60 46 L0 46 Z', 'bs'), S('M0 20 L12 8 L20 20 L40 20 L50 8 L60 20', 'ik', 1.3), ...pqCracks(48), ...pkSun(30, 10), ...pkCactus(8, 46)],
+nubian_desert: () => [...prSand(46), ...prDunes(46, [10, 14, 10]), P('M6 46 L10 36 L22 36 L26 46 Z', 'ik'), ...pkSun(50, 10)],
+painted_desert_arizona: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), ...prBands(20, 56), ...pkButte(8, 40, 14, 12), ...pkButte(38, 40, 14, 14), ...pkSun(50, 8)],
+patagonian_desert: () => [...prSand(40), ...pgPlateau(8, 30, 40, 8), ...pgFox(40, 52, 0.7), S('M4 14 q8 -3 16 0 t16 0 t16 0 M10 24 q8 -3 16 0 t16 0', 'hi', 1.4), ...prSteppe(46).slice(1, 2)],
+pobiti_kamani: () => [...prSand(40), ...[8, 18, 28, 38, 48].flatMap((x, i) => [P(`M${x - 3} 54 L${x - 2} ${22 + (i % 3) * 5} L${x + 2} ${22 + (i % 3) * 5} L${x + 3} 54 Z`, 'bs'), S(`M${x - 3} 54 L${x - 2} ${22 + (i % 3) * 5} L${x + 2} ${22 + (i % 3) * 5} L${x + 3} 54`, 'ik', 1)])],
+rabjerg_mile: () => [...plWater(46), ...prDunes(46, [10, 18, 10]), ...pgTrees(2, 8, 46).slice(0, 1), S('M0 46 L60 46', 'ik', 1.2), S('M6 54 q8 -3 16 0 t16 0', 'hi', 1.3), ...pkSun(50, 8)],
+rub_al_khali: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), ...prDunes(54, [22, 30, 24]), S('M4 20 q8 -3 16 0 t16 0 t16 0', 'hi', 1.3), ...pkSun(50, 8)],
+sechura_desert: () => [...prSand(44), ...prDunes(44, [8, 14, 8]), ...plWater(52), ...pkSun(50, 10), S('M0 44 L60 44', 'ik', 1.2)],
+seven_coloured_earths: () => [...prBands(18, 60), S('M0 18 L60 18', 'ik', 1.3), ...pkSun(50, 8), ...nlPalm(10, 18, 12, 'lo')],
+sonoran_desert: () => [...prSand(48), ...[10, 30, 50].flatMap((x, i) => [S(`M${x} 52 L${x} ${28 + (i % 2) * 6}`, 'lo', 3), S(`M${x} 42 L${x - 6} 42 L${x - 6} ${34 + (i % 2) * 4} M${x} 38 L${x + 6} 38 L${x + 6} ${30 + (i % 2) * 4}`, 'lo', 2.4)]), ...pkSun(48, 10)],
+syrian_desert: () => [...prSand(46), ...prDunes(46, [8, 12, 8]), ...prSteppe(50).slice(1, 2), ...pkSun(48, 10), ...pgFox(10, 54, 0.6)],
+al_ahsa_oasis: () => [...prSand(40), ...prOasis(30, 40), ...nlPalm(10, 40, 14, 'lo'), ...nlPalm(50, 40, 14, 'lo'), ...pkSun(50, 10), S('M0 40 L60 40', 'ik', 1.2)],
+bahariya_oasis: () => [...prSand(40), P('M0 40 L10 30 L20 40 Z M40 40 L52 28 L60 40 Z', 'bs'), ...prOasis(30, 42), ...pkSun(48, 10)],
+beni_abbes: () => [...prSand(40), ...prDunes(40, [12, 18, 12]), ...prOasis(30, 42), ...paHouse(8, 40, 5)],
+bilma: () => [...prSand(40), P('M0 40 L0 20 L18 20 L20 40 Z', 'hi'), S('M0 20 L18 20 L20 40', 'ik', 1.3), ...prOasis(36, 42), ...pkSun(50, 10)],
+dakhla_oasis: () => [...prSand(40), ...nlPalm(10, 44, 14, 'lo'), ...nlPalm(22, 44, 12, 'lo'), ...nlPalm(38, 44, 14, 'lo'), ...nlPalm(50, 44, 12, 'lo'), ...pjLake(30, 54, 14, 1.6), ...pkSun(30, 8)],
+ein_gedi_nature_reserve: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), S('M30 4 L26 20 L32 32 L28 46 L30 56', 'lo', 4), S('M30 4 L26 20 L32 32 L28 46 L30 56', 'hi', 1.4), ...nlPalm(14, 46, 12, 'lo'), ...nlPalm(46, 46, 12, 'lo'), ...pjLake(30, 56, 12, 1.6)],
+kharga_oasis: () => [...prSand(40), ...pgPlateau(2, 22, 40, 14), ...prOasis(40, 44), ...pkSun(50, 8), ...paHouse(10, 54, 5)],
+nefta_tunisia: () => [...prSand(40), P('M0 40 L60 40 L60 48 L0 48 Z', 'hi'), ...prOasis(20, 42), ...nlPalm(40, 44, 14, 'lo'), ...nlPalm(52, 44, 12, 'lo'), ...pkSun(48, 10)],
+llanos: () => [P('M0 40 L60 40 L60 60 L0 60 Z', 'bs'), S('M0 40 L60 40', 'ik', 1.3), S('M4 46 l2 -4 l2 4 M18 52 l2 -4 l2 4 M34 48 l2 -4 l2 4 M48 54 l2 -4 l2 4', 'ik', 1), ...paCow(18, 50, 0.8), ...pjRiver('M0 56 Q30 50 60 56', 3), ...pnCloud(46, 14), ...opMtn(10, 40, 8, 10, 'bs', false)],
+serengeti: () => [pkGround(42), ...prAcacia(14, 42), ...prAcacia(42, 42), ...pgDeer(30, 52, 0.9), ...pkSun(50, 10), S('M4 56 L56 56', 'ik', 1)],
+sudanian_savanna: () => [pkGround(44), ...prAcacia(12, 44), ...prAcacia(32, 44, 14), ...prAcacia(50, 44), ...pkBison(22, 54, 0.6), ...pkSun(50, 10)],
+atlantic_forest: () => [...pnCloud(46, 10), ...prCanopy(14, 22, 8), ...prCanopy(32, 18, 9), ...prCanopy(48, 24, 7), S('M0 56 L60 56', 'ik', 1.2)],
+black_forest: () => [...pgTrees(2, 56, 52), ...pgTrees(8, 50, 40), S('M0 52 L60 52', 'ik', 1.2), ...pgDeer(30, 56, 0.6)],
+boreal_forest_of_canada: () => [pkGround(52), ...pgTrees(2, 56, 52), ...pgTrees(5, 53, 42), ...pjLake(30, 56, 10, 1.4), ...pnCloud(46, 8)],
+borneo_lowland_rain_forests: () => [...prCanopy(12, 18, 8), ...prCanopy(30, 14, 9), ...prCanopy(48, 20, 8), ...prCanopy(22, 30, 6), ...prCanopy(40, 32, 6), S('M0 56 L60 56', 'ik', 1.2)],
+hyrcanian_forests: () => [...plWater(46), ...pgTrees(2, 56, 40), ...pgTrees(8, 50, 30), S('M0 46 L60 46', 'ik', 1.2), S('M6 54 q8 -3 16 0 t16 0', 'hi', 1.3)],
+pacific_temperate_rainforests: () => [...pgTrees(2, 56, 56), ...pgTrees(6, 52, 46), ...pgTrees(10, 48, 36), S('M6 20 q8 -3 16 0 t16 0 t16 0', 'hi', 1.3), ...pnCloud(46, 8)],
+sherwood_forest: () => [pkGround(50), ...prCanopy(18, 22, 9), ...prCanopy(40, 26, 8), S('M18 36 L18 50 M40 38 L40 50', 'ik', 3), ...pgDeer(30, 54, 0.7), S('M0 50 L60 50', 'ik', 1.2)],
+virgin_komi_forests: () => [pkGround(50), ...opMtn(10, 50, 10, 14, 'bs', true), ...opMtn(50, 50, 10, 12, 'bs', true), ...pgTrees(10, 50, 50), ...pnCloud(30, 8)],
+protected_area: () => [pkGround(30), ...prFence(), ...pgTrees(10, 46, 50), ...pgDeer(30, 52, 0.6).slice(0, 2)],
+nature_reserve: () => [pkGround(30), ...prFence(), ...pgTrees(10, 22, 50), ...prAcacia(40, 50, 10), ...pkSun(44, 14).slice(0, 2)],
+};
+for (const [id, fn] of Object.entries(MKpr)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 108: national parks, nature reserves and protected landscapes, sourced, audited, hand-drawn ── */
+const psPillars = (xs, base, h) => xs.flatMap((x, i) => { const hh = h - (i % 3) * 6; return [P(`M${x - 3} ${base} L${x - 2.4} ${base - hh} L${x + 2.4} ${base - hh} L${x + 3} ${base} Z`, 'bs'), S(`M${x - 3} ${base} L${x - 2.4} ${base - hh} L${x + 2.4} ${base - hh} L${x + 3} ${base}`, 'ik', 1)]; });
+const psTerraces = (cx, y) => [0, 1, 2, 3].map(i => E(cx - 6 + i * 4, y + i * 5, 12 - i * 1.5, 2.6, 'lo')).concat([0, 1, 2, 3].map(i => mmEll(cx - 6 + i * 4, y + i * 5, 12 - i * 1.5, 2.6, 'ik', 1)));
+const psRivers = (y0, y1) => [10, 30, 50].flatMap(x => pjRiver(`M${x} ${y0} Q${x + 3} ${(y0 + y1) / 2} ${x} ${y1}`, 3));
+const psSpit = (y) => [P(`M0 ${y} L60 ${y - 6} L60 ${y} L0 ${y + 6} Z`, 'bs'), S(`M0 ${y} L60 ${y - 6} M0 ${y + 6} L60 ${y}`, 'ik', 1.3)];
+const psTent = (x, y) => [P(`M${x - 5} ${y} L${x} ${y - 7} L${x + 5} ${y} Z`, 'hi'), S(`M${x - 5} ${y} L${x} ${y - 7} L${x + 5} ${y} Z`, 'ik', 1)];
+const psSign = (x, y) => [S(`M${x} ${y} L${x} ${y - 9}`, 'ik', 1.6), box(x - 4, y - 12, 8, 4, 'hi'), S(`M${x - 4} ${y - 12} L${x + 4} ${y - 12} L${x + 4} ${y - 8} L${x - 4} ${y - 8} Z`, 'ik', 0.8)];
+const psPuy = (x, base, w, h) => [P(`M${x - w} ${base} Q${x - w * 0.4} ${base - h} ${x} ${base - h} Q${x + w * 0.4} ${base - h} ${x + w} ${base} Z`, 'bs'), S(`M${x - w} ${base} Q${x - w * 0.4} ${base - h} ${x} ${base - h} Q${x + w * 0.4} ${base - h} ${x + w} ${base}`, 'ik', 1.2), P(`M${x - 3} ${base - h + 1} Q${x} ${base - h + 4} ${x + 3} ${base - h + 1} Z`, 'lo')];
+const psSpire = (x, base, h, w = 3) => [P(`M${x - w} ${base} L${x - w * 0.5} ${base - h} L${x} ${base - h - 3} L${x + w * 0.5} ${base - h} L${x + w} ${base} Z`, 'bs'), S(`M${x - w} ${base} L${x - w * 0.5} ${base - h} L${x} ${base - h - 3} L${x + w * 0.5} ${base - h} L${x + w} ${base}`, 'ik', 1.1)];
+const MKps = {
+central_kalahari_game_reserve: () => [...prSand(44), ...prDunes(44, [6, 10, 6]), ...prAcacia(14, 44), ...pgDeer(34, 54, 0.8), ...pkSun(50, 10)],
+comoe_national_park: () => [pkGround(44), ...pjRiver('M0 52 Q30 46 60 52', 4), ...prAcacia(12, 44), ...prAcacia(46, 44, 14), ...pkBison(26, 44, 0.6), ...pkSun(50, 10)],
+ennedi_plateau: () => [...prSand(46), ...pkButte(6, 46, 18, 22), ...pkButte(34, 46, 20, 28), ...pqArch(50, 46, 6, 14).slice(0, 3), ...pkSun(52, 8)],
+golden_gate_highlands_national_park: () => [pkGround(48), ...pkButte(4, 48, 22, 28), ...pkButte(34, 48, 22, 22), ...pgDeer(30, 56, 0.7), ...pkSun(50, 10)],
+great_limpopo_transfrontier_park: () => [pkGround(44), S('M30 0 L30 44', 'ik', 1.2), ...prAcacia(14, 44), ...prAcacia(46, 44), ...pkBison(18, 54, 0.6), ...pgDeer(44, 54, 0.7)],
+kruger_national_park: () => [pkGround(44), ...pjRiver('M0 52 Q30 46 60 52', 4), ...prAcacia(14, 44, 14), ...prAcacia(40, 44), ...pgDeer(24, 54, 0.7), ...pkSun(50, 10)],
+manovo_gounda_st_floris_national_park: () => [pkGround(44), ...pkButte(34, 44, 18, 18), ...prAcacia(12, 44), ...pjRiver('M0 54 Q30 50 60 54', 3), ...pkBison(20, 54, 0.6), ...pkSun(8, 10)],
+maasai_mara: () => [pkGround(44), ...prAcacia(14, 44, 14), ...prAcacia(48, 44), ...pgDeer(26, 52, 0.8), ...pgDeer(40, 56, 0.7), ...pkSun(32, 10)],
+okapi_wildlife_reserve: () => [...prCanopy(14, 18, 8), ...prCanopy(32, 14, 9), ...prCanopy(48, 20, 8), ...pgDeer(30, 56, 0.7), S('M0 58 L60 58', 'ik', 1.2)],
+altai_nature_reserve: () => [pkGround(50), ...pnPeak(30, 50, 22, 38), ...opMtn(8, 50, 8, 14, 'bs', true), ...pjLake(48, 56, 8, 1.6), ...pgTrees(2, 14, 56).slice(0, 2), ...pnCloud(48, 12)],
+band_e_amir_national_park: () => [pkGround(30), ...pjLake(14, 46, 10, 4), ...pjLake(34, 50, 10, 4), ...pjLake(50, 44, 8, 3), ...opMtn(14, 30, 10, 14, 'bs', false), ...opMtn(46, 30, 10, 12, 'bs', false)],
+chitwan_national_park: () => [pkGround(44), ...pjRiver('M0 54 Q30 48 60 54', 4), ...prAcacia(14, 44, 14), ...pgTrees(30, 54, 44).slice(0, 2), ...pgFox(24, 50, 0.7), ...pkSun(50, 10)],
+goreme_historical_national_park: () => [pkGround(50), ...[10, 24, 38, 50].flatMap((x, i) => [P(`M${x - 5} 50 L${x - 1} ${24 + (i % 2) * 6} L${x + 1} ${24 + (i % 2) * 6} L${x + 5} 50 Z`, 'bs'), S(`M${x - 5} 50 L${x - 1} ${24 + (i % 2) * 6} L${x + 1} ${24 + (i % 2) * 6} L${x + 5} 50`, 'ik', 1), P(`M${x - 1} 44 L${x + 1} 44 L${x + 1} 48 L${x - 1} 48 Z`, 'ik')]), ...pkSun(52, 8)],
+great_arctic_state_nature_reserve: () => [...plWater(34), ...ozIce(18, 30, 14, 4), ...ozIce(46, 28, 10, 3), ...ozBerg(30, 46, 1), ...ozSeal(14, 54, 0.8)],
+jim_corbett_national_park: () => [pkGround(48), ...pgTrees(2, 56, 50), ...pjRiver('M0 56 Q30 52 60 56', 3), ...pgFox(30, 54, 0.8)],
+lorentz_national_park: () => [pkGround(46), ...pnPeak(30, 46, 20, 40), ...prCanopy(10, 38, 6), ...prCanopy(50, 38, 6), ...pjRiver('M0 56 Q30 50 60 56', 3), ...pnCloud(10, 10)],
+hoh_xil: () => [pkGround(46), ...pgPlateau(4, 56, 46, 8), ...opMtn(10, 38, 8, 14, 'bs', true), ...opMtn(50, 38, 8, 16, 'bs', true), ...pgDeer(28, 54, 0.7), ...pjLake(40, 52, 6, 1.4)],
+kronotsky_nature_reserve: () => [pkGround(46), ...pnVolc(18, 46, 14, 28, true), ...pnVolc(46, 46, 10, 18, false), S('M32 46 L32 30 M34 46 L34 26', 'hi', 2), ...pbBear(30, 54, 0.6), ...pnCloud(46, 10)],
+phong_nha_ke_bang_national_park: () => [pkGround(44), ...opMtn(10, 44, 10, 22, 'bs', false), ...opMtn(30, 44, 12, 28, 'bs', false), ...opMtn(50, 44, 10, 20, 'bs', false), P('M26 44 L34 44 L34 36 Q30 30 26 36 Z', 'lo'), ...pjRiver('M0 54 Q30 48 60 54', 3), ...pgTrees(4, 18, 56).slice(0, 1)],
+puerto_princesa_subterranean_river_national_park: () => [...plWater(46), P('M0 0 L60 0 L60 46 L0 46 Z', 'bs'), P('M18 46 L18 30 Q30 14 42 30 L42 46 Z', 'lo'), S('M18 46 L18 30 Q30 14 42 30 L42 46', 'ik', 1.4), ...pqTites([24, 30, 36], 22, 6), ...orBoat(30, 52, 0.6), ...nlPalm(8, 30, 14, 'lo'), ...nlPalm(52, 30, 14, 'lo')],
+setonaikai_national_park: () => [...plWater(0), ...ozLand(12, 14, 10, 6, 'bs'), ...ozLand(44, 18, 12, 6, 'bs'), ...ozLand(28, 38, 12, 6, 'bs'), ...ozLand(50, 46, 8, 4, 'bs'), ...orBoat(10, 40, 0.6), ...paTree(12, 14, 3), ...paTree(44, 18, 3)],
+sundarbans_national_park: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'lo'), ...ozLand(14, 26, 12, 6, 'bs'), ...ozLand(42, 20, 12, 6, 'bs'), ...ozLand(32, 46, 14, 6, 'bs'), ...[8, 20, 36, 46, 28, 40].flatMap((x, i) => [S(`M${x} ${i < 3 ? 26 : i < 5 ? 20 : 46} L${x} ${i < 3 ? 18 : i < 5 ? 12 : 38}`, 'ik', 1.4), C(x, i < 3 ? 17 : i < 5 ? 11 : 37, 3, 'ik')])],
+taroko_national_park: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), P('M22 0 L38 0 L34 20 L38 40 L32 60 L28 60 L24 40 L26 20 Z', 'lo'), S('M22 0 L26 20 L24 40 L28 60 M38 0 L34 20 L38 40 L32 60', 'ik', 1.3), S('M30 4 L30 56', 'hi', 1.6), ...pgTrees(2, 14, 20).slice(0, 2), ...pgTrees(44, 56, 20).slice(0, 2)],
+three_parallel_rivers: () => [pkGround(26), ...opMtn(10, 26, 10, 16, 'bs', true), ...opMtn(30, 26, 12, 22, 'bs', true), ...opMtn(50, 26, 10, 16, 'bs', true), ...psRivers(26, 60)],
+tropical_rainforest_heritage_of_sumatra: () => [pkGround(48), ...pnVolc(30, 48, 14, 24, false), ...prCanopy(10, 32, 7), ...prCanopy(50, 32, 7), ...prCanopy(20, 38, 5), ...prCanopy(42, 38, 5), ...pnCloud(46, 10)],
+tunkinsky_national_park: () => [pkGround(46), ...opMtn(14, 46, 12, 22, 'bs', true), ...opMtn(46, 46, 12, 20, 'bs', true), ...pjRiver('M30 46 Q26 52 30 60', 4), ...pgTrees(20, 40, 46).slice(0, 2), ...pnCloud(30, 10)],
+wadi_rum: () => [...prSand(48), ...pkButte(4, 48, 14, 34), ...pkButte(40, 48, 16, 28), ...prDunes(48, [4, 6, 4]), ...pkSun(30, 10)],
+wulingyuan: () => [pkGround(52), ...psPillars([8, 16, 24, 32, 40, 48], 52, 40), ...pgTrees(2, 12, 56).slice(0, 1), ...poMist(40)],
+bohemian_paradise: () => [pkGround(50), ...psPillars([10, 22, 34, 46], 50, 28), ...paCastle(30, 20, 10, 6), ...pgTrees(2, 56, 56).slice(0, 4)],
+cevennes: () => [pkGround(46), P('M0 46 L10 30 L20 36 L32 24 L44 34 L56 28 L60 46 Z', 'bs'), S('M0 46 L10 30 L20 36 L32 24 L44 34 L56 28 L60 46', 'ik', 1.3), ...pgTrees(4, 54, 56).slice(0, 5), ...pjRiver('M30 46 Q36 52 32 60', 3)],
+chaine_des_puys: () => [pkGround(48), ...psPuy(10, 48, 10, 14), ...psPuy(26, 48, 12, 20), ...psPuy(44, 48, 10, 12), ...pnCloud(30, 8), S('M0 56 L60 56', 'ik', 1)],
+curonian_spit: () => [...plWater(0), ...psSpit(30), P('M0 30 L60 24 L60 26 L0 32 Z', 'hi'), ...pgTrees(8, 52, 26).slice(0, 4), S('M4 50 q8 -3 16 0 t16 0 t16 0', 'hi', 1.3), S('M4 12 q8 -3 16 0 t16 0 t16 0', 'hi', 1.3)],
+dartmoor: () => [pkGround(46), P('M0 46 L12 34 L24 40 L36 30 L48 38 L60 46 Z', 'bs'), S('M0 46 L12 34 L24 40 L36 30 L48 38 L60 46', 'ik', 1.3), ...pnRock(36, 28, 4, 2.4), ...paPony(16, 54, 0.8), ...poMist(14)],
+dolomites: () => [pkGround(50), ...psSpire(10, 50, 32, 5), ...psSpire(22, 50, 42, 5), ...psSpire(34, 50, 34, 5), ...psSpire(46, 50, 44, 5), ...pgTrees(2, 56, 56).slice(0, 3), ...pnCloud(30, 6)],
+donana_national_park: () => [pkGround(34), ...pjLake(30, 44, 18, 4), ...pqDune(36, 60, 34, 6), ...prAcacia(10, 34, 8), ...pkSun(48, 8), S('M6 54 L54 54', 'ik', 1)],
+el_torcal_de_antequera: () => [pkGround(50), ...[8, 18, 28, 38, 48].flatMap((x, i) => [P(`M${x - 5} 50 Q${x - 4} ${34 - (i % 2) * 6} ${x} ${30 - (i % 3) * 4} Q${x + 4} ${34 - (i % 2) * 6} ${x + 5} 50 Z`, 'bs'), S(`M${x - 5} 50 Q${x - 4} ${34 - (i % 2) * 6} ${x} ${30 - (i % 3) * 4} Q${x + 4} ${34 - (i % 2) * 6} ${x + 5} 50`, 'ik', 1)]), ...pkSun(52, 8)],
+gulf_of_porto: () => [...plWater(0), P('M0 0 L18 0 L24 14 L16 30 L20 44 L0 60 Z', 'bs'), P('M60 0 L42 0 L38 18 L46 34 L40 48 L60 60 Z', 'bs'), S('M18 0 L24 14 L16 30 L20 44 L0 60 M42 0 L38 18 L46 34 L40 48 L60 60', 'ik', 1.3), ...orBoat(30, 46, 0.6), S('M22 54 q4 -3 8 0 t8 0', 'hi', 1.3)],
+hyde_park_london: () => [pkGround(30), ...pjLake(30, 44, 18, 4), ...pgBridge(10, 50, 44), ...prCanopy(10, 16, 6), ...prCanopy(30, 12, 7), ...prCanopy(50, 16, 6)],
+nenets_nature_reserve: () => [...plWater(40), P('M0 40 L60 40 L60 60 L0 60 Z', 'lo'), P('M0 24 L60 24 L60 40 L0 40 Z', 'bs'), S('M0 24 L60 24', 'ik', 1.2), S('M6 32 l2 -3 l2 3 M26 34 l2 -3 l2 3 M44 30 l2 -3 l2 3', 'ik', 1), ...pjRiver('M20 24 Q26 32 20 40', 3), ...paPuffin(46, 22), S('M4 52 q8 -3 16 0 t16 0 t16 0', 'hi', 1.3)],
+peneda_geres_national_park: () => [pkGround(46), P('M0 46 L12 28 L26 36 L40 22 L60 46 Z', 'bs'), S('M0 46 L12 28 L26 36 L40 22 L60 46', 'ik', 1.3), ...pgTrees(2, 56, 56).slice(0, 4), ...pjRiver('M30 46 Q34 54 30 60', 3), ...pnRock(14, 40, 4, 2.4)],
+russian_arctic_national_park: () => [...plWater(30), ...ozIce(18, 24, 14, 6), ...ozIce(46, 26, 12, 5), ...ozBerg(10, 46, 1), ...ozBerg(48, 50, 0.8), ...ozSeal(30, 54, 0.8)],
+saxon_switzerland: () => [pkGround(52), ...psPillars([8, 18, 28, 38, 48], 52, 36), ...pgBridge(18, 38, 30), ...pjRiver('M0 58 Q30 54 60 58', 3)],
+snowdonia: () => [pkGround(46), ...pnPeak(30, 46, 20, 36), ...opMtn(10, 46, 10, 16, 'bs', false), ...pjLake(46, 54, 10, 2), ...pnCloud(46, 10)],
+stora_sjofallet_national_park: () => [pkGround(46), ...opMtn(14, 46, 14, 22, 'bs', true), ...opMtn(48, 46, 10, 16, 'bs', true), S('M30 24 L28 36 L32 46', 'lo', 4), S('M30 24 L28 36 L32 46', 'hi', 1.4), ...pjLake(30, 54, 12, 2), ...pgTrees(2, 8, 50).slice(0, 1)],
+yugyd_va_national_park: () => [pkGround(46), ...pgTrees(2, 56, 50), ...pgTrees(6, 52, 40), ...pjRiver('M30 46 Q26 54 30 60', 3), ...pnCloud(46, 8)],
+huanglong_scenic_and_historic_interest_area: () => [pkGround(14), ...psTerraces(30, 14), ...opMtn(8, 14, 8, 14, 'bs', true), ...opMtn(52, 14, 8, 14, 'bs', true), ...pgTrees(2, 12, 56).slice(0, 1)],
+};
+for (const [id, fn] of Object.entries(MKps)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 109: quicksand and other landforms, and the parks of the Americas, sourced, audited, hand-drawn ── */
+const ptRipple = (cx, y, rx) => [E(cx, y, rx, rx * 0.3, 'lo'), mmEll(cx, y, rx, rx * 0.3, 'ik', 1.2), mmEll(cx, y, rx * 0.6, rx * 0.18, 'ik', 1), mmEll(cx, y, rx * 0.25, rx * 0.08, 'ik', 1)];
+const ptHoodoo = (x, base, h, w = 3) => [P(`M${x - w * 1.4} ${base} L${x - w * 0.6} ${base - h * 0.6} L${x - w} ${base - h * 0.8} L${x} ${base - h} L${x + w} ${base - h * 0.8} L${x + w * 0.6} ${base - h * 0.6} L${x + w * 1.4} ${base} Z`, 'bs'), S(`M${x - w * 1.4} ${base} L${x - w * 0.6} ${base - h * 0.6} L${x - w} ${base - h * 0.8} L${x} ${base - h} L${x + w} ${base - h * 0.8} L${x + w * 0.6} ${base - h * 0.6} L${x + w * 1.4} ${base}`, 'ik', 1.1)];
+const ptWave = (y) => [P(`M0 ${y} Q14 ${y - 14} 26 ${y - 6} Q18 ${y - 2} 24 ${y + 4} L0 ${y + 4} Z`, 'hi'), S(`M0 ${y} Q14 ${y - 14} 26 ${y - 6} Q18 ${y - 2} 24 ${y + 4}`, 'ik', 1.3)];
+const ptMound = (cx, base, w, h, role = 'bs') => [P(`M${cx - w} ${base} Q${cx - w * 0.6} ${base - h} ${cx} ${base - h} Q${cx + w * 0.6} ${base - h} ${cx + w} ${base} Z`, role), S(`M${cx - w} ${base} Q${cx - w * 0.6} ${base - h} ${cx} ${base - h} Q${cx + w * 0.6} ${base - h} ${cx + w} ${base}`, 'ik', 1.2)];
+const ptCactus = (x, y, h = 20) => [S(`M${x} ${y} L${x} ${y - h}`, 'lo', 3.4), S(`M${x} ${y - h * 0.4} L${x - 5} ${y - h * 0.4} L${x - 5} ${y - h * 0.7} M${x} ${y - h * 0.55} L${x + 5} ${y - h * 0.55} L${x + 5} ${y - h * 0.85}`, 'lo', 2.4)];
+const ptStrata = (x0, x1, y0, y1) => [P(`M${x0} ${y0} L${x1} ${y0} L${x1} ${y1} L${x0} ${y1} Z`, 'bs'), S(`M${x0} ${y0 + (y1 - y0) * 0.33} L${x1} ${y0 + (y1 - y0) * 0.33} M${x0} ${y0 + (y1 - y0) * 0.66} L${x1} ${y0 + (y1 - y0) * 0.66}`, 'ik', 1)];
+const ptDome = (x, y) => [P(`M${x - 6} ${y} L${x - 6} ${y - 8} Q${x} ${y - 16} ${x + 6} ${y - 8} L${x + 6} ${y} Z`, 'hi'), S(`M${x - 6} ${y} L${x - 6} ${y - 8} Q${x} ${y - 16} ${x + 6} ${y - 8} L${x + 6} ${y}`, 'ik', 1)];
+const ptObelisk = (x, y, h) => [P(`M${x - 2} ${y} L${x - 1.2} ${y - h} L${x} ${y - h - 3} L${x + 1.2} ${y - h} L${x + 2} ${y} Z`, 'hi'), S(`M${x - 2} ${y} L${x - 1.2} ${y - h} L${x} ${y - h - 3} L${x + 1.2} ${y - h} L${x + 2} ${y}`, 'ik', 1)];
+const MKpt = {
+quicksand: () => [...prSand(34), ...ptRipple(30, 44, 20), S('M30 44 L30 30', 'ik', 1.6), ...paFlower(48, 30).slice(0, 1), ...pkSun(50, 10)],
+tidal_bore: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), P('M0 20 L60 20 L60 56 L0 56 Z', 'lo'), S('M0 20 L60 20 M0 56 L60 56', 'ik', 1.3), ...ptWave(36), S('M30 30 q6 -3 12 0 t12 0 M30 44 q6 -3 12 0 t12 0', 'hi', 1.3)],
+hoodoo: () => [...prSand(50), ...ptHoodoo(14, 50, 30, 3), ...ptHoodoo(28, 50, 40, 3.4), ...ptHoodoo(42, 50, 24, 3), ...pkSun(52, 8)],
+ice_cave: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'hi'), P('M8 56 L10 24 Q12 10 30 10 Q48 10 50 24 L52 56 Z', 'lo'), S('M8 56 L10 24 Q12 10 30 10 Q48 10 50 24 L52 56', 'ik', 1.4), ...pqTites([18, 30, 42], 10, 10), ...pqMites([20, 40], 56, 8)],
+yardang: () => [...prSand(48), ...[8, 22, 36, 50].flatMap((x, i) => [P(`M${x - 6} 48 Q${x - 4} ${34 - (i % 2) * 4} ${x + 8} ${36 - (i % 2) * 4} L${x + 8} 48 Z`, 'bs'), S(`M${x - 6} 48 Q${x - 4} ${34 - (i % 2) * 4} ${x + 8} ${36 - (i % 2) * 4}`, 'ik', 1.2)]), S('M4 16 q10 -3 20 0 t20 0 M10 24 q10 -3 20 0 t20 0', 'hi', 1.4)],
+playa: () => [...prSand(30), P('M4 30 L56 30 L52 52 L8 52 Z', 'hi'), S('M4 30 L8 52 L52 52 L56 30', 'ik', 1.3), ...pqCracks(34), ...opMtn(10, 30, 8, 12, 'bs', false), ...opMtn(50, 30, 8, 10, 'bs', false), ...pkSun(30, 10)],
+salt_pan_geology: () => [...prSand(30), P('M0 30 L60 30 L60 54 L0 54 Z', 'hi'), S('M0 30 L60 30 M0 54 L60 54', 'ik', 1.3), S('M10 36 L22 36 L26 44 M34 36 L46 36 L50 44 M14 46 L28 46', 'ik', 1), ...pkSun(48, 10)],
+sandbar: () => [...plWater(0), P('M6 34 Q30 22 56 34 Q30 42 6 34 Z', 'bs'), S('M6 34 Q30 22 56 34 Q30 42 6 34', 'ik', 1.3), S('M4 50 q8 -3 16 0 t16 0 t16 0 M10 12 q8 -3 16 0 t16 0', 'hi', 1.4)],
+mud_volcano: () => [pkGround(46), ...ptMound(30, 46, 16, 16, 'bs'), ...pnCrater(30, 32, 4), S('M30 30 L28 22 M30 30 L33 20', 'ik', 1.6), E(28, 20, 2, 2, 'lo'), E(33, 18, 2, 2, 'lo'), ...pnCloud(46, 10)],
+pingo: () => [P('M0 40 L60 40 L60 60 L0 60 Z', 'hi'), S('M0 40 L60 40', 'ik', 1.3), ...ptMound(30, 40, 12, 22, 'hi'), ...ptMound(10, 40, 6, 8, 'hi'), P('M26 30 L34 30 L32 36 L28 36 Z', 'lo'), S('M44 48 l2 -3 l2 3 M6 52 l2 -3 l2 3', 'ik', 1)],
+drumlin: () => [pkGround(44), ...[10, 28, 46].flatMap(x => ptMound(x, 44, 12, 12, 'bs')), S('M4 52 L56 52', 'ik', 1), ...pnCloud(46, 12)],
+acadia_national_park: () => [...plWater(34), P('M0 34 L0 0 L26 0 L34 20 L26 34 Z', 'bs'), S('M26 0 L34 20 L26 34', 'ik', 1.3), ...pgTrees(2, 22, 22).slice(0, 2), ...paLH(20, 22), ...ozLand(46, 36, 10, 3, 'bs'), S('M4 52 q8 -3 16 0 t16 0', 'hi', 1.3)],
+arches_national_park: () => [...prSand(52), ...pqArch(20, 52, 12, 24), ...pqArch(44, 52, 10, 18), ...pkSun(32, 8)],
+badlands_national_park: () => [pkGround(52), P('M0 52 L8 30 L14 44 L22 24 L30 44 L38 28 L46 44 L54 32 L60 52 Z', 'bs'), S('M0 52 L8 30 L14 44 L22 24 L30 44 L38 28 L46 44 L54 32 L60 52', 'ik', 1.3), S('M6 46 L52 46 M10 40 L48 40', 'ik', 1), ...pkBison(30, 58, 0.5), ...pkSun(50, 10)],
+black_canyon_of_the_gunnison_national_park: () => [...pkCanyon(18, 42, 8, 54), ...pjRiver('M30 54 L30 60', 4), ...pgTrees(2, 12, 12).slice(0, 1), ...pgTrees(48, 58, 12).slice(0, 1), S('M24 20 L26 40 M36 20 L34 40', 'ik', 1)],
+bryce_canyon_national_park: () => [...prSand(52), ...[6, 14, 22, 30, 38, 46, 54].flatMap((x, i) => ptHoodoo(x, 52, 16 + (i * 7) % 14, 2.2)), ...pkSun(50, 8)],
+carlsbad_caverns_national_park: () => pqCave([...pqTites([14, 24, 36, 46], 8, 12), ...pqMites([16, 30, 44], 52, 10), E(46, 24, 2, 3, 'ik'), E(40, 20, 2, 3, 'ik'), ...pqFloor()]),
+craters_of_the_moon_national_monument_and_preserve: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'ik'), ...ptMound(16, 56, 14, 12, 'bs'), ...ptMound(44, 56, 14, 16, 'bs'), ...pnCrater(16, 46, 4), ...pnCrater(44, 42, 5), S('M2 12 q8 -3 16 0 t16 0', 'hi', 1.3), ...pkSun(50, 8)],
+death_valley_national_park: () => [...prSand(34), ...opMtn(10, 34, 10, 16, 'bs', false), ...opMtn(50, 34, 10, 14, 'bs', false), P('M0 34 L60 34 L60 44 L0 44 Z', 'hi'), ...pqCracks(44), ...pkSun(30, 10), ...ptCactus(52, 52, 10)],
+everglades_national_park: () => [P('M0 38 L60 38 L60 60 L0 60 Z', 'lo'), S('M0 38 L60 38', 'ik', 1.3), S('M6 48 q6 -3 12 0 t12 0 t12 0 t12 0', 'hi', 1.3), ...[12, 30, 48].flatMap(x => [S(`M${x} 38 L${x} 22`, 'ik', 1.4), S(`M${x - 4} 38 L${x} 28 L${x + 4} 38`, 'ik', 1)]), ...paPuffin(40, 36).slice(0, 2), ...pkSun(48, 8)],
+gates_of_the_arctic_national_park_and_preserve: () => [pkGround(44), ...pnPeak(18, 44, 12, 30), ...pnPeak(42, 44, 12, 26), ...pjRiver('M30 44 Q26 52 30 60', 3), ...pnCloud(50, 12)],
+glacier_bay_national_park_and_preserve: () => [...plWater(34), ...opMtn(14, 34, 14, 26, 'bs', true), ...opMtn(46, 34, 14, 22, 'bs', true), ...ozBerg(30, 46, 1.2), ...ozBerg(14, 52, 0.8), ...ozSeal(48, 54, 0.8)],
+grand_canyon_national_park: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), P('M0 12 L14 12 L16 24 L22 26 L24 38 L30 40 L30 60 L0 60 Z M60 12 L46 12 L44 24 L38 26 L36 38 L30 40 L30 60 L60 60 Z', 'bs'), S('M0 12 L14 12 L16 24 L22 26 L24 38 L30 40 M60 12 L46 12 L44 24 L38 26 L36 38 L30 40', 'ik', 1.3), S('M27 40 L30 56', 'lo', 5)],
+grand_teton_national_park: () => [pkGround(50), ...psSpire(14, 50, 30, 6), ...psSpire(32, 50, 42, 7), ...psSpire(48, 50, 28, 6), ...pjLake(30, 56, 14, 1.8), ...pgDeer(8, 58, 0.5)],
+joshua_tree_national_park: () => [...prSand(48), ...pnRock(14, 42, 8, 5), ...pnRock(40, 40, 9, 6), ...[26, 50].flatMap(x => [S(`M${x} 48 L${x} 34`, 'ik', 2), S(`M${x - 5} 32 L${x} 36 L${x + 5} 32 M${x - 4} 38 L${x} 34 L${x + 4} 38`, 'ik', 1.4)]), ...pkSun(8, 10)],
+la_amistad_international_park: () => [pkGround(46), S('M30 0 L30 46', 'ik', 1), ...opMtn(14, 46, 12, 18, 'bs', false), ...opMtn(46, 46, 12, 20, 'bs', false), ...prCanopy(10, 38, 5), ...prCanopy(50, 38, 5), ...pjRiver('M24 46 Q30 52 36 60', 3)],
+mammoth_cave_national_park: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'bs'), S('M8 8 L8 24 L24 24 L24 38 L12 38 L12 50 L40 50 L40 36 L52 36 L52 12', 'lo', 5), S('M8 8 L8 24 L24 24 L24 38 L12 38 L12 50 L40 50 L40 36 L52 36 L52 12', 'ik', 0.9)],
+mount_rainier_national_park: () => [pkGround(50), ...pnVolc(30, 50, 24, 40, false), P('M22 30 L38 30 L30 12 Z', 'hi'), ...pgTrees(2, 12, 56).slice(0, 2), ...pgTrees(48, 58, 56).slice(0, 2), ...pgDeer(30, 56, 0.5)],
+national_mall: () => [pkGround(36), ...pjLake(30, 40, 22, 2.4), ...ptObelisk(30, 36, 28), ...ptDome(8, 36), ...ptDome(52, 36), ...paTree(18, 36, 3), ...paTree(42, 36, 3)],
+olympic_national_park: () => [...plWater(46), ...opMtn(20, 34, 14, 24, 'bs', true), ...pgTrees(30, 56, 46), ...pgTrees(34, 52, 40), S('M4 54 q8 -3 16 0 t16 0', 'hi', 1.3), ...pnCloud(46, 8)],
+petrified_forest_national_park: () => [...prSand(40), ...[14, 34].flatMap(x => [P(`M${x - 10} 46 L${x + 10} 40 L${x + 10} 46 L${x - 10} 52 Z`, 'bs'), S(`M${x - 10} 46 L${x + 10} 40 M${x - 10} 52 L${x + 10} 46 M${x - 2} 44 L${x - 2} 50 M${x + 4} 42 L${x + 4} 48`, 'ik', 1.1)]), ...pkButte(40, 40, 16, 12), ...pkSun(50, 10)],
+rocky_mountain_national_park: () => [pkGround(50), ...pnPeak(30, 50, 22, 38), ...opMtn(10, 50, 8, 14, 'bs', true), ...pjLake(46, 56, 8, 1.8), ...pgDeer(12, 58, 0.5), ...pgTrees(40, 54, 50).slice(0, 2)],
+saguaro_national_park: () => [...prSand(48), ...ptCactus(14, 52, 26), ...ptCactus(30, 52, 34), ...ptCactus(46, 52, 22), ...pkSun(52, 8)],
+sian_kaan_biosphere_reserve: () => [...plWater(34), P('M0 34 L60 34 L60 50 L0 50 Z', 'bs'), S('M0 34 L60 34', 'ik', 1.3), ...nlPalm(14, 34, 16, 'lo'), ...nlPalm(46, 34, 16, 'lo'), ...paTree(30, 34, 3), S('M4 54 q8 -3 16 0 t16 0', 'hi', 1.3)],
+sequoia_national_park: () => [pkGround(52), ...[10, 26, 42].flatMap((x, i) => [P(`M${x - 4} 52 L${x - 3} ${8 + i * 4} L${x + 3} ${8 + i * 4} L${x + 4} 52 Z`, 'bs'), S(`M${x - 4} 52 L${x - 3} ${8 + i * 4} L${x + 3} ${8 + i * 4} L${x + 4} 52`, 'ik', 1.1)]), ...ntConifer(54, 20, 22, 8, 'lo'), ...pgDeer(30, 58, 0.5)],
+waterton_glacier_international_peace_park: () => [pkGround(46), ...opMtn(14, 46, 12, 24, 'bs', true), ...opMtn(46, 46, 12, 24, 'bs', true), S('M30 0 L30 46', 'ik', 1), ...pjLake(30, 54, 18, 2), ...pgTrees(24, 36, 46).slice(0, 1)],
+white_sands_national_park: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'hi'), ...[0, 1, 2].flatMap(i => [S(`M0 ${24 + i * 12} Q15 ${14 + i * 12} 30 ${24 + i * 12} T60 ${24 + i * 12}`, 'ik', 1.4)]), ...pkSun(48, 10), ...opMtn(10, 20, 8, 8, 'bs', false)],
+wind_cave_national_park: () => [pkGround(30), ...pkBison(14, 28, 0.6), P('M22 30 L38 30 L38 56 L22 56 Z', 'lo'), S('M22 30 L22 56 M38 30 L38 56', 'ik', 1.2), S('M44 10 q6 -3 12 0 M44 18 q6 -3 12 0', 'hi', 1.4)],
+wood_buffalo_national_park: () => [pkGround(34), S('M0 34 L60 34', 'ik', 1.3), ...pkBison(18, 40, 0.8), ...pgTrees(34, 56, 34), ...pjRiver('M0 56 Q30 50 60 56', 3), ...pkSun(48, 10)],
+zion_national_park: () => [...pkCanyon(14, 46, 6, 54), ...pjRiver('M30 54 L30 60', 4), S('M20 14 L24 40 M40 14 L36 40', 'ik', 1), ...pkSun(30, 4)],
+jau_national_park: () => [pkGround(44), ...pjRiver('M0 52 Q30 46 60 52', 5), ...prCanopy(12, 22, 8), ...prCanopy(30, 18, 9), ...prCanopy(48, 22, 8), ...pnCloud(46, 6)],
+lencois_maranhenses_national_park: () => [...prSand(30), ...pqDune(0, 30, 30, 8), ...pqDune(30, 60, 30, 8), ...pjLake(14, 42, 8, 2.4), ...pjLake(40, 46, 10, 2.4), ...pjLake(30, 54, 6, 1.6), ...pkSun(50, 10)],
+nahuel_huapi_national_park: () => [pkGround(40), ...opMtn(12, 40, 12, 22, 'bs', true), ...opMtn(48, 40, 12, 22, 'bs', true), ...pjLake(30, 50, 22, 4), ...pgTrees(2, 56, 40).slice(0, 3)],
+serra_da_capivara_national_park: () => [pkGround(50), ...pkButte(4, 50, 52, 30), P('M20 40 L38 40 L38 50 L20 50 Z', 'lo'), S('M24 44 L26 40 L28 44 M32 46 L34 42', 'ik', 1.2), ...pkSun(50, 8)],
+serra_do_mar: () => [...plWater(46), P('M0 46 L0 28 L14 20 L28 30 L44 16 L60 26 L60 46 Z', 'bs'), S('M0 28 L14 20 L28 30 L44 16 L60 26', 'ik', 1.3), ...pgTrees(2, 56, 46).slice(0, 5), ...poMist(24).slice(0, 1), S('M4 54 q8 -3 16 0 t16 0', 'hi', 1.3)],
+};
+for (const [id, fn] of Object.entries(MKpt)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 110: peaks, plains, small animals, bridges, chemistry, physics and mathematics, sourced, audited, hand-drawn ── */
+const puAtom = (cx, cy, rings = 3) => [C(cx, cy, 3, 'ik'), ...Array.from({ length: rings }, (_, i) => ring('ik', cx, cy, 8 + i * 6, 1.2))];
+const puFlask = (cx, base, w, h, fill = 'lo') => [P(`M${cx - 3} ${base - h} L${cx - 3} ${base - h * 0.55} L${cx - w} ${base} L${cx + w} ${base} L${cx + 3} ${base - h * 0.55} L${cx + 3} ${base - h} Z`, 'hi'), P(`M${cx - w * 0.7} ${base - h * 0.2} L${cx + w * 0.7} ${base - h * 0.2} L${cx + w} ${base} L${cx - w} ${base} Z`, fill), S(`M${cx - 3} ${base - h} L${cx - 3} ${base - h * 0.55} L${cx - w} ${base} L${cx + w} ${base} L${cx + 3} ${base - h * 0.55} L${cx + 3} ${base - h}`, 'ik', 1.4)];
+const puBox = (x, y, w, h, role = 'hi') => [box(x, y, w, h, role), S(`M${x} ${y} L${x + w} ${y} L${x + w} ${y + h} L${x} ${y + h} Z`, 'ik', 1)];
+const puGraph = (pts, edges, w = 1.4) => [...edges.map(([a, b]) => S(`M${pts[a][0]} ${pts[a][1]} L${pts[b][0]} ${pts[b][1]}`, 'ik', w)), ...pts.map(([x, y]) => C(x, y, 2.2, 'hi'))];
+const puWaves = (y, n = 2) => Array.from({ length: n }, (_, i) => S(`M4 ${y + i * 6} q8 -3 16 0 t16 0 t16 0`, 'hi', 1.3));
+const puTruss = (x0, x1, y) => [S(`M${x0} ${y} L${x1} ${y}`, 'ik', 2), ...Array.from({ length: Math.floor((x1 - x0) / 8) }, (_, i) => S(`M${x0 + i * 8} ${y} L${x0 + i * 8 + 4} ${y - 6} L${x0 + i * 8 + 8} ${y}`, 'ik', 1)), S(`M${x0} ${y - 6} L${x1} ${y - 6}`, 'ik', 1)];
+const MKpu = {
+gannett_peak: () => [pkGround(50), ...pnPeak(30, 50, 22, 38), ...opMtn(10, 50, 8, 14, 'bs', true), ...opMtn(52, 50, 8, 16, 'bs', true), ...poPine(6, 36, 14), ...pnCloud(46, 12)],
+yugansky_nature_reserve: () => [pkGround(46), ...pgTrees(2, 56, 46), ...pgTrees(6, 52, 36), ...pjRiver('M0 56 Q30 50 60 56', 3), ...pnCloud(46, 8)],
+european_plain: () => [P('M0 40 L60 40 L60 60 L0 60 Z', 'bs'), S('M0 40 L60 40', 'ik', 1.3), S('M4 46 L56 46 M8 52 L52 52', 'ik', 1), ...pjRiver('M0 56 Q30 50 60 56', 3), ...paHouse(10, 40, 5), ...paHouse(40, 40, 5), ...pgTrees(48, 56, 40).slice(0, 1), ...pkSun(48, 10)],
+peanut_hole: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'lo'), E(30, 30, 20, 10, 'hi'), E(18, 30, 10, 12, 'hi'), E(42, 30, 10, 12, 'hi'), mmEll(30, 30, 20, 10, 'ik', 1), ...puWaves(10, 1), ...puWaves(46, 1)],
+kitamaebune: () => [...plWater(34), ...orBoat(30, 36, 1.4), S('M4 52 q8 -3 16 0 t16 0 t16 0', 'hi', 1.3), ...pkSun(50, 10), S('M0 20 L12 14 L24 20', 'ik', 1.2)],
+genet_animal: () => [pkGround(46), ...pgFox(26, 44, 1.5), S('M14 44 Q4 36 6 26', 'ik', 3), S('M10 28 L12 32 M8 34 L10 38', 'hi', 1.4), S('M18 42 L18 40 M24 42 L24 40 M30 42 L30 40', 'ik', 1.2), ...paTree(52, 46, 4)],
+mara_mammal: () => [pkGround(46), E(28, 38, 9, 5, 'bs'), mmEll(28, 38, 9, 5, 'ik', 1.2), C(38, 33, 3, 'bs'), S('M38 30 L39 26 M40 31 L43 28', 'ik', 1.4), S('M22 42 L21 50 M26 42 L25 50 M32 42 L33 50 M35 41 L36 50', 'ik', 1.6), P('M19 36 L18 38 L20 40 Z', 'ik'), ...pkSun(50, 10), S('M4 52 l2 -4 l2 4 M44 54 l2 -4 l2 4', 'ik', 1)],
+hypericum_perforatum: () => [pkGround(52), S('M30 52 L30 24 M30 40 L20 28 M30 34 L40 24', 'lo', 2.4), ...[[30, 20], [20, 26], [40, 22], [24, 32], [38, 30]].flatMap(([x, y]) => [C(x, y, 3.4, 'hi'), C(x, y, 1, 'ik')]), S('M26 46 L22 42 M34 44 L38 40', 'lo', 1.6)],
+morchella_esculenta: () => [pkGround(50), P('M26 50 L26 30 L34 30 L34 50 Z', 'hi'), S('M26 50 L26 30 M34 50 L34 30', 'ik', 1.2), P('M20 30 Q20 12 30 10 Q40 12 40 30 Z', 'bs'), S('M20 30 Q20 12 30 10 Q40 12 40 30 Z', 'ik', 1.3), S('M24 16 L28 20 L24 24 M32 14 L36 18 L32 22 M28 26 L32 28', 'ik', 1.1), ...pgTrees(2, 12, 50).slice(0, 1)],
+salmonella_enterica: () => [P('M0 0 L60 0 L60 60 L0 60 Z', 'hi'), ...[[14, 16, 0], [34, 22, 40], [20, 42, -30], [44, 44, 70]].flatMap(([x, y, a]) => [E(x, y, 9, 3.4, 'bs'), mmEll(x, y, 9, 3.4, 'ik', 1.2), S(`M${x - 9} ${y} q-4 3 -7 0 M${x + 9} ${y} q4 -3 7 0 M${x - 3} ${y - 3} l-2 -3 M${x + 3} ${y + 3} l2 3`, 'ik', 0.9)])],
+astoria_megler_bridge: () => [P('M0 40 L60 40 L60 60 L0 60 Z', 'lo'), S('M0 40 L60 40', 'ik', 1.3), ...puTruss(8, 52, 28), S('M12 28 L12 44 M30 28 L30 44 M48 28 L48 44', 'ik', 2), S('M12 28 L30 12 L48 28', 'ik', 1.6), ...puWaves(48, 1)],
+qingdao_jiaozhou_bay_bridge: () => [...plWater(34), S('M0 30 L60 30', 'ik', 2.4), ...[8, 20, 32, 44, 56].map(x => S(`M${x} 30 L${x} 40`, 'ik', 2)), S('M0 34 L60 34', 'ik', 0.8), ...orBoat(30, 48, 0.6), ...pkSun(48, 10)],
+delta_carbon_13: () => [...puAtom(30, 30, 2), P('M4 52 L30 52 L30 58 L4 58 Z', 'bs'), P('M30 52 L56 52 L56 58 L30 58 Z', 'hi'), S('M4 52 L56 52', 'ik', 1.2), C(40, 22, 2, 'hi'), C(20, 38, 2, 'hi')],
+delta_oxygen_18: () => [...puAtom(30, 30, 2), ...puWaves(46, 2), C(30, 30, 5, 'lo')],
+squeeze_theorem: () => [S('M4 56 L4 4 M4 56 L56 56', 'ik', 1.4), S('M6 46 Q20 14 34 12 T56 10', 'ik', 1.8), S('M6 52 Q20 36 34 40 T56 34', 'ik', 1.8), S('M6 50 Q20 26 34 26 T56 22', 'hi', 2.4), S('M40 56 L40 8', 'ik', 0.9), C(40, 24, 2.4, 'hi')],
+fkt_algorithm: () => puGraph([[10, 10], [30, 10], [50, 10], [10, 30], [30, 30], [50, 30], [10, 50], [30, 50], [50, 50]], [[0, 1], [1, 2], [3, 4], [4, 5], [6, 7], [7, 8], [0, 3], [3, 6], [1, 4], [4, 7], [2, 5], [5, 8]], 1).concat([S('M10 10 L30 10 M50 10 L50 30 M10 30 L10 50 M30 30 L50 30 M30 50 L50 50', 'hi', 3)]),
+period_periodic_table: () => [...[0, 1, 2, 3, 4, 5].flatMap(i => puBox(4 + i * 9, 24, 8, 12, i % 2 ? 'hi' : 'bs')), S('M4 42 L58 42 M4 46 L36 46', 'ik', 1.2), C(8, 14, 2, 'ik')],
+material: () => [...[0, 1, 2].flatMap(r => [0, 1, 2, 3].flatMap(c => puBox(6 + c * 12 + (r % 2) * 5, 34 + r * 8, 11, 7, (r + c) % 2 ? 'hi' : 'bs'))), S('M4 56 L56 56', 'ik', 1.3)],
+ununennium: () => [...puAtom(30, 30, 4), S('M28 28 q2 -4 4 0 q0 3 -2 4 M30 36 L30 37', 'hi', 1.6)],
+fluorosulfuric_acid: () => [...puFlask(30, 52, 14, 34), S('M4 56 L56 56', 'ik', 1.2), S('M24 34 q3 -3 6 0 t6 0', 'ik', 1), C(24, 44, 2, 'hi'), C(34, 46, 2, 'hi')],
+oxonium_ion: () => [C(30, 30, 7, 'lo'), C(18, 22, 3.4, 'hi'), C(42, 22, 3.4, 'hi'), C(30, 44, 3.4, 'hi'), S('M26 26 L20 23 M34 26 L40 23 M30 37 L30 41', 'ik', 1.6), ring('ik', 30, 30, 22, 0.9)],
+potassium_perchlorate: () => [...puBox(10, 40, 40, 12, 'hi'), ...[10, 24, 38].flatMap((x, i) => [C(x + 6, 36 - (i % 2) * 2, 3, 'bs'), mmEll(x + 6, 36 - (i % 2) * 2, 3, 3, 'ik', 1)]), P('M26 24 L30 12 L34 24 Z', 'ik'), S('M30 8 L30 12 M24 12 L28 14 M36 12 L32 14', 'hi', 1.4)],
+process_design: () => [...puBox(4, 24, 12, 12, 'hi'), ...puBox(24, 24, 12, 12, 'bs'), ...puBox(44, 24, 12, 12, 'hi'), S('M16 30 L24 30 M36 30 L44 30', 'ik', 1.8), P('M22 28 L24 30 L22 32 Z M42 28 L44 30 L42 32 Z', 'ik'), S('M10 24 L10 14 L50 14 L50 24 M30 14 L30 24', 'ik', 1.2), S('M10 36 L10 46 L50 46 L50 36', 'ik', 1.2)],
+thomson_scattering: () => [C(30, 32, 4, 'hi'), mmEll(30, 32, 4, 4, 'ik', 1.2), S('M4 14 Q16 20 26 30', 'ik', 1.6), S('M34 34 Q46 38 56 52', 'ik', 1.6), P('M24 28 L28 30 L24 32 Z', 'ik'), P('M52 46 L56 52 L50 50 Z', 'ik'), S('M4 8 l4 4 l4 -4 l4 4', 'hi', 1.3)],
+discovery_of_the_neutron: () => [C(30, 30, 5, 'bs'), mmEll(30, 30, 5, 5, 'ik', 1.3), C(24, 26, 3.4, 'hi'), C(36, 34, 3.4, 'hi'), S('M4 30 L20 30', 'ik', 1.6), P('M16 27 L20 30 L16 33 Z', 'ik'), S('M40 30 L56 14 M40 30 L56 46', 'hi', 1.4), C(52, 18, 2, 'ik')],
+wien_approximation: () => [S('M4 56 L4 4 M4 56 L56 56', 'ik', 1.4), P('M6 54 Q14 6 24 20 Q34 38 54 52 L54 54 Z', 'hi'), S('M6 54 Q14 6 24 20 Q34 38 54 52', 'ik', 1.8), S('M16 8 L16 56', 'ik', 0.9)],
+};
+for (const [id, fn] of Object.entries(MKpu)) def(id, () => gAll(fn().filter(s => s && s.length)));
+
+/* ── level 5, batch 111: moons, stars, nebulae, galaxies and astronomical ideas, sourced, audited, hand-drawn ── */
+const pvStar = (x, y, r = 3, rays = true) => [C(x, y, r, 'hi'), ...(rays ? [S(`M${x} ${y - r - 3} L${x} ${y + r + 3} M${x - r - 3} ${y} L${x + r + 3} ${y}`, 'hi', 1.2)] : [])];
+const pvPlanet = (x, y, r, role = 'bs') => [C(x, y, r, role), mmEll(x, y, r, r, 'ik', 1.2)];
+const pvRinged = (x, y, r) => [...pvPlanet(x, y, r), mmEll(x, y, r * 1.8, r * 0.45, 'ik', 1.2)];
+const pvOrbit = (cx, cy, rx, ry) => [mmEll(cx, cy, rx, ry, 'ik', 1)];
+const pvSpiral = (cx, cy, r) => [S(`M${cx} ${cy} Q${cx + r * 0.5} ${cy - r * 0.6} ${cx + r} ${cy} Q${cx + r * 0.6} ${cy + r * 0.9} ${cx - r * 0.2} ${cy + r * 0.8}`, 'hi', 2.4), S(`M${cx} ${cy} Q${cx - r * 0.5} ${cy + r * 0.6} ${cx - r} ${cy} Q${cx - r * 0.6} ${cy - r * 0.9} ${cx + r * 0.2} ${cy - r * 0.8}`, 'hi', 2.4), C(cx, cy, r * 0.22, 'bs')];
+const pvEllipse = (cx, cy, rx, ry) => [E(cx, cy, rx, ry, 'bs'), E(cx, cy, rx * 0.55, ry * 0.55, 'hi'), mmEll(cx, cy, rx, ry, 'ik', 1)];
+const pvDots = (pts, r = 1.2) => pts.map(([x, y]) => C(x, y, r, 'hi'));
+const pvNeb = (cx, cy, rx, ry) => [E(cx, cy, rx, ry, 'bs'), E(cx - rx * 0.2, cy, rx * 0.6, ry * 0.7, 'hi')];
+const pvBurst = (cx, cy, r) => [S(`M${cx - r} ${cy} L${cx + r} ${cy} M${cx} ${cy - r} L${cx} ${cy + r} M${cx - r * 0.7} ${cy - r * 0.7} L${cx + r * 0.7} ${cy + r * 0.7} M${cx - r * 0.7} ${cy + r * 0.7} L${cx + r * 0.7} ${cy - r * 0.7}`, 'hi', 1.4), C(cx, cy, r * 0.35, 'hi')];
+const pvDish = (x, y) => pcDish(x, y);
+const pvGrid = () => [S('M0 20 L60 20 M0 40 L60 40 M20 0 L20 60 M40 0 L40 60', 'ik', 0.8)];
+const MKpv = {
+moons_of_jupiter: () => [...pvPlanet(18, 30, 14), S('M6 24 Q18 20 30 26 M5 32 Q18 28 31 34', 'ik', 1.2), ...pvPlanet(42, 12, 3, 'hi'), ...pvPlanet(48, 26, 2.4, 'hi'), ...pvPlanet(44, 40, 3.4, 'hi'), ...pvPlanet(52, 50, 2, 'hi')],
+chiron_centaur: () => [...pvOrbit(30, 30, 24, 12), ...pvStar(30, 30, 4), ...pvPlanet(50, 30, 3, 'bs'), ...pvPlanet(44, 22, 2.4, 'hi'), S('M44 22 l8 -6', 'hi', 1)],
+epsilon_eridani: () => [...pvStar(30, 30, 6), ...pvOrbit(30, 30, 18, 9), ...pvPlanet(48, 30, 2.4, 'bs'), ...pvDots([[8, 10], [52, 12], [12, 50], [50, 52]])],
+wise_0855_0714: () => [...pvPlanet(30, 30, 14, 'ik'), S('M18 26 Q30 22 42 28 M18 34 Q30 38 42 32', 'hi', 1.2), ...pvDots([[8, 10], [52, 8], [8, 52], [54, 50]])],
+cancri_e: () => [...pvStar(12, 30, 8), ...pvPlanet(38, 30, 6, 'bs'), S('M32 28 L44 28 M33 33 L43 33', 'hi', 1.2), ...pvOrbit(12, 30, 26, 12)],
+ngc_6302: () => [...pvStar(30, 30, 3), E(18, 30, 12, 6, 'bs'), E(42, 30, 12, 6, 'bs'), mmEll(18, 30, 12, 6, 'ik', 1), mmEll(42, 30, 12, 6, 'ik', 1), S('M30 30 Q24 10 18 12 M30 30 Q36 10 42 12 M30 30 Q24 50 18 48 M30 30 Q36 50 42 48', 'hi', 1.6)],
+scutum_centaurus_arm: () => [...pvSpiral(30, 30, 24), ...pvDots([[10, 10], [52, 10], [10, 52], [52, 52]])],
+r136: () => [...pvNeb(30, 30, 26, 18), ...pvStar(30, 30, 4), ...pvStar(22, 24, 2, false), ...pvStar(38, 36, 2.4, false), ...pvStar(36, 22, 1.8, false), ...pvStar(24, 38, 1.8, false)],
+messier_49: () => [...pvEllipse(30, 30, 22, 18), ...pvDots([[10, 10], [52, 10], [10, 52], [52, 50]])],
+messier_77: () => [...pvSpiral(30, 30, 22), ...pvStar(30, 30, 2, true)],
+messier_106: () => [...pvSpiral(30, 30, 20), S('M12 34 Q30 22 48 26', 'hi', 1.2), ...pvDots([[8, 10], [52, 52]])],
+centaurus_a_m83_group: () => [...pvEllipse(20, 24, 14, 10), ...pvSpiral(44, 40, 10), ...pvEllipse(46, 16, 6, 4), ...pvDots([[8, 50], [30, 52]])],
+ic_342_maffei_group: () => [...pvSpiral(18, 20, 10), ...pvEllipse(44, 36, 12, 8), ...pvEllipse(20, 46, 7, 5), ...pvDots([[48, 10], [8, 36]])],
+huge_lqg: () => [...pvStar(10, 12, 2, false), ...pvStar(24, 20, 2.4, false), ...pvStar(38, 12, 2, false), ...pvStar(50, 24, 2.4, false), ...pvStar(16, 36, 2.4, false), ...pvStar(34, 34, 2, false), ...pvStar(46, 46, 2.4, false), ...pvStar(12, 50, 2, false), S('M10 12 L24 20 L38 12 L50 24 L46 46 L34 34 L16 36 L24 20 M16 36 L12 50', 'ik', 0.9)],
+local_void: () => [...pvDots([[8, 8], [20, 6], [34, 8], [48, 10], [54, 20], [54, 34], [52, 48], [40, 54], [26, 54], [12, 52], [6, 40], [6, 24], [14, 14], [46, 14], [48, 42], [14, 44]], 1.8), mmEll(30, 30, 16, 12, 'ik', 1)],
+sn_1972e: () => [...pvEllipse(24, 38, 18, 10), ...pvBurst(44, 18, 10), ...pvDots([[8, 10], [52, 52]])],
+iau_definition_of_planet: () => [...pvStar(10, 30, 6), ...pvOrbit(10, 30, 26, 20), ...pvPlanet(36, 12, 5, 'bs'), ...pvPlanet(48, 36, 3, 'hi'), ...pvDots([[28, 50], [44, 52], [52, 24]], 1)],
+clearing_the_neighbourhood: () => [...pvOrbit(30, 30, 22, 22), ...pvPlanet(30, 8, 5, 'bs'), ...pvDots([[16, 44], [44, 44], [10, 28], [50, 30], [30, 52]], 1.2), ...pvStar(30, 30, 4, false)],
+minor_planet_moon: () => [E(24, 30, 12, 9, 'bs'), mmEll(24, 30, 12, 9, 'ik', 1.2), C(18, 28, 2, 'ik'), C(28, 33, 1.6, 'ik'), ...pvPlanet(48, 18, 4, 'hi'), ...pvOrbit(24, 30, 26, 16)],
+gamma_ray_burst_emission_mechanisms: () => [...pvBurst(14, 30, 7), S('M22 30 L56 30 M22 26 L50 18 M22 34 L50 42', 'hi', 1.8), P('M54 27 L58 30 L54 33 Z', 'hi')],
+gamma_ray_burst_progenitors: () => [...pvPlanet(14, 30, 8, 'bs'), ...pvStar(14, 30, 3, false), S('M22 30 L44 30', 'ik', 1.4), ...pvBurst(48, 30, 8)],
+s_type_star: () => [...pvPlanet(30, 30, 16, 'bs'), E(30, 30, 10, 10, 'hi'), S('M14 30 Q30 26 46 30', 'ik', 1), ...pvDots([[8, 10], [54, 54]])],
+yellow_supergiant: () => [...pvStar(30, 30, 14), C(30, 30, 8, 'bs'), ...pvPlanet(54, 54, 2, 'hi'), ...pvPlanet(8, 52, 2.4, 'hi')],
+flare_star: () => [...pvPlanet(26, 34, 14, 'hi'), S('M36 24 Q46 8 52 16 Q48 22 42 24', 'hi', 2.4), S('M16 26 Q8 14 14 8', 'hi', 1.6), ...pvDots([[8, 50], [54, 52]])],
+h_i_region: () => [...pvNeb(30, 30, 24, 16), ...pvDots([[14, 26], [22, 36], [34, 24], [42, 34], [30, 30], [48, 28]], 1.6), ...pvDots([[8, 8], [54, 10]])],
+galaxy_group: () => [...pvSpiral(18, 18, 10), ...pvEllipse(44, 22, 10, 7), ...pvSpiral(26, 44, 9), ...pvEllipse(50, 46, 5, 3.4), ...pvDots([[8, 52]])],
+type_cd_galaxy: () => [E(30, 30, 24, 18, 'ik'), ...pvEllipse(30, 30, 14, 10), ...pvDots([[8, 10], [52, 10], [10, 50], [52, 50], [30, 8], [30, 54]], 1.6)],
+lyman_alpha_emitter: () => [...pvEllipse(20, 34, 10, 6), S('M30 34 L56 34', 'hi', 1.6), P('M52 31 L58 34 L52 37 Z', 'hi'), S('M32 28 q4 -4 8 0 t8 0 t8 0', 'hi', 1.2), ...pvDots([[8, 10], [48, 12], [46, 50]])],
+solar_phenomena: () => [...pvPlanet(30, 34, 16, 'hi'), S('M30 18 L30 6 M18 24 L10 14 M42 24 L50 14 M14 34 L4 34 M46 34 L56 34', 'hi', 1.6), C(26, 36, 2, 'ik'), C(36, 32, 1.6, 'ik')],
+nasa_ipac_extragalactic_database: () => [E(30, 14, 16, 5, 'hi'), E(30, 44, 16, 5, 'hi'), P('M14 14 L14 44 L46 44 L46 14 Z', 'hi'), S('M14 14 L14 44 M46 14 L46 44 M14 26 Q30 31 46 26 M14 36 Q30 41 46 36', 'ik', 1.2), mmEll(30, 14, 16, 5, 'ik', 1.2), ...pvStar(30, 30, 2, false)],
+two_mass: () => [...pvGrid(), ...pvDots([[10, 10], [30, 14], [48, 8], [14, 30], [34, 34], [52, 28], [8, 50], [28, 52], [48, 48]], 2)],
+};
+for (const [id, fn] of Object.entries(MKpv)) def(id, () => gAll(fn().filter(s => s && s.length)));
 
 /* ── build ────────────────────────────────────────────────────────────────*/
 

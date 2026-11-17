@@ -123,7 +123,7 @@ const PUBLIC = [
 const BATTLE_PRIVATE = [/^data\/(afterlife|habitat|matchups|disasters|equip|weapons|behaviours)\.json$/, /^tools\/(afterlife|habitat|matchups|battle-smoke|battle-perf|creature-lint|disasters|equip|weapons|behaviours)\.mjs$/, /^tools\/lib\/fates\.mjs$/];
 // Loam Tube: only the built tube.html ships; its engine, template, modelled data, loader and checkers stay private.
 const TUBE_PRIVATE = [/^tube\//, /^data\/tube\.json$/, /^tools\/tube[a-z-]*\.mjs$/, /^tools\/lib\/tube-data\.mjs$/];
-const NEVER = [...BATTLE_PRIVATE, ...TUBE_PRIVATE, /^RESEARCH.*\.md$/, /^research\//, /^LEADS.*\.md$/, /^ROADMAP\.md$/, /^BACKLOG.*\.md$/, /^DESIGN.*\.md$/, /^SOURCES\.md$/,
+const NEVER = [...BATTLE_PRIVATE, ...TUBE_PRIVATE, /^todo-people\.json$/, /^RESEARCH.*\.md$/, /^research\//, /^LEADS.*\.md$/, /^ROADMAP\.md$/, /^BACKLOG.*\.md$/, /^DESIGN.*\.md$/, /^SOURCES\.md$/,
                /^roadmap\.page\.html$/, /^icons\.html$/, /notes/i, /private/i,
                // QUEUE.md is the outstanding-work list: it names unopened
                // sources, unfixed faults and commercial roadmap items.
